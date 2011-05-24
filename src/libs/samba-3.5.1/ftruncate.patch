@@ -1,0 +1,34 @@
+--- ./samba-3.5.1/source3/modules/vfs_default.c.org	2011-03-09 15:29:31.000000000 +0800
++++ ./samba-3.5.1/source3/modules/vfs_default.c	2011-03-09 15:31:52.000000000 +0800
+@@ -988,6 +988,7 @@
+ 		return -1;
+ 	}
+ 
++#if 0
+ 	/* Write out the real space on disk. */
+ 	if (SMB_VFS_LSEEK(fsp, st.st_ex_size, SEEK_SET) != st.st_ex_size)
+ 		return -1;
+@@ -1008,6 +1009,7 @@
+ 	if (SMB_VFS_LSEEK(fsp, currpos, SEEK_SET) != currpos)
+ 		return -1;
+ 
++#endif
+ 	return 0;
+ }
+ 
+@@ -1033,6 +1035,7 @@
+ 	   ftruncate extend but ext2 can. */
+ 
+ 	result = sys_ftruncate(fsp->fh->fd, len);
++#if 0
+ 	if (result == 0)
+ 		goto done;
+ 
+@@ -1080,6 +1083,7 @@
+ 		goto done;
+ 	result = 0;
+ 
++#endif
+   done:
+ 
+ 	END_PROFILE(syscall_ftruncate);

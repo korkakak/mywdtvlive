@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/Villa_bg.png">
+	<ctrlgrp>
+		<button valkey="OK"
+			focused_bg="image/Villa_button_blue_f_02.png"
+			normal_bg="image/Villa_button_blue_n_02.png"/>
+	</ctrlgrp>
+
+  <table x="490" y="530" w="343" h="78" cols="1" colspacing="0" fontsize="20" align="hcenter">
+    <imgbtn image="@@bg-OK" text="OK" active="@@act-OK" actnoseltextcolor="0xffffff" align="hcenter"/>
+  </table> 
+	<image image="./image/radiotime/tuneinradio_frame.png" x="198" y="183" w="210" h="210"/>
+	<image image="./image/radiotime/tuneinradio_frame_blister.png" x="198" y="183" w="210" h="210"/>
+	<image image="@@album_art" x="209" y="194" w="187" h="187" scale_type="fixratio" scale="100"/>
+  	<text x="419" y="197" w="656" h="28" text="@@radiotime_Title" fontsize="26" textcolor="0x07b5ff"/>
+  	<text x="419" y="238" w="651" h="22" text="@@radiotime_genres" fontsize="18" textcolor="0xd3d3d3"/>
+  	<text x="419" y="268" w="651" h="22" text="@@radiotime_lang" fontsize="18" textcolor="0xd3d3d3"/>
+  	<text x="419" y="298" w="651" h="22" text="@@radiotime_playing" fontsize="18" textcolor="0xd3d3d3"/>
+  	<text x="419" y="328" w="651" h="22" text="@@radiotime_next" fontsize="18" textcolor="0xd3d3d3"/>
+  	<text x="419" y="358" w="651" h="22" text="@@radiotime_time" fontsize="18" textcolor="0xd3d3d3"/>
+	<image image="./image/radiotime/tuneinradio_station_info_line.png" x="419" y="384" w="656" h="1"/>
+  	<text x="204" y="402" w="651" h="116" text="@@radiotime_info" fontsize="18" textcolor="0xe2e2e2" numlines="4"/>
+	<include filename="./inc_loading.xml"/>
+	<!-- fixed --> 
+	<include filename="./decoration.xml"/>
+	<image image="./image/radiotime/tuneinradio_logo.png" x="1026" y="606" w="168" h="58"/>
+</page>

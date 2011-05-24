@@ -1,0 +1,147 @@
+div#footer{
+  bottom:-47px;
+  left:0;
+  width:100%;
+  height:80px;
+  background-color:#282828;
+  position: fixed;
+  z-index:1000;
+  border-top:solid #464646 1px;
+  display:none;
+  /*cursor:pointer;*/
+ }
+
+#footer_content{
+	width:930px;
+	margin:auto;
+	position:relative;
+}
+
+#device_graphic{
+	position:absolute;
+	background-image:url(images/footer/device.png);
+	width:158px;
+	height:80px;
+	top:-5px;
+	left:-80px;
+}
+
+#device_graphic.good{
+	background-image:url(images/footer/device_status_good.gif);
+}
+
+#device_graphic.bad{
+	background-image:url(images/footer/device_status_bad.gif);
+}
+
+#device_display_name{
+	position:absolute;
+	top:5px;
+	left:87px;
+	font-size:9px;
+	/*padding-left:15px;
+	background-image:url(images/footer/collapsed_arrow.png);
+	background-repeat:no-repeat;
+	background-position:left center;*/ 
+}
+
+#device_display_name.open{
+	padding-left:0px;
+	background-image:none;
+}
+
+#device_display_status{
+	position:absolute;
+	top:35px;
+	left:65px;
+	font-size:9px;
+	display:none;
+}
+
+#footer_chart_container{
+	position:relative;
+}
+
+#usage_chart_wrap{
+	top:20px;
+	right:133px;
+	position:absolute;
+}
+
+#usage_chart{
+	position:relative;
+	background:#5e5e5e;
+	height:2px;
+	width:710px;
+	overflow:hidden;
+}
+
+#usage_chart .usage_indicator{
+	position:absolute;
+	left:0px;
+	top:0px;
+	height:2px;
+}
+
+.status_bad{
+	color:red;
+}
+
+.status_good{
+	color:#599f3e;
+}
+
+#usage_chart .status_good{
+	background-color:#599f3e;
+}
+
+#usage_chart .status_bad{
+	background-color:red;
+}
+
+#footer_content .music{
+	background-color:#aad412;
+	color:#aad412;
+}
+
+#footer_content .photos{
+	background-color:#46c87d;
+	color:#46c87d;
+}
+
+#footer_content .video{
+	background-color:#00b0e3;
+	color:#00b0e3;
+}
+
+#footer_content .backups{
+	background-color:#d436ff;
+	color:#d436ff;
+}
+
+#footer_content .other{
+	background-color:#c3c3c3;
+	color:#c3c3c3;
+}
+
+#indicator_label_wrap{
+	display:none;
+}
+
+.usage_indicator_label{
+	background:none !important;
+	float:left;
+	margin:14px 37px 0 0;
+	font-size:9px;
+}
+
+#all_usage_label{
+	position:absolute;
+	right:-37px;
+	top:1px;
+	color:#a5a5a5;
+}
+
+#all_usage_label span{
+	color:#fff;
+}

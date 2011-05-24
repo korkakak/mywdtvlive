@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png">
+	<ctrlgrp>
+		<include filename="./inc_optionmenu_ctrlgrp.xml"/>
+		<ctrlgrp valkey="hide_ctrlgrp" lbmask="LRud" autoenter="1">
+			<button valkey="HIDE"
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"/>
+			 <button valkey="SHOW" 
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"/>
+		</ctrlgrp>
+		<ctrlgrp valkey="ab_ctrlgrp" lbmask="LRud" autoenter="1">
+			<button valkey="A"
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"/>
+			 <button valkey="B" 
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"/>
+			 <button valkey="C" 
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"/>
+		</ctrlgrp>
+	</ctrlgrp>
+
+
+	<include filename="./inc_optionmenu_widgets.xml"/>
+
+	<imgbtn image="@@bg-HIDE" text="Hide Pop menu" active="@@act-HIDE" 
+		actnoseltextcolor="0xffffff" x="313" y="390" w="343" h="78" align="hcenter" fontsize="20"/>
+	<imgbtn image="@@bg-SHOW" text="Show Pop menu" active="@@act-SHOW" 
+		actnoseltextcolor="0xffffff" x="640" y="390" w="343" h="78" align="hcenter" fontsize="20"/>
+	<imgbtn image="@@bg-A" text="A(add push menu)" active="@@act-A" 
+		actnoseltextcolor="0xbffffff" x="163" y="490" w="343" h="78" align="hcenter" fontsize="20"/>
+	<imgbtn image="@@bg-B" text="B(disable Pop menu)" active="@@act-B" 
+		actnoseltextcolor="0xffffff" x="490" y="490" w="343" h="78" align="hcenter" fontsize="20"/>
+	<imgbtn image="@@bg-C" text="C(add zoom menu)" active="@@act-C" 
+		actnoseltextcolor="0xffffff" x="817" y="490" w="343" h="78" align="hcenter" fontsize="20"/>
+
+	<image image="@@pan-icon" x="1000" y="85" w="75" h="74"/>
+	<text text="@@pan-text" x="476" y="300" w="327" h="45" align="hcenter" fontsize="40" textcolor="0x7b5ff"/>
+	<text text="Optionmenu Demo" x="130" y="131" w="610" h="45" align="left" fontsize="40" textcolor="0x7b5ff"/>
+</page>

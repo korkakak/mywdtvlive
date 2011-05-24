@@ -1,0 +1,10 @@
+<?php
+$lang0='Verbindungstyp:';
+	$lang1='SSID:';
+$lang2='IP-Adresse:';
+$lang3='Subnetzmaske:';
+$lang4='Gateway:';
+$lang5='DNS-Server:';
+	$lang6='Workgroup:';
+	$lang7='Kabelgebunden';
+?>

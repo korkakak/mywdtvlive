@@ -1,0 +1,4 @@
+/* Progressbar
+----------------------------------*/
+.ui-progressbar { height:.3em; text-align: left; border:solid #000000 1px !important; background-color:#000000 !important; background-image:none !important;}
+.ui-progressbar .ui-progressbar-value {margin: -1px; height:100%; background-image:url(images/slider_tooltip_bg.png) !important; background-position: top !important; border-color:#0373b7 !important; -moz-border-radius: 3px !important; -webkit-border-radius: 3px !important; }

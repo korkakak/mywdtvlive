@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+  <ctrlgrp>
+    <button valkey="FW_UPGRADING_FAIL_OK"
+		focused_bg="image/Villa_button_blue_f_02.png"
+		normal_bg="image/Villa_button_blue_n_02.png"
+		click_bg="image/Villa_button_blue_f_02.png" />
+  </ctrlgrp>
+
+  <text text="$$Update Device" x="241" y="149" w="700" h="42" align="left" fontsize="40" textcolor="0x07b5ff"/>
+
+  <text text="@@upgrading_fail_msg" x="250" y="260" w="780" h="140" fontsize="26" numlines="3" align="hcenter" textcolor="0xe2e2e2"/>
+
+  <imgbtn x="469" y="488" w="343" h="78" image="@@bg-FW_UPGRADING_FAIL_OK" text="$$OK" align="hcenter" fontsize="24" textcolor="0xffffff" active="@@act-FW_UPGRADING_FAIL_OK" actnoseltextcolor="0xffffff"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

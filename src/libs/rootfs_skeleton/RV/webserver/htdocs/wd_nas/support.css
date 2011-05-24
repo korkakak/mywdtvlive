@@ -1,0 +1,11 @@
+hr {
+    width:90%;
+    margin:0 auto;
+}
+.privacyPolicyLink {
+	font-size:11px;
+}
+
+#run_report_button {
+    margin:15px 0px 20px 110px;
+}

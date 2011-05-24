@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scraper framework="1.1" date="2010-02-24" name="yahoomovietw" content="movies" thumb="yahoo.png" language="en">
+	<CreateSearchUrl dest="3">
+		<RegExp input="$$1" output="&lt;url&gt;http://tw.movie.yahoo.com/moviesearch_result.html?qmv=\1&lt;/url&gt;" dest="3">
+			<expression>(.+)</expression>
+		</RegExp>
+	</CreateSearchUrl>
+	<GetSearchResults dest="8">
+		<RegExp input="$$3" output="&lt;results&gt;\1&lt;/results&gt;" dest="8">
+			<RegExp input="$$1" output="&lt;entity&gt;&lt;title&gt;\3&lt;/title&gt;&lt;url&gt;http://tw.movie.yahoo.com/movieinfo_main.html/id=\1&lt;/url&gt;&lt;id&gt;\1&lt;/id&gt;&lt;year&gt;\4&lt;/year&gt;&lt;desc&gt;\5&lt;/desc&gt;&lt;thumb&gt;\2&lt;/thumb&gt;&lt;/entity&gt;" dest="3">
+				<expression>&lt;a href=&quot;http://tw.rd.yahoo.com/referurl/movie/search/movieinfo/\*http://tw.movie.yahoo.com/movieinfo_main.html/id=([0-9]*)&quot;&gt;&lt;img src=&quot;(.*?)&quot; title=&quot;(.*?)&quot;.*?&lt;span class=&quot;date&quot;&gt;上映日期：&lt;span&gt;(.*?)&lt;/span&gt;&lt;/span&gt; &lt;p&gt;(.*?)&lt;a href=</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</GetSearchResults>
+	<GetDetails dest="3">
+		<RegExp input="$$5" output="&lt;details&gt;\1&lt;/details&gt;" dest="3">
+			<RegExp input="$$1" output="&lt;title&gt;\1&lt;/title&gt;" dest="5">
+				<expression>&lt;title&gt;(.*?) -.*?&lt;/title&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;year&gt;\1&lt;/year&gt;" dest="5+">
+				<expression>上映日期：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.*?)&lt;/span&gt;&lt;/p&gt;</expression>
+			</RegExp>
+			<RegExp input="$$6" output="&lt;genre&gt;\1&lt;/genre&gt;" dest="5+">
+				<RegExp input="$$4" output="\1/" dest="6">
+				
+					<RegExp input="$$1" output="\1" dest="4">
+						<expression noclean="1">類　　型：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.*?)&lt;/span&gt;&lt;/p&gt;</expression>
+					</RegExp>
+					<expression>'&gt;(.*?)&lt;/a&gt;</expression>
+				
+				</RegExp>
+				<expression/>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;director&gt;\1&lt;/director&gt;" dest="5+">
+				<expression>導　　演：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.*?)&lt;/span&gt;&lt;/p&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;cast&gt;\1&lt;/cast&gt;" dest="5+">
+				<expression>演　　員：&lt;/span&gt;&lt;span class=&quot;dta&quot;&gt;(.*?)&lt;/span&gt;&lt;/p&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;overview&gt;\1&lt;/overview&gt;" dest="5+">
+				<expression>&lt;div class=&quot;text full&quot;&gt;&lt;p&gt;(.*?)&lt;p&gt;</expression>
+			</RegExp>
+			<RegExp input="$$1" output="&lt;thumbnail&gt;\1&lt;/thumbnail&gt;" dest="5+">
+				<expression>_poster&quot;&gt;&lt;img src=&quot;(.*?)&quot; title=&quot;</expression>
+			</RegExp>
+			<expression/>
+		</RegExp>
+	</GetDetails>
+</scraper>

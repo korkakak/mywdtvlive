@@ -1,0 +1,2326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "ビデオ"
+
+msgid "Music"
+msgstr "音楽"
+
+msgid "Settings"
+msgstr "設定"
+
+msgid "All Video"
+msgstr "全てのビデオ"
+
+msgid "Date"
+msgstr "日付"
+
+msgid "Folders"
+msgstr "フォルダ"
+
+msgid "Recent"
+msgstr "最近"
+
+msgid "Playlist"
+msgstr "プレイリスト"
+
+msgid "Playlist Videos"
+msgstr "プレイリスト"
+
+msgid "All Music"
+msgstr "全ての音楽"
+
+msgid "Artist"
+msgstr "アーチスト"
+
+msgid "Genre"
+msgstr "ジャンル"
+
+msgid "Album"
+msgstr "アルバム"
+
+msgid "Now Playing"
+msgstr "再生中です"
+
+msgid "Now playing"
+msgstr "再生中です"
+
+msgid "New firmware found"
+msgstr "新しいファームウェアを検出しました"
+
+msgid "No storage present"
+msgstr "ストレージがありません"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "メディアライブラリコンピレーションには多くの格納スペースが必要です。 "
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "接続したストレージをスキャンしています。初めての場合は時間がかかります。お待ちください。"
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "[OK]を選択すると前回停止位置から再生できます。[キャンセル]ではじめから再生します。"
+
+msgid "Audio/Video"
+msgstr "音声/ビデオ"
+
+msgid "Audio"
+msgstr "音声"
+
+msgid "Movie"
+msgstr "動画"
+
+msgid "System"
+msgstr "システム"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "間隔"
+
+msgid "Language"
+msgstr "言語"
+
+msgid "About"
+msgstr "バージョン情報"
+
+msgid "Normal"
+msgstr "標準"
+
+msgid "Widescreen"
+msgstr "ワイドスクリーン"
+
+msgid "Composite"
+msgstr "コンポジット"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "自動"
+
+msgid "Stereo"
+msgstr "ステレオ"
+
+msgid "Digital"
+msgstr "デジタル"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "ビデオ解像度を変更しますか?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "ビデオ出力形式を変更しますか?"
+
+msgid "Repeat one"
+msgstr "1曲リピート"
+
+msgid "Repeat all"
+msgstr "全曲リピート"
+
+msgid "Repeat all and shuffle"
+msgstr "全曲リピートしてシャッフル"
+
+msgid "Keep as original"
+msgstr "そのまま表示"
+
+msgid "Fit to screen"
+msgstr "画面にフィット"
+
+msgid "Shuffle"
+msgstr "シャッフル"
+
+msgid "Fade"
+msgstr "フェード"
+
+msgid "Random"
+msgstr "ランダム"
+
+msgid "3 Seconds"
+msgstr "3 秒"
+
+msgid "5 Seconds"
+msgstr "5 秒"
+
+msgid "10 Seconds"
+msgstr "10 秒"
+
+msgid "20 Seconds"
+msgstr "20 秒"
+
+msgid "30 Seconds"
+msgstr "30 秒"
+
+msgid "1 Minute"
+msgstr "1 分"
+
+msgid "3 Minutes"
+msgstr "3 分"
+
+msgid "5 Minutes"
+msgstr "5 分"
+
+msgid "10 Minutes"
+msgstr "10 分"
+
+msgid "15 Minutes"
+msgstr "15 分"
+
+msgid "20 Minutes"
+msgstr "20 分"
+
+msgid "30 Minutes"
+msgstr "30 分"
+
+msgid "English"
+msgstr "英語"
+
+msgid "French"
+msgstr "フランス語"
+
+msgid "Italian"
+msgstr "イタリア語"
+
+msgid "German"
+msgstr "ドイツ語"
+
+msgid "Spanish"
+msgstr "スペイン語"
+
+msgid "Simplified Chinese"
+msgstr "簡体字中国語"
+
+msgid "Traditional Chinese"
+msgstr "繁体字中国語"
+
+msgid "Korean"
+msgstr "韓國語"
+
+msgid "Japanese"
+msgstr "日本語"
+
+msgid "On"
+msgstr "オン"
+
+msgid "Off"
+msgstr "オフ"
+
+msgid "CAS_On"
+msgstr "オン"
+
+msgid "CAS_Off"
+msgstr "オフ"
+
+msgid "Never"
+msgstr "なし"
+
+msgid "List mode"
+msgstr "リストモード"
+
+msgid "Thumbnail mode"
+msgstr "サムネイルモード"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "出荷時設定に復元しますか?"
+
+msgid "WD TV HD Media Player"
+msgstr "WD TV Live HD メディアプレーヤー"
+
+msgid "WD TV Plus HD Media Player"
+msgstr "WD TV Live Plus HD メディアプレーヤー"
+
+msgid "version"
+msgstr "バージョン"
+
+msgid "Current version"
+msgstr "現在のバージョン"
+
+msgid "Current version:"
+msgstr "現在のバージョン:"
+
+msgid "New version"
+msgstr "新バージョン"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "新しいファームウェアが見つかりました。更新しますか?"
+
+msgid "Rebooting"
+msgstr "再起動中"
+
+msgid "Invalid firmware"
+msgstr "無効ファームウェア"
+
+msgid "Contains"
+msgstr "キーワード検索（部分一致）"
+
+msgid "Starts with"
+msgstr "キーワード検索（前方一致）"
+
+msgid "Loading"
+msgstr "ロード中"
+
+msgid "Loading..."
+msgstr "ロード中..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "キャンセル"
+
+msgid "Yes"
+msgstr "OK"
+
+msgid "No"
+msgstr "取消"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "USB ポートが認識できませんでした"
+
+msgid "Storage can not aggregate"
+msgstr "ストレージを集合できません"
+
+msgid "Next Song:"
+msgstr "次の曲:"
+
+msgid "Current Song"
+msgstr "現在の曲"
+
+msgid "Search"
+msgstr "検索"
+
+msgid "All Photos"
+msgstr "すべての写真"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "メディアライブラリはジャーナルされたファイルシステムをサポートしません。再生はサポートされています。"
+
+msgid "Unable to create media library on read only storage."
+msgstr "読み取り専用ストレージでメディアライブラリを作成できません。"
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "メディアライブラリを作成できません。ストレージ設定を確認してください。"
+
+msgid "Unrecognized USB device"
+msgstr "USBデバイスを認識できません"
+
+msgid "Scanning the attached USB device..."
+msgstr "USBデバイスをスキャンしています..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "再生使用としているビデオファイルには、サポートされていない複数のオーディオチャンネル出力が含まれています。デジタルオーディオ出力に切り替え、Live HDメディアプレーヤーをオーディオコーデックをサポートするAVレシーバーに接続してください。"
+
+msgid "Unsupported subtitle"
+msgstr "非対応のサブタイトル"
+
+msgid "Audio Channel"
+msgstr "オーディオチャンネル"
+
+msgid "Audio channel"
+msgstr "オーディオチャンネル"
+
+msgid "Photos"
+msgstr "写真"
+
+msgid "photos"
+msgstr "写真"
+
+msgid "Firmware upgrade"
+msgstr "ファームウェアのアップグレード"
+
+msgid "Video output"
+msgstr "ビデオ出力"
+
+msgid "Display resolution"
+msgstr "画面解像度"
+
+msgid "Aspect ratio"
+msgstr "アスペクト比"
+
+msgid "Audio output"
+msgstr "音声出力"
+
+msgid "Video sequence"
+msgstr "ビデオシーケンス"
+
+msgid "Music sequence"
+msgstr "音楽シーケンス"
+
+msgid "Slideshow sequence"
+msgstr "スライドショーシーケンス"
+
+msgid "Photo scaling"
+msgstr "写真の拡大縮小"
+
+msgid "Transition effect"
+msgstr "遷移効果"
+
+msgid "Screensaver delay"
+msgstr "スクリーンセーバー待ち時間"
+
+msgid "Browser display"
+msgstr "ブラウザ表示"
+
+msgid "System reset"
+msgstr "システムリセット"
+
+msgid "Display in full screen"
+msgstr "歪みのあるフルスクリーン"
+
+msgid "Wipe right"
+msgstr "右にワイプ"
+
+msgid "Wipe left"
+msgstr "左にワイプ"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "HDメディアプレーヤーがアップグレードされています。電源または接続されたストレージを切断しないでください。"
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "アップグレードが完了しました。メディアプレーヤーが再起動します。"
+
+msgid "Please select the device you would like to eject."
+msgstr "取り外すデバイスを選択してください。"
+
+msgid "Are you sure you want to remove this device?"
+msgstr "このデバイスを取り外しますか?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "デジタルオーディオ出力設定を行っている場合、サラウンドサウンドでオーディオトラックを再生するには適切なオーディオ形式をサポートするAVレシーバーが必要です。"
+
+msgid "Subtitle off"
+msgstr "サブタイトルオフ"
+
+msgid "No subtitle"
+msgstr "サブタイトルなし"
+
+msgid "Media library"
+msgstr "メディアライブラリ"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "HD Media Playerの詳細については、ユーザーマニュアルを参照するか、以下にアクセスしてください"
+
+msgid "Subtitle"
+msgstr "サブタイトル"
+
+msgid "Firmware Version"
+msgstr "ファームウェアバージョン"
+
+msgid "Title"
+msgstr "タイトル"
+
+msgid "File name"
+msgstr "ファイル名"
+
+msgid "Search completed. No results found."
+msgstr "検索が完了しましたが、見つかりませんでした。"
+
+msgid "Unsupported"
+msgstr "対応していません"
+
+msgid "Space"
+msgstr "スペース"
+
+msgid "No audio channel"
+msgstr "オーディオチャンネルない"
+
+msgid "Untitled volume"
+msgstr "タイトルのないボリューム"
+
+msgid "Subtitle font size"
+msgstr "字幕のフォントサイズ"
+
+msgid "Additional encoding support"
+msgstr "追加の符号化サポート"
+
+msgid "Western Europe (ISO)"
+msgstr "西ヨーロッパ (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "繁体字中国語 (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "簡体字中国語 (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "日本語 (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "韓國語 (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "キリル文字 (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "キリル文字 (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "ギリシャ語 (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "ギリシャ語 (Windows-1253)"
+
+msgid "All"
+msgstr "すべて"
+
+msgid "Equal to"
+msgstr "と等号"
+
+msgid "Not Equal to"
+msgstr "と不等号"
+
+msgid "Central Europe (ISO)"
+msgstr "中央ヨーロッパ (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "中央ヨーロッパ (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "含まない"
+
+msgid "Display file size"
+msgstr "ファイルサイズを表示"
+
+msgid "Display file size during navigation"
+msgstr "ナビゲーション中にファイルサイズを表示"
+
+msgid "Western Europe"
+msgstr "西欧"
+
+msgid "Turkish"
+msgstr "トルコ語"
+
+msgid "Subtitle default"
+msgstr "サブタイトル デフォルト"
+
+msgid "Subtitle border"
+msgstr "サブタイトル 境界"
+
+msgid "Thick"
+msgstr "太い"
+
+msgid "Thin"
+msgstr "細い"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "接続したUSBデバイスの空き容量が不十分です。メディアライブラリ コンパイルには記憶容量がさらに必要です。"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "接続したUSBデバイスはHFS+Journalingファイルシステムを使用しています。再生はできますが、メディアライブラリはこのファイルシステムをサポートしていません。メディアプレイヤーの機能を全て使用するには、Journalingを無効化してください。"
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "接続したUSBデバイスは読み取り専用に設定されています。メディアライブラリ機能は実行されません。"
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "接続したUSBデバイスにメディアライブラリを作成できません。デバイスの設定を確認してください。"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "ファームウェアが無効です。http://www.wdc.comから適切なファームウェアをダウンロードしてください。"
+
+msgid "File Management"
+msgstr "ファイル管理"
+
+msgid "Select source"
+msgstr "ソースを選択"
+
+msgid "Select a destination"
+msgstr "送り先を選択"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "ファイルの移動を実施します。再生中の音楽は停止します。"
+
+msgid "Copy"
+msgstr "コピー"
+
+msgid "Delete"
+msgstr "削除"
+
+msgid "Move"
+msgstr "移動"
+
+msgid "Select all"
+msgstr "全てを選択"
+
+msgid "Source"
+msgstr "ソース"
+
+msgid "Destination"
+msgstr "送り先"
+
+msgid "Would you like to delete the selected files?"
+msgstr "選択したファイルを削除しますか？"
+
+msgid "Would you like to copy the selected files?"
+msgstr "選択したファイルをコピーしますか？"
+
+msgid "Would you like to move the selected files?"
+msgstr "選択したファイルを移動しますか？"
+
+msgid "Deleting files..."
+msgstr "ファイルを削除しています..."
+
+msgid "Deleted"
+msgstr "削除しました。"
+
+msgid "Copying files..."
+msgstr "ファイルをコピーしています..."
+
+msgid "Moving files..."
+msgstr "ファイルを移動しています..."
+
+msgid "Moved"
+msgstr "移動が完了しました"
+
+msgid "File delete complete."
+msgstr "ファイルの削除が完了しました。"
+
+msgid "Write fail. Please check the destination device."
+msgstr "書き込みに失敗しました。書き込み先デバイスを確認してください。"
+
+msgid "Read fail. Please check the source device."
+msgstr "読み取りに失敗しました。ソースデバイスを確認してください。"
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "ファイルのコピーまたは移動ができません。コピー/移動先の空き容量が十分ではありません。"
+
+msgid "Unable to write to read-only device at destination."
+msgstr "書き込みできません。書き込み先のデバイスは読み取り専用です。"
+
+msgid "Unable to delete read-only file."
+msgstr "読み取り専用ファイルを削除することはできません。"
+
+msgid "Press [BACK] to cancel."
+msgstr "キャンセルするには[戻る]を押します。"
+
+msgid "Are you sure you want to cancel?"
+msgstr "キャンセルしますか？"
+
+msgid "Auto play"
+msgstr "自動再生"
+
+msgid "Photo auto play"
+msgstr "写真自動再生"
+
+msgid "Video auto play"
+msgstr "ビデオ自動再生"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "このビデオ設定を変更しますか？"
+
+msgid "Camera"
+msgstr "カメラ"
+
+msgid "Camera 1"
+msgstr "カメラ 1"
+
+msgid "Camera 2"
+msgstr "カメラ 2"
+
+msgid "Chapters"
+msgstr "チャプター"
+
+msgid "file name"
+msgstr "ファイル名"
+
+msgid "Press [RIGHT] to select source."
+msgstr "[右]を押してソースを選択します。"
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "[OPTION]を押してコピー、移動、あるいは削除を選択します。"
+
+msgid "Press [RIGHT] to select destination."
+msgstr "[右]を押して送り先を選択します。"
+
+msgid "Press [OPTION] to confirm."
+msgstr "[OPTION]を押して決定します。"
+
+msgid "Standby mode"
+msgstr "スタンバイモード"
+
+msgid "Audio track display"
+msgstr "オーディオトラック表示"
+
+msgid "Action cancelled."
+msgstr "操作をキャンセル"
+
+msgid "Arabic"
+msgstr "アラビア語"
+
+msgid "Hindu"
+msgstr "ヒンディー語"
+
+msgid "Thailand"
+msgstr "タイ"
+
+msgid "Preview mode"
+msgstr "プレビューモード"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "ファームウェアのアップグレードに失敗しました。 デバイスが再起動します。"
+
+msgid "Empty"
+msgstr "空ろ"
+
+msgid "Push"
+msgstr "押す"
+
+msgid "Wipe"
+msgstr "拭く"
+
+msgid "Zoom"
+msgstr "ズーム"
+
+msgid "Access point detecting..."
+msgstr "ワイヤレスネットワークを検出中..."
+
+msgid "Detecting Wireless Access Point"
+msgstr "ワイヤレスネットワークを検出中..."
+
+msgid "The network encryption key is not valid."
+msgstr "ネットワーク暗号化キーは有効ではありません。"
+
+msgid "No Chapter"
+msgstr "章ではない"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "Live365 Home"
+msgstr "Live365 ホーム"
+
+msgid "Last 7 days interesting"
+msgstr "最近1週間のお気に入り"
+
+msgid "Most recent uploads"
+msgstr "最新のアップロード"
+
+msgid "Hot tags"
+msgstr "注目のタグ"
+
+msgid "Hot Tags"
+msgstr "注目のタグ"
+
+msgid "My contacts"
+msgstr "アドレス帳"
+
+msgid "My Contacts"
+msgstr "アドレス帳"
+
+msgid "My tags"
+msgstr "マイタグ"
+
+msgid "Explore"
+msgstr "検索"
+
+msgid "Keywords"
+msgstr "キーワード"
+
+msgid "Flickr members"
+msgstr "Flickr会員"
+
+msgid "Tags"
+msgstr "タグ"
+
+msgid "Tag"
+msgstr "タグ"
+
+msgid "Submit"
+msgstr "送信"
+
+msgid "Search results"
+msgstr "検索結果"
+
+msgid "Search Results"
+msgstr "検索結果"
+
+msgid "Photo can not be access"
+msgstr "写真にアクセスできません"
+
+msgid "Download photo"
+msgstr "写真ダウンロード"
+
+msgid "This member doesn't have anything available to you."
+msgstr "この会員の情報は入手できません。"
+
+msgid "Photostream"
+msgstr "フォトストリーム"
+
+msgid "Contacts"
+msgstr "アドレス"
+
+msgid "Featured Videos"
+msgstr "おすすめの動画"
+
+msgid "Recent Videos"
+msgstr "最近の動画"
+
+msgid "Account"
+msgstr "アカウント"
+
+msgid "Top Favorited"
+msgstr "一番のお気に入り"
+
+msgid "Today"
+msgstr "今日"
+
+msgid "This Week"
+msgstr "今週"
+
+msgid "This Month"
+msgstr "今月"
+
+msgid "All Time"
+msgstr "常時"
+
+msgid "Featured"
+msgstr "おすすめ"
+
+msgid "Rated Videos"
+msgstr "評価済みの動画"
+
+msgid "Rate Video"
+msgstr "動画を評価する"
+
+msgid "Rate video"
+msgstr "動画を評価する"
+
+msgid "Download"
+msgstr "ダウンロード"
+
+msgid "Play Again"
+msgstr "もう一度再生"
+
+msgid "Download Video"
+msgstr "動画をダウンロード"
+
+msgid "Add to Favorites"
+msgstr "お気に入りに追加"
+
+msgid "Back to Videos"
+msgstr "動画に戻る"
+
+msgid "Poor"
+msgstr "いまいち"
+
+msgid "Nothing special"
+msgstr "普通"
+
+msgid "Worth watching"
+msgstr "見る価値あり"
+
+msgid "Pretty cool"
+msgstr "かなり良い"
+
+msgid "Awesome"
+msgstr "最高"
+
+msgid "My Account"
+msgstr "マイアカウント"
+
+msgid "My Videos"
+msgstr "マイビデオ"
+
+msgid "My Favorites"
+msgstr "お気に入り"
+
+msgid "My Playlists"
+msgstr "マイプレイリスト"
+
+msgid "My videos"
+msgstr "マイビデオ"
+
+msgid "My favorites"
+msgstr "お気に入り"
+
+msgid "My playlists"
+msgstr "マイプレイリスト"
+
+msgid "Visit www.live365.com/vip to sign up. for more info or become a VIP."
+msgstr "VIPになるにはwww.live365.com/vipにてサインアップ。詳しい情報もこちらでご覧ください。"
+
+msgid "Live365 - the world's largest internet radio network. Listen to select stations for free or get a VIP Membership for unlimited access to thousands of commercial-free stations from over 240 genres. Visit www.liver365.com/vip to sign up. Once purchased. your commercial-free VIP access is active on the Live365 website as well as participating devices."
+msgstr "LIVE365-世界最大のインターネットラジオネットワークです。 局を選択して無料で聴くか、VIPになってコマーシャルなしで聴ける何千もの局へアクセス無制限。240以上のジャンルから選べます。 www.live365.com/vipにてVIPにサインアップしてください。 ご購入により、コマーシャルなしのVIPアクセスがLive365ウェブサイトおよび参加機器に対し有効となります。"
+
+msgid "Continue"
+msgstr "続行"
+
+msgid "Last Station"
+msgstr "最後に選択したサイト"
+
+msgid "Last Stations"
+msgstr "最後に選択したサイト"
+
+msgid "My presets"
+msgstr "マイプリセット"
+
+msgid "My Presets"
+msgstr "マイプリセット"
+
+msgid "Stations"
+msgstr "サイト"
+
+msgid "VIP Stations"
+msgstr "VIP サイト"
+
+msgid "Preferences"
+msgstr "基本設定"
+
+msgid "YouTube Preferences"
+msgstr "YouTube 基本設定"
+
+msgid "Start up"
+msgstr "開始"
+
+msgid "Sign In / Sign Out"
+msgstr "ログイン/ログアウト"
+
+msgid "Sign out / Sign in"
+msgstr "ログイン/ログアウト"
+
+msgid "Logout"
+msgstr "ログアウト"
+
+msgid "Sort Option"
+msgstr "並べ替えオプション"
+
+msgid "Sort Options"
+msgstr "並べ替えオプション"
+
+msgid "Audio settings"
+msgstr "オーディオ設定"
+
+msgid "All Stations(8k-256k)"
+msgstr "すべての局(8k-256k)"
+
+msgid "Only High(96k-256k)"
+msgstr "高のみ(96k-256k)"
+
+msgid "Medium to High(56k-256k)"
+msgstr "中から高(56k-256k)"
+
+msgid "Low to Medium(8k-56k)"
+msgstr "低から中(8k-56k)"
+
+msgid "Only Low(8k-32k)"
+msgstr "低のみ(8k-32k)"
+
+msgid "Home page"
+msgstr "ホームページ"
+
+msgid "Presets page"
+msgstr "プリセットページ"
+
+msgid "Play last station"
+msgstr "最後に選択した局を再生"
+
+msgid "Sort Station Alphabetically"
+msgstr "局をアルファベット順に並び替え"
+
+msgid "Sort Station by Popularity"
+msgstr "局を人気順に並び替え"
+
+msgid "Please check your email for the track info."
+msgstr "トラック情報のためのメールアドレスを確認してください。"
+
+msgid "We are sorry.Pandora service only for U.S.Listeners that language support only for English. "
+msgstr "現在、Pandora(パンドラ)サービスは米国のみでの使用となっております。従って、英語のみでのご使用となります。"
+
+msgid "Network Setup"
+msgstr "ネットワーク設定"
+
+msgid "Network setup"
+msgstr "ネットワーク設定"
+
+msgid "Invalid username or password. Please try again."
+msgstr "ユーザー名あるいはパスワードが無効です。再度おためしください。"
+
+msgid "Failed to connect file server, the account/password may be changed, please check it."
+msgstr "ユーザー名あるいはパスワードが無効です。再度おためしください。"
+
+msgid "Wired"
+msgstr "有線"
+
+msgid "Ethernet"
+msgstr "イーサネット"
+
+msgid "Wireless"
+msgstr "ワイヤレス"
+
+msgid "Please Specify your Network Type."
+msgstr "ネットワークタイプを指定してください"
+
+msgid "Select Setup Method."
+msgstr "接続モードを選択"
+
+msgid "Manual"
+msgstr "手動"
+
+msgid "Automatic"
+msgstr "自動"
+
+msgid "Enter your IP address and then press Submit"
+msgstr "IPアドレスを入力し、送信をクリックしてください"
+
+msgid "if you have a Subnet mask, enter it and then press Submit"
+msgstr "サブネットマスクを使用する際は、それを入力し、送信をクリックしてください"
+
+msgid "Auto search"
+msgstr "自動検索"
+
+msgid "Manually SSID"
+msgstr "SSIDを手動入力する"
+
+msgid "Enter SSID Key:"
+msgstr "SSIDを入力してください。"
+
+msgid "Site survey"
+msgstr "サイト調査"
+
+msgid "Signal"
+msgstr "信号"
+
+msgid "Security Type"
+msgstr "セキュリティタイプ"
+
+msgid "Please enter your Encryption Key"
+msgstr "ネットワークセキュリティパスワードを入力してください。"
+
+msgid "Key length error!\n If your key type is ASCII, the length should be 5, 13, or 16.\nIf your key type if Hex, the length should be 10, 26 or 32."
+msgstr "ネットワークセキュリティパスワードが無効です。再試行してください。"
+
+msgid "Key length error!\n The length of WPAPSK should be 8~64!"
+msgstr "ネットワークセキュリティパスワードが無効です。再試行してください。"
+
+msgid "Network not available!"
+msgstr "デバイスはネットワークと接続できません。"
+
+msgid "Please Wait..."
+msgstr "しばらくお待ちください..."
+
+msgid "Network Setup Completed"
+msgstr "ネットワークの設定が完了しました"
+
+msgid "Return Home"
+msgstr "ホームに戻る"
+
+msgid "Device name"
+msgstr "デバイス名"
+
+msgid "Samba Servers"
+msgstr "Sambaサーバ"
+
+msgid "Media Servers"
+msgstr "メディアサーバー"
+
+msgid "Delete the preset's password?"
+msgstr "保存したログイン情報をクリアしますか？"
+
+msgid "Sign in"
+msgstr "ログイン"
+
+msgid "Username"
+msgstr "ユーザー名"
+
+msgid "Password"
+msgstr "パスワード"
+
+msgid "Connecting..."
+msgstr "接続中..."
+
+msgid "Unable to obtain an IP address. The media player has limited or no network connectivity."
+msgstr "IPアドレスを取得できませんでした。メディアプレーヤーに制限があるか、ネットワーク接続がありません。"
+
+msgid "RGB High"
+msgstr "RGB高"
+
+msgid "RGB Low"
+msgstr "RGB低"
+
+msgid "Reboot now"
+msgstr "再起動"
+
+msgid "Update Device"
+msgstr "デバイスの更新"
+
+msgid "Searching for update"
+msgstr "更新を検索しています"
+
+msgid "System information"
+msgstr "システム情報"
+
+msgid "Local Drives"
+msgstr "ローカルドライブ"
+
+msgid "Are you sure you want to sign out?"
+msgstr "ログアウトしてよろしいですか？"
+
+msgid "Video Setting"
+msgstr "ビデオ設定"
+
+msgid "Photo Setting"
+msgstr "写真設定"
+
+msgid "Music Setting"
+msgstr "音楽設定"
+
+msgid "Network Setting"
+msgstr "ネットワーク設定"
+
+msgid "RETRY"
+msgstr "再試行"
+
+msgid "System Setting"
+msgstr "システム設定"
+
+msgid "Check Latest FW With WD TV Live HD Media Player"
+msgstr "WD TV Live HD Media Playerはインターネットを使ってファームウェアのアップグレードが可能です。更新を確認しますか？"
+
+msgid "Check Latest FW With WD TV Plus HD Media Player"
+msgstr "WD TV Live Plus HD Media Playerはインターネットを使ってファームウェアのアップグレードが可能です。更新を確認しますか？"
+
+msgid "New version check"
+msgstr "最新バージョン確認"
+
+msgid "Check connection"
+msgstr "接続を確認"
+
+msgid "There was a problem connecting to the network. The device could not connect to the network"
+msgstr "ネットワーク接続に障害があります。 デバイスはネットワークと接続できません。"
+
+msgid "Network is disconnected."
+msgstr "ネットワーク接続に障害があります。 デバイスはネットワークと接続できません。"
+
+msgid "Replace"
+msgstr "置換"
+
+msgid "Checker Board"
+msgstr "チェッカーボード"
+
+msgid "Connect successfully!"
+msgstr "接続しました!"
+
+msgid "Select SSID Input Method."
+msgstr "続モードを選択"
+
+msgid "No Security"
+msgstr "暗号化なし"
+
+msgid "Free Stations"
+msgstr "無料ステーション"
+
+msgid "Recommendations"
+msgstr "おすすめ"
+
+msgid "Login"
+msgstr "ログイン"
+
+msgid "Live365 Login"
+msgstr "Live365 サインイン"
+
+msgid "Youtube Login"
+msgstr "Youtube ログイン"
+
+msgid "YouTube sign in"
+msgstr "YouTube ログイン"
+
+msgid "Pandora Login"
+msgstr "Pandora ログイン"
+
+msgid "Mediafly Sign in"
+msgstr "Mediafly ログイン"
+
+msgid "Back"
+msgstr "戻る"
+
+msgid "Add Account"
+msgstr "アカウントの追加"
+
+msgid "Related Videos"
+msgstr "関連動画"
+
+msgid "Finish"
+msgstr "終了"
+
+msgid "Audio Options"
+msgstr "オーディオオプション"
+
+msgid "Arabic (Windows-1256)"
+msgstr "アラビア語 (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "タイ (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "WDドライブのロック解除"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "このWDドライブをロックを解除しますか? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "ＷＤドライブのパスワードを入力してください。"
+
+msgid "Password invalid"
+msgstr "パスワードが無効です"
+
+msgid "Please enter your password again."
+msgstr "パスワードを再入力してください。"
+
+msgid "Too many password attempts"
+msgstr "パスワードの試行回数が多すぎます。"
+
+msgid "There were too many password recovery attempts."
+msgstr "パスワードの試行回数が多すぎます。"
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "一度 WD TVからドライブを取り外し、"
+
+msgid "reconnect it and try again."
+msgstr "接続してから再度実行してください。"
+
+msgid "Check network connection"
+msgstr "ネットワーク接続を確認"
+
+msgid "Check IP address"
+msgstr "IPアドレスのチェック"
+
+msgid "Check DNS server"
+msgstr "DNSサーバーのチェック"
+
+msgid "Check internet connection"
+msgstr "インターネット接続のチェック"
+
+msgid "Creative a new account"
+msgstr "新規アカウントの作成"
+
+msgid "Save username only"
+msgstr "ユーザー名のみ保存"
+
+msgid "Want to Rate Video? Sign in to YouTube now!"
+msgstr "YouTubeにサインインすると、動画を評価できます。"
+
+msgid "Want to add to Favorites? Sign in to YouTube now!"
+msgstr "YouTubeにサインインすると、お気に入りを追加できます。"
+
+msgid "Invalid character(s) in first name."
+msgstr "名に無効な文字があります。"
+
+msgid "Invalid character(s) in last name."
+msgstr "姓に無効な文字があります。"
+
+msgid "Registration was submitted, please check your email to complete the registration."
+msgstr "情報が送信されました。電子メールを確認し、登録を完了してください。"
+
+msgid "This product has been added to your registration account."
+msgstr "この製品は登録情報に追加されています。"
+
+msgid "Our record indicates that the email address you provided is under another customer’s name, please verify your name and try it again, or log into your account at https://websupport.wdc.com/registration/index.asp to update your user profile."
+msgstr "お客様が提供された電子メールアドレスは別の顧客名ですでに登録されています。名前を確認して再実行するか、https://websupport.wdc.com/registration/index.aspでログインし、ユーザープロファイルを更新してください。"
+
+msgid "E-mail address is invalid, please verify your e-mail address and try it again."
+msgstr "電子メールアドレスが無効です。電子メールアドレスを確認して再度実行してください。"
+
+msgid "Maximum length of e-mail address is 80 characters"
+msgstr "電子メールアドレスの最大長は80文字です"
+
+msgid "Registration failed. Please try it again."
+msgstr "登録できませんでした。再度実行してください。"
+
+msgid "Thank you for rating this track. Glad you like it!"
+msgstr "この曲目をランキングしていただき、ありがとうございました。お気に召していただき幸いです。"
+
+msgid "Thank you for rating this track. Sorry it’s not to your taste!"
+msgstr "この曲目をランキングしていただき、ありがとうございました。お気に召されず残念です！"
+
+msgid "This station is already in your Presets."
+msgstr "このステーションはすでに[プリセット]にあります。"
+
+msgid "Genre:"
+msgstr "ジャンル:"
+
+msgid "File Size:"
+msgstr "ファイルのサイズ:"
+
+msgid "File Type:"
+msgstr "ファイルのタイプ:"
+
+msgid "Play mode"
+msgstr "再生モード"
+
+msgid "Pan"
+msgstr "動く"
+
+msgid "Zoom in"
+msgstr "ズームイン"
+
+msgid "Zoom out"
+msgstr "ズームアウト"
+
+msgid "Info bar"
+msgstr "情報バー"
+
+msgid "Chapter"
+msgstr "章"
+
+msgid "Rotate left"
+msgstr "左に回転"
+
+msgid "Rotate right"
+msgstr "右に回転"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "エラー: ソースフォルダおよびあて先フォルダが同一です。"
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "エラー: あて先フォルダはソースフォルダのサブフォルダです。"
+
+msgid "This folder is empty"
+msgstr "現在のフォルダ内にないメディアです。"
+
+msgid "This folder is empty."
+msgstr "現在のフォルダ内にないメディアです。"
+
+msgid "First Name"
+msgstr "名"
+
+msgid "Last Name"
+msgstr "姓"
+
+msgid "Email"
+msgstr "Eメール"
+
+msgid "Serial Number"
+msgstr "シリアル番号"
+
+msgid "Serial Number:"
+msgstr "シリアル番号:"
+
+msgid "Mac Address"
+msgstr "MACアドレス"
+
+msgid "MAC Address"
+msgstr "MACアドレス"
+
+msgid "No content available."
+msgstr "使用可能なコンテンツはありません。"
+
+msgid "No content available!"
+msgstr "使用可能なコンテンツはありません。"
+
+msgid "State end. No content available."
+msgstr "使用可能なコンテンツはありません。"
+
+msgid "Most Viewed"
+msgstr "再生回数の多い動画"
+
+msgid "Most Viewed Videos"
+msgstr "再生回数の多い動画"
+
+msgid "Most Popular"
+msgstr "人気の動画"
+
+msgid "Most Popular Videos"
+msgstr "人気の動画"
+
+msgid "Top Rated"
+msgstr "評価の高い動画"
+
+msgid "Include HD video feeds"
+msgstr "HDビデオを含める"
+
+msgid "Listen to thousands of commercial-free Internet radio stations! Live365 has broadcasts from Radio Disney, Santana, David Byrne, Pat Metheny, and Paul Oakenfold, as well as stations created by music lovers just like you! Easily browse through popular genres such as rock, hip-hop, jazz, and new age. Or discover treasures in some of the less-traveled styles such as gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic, and 100s more."
+msgstr "何千ものインターネットラジオ局をコマーシャルなしでお楽しみ頂けます!Live365ではRadio Disney、Santana、David Byrne、 Pat Metheny、 Paul Oakenfoldらによるブロードキャスト、さらにあなたと同じように音楽を愛する人々が作成した局の放送をお届けします。ロック、ヒップホップ、ジャズ、ニューエイジといった主要ジャンルを簡単に閲覧。またはゴスペル、コメディ、アニメ、ヒンディ、トリップホップ、30ｓ、グラム、トライバル、ケルティック等、何百にもわたるアンダーグラウンドなジャンルからも、きっとお気に入りが見つかります。"
+
+msgid "If you don't have an Live365 account, please visit http://www.live365.com to get started with your membership or become a VIP."
+msgstr " Live365アカウントをお持ちでない場合は、http://www.live365.com/wdtv にアクセスし、会員になるかVIPになってください。"
+
+msgid "Sort"
+msgstr "並べ替え"
+
+msgid "Audio Quality"
+msgstr "音質"
+
+msgid "No station available!"
+msgstr "放送局がありません。"
+
+msgid "You must be logged in to use this feature. Would you like to login now?"
+msgstr "この機能を使用するにはログインが必要です。今すぐログインしますか？"
+
+msgid "has been removed from my presets."
+msgstr "このラジオ局のプリセットからすでに削除されている。"
+
+msgid "has been added to my presets."
+msgstr "このステーションはすでに[プリセット]にあります。"
+
+msgid "Track info has been sent. Please check your email."
+msgstr "トラック情報を送信しました。Eメールをご確認ください。"
+
+msgid "info"
+msgstr "所有者プロフィール"
+
+msgid "The device name can not contain any of following "
+msgstr "デバイス名は空白あるいは以下の記号は使用できません "
+
+msgid "and blank characters. The device name can not over 15 characters."
+msgstr "デバイス名は最大15文字までです。"
+
+msgid "Network Shares"
+msgstr "ネットワーク共有"
+
+msgid "Samba Server"
+msgstr "WDTVをネットワーク上で共有"
+
+msgid "Auto login"
+msgstr "ネットワーク共有に自動ログイン"
+
+msgid "Clear account information"
+msgstr "ネットワーク共有へのログイン情報をクリア"
+
+msgid "DNS server"
+msgstr "DNSサーバー"
+
+msgid "Internet connection"
+msgstr "インターネット接続"
+
+msgid "Incorrect IP address. Please check your network setting and try again."
+msgstr "IPアドレスが間違っています。ネットワーク設定を確認し再試行してください。"
+
+msgid "Incorrect DNS server address. Please check your network setting and try again."
+msgstr "DNSサーバアドレスが間違っています。ネットワーク設定を確認し再試行してください。"
+
+msgid "Check Internet connection failed. Please check your broadband connection."
+msgstr "インターネット接続が切断されました。ブロードバンド接続を確認してください。 "
+
+msgid "Would you like to save this account?"
+msgstr "このアカウントを保存しますか？"
+
+msgid "Don't have an account?"
+msgstr "アカウントをお持ちですか？"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "このアカウントを消去しますか？"
+
+msgid "The media player can only save"
+msgstr "メディアプレーヤーは各サービスごとに最大"
+
+msgid "user accounts for each service. Please delete an account if you wish to add a new one."
+msgstr "ユーザーアカウントまで保存することができます。新しくアカウントを追加する場合は、既存のアカウントを一つ削除してください。"
+
+msgid "Your media player is up to date."
+msgstr "ご使用のメディアプレーヤーは最新の状態に更新されています。"
+
+msgid "WD TV Live HD Media Player FW IS Top"
+msgstr "あなたのWD TV Live HD Media Playerは最新です。"
+
+msgid "WD TV Plus HD Media Player FW IS Top"
+msgstr "あなたのWD TV Live Plus HD Media Playerは最新です。"
+
+msgid "The device could not download updates."
+msgstr "デバイスは更新をダウンロードできませんでした。"
+
+msgid "System updates could not check for updates because of a network problem. Please check your network connections."
+msgstr "ネットワークに障害があるため、アップデートを確認することができませんでした。ネットワーク接続を確認してください。"
+
+msgid "Select connection method"
+msgstr "接続方法の選択"
+
+msgid "Please choose your network connection"
+msgstr "ネットワーク接続を選択してください"
+
+msgid "Please choose your network connection."
+msgstr "ネットワーク接続を選択してください"
+
+msgid "Select an Available Network"
+msgstr "使用できるワイヤレスネットワークを選択"
+
+msgid "Connect Now"
+msgstr "今すぐ接続する"
+
+msgid "Done"
+msgstr "完了"
+
+msgid "(Empty)"
+msgstr "（登録なし）"
+
+msgid "Default"
+msgstr "デフォルト"
+
+msgid "Favorites"
+msgstr "お気に入り"
+
+msgid "Connection successful."
+msgstr "接続しました!"
+
+msgid "Connect Successfully!"
+msgstr "ネットワーク接続の確認が終了しました。"
+
+msgid "The profile space is full!"
+msgstr "プロファイルの保存ができません。新しいプロファイルを追加するには、既存のプロファイルを削除してください。"
+
+msgid "Do you want replace this profile?"
+msgstr "このプロファイルに上書きしますか？"
+
+msgid "Can not detect wireless module."
+msgstr "ワイヤレスUSBアダプタを検出できません。"
+
+msgid "The SSID is Empty."
+msgstr "SSIDがありません。"
+
+msgid "Can not set this profile to favorite."
+msgstr "このプロファイルをお気に入りに保存できません。"
+
+msgid "Unable to connect to the wireless network."
+msgstr "デバイスはネットワークに接続できません。"
+
+msgid "System registration"
+msgstr "システム登録"
+
+msgid "Register Product"
+msgstr "システム登録"
+
+msgid "Register"
+msgstr "システム登録"
+
+msgid "Enter First Name"
+msgstr "名を入力してください"
+
+msgid "Enter Last Name"
+msgstr "姓を入力してください"
+
+msgid "Enter Email"
+msgstr "Eメールを入力してください。"
+
+msgid "Registration failed. Please go to http://register.wdc.com/ to register your product."
+msgstr "登録できませんでした。http://register.wdc.com/ からご使用の製品を登録してください。"
+
+msgid "Would you like to register now?"
+msgstr "今すぐ登録しますか？"
+
+msgid "Do you want to receive future email support survey or free newsletter with special member-only discounts and latest news from WD?"
+msgstr "将来WDからEメールサポートアンケート、あるいは会員向け特別割引の無料ニュースレターおよび最新情報の配信を希望しますか？"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "アップグレードを開始するためメディアプレーヤーを再起動します。新しいファームウェアはパスワード保護されたドライブに保存されているため、再起動後にドライブのロックを解除してください。"
+
+msgid "Please remove your drive from WD TV."
+msgstr "WD TVからドライブを取り外してください。"
+
+msgid "Please remove your drive from WD TV,"
+msgstr "WD TVからドライブを取り外してください。"
+
+msgid "Would you like to permanently delete the selected file?"
+msgstr "選択したファイルを永久に削除しますか？"
+
+msgid "HDMI compatible mode"
+msgstr "HDMIの互換モード"
+
+msgid "About Live365"
+msgstr "Live 365 について"
+
+msgid "About Live365 VIP"
+msgstr "Live 365 について"
+
+msgid "All Stations"
+msgstr "すべてのサイト"
+
+msgid "Only high"
+msgstr "高のみ"
+
+msgid "Medium to high"
+msgstr "中から高"
+
+msgid "Low to medium"
+msgstr "低から中"
+
+msgid "Only low"
+msgstr "低のみ"
+
+msgid "Sign in/Sign out"
+msgstr "サインイン/サインアウト"
+
+msgid "Sort stations alphabetically"
+msgstr "サイトをアルファベット順に並び替え"
+
+msgid "Sort stations by popularity"
+msgstr "サイトを人気順に並び替え"
+
+msgid "IP address"
+msgstr "IPアドレス"
+
+msgid "IP Address"
+msgstr "IPアドレス"
+
+msgid "Subnet Mask"
+msgstr "ネットマスク"
+
+msgid "Gateway"
+msgstr "ゲートウェイ"
+
+msgid "There was a problem connecting to the network.Check your settings and try again."
+msgstr "ネットワークの接続に問題があります。設定を確認し再試行してください。"
+
+msgid "There was a problem connecting to the network. Please check your settings and try again."
+msgstr "ネットワークの接続に問題があります。設定を確認し再試行してください。"
+
+msgid "Are you sure you want to delete all accounts?"
+msgstr "すべてのアカウントを消去しますか？"
+
+msgid "The video has been successfully added!"
+msgstr "動画を追加しました。"
+
+msgid "The video has been successfully rated!"
+msgstr "評価を完了しました。"
+
+msgid "HDMI deep color"
+msgstr "HDMI deep color モード"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "このHDMI deep color モードを変更しますか？"
+
+msgid "Wireless Favorites"
+msgstr "お気に入りのアクセスポイント"
+
+msgid "Check for new update"
+msgstr "更新プログラムの確認"
+
+msgid "Downloading new firmware"
+msgstr "新しいファームウェアをダウンロードしています"
+
+msgid "Updating firmware"
+msgstr "ファームウェアのアップデート"
+
+msgid "Firmware is being updated. Please DO NOT disconnect power."
+msgstr "ファームウェアの更新中です。絶対に電源を切らないでください。"
+
+msgid "Downloading new firmware for your WD TV. Please DO NOT disconnect power or internet connection."
+msgstr "WD TVの新しいファームウェアをダウンロードします。電源またはインターネット接続を切断しないでください。"
+
+msgid "The device fails to check for new firmware update. Please check your network connection and try again."
+msgstr "新しいファームウェアの確認に失敗しました。ネットワーク接続を確認し再度試行してください。"
+
+msgid "New firmware download failed. Please check your network connection and try again."
+msgstr "新しいファームウェアのダウンロードに失敗しました。ネットワーク接続を確認し再度試行してください。"
+
+msgid "Setup Completed!"
+msgstr "セットアップが完了しました。"
+
+msgid "This media server cannot be accessed."
+msgstr "このメディアサーバにはアクセスできません。"
+
+msgid "The device is busy. Please try later."
+msgstr "このネットワーク共有にはアクセスできません。"
+
+msgid "The device has lost its connection with the media server."
+msgstr "このメディアサーバにはアクセスできません。"
+
+msgid "Current network setting"
+msgstr "現在のネットワーク設定"
+
+msgid "Current network setting:"
+msgstr "現在のネットワーク設定:"
+
+msgid "Join the largest worldwide video community! Please visit http://www.youtube.com/create_account to create your account."
+msgstr "アカウントを作成して世界最大の動画コミュニティに参加しよう！ http://www.youtube.com/create_accountをご覧ください。"
+
+msgid "IP address is invalid, please verify your IP address and try again."
+msgstr "IPアドレスが無効です。IPアドレスを確認して再実行してください。"
+
+msgid "Subnet mask is invalid, please verify your Subnet Mask and try again."
+msgstr "ネットマスクが無効です。ネットマスクを確認して再実行してください。"
+
+msgid "Gateway is invalid, please verify your Gateway and try again."
+msgstr "ゲートウェイが無効です。ゲートウェイを確認して再実行してください。"
+
+msgid "DNS is invalid, please verify your DNS and try again."
+msgstr "DNSが無効です。DNSを確認して再実行してください。"
+
+msgid "Thumb up"
+msgstr "このトラックを格付けしていただき、ありがとうございます。お気に召していただければ幸いです。"
+
+msgid "Thumb down"
+msgstr "このトラックを格付けしていただき、ありがとうございます。お気に召していただけなく、残念です。"
+
+msgid "Add preset"
+msgstr "このステーションはすでに[プリセット]にあります。"
+
+msgid "Delete Account"
+msgstr "アカウントを消去"
+
+msgid "Delete All"
+msgstr "すべてのアカウントを消去"
+
+msgid "Remove Station"
+msgstr "サイトの削除"
+
+msgid "Add to My Presets"
+msgstr "プリセットの追加"
+
+msgid "Owner profile"
+msgstr "所有者情報"
+
+msgid "Youtube"
+msgstr "YouTube"
+
+msgid "This file is currently unavailable. Please try again later."
+msgstr "このファイルは現在使用できません。後ほどおためしください。"
+
+msgid "Cannot connect to "
+msgstr " "
+
+msgid ". An unknown network error has occurred. Please check your network setting and try again."
+msgstr " に接続することができません。ネットワークエラーが発生しました。設定を確認し再度おためしください。"
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "メディアライブラリのコンパイル中です。メディアのコンテンツはスキャン順に使用可能となります。デバイスナビゲーションはこの処理の間も使用可能です。"
+
+msgid "Access Point can not be found"
+msgstr "ワイヤレスネットワークが見つかりません。設定を確認し再度お試しください。"
+
+msgid "YouTube can’t be accessed at this moment. A new firmware upgrade may be needed. Would you like to check for new firmware now?"
+msgstr "YouTubeにアクセスできません。ファームウェアのアップデートが必要な場合があります。ファームウェアを確認しますか？"
+
+msgid "New firmware download failed due to incomplete firmware download. Please check your network connection and try again."
+msgstr "新しいファームウェアのダウンロードに失敗しました。ネットワーク設定を確認し再度試行してください。"
+
+msgid "New firmware download failed due to unstable wireless connection. Please use a wired connection and try again."
+msgstr "無線接続が不安定なため、新しいファームウェアのダウンロードに失敗しました。イーサネット接続を使用してもう一度試してください。"
+
+msgid "Copied"
+msgstr "コピー"
+
+msgid "Thank you for registering your WDTV. Your registration has been submitted."
+msgstr "WDTVにご登録いただきありがとうございます。登録は送信されました。"
+
+msgid "Thank you for registering your WDTV. Please check your email to confirm the registration."
+msgstr "WDTVにご登録いただきありがとうございます。電子メールをチェックして登録を確認してください。"
+
+msgid "SSID should not be empty!"
+msgstr "SSID空にしてはならない。"
+
+msgid "Please do not use blank space name for device name."
+msgstr "デバイス名空にしてはならない。"
+
+msgid "The firmware was successfully downloaded. The device will now restart to complete the installation."
+msgstr "新しいファームウェアのダウンロードに成功しました。ＷＤＴＶを再起動し、更新を適用します。"
+
+msgid "Upgrade firmware failed. The device will now restart. Please try again."
+msgstr "更新に失敗しました。再起動してください。"
+
+msgid "There was a problem connecting to the wireless network. Please check your network setting and try again."
+msgstr "ワイヤレスネットワークの接続に問題があります。設定を確認し再試行してください。"
+
+msgid "Wireless network connection lost."
+msgstr "ワイヤレスネットワークが切断されました。"
+
+msgid "Delete one"
+msgstr "1つ削除する"
+
+msgid "Delete all"
+msgstr "全部削除します。"
+
+msgid "Are you sure you want to delete this item?"
+msgstr "この項目を消去しますか？"
+
+msgid "Are you sure you want to delete all items?"
+msgstr "全部の項目を消去しますか？"
+
+msgid "Component"
+msgstr "コンポーネントビデオ"
+
+msgid "Thanks for trying Live365! We hope you enjoyed your free trial of our commercial-free service. Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "Live365をご利用いただきありがとうございます！私たちはあなたの無料トライアルの商業的な無料サービスをお楽しみください。詳しい情報、またはVIPとなるにはwww.live365.com/wdtv をご覧ください。"
+
+msgid "Reserved for VIP subscribers"
+msgstr "VIP顧客のために予約"
+
+msgid "Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "詳しい情報、またはVIPとなるにはwww.live365.com/wdtv をご覧ください。"
+
+msgid "8 bit"
+msgstr "8 ビット"
+
+msgid "10 bit"
+msgstr "10 ビット"
+
+msgid "12 bit"
+msgstr "12 ビット"
+
+msgid "day left on your VIP Free Trial."
+msgstr "日はVIP無料お試し期間は残り。"
+
+msgid "days left on your VIP Free Trial."
+msgstr "日はVIP無料お試し期間は残り。"
+
+msgid "hour left on your VIP Free Trial."
+msgstr "時間はVIP無料お試し期間は残り。"
+
+msgid "hours left on your VIP Free Trial."
+msgstr "時間はVIP無料お試し期間は残り。"
+
+msgid "New firmware download failed due to network connection error. Please check your network connection and try again."
+msgstr "新しいファームウェアのダウンロードに失敗しました。ネットワーク設定を確認し再度試行してください。"
+
+msgid "The auto play content could not be accessed."
+msgstr "自動再生のコンテンツにアクセスすることができませんでした。"
+
+msgid "Local device is disconnected."
+msgstr "警告: 取り外す前に、「USBデバイスの取り外し」を実行してください。"
+
+msgid "User interface transition effect"
+msgstr "ユーザーインターフェイスのトランジション効果"
+
+msgid "Fade in and fade out"
+msgstr "フェードインとフェードアウト"
+
+msgid "None"
+msgstr "何もない"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "致命的なシステムエラーが検出されます。デバイスが再起動します..."
+
+msgid "YES"
+msgstr "はい"
+
+msgid "Yes to all"
+msgstr "すべてにはい"
+
+msgid "NO"
+msgstr "いいえ"
+
+msgid "This folder already contains a file named:"
+msgstr "このフォルダには既に以下のファイル名が含まれています："
+
+msgid "Would you like to overwrite it?"
+msgstr "それを上書きしますか？"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "選択されたファイルを再生できません。サポートしているファイル形式のリストについては、ユーザマニュアルを参照してください。"
+
+msgid "Part Number:"
+msgstr "品番:"
+
+msgid "Press [Option] key for multi-lingual input"
+msgstr "多言語入力用に [OPTION] を押します"
+
+msgid "Would you like to setup a login protection?"
+msgstr "ログイン保護を設定しますか?"
+
+msgid "Current Location"
+msgstr "現在の場所"
+
+msgid "Added"
+msgstr "追加済み"
+
+msgid "Category"
+msgstr "カテゴリ"
+
+msgid "Views"
+msgstr "表示"
+
+msgid "Want to flag this video? Sign in to YouTube now!"
+msgstr "このビデオにフラグを付けますか? 今すぐ YouTube にサインインしてください!"
+
+msgid "Want to add to playlist? Sign in to YouTube now!"
+msgstr "プレイリストに追加しますか? 今すぐ YouTube にサインインしてください!"
+
+msgid "Add to playlist"
+msgstr "プレイリストに追加"
+
+msgid "Add to Playlist"
+msgstr "プレイリストに追加"
+
+msgid "Press [Search] key to use search history"
+msgstr "[SEARCH] を押して検索履歴を使用します"
+
+msgid "From"
+msgstr "提供者"
+
+msgid "On with login protection"
+msgstr "ログイン保護してオン"
+
+msgid "Flagging"
+msgstr "フラッギング"
+
+msgid "We are sorry. Pandora service is only for U.S. audiences and your IP is not allowed."
+msgstr "申し訳ありません。 Pandoraのサービスは、米国の観客のためであり、あなたのIPアドレスは許可されません。"
+
+msgid "This video is restricted by the video content owner and it is not available on TV connected devices."
+msgstr "このビデオは ビデオコンテンツの所有者によって制限されますし、テレビに接続のデバイスで利用されていません。"
+
+msgid "Workgroup name"
+msgstr "ワークグループ名"
+
+msgid "Search History"
+msgstr "検索履歴"
+
+msgid "Samba Server Protection"
+msgstr "Sambaサーバの保護"
+
+msgid "Check network status..."
+msgstr "チェックネットワークの状態を..."
+
+msgid "Try to wake up system..."
+msgstr "システムが目を覚ますてみてください..."
+
+msgid "Worldwide"
+msgstr "ワールドワイド"
+
+msgid "Germany"
+msgstr "ドイツ"
+
+msgid "France"
+msgstr "フランス"
+
+msgid "Spain"
+msgstr "スペイン"
+
+msgid "Italy"
+msgstr "イタリア"
+
+msgid "Taiwan"
+msgstr "台湾"
+
+msgid "South Korea"
+msgstr "大韓民国"
+
+msgid "Japan"
+msgstr "日本"
+
+msgid "Russia"
+msgstr "ロシア"
+
+msgid "The file you are playing doesn't support trick-mode."
+msgstr "再生しているファイルはトリックモードをサポートしていません。"
+
+msgid "Flag sent to YouTube."
+msgstr "YouTubeに送信されたフラグ。"
+
+msgid "Create a new playlist"
+msgstr "プレイリストを作成する"
+
+msgid "Choose your current playlist"
+msgstr "現在のプレイリストを選択する"
+
+msgid "The video has been added to your playlist."
+msgstr "ビデオはプレイリストに追加されました。"
+
+msgid "Flagging Reason"
+msgstr "フラグを付ける理由"
+
+msgid "Porn"
+msgstr "ポルノ"
+
+msgid "Violence"
+msgstr "暴力"
+
+msgid "Hate"
+msgstr "憎悪"
+
+msgid "Dangerous"
+msgstr "危険"
+
+msgid "Rights"
+msgstr "権利"
+
+msgid "Spam"
+msgstr "スパム"
+
+msgid "Unable to play this video menu. Would you like to play video file?"
+msgstr "このビデオメニューを再生できません。ビデオファイルを再生したいですか？"
+
+msgid "My channels"
+msgstr "マイチャンネル"
+
+msgid "Popular channels"
+msgstr "人気のあるチャンネル"
+
+msgid "Browse content plug-ins"
+msgstr "コンテンツのプラグインを閲覧"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Mediafly dashboard"
+msgstr "Mediafly ダッシュボード"
+
+msgid "Add to my channel"
+msgstr "マイチャンネルに追加"
+
+msgid "Remove from my channel"
+msgstr "マイチャンネルから削除"
+
+msgid "Rate/Favorite"
+msgstr "評価/お気に入り"
+
+msgid "View episodes"
+msgstr "エピソードを見る"
+
+msgid "Show info"
+msgstr "情報を表示する"
+
+msgid "Content source was added successfully to your Mediafly dashboard."
+msgstr "コンテンツのソースがMediaflyのダッシュボードに正常に追加されました。"
+
+msgid "The device could not connect to the network."
+msgstr "デバイスはネットワークと接続できません。"
+
+msgid "All Episodes in this show"
+msgstr "このショー内のすべてのエピソード"
+
+msgid "What would you like to remove?"
+msgstr "削除してもよろしいですか？"
+
+msgid "Would you like to rate for this show/episode?"
+msgstr "このショー/エピソードを評価しますか？"
+
+msgid "Save"
+msgstr "保存する"
+
+msgid "Fail to add to your favorite. Additional options are available on Mediafly.com"
+msgstr "お気に入りに追加できませんでした。追加のオプションがMediafly.comで利用できます"
+
+msgid "Both"
+msgstr "両方"
+
+msgid "To set up your personalized channels you need to link your player with Mediafly account."
+msgstr "チャンネルのパーソナライズを設定するには、ご使用のプレーヤーをMediaflyのアカウントにリンクする必要があります。"
+
+msgid "Mediafly accounts are completely free and allow you centralized control and management of your favorite free online content."
+msgstr "Mediaflyのアカウントは無料であり、お好きな無料オンラインコンテンツを集中コントロールし一括管理が可能になります。"
+
+msgid "Option 1: from your computer"
+msgstr "オプション1：ご使用のコンピュータを利用"
+
+msgid "Option 2: Enter your Mediafly ID and password."
+msgstr "オプション2：MediaflyのIDとパスワードを入力する"
+
+msgid "Enter Mediafly User ID and Pwd now"
+msgstr "MediaflyのユーザーIDとパスワードを今すぐ入力する"
+
+msgid "Manage Users"
+msgstr "ユーザーの管理"
+
+msgid "Media Plug-ins"
+msgstr "メディアのプラグイン"
+
+msgid "Add Media Plug-in via mCode"
+msgstr "mCodeによりメディアのプラグインを追加"
+
+msgid "Invalid mCode, please try again."
+msgstr "無効なmCodeです。再度お試しください。"
+
+msgid "Are you sure you want to add the show: "
+msgstr "チャンネルに追加してもよろしいですか？"
+
+msgid "This episode has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "このエピソードはチャンネルに追加されました。追加のオプションがMediafly.comで利用できます。"
+
+msgid "This show has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "このショーはチャンネルに追加されました。追加のオプションがMediafly.comで利用できます。"
+
+msgid "This episode"
+msgstr "このエピソード"
+
+msgid "This episode has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "このエピソードはチャンネルから削除されました。追加のオプションがMediafly.comで利用できます。"
+
+msgid "This show has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "このショーはチャンネルから削除されました。追加のオプションがMediafly.comで利用できます。"
+
+msgid "my rating:"
+msgstr "評価："
+
+msgid "my favorites:"
+msgstr "お気に入り："
+
+msgid "Thank you. Additional options are available on Mediafly.com."
+msgstr "ありがとうございます。"
+
+msgid "and enter this code:"
+msgstr "このコードを入力する："
+
+msgid "Invalid assoc code"
+msgstr "無効なassocコード"
+
+msgid "Remove Media Plug-in"
+msgstr "メディアのプラグインを削除する"
+
+msgid "Resume"
+msgstr "再開"
+
+msgid "Restart"
+msgstr "再スタート"
+
+msgid "eng"
+msgstr "英語"
+
+msgid "en"
+msgstr "英語"
+
+msgid "EN"
+msgstr "英語"
+
+msgid "fre"
+msgstr "フランス語"
+
+msgid "fra"
+msgstr "フランス語"
+
+msgid "fr"
+msgstr "フランス語"
+
+msgid "FR"
+msgstr "フランス語"
+
+msgid "ita"
+msgstr "イタリア語"
+
+msgid "it"
+msgstr "イタリア語"
+
+msgid "IT"
+msgstr "イタリア語"
+
+msgid "ger"
+msgstr "ドイツ語"
+
+msgid "deu"
+msgstr "ドイツ語"
+
+msgid "de"
+msgstr "ドイツ語"
+
+msgid "DE"
+msgstr "ドイツ語"
+
+msgid "spa"
+msgstr "スペイン語"
+
+msgid "es"
+msgstr "スペイン語"
+
+msgid "ES"
+msgstr "スペイン語"
+
+msgid "chi"
+msgstr "中国語"
+
+msgid "zho"
+msgstr "中国語"
+
+msgid "zh"
+msgstr "中国語"
+
+msgid "ZH"
+msgstr "中国語"
+
+msgid "kor"
+msgstr "韓国語"
+
+msgid "ko"
+msgstr "韓国語"
+
+msgid "KO"
+msgstr "韓国語"
+
+msgid "por"
+msgstr "ポルトガル語"
+
+msgid "pt"
+msgstr "ポルトガル語"
+
+msgid "PT"
+msgstr "ポルトガル語"
+
+msgid "jpn"
+msgstr "日本語"
+
+msgid "ja"
+msgstr "日本語"
+
+msgid "JA"
+msgstr "日本語"
+
+msgid "gre"
+msgstr "ギリシャ語"
+
+msgid "ell"
+msgstr "ギリシャ語"
+
+msgid "el"
+msgstr "ギリシャ語"
+
+msgid "EL"
+msgstr "ギリシャ語"
+
+msgid "tur"
+msgstr "トルコ語"
+
+msgid "tr"
+msgstr "トルコ語"
+
+msgid "TR"
+msgstr "トルコ語"
+
+msgid "ara"
+msgstr "アラビア語"
+
+msgid "ar"
+msgstr "アラビア語"
+
+msgid "AR"
+msgstr "アラビア語"
+
+msgid "hin"
+msgstr "ヒンディー語"
+
+msgid "hi"
+msgstr "ヒンディー語"
+
+msgid "HI"
+msgstr "ヒンディー語"
+
+msgid "tha"
+msgstr "タイ"
+
+msgid "th"
+msgstr "タイ"
+
+msgid "TH"
+msgstr "タイ"
+
+msgid "Would you like to resume play or restart from the beginning?"
+msgstr "再生を再開または最初から再スタートしたいですか？"
+
+msgid "Screensaver mode"
+msgstr "スクリーンセーバーモード"
+
+msgid "Logo"
+msgstr "ロゴ"
+
+msgid "Digital without HDMI audio"
+msgstr "HDMI音声なしのデジタル"
+
+msgid "Match video framerate"
+msgstr "ビデオフレームレートを一致"
+
+msgid "Menu"
+msgstr "メニュー"
+
+msgid "Parental control"
+msgstr "ペアレンタルコントロール"
+
+msgid "Set the new password"
+msgstr "新しいパスワードを設定"
+
+msgid "Remove password"
+msgstr "パスワードの削除"
+
+msgid "Would you like to setup parental control?"
+msgstr "ペアレンタルコントロールを設定したいですか？"
+
+msgid "Please enter your password."
+msgstr "パスワードを入力してください。"
+
+msgid "Re-enter your password."
+msgstr "パスワードを再入力してください。"
+
+msgid "The password you entered do not match, please try again."
+msgstr "入力したパスワードが一致しません。再度お試しください。"
+
+msgid "Setup completed. parental control can only be applied to folders saved in the internal storage."
+msgstr "設定が完了しました。ペアレンタルコントロールは、内部ストレージに保存されたフォルダにのみ適用することができます。"
+
+msgid "Please enter the old password."
+msgstr "古いパスワードを入力してください。"
+
+msgid "Password has been removed."
+msgstr "パスワードは削除されました。"
+
+msgid "Your password has been changed."
+msgstr "パスワードは変更されました。"
+
+msgid "Invalid password. Please try again."
+msgstr "無効なパスワードです。再度お試しください。"
+
+msgid "Please enter the new password."
+msgstr "新しいパスワードを入力してください。"
+
+msgid "Remove parental control"
+msgstr "ペアレンタルコントロールを削除"
+
+msgid "Lock this folder"
+msgstr "このフォルダをロック"
+
+msgid "Invalid input!"
+msgstr "無効な入力です"
+
+msgid "Input is empty!"
+msgstr "入力されていません"
+
+msgid "Proxy"
+msgstr "プロキシ"
+
+msgid "Please enter proxy address"
+msgstr "プロキシアドレスを入力してください"
+
+msgid "Please enter proxy port"
+msgstr "プロキシポートを入力してください"
+
+msgid "Proxy Address"
+msgstr "プロキシアドレス"
+
+msgid "Proxy Port"
+msgstr "プロキシポート"
+
+msgid "Restart network. Please wait... "
+msgstr "ネットワークを再スタートします。お待ちください。"
+
+msgid "The Mediafly service is currently unavailable, please check again later."
+msgstr "Mediaflyサービスは現在利用できません。後ほど再度確認してください。"
+
+msgid "Internet Media"
+msgstr "インターネットメディア"
+
+msgid "Episodes"
+msgstr "エピソード"
+
+msgid "of days left on your VIP Free Trial.Visit www.live365.com/wdc for info or to become a VIP."
+msgstr "日VIP無料お試し期間は残り。 詳しい情報、またはVIPとなるにはhttp://www.live365.com/wdtv をご覧ください。"
+
+msgid "Connection Successfully.Would you like to save this network connection Automatically?"
+msgstr "接続しました! このネットワーク接続を自動に設定しますか？"
+
+msgid "arabic"
+msgstr "العربية"
+
+msgid "hebrew"
+msgstr "עברית"
+
+msgid "Change Location"
+msgstr "場所を変更"
+
+msgid "Wall"
+msgstr "掲示板"
+
+

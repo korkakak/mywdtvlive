@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="">
+	<ctrlgrp valkey="main">
+		<button valkey="Back"
+			normal_bg="image/bestbuy/bby_browse_back_n.png"
+			focused_bg="image/bestbuy/bby_browse_back_f.png"/>
+		<button valkey="ToHome"
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"/>
+		<linebreak/>
+		<eventbox_keyboard valkey="keyboard" autoenter="1"/>
+		<linebreak/>
+		<button valkey="CANCEL" 
+			normal_bg="image/bestbuy/keyboard_funchion_cancel_btn_n.png" 
+			focused_bg="image/bestbuy/keyboard_funchion_cancel_btn_f.png" 
+			disabled_bg="image/bestbuy/keyboard_funchion_cancel_btn_d.png"
+			click_bg="image/bestbuy/keyboard_funchion_cancel_btn_c.png" click_effect="tp"/>
+		<button valkey="OK" 
+			normal_bg="image/bestbuy/keyboard_funchion_cancel_btn_n.png" 
+			focused_bg="image/bestbuy/keyboard_funchion_cancel_btn_f.png" 
+			disabled_bg="image/bestbuy/keyboard_funchion_cancel_btn_d.png"
+			click_bg="image/bestbuy/keyboard_funchion_cancel_btn_c.png" click_effect="tp"/>
+	</ctrlgrp>
+
+	<texttail text="@@input_01_text" x="470" y="186" w="342" h="26"  textcolor="0xfff2f2f2" fontsize="24" ignore_translate="1"/>
+	<image image="image/bestbuy/keyboard_search_box.png" x="454" y="171" w="374" h="50" bg="1"/>
+	<widget_keyboard ctrlname="keyboard" x="454" y="234" w="374" h="310" cols="8" rows="6" align="hcenter" 
+		textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xff186ca7" 
+		changed="@@keyboard_changed" extra_height="0" extra_index="0"/>
+
+	<wrapper textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029" y="570" w="185" h="49" fontsize="20" align="hcenter">
+		<imgbtn x="454" text="$$Cancel" image="@@bg-CANCEL"
+			disable="@@disable-CANCEL" active="@@act-CANCEL" selected="@@sel-CANCEL" click="@@click-CANCEL"/>
+		<imgbtn x="643" text="$$Submit" image="@@bg-OK"
+			disable="@@disable-OK" active="@@act-OK" selected="@@sel-OK" click="@@click-OK"/>
+	</wrapper>
+
+	<image image="@@status_icon" x="794" y="303" w="113" h="113"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

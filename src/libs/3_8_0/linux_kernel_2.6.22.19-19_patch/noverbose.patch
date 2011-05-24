@@ -1,0 +1,84 @@
+--- ../linux_kernel_2.6.22.19-4/fs/fat/dir.c	2008-02-26 17:54:25.000000000 +0800
++++ fs/fat/dir.c	2009-02-05 19:31:42.000000000 +0800
+@@ -86,8 +86,10 @@
+ 
+ 	*bh = sb_bread(sb, phys);
+ 	if (*bh == NULL) {
++#if 0
+ 		printk(KERN_ERR "FAT: Directory bread(block %llu) failed\n",
+ 		       (unsigned long long)phys);
++#endif
+ 		/* skip this block */
+ 		*pos = (iblock + 1) << sb->s_blocksize_bits;
+ 		goto next;
+--- ../linux_kernel_2.6.22.19-4/fs/fat/fatent.c	2008-02-26 17:54:25.000000000 +0800
++++ fs/fat/fatent.c	2009-02-05 19:31:42.000000000 +0800
+@@ -89,8 +89,10 @@
+ err_brelse:
+ 	brelse(bhs[0]);
+ err:
++#if 0
+ 	printk(KERN_ERR "FAT: FAT read failed (blocknr %llu)\n",
+ 	       (unsigned long long)blocknr);
++#endif
+ 	return -EIO;
+ }
+ 
+@@ -102,8 +104,10 @@
+ 	WARN_ON(blocknr < MSDOS_SB(sb)->fat_start);
+ 	fatent->bhs[0] = sb_bread(sb, blocknr);
+ 	if (!fatent->bhs[0]) {
++#if 0
+ 		printk(KERN_ERR "FAT: FAT read failed (blocknr %llu)\n",
+ 		       (unsigned long long)blocknr);
++#endif
+ 		return -EIO;
+ 	}
+ 	fatent->nr_bhs = 1;
+--- ../linux_kernel_2.6.22.19-4/fs/fat/misc.c	2008-02-26 17:54:25.000000000 +0800
++++ fs/fat/misc.c	2009-02-05 19:31:42.000000000 +0800
+@@ -48,7 +48,9 @@
+ 
+ 	bh = sb_bread(sb, sbi->fsinfo_sector);
+ 	if (bh == NULL) {
++#if 0
+ 		printk(KERN_ERR "FAT: bread failed in fat_clusters_flush\n");
++#endif
+ 		return;
+ 	}
+ 
+--- ../linux_kernel_2.6.22.19-4/drivers/scsi/scsi_lib.c	2008-02-26 17:54:25.000000000 +0800
++++ drivers/scsi/scsi_lib.c	2009-02-05 19:32:51.000000000 +0800
+@@ -1190,8 +1190,10 @@
+ 			 * commands.  The device must be brought online
+ 			 * before trying any recovery commands.
+ 			 */
++#if 0
+ 			sdev_printk(KERN_ERR, sdev,
+ 				    "rejecting I/O to offline device\n");
++#endif
+ 			ret = BLKPREP_KILL;
+ 			break;
+ 		case SDEV_DEL:
+@@ -1199,8 +1201,10 @@
+ 			 * If the device is fully deleted, we refuse to
+ 			 * process any commands as well.
+ 			 */
++#if 0
+ 			sdev_printk(KERN_ERR, sdev,
+ 				    "rejecting I/O to dead device\n");
++#endif
+ 			ret = BLKPREP_KILL;
+ 			break;
+ 		case SDEV_QUIESCE:
+@@ -1454,8 +1458,10 @@
+ 			break;
+ 
+ 		if (unlikely(!scsi_device_online(sdev))) {
++#if 0
+ 			sdev_printk(KERN_ERR, sdev,
+ 				    "rejecting I/O to offline device\n");
++#endif
+ 			scsi_kill_request(req, q);
+ 			continue;
+ 		}

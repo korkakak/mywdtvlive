@@ -1,0 +1,26 @@
+--- /home/steven/job/avls700l/src/libs/3_6_1_rc2/linux_kernel_2.6.22.19-12/drivers/char/Makefile	2009-02-27 12:23:03.000000000 +0800
++++ drivers/char/Makefile	2009-04-02 20:25:55.000000000 +0800
+@@ -97,6 +97,7 @@
+ obj-$(CONFIG_GPIO_TB0219)	+= tb0219.o
+ obj-$(CONFIG_TELCLOCK)		+= tlclk.o
+ obj-$(CONFIG_TANGOX_IR)		+= irkernel.o
++obj-$(CONFIG_AVLS700L_LED)	+= avls700l_led.o
+ obj-$(CONFIG_TANGOX_FIP) 	+= fipkernel.o
+ obj-$(CONFIG_TANGOX_SCARD) 	+= sckernel.o
+ obj-$(CONFIG_TANGOX_UIR) 	+= uirkernel.o
+
+--- drivers/char/Kconfig	2009-05-07 18:58:45.000000000 +0800
++++ drivers/char/Kconfig1	2009-05-07 19:05:45.000000000 +0800
+@@ -459,6 +459,12 @@
+ 
+ source "drivers/serial/Kconfig"
+ 
++config AVLS700L_LED
++       tristate "AVLS-700L IO-Data Media Player LEDs support" 
++       default n
++       help
++         Control LEDs of AVLS-700L IO-Data Media Player platform
++
+ config TANGOX_IR
+        tristate "SMP86xx IR remote support" if TANGOX
+        default m

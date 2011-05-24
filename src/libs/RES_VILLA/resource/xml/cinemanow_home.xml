@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<page background="image/cinemanow/CN_common_bg.jpg">
+	<ctrlgrp>
+		<button valkey="Movies" 
+			normal_bg="image/cinemanow/cn_main_movies_n.png"
+			focused_bg="image/cinemanow/cn_main_movies_f.png"
+			click_bg="image/cinemanow/cn_main_movies_c.png"/>
+		<button valkey="TVShows" 
+			normal_bg="image/cinemanow/cn_main_tv_shows_n.png"
+			focused_bg="image/cinemanow/cn_main_tv_shows_f.png"
+			click_bg="image/cinemanow/cn_main_tv_shows_c.png"/>
+		<button valkey="SearchAll" 
+			normal_bg="image/cinemanow/cn_main_search_all_n.png"
+			focused_bg="image/cinemanow/cn_main_search_all_f.png" 
+			click_bg="image/cinemanow/cn_main_search_all_c.png"/>
+		<button valkey="DownloadManager" 
+			normal_bg="image/cinemanow/cn_main_doenload_manager_n.png"
+			focused_bg="image/cinemanow/cn_main_doenload_manager_f.png" 
+			click_bg="image/cinemanow/cn_main_doenload_manager_c.png"/>
+		<linebreak/>
+		<button valkey="MyVideos" 
+			normal_bg="image/cinemanow/cn_bt_n.png" 
+			focused_bg="image/cinemanow/cn_bt_f.png"
+			click_bg="image/cinemanow/cn_bt_c.png"
+			click_effect="tp"/>
+		<button valkey="WishLists" 
+			normal_bg="image/cinemanow/cn_bt_n.png" 
+			focused_bg="image/cinemanow/cn_bt_f.png" 
+			click_bg="image/cinemanow/cn_bt_c.png" 
+			click_effect="tp"/>
+		<button valkey="Settings" 
+			normal_bg="image/cinemanow/cn_bt_n.png" 
+			focused_bg="image/cinemanow/cn_bt_f.png" 
+			click_bg="image/cinemanow/cn_bt_c.png" 
+			click_effect="tp"/>
+		<button valkey="Preference" 
+			normal_bg="image/cinemanow/cn_bt_n.png" 
+			focused_bg="image/cinemanow/cn_bt_f.png" 
+			click_bg="image/cinemanow/cn_bt_c.png" 
+			click_effect="tp"/>
+	</ctrlgrp>
+
+	<image image="image/cinemanow/cn_logo.png" x="111" y="84" w="288" h="58"/>
+
+	<table x="210" y="221" w="860" h="304" rows="1" cols="4" colspacing="20">
+		<image image="@@bg-Movies" active="@@act-Movies"/>
+		<image image="@@bg-TVShows" active="@@act-TVShows"/>
+		<image image="@@bg-SearchAll" active="@@act-SearchAll"/>
+		<image image="@@bg-DownloadManager" active="@@act-DownloadManager"/>
+
+	</table>	
+	<table x="212" y="533" w="855" h="49" fontsize="20" rows="1" cols="4" colspacing="4" align="hcenter" textcolor="0xff727272" selectedtextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d"> 
+		<imgbtn image="@@bg-MyVideos" text="$$My Videos" active="@@act-MyVideos" selected="@@sel-MyVideos" click="@@click-MyVideos"/>
+		<imgbtn image="@@bg-WishLists" text="$$Wish Lists" active="@@act-WishLists" selected="@@sel-WishLists" click="@@click-WishLists"/>
+		<imgbtn image="@@bg-Settings" text="$$Settings" active="@@act-Settings" selected="@@sel-Settings" click="@@click-Settings"/>
+		<imgbtn image="@@bg-Preference" text="$$Preference" active="@@act-Preference" selected="@@sel-Preference" click="@@click-Preference"/>
+	</table>
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+</page>

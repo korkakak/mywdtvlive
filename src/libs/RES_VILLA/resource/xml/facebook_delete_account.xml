@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" type="basic">
+
+	<include filename="./inc_setup_headline.xml"/>
+	<listbox valkey="delete_account" autoenter="1" autoswitch="0"  move="page" cols="1" rows="7" lbmask="lr"  loop_scroll="1"/>
+
+	<text text="@@title" x="97" y="122" w="540" h="44" align="left" fontsize="42" textcolor="0x07B5FF" />
+
+
+  <table x="281" y="235" w="720" h="357" rows="7" rowspacing="0" 
+	  lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png">
+    <image lightbar="@@lightbar-delete_account-0" active="@@act-delete_account-0"/>
+    <image lightbar="@@lightbar-delete_account-1" active="@@act-delete_account-1"/>
+    <image lightbar="@@lightbar-delete_account-2" active="@@act-delete_account-2"/>
+    <image lightbar="@@lightbar-delete_account-3" active="@@act-delete_account-3"/>
+    <image lightbar="@@lightbar-delete_account-4" active="@@act-delete_account-4"/>
+    <image lightbar="@@lightbar-delete_account-5" active="@@act-delete_account-5"/>
+    <image lightbar="@@lightbar-delete_account-6" active="@@act-delete_account-6"/>
+  </table>
+
+  <wrapper x="293" w="695" h="1">
+    <image image="@@account_0_line" ymargin="0" bg="1" y="285"/>
+	<image image="@@account_1_line" ymargin="0" bg="1" y="336"/>
+	<image image="@@account_2_line" ymargin="0" bg="1" y="387"/>
+    <image image="@@account_3_line" ymargin="0" bg="1" y="438"/>
+    <image image="@@account_4_line" ymargin="0" bg="1" y="489"/>
+    <image image="@@account_5_line" ymargin="0" bg="1" y="540"/>
+    <image image="@@account_6_line" ymargin="0" bg="1" y="591"/>
+  </wrapper>
+
+  <table x="281" y="235" w="720" h="357"
+    	cols="1" rows="7" colspacing="0" rowspacing="0"  
+		textcolor="0xe2e2e2" 
+		actnoseltextcolor="0xe2e2e2" 
+		fontsize="20" 
+		selected_fontsize="24"
+		speed="1" delay="2" align="hcenter">
+    <text text="@@account_0_text" active="@@act-delete_account-0"/>
+    <text text="@@account_1_text" active="@@act-delete_account-1"/>
+    <text text="@@account_2_text" active="@@act-delete_account-2"/>
+    <text text="@@account_3_text" active="@@act-delete_account-3"/>
+    <text text="@@account_4_text" active="@@act-delete_account-4"/>
+    <text text="@@account_5_text" active="@@act-delete_account-5"/>
+    <text text="@@account_6_text" active="@@act-delete_account-6"/>
+  </table>
+
+  <image image="@@ss-prev" x="616" y="195" w="38" h="27"/>
+  <image image="@@ss-more" x="616" y="605" w="38" h="27"/>
+  <image image="@@wrongkeyicon" x="1100" y="71" w="52" h="53" align="left" />
+
+  <include filename="./inc_facebook_logo.xml"/>
+  <include filename="./inc_loading.xml"/>
+</page>

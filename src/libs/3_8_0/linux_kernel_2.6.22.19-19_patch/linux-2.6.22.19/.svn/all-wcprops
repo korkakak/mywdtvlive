@@ -1,0 +1,221 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/dmax/!svn/ver/81052/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19
+END
+0000.shared.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/0000.shared.patch
+END
+1005.ide.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1005.ide.patch
+END
+1016.watchdog.patch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1016.watchdog.patch
+END
+1030.ccache.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1030.ccache.patch
+END
+1028.hwtrigger.patch
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1028.hwtrigger.patch
+END
+1024.unaligned.patch
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1024.unaligned.patch
+END
+1011.ir.patch
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1011.ir.patch
+END
+2100.efi-partition.patch
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/dmax/!svn/ver/81052/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/2100.efi-partition.patch
+END
+1027.tango3otg.patch
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1027.tango3otg.patch
+END
+1010.ipfilter.patch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1010.ipfilter.patch
+END
+1015.multirecv.patch
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1015.multirecv.patch
+END
+1012.fip.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1012.fip.patch
+END
+1001.zbf.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1001.zbf.patch
+END
+1020.freqctrl.patch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1020.freqctrl.patch
+END
+1017.rootfs.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1017.rootfs.patch
+END
+1009.udf.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1009.udf.patch
+END
+1008.mtd.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1008.mtd.patch
+END
+1002.pcidma.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1002.pcidma.patch
+END
+1013.scard.patch
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1013.scard.patch
+END
+1000.tangox.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1000.tangox.patch
+END
+1006.enet.patch
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1006.enet.patch
+END
+1033.gcc44x.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1033.gcc44x.patch
+END
+1026.gcc43x.patch
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1026.gcc43x.patch
+END
+1031.mixdram.patch
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1031.mixdram.patch
+END
+1019.uir.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1019.uir.patch
+END
+2200.mac-partition.patch
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/dmax/!svn/ver/81052/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/2200.mac-partition.patch
+END
+1004.mbus.patch
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1004.mbus.patch
+END
+1023.codesourcery.patch
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1023.codesourcery.patch
+END
+1025.testdisplay.patch
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1025.testdisplay.patch
+END
+1021.ck1.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1021.ck1.patch
+END
+1022.oprofile.patch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1022.oprofile.patch
+END
+1014.fb.patch
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1014.fb.patch
+END
+2000.msdos-partition.patch
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/dmax/!svn/ver/81052/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/2000.msdos-partition.patch
+END
+1007.usb.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1007.usb.patch
+END
+1018.sata.patch
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/dmax/!svn/ver/67690/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1018.sata.patch
+END
+1003.gpio.patch
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/linux-2.6.22.19/1003.gpio.patch
+END

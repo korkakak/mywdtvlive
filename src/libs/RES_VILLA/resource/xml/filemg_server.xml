@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/villa_bg.png" wait_seconds="1">
+
+<text text="$$Network" x="247" y="156" w="600" h="44" fontsize="40" textcolor="0xffffff"/>
+<text text="@@type" x="247" y="199" w="600" h="26" fontsize="24" textcolor="0xffffff"/>
+<text text="@@pagecounter" x="872" y="172" w="118" h="26" fontsize="24" textcolor="0xffffff"/>
+  <listbox valkey="serverlist" move="row" cols="1" rows="7" lbmask="l" more_select="right"/>
+	<image image="@@listprev" x="619" y="194" w="38" h="27"/>
+  <table x="365" y="235" w="720" h="357"
+         cols="1" rows="7" colspacing="0" rowspacing="0"
+         lbimage="image/browser_list_btn.png" fontsize="20">
+    <text text="@@serverlist-0" fontsize="20" xmargin="65" ymargin="5" y="248"
+          lightbar="@@lightbar-serverlist-0" active="@@act-serverlist-0"/>
+
+    <text text="@@serverlist-1" fontsize="20" xmargin="65" ymargin="5" y="290"
+          lightbar="@@lightbar-serverlist-1" active="@@act-serverlist-1"/>
+
+    <text text="@@serverlist-2" fontsize="20" xmargin="65" ymargin="5" y="334"
+          lightbar="@@lightbar-serverlist-2" active="@@act-serverlist-2"/>
+
+    <text text="@@serverlist-3" fontsize="20" xmargin="65" ymargin="5" y="378"
+          lightbar="@@lightbar-serverlist-3" active="@@act-serverlist-3"/>
+
+    <text text="@@serverlist-4" fontsize="20" xmargin="65" ymargin="5" y="422"
+          lightbar="@@lightbar-serverlist-4" active="@@act-serverlist-4"/>
+
+    <text text="@@serverlist-5" fontsize="20" xmargin="65" ymargin="5" y="466"
+          lightbar="@@lightbar-serverlist-5" active="@@act-serverlist-5"/>
+
+    <text text="@@serverlist-6" fontsize="20" xmargin="65" ymargin="5" y="510"
+          lightbar="@@lightbar-serverlist-6" active="@@act-serverlist-6"/>
+  </table>
+	<image image="@@listmore" x="619" y="605" w="38" h="27"/>
+
+  <wrapper x="293" w="695" h="1">
+    <image image="@@browser_0_line" ymargin="0" bg="1" y="290"/>
+    <image image="@@browser_1_line" ymargin="0" bg="1" y="334"/>
+    <image image="@@browser_2_line" ymargin="0" bg="1" y="378"/>
+    <image image="@@browser_3_line" ymargin="0" bg="1" y="422"/>
+    <image image="@@browser_4_line" ymargin="0" bg="1" y="466"/>
+    <image image="@@browser_5_line" ymargin="0" bg="1" y="510"/>
+    <image image="@@browser_6_line" ymargin="0" bg="1" y="554"/>
+  </wrapper>
+  <table rows="7" x="311" y="238" w="49" h="266">
+    <image image="@@browser_icon-0" y="238"/>
+    <image image="@@browser_icon-1" y="290"/>
+    <image image="@@browser_icon-2" y="334"/>
+    <image image="@@browser_icon-3" y="378"/>
+    <image image="@@browser_icon-4" y="422"/>
+    <image image="@@browser_icon-5" y="466"/>
+    <image image="@@browser_icon-6" y="510"/>
+  </table>
+ </page>

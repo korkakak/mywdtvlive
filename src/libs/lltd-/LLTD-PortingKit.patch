@@ -1,0 +1,79 @@
+diff -uBbNr LLTD-PortingKit/Sample_Code/native-linux/Makefile LLTD-PortingKit.modify/Sample_Code/native-linux/Makefile
+--- LLTD-PortingKit/Sample_Code/native-linux/Makefile	2009-03-31 19:25:28.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/native-linux/Makefile	2009-04-09 06:41:17.000000000 +0800
+@@ -1,7 +1,6 @@
+ VPATH = ../src
+ 
+-CC = gcc
+-LD = gcc
++LD=$(CC)
+ CFLAGS = -pipe -Wall -Wno-unused -O3 -g
+ LDFLAGS = 
+ 
+diff -uBbNr LLTD-PortingKit/Sample_Code/src/osl-linux.c LLTD-PortingKit.modify/Sample_Code/src/osl-linux.c
+--- LLTD-PortingKit/Sample_Code/src/osl-linux.c	2009-03-31 19:24:54.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/src/osl-linux.c	2009-04-09 06:41:17.000000000 +0800
+@@ -510,7 +510,7 @@
+     /* If your device has a management page at the url
+             http://<device-ip-address>/
+        then use the fMW flag, otherwise, remove it */
+-    nf = htonl(fFD | fMW);
++    nf = htonl(fFD);
+ 
+     memcpy(data,&nf,4);
+ 
+@@ -858,36 +858,23 @@
+ 
+     ucs2char_t* name = (ucs2char_t*) data;
+ 
+-    int ret;
+-    struct utsname unamebuf;
+-
+-    /* use uname() to get the system's hostname */
+-    ret = uname(&unamebuf);
+-    if (ret != -1)
+-    {
+-        /* because I am a fool, and can't remember how to refer to the sizeof a structure
+-         * element directly, there is an unnecessary declaration here... */
++    FILE *fp = fopen("/tmp/server_name", "r");
++    if (fp != NULL) {
+         tlv_info_t* fool;
+         size_t  namelen;
+-
+-	/* nuke any '.' in what should be a nodename, not a FQDN */
+-	char *p = strchr(unamebuf.nodename, '.');
+-	if (p)
+-	    *p = '\0';
+-
+-        namelen = strlen(unamebuf.nodename);
+-
+-	util_copy_ascii_to_ucs2(name, sizeof(fool->machine_name), unamebuf.nodename);
+-
++	    char server_name[128] = {0};
++	    fscanf(fp, "%s", server_name);
++	    util_copy_ascii_to_ucs2(name, sizeof(fool->machine_name), server_name);
++	    fclose(fp);
+         IF_TRACED(TRC_TLVINFO)
+             dbgprintf("get_machine_name(): space=" FMT_SIZET ", len=" FMT_SIZET ", machine name = %s\n",
+-                       sizeof(fool->machine_name), namelen, unamebuf.nodename);
++				    sizeof(fool->machine_name), namelen, server_name);
+         END_TRACE
+         return TLV_GET_SUCCEEDED;
+     }
+ 
+     IF_TRACED(TRC_TLVINFO)
+-        dbgprintf("get_machine_name(): uname() FAILED, returning %d\n", ret);
++	    dbgprintf("get_machine_name(): /tmp/server_name doesn't exist\n");
+     END_TRACE
+ 
+     return TLV_GET_FAILED;
+diff -uBbNr LLTD-PortingKit/Sample_Code/src/state.c LLTD-PortingKit.modify/Sample_Code/src/state.c
+--- LLTD-PortingKit/Sample_Code/src/state.c	2009-03-31 19:24:51.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/src/state.c	2009-04-09 06:41:47.000000000 +0800
+@@ -20,6 +20,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <assert.h>
++#include <limits.h>
+ 
+ #include "globals.h"

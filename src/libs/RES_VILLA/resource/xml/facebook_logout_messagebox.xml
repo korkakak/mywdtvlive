@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page overlay="1">
+  <image image="image/video_encoding_bg.png" x="0" y="0" w="1280" h="720"/>
+  <image image="./image/global_messagebox_large_bg.png" x="226" y="48" w="832" h="624"/>
+  <ctrlgrp>
+     <button valkey="CANCEL"
+	focused_bg=""
+	normal_bg=""/>
+     <button valkey="OK"
+	focused_bg=""
+	normal_bg=""/>
+  </ctrlgrp>
+
+  <image image="./image/alert_messagebox_divide.png" x="274" y="468" w="737" h="1"/>
+  <text text="@@text-CANCEL" x="332" y="504" w="270" h="39" active="@@act-CANCEL" fontsize="36" textcolor="0xC1C1C1" activetextcolor="0xff8400" align="hcenter"/>
+  <text text="@@text-OK" x="686" y="504" w="270" h="39" active="@@act-OK" fontsize="36" textcolor="0xC1C1C1" activetextcolor="0xff8400" align="hcenter"/>
+  
+  <include filename="./inc_messagebox.xml" />
+</page>

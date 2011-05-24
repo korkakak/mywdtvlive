@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrapper>
+  <wrapper disable="@@info_radiotime_now_playing_disable">	
+  <image image="@@info_inforbar" x="252" y="0" w="775" h="172" bg="1"/>
+  <image image="@@info_trackicon" x="297" y="6" w="125" h="125" scale_type="fixratio" scale="100" align="hcenter"/>
+
+  <text text="@@info_trackname" x="435" y="55" w="535" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xafafaf" auto_translate="1"/>
+  <text text="@@info_subtext" x="435" y="78" w="535" h="21" fontsize="18" speed="1" delay="2" align="left" textcolor="0xafafaf" auto_translate="1"/>
+
+  </wrapper>
+</wrapper>

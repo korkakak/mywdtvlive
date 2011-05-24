@@ -1,0 +1,5027 @@
+
+mainmenu "DMAX Configuration"
+
+config	VERSION
+	string "version"
+	default "0.00.01"	
+
+menu "Preparation"
+	
+
+	menu "Product selection"
+		choice
+			prompt	"Product extension"
+			config	PRODUCT_EXT_WDTV_HOUSE
+				bool "WDTV HOUSE"
+			config	PRODUCT_EXT_WDTV_HUT
+				bool "WDTV HUT"
+			config	PRODUCT_EXT_WDTV_VILLA
+				bool "WD VILLA"
+			config	PRODUCT_EXT_WDTV_RV
+				bool "WD RV"
+			config	PRODUCT_EXT_LMP555
+				bool "Lacie LMP555"
+			config  PRODUCT_EXT_AV_LS700L
+				bool "IODATA AV_LS700L"
+			config  PRODUCT_EXT_IMEDIA_HD100
+				bool "BEWAN iMedia HD100"
+			config  PRODUCT_EXT_FUNTWIST
+				bool "FUNTWIST"
+			config  PRODUCT_EXT_ALPHA
+				bool "Alpha customized product (For developing whatever you want) "
+			config  PRODUCT_EXT_EM7075
+				bool "Eminent EM7075"
+		endchoice
+
+		config  RV_HOME
+			bool "RV HOME"
+			depends on PRODUCT_EXT_WDTV_RV
+			default y
+			help
+			"turn on this option to use rv home page at startup"
+		config  PRODUCT_EXT_WDTV_VILLA_BUNGALOW
+			bool "WD VILLA BUNGALOW"
+			depends on PRODUCT_EXT_WDTV_VILLA
+			default n
+			help
+			"turn on this option for BUNGALOW firmware"
+		config	PRODUCT_EXT_UNO
+			bool "Google UNO"
+			depends on PRODUCT_EXT_WDTV_VILLA_BUNGALOW
+			default n
+			help
+				"turn on this option for UNO firmware (depends on WDTV_VILLA & WDTV_BUNGALOW)
+
+			choice
+				prompt	"UNO Phase selection"
+				depends on PRODUCT_EXT_UNO
+				config	UNO_PHASE_I
+					bool "Google UNO Phase I"
+				config	UNO_PHASE_II
+					bool "Google UNO Phase II"
+			endchoice
+			
+			config UNO_PHASE_II_FEATURES
+				depends on PRODUCT_EXT_UNO
+				bool "Some features for phase II"
+				default y if UNO_PHASE_II
+				default n
+		
+			config UNO_USE_FLASH_FRAMEWORK
+				depends on PRODUCT_EXT_UNO
+				bool "Use only flash based apps without engine UI"
+				default n 
+
+		config PRODUCT_SN
+			string
+                        default "WDTV_SN" if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA
+                        default "HDD_SN" if PRODUCT_EXT_WDTV_RV
+			default "PRODUCT_SN"
+		
+		choice 
+			prompt "UI logic"
+			config UI_LOGIC_TVDOCK
+				bool "TVDOCK"
+				depends on (PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_ALPHA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV)
+			config UI_LOGIC_LMP555
+				bool "LMP555"
+				depends on (PRODUCT_EXT_LMP555)
+			config UI_LOGIC_VILLA
+				bool "VILLA"
+				depends on PRODUCT_EXT_WDTV_VILLA
+			config UI_LOGIC_RV
+				bool "RV"
+				depends on PRODUCT_EXT_WDTV_RV
+		endchoice
+		choice
+			prompt	"Basic Pages Selection"
+			default BASIC_PAGES_WD_RV if PRODUCT_EXT_WDTV_RV
+			default BASIC_PAGES_WD if PRODUCT_EXT_WDTV_VILLA 
+			default BASIC_PAGE_GOOGLE_UNO if PRODUCT_EXT_UNO
+			default BASIC_PAGES_LACIE_CLASSIC if PRODUCT_EXT_LMP555 
+			config	BASIC_PAGES_GENERIC
+				bool "Pages"
+				depends on !PRODUCT_EXT_WDTV_RV && !PRODUCT_EXT_WDTV_VILLA && !PRODUCT_EXT_LMP555
+				help 
+				"original Pages Folder, for general used"
+			config	BASIC_PAGES_WD
+				bool "WD_Pages"
+				depends on (PRODUCT_EXT_WDTV_VILLA && !PRODUCT_EXT_UNO)
+				help 
+				"copy from pages. For WD, we'll do special UI/Flow. So we duplicate pages so that WD can have their own basic_class, browse3_class, playing pages ...."
+			config	BASIC_PAGES_WD_RV
+				bool "RV_Pages"
+				depends on PRODUCT_EXT_WDTV_RV
+				help 
+				"copy from pages. For WD, we'll do special UI/Flow. So we duplicate pages so that WD can have their own basic_class, browse3_class, playing pages ...."
+			config BASIC_PAGE_GOOGLE_UNO
+				bool "UNO_Pages"
+				depends on PRODUCT_EXT_UNO
+				help
+				"copy from pages. For WD, we'll do special UI/Flow. So we duplicate pages so that WD can have their own basic_class, browse3_class, playing pages ...."
+			config	BASIC_PAGES_LACIE_CLASSIC
+				bool "Lacie_pages"
+				depends on PRODUCT_EXT_LMP555
+				help 
+				"We merge pages/LMP555_pages/TVDOCK_pages to this directory to avoid confused codebase for Ariance"
+		endchoice
+		config UI_LOGIC
+			string
+			default "TVDOCK_pages" if UI_LOGIC_TVDOCK 
+			default "LMP555_pages" if UI_LOGIC_LMP555
+			default "VILLA_pages" if (UI_LOGIC_VILLA && !PRODUCT_EXT_UNO)
+			default "RV_pages" if UI_LOGIC_RV
+			default "UNO_pages" if (UI_LOGIC_VILLA && PRODUCT_EXT_UNO)
+		
+		choice
+			prompt	"House UI OEM"
+				depends on PRODUCT_EXT_WDTV_HOUSE
+			config OEM_HOUSE_WD
+				bool "House with WD UI"
+			config OEM_HOUSE_ALPHA
+				bool "House with alpha generic UI"
+		endchoice
+
+		choice
+			prompt	"Penthouse Apartment UI OEM"
+				depends on PRODUCT_EXT_WDTV_HUT
+			config OEM_HUT_WD
+				bool "PA with WD UI"
+			config OEM_HUT_ALPHA
+				bool "PA with alpha generic UI"
+		endchoice
+
+		choice
+			prompt	"LMP555 UI OEM"
+				depends on PRODUCT_EXT_LMP555
+			config OEM_LMP555_LACIE
+				bool "LMP555 with Lacie UI"
+			config OEM_LMP555_ALPHA
+				bool "LMP555 with alpha UI"
+		endchoice
+
+		choice
+			prompt  "AV_LS700L UI OEM"
+                               depends on PRODUCT_EXT_AV_LS700L
+			config OEM_AV_LS700L
+                               bool "AV_LS700L UI"
+		endchoice
+
+		choice
+			prompt  "IMEDIA_HD100 UI OEM"
+                               depends on PRODUCT_EXT_IMEDIA_HD100
+			config OEM_IMEDIA_HD100
+                               bool "IMEDIA_HD100 UI"
+		endchoice
+
+		choice
+			prompt  "FUNTWIST UI OEM"
+                               depends on PRODUCT_EXT_FUNTWIST
+			config OEM_FUNTWIST
+                               bool "FUNTWIST UI"
+		endchoice
+
+		choice
+			prompt  "EM7075 UI OEM"
+                               depends on PRODUCT_EXT_EM7075
+			config OEM_EM7075
+                               bool "EM7075 UI"
+		endchoice
+
+		choice
+			prompt "Resource"
+			config RESOURCE_TVDOCK
+				bool "TVDOCK"
+				depends on OEM_HOUSE_WD || OEM_HUT_WD
+			config RESOURCE_VILLA
+				bool "VILLA UI from WD"
+				depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			config RESOURCE_AV_LS700L
+				bool "AV_LS700L"
+				depends on PRODUCT_EXT_AV_LS700L
+			config RESOURCE_AV_LS700L_BLUE
+				bool "AV_LS700L_BLUE"
+				depends on PRODUCT_EXT_AV_LS700L
+			config RESOURCE_IMEDIA_HD100
+				bool "IMEDIA_HD100"
+				depends on PRODUCT_EXT_IMEDIA_HD100
+			config RESOURCE_FUNTWIST
+				bool "FUNTWIST"
+				depends on PRODUCT_EXT_FUNTWIST
+			config RESOURCE_TVDOCK_ALPHA
+				bool "TVDOCK Alpha UI"
+				depends on PRODUCT_EXT_ALPHA || OEM_LMP555_ALPHA || OEM_HOUSE_ALPHA || OEM_HUT_ALPHA
+			config RESOURCE_LMP555
+				bool "LMP 555"
+				depends on OEM_LMP555_LACIE
+			config RESOURCE_EM7075
+				bool "EM7075"
+				depends on PRODUCT_EXT_EM7075
+		endchoice
+		config RESOURCE
+			string
+			default "TVDOCK" if RESOURCE_TVDOCK
+			default "TVDOCK_ALPHA" if RESOURCE_TVDOCK_ALPHA
+			default "LMP555" if RESOURCE_LMP555
+			default "RES_VILLA" if (PRODUCT_EXT_WDTV_VILLA && !PRODUCT_EXT_UNO)
+			default "RES_AV_LS700L" if RESOURCE_AV_LS700L 
+			default "RES_AV_LS700L_BLUE" if RESOURCE_AV_LS700L_BLUE
+			default "RES_IMEDIA_HD100" if RESOURCE_IMEDIA_HD100
+			default "RES_FUNTWIST" if RESOURCE_FUNTWIST
+			default "RES_EM7075" if RESOURCE_EM7075
+			default "RES_RV" if PRODUCT_EXT_WDTV_RV
+			default "RES_UNO" if (PRODUCT_EXT_WDTV_VILLA && PRODUCT_EXT_UNO)
+
+		config SUPPORT_EXTRA_RESOURCE
+			bool "EXTRA option"
+			depends on 0
+			help
+			If you turn on this option, system will copy [CONF_RESOURCE] first then copy [CONF_EXTRA_RESOURCE] thereafter for installing step.
+
+		config EXTRA_RESOURCE
+			string
+			depends on SUPPORT_EXTRA_RESOURCE
+			default "RES_RV" if PRODUCT_EXT_WDTV_RV
+			default "RES_UNO" if PRODUCT_EXT_UNO
+
+		choice
+			prompt "Model (World wide, US, EU, ....)"
+			config MODEL_WW
+				bool "World wide"
+			config MODEL_US
+				bool "United states only"
+			config MODEL_EU
+				bool "Europe"
+		endchoice
+		config MODEL
+			string
+			default "ww" if MODEL_WW
+			default "us" if MODEL_US
+			default "eu" if MODEL_EU
+
+		config TVDOCK
+			bool "TVDOCK (Should be removed)"
+			default y
+		config PRODUCT
+			string "Product define (Should be removed)"
+			default "TVDOCK"
+		config CONFIG_HEADER_TYPE
+			string "config file header type"
+			default "A"
+			help
+				config_tool use this option to identify config file
+		config CONFIG_HEADER_VERSION
+			string "config file header version"
+			default "1"
+			help
+				config_tool use this option to identify config file
+		config BUILD_GPL_FIRMWARE
+			bool "config build GPL firmware"
+			default n
+			help
+				This config will disable online services and unnecessary third party library to build GPL firmware
+	endmenu
+
+	menu "Platform selection"
+		choice
+			prompt	"Platform"
+			config	PLATFORM_SMP8634
+				bool "Sigma Designs SMP8634"
+				depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_ALPHA 
+			config	PLATFORM_SMP8654
+				bool "Sigma Designs SMP8654"
+				depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			config	PLATFORM_SMP8670
+				bool "Sigma Designs SMP8670"
+				depends on PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_RV
+			config	PLATFORM_X86
+				bool "x86"
+		endchoice
+		choice
+			prompt	"Board selection"
+			config	PLATFORM_SMP8634_WISTRON_BOARD
+				bool "SMP8634 by Wistron"
+				depends on PLATFORM_SMP8634
+			config	PLATFORM_SMP8634_ALPHA
+				bool "SMP8634 by Alpha"
+				depends on PLATFORM_SMP8634
+				help
+					RAM(MB) : Bank0 128, Bank1 64
+						RUA RAM : Bank 1
+						Kernel RAM : Bank 0
+			config	PLATFORM_SMP8654_WISTRON_VILLA_BOARD_D2
+				bool "Villa SMP8654 by Wistron + 512 MB RAM + 256 MB Flash (Board id: D2)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 256
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+					Flash : 256 MB
+			config	PLATFORM_SMP8654_WISTRON_VILLA_BOARD
+				bool "Villa SMP8654 by Wistron + 512 MB RAM + 128 MB Flash (Board id: D1)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 256
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+					Flash : 128 MB
+			config	PLATFORM_SMP8654_WISTRON_BOARD
+				bool "SMP8654 by Wistron"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 128, Bank1 128
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+			config	PLATFORM_SMP8654_WISTRON_PENTHOUSE_512_BOARD
+				bool "Penthouse_512 by Wistron"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 256
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+			config	PLATFORM_SMP8652_GOOGLE_UNO_BOARD
+				bool "SMP8652 Google UNO by Alpha"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 0
+					Flash : 256 MB
+			config	PLATFORM_SMP8670_GOOGLE_UNO_BOARD
+				bool "SMP8670 Google UNO by Alpha"
+				depends on PLATFORM_SMP8670
+				help
+					RAM(MB) : Bank0 512 MB (128x16x2)
+					Flash : 512 MB (4Gb)
+			config	PLATFORM_SMP8654_ALPHA_LMP555_BOARD
+				bool "SMP8654 Lacie LMP555 by Alpha"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 0
+			config	PLATFORM_SMP8654_ALPHA_LMP555_A2C_BOARD
+				bool "SMP8654 Lacie LMP555 A2c by Alpha"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 0
+                                        internal sata driver zboot
+			config	PLATFORM_SMP8654_ALPHA_AV_LS700L_BOARD
+				bool "SMP8654 by Alpha (AV_LS700L)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 512, Bank1 128
+					USB can not support 2.5" HDD
+			config	PLATFORM_SMP8654_ALPHA_IMEDIA_HD100_BOARD
+				bool "SMP8654 by Alpha (IMEDAI_HD100)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 128, Bank1 128
+				        can not support 2.5" HDD
+			config	PLATFORM_SMP8654_ALPHA_8AV500LE_BOARD
+				bool "SMP8654AD by Alpha + 512 MB RAM + 256 MB Flash"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 256
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+					Flash : 256 MB
+			config	PLATFORM_SMP8654_ALPHA_RV_BOARD
+				bool "RV ALPHA BOARD SMP8654AD + 512 MB RAM + 256 MB Flash"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 256
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+					Flash : 256 MB
+			config	PLATFORM_SMP8654_ALPHA_RV_BOARD_256
+				bool "RV ALPHA BOARD SMP8654AD + 256 MB RAM + 256 MB Flash"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 256, Bank1 0
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 1
+					Flash : 256 MB
+			config	PLATFORM_SMP8670_ALPHA_PALACE_BOARD
+				bool "ALPHA PALACE BOARD SMP8670 + 512 MB RAM + 512 MB Flash"
+				depends on PLATFORM_SMP8670
+				help
+					RAM(MB) : Bank0 512
+						RUA RAM : Bank 0
+						Kernel RAM : Bank 0
+					Flash : 512 MB
+			config	PLATFORM_SMP8654_ALPHA_FUNTWIST_BOARD
+				bool "SMP8654 by Alpha (FUNTWIST)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 128, Bank1 128
+				        can not support 2.5" HDD
+			config	PLATFORM_SMP8654_ALPHA_EM7075_BOARD
+				bool "SMP8654 by Alpha (EM7075)"
+				depends on PLATFORM_SMP8654
+				help
+					RAM(MB) : Bank0 128, Bank1 128
+				        can not support 2.5" HDD
+			config	WILLIAM_LAPTOP	
+				bool "William's laptop"
+				depends on PLATFORM_X86
+			config	PLATFORM_PC
+				bool "None"
+				depends on PLATFORM_X86
+		endchoice
+		config PLATFORM_SMP8654_WISTRON_BOARD_FIX_REBOOT
+			bool "Patch fix for reboot"
+			default y
+			depends on PLATFORM_SMP8654_WISTRON_BOARD || PLATFORM_SMP8654_WISTRON_VILLA_BOARD || PLATFORM_SMP8654_WISTRON_PENTHOUSE_512_BOARD
+			help
+				Workaround for old wistron boards which doesn't have watchdog so that we have to reboot through GPIO
+
+		menu "Common compile options"
+			config COMPILE_WITH_GFLAG
+				string "Compile with debug information (-g or -ggdb)"
+				default "-ggdb" if  PLATFORM_X86
+				default ""      if !PLATFORM_X86
+			config COMPILE_WITH_OPTIMIZE
+				string "Optimize flag (-O, ....)"
+				default ""      if  PLATFORM_X86
+				default "-O3"    if !PLATFORM_X86
+		endmenu
+		
+		menu "SMP8634 compile options"
+			depends on PLATFORM_SMP8634
+			choice 
+				prompt "SDK"
+				config PLATFORM_SMP8634_SDK_2_8_3_0
+					bool "2.8.3.0"
+				config PLATFORM_SMP8634_SDK_2_8_4_1
+					bool "2.8.4.1"
+			endchoice
+			choice
+				prompt "toolchain"
+				config PLATFORM_SMP8634_TOOLCHAIN_2_8_2_0
+					bool "2.8.2.0"
+			endchoice
+		endmenu
+
+		menu "SMP8654/SMP8670 compile options"
+			depends on PLATFORM_SMP8654 || PLATFORM_SMP8670 
+			choice 
+				prompt "SDK"
+				config PLATFORM_SMP8654_SDK_3_5_0
+					bool "3.5.0"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_6_0_rc11
+					bool "3.6.0_rc11"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_6_0
+					bool "3.6.0"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_6_1_rc2
+					bool "3.6.1_rc2"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_7_0
+					bool "3.7.0"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_0
+					bool "3.8.0"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_1
+					bool "3.8.1"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_2
+					bool "3.8.2"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_3
+					bool "3.8.3"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_4
+					bool "3.8.4"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_5
+					bool "3.8.5"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_5_WD0
+					bool "3.8.5_wd0"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_7
+					bool "3.8.7"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_8
+					bool "3.8.8"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8670_SDK_3_8_8
+					bool "3.8.8"
+					depends on PLATFORM_SMP8670
+			endchoice
+			choice
+				depends on PLATFORM_SMP8654_SDK_3_8_8 || PLATFORM_SMP8670_SDK_3_8_8
+				prompt	"SDK Sub Version"
+				config	PLATFORM_SMP8654_SDK_SUBVERSION_rc_4
+					bool	"rc_4"
+				config	PLATFORM_SMP8654_SDK_SUBVERSION_rc_6
+					bool	"rc_6"
+			endchoice
+			config SUPPORT_DCCHD
+				bool "Using DCCHD"
+				default y if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+				depends on PLATFORM_SMP8654_SDK_3_8_0 || PLATFORM_SMP8654_SDK_3_8_1 || PLATFORM_SMP8654_SDK_3_8_2 || PLATFORM_SMP8654_SDK_3_8_3 || PLATFORM_SMP8654_SDK_3_8_4 || PLATFORM_SMP8654_SDK_3_8_5 || PLATFORM_SMP8654_SDK_3_8_5_WD0 || PLATFORM_SMP8654_SDK_3_8_7 || PLATFORM_SMP8654_SDK_3_8_8 || PLATFORM_SMP8670_SDK_3_8_8
+				help
+					This feature will compile DCCHD, you can use it to play DVD or UI. 
+			config USING_DCCHD_NEW_MMAP
+				bool 
+				depends on SUPPORT_DCCHD
+				default y if 3_8_0_NEW_MMAP
+			config 3_8_0_NEW_MMAP_DRAM0_70MB
+				bool "increase DirectFB DRAM0 size to 70MB "
+				depends on 3_8_0_NEW_MMAP
+				default n
+				help
+					the default DRAM0 size is 40MB, but it's not enough for netflix.
+			config SUPPORT_DCCHD_DVD_BD_NAVIGATION
+				bool "Using DCCHD to do DVD/BD navigation"
+				default y if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+				depends on SUPPORT_DCCHD
+				help
+					This feature will enable full DVD and AVCHD navigation. The dmaosd will call DCCHD to play DVD or AVCHD. 
+			choice
+				prompt "DCCHD version"
+				depends on SUPPORT_DCCHD_DVD_BD_NAVIGATION
+				config 3_8_0_AQUA
+					bool "3_8_0_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_0
+				config 3_8_1_RC1_AQUA
+					bool "3_8_1_rc1_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_1
+				config 3_8_2_RC1_AQUA
+					bool "3_8_2_rc1_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_2
+				config 3_8_2_AQUA
+					bool "3_8_2_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_2
+				config 3_8_3_RC1_AQUA
+					bool "3_8_3_rc1_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_3
+				config 3_8_3_AQUA
+					bool "3_8_3_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_3
+				config 3_8_5_RC2_AQUA
+					bool "3_8_5_rc2_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_5 || PLATFORM_SMP8654_SDK_3_8_5_WD0
+				config 3_8_0_NEW_MMAP
+					bool "3_8_0_new_mmap" 
+					depends on PLATFORM_SMP8654_SDK_3_8_5_WD0
+				config 3_8_7_AQUA
+					bool "3_8_7_aqua"
+					depends on PLATFORM_SMP8654_SDK_3_8_7
+				config 3_8_8_AQUA
+					bool "3_8_8_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_8 || PLATFORM_SMP8670_SDK_3_8_8
+				config 3_8_8_rc_6_AQUA
+					bool "3_8_8_rc_6_aqua" 
+					depends on PLATFORM_SMP8654_SDK_3_8_8 || PLATFORM_SMP8670_SDK_3_8_8
+			endchoice
+			config DCCHD_VERSION
+				string
+				depends on SUPPORT_DCCHD
+				default "SMP8652_3_8_0_aqua.mips" if 3_8_0_AQUA
+				default "SMP8652_3_8_1_rc_1_aqua.mips" if 3_8_1_RC1_AQUA
+				default "SMP8652_3_8_2_rc_1_aqua.mips" if 3_8_2_RC1_AQUA
+				default "SMP8654_3_8_2_aqua.mips" if 3_8_2_AQUA
+				default "SMP8654_3_8_3_rc_1_aqua.mips" if 3_8_3_RC1_AQUA
+				default "SMP8652_3_8_3_aqua.mips" if 3_8_3_AQUA
+				default "SMP8652_3_8_5_rc_2_aqua.mips" if 3_8_5_RC2_AQUA
+				default "SMP865x_dcchd_3_8_0_new_mmap_sandbox_SNAPSHOT_2010-11-17_19h38m30Z_aqua.mips" if 3_8_0_NEW_MMAP
+				default "SMP8652_3_8_7_aqua.mips" if 3_8_7_AQUA
+				default "SMP8652_3_8_8_rc_4_aqua.mips" if 3_8_8_AQUA
+				default "SMP8654_3_8_8_rc_6_aqua.mips" if 3_8_8_rc_6_AQUA
+			choice
+				prompt "DCCHD HDMI chip select"
+				depends on SUPPORT_DCCHD && PLATFORM_SMP8652_GOOGLE_UNO_BOARD 
+				config SLI13_HDMI_CHIP
+					bool "sli13" 
+				config SII9030_HDMI_CHIP
+					bool "siI9030" 
+				config SII9034_HDMI_CHIP
+					bool "siI9034" 
+				config SII9134_HDMI_CHIP
+					bool "siI9134" 
+				config SII9002_HDMI_CHIP
+					bool "siI9002"
+				help
+					SMP8652 need external HDMI phy.
+			endchoice
+			config DCCHD_MMAP_CONFIG_FILE
+				string
+				default "dcchd_config_3_8_0.h" if 3_8_0_AQUA || 3_8_1_RC1_AQUA || 3_8_2_RC1_AQUA
+			config DIRECTFBRC_BUILDER
+				bool "create directfbrc by securesoho config"
+				depends on SUPPORT_DCCHD
+				default y
+				help
+					Using securesoho's config to create  directfbrc file for DCCHD.
+			config USE_DIRECTFB_PORTING_SOURCECODE
+				bool "Use DirectFB porting source code"
+				depends on SUPPORT_DCCHD && (3_8_2_AQUA || 3_8_3_RC1_AQUA || 3_8_3_AQUA || 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA)
+				default n
+			config DIRECTFB_PORTING_VERSION
+				depends on USE_DIRECTFB_PORTING_SOURCECODE
+				string 
+				default "SMP8654_3_8_2_porting.mips" if 3_8_2_AQUA
+				default "SMP8654_3_8_3_rc_1_porting.mips" if 3_8_3_RC1_AQUA
+				default "SMP8654_3_8_3_porting.mips" if 3_8_3_AQUA
+				default "SMP8654_3_8_5_rc_2_porting.mips" if 3_8_5_RC2_AQUA
+				default "SMP865x_dcchd_3_8_0_new_mmap_sandbox_SNAPSHOT_2010-11-17_19h38m30Z_porting.mips" if 3_8_0_NEW_MMAP
+				default "SMP8652_3_8_7_porting.mips" if 3_8_7_AQUA
+				default "SMP8654_3_8_8_rc_4_porting.mips" if 3_8_8_AQUA
+				default "SMP8654_3_8_8_rc_6_porting.mips" if 3_8_8_rc_6_AQUA
+			config MMAP_DOUBLE_TO_SINGLE
+				bool "MMAP_DOUBLE_TO_SINGLE"
+				depends on 3_8_8_rc_6_AQUA
+				default y
+				help
+					the default setting is DRAM1(DCCHD), we need to change to DRAM0
+					SMP8654 DRAM1(linux kernel) / DRAM0 (for rua memory, DCCHD need more memory space)
+			config DCCHD_SUPPORT_VIDEO_OUTPUT_ON_OFF
+				bool "add patch to turn on/off video output"
+				depends on 3_8_5_RC2_AQUA || 3_8_7_AQUA
+				default y
+				help
+					ITR24384: HDMI No A/V signal with turning on TV after turning on device.
+					Fix turning on HDMI fail.
+			config DIRECTFB_OVERWRITE_SIMGA_PNG_PATCH
+				bool "Overwrite sigma png patch"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (3_8_3_AQUA || 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA)
+				default y
+				help
+					Use original png provider code to overwrite sigma patch because it will crash randomly.
+			config DIRECTFB_SKIP_DFB_SIGNAL_HANDLER
+				bool "prohibit DCCHD to catch signal SEGV and BUS "
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (3_8_3_AQUA || 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA)
+				default n
+				help
+					the signal should handle by dmaosd, not dcchd.
+					we should take it back.	
+			config DIRECTFB_HDMI_FIX_COLOR_DEPTH_SWITCHING
+				bool "HDMI Fix 12bit color depth switching patch"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && 3_8_3_AQUA
+				default y
+				help
+					We have to hotplug HDMI cable to make color depth ative.
+					Root cause is DFB didn't call hdmi_video_conversion_colordepth().
+					This patch is to fix DFB didn't update hdmi_video_conversion_colordepth(). 
+			config DCCHD_FIX_AVCHD_PLAY_FAIL_BUT_NO_RETURN
+				bool "Fix avchd play fail, but dcchd didn't return error"
+				depends on 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA
+				default y
+				help
+					in the log file I see an infinite loop, where MovieManager tries to play playlist#0.
+
+					bdrom spec specifies, if the MovieManager tries to play an invalid playlist
+					than go to next command. but in this case, the next command is play playlist#0.
+					So lastCmd is not updated with error flag. 
+					So when no playlist files in PLAYLIST directory, the MediaDetection() should
+					not detect as BDROM or AVCHD.
+
+
+			config DCCHD_FIX_DVD_PALY_FAIL_AND_SYSTEM_BLOCK
+				bool "Fix dvd playing will block system (Class CPlaybackControl need initial variable)"
+				depends on 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA
+				default y
+				help
+					m_statusAlreadyLocked be changed as invalid value because Class CPlaybackControl didn't assign init value for it.
+					So we have to correct it.
+			config DCCHD_FIX_HDMI_NOT_SYNC
+				bool "Fix HDMI no output after removed power cable over 5 minutes(ITR 24985)"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA)
+				default y
+				help
+					ITR24985: [HDMI] DDC fail if user boot up Villa after remove power cable over 5 minutes.
+					Root cause is CPU in low temperature will cause HDMI sync fail.
+			config DCCHD_FIX_DVD_PCR_FAIL
+				bool "Fix DVD PCR error cause dvd play fail"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA)
+				default y
+				help
+					Fix DVD PCR error cause dvd play fail.
+			config DIRECTFB_HDMI_FIX_1080P24_SWITCHING
+				bool "HDMI Fix fail to switch from 1080p24 to Auto"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (3_8_3_AQUA || 3_8_5_RC2_AQUA || 3_8_0_NEW_MMAP || 3_8_7_AQUA || 3_8_8_AQUA || 3_8_8_rc_6_AQUA)
+				default y
+				help
+					Fix can't change resolution from Auto to 1080p24.
+			config DIRECTFB_HDMI_FIX
+				bool "HDMI Fix patch"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && 3_8_2_AQUA
+				default n
+				help
+					The DFB HDMI thread fails if you connect HDMI to TV and change TV sources. The patch is from Yanquan of Sigma. We are runing Netflix project. 
+			config DIRECTFB_FIX_COLOR_SPACE
+				bool "fix dcchd can't set color space"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE
+				default n
+				help
+					DCCHD doesn't use the color space that we setup.
+					It use preferences color space.
+					This patch will skip preferences color space if we had selected color space.
+			config DIRECTFB_FIX_CRASH_IN_INVALID_ISO
+				bool "fix dcchd crash in reading invalid iso file"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE
+				default y
+				help
+					DCCHD crash if the iso is incorrectly DVD/AVCHD rip file.
+					Skip this iso if it's incorrectly rip file.
+			config DCCHD_FIX_HDMI_SPD_TO_WDTV
+				bool "fix HDMI SPD name to WDTV"
+				depends on USE_DIRECTFB_PORTING_SOURCECODE && (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+				default y
+				help
+					fix ITR No.: 18893HDMI: During HDMI handshaking, Bungalow is recognized by TV as "Bluray SMP_8654"
+					change the SPD to "WDC WDTV STB"	
+			config DCCHD_FIX_USB_HOTPLUG_CRASH
+				bool "fix dcchd dvd navi. crash if the current dvd file be removed"
+				depends on 3_8_3_RC1_AQUA || 3_8_3_AQUA
+				default y
+				help
+					fix system reboot if unplug USB disk during dvd playback.
+					sigma fix this, but we have to replace librmdvdfs.so.
+			choice
+				prompt "select original patch for your kernel version"
+				config PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+					bool "using 3_7_0_KERNEL"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH
+					bool "using 3_8_2_KERNEL"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+					bool "using 2.6.29-17_KERNEL"
+					depends on PLATFORM_SMP8654
+				config PLATFORM_SMP8670_SDK_2_6_22_19_40_ORIGINAL_KERNEL_PATCH
+					bool "using 2.6.22.19-40_KERNEL for SMP8670"
+					depends on PLATFORM_SMP8670
+				help
+					The original LINUX Kernel needs sigma's patch for SMP865x. 
+					You have to select one for your kernel.
+			endchoice
+		
+			config SUPPORT_DRIVE_LARGER_THAN_2T
+				bool 
+				depends on PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+				default y if PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+
+			config PLATFORM_SMP8654_SDK_3_7_1_RC3_BASE_ON_3_7_0
+				bool "3.7.1_rc3 SDK base on 3.7.0"
+				depends on PLATFORM_SMP8654_SDK_3_7_0
+				default n
+				help
+					we just use 3.7.1_rc3 mrua and mruafw SDK. 
+					the player code is the same the 3.7.0
+
+			choice
+				prompt "toolchain"
+				config PLATFORM_SMP8654_TOOLCHAIN_3_4_0
+					bool "3.4.0"
+				config PLATFORM_SMP8654_TOOLCHAIN_3_6_0
+					bool "3.6.0"
+				config PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+					bool "mips4.3.2"
+			endchoice
+			
+			choice
+				prompt "Choose ezboot version" 
+				depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+				config SIGMA_EZBOOT_0X82_NAND_FLASH_DRIVER
+					bool "Use ezboot_0x82 to generate bootloader"
+					depends on PLATFORM_SMP8654
+				config SIGMA_EZBOOT_0X98_NAND_FLASH_DRIVER
+					bool "Use ezboot_0x98 to generate bootloader for New NAND flash driver"
+					depends on PLATFORM_SMP8654
+				config SIGMA_EZBOOT_0Xb5_NAND_FLASH_DRIVER
+					bool "Use ezboot_0xb5 to generate bootloader"
+					depends on PLATFORM_SMP8670
+			endchoice
+
+			config SIGMA_EZBOOT_0X98_OPTIMIZED_IOS_ALLOC
+				bool "sigma zboot optimized the IOS allocate address"
+				default n
+				depends on SIGMA_EZBOOT_0X98_NAND_FLASH_DRIVER
+				help
+					optimized the IOS allocate address.
+
+			choice
+				prompt "Choose yamon version"
+				depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+				config SIGMA_YAMON_R2_13_17_NAND_FLASH_DRIVER
+					bool "Use yamon_R2.13-17"
+					depends on PLATFORM_SMP8654
+				config SIGMA_YAMON_R2_13_24_NAND_FLASH_DRIVER
+					bool "Use yamon_R2.13-24 for New NAND flash driver"
+					depends on PLATFORM_SMP8654
+				config SIGMA_YAMON_R2_16_9_NAND_FLASH_DRIVER
+					bool "Use yamon_R2.16-9"
+					depends on PLATFORM_SMP8670
+			endchoice
+
+			choice
+				prompt "Choose kernel proprietary"
+				depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+				config LINUX_KERNEL_2_6_22_19_19_NAND_FLASH_DRIVER
+					bool "Proprietary from Linux_kernel_2.6.22.19-19 package"
+					depends on PLATFORM_SMP8654
+				config LINUX_KERNEL_2_6_22_19_27_NAND_FLASH_DRIVER
+					bool "Proprietary_27 from Linux_kernel_2.6.22.19-27 package for New NAND flash drive"
+					depends on PLATFORM_SMP8654
+				config LINUX_KERNEL_2_6_22_19_40_NAND_FLASH_DRIVER
+					bool "proprietary_40 from Linux_kernel_2.6.22.19-40 package for New NAND flash drive"
+					depends on PLATFORM_SMP8670
+				config LINUX_KERNEL_2_6_29_17_NAND_FLASH_DRIVER
+					bool "Proprietary_29-17 from Linux_kernel_2.6.29-17 package for New NAND flash drive"
+					depends on PLATFORM_SMP8654
+			endchoice
+
+			config DTS_CHIP_SET
+				bool "DTS_chip_set"
+				default n
+				help
+					DTS chip set,We change the sigma SDK (mruafw) for DTS.You can see scripts/target-smp8654.mk.
+
+			config NAND_FLASH_PATCH_05122010
+				bool "NANDv2_PATCH.DAT and EZBOOT_fix_NAND_flash_05122010.patch"
+				default y
+				help
+					Sigma give us the NAND flash patch: NANDv2_PATCH.DAT and EZBOOT_fix_NAND_flash_05122010.patch
+
+			config SIGMA_LIBSAMPLE2
+				bool "support sigma libsamplev2 player"
+				default n
+				help
+					Currently, our player is under sigma libsamplev1. when we enable this config. we will use sigma libsample v2 to do playback except psfdemux (hw demux) and HW photo player.
+					and I only verify this on 3.8.5 SDK. if we want to use other SDK. please add related libname in the target-smp8654.mk
+
+			config HAVE_VIDEO_CODEC_RMVB
+				bool "Use SMP86xx chip set which support RMVB codec"
+				default n
+				help
+					Only can use in SMP86xx chip set which support video codec rmvb.
+
+			config PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				bool "Enable toolchain compile cache (it seems to related nand flash write)"
+				depends on PLATFORM_SMP8654_TOOLCHAIN_3_6_0
+				default y 
+
+			config TOOLCHAIN_FILENAME
+				string
+				default "toolchain_smp86xx_3.4.0.tgz" if PLATFORM_SMP8654_TOOLCHAIN_3_4_0
+				default "smp86xx_toolchain_R3.6_nofpu.tgz" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "toolchain_smp86xx_3.6.0.tgz" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && ! PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "mips-4.3.tgz" if PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+			config CROSS_BIN
+				string
+				default "/opt/smp86xx_toolchain_3.4.0/bin/" if PLATFORM_SMP8654_TOOLCHAIN_3_4_0
+				default "/opt/smp86xx_toolchain_R3.6_nofpu/build_mipsel_nofpu/staging_dir/bin/" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "/opt/smp86xx_toolchain_R3.6/bin/" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && ! PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "/opt/mips-4.3/bin/" if PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+			config CROSS
+				string
+				default "$(CROSS_BIN)/mipsel-linux-"
+			config CROSS_PREFIX
+				string
+				default "/opt/smp86xx_toolchain_3.4.0/" if PLATFORM_SMP8654_TOOLCHAIN_3_4_0
+				default "/opt/smp86xx_toolchain_R3.6_nofpu/build_mipsel_nofpu/staging_dir/" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "/opt/smp86xx_toolchain_R3.6/" if PLATFORM_SMP8654_TOOLCHAIN_3_6_0 && ! PLATFORM_SMP8654_TOOLCHAIN_3_6_0_CACHE
+				default "/opt/mips-4.3/" if PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		endmenu
+
+		config SIGMA_SDK_VERSION
+			string
+			default "2.8.3.0" if PLATFORM_SMP8634_SDK_2_8_3_0 
+			default "2.8.4.1" if PLATFORM_SMP8634_SDK_2_8_4_1 
+			default "3_5_0" if PLATFORM_SMP8654_SDK_3_5_0 
+			default "3_6_0_rc11" if PLATFORM_SMP8654_SDK_3_6_0_rc11 
+			default "3_6_0" if PLATFORM_SMP8654_SDK_3_6_0 
+			default "3_6_1_rc2" if PLATFORM_SMP8654_SDK_3_6_1_rc2
+			default "3_7_0" if PLATFORM_SMP8654_SDK_3_7_0
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_0
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_1
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_2
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_3
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_4
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_5
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_5_WD0
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_7
+			default "3_8_0" if PLATFORM_SMP8654_SDK_3_8_8 || PLATFORM_SMP8670_SDK_3_8_8
+
+		menu "x86 compile options"
+			depends on PLATFORM_X86
+		endmenu
+
+	endmenu
+
+	menu "Component to build"
+		config BUILD_DMAOSD
+			bool "build dmaosd"
+			default	y
+		config BUILD_DMARENDER
+			bool "build DMARender"
+			default	y if !PLATFORM_X86
+		config BUILD_MISC
+			bool "build misc utility"
+			default y
+		config BUILD_MEDIALOGIC
+			depends on !PLATFORM_X86
+			bool "build MediaLogic"
+			default y
+		config BUILD_EXTERNAL_PACKAGES
+			bool "build external packages"
+			default y
+		config	BUILD_ROOTFS
+			bool "Install rootfs"
+			default y
+		config	BUILD_ROOTFS_PRIMARY_SYSTEM
+			depends on !PLATFORM_X86
+			bool "Install primary system rootfs"
+			default y
+		config BUILD_FIRMWARE
+			bool "Build final firmware"
+			default y
+	endmenu
+
+
+
+	menu "Repository"
+		config	REPOSITORY_IP
+			string "Repository IP address"
+			default	"172.19.149.41"
+	
+		config	REPOSITORY_PATH
+			string "Repository path"
+			default "dmax/trunk"
+		config	SPECIFY_SVN_VERSION
+			bool "Specify SVN version"
+			default n	
+		config	SVN_VERSION
+			depends on SPECIFY_SVN_VERSION
+			int "version"
+	endmenu
+endmenu
+
+menu "Features"
+	config DBUS
+		bool "Enable DBUS"
+		default	n if PLATFORM_X86
+		default	n
+		help
+			I decided to use DBUS as status BBS.
+	menu "Networking features"
+		config ENABLE_NETWORKING
+			bool "Enable networking"
+		menu "Built-in web server support"
+			depends on ENABLE_NETWORKING
+			config WEB_SERVER_APACHE
+				bool "Apache web server support"
+				default n
+			config WEB_SERVER_APACHE_INSTALL_PATH
+				depends on WEB_SERVER_APACHE
+				string "Install path"
+				default "/webserver"
+			config WEB_SERVER_PHP
+				bool "PHP support"
+				default y
+				depends on WEB_SERVER_APACHE 
+			
+
+
+		endmenu
+
+		config WD_ORION
+			bool "WD's orion support"
+			default n
+			depends on PRODUCT_EXT_WDTV_RV && !BUILD_GPL_FIRMWARE 
+		config WD_ORION_BLOCK_80_PORT_WAN_ACCESS
+			bool "Block 80 port's WAN access"
+			default n
+			depends on WD_ORION
+			select	OPENSSL
+			help
+				This is requested by WD. They don't want 80 port to 
+				be accessed from WAN.
+
+		config DMA_SLAVEMODE 
+			bool "Support slave mode for external CP to play"
+			default n
+			depends on ENABLE_NETWORKING
+			help
+				If you want to use external CP to play media file to device, you should disable this option.
+				If render get external CP command, OSD will hide page to play media file.
+		config DMA_SLAVEMODE_SUPPORT_FF_REV_FUNCTION_FOR_VIDEO_PLAYING
+			bool "[Slavemode] support ff/rev function for video_ex_playing"
+			default n if PRODUCT_EXT_LMP555
+			depends on DMA_SLAVEMODE
+			help
+				If you want to support ff/rev function on video_ex_playing, please turn on this option.
+		config DMA_SLAVEMODE_DONT_AUTO_POP_PLAYING_PAGE
+			bool "[Slavemode] Don't pop playing page when continuous playing by slave mode "
+			default y if PRODUCT_EXT_LMP555
+			depends on DMA_SLAVEMODE
+			help
+				By default playing page will be popped when media file is changed. This is caused by the STOP command sent by control point.
+				However, for device which is used in shop as demo machine, it should not pop to parent page when changing files.
+		config NETSERVICE_NOT_APPLY_COMMAND
+			bool "Do not apply networking commands"
+			default n
+			help
+				This one is tricky.
+				If you are debuging on x86 platform, you may use remote login and 
+				you may not want the IP address to be changed. If so, you should
+				turn this on.
+		config SUPPORT_IP_LOCATOR
+			bool "Support ip locator(get country code or time zone by IP)"
+			default n
+			depends on ENABLE_NETWORKING
+			help
+				If you want to use current ip to get country-code or time zone or other(please refer
+				http://www.geobytes.com/IpLocator.htm?GetLocation to see), you could enbale this.
+		config ENABLE_REGISTRATION
+			bool "Enable on-line registration"
+			default n
+			depends on ENABLE_NETWORKING && (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+			help
+				This feature is used to register on line (only for WD)
+		config SUPPORT_CHECK_CONNECTION
+			bool "Support check connection"
+			default n
+			depends on ENABLE_NETWORKING
+			help
+				If you want to support "check connection" (check internet state is ready or not), please
+				turn on this option and set connection host in CHECK_CONNECTION_HOST.
+		config CHECK_CONNECTION_HOST
+			string "Check connection host"
+			depends on SUPPORT_CHECK_CONNECTION
+		config LAN_INTERFACE
+			string "LAN interface"
+			default	"eth0"
+		config ENABLE_AUTOIP
+			bool "enable autoip"
+			default y 
+			depends on ENABLE_NETWORKING
+		config IPERF_TOOL
+			bool "iperf tool"
+			default n
+			depends on ENABLE_NETWORKING
+		config YOTA_NETWORK_SUPPORT
+			bool "Yota support"
+			default n
+			depends on !BUILD_GPL_FIRMWARE
+		config WIRELESS_SUPPORT
+			bool "wireless support"
+			default n
+		config DROP_DUPLICATE_SSID
+			bool "Drop duplicate SSID in site survey list"
+			default y
+			depends on WIRELESS_SUPPORT
+		config WIRELESS_PROFILE_SUPPORT
+			bool "enable wireless profile support"
+			default y
+			depends on WIRELESS_SUPPORT && ( PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+			help
+				When this option is enabled, wireless will remember five wireless profile,
+				and try to associate them while device boot up. 
+				Notice: your must add config to save these profile information in config file.
+		config WIRELESS_PROFILE_NUM
+			int "wireless profile number"
+			default 5
+			depends on WIRELESS_PROFILE_SUPPORT
+			help
+				The total number of wireless profile.
+		config WIRELESS_PROFILE_PAGE_SUPPORT
+			bool "enable wireless favorite profile page"
+			default y
+			depends on WIRELESS_PROFILE_SUPPORT
+			help
+				When this option is disabled, the system page don't display wireless favorite profile page
+				in network for user to configure. And system uses the default order(0->1->2->3->4) to 
+				save/connect wireless profiles.
+		config WIRELESS_PREFERENCE_IN_SETUP_WIZARD
+			bool "enable wireless preference in network setup wizard"
+			default y
+			depends on WIRELESS_PROFILE_SUPPORT && (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+			help
+				Enable wireless preference in network setup wizard
+		config WIRELESS_TOOLS
+			bool "Enable Wireless tools"
+			default y
+			depends on WIRELESS_SUPPORT
+		config WLAN_INTERFACE
+			string "WAN interface"
+			default "eth1"
+			depends on WIRELESS_SUPPORT
+		config WIRELESS_SITE_SURVEY_SORT_BY_SIGNAL_STRENGTH
+			bool "site survey result sort by signal strength support"
+			default y
+			depends on WIRELESS_SUPPORT
+			help	
+				Enable this feature, if you want the site survey result sort by signal strength(strong->weak).
+		config WIRELESS_RALINK_SOLUTION
+			bool "Ralink solution support"
+			default y if OEM_LMP555_LACIE
+			depends on WIRELESS_SUPPORT
+		config WIRELESS_MINIPCI_CARD
+			bool "Mini PCI card support"
+			default y if OEM_LMP555_LACIE
+			depends on WIRELESS_SUPPORT
+
+		config WIRELESS_MARVELL
+			bool "Marvell 8363 mini pci support"
+			default y
+			depends on WIRELESS_MINIPCI_CARD
+		config WIRELESS_AR5413
+			bool "Atheros AR5413 mini pci support"
+			default y
+			depends on WIRELESS_MINIPCI_CARD
+		config WIRELESS_RT2880
+			bool "Ralink RT2880 mini pci support"
+			default y
+			depends on WIRELESS_MINIPCI_CARD && WIRELESS_RALINK_SOLUTION
+		config WIRELESS_RT2860
+			bool "Ralink RT2860 mini pci support"
+			default y
+			depends on WIRELESS_MINIPCI_CARD && WIRELESS_RALINK_SOLUTION
+
+		config WIRELESS_USB_DONGLE
+			bool "USB dongle support"
+			default y if OEM_LMP555_LACIE || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+			depends on WIRELESS_SUPPORT
+
+		config WIRELESS_BCM4323
+			bool "Broadcom BCM4323 usb support"
+			default n
+			depends on WIRELESS_USB_DONGLE
+
+		config WIRELESS_RTL8192
+			bool "Realtek RTL8192 usb support"
+			default n
+			depends on WIRELESS_USB_DONGLE
+
+		config WIRELESS_RTL8712
+			bool "Realtek RTL8712 usb support"
+			default y
+			depends on WIRELESS_USB_DONGLE
+
+		config WIRELESS_RTL8192CU
+			bool "Realtek RTL8192CU usb support"
+			default n
+			depends on WIRELESS_USB_DONGLE
+
+		config WIRELESS_AR9170
+			bool "Atheros AR9170 usb support"
+			default y
+			depends on WIRELESS_USB_DONGLE && !PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+
+		config WIRELESS_RT2870
+			bool "Ralink RT2870 usb support"
+			default y
+			depends on WIRELESS_USB_DONGLE && WIRELESS_RALINK_SOLUTION
+		choice
+			depends on WIRELESS_RT2870
+			prompt "select driver version"
+			config RT2870_VERSION_2_4_0_0
+				bool "2.4.0.0"
+			config RT2870_VERSION_2_1_0_0
+				bool "2.1.0.0"
+				depends on !PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+		endchoice
+
+		config WIRELESS_RT3070
+			bool "Ralink RT3070 usb support"
+			default y
+			depends on WIRELESS_USB_DONGLE && WIRELESS_RALINK_SOLUTION
+		choice
+			depends on WIRELESS_RT3070
+			prompt "select driver version"
+			config RT3070_VERSION_2_5_0_1
+				bool "2.5.0.1"
+			config RT3070_VERSION_2_1_0_0
+				bool "2.1.0.0"
+				depends on !PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+		endchoice
+
+		config WIRELESS_RT3572
+			bool "Ralink RT3572 usb support"
+			default y
+			depends on WIRELESS_USB_DONGLE && WIRELESS_RALINK_SOLUTION
+		choice
+			depends on WIRELESS_RT3572
+			prompt "select driver version"
+			config RT3572_VERSION_2_5_0_0
+				bool "2.5.0.0"
+			config RT3572_VERSION_2_1_2_0
+				bool "2.1.2.0"
+				depends on !PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+		endchoice
+
+		config WPA_SUPPLICANT
+			bool "Enable WPA Supplicant"
+			default y if WIRELESS_AR9170
+			depends on WIRELESS_SUPPORT
+		config PROXY
+			bool "Support proxy"
+			default y if  PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default n	
+		config SUPPORT_NFS
+                        bool "Support nfs client"
+                        default n
+                        depends on ENABLE_NETWORKING
+                        help
+                                If you want to "browse nfs server" funtion, please enable this option.
+		config NFS_MOUNT_POINT
+			string
+			depends on SUPPORT_NFS
+			default "/tmp/nfs"
+
+		comment "samba client feature"
+		config SAMBA
+			bool "Enable samba browse"
+			default y if (ENABLE_NETWORKING && BROWSE_HANDLER)
+			depends on (ENABLE_NETWORKING && BROWSE_HANDLER)
+		choice
+			depends on SAMBA
+			prompt "select samba package version"
+			config SAMBA_VERSION_3_0_28A
+				bool "3.0.28a"
+			config SAMBA_VERSION_3_5_1
+				bool "3.5.1"
+			config SAMBA_VERSION_3_5_6
+				bool "3.5.6"
+			config SAMBA_VERSION_3_5_8
+				bool "3.5.8"
+		endchoice
+		config SAMBA_VERSION
+			string
+			default "3.0.28a" if SAMBA_VERSION_3_0_28A
+			default "3.5.1" if SAMBA_VERSION_3_5_1
+			default "3.5.6" if SAMBA_VERSION_3_5_6
+			default "3.5.8" if SAMBA_VERSION_3_5_8
+		config SAMBA_PACKAGE_3_5_1_SUPPORT_3_0_28A_CLIENT
+			bool "Samba package 3.5.1 supports to use 3.0.28a samba client"
+			depends on SAMBA_VERSION_3_5_1
+			default n
+		config SAMBA_WORKGROUP
+			bool "Support to modify samba workgroup"
+			depends on SAMBA
+			default y if PRODUCT_EXT_WDTV_RV
+		config SAMBA_SUPPORT_ONLY_BROWSE_WORKGROUP_SERVERS
+			bool "Support to only browse workgroup servers"
+			depends on SAMBA_WORKGROUP
+			default y if PRODUCT_EXT_WDTV_RV
+			help
+				This feature is let use only browse samba servers which are belong to your workgroup.
+		config SAMBA_INSTALL_SMBCLIENT
+			bool "Install smbclient"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+			default n
+			depends on SAMBA
+		config SAMBA_CONF_PATH
+			depends on SAMBA
+			string "samba conf path"
+			default "/tmp/smb.conf"
+		config SAMBA_MOUNT_POINT
+			depends on SAMBA
+			string "samba mount point"
+			default "/tmp"
+		config AUTO_LOGIN
+			depends on SAMBA
+			bool "[SAMBA FEATURE]Enable auto login"
+			default y
+			help
+				This feature is only used for samba.
+				If you enable this feature, system will use preset user-info or anonymous to login.
+		config SAMBA_CLIENT_SUPPORT_AUTO_SERVERLIST_REFRESH
+			depends on SAMBA
+			bool "[SAMBA FEATURE]Enable samba server list refresh function automatically"
+			default n
+			help
+				If you turn on this option, system will do serverlist-refresh action per 2 minutes at background.
+		config SAMBA_CLIENT_SUPPORT_SERVERLIST_REFRESH
+			depends on SAMBA
+			bool "[SAMBA FEATURE]Enable samba server list refresh function manually"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				If you turn on this option, system will do serverlist-refresh action when enter browsing samba serverlist.
+				Ex: [Villa] enter Video/Audio/Photo --> Network Shares --> do serverlist-refresh
+		config CLEAR_USERACCOUNT
+			depends on SAMBA
+			bool "[SAMBA FEATURE]Enable clear useraccount"
+			default y
+			help
+				This feature is only used for samba.
+				If you enable this feature, you must select you want to "clear password only" or "clear
+				all userinfo". The default option is "clear all userinfo"
+		choice
+			prompt "[SAMBA FEATURE]Select Option of Clearing Userinfo"
+			depends on CLEAR_USERACCOUNT
+			default CLEAR_ALL_USERINFO
+			config CLEAR_ALL_USERINFO
+				bool "clear all userinfo"
+			config CLEAR_PASSWORD
+				bool "clear password only"
+		endchoice
+		choice
+			prompt "[SAMBA FEATURE]Select CIFS MOUNT PROPERTY"
+			depends on SAMBA
+			default SAMBA_CIFS_MOUNT_READ_ONLY
+			config SAMBA_CIFS_MOUNT_READ_ONLY
+				bool "samba mount with read-only"
+			config SAMBA_CIFS_MOUNT_READ_WRITE
+				bool "samba mount with read-write"
+		endchoice
+		config DEBUG_SMBTREE 
+			depends on PLATFORM_X86 
+			bool "Debug samba under x86. Press home key to reflash"
+			default y
+		config SUPPORT_NETWORK_SERVER_MOUNT
+			depends on SAMBA
+			bool "support network server mount"
+			default y if SAMBA
+			help
+				If support samba or nfs client, you must enable this option to mount server.
+		config UNO_SUPPORT_SAMBA_CLIENT_BROWSE
+			depends on SAMBA && PRODUCT_EXT_UNO
+			bool "[UNO for mp_test] support samba client browse"
+			default n
+			help
+				[UNO: only for mp_test]
+				If you enable this option, you can browse samba server by files entry.
+		config SUPPORT_NETWORK_SYNC_DAEMON
+			depends on ENABLE_NETWORKING && SAMBA
+			bool "support network sync daemon"
+			default y if SUPPORT_NETWORK_SYNC
+			help
+				1. Support	1) NETWORK_SYNC_DAEMON_TYPE_CHECK_MOUNT : try to mount samba-server
+						2)NETWORK_SYNC_DAEMON_TYPE_SYNC_DATA : copy data from samba-server to local storage
+				2. if you enable this option, please check SUPPORT_RSYNC is enable or not. if SUPPORT_RSYNC is disable, please enable it.
+		config DMA_UPNP
+			bool "UPNP support"
+			default y
+			depends on ENABLE_NETWORKING
+		config DEVICE_MODEL_DESC
+			string "device model description"
+			depends on DMA_UPNP
+			default "Alphanetworks Media Center Extender Prototype"
+		config DEVICE_MODEL_NAME
+			string "device model name"
+			depends on DMA_UPNP
+			default "DMAX" 
+		config DEVICE_MODEL_NUM
+			string "device model number"
+			depends on DMA_UPNP
+			default "default"
+		config DEVICE_MODEL_URL
+			string "device model URL"
+			depends on DMA_UPNP
+			default "http://www.alphanetworks.com"
+		config DEVICE_MANUFACTURER_URL
+			string "device manufacturer URL"
+			depends on DMA_UPNP
+			default "http://www.alphanetworks.com"
+		config DEVICE_MANUFACTURER_NAME
+			string "device manufacturer name"
+			depends on DMA_UPNP
+			default "Alpha Networks Co., LTD."
+		config DMA_DLNA
+			bool "DLNA support"
+			default y
+			depends on ENABLE_NETWORKING
+		config WMC_WITH_WRONG_BITRATE
+			bool "WMC with wrong bitrate"
+			default y
+		config ZEROCONF
+                        bool "support ZEROCONF"
+                        depends on ENABLE_NETWORKING
+                        default y if PRODUCT_EXT_LMP555
+                config LACIE_WEB_SERVER
+                        bool "Support Lacie web server"
+                        depends on ENABLE_NETWORKING && PRODUCT_EXT_LMP555
+                        default y
+		config WIN7_WAKEONLAN
+			bool "support WIN7 media server's wakeonlan"
+			depends on ENABLE_NETWORKING
+			default n
+		config DEVICE_NAME
+	       		string "device name"
+			default ""
+			help
+				The default value of device-name is "".
+				This value will affect in /etc/hostname ,config(DMA_NAME) and server's name.
+		menu "Media server list"
+			depends on ENABLE_NETWORKING
+			config HOME_ENTER_ALWAYS_SERVER_LIST
+				bool "Home enter always server list (What the fuck?)"
+				default y
+			config MOVE_DEFAULT_M_SERVER_FIRST
+				bool "Move default M server first (What the fuck?)"
+				default y
+		endmenu
+			
+		menu "Internal Media Server"
+			depends on ENABLE_NETWORKING
+			config UPNP_MEDIA_SERVER_SUPPORT
+				bool "UPnP media server support"
+				default n
+				depends on STORAGE_SUPPORT && !BUILD_GPL_FIRMWARE
+			config DMA_SUPPORT_LOOPBACK
+				depends on UPNP_MEDIA_SERVER_SUPPORT
+				bool "Media server binds on lo device"
+				default y
+			menu "select UPNP server"
+				depends on UPNP_MEDIA_SERVER_SUPPORT
+				config TWONKYMEDIA_SERVER_SUPPORT
+					bool "Twonkymedia server support"
+					default y
+			endmenu
+			comment "twonky server feature"
+			config TWKY_PATH
+				depends on TWONKYMEDIA_SERVER_SUPPORT
+				string
+				default "../usr/local/TwonkyVision" if PLATFORM_X86
+	                        default "/usr/local/TwonkyVision" if PLATFORM_SMP8654 || PLATFORM_SMP8670
+			config TWKY_SUPPORT_TO_SAVE_DB_IN_STAT
+				depends on TWONKYMEDIA_SERVER_SUPPORT && (PLATFORM_SMP8654 || PLATFORM_SMP8670)
+				bool "support save twky-database in sata"
+				default n
+				help
+					This option is only used for 8654 platform. It's used to save the database of twonkymedia-server in built-in SATA hard disk.
+			config TWKY_DISABLE_WEB_CONFIG_PAGE
+                                depends on TWONKYMEDIA_SERVER_SUPPORT && (PLATFORM_SMP8654 || PLATFORM_SMP8670)
+                                bool "disable twonkymedia-server web config page"
+                                default y if PRODUCT_EXT_LMP555
+                                help
+                                        This option is only used for 8654 platform. If you want to disable web config page for twonkymedia server, please enable this option.
+			config SAMBA_SERVER
+				bool "samba server support"
+				default n
+				depends on STORAGE_SUPPORT
+			comment "samba server feature"
+			config SAMBA_SERVER_SUPPORT_SECURITY
+				bool "support samba server's security"
+				depends on (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV) && SAMBA_SERVER && SUPPORT_SYSTEM_ACCOUNT
+				default y
+				help
+					If you want to support username/password for your samba server, please enable this option.
+			config SAMBA_FTRUNCATE_PATCH
+				depends on SAMBA_SERVER
+				bool "Don't generate the file before copying."
+				default n
+			config SAMBA_SERVER_SCRIPT
+				depends on SAMBA_SERVER
+				string "samba server script path"
+				default "/bin/run_samba"
+			config SAMBA_SERVER_DESCRIPTIVE_COMMENT_STRING
+				depends on SAMBA_SERVER
+				string "samba server descriptive comment string"
+				default "This is my samba server"
+				help
+					You can modify this option to change samba descriptive string
+			choice
+				prompt "[SAMBA SERVER]Handle Samba Server Duplicated Name"
+				depends on SAMBA_SERVER
+				default SAMBA_SERVER_RENAME_DUPLICATE_NAME_METHOD1 if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_ALPHA || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+				default SAMBA_SERVER_RENAME_DUPLICATE_NAME_METHOD2 if PRODUCT_EXT_LMP555
+				config SAMBA_SERVER_RENAME_DUPLICATE_NAME_METHOD1
+					bool "rename duplicate name method 1"
+					help
+						We don't rename first plug-in USB's partiotion name.
+						Ex:
+						1. plug in USB1: aa, aa-1
+						2. plug in USB2: aa
+						   aa is duplicate so we must rename it as aa-1 but aa-1 is also duplicate 
+						   then we rename it as aa-2
+				config SAMBA_SERVER_RENAME_DUPLICATE_NAME_METHOD2
+					bool "rename duplicate name method 2"
+					help
+						We will rename first plug-in USB's partition name.
+						Ex:
+						1. plug in USB1: aa, aa-1
+						2. plug in USB2: aa
+						3. sort as: aa, aa, aa-1
+						4. rename as: aa-1, aa-2, aa-1-1
+			endchoice
+		endmenu
+
+		config NETATALK
+			bool "Support AFP(Apple Filing Protocol)"
+			depends on ENABLE_NETWORKING
+			default n
+
+		config DMA_VILLA_ONLINE_MATRIX
+			bool "Online matrix style UI"
+			default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA)
+			depends on (ENABLE_NETWORKING)
+
+		config DMA_LIVE365
+			bool "Enable live365 function"
+			default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+			depends on (ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE)
+		
+		config DMA_LIVE365_VIP
+			bool "Enable live365 VIP"
+			default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+			default n if PRODUCT_EXT_LMP555
+			depends on DMA_LIVE365
+			
+		config DMA_FLICKR
+			bool "Enable filckr function"
+			default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+			depends on (ENABLE_NETWORKING && BROWSE_HANDLER)
+			menu "Flickr options"
+				depends on DMA_FLICKR
+				config DMA_FLICKR_DOWNLOAD
+					bool "Enable flickr downloading"
+					default n
+				config DMA_FLICKR_WITH_SEARCH_HEAD
+					bool "Enable flickr with search on static head"
+					default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV) 
+
+				choice
+					prompt "Flickr API key"
+					config FLICKR_API_KEY_WD
+						bool "WD"
+						depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+					config FLICKR_API_KEY_ALPHA
+						bool "Alpha Generic"
+					config FLICKR_API_KEY_LACIE
+						bool "Lacie Generic"
+				endchoice
+				config DMA_FLICKR_API_KEY
+					string
+					default "" if BUILD_GPL_FIRMWARE
+					default "7f767c35af1280480a9987ec9b4cb964" if FLICKR_API_KEY_WD
+					default "547364fd6e54ec7a456b73e467147946" if FLICKR_API_KEY_ALPHA
+					default "77211bc3b62bd13183c817db421d23d7" if FLICKR_API_KEY_LACIE
+				config DMA_FLICKR_SCRECT_KEY
+					string
+					default "" if BUILD_GPL_FIRMWARE
+					default "9f243ce2dc6d1a9b" if FLICKR_API_KEY_WD
+					default "a483f14791816714" if FLICKR_API_KEY_ALPHA
+					default "955138f2ee6cf0a7" if FLICKR_API_KEY_LACIE
+			endmenu
+		config DMA_PANDORA
+			bool "Enable pandora function"
+			default y if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+			depends on (ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE)
+		config OSSP
+			bool "Enable Online Service Slave Process. Some online services need to use this module."
+			default n
+			depends on ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE
+			help
+				It should be enabled while MEDIAFLY or DEEZER is need to be supported.
+		config DMA_MEDIAFLY
+			bool "Enable MediaFly. Please choose HTTP_HEADER_KEEP_ORIGNAL_HOSTNAME as y below because the server wants hostname which the server gives."
+			default n
+			depends on OSSP
+		config MEDIAFLY_COMBINE_POPULAR_MYCHANNEL
+			bool "Combine popular channel in my channel"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_MANAGER_USER_IN_DASHBOARD
+			bool "Add manager user in dashboard"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_SEARCH_IN_DASHBOARD
+			bool "Add search in dashboard"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_MCODE_IN_DASHBOARD
+			bool "Add mcode in dashboard"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_COMBINE_CONTENT_SOURCE
+			bool "Combine user content source with server content source"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_SEARCH_WITH_SEARCHTYPE
+			bool "Filter search result with search type"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_API_3_0
+			bool "API 3.0"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_USE_SN_FOR_DEVICE_ID
+			bool "Use serial number as part of device id"
+			default n
+			depends on DMA_MEDIAFLY
+		config MEDIAFLY_OFFICIAL_PROFILE
+			bool "Use the profile with call signature"
+			default y
+			depends on DMA_MEDIAFLY
+		config DMA_DEEZER
+			bool "Enable Deezer"
+			default n
+			depends on OSSP
+		config DMA_RADIOTIME
+			bool "Enable RadioTime"
+			default n
+			depends on OSSP
+		config DMA_CINEMANOW
+			bool "Use CinemaNow SDK"
+			default n
+			depends on !BUILD_GPL_FIRMWARE
+		config DMA_BLOCKBUSTER_UI_INSTANCE
+			bool "Enable BlockBuster UI Instance"
+			depends on DMA_CINEMANOW
+		config DMA_BESTBUY_UI_INSTANCE
+			bool "Enable Bestbuy UI Instance"
+			depends on DMA_CINEMANOW
+		config CHANGE_CINEMANOW_PRODUCT_MODE
+			bool "Enable back door to change cinemanow product mode"
+			depends on DMA_CINEMANOW
+		config CINEMANOW_DO_NOT_GET_ENVIRONMENT_SETTING_FROM_SERVER
+                        bool "always point device to production base server"
+                        default n
+                        depends on (PRODUCT_EXT_WDTV_VILLA_BUNGALOW && DMA_CINEMANOW)
+		config CINEMANOW_PREFERENCE_STYLE_V2
+			bool "Show Preference with Style v2"
+			default n
+			depends on DMA_CINEMANOW
+		config CLEAR_PREFETCH_WHEN_LEAVING
+			bool "Clear prefetch resource when leaving Cinemanow relative page"
+			default n
+			depends on DMA_CINEMANOW
+		config USE_PANDORA_OFFICAL_URL
+			bool "enable it when pandora approve the firmware"
+			default n
+			depends on DMA_PANDORA
+			help
+				Enable this option will change the pandora server url to offical's.
+		config PANDORA_SUPPORT_AUTOCOMPLETE
+			bool "enable auto complete function on create station page."
+			default n
+			depends on DMA_PANDORA
+			help
+				Enable this option will push create station page with auto complete.
+		config DMA_PICASA
+		    bool "Enable Picasa function"
+			default n if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA)
+	        depends on (ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE)
+	        help
+			    This feature enables Picasa supports.
+				While enabling this feature, the picasa library will be installed and browse handler 
+				will support Picasa function. The UI page will not depend on this feature.
+			menu "Picasa options"
+				depends on DMA_PICASA
+				config DMA_PICASA_WITH_SEARCH_HEAD
+                    bool "Enable picasa with search on static head"
+                    default y if (PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555)
+			endmenu
+        config DMA_YOUTUBE
+            bool "Enable Youtube function"
+            default n if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+            depends on (ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE)
+			help
+				This feature enables Youtube supports. 
+				While enabling this feature, the youtube library will be installed and browse handler
+				will support Youtube function. The UI page will not depend on this feature.		
+			menu "Youtube options"
+				depends on DMA_YOUTUBE
+				config DMA_YOUTUBE_DOWNLOAD
+					bool "Enable youtube downloading"
+					default n
+				config DMA_YOUTUBE_RECENT_VIDEOS
+					bool "Enable youtube feature of recent videos"
+					default n
+					help
+						This feature has some side effect if we need mpeg4 formatted video streams.
+						Most recent videos may just uploaded but the transcode to mpeg4 format may
+						not completed.
+				config DMA_YOUTUBE_SEARCH_LIST
+					bool "Enable search list for youtube"
+					default n
+					help
+						If turned on, it will check /HDD_mount_point/yt_search_list file and generates
+						a list to search from the file.
+
+				config DMA_YOUTUBE_STRONG_AUTH
+					bool "Enable youtube strong device authentication process"
+					default n if RESOURCE_VILLA
+					default n
+				config DMA_YOUTUBE_FILTEROUT_VIDEO
+					bool "Enable to filter out videos that doesn't support mpeg4"
+					depends on DMA_YOUTUBE_STRONG_AUTH
+					default n
+				config DMA_YOUTUBE_AUTOGEN_SN
+					bool "To auto generate a fake S/N(id) if the system doesn't have one."
+					depends on DMA_YOUTUBE_STRONG_AUTH
+					default n
+					help
+						To auto generate a fake S/N(id) if the system doesn't have one.
+						This auto generated S/N will not set to system's flash and will not be stored.
+						It is only used for YouTube device registration.
+				config DMA_YOUTUBE_DEBUG
+					bool "Enable to print out debug messages."
+					default n
+				config DMA_YOUTUBE_DEBUG_TO_FILE
+					bool "Enable to save log to a local file."
+					default n
+				config DMA_YOUTUBE_PRODUCT_NAME
+					string
+					default "WDTVHDMediaPlayer" if RESOURCE_VILLA
+					default "HDDigitalMediaPlayer" 
+				config DMA_YOUTUBE_CLIENT_ID
+					string
+					default "ytapi-WesternDigital-WDTVHDMediaPlaye-5qo56c3v-0" if RESOURCE_VILLA
+					default "ytapi-ALPHANetworks-HDDigitalMediaPl-g2cgn5e5-0" if RESOURCE_TVDOCK_ALPHA
+					default "ytapi-MyMediaPlayer-1234567-0"
+				config DMA_YOUTUBE_DEVELOPER_KEY
+					string
+					default "AI39si577Qh0xIi5dJPtTY0IxYvwb8zgGWSIwIqe42UHaYw5czTuf7_Yu1L1T3uvChPllvSD9YTt3vGPtBokPX7BLKek-ght3Q" if RESOURCE_VILLA
+					default "AI39si4KvhT36nM1-RRla4mUPAUYmHrPdApNT0pgC9aywq8ABMrWnuNgO2lKklJDYf6gSOn6apt9cL93D36PSfmFdoD-1C8fZQ" if RESOURCE_EM7075
+					default "AI39si7qjqVjcP1ElCDBs8Brr18-4k-4s5wLHxvzoDRLPR9RhZ8CdXht_DAd--NHItbDvmDE1Au8RCjrpXc6udZZ0AWy_p0c7A" if RESOURCE_LMP555
+					default "AI39si6qtU8Yk71b6FVhnFqPIUsZKLG0_ypuJuilP4Hal5Sot0GJNJKMTaJ9bt5bdhNu8Yw5UZmbcpM4abyA_wtH1ZJsQWxMsQ"
+				config DMA_YOUTUBE_DEVELOPER_SECRET
+					string
+					default "NHcVJX4QAAxtaiVrUIXP0A==" if RESOURCE_VILLA
+			endmenu
+        config DMA_YOUTUBE_LEANBACK
+            bool "Enable Youtube leanback"
+            default n if (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV)
+            depends on (ENABLE_NETWORKING && QT_WEB_KIT)
+			help
+				This feature enables Youtube leanback supports. 
+				While enabling this feature, the youtube library will be installed and browse handler
+				will support Youtube function. The UI page will not depend on this feature.		
+				
+			config DMA_FACEBOOK
+				bool "Enable Facebook function"
+				default n
+				depends on (ENABLE_NETWORKING && BROWSE_HANDLER && !BUILD_GPL_FIRMWARE)
+				help
+					This feature enables Facebook supports.
+			menu "Facebook options"
+				choice
+					depends on DMA_FACEBOOK
+					default DMA_FACEBOOK_DEVELOPER_TEST
+					prompt	"Select the type of keys."
+					config	DMA_FACEBOOK_DEVELOPER_TEST
+						bool "Facebook developer test"
+						help
+							Three keys should be specified to Facebook for each API calls : 
+								Application ID, API Key, and Application Secret.
+							Facebook Server provides 2 packs of keys above, select this for developing time.
+					config	DMA_FACEBOOK_RELEASE_VERSION
+						bool "Facebook release version"
+						help
+							Three keys should be specified to Facebook for each API calls : 
+								Application ID, API Key, and Application Secret.
+							Facebook Server provides 2 packs of keys above, select this for final release.
+				endchoice	
+				config DMA_FACEBOOK_APP_ID
+					string
+					default "204923868039" if (RESOURCE_VILLA && DMA_FACEBOOK_DEVELOPER_TEST)
+					default "please-fill-in-when-final-release" if (RESOURCE_VILLA && DMA_FACEBOOK_RELEASE_VERSION)
+				config DMA_FACEBOOK_API_KEY
+					string
+					default "328de2302e6863f20818f11341603233" if (RESOURCE_VILLA && DMA_FACEBOOK_DEVELOPER_TEST)
+					default "please-fill-in-when-final-release" if (RESOURCE_VILLA && DMA_FACEBOOK_RELEASE_VERSION)
+				config DMA_FACEBOOK_APP_SECRET
+					string
+					default "c118ba8bf718108139fcaec8fd7f973e" if (RESOURCE_VILLA && DMA_FACEBOOK_DEVELOPER_TEST)
+					default "please-fill-in-when-final-release" if (RESOURCE_VILLA && DMA_FACEBOOK_RELEASE_VERSION)
+
+			endmenu
+               config DMA_SHOUTCAST
+                       bool "Enable Shoutcast function"
+                       default n
+                       depends on (ENABLE_NETWORKING && BROWSE_HANDLER)
+                       help
+				This feature enables Shoutcast supports.
+		config HOWL
+			bool "Support Bonjour"
+			depends on ENABLE_NETWORKING
+			default n
+		config BONJOUR_EDCP_SERVICE
+			bool "Support EDCP service of Bonjour"
+			depends on HOWL && PRODUCT_EXT_LMP555
+			default n 
+		config LACIE_BONJOUR_MODEL_NAME
+			string "[Lacie Only] model_name of _device-info._tcp (Bonjour)"
+			depends on HOWL && PRODUCT_EXT_LMP555
+			default "lacinemaclassichd"
+			help
+				This option is only for Lacie's Bonjour Protocl.
+				Lacie want to add two bonjour services:
+					[Mini_HD]: "[MACHINE_NAME]" _device-info._tcp local. 0 "model=lacinemaminihd"
+					[Classic HD]: "[MACHINE_NAME]" _device-info._tcp local. 0 "model=lacinemaclassichd"
+				So, we use this LACIE_BONJOUR_MODEL_NAME to save model name.
+		config ITUNE_SUPPORT
+			bool "Support iTune discovery and playback from iTune"
+			depends on ENABLE_NETWORKING
+			default n
+
+		config DMA_BT
+                        bool "Enable the BT feature"
+                        default y if PRODUCT_EXT_LMP555
+                        depends on ENABLE_NETWORKING
+
+                config DMA_BT_SCRIPT
+                        depends on DMA_BT
+                        string "The bt feature script path"
+                        default "/bin/btscript.sh"
+
+                config DMA_BT_PAUSE_SCRIPT
+                        depends on DMA_BT
+                        string "The bt pause script path"
+                        default "/bin/bt_pause_script.sh"
+
+                config DMA_BT_RESUME_SCRIPT
+                        depends on DMA_BT
+                        string "The bt resume script path"
+                        default "/bin/bt_resume_script.sh"
+
+                config DMA_BT_SINGLE_SCRIPT
+                        depends on DMA_BT
+                        string "The bt single operate(resume/pause) script path"
+                        default "/bin/bt_single_task_script.sh"
+
+                config DMA_BT_QUEUE_SCRIPT
+                        depends on DMA_BT
+                        string "The bt queue script path"
+                        default "/bin/bt_single_task_move_last_script.sh"
+               
+                config DMA_BT_ADD_SCRIPT
+                        depends on DMA_BT
+                        string "The bt add script path"
+                        default "/bin/bt_add_torrent.sh"
+               
+                config DMA_BT_DELETE_SCRIPT
+                        depends on DMA_BT
+                        string "The bt delete script path"
+                        default "/bin/bt_delete_torrent.sh"
+		config BT_ON_STORAGE
+			string "Enable BT on storage SATA/USB"
+			default "SATA"
+			depends on DMA_BT
+
+
+		config DMA_NZB
+                        bool "Enable the NZB feature"
+                        default n
+                        depends on ENABLE_NETWORKING
+                config DMA_NZB_SCRIPT
+                        depends on DMA_NZB
+                        string "The nzb feature script path"
+                        default "/bin/nzbscript.sh"
+		config FLASHLITE3
+			depends on SUPPORT_DCCHD && !BUILD_GPL_FIRMWARE
+			bool "FlashLite3 based on Sigma DCCHD"
+			default n
+			help 
+				FlashLite3 needs Sigma DCCHD.
+		choice
+			depends on FLASHLITE3
+			prompt "Does FlashLite3 contain extensions?"
+			config FLASHLITE3_WITHOUT_EDK
+				bool "not contain EDK"
+			config FLASHLITE3_WITH_EDK
+				bool "contain EDK"
+		endchoice
+		config FLASHLITE3_VERSION
+			string
+			default "SMP8654_1.2.205-3_8_4-4.mips" if FLASHLITE3_WITHOUT_EDK 
+			default "SMP8654_1.2.206-3_8_8_rc_6-1-sdk-edk.mips" if FLASHLITE3_WITH_EDK
+		config FOR_ADOBE_CERT
+			depends on FLASHLITE3
+			bool "Copy some binary files for certificate"
+			default n
+			help 
+				Copy some binary files for certificate.
+		config ENABLE_STAGECRAFT_PLAYER
+			depends on FLASHLITE3
+			bool "Copy stagecraft flash player to bin"
+			default n
+			help 
+				Copy stagecraft flash player to bin.
+		config DMA_NETFLIX
+			depends on (FLASHLITE3 && DMA_MS_JANUS_SIGMA) 
+			bool "Enable NetFlix"
+			default n
+			depends on !BUILD_GPL_FIRMWARE
+			help 
+					NetFlix needs Flashlite3 and DRM.
+		config NETFLIX_3_0
+			bool "Netflix 3.0"
+			depends on DMA_NETFLIX
+			default n
+		config NETFLIX_VERSION
+			depends on DMA_NETFLIX
+			string
+			default "3.0.2-591521" if NETFLIX_3_0
+			default "v2.0.4-091027-02"
+		config SIGMA_NETFLIX_VERSION
+			string 
+			default "v2.0.4_20091229" if DMA_NETFLIX
+		config NF_BLOCK_VERSION_WORKAROUND
+			string
+			depends on NETFLIX_3_0
+			default "2.05.04" if PRODUCT_EXT_WDTV_RV
+			default "1.04.22" if PRODUCT_EXT_WDTV_VILLA_BUNGALOW
+		config NETFLIX_SYSTEM_DATA_FILE
+			string 
+			default "systemData" if DMA_NETFLIX
+		config NETFLIX_SYSTEM_DATA_SECURE_FILE
+			string
+			default "systemData.secure" if DMA_NETFLIX
+		config NETFLIX_ACCOUNT_ACTIVATED_FILE
+			string
+			default "activated" if DMA_NETFLIX
+		config CONSOLE_SECURE
+			bool "Enable login mechanism"
+			default n
+			depends on DMA_NETFLIX
+			help
+				enable login mechanism.
+		config NETFLIX_EXIT_WITH_SPINNER
+			bool "Show spinner when exists Netflix function."
+			default n
+			depends on DMA_NETFLIX
+			help
+				Show spinner when exists Netflix function.
+		config CHECK_STAGECRAFT_CONFIG_SIZE
+			bool "Enable to check stagecraft config size"
+			default y if PRODUCT_EXT_WDTV_VILLA_BUNGALOW
+			default n
+			help
+				Enable this item, system will check the config file size of stagecraft.
+				If the size over 50MB, system will remove ca_bundle.crt file automatically.
+		config DMA_RUN_SWF
+			depends on FLASHLITE3
+			bool "Enable run swf"
+			default n
+			help
+			    Run swf needs  Flashlite3 and DRM.
+		config DMA_SUPPORT_SWF_GAME
+			depends on FLASHLITE3
+			bool "Enable swf game"
+			default n
+			help
+			    Run swf game needs  Flashlite3.
+		config DMA_SHOW_SWF_FILE_IN_VILLA
+			depends on DMA_RUN_SWF
+			bool "Can browse swf file on villa"
+			default n
+			help
+			    See swf file in villa browse page.
+		config RV_FLASH_APP
+			depends on DMA_RUN_SWF
+			bool "Enable Flash App UI on RV"
+			default n
+			help
+			    Enable Flash App UI on RV
+		config RUN_SWF_WITH_SPINNER
+			depends on DMA_RUN_SWF
+			bool "Enabel run_swf with spinner"
+			default y
+			help
+				Enable this config system will display loading icon while exit run_swf.
+		config DMA_FREESTREAM
+			depends on DMA_RUN_SWF
+			bool "Enable freestream"
+			default n
+			help 
+				Freestream needs RUN_SWF.
+		config DMA_HULU
+			depends on DMA_RUN_SWF
+			bool "Enable Hulu"
+			default n
+			help 
+				Hulu needs RUN_SWF.
+		config DMA_BBC
+			depends on DMA_RUN_SWF
+			bool "Enable BBC"
+			default n
+			help 
+				Hulu needs RUN_SWF.
+		config DMA_YOTA_MUSIC
+			depends on DMA_RUN_SWF
+			bool "Enable Yota music"
+			default n
+			help 
+				Yota music needs RUN_SWF.
+		config RUN_YOUTUBE_LEANBACK_SWF
+			depends on DMA_RUN_SWF
+			bool "Enable YouTube Leanback"
+			default y if PRODUCT_EXT_UNO 
+			default n
+			help 
+				Run YouTube Leanback swf file.
+		config YOUTUBE_LEANBACK_SWF_PATH
+			depends on RUN_YOUTUBE_LEANBACK_SWF
+			string "Specify the path to the YouTube Leanback swf file"
+			default "/swf/yt_lb.swf"
+			help 
+				Please specify the path to the YouTube Leanback swf file.
+
+		config METADATA_TAGGING
+			bool "Enable metadata tagging"
+			default n
+			help
+				Enalbe this to support metadata tagging.
+		config METADATA_AUTO_TAGGING
+			bool "Enable auto metadata tagging"
+			depends on METADATA_TAGGING
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			help
+				Enable this to support auto metadata tagging.
+		config METADATA_SCRAPER_SUPPORT
+			bool "Enable XBMC metadata scraper support"
+			depends on METADATA_TAGGING
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			help
+				Enalbe this to support XBMC metadata scraper.
+		config METADATA_SCRAPER_FOLDER
+			depends on METADATA_TAGGING
+			string "Specify the path to let user upload metadata scraper"
+			default "/tmp/WDTVPriv/scraper/metadata"
+			help
+				Please secify the path to let user upload metadata scraper.
+		config METADATA_SUPPORT_MULTILANGUAGE
+			depends on METADATA_TAGGING
+			bool "Enable metadata multilanguage tagging support"
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			help 
+				Enable this to support metadata multilanguage tagging.
+		config METADATA_VIEW_BACKDROP_PHOTOS
+			depends on METADATA_TAGGING
+			bool "Enable view video related backdrop photos support"
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			help 
+				Enable this to support view video related backdrop photos.
+		config WEATHER
+			bool "Enable weather support"
+			default n
+			depends on !BUILD_GPL_FIRMWARE
+			help
+				Enalbe this to support weather support.
+		config METADATA_TAGGING_LIB
+			bool
+			default y if METADATA_TAGGING || WEATHER
+			default n
+			depends on PCRE
+			help
+				The metadata tagging library which works as regular expression library is not for metadata tagging only.
+				So we seperate it as independent library
+		config WEATHER_SIMPLE_MODE
+			bool "Enable weather simple search mode."
+			default y
+			depends on WEATHER
+			help
+				Enable this to support simple search mode.
+		config WEBGUI_SUPPORT
+			bool "Enable Web GUI support"
+			default n
+			depends on !BUILD_GPL_FIRMWARE
+			help
+				Enalbe this to support Web GUI support.
+
+		config UNO_CM
+			bool "Enable internal communication with main board"
+			default y
+			depends on PRODUCT_EXT_UNO
+			help
+				Enables internal communication with Marvell board.
+
+		config ALPHA_BOX_SUPPORT
+			bool "Enable Alpha Box API"
+			default n
+			help
+				Let SWF can use system's service.
+		config ALPHA_BOX_SERVER_EXTERNAL_INTERFACE
+			int "External SWF use this interface to communicate with our system."
+			default	8008
+			depends on ALPHA_BOX_SUPPORT
+		config ALPHA_BOX_SERVER_INTERNAL_INTERFACE
+			int "Alpha native SWF use this interface to communicate with our system. System notification will broadcast from this interface."
+			default	8009
+			depends on ALPHA_BOX_SUPPORT
+
+
+	endmenu
+	menu "Community features"
+		config UMSP
+			bool "UMSP support"
+			default	n
+			help 
+				http://wiki.wdlxtv.com/UMSP_plugin_development#Sample_plugin
+				Please read the link above. 
+				This shouldn't be used in official firmware since it may have GPL issue.
+	endmenu
+	menu "Browser features"
+		config QT
+			bool "QT web kit base on Sigma DCCHD"
+			default n
+			depends on SUPPORT_DCCHD
+			help
+				This QT browser, but it require Sigma's DCCHD.
+		config QT_WEB_KIT
+			bool "QT web kit base on Sigma DCCHD"
+			default n
+			depends on QT
+			help
+				This QT browser, but it require Sigma's DCCHD.
+		choice
+			prompt "QT version"
+			depends on QT_WEB_KIT
+			config QT_4_5_0
+				bool "4.5.0-1.2" 
+			config QT_4_6_2
+				bool "4.6.2" 
+		endchoice
+		config QT_VERSION
+			string
+			default "4.5.0-1.2" if QT_4_5_0
+			default "4.6.2" if QT_4_6_2
+		config QWS_FULLSCREEN
+			bool "Set browser to fullscreen"
+			default n
+			depends on QT_WEB_KIT
+			help
+				To set the browser fullscreen without menubars.
+
+		config QWS_DEFAULT_HOMEPAGE
+			bool "set the default browser's homepage"
+			default n
+			depends on QT_WEB_KIT
+
+		config QWS_DEFAULT_HOMEPAGE_STR
+			string "set the default browser homepage value."
+			default "http://www.google.com"
+			depends on QWS_DEFAULT_HOMEPAGE
+
+
+		config SUPPORT_PARENTAL_CONTROL
+			bool "support parental control function"
+			default y if PRODUCT_EXT_WDTV_RV
+			help
+				If you turn on this option, system will provide parental control function.
+				You can set lock username/password through settings/system menu. while browsing and you want to lock folder, you can press menu key to lock it. if you want to unlock folder, you also pree menu key to unlock it.
+		config SIGMA_OWB_BROWSER
+			bool "OWB browser"
+			default n
+			help
+				Enable this to support OWB browser.
+	endmenu
+	menu "UI features"
+		menu "Alpha engine related"
+			config OSD_ENGINE_DFB_DOUBLE_BUFFER
+				bool "DirectFB uses Double Buffer ?"
+				depends on DIRECTFB
+				default y
+				help
+					For DirectFB, we use double buffer to switch between winMain and pixDrawSet
+			config OSD_ENGINE_COMMON_PAGE 
+				bool "Enable common page feature"
+				default n
+				help
+					This feature makes each page object be automatically inhertiaged 
+					by 'common page'. With this idea, developers can put some routines
+					with this common page. 
+					This is added by William Chen. Please consult with him if you find
+					anything wrong.
+				
+
+
+			config OSD_ENGINE_STATIC_IMAGE_BUF_SIZE
+				int "Static image buffer for engine"
+				default 1572864
+			config OSD_ENGINE_HTTP_IMAGE
+				bool "Enable image widget to get image from HTTP"
+				depends on ENABLE_NETWORKING
+				default y
+			config ENGINE_HAL
+				bool "Use engine hal (This should be removed)"
+				default y
+			config BG_ON_OSD
+				bool "Background on OSD"
+				default y
+			config OSD_IMG_CACHE_LARGE
+				int "large image cache"
+				default 3
+			config OSD_IMG_CACHE_MEDIUM
+				int "medium image cache"
+				default 24
+			config OSD_IMG_CACHE_SMALL
+				int "small image cache"
+				default 16
+			config OSD_IMG_CACHE_LARGE_THRES
+				int "large image cache threshold"
+				default 345600
+			config OSD_IMG_CACHE_MEDIUM_THRES
+				int "medium image cache threshold"
+				default 6400
+			config MAX_THUMB_CATCH_SIZE
+				int "maximum thumbnail cache size"
+				default 3145728 
+			config MAX_THUMB_CATCH_NUMBER
+				int "maximum cached thumbnail number"
+				default 10000
+			config DRAW_OSD_TEXT_BY_ALE
+				bool "Draw text by Arphic Layout Engine"
+				depends on DIRECTFB
+				default n if PRODUCT_EXT_WDTV_RV
+				help
+					In order to support Arabic and Hebrew, we need to Arphic Layou Engine to do this.
+			config ALE_TEXT_CACHE_SIZE
+				int "maximum cache size for drawn text pixmap"
+				default 1048576
+				depends on DRAW_OSD_TEXT_BY_ALE
+			config PREFETCH_LIST_NUM
+				int "The max number of records keep in prefetch list"
+				default 60
+		endmenu
+
+		config THUMBNAIL_CACHE_ON_STORAGE
+			bool "Cache thumbnails in their corresponding storage"
+			default y
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_RV
+			help	
+				This is just an ugly design. 
+				We will try to keep the thumbnails in their corresponding storage 
+				in order to save the transcoding time but it also increase the spare 
+				space needed. 
+
+				This will be removed after Ranbow finishes new media library. 
+		config THUMBNAIL_CACHE_ON_STORAGE_FOLDER
+			string "folder name to storage thumbnail cache"
+			default "thumb"
+			depends on THUMBNAIL_CACHE_ON_STORAGE
+				
+		config CAS_BROWSE_DATE_DESCEND
+			bool "CAS browse sort by date with descendent"
+			default n
+			depends on CAS 
+		config CAS_SEARCH_FILENAME_IN_AUDIO_AND_PLAYLIST
+			bool "CAS search filename in both audio and playlist table."
+			default n
+			depends on CAS 
+		config DMA_HD_UI
+			bool "HD UI support"
+			default y
+		choice 
+			prompt "Color depth"
+			default DMA_DEPTH32
+			config DMA_DEPTH8
+				bool "8 bits"
+			config DMA_DEPTH16
+				bool "16 bits"
+			config DMA_DEPTH24
+				bool "24 bits"
+			config DMA_DEPTH32
+				bool "32 bits"
+		endchoice
+		config EJECT_USB_BY_NEW_CASE
+			bool "eject USB by new mode"
+			default y if PRODUCT_EXT_LMP555
+			help
+				This feature is requested by LaCie.
+				Whatever unplugging USB device, we always show message to user to notice them to unplug USB safely.
+
+		config THEME_ENABLED
+			bool "theme setting support"
+			default n
+			help
+				This feature permit user to change the theme.
+				User can manage all theme which storage on USB or SATA drive,
+				such as preview, set, delete etc., and user can also restore to default one.
+				User can browse themes from online.		
+
+		config THEME_SCREENSHOT
+			string "default theme screenshot path"
+			default "screenshot"
+			depends on THEME_ENABLED
+
+		config THEME_THUMBNAIL
+			string "default theme thumbnail"
+			default "screenshot_00.jpg"
+			depends on THEME_ENABLED
+
+		config DEFAULT_THEME
+			string "default theme"
+			default "/osd"
+			depends on THEME_ENABLED
+			
+		config DESKTOP_ENABLED
+			bool "desktop setting support"
+			default n
+			help
+				This feature permit user to change the background image.
+				User can manage all background images which storage on USB or SATA drive,
+				such as preview, set, delete etc., and user can also restore to default one.		
+		choice 
+			prompt "storage to save for Theme/Desktop "
+			depends on DESKTOP_ENABLED
+			default THEME_DESKTOP_STORE_ON_SATA if MOUNT_LOCAL_SATA_DRIVE
+			config THEME_DESKTOP_STORE_ON_USB0
+				bool "save theme/desktop on USB0"
+			config THEME_DESKTOP_STORE_ON_USB1
+				bool "save theme/desktop on USB1"
+			config THEME_DESKTOP_STORE_ON_SATA
+				depends on MOUNT_LOCAL_SATA_DRIVE
+				bool "save theme/desktop on SATA"
+		endchoice
+		config DEFAULT_DESKTOP
+			string "default background image"
+			default "/image/RV-BG.jpg" if PRODUCT_EXT_WDTV_RV
+			default "/image/Villa_bg.png" if PRODUCT_EXT_WDTV_VILLA
+			depends on DESKTOP_ENABLED
+
+		config ONLINE_IMAGE_LOCAL_PATH	
+			string "default online image location"
+			default "/tmp/local_file"
+
+		config DESKTOP_WDCM_PATH
+			string "wd creative masters path"
+			default "wdcm/"
+			depends on DESKTOP_ENABLED
+
+		config DESKTOP_USER_PATH
+			string "user's background image path"
+			default "desktop/"
+			depends on DESKTOP_ENABLED
+
+		config CROSSBAR_EXCHANGE_DIRECTION
+			bool "Set crossbar master direct as horizontal"
+			default y if PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_ALPHA) || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+			depends on PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_ALPHA) || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+		config CROSSBAR_SHARE_DIRECTION
+			bool "Crossbar master and slave use the same direction"
+			default y if PRODUCT_EXT_IMEDIA_HD100
+			depends on PRODUCT_EXT_IMEDIA_HD100
+		config ALPHA_UI_STYLE
+			bool "Apply specific UI for Alpha generic version"
+			default y if PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_ALPHA) || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+			depends on PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_ALPHA) || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+		config LAVENDER_UI
+			bool "Lavender UI"
+			default y
+		config OSD_FADING_UI_EFFECT
+			bool "fade in and out UI"
+			default y
+		config ENABLE_FADING_UI_EFFECT
+			bool "Enable a choice in system setting to select Fade_in_&_fade_out or None"
+			default y
+                        depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+		config OSD_HOME_CROSSBAR_V2
+			bool "Home crossbar V2"
+			default y
+		config OSD_HOME_CROSSBAR_V2_MODE1
+			bool "Home crossbar V2 mode 1"
+			default y
+			depends on OSD_HOME_CROSSBAR_V2
+			
+		config QUICK_SHOW_BG
+			string "Quick show background"
+			default "image/Screensaver_Background.png" if PRODUCT_EXT_WDTV_RV 
+			default "image/welcome_background_bg.jpg"
+		config OSD_WIDTH
+			int "OSD width"
+			default 1280
+		config OSD_HEIGHT
+			int "OSD height"
+			default 720
+		config JPEG_THUMBNAIL_MAX_W
+			int "Maximum width of thumbnail"
+			default 240
+		config JPEG_THUMBNAIL_MAX_H
+			int "Maximum height of thumbnail"
+			default 240
+		config MAX_SUPPORTED_PROGRESSIVE_JPEG_SIZE
+			int "Maximum supported progressive jpeg size for mediaplayer decode. (default : 2097152)"
+			default 2097152 
+		config MAX_SUPPORTED_THUMBNAIL_PROGRESSIVE_JPEG_SIZE
+			int "Maximum supported progressive jpeg size for thumbnail. (default :720x480)"
+			default 345600
+		config MAX_SUPPORTED_THUMBNAIL_PNG_SIZE
+			int "Maximum supported png size for thumbnail. (default :720x480)"
+			default 921600 if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PLATFORM_X86
+			default 345600
+		config MAX_SUPPORTED_THUMBNAIL_GIF_SIZE
+			int "Maximum supported gif size for thumbnail. (default :720x480)"
+			default 345600
+		config GFX
+			bool "Use GFX of Sigma Designs"
+			default y
+			depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670 
+		config GFX_WAIT_FOR_COMMAND
+			bool "GFX wait for command"
+			default y
+			depends on GFX
+		config DISABLE_VIDEO_OUTPUT_IN_POWER_OFF
+			bool "Disable video output while power is off"
+			default y
+		config ENABLE_HOME_PLAYING_INFO
+			bool "Enable playing info at home page"
+			default y
+		config QUICK_MENU
+			bool "quick menu support"
+			default y
+		config OSD_ENABLE_SCREENSAVER
+			bool "screen saver support"
+			default y
+		config OSD_ENABLE_SCREENSAVER_ALBUM_PLAYBACK
+			bool "album playback screen saver support"
+			default n
+		config OSD_ENABLE_SLIDESHOW_SCREENSAVER
+			depends on OSD_ENABLE_SCREENSAVER && CASII
+			bool "slide show screensaver support"
+			default y if PRODUCT_EXT_WDTV_RV
+			help
+				if you want to support slide show screensaver, please enable this option.
+		config OSD_ENABLE_STANDBY_MODE
+			bool "standby mode support"
+			default n
+		config OSD_STANDBY_MODE_TIMEOUT
+			depends on OSD_ENABLE_STANDBY_MODE
+			string "set standby mode timeout (minute)"
+			default "20"
+		config THUMB_VARIOUS_EXTRACT_SUPPORT
+			bool "y to enable various thumb get type support."
+			default n	
+		config SHOW_FILESIZE
+			bool "Enable to choice display file size or not during navigation"	
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+		config SLIDESHOW_INTERVAL
+			int "The interval of photo slide show"
+			default 3
+		config PREV_NEXT_AS_PGUP_PGDN
+			bool "y to enable prev/next kkey as pgup pgdn key in browse page."
+			default y if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_RV
+		config SPLASH_SCREEN_NTSC_PAL_SWITCH
+			bool "y to enable splash screen composite output siwtch"
+			default y
+			depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+			help
+				splash screen composite output NTSC or PAL depends on your
+				setting.
+		config EZBOOT_SUPPORT_FAIL_SAFE_SPLASH_SCREEN
+			bool "y to enable splash screen show fail save picture if firmware sign not found "
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				splash screen show fail safe picture if firmware sign not found.	
+		config USING_WIZARD
+			bool "run a wizard to help user setup player"
+			default y if PRODUCT_EXT_LMP555
+			depends on PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_ALPHA) || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+			help
+				This wizard can help user to setup their player when first time to use or factory reset the player.
+		config WDTV_RV_SETUP_ABOUT_PAGE
+			bool "WDTV RV style setup about page"
+			default n
+			depends on PRODUCT_EXT_WDTV_RV
+			help
+				This is new setup about page UI for RV.
+		config HIDDEN_SETTING_PAGE
+			bool "Hidden setting page"
+			default y if (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_WD) || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			depends on (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_WD) || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help 
+				Press up/down/left/right/up/down/down on Setup/About page.
+		config USING_CREDIT
+			bool "Credit page"
+			default y if (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_WD) || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			depends on (PRODUCT_EXT_WDTV_HOUSE && OEM_HOUSE_WD) || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help 
+				Press up/up/down/down/left/right/play-pause on Setup/About page. Now the wording is based on WD version. Please verify credit page's string.
+		comment "Browse mode"
+		config OSD_SUPPORT_PREVIEW_PAGE
+			bool "support preview page"
+			default n 
+			depends on BROWSE_HANDLER
+			help
+				This feature is only enable for video-browse. If you turn on it, you could enter "Settings->Video Setting->Browser display" to select which browse-mode you want.
+			
+		config PREVIEW_MODE_SUPPORT_FF_REV
+			bool "support ff/rev function for preview page"
+			default n 
+			depends on OSD_SUPPORT_PREVIEW_PAGE && (PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+			help
+				This feature is only supported on preview mode. If you want to ff/rev on PIP_ZOOM, please enable this option. 
+		config PREVIEW_MODE_SUPPORT_VIDEO_FOLDER_ICON_AND_THUMBNAIL
+			bool "support to display video folder's(preview PIP) icon & thumnail for preview page"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			depends on OSD_SUPPORT_PREVIEW_PAGE
+			help
+				This feature is only supported on preview mode. If you want to display thumbnail on video folder(preview PIP), please enable this option.
+		
+		config PREVIEW_MODE_SUPPORT_THUMBNAIL
+			bool "support to display video Cover art image"
+			default y if PRODUCT_EXT_LMP555
+			default n
+			depends on OSD_SUPPORT_PREVIEW_PAGE
+			
+		choice
+			prompt "Preview Window Size"
+			depends on OSD_SUPPORT_PREVIEW_PAGE
+			config PREVIEW_WINDOW_VILLA
+				bool "Perview window vila"
+				depends on PRODUCT_EXT_WDTV_VILLA
+			config PREVIEW_WINDOW_RV
+				bool "Perview window RV"
+				depends on PRODUCT_EXT_WDTV_RV
+			config PREVIEW_WINDOW_LMP555
+				bool "Perview window lmp555"
+				depends on PRODUCT_EXT_LMP555
+		endchoice
+		
+		config OSD_PREVIEW_WIN_X
+			int 
+			default 778 if PREVIEW_WINDOW_VILLA
+			default 172 if PREVIEW_WINDOW_LMP555
+			default 902 if PREVIEW_WINDOW_RV
+		config OSD_PREVIEW_WIN_Y
+			int 
+			default 179 if PREVIEW_WINDOW_VILLA
+			default 376 if PREVIEW_WINDOW_LMP555
+			default 198 if PREVIEW_WINDOW_RV
+		config OSD_PREVIEW_WIN_W
+			int 
+			default 333 if PREVIEW_WINDOW_VILLA
+			default 333 if PREVIEW_WINDOW_LMP555
+			default 313 if PREVIEW_WINDOW_RV
+		 config OSD_PREVIEW_WIN_H
+			int 
+			default 222 if PREVIEW_WINDOW_VILLA
+			default 222 if PREVIEW_WINDOW_LMP555
+			default 209 if PREVIEW_WINDOW_RV
+				
+		config SHOW_AUDIO_NAME_ON_PAGEUI
+			bool "show audio language on video playing page"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555 
+			depends on BROWSE_HANDLER
+			help
+				show audio language name on video playing page
+
+		config SHOW_AUDIO_CODEC_ON_PAGEUI
+			bool "show audio codec on video playing page"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			depends on BROWSE_HANDLER
+			help
+				show audio codec on video playing page
+		config SHOW_BROWSE_PAGE_TITLE_ICON
+			bool "show browse page title icon"
+				default y if PRODUCT_EXT_LMP555
+			help
+				show browse page title icon
+
+
+		choice 
+			prompt "the style for audio show info in video playing page"
+			default CASE2_AUDIO_SHOW_INFO_STYLE if PRODUCT_EXT_LMP555
+			config ORG_AUDIO_SHOW_INFO_STYLE
+				bool "original audio show info style"
+				help
+					the style for audio show info, please check src/osd/pages/playing_page/show_info_generator.c
+			config CASE1_AUDIO_SHOW_INFO_STYLE
+				bool "another style for case1"
+				help
+					the style for audio show info, please check src/osd/pages/playing_page/show_info_generator.c
+			config CASE2_AUDIO_SHOW_INFO_STYLE
+				bool "another style for case2"
+				help
+				    the style for audio show info, please check src/osd/pages/playing_page/show_info_generator.c
+		endchoice
+		config	AUDIO_SHOW_INFO_STYLE_IN_VIDEO_PAGE
+			int
+			default 0 if ORG_AUDIO_SHOW_INFO_STYLE
+			default 1 if CASE1_AUDIO_SHOW_INFO_STYLE
+			default 2 if CASE2_AUDIO_SHOW_INFO_STYLE
+
+		choice 
+			prompt "the style for subtitle show info in video playing page"
+			config ORG_SUBTITLE_SHOW_INFO_STYLE
+				bool "original subtitle show info style"
+				help
+					the style for subtitle show info, please check src/osd/pages/playing_page/show_info_generator.c
+			config CASE1_SUBTITLE_SHOW_INFO_STYLE
+				bool "another style case1"
+				help
+					the style for subtitle show info, please check src/osd/pages/playing_page/show_info_generator.c
+		endchoice
+		config	SUBTITLE_SHOW_INFO_STYLE_IN_VIDEO_PAGE
+			int
+			default 0 if ORG_SUBTITLE_SHOW_INFO_STYLE
+			default 1 if CASE1_SUBTITLE_SHOW_INFO_STYLE
+		config DMR_PAGE_HIDE
+			bool "Enable hide-page option for DMR testing"
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default n
+			help
+				This option is only used for DMR testing currently.
+				If you want to use CTT to test DMR, you can push home button at home page.
+		config POWER_EJECT_KEY
+			bool "Support of the bi-mode of the power key of the RC(Power/Eject)"
+			default n
+			help 
+				Enable it will show a message box to select "Power OFF" or "Eject USB".
+
+		config ENHANCED_PAGE_OBJECT
+			bool "Multi pages handling supports"
+			default n
+
+		config ENABLE_GUI_HANDLER
+			bool "A single thread to draw pages"
+			default n
+			config RV_HOME_DISABLE_FOCUS_ANIMATION
+				bool "Disables rv home focused animation"
+				depends on ENABLE_GUI_HANDLER
+				default n
+	
+		choice
+			depends on ENABLE_GUI_HANDLER
+			prompt "Selection of how to run gui handler."
+			config GUI_HANDLER_THREAD
+				bool "Using a simple thread"
+			config GUI_HANDLER_CHAIN
+				bool "Using a thread with chain mechanism"
+		endchoice
+
+		config ENABLE_PAGE_EFFECT
+			bool "Drawing special effects between pages switching"
+			depends on ENHANCED_PAGE_OBJECT && ENABLE_GUI_HANDLER 
+			default n
+			help
+				To draw effects when switching between pages.
+
+		config ENABLE_HOME_DASHBOARD_GLOW_ANIMATION
+			bool "Enable the home dashboard pop-up glow animation."
+			depends on ENABLE_GUI_HANDLER
+			default n
+			help
+				Enable the glow animation on dashboard when it is being pop-up at home page.
+
+		config RV_HOME_ANIMATION_ICON
+			bool "Drawing animation icon on home menu."
+			depends on ENABLE_GUI_HANDLER 
+			default n
+			help
+				To draw animation icon on home menu when focused.
+
+		config RV_HOME_SPEEDUP_ICON_ANIMATION
+			bool "Speed up the drawing of home icon animation."
+			depends on RV_HOME_ANIMATION_ICON 
+			default n
+			help
+				To speed up the drawing of home icon animation, it will drop half of icon images.
+
+		config ENHANCED_LOADING_MSG
+			bool "Enhanced loading msg if gui handler is enabled."
+			depends on ENABLE_GUI_HANDLER 
+			default n
+			help
+				To make loading msg more smooth and quick if gui handler is enabled.
+
+		config UI_AUDIO_EFFECT
+			bool "UI audio effect"
+			default n
+			help
+				we implement auido effect base on sigma library sample 2.
+		config UI_DISPLAY_PERCENTAGE_SETTING
+			bool "modify UI display percentage"
+			default n
+			help
+				we implement a function : we can modify the percentage of UI display.
+	
+		config UI_ENABLE_FORBIDDEN_ICON
+			bool "enable forbidden icon if the key pressed is not supported"
+			default n if PRODUCT_EXT_WDTV_RV
+			default y
+			help
+				If this is enabled, we will show the forbidden icon when key presse not supports.
+
+		config DISABLE_USB_KEYBOARD_ARROW_KEYS_IN_KEYBOARD_PAGE
+			bool "disable the usb keybaord arrows keys in keyboard page"
+			default y if PRODUCT_EXT_WDTV_RV
+			help
+				Disable the usb keybaord arrows keys in keyboard page.
+				
+		config 3D_SCREEN_SUPPORT
+			bool "duplicate OSD to support 3D screen"
+			default n
+			help
+				It will stretch the current OSD to half width and duplicate left and right.
+	endmenu
+	menu "System features"
+		config DIGITAL_WITHOUT_HDMI_AUDIO
+                        bool "Support digital audio passthrough without HDMI audio"
+                        default y if PRODUCT_EXT_WDTV_RV
+                        help
+				Digital audio passthrough, but disable HDMI audio output.
+		config DIGITAL_HDMI_AUDIO_ONLY
+                        bool "Support digital audio passthrough 7.1ch, HDMI audio only"
+                        default y if PRODUCT_EXT_WDTV_RV
+                        help
+				Digital audio passthrough 7.1ch, but disable SPDIF audio output.
+		config PARENTAL_CONTROL
+                        bool "parental control"
+                        default y if PRODUCT_EXT_WDTV_RV
+			default n
+			help 
+				Enable this option to support parental control.
+		config SUPPORT_LOCAL_SYNC
+                        bool "Support auto sync function"
+                        depends on STORAGE_SUPPORT
+                        default y if PRODUCT_EXT_WDTV_RV
+                        help
+                                1. Enable this option, system detect external USB plug in and it will show prompt UI to ask user want to sync or not. If user want, system will do sync.
+				2. if you enable this option, please check SUPPORT_RSYNC is enable or not. if SUPPORT_RSYNC is disable, please enable it.
+		config SUPPORT_NETWORK_SYNC
+			bool "Support auto network sync function"
+			depends on STORAGE_SUPPORT && ENABLE_NETWORKING && SAMBA
+			default n
+			help
+				1. Enable this option, user can set sync-timer, sync-server_name, sync-username and sync-password to let system do network_sync action at user's specified timer.
+				2. if you enable this option, please check SUPPORT_RSYNC is enable or not. if SUPPORT_RSYNC is disable, please enable it.
+		config  FULL_KEYBOARD
+			bool "Use the full keyboard in keyboard page"
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default n
+			help
+				Use the full keyboard in keyboard page.
+		config KEYBOARD_SUPPORT_EU
+			bool "Keyboard support eu characters"
+			default n
+			help
+				Support inputting European chararcters in keyboard
+		config SUPPORT_MOBILE_KEY_INPUT
+			bool "Support mobile key input"
+			default y
+			depends on PRODUCT_EXT_WDTV_RV
+			help
+				Enable this to support mobile key input.
+		config SUPPORT_MOVABLE_KEYBOARD_CURSOR
+			bool "Support movalbe keyboard cursor"
+			default y
+			depends on PRODUCT_EXT_WDTV_RV
+			help
+				Enable this to support movable cursor in keyboard input page.
+		config SINGLE_RENDERER
+			bool "Single render"
+			default n
+			help 
+				Only one media renderer instance for AV/PIC.
+		config INDEPENDENT_BROWSE_DISPLAY
+			bool "Independent browse display"
+			default y if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				Turn on this option if you want to have 
+				independent browse display setting(list mode or thumbnail mode)
+				for PHOTO/VIDEO/MUSIC/COMMON(network).
+				Otherwise, turn it off if you want to make
+				PHOTO, VIDIO, MUSIC, and COMMON(network) share same setting.
+
+		choice
+			depends on INDEPENDENT_BROWSE_DISPLAY
+			prompt "Default browse display for photo"
+			config PHOTO_BROWSE_DISPLAY_DEFAULT_IS_THUMBNAIL
+				bool "thumbnail mode"
+			config PHOTO_BROWSE_DISPLAY_DEFAULT_IS_LIST
+				bool "list mode"
+		endchoice
+		choice
+			depends on INDEPENDENT_BROWSE_DISPLAY
+			prompt "Default browse display for video"
+			config VIDEO_BROWSE_DISPLAY_DEFAULT_IS_THUMBNAIL
+				bool "thumbnail mode"
+			config VIDEO_BROWSE_DISPLAY_DEFAULT_IS_LIST
+				bool "list mode"
+			config VIDEO_BROWSE_DISPLAY_DEFAULT_IS_VIDEO
+				depends on OSD_SUPPORT_PREVIEW_PAGE
+				bool "preview mode"
+		endchoice
+		choice
+			depends on INDEPENDENT_BROWSE_DISPLAY
+			prompt "Default browse display for music"
+			config MUSIC_BROWSE_DISPLAY_DEFAULT_IS_THUMBNAIL
+				bool "thumbnail mode"
+			config MUSIC_BROWSE_DISPLAY_DEFAULT_IS_LIST
+				bool "list mode"
+		endchoice
+
+		choice
+			depends on !INDEPENDENT_BROWSE_DISPLAY
+			prompt "default browse display for music/video/photo"
+			config BROWSE_DISPLAY_DEFAULT_IS_THUMBNAIL
+				bool "thumbnail mode"
+			config BROWSE_DISPLAY_DEFAULT_IS_LIST
+				bool "list mode"
+		endchoice				
+
+		choice
+		prompt "Home crossbar menu default"
+		default HOME_CROSSBAR_DEFAULT_IS_VIDEO if PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+		config HOME_CROSSBAR_DEFAULT_IS_PHOTO
+			bool "photo"
+		config HOME_CROSSBAR_DEFAULT_IS_VIDEO
+			bool "video"
+		config HOME_CROSSBAR_DEFAULT_IS_MUSIC
+			bool "music"
+		config HOME_CROSSBAR_DEFAULT_IS_SETTING
+			bool "setting"
+		config HOME_CROSSBAR_DEFAULT_IS_NETWORK
+			bool "network"
+		endchoice
+
+		config DISABLE_CONTROL_OSD_FROM_STD_INPUT
+			bool "Disable the dmaosd read data from std input"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8634 || PLATFORM_SMP8670)
+			default y if (PLATFORM_SMP8654 || PLATFORM_SMP8634 || PLATFORM_SMP8670)
+			default n
+			help 
+				We run the dmaosd in the BG. and that will make input_key be set. 
+				In this case, the dmaosd will take much CPU resource.  
+				So we disable the input_key.
+		config DMA_HDMI
+			bool "HDMI output"
+			default y
+		config MULTI_LANGUAGE
+			bool "Multilingo support"
+			default y
+		config HEBREW_AND_ARABIC_SUPPORT
+			bool "Hebrew and Arabic language support"
+			default n
+		config  DISABLE_HOME_AND_RETURN_WHILE_VIDEO_PLAYING
+                        bool "Disable home and return key while video playing"
+                        default y if PRODUCT_EXT_LMP555
+                        default n
+                        help
+                                Disable "home" & "Back" key while playing a video.
+		config DMA_SUBTITLE
+			bool "Subtitle support"
+			default y
+		config DMA_SUBTITLE_CLOSE_MUXED_BYDEF
+			bool "Disable embedded subtitle by default"
+			default y
+			depends on DMA_SUBTITLE
+		menu "Zoom Ratio"
+			choice 
+				prompt "select the zoom ratio"
+				default ZOOM_IN_OUT_CASE1
+				config ZOOM_IN_OUT_CASE1
+					bool "zoom in 2,4,8X, zoom out 2,4,8X"
+					help
+						the zoom ratio is 2X,4X,8X for zoom in / out. 
+						it define in the src/util/include/zoom_ratio_definition.h
+				config ZOOM_IN_OUT_CASE2
+					bool "zoom in 1.1,1.2,2,4,8X, zoom out 2,4,8X"
+					help
+						the zoom ratio is 1.1X,1.2X,2X,4X,8X for zoom in, 2X,4X,8X for zoom out
+						it define in the src/util/include/zoom_ratio_definition.h
+				config ZOOM_IN_OUT_CASE3
+					bool "zoom in 1.1,1.2,2,4,8X, zoom out 0.9,0.8,2,4,8X"
+					help
+						the zoom ratio is 1.1X,1.2X,2X,4X,8X for zoom in, 0.9X,0.8X,2X,4X,8X for zoom out
+						it define in the src/util/include/zoom_ratio_definition.h
+			endchoice
+		endmenu
+		config LIMIT_VOB_ZOOM_SIZE
+			bool "limit the size of ZOOM, work around for MRUA_3.7.x zoom bug. "
+			default n
+			default y if PLATFORM_SMP8654_SDK_3_7_0
+			help
+				MRUA_3.7.x show incorrect in certain zoom ratio.
+				So we have to avoid this. 
+		config DISABLE_SUBTITLE_IN_ZOOM
+			bool "Disable subtitle while ZOOM (PAN for player)"
+			default y
+			depends on DMA_SUBTITLE
+			help 
+				when we enable this , 
+				we will disable subtitle when we do zoom and pan for player.
+				but we only show wrong key when we do zoom function on OSD.
+		config PLAYER_CHAPTER_SUPPORT
+			bool "player chapter support"
+			default y
+			help
+				to support mkv or mp4 chapter
+		config MKV_CHAPTER_SUPPORT
+			bool "MKV chapter support"
+			depends on PLAYER_CHAPTER_SUPPORT
+			default y
+		config MOV_CHAPTER_SUPPORT
+			bool "MOV chapter support"
+			depends on PLAYER_CHAPTER_SUPPORT && QUICKTIME_PLAYER
+			default n
+		config HDMI_OUTPUT_APPLY_TWICE
+			bool "Apply HDMI settings twice"
+			default n
+		config HDMI_FIX_EDID_READ_ERR
+			bool "Fix HDMI chip can't read TV's EDID"
+			default y
+			depends on PLATFORM_SMP8654_SDK_3_5_0 || PLATFORM_SMP8654_SDK_3_6_0_rc11 || PLATFORM_SMP8654_SDK_3_6_0 || PLATFORM_SMP8654_SDK_3_6_1_rc2 || PLATFORM_SMP8654_SDK_3_7_0 
+			help
+				sometime HDMI chip can't read EDID table from TV, This patch will reset PLL and 
+				turn on TMDS when read EDID fail. Then the EDID table can be read in next time.
+		config HDMI_SIMPLAY_3_7_0_SLi_AVI_double_send_PATCH
+			bool "3.7.0 Simplay SLi_AVI_double_send patch "
+			default n if PLATFORM_SMP8654_SDK_3_7_1_RC3_BASE_ON_3_7_0
+			default y
+			depends on PLATFORM_SMP8654_SDK_3_7_0 && HDMI_FIX_EDID_READ_ERR
+			help
+				this patch is for Simplay.
+				to potentially fix this "purple screen" and 
+				increase the robustness to the HDMI 
+
+		config HDMI_SIMPLAY_3_7_0_SLi_EDID_rotation_minimal_PATCH
+			bool "3.7.0 Simplay SLi_EDID_rotation_minimal patch"
+			default n if PLATFORM_SMP8654_SDK_3_7_1_RC3_BASE_ON_3_7_0
+			default y
+			depends on PLATFORM_SMP8654_SDK_3_7_0 && HDMI_FIX_EDID_READ_ERR
+			help
+				this patch is for Simplay.
+
+		config HDMI_ALWAYS_OUTPUT_RGB
+			bool "Always use RGB color space for HDMI"
+			default y
+		config HDMI_3_7_1_fix_FPE
+			bool "Fix mrua 3.7.1 rc3 Floating point exception"
+			default y
+			help
+				Fix mrua 3.7.1 rc3 Floating point exception
+		config MPEG_AUDIO_CHANNEL_SWITCH
+			bool "Audio channel switching for MPEG file (Left, Right, Mono, Stereo)"
+			default n
+		config VIDEO_QUICK_JUMP
+			bool "TiVO like seek"
+			default y
+		config PICTURE_AUTO_ORIENTATION
+			bool "auto orientation for picture"
+			default y
+		config ADDITIONAL_ENCODING_SUPPORT
+			bool "Additional encoding support"
+			default y
+		config HD_PHOTO_PLAYER
+			bool "HD photo player support"
+			default y
+		menu "Slide show effect"
+			config ENABLE_WIPE_EFFECT
+				bool "Wipe effect"
+				default n
+			config WIPE_IN_CHOPPY
+				bool "Wipe in choppy"
+				default n
+			config WIPE_NO_CHOPPY
+				bool "Wipe no choppy"
+				default n
+			config PICTURE_PLAYER_WIPE
+				bool "Wipe effect in picture player"
+				default n
+				depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670 
+		endmenu
+		config GIF_PLAY_SINGLE_FRAME
+			bool "Play single frame for GIF"
+			default y
+		config TIFF_PLAY_SINGLE_FRAME
+			bool "Play single frame for TIFF"
+			default y
+		config NTSC_PAL_SWITCHING
+			bool "Support NTSC & PAL switching"
+			default y
+		config NTSC_OR_PAL_UNUPGRADABLE
+			bool "NTSC PAL setting won't be upgraded"
+			default y
+			depends on NTSC_PAL_SWITCHING
+		config LOCAL_BROWSE
+			bool "Local browse"
+			default y
+		config LOCAL_PLAYLIST
+			bool "Local playlist support"
+			default y
+			depends on LOCAL_BROWSE
+		config LOCAL_PLAYLIST_PARSE_BUFFER_SIZE
+			int "Local playlist buffer size"
+			default 102400
+			depends on LOCAL_PLAYLIST
+		config ITUNES_PLAYLIST
+			bool "iTunes playlist support"
+			default n
+			help
+				Enable this to support iTunes playlist.
+		config SLIDE_SHOW_SECOND_INDEX_0_IS
+			int "slide show second index 0 is (what the hell?)"
+			default 3
+		config SLIDE_SHOW_1_MIN_INDEX
+			int "slide show 1 min index (what the hell?)"
+			default 28
+		config SLIDE_SHOW_2_MINS_INDEX
+			string "slide show 2 min index (what the hell?)"
+			default 29
+		config THUMB_WMA
+			bool "thumbnail from WMA"
+			default y
+		config THUMB_MP4
+			bool "thumbnail from MP4"
+			default y
+		config DMA_AUDIO_ALBUM_ART
+			bool "Audio album art"
+			default y
+		config DMA_LOCAL_BROWSE_THUMB
+			bool "thumbnail for local browse"
+			default y
+		config LOCAL_THUMBNAIL_MAX_SIZE
+			int "buffer size for thumbnail of local browse"
+			default 102400
+		config DMA_AUDIO_TRACK_SWITCH
+			bool "audio track switching"
+			default y
+		config DMA_FONT_FREETYPE2
+			bool "Use freetype2 font"
+			default y
+		config ENABLE_LOGO4WMC
+			bool "enable logo for WMC"
+			default y
+		config SAFE_MODE
+			bool "Safe mode (What the hell?)"
+			default y
+		config BROWSE_HANDLER 
+			bool "browse handler"
+			default y
+		config BROWSE_CACHE
+			bool "Enable browse cache of browse handler"
+			default y if BROWSE_HANDLER
+			depends on BROWSE_HANDLER
+		config USE_SERVER_HANDLER
+			bool "Enable browse servers handler"
+			default y if BROWSE_HANDLER
+			depends on BROWSE_HANDLER
+		config PHOTO_SLIDESHOW_NO_RESUME_PLAYING_WITH_PREV_NEXT
+			bool "Dont resume to playing at pause state with prev / next function only for photo slideshow."
+			default y
+			depends on BROWSE_HANDLER
+			help
+				Dont resume to playing at pause state with prev / next function only for photo slideshow.
+		config PLAYLIST_SUPPORT_WHOLE_PLAY_IN_CASII
+			bool "Support play the whole entry"
+			default n
+			depends on (BROWSE_HANDLER && CASII)
+			help
+				Support completely play the whole genre / folder / artist.
+		config PLAYLIST_SHUFFLE_LIMITED
+			bool "In shuffle mode, the shuffle will be limited in self ~ self + 100."
+			default y
+			depends on BROWSE_HANDLER
+			help
+				Do shuffle between self ~ self+100.
+				EX:
+					1000 items.
+					Without this option, the playlist map in the worse case will be:
+						0 999 666 777 333 222 111 .....
+					With this option, the playlist map in the worse case will be:
+						0 101 4 103 50 151 ....
+		config FILEOP
+			bool "Enable file operation: Copy/Move/Delete "
+			default y if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			default n
+			depends on (USE_SERVER_HANDLER && BROWSE_HANDLER)
+			help
+				We currently support file operations :
+					Local : Delete
+					Local -> Local :  Copy/Move
+					Remote : Copy
+				For local, it will copy/move/delete all files recursively (including hidden files)
+				For remote, we only copy browsed files/folders
+		config BROWSE_DO_FILEOP
+			bool "Enable file operation in browse page "
+			default n
+			depends on (FILEOP)
+			help
+				It enables use fileop operations on selected item in browse page
+		config BROWSE_DO_FILEOP_SUPPORT_COPY_MOVE_DELETE_OPTION
+			bool "Support fileop with copy/move/delete option"
+			depends on BROWSE_DO_FILEOP
+			default n
+			help
+				It enables use fileop operations (copy/move/delete) on selected item in browse page
+		config BROWSE_DO_FILEOP_SUPPORT_FACEBOOK_UPLOAD_OPTION
+			bool "Support fileop with facebook upload" 
+			depends on BROWSE_DO_FILEOP && DMA_FACEBOOK
+			default n
+			help
+				It enables use fileop operations (facebook upload) on selected item in browse page
+		config SUPPORT_AUTO_MOVE_WITH_PLAYLIST
+			bool "Enable browse move with playlist"
+			default y if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			depends on BROWSE_HANDLER
+			help
+				Enable this will make browse page change at reshow by last playlist item index.
+		config RUA_MEMORY_ALLOC_BANK1_FIRST
+			bool "RUA Malloc from bank 1 first"
+			default y if PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+			default n
+			depends on PLATFORM_SMP8634 || PLATFORM_SMP8654
+			help
+				For rua malloc in em86xx_device.c
+				If you enable this configuration, the rua malloc will try to alloc from bank 1 then bank 0.
+				Otherwise, the rua malloc will try to alloc from bank 0 then bank 1.
+		config QUICK_START_MODE
+			bool "Set this option to on it allows you to select one of both modes to shutdown your device"
+			default y if PRODUCT_EXT_LMP555
+			help
+				If you enable this configuration,you will can select anyone of both modes to shutdown device in settings option.
+		config POWER_ON_OFF_WITH_ETHERNET_UP_DOWN
+			bool "Turn power on or off with ethernet up or down"
+			default n
+			depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670
+			help
+				If you enable this configuration, when you turn power on or off ,the ethernet function up or down.
+		config DELETE_OUT_OF_DATA_FIRMWARE_IN_USB
+                        bool "Delete out of date firmware in the usb drive"
+                        default n
+                        default y if PRODUCT_EXT_AV_LS700L
+                        depends on PLATFORM_SMP8634 || PLATFORM_SMP8654
+                        help
+                                If you enable this configuration, the firmware in you USB drive which is out of date will be removed.
+		config SAVE_DEFAULT_SETTING_IN_LAST_PARTITON
+			bool "Save default setting in last partition"
+			default y if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+			default n
+			depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+			help
+				If you enable this configuration, we save the static NTSC/PAL and Language setting in last partition.
+				This setting will be read if setting partition is blank or factory default.
+		config LAST_PARTITION_NODE_NAME
+			string "last partition node name"
+			default "/dev/sigmblockl"
+			depends on SAVE_DEFAULT_SETTING_IN_LAST_PARTITON
+			help
+				Please enter the device node name of last partition.
+		config STATIC_CONFIG_MOUNT_POINT
+			string "Mount point of static config partition"
+			default "/tmp/static_config"
+			depends on SAVE_DEFAULT_SETTING_IN_LAST_PARTITON
+			help
+				Please enter the mount point of last partition
+		config SUPPORT_SYSTEM_ACCOUNT
+			bool "Support to add/delete system account"
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default y
+			help
+				If you want to support to add/delete system account from /etc/password or /etc/shadow, please enable this option.
+		config SUPPORT_DEEP_SLEEP_MODE
+			bool "support deep sleep mode"
+			default n
+			depends on PLATFORM_SMP8654 || PLATFORM_SMP8670
+			help
+				This config is only used in PLATFORM_SMP8654/PLATFORM_SMP8670 to support deep sleep mode.
+		config DEBOUNCE_NTSC_PAL_KEY_TIME 
+			int "Set a time to avoid NTSC/PAL switch key repeat too fast"
+			default 10
+			help	
+				Switching NTSC/PAL need several seconds. We can set a time to avoid repeating key too fast.
+
+		config THERMAL_SENSOR_SUPPORT
+			bool "Support thermal sensor"
+			default y if PRODUCT_EXT_LMP555
+			default n
+			help
+				Support thermal sensor. It can report current temperature and starts/stops FAN.	
+	
+		config THERMAL_HIGH_TEMPERATURE
+			int "High temperature threshold (Centigrade)"
+			depends on THERMAL_SENSOR_SUPPORT
+			default 65
+			help
+				The fan starts if the temperature higher than this
+
+		config THERMAL_LOW_TEMPERATURE
+			int "Lower temperature threshold (Centigrade)"
+			depends on THERMAL_SENSOR_SUPPORT
+			default 50
+			help
+				The fan stops if the temperature lower than this
+
+		config LACIE_MEDIAPLAYER_SATA_CLOCK_CORRECTION
+			bool "Lacie media player SATA clock correction"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && MOUNT_LOCAL_SATA_DRIVE && PRODUCT_EXT_LMP555  
+			default n
+			help
+				This is a workaround for Lacie mediaplayer board
+				Phase I hardware : external SATA clock(zboot: a.sata_channel_cfg = 0x0007), no power control microP, no thermal and fan ,  no DTS
+				Phase II hardware : internal SATA clock(zboot: a.sata_channel_cfg = 0x8057), having power control microP, thermal, fan and DTS
+				Because we want to use the same firmware (including bootloader) for phase I and phase II firmware, thus, we have to detect phaseI and II runtime,
+				and fix up the a.sata_channel_cfg in bootloader. 
+				The rule is : if thermal exist and it is external SATA clock, we'll change it to internal SATA clock. 
+
+		config RTC_TOOL
+			bool "Add support for configuring rtc"
+			default n
+			help
+				Enable this config will compile an application for configure rtc.
+
+		config MLS_PRESET
+			bool "Audio preset support"
+			default n
+			depends on BROWSE_HANDLER 
+			help
+				Preset : 
+					Which defines shortcuts to audio media objects in slots. 
+					Audio item / folder / playlist only.
+					Online audio allowed
+					It allows empty slots which no media object hooks, but no need to reorder.
+				
+		config MLS_FAVORITE
+			bool "Create Favorite(shortcut) to file or folder" 
+			default y if PRODUCT_EXT_LMP555
+			depends on BROWSE_HANDLER 
+			help
+				Favorites : 
+					Which contains shortcuts for media objects. 
+					All categories are allowed including audio/video/photo 
+					Item ,playlist ,folder are all allowed
+					Online items are allowed
+					The order can be defined. It can be sorted by favorite order
+
+		config MLS_PLAYQUEUE
+			bool "Editible playlist for WD"
+			default n
+			depends on BROWSE_HANDLER
+			help
+				Editable Playlist :
+					Which are lists for media objects shortcuts. 
+					All categories are allowed including audio/video/photo 
+					Items only. Container shouldn't be allowed
+					The order can be defined. It can be sorted by favorite order
+
+		config MLS
+			bool
+			default y if MLS_PRESET || MLS_FAVORITE || MLS_PLAYQUEUE
+			help
+				This is a media object access layer. It can save preset, favorite(shortcuts), playqueue.
+
+		choice 
+			prompt "Please select the storage devices to store presets/favorites/editable playlist"
+			depends on MLS
+			default MLS_STORE_TO_CONFIG_PARTITION
+			config MLS_STORE_TO_CONFIG_PARTITION
+				bool "save to config partion"
+			config MLS_STORE_ON_USB0
+				depends on 0
+				bool "save presets/favorites/editable playlist on USB0"
+			config MLS_STORE_ON_USB1
+				depends on 0
+				bool "save presets/favorites/editable playlist on USB1"
+			config MLS_STORE_ON_SATA
+				depends on 0
+				bool "save presets/favorites/editable playlist on SATA"
+		endchoice
+		config SUPPORT_MEMORY_COMPRESSION
+                        bool "Support in-memory compression using compcache module"
+                        default n
+                        help
+				***** TO BE ABLE USE THIS FEATURE, YOU MUST OPEN CONFIG_LZO in LINUX KERNEL CONFIGURATION, OTHERWISE THIS MODULE WON'T WORK *****
+				This module creates RAM based block device (named ramzswap) which acts as swap disk. Pages swapped to this disk are compressed and stored in memory itself.
+				Compressing pages and keeping them in RAM virtually increases its capacity. This allows more applications to fit in given amount of memory. 
+				If you're unsure, select N
+		config SUPPORT_MEMORY_COMPRESSION_RUNTIME_CONTROL
+			depends on SUPPORT_MEMORY_COMPRESSION
+                        bool "Support runtime control at system setting to enable/disable memory compression"
+                        default n
+                        help
+				Open this option will enable control to disable/enable memory compression (compcache) at system setting.
+				This option is used to DEBUG only, it should not be open for customer. If you're unsure, select N
+
+	endmenu
+	menu "Video Output Configuration"
+		config NTSC_OR_PAL
+			string "Set analogue television systems"
+			default	"NTSC"
+		choice 
+			prompt "NTSC Video Output Configuration"
+			default NTSC_M_Japan if PRODUCT_EXT_AV_LS700L 
+			default NTSC_M
+			config NTSC_M
+				bool "NTSC-M"
+				help
+					NTSC_M: Most common standard.
+			config NTSC_M_Japan
+				bool "NTSC-J"
+				help
+					NTSC_M_Japan: Used in Japan only.
+					  			  The same as NTSC_M, except there is no blanking pedestal 
+								  during active video. 
+		endchoice
+		config ENABLE_ALL_DIGITAL_ANALOG_OUTPUT
+			bool "Enable all video output(composite, component & HDMI)"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				Enable composite, component and HDMI output at the same time.
+		config COMPONENT_SUPPORT_RGB_COLOR_SPACE
+			bool "component output support RGB color space"
+			default n
+			help
+				To enable RGB color space in Component output
+		config SUPPORT_COMPONENT_OUTPUT_IN_TVDOCK
+			bool "support component output"
+			default y if PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				To enable component setting and output.
+				There no oem page, so I have to use this name.
+				It just work around
+		config HDMI_REPLACE_PREFERRED_MODE_TO_1080P
+			bool "Using -r 1080p to replace -r pref"
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				Using force 1080p to replace preferred mode.
+				Fix preferred mode will select wrong resolution. 
+		config HDMI_USING_1080P23
+			bool "HDMI support 1080P 23.976Hz"
+			default n
+			help
+				This feature will enable 1080P 23.976Hz.
+		config HDCP_ALWAYS_ON
+			bool "HDMI alwasy turn on HDCP"
+			default n
+			depends on PRODUCT_EXT_WDTV_RV
+			help
+				This feature will always turn on HDCP in HDMI output.
+		config GET_HDMI_VIC
+			bool "save HDMI VIC list to file"
+			default n
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				This feature will save current HDMI EDID data and VIC to file.
+		config HDMI_AUTO_NATIVE_MODE
+			bool "auto change HDMI output frame rate to match video's frame rate"
+			default n
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				This feature will change current HDMI output frame rate to meet your video's frame rate.
+				It will find best match of the framerate if your TV didn't support this video's frame rate.
+		config HDMI_SAVE_TV_MODEL
+			bool "save current HDMI TV's model(deep color and hdmi force mode  will need this.)"
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_ALPHA || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				Deep color and HDMI force output need to detect TV model.
+				If TV changed, then we should fall back to default setting.
+		config HDMI_COMPATIBLE_MODE
+			bool "add HDMI compatible mode in AV setting page to select deep color mode"
+			default y
+			depends on HDMI_SAVE_TV_MODEL
+			help
+				add HDMI compatible mode in AV setting page.
+				HDMI use 8bit deep color, if this turn on.
+				Otherwise will auto negotiate with TV.
+		config HDMI_FORCE_OUTPUT_UNSUPPORTED_RESOLUTION
+			bool "force HDMI to output a unsupported output"
+			default n
+			depends on HDMI_SAVE_TV_MODEL
+			help
+				Most of the DVI monitor didn't have enough information to told you what resolution they can support.
+				So we add force output mode for user to try it.
+		config FIX_HDMI_NO_SYNC
+			bool "Fix HDMI chip fail to output on certain TV"
+			default y
+			depends on PLATFORM_SMP8654_SDK_3_8_5_WD0 
+			help
+				This patch is from Sigma FAE "Yanquan".
+				It use to fix HDMI not sync in certain TV.
+		config FIX_TMDS_OFF_DELAY
+			bool "fix 12bit color depth noise in DFB"
+			default y if PLATFORM_SMP8654_SDK_3_8_4 
+			depends on HDMI_COMPATIBLE_MODE && PLATFORM_SMP8654_SDK_3_8_4
+			help
+				TMDS should turn off when changing color depth.
+		config HDMI_HOTPLUG_ALWAYS_ON
+			bool "HDMI hotplug set to always on"
+			default n
+			help
+				HDMI hotplug set to always on
+		config SUPPORT_10_BIT_DEEP_COLOR
+			bool "support 10 bit deep color"
+			default n
+			depends on HDMI_COMPATIBLE_MODE 
+			help
+				add 10 bit deep color for HDMI.
+		config FORCE_HDMI_8_BIT_DEEP_COLOR
+			bool "force HDMI output 8 bit deep color"
+			depends on !HDMI_COMPATIBLE_MODE
+			default y if PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_VILLA
+			default n
+			help
+				force HDMI output 8 bit deep color.
+		config HDMI_SUPPORT_CEC
+			bool "Open HDMI CEC Feature"
+			default n
+			depends on PLATFORM_SMP8654_SDK_3_8_8
+			help
+			Open HDMI CEC Feature
+		config HDMI_APPLY_DISPLAY_OPTION_WITHOUT_CLOSE_HDMI_CHIP
+			bool "Never close HDMI chip when apply display option or Power off"
+			default n
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				Follow Rex's suggestion to  avoid some bugs.
+		config HDMI_LOCK_FUNCTION
+			bool "add hdmi lock function to avoid GFX and display conflict"
+			default y
+			help
+				add hdmi lock function to avoid GFX and display conflict.
+				GFX and display can't set property at the same time.
+				It will cause display pending.
+		config IMPROVE_COMPOSITE_QUALITY
+			bool "improve composite quality when HD->SD converter is enable"
+			default n
+			help
+				The composite quality will become worse when when HD->SD converter is enable.
+				But the quality can be improved by "-sdbuf".
+				"-sdbuf" will require some memory buffer and CPU usage.
+		config APPLY_DISPLAY_IF_ASPECT_RATIO_CHANGED
+			bool "Re-apply display output if aspect ratio changed"
+			default y
+			depends on SUPPORT_COMPONENT_OUTPUT_IN_TVDOCK 
+			help
+				We have to enable this if we use "-sdf" to eanble HD->SD converter.
+				Composite's aspect ration will incorrectly in particular movie if we change aspect ratio withou apply display output.
+	endmenu
+	menu "Remote controller"
+		choice
+			prompt "Remote controller driver"
+			config IRDA_TANGO3_SIMPLE
+				bool "Use Tango 3 simple driver"
+				depends on (PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670)
+				depends on !DIRECTFB
+			config IRDA_DFB_EVENT
+				bool "Use DirectFB event driver"
+				depends on DIRECTFB
+				help
+					DFB will send event when you get input from irda, keyboard and mouse.
+					dmaosd will read evnet and convert to osd key.
+		endchoice
+		config IRDA_KEY_TIMING
+			int "Set the IrDA key read timing (Unit: ms )"
+			default 300 if (PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV)
+			default 200
+			depends on IRDA_TANGO3_SIMPLE
+			help
+				Customize the irda key getting timing. Shorter timing may cause OSD act faster. 
+				However, for some remote controllers (Logictech universal or Sony), shorter timing may cause reading 2 keys when press once.
+				Currently only WD request for special remote controllers. So we set it to longer timing
+		config REMOTE_WDTV 
+			bool "WD remote support"
+			default y if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default n
+		config REMOTE_ADM500
+			bool "ADM500 remote support"
+			default n
+		config REMOTE_ADM534H
+			bool "ADM534H remote support"
+			default n
+		config REMOTE_DSM520_IN_TANGO3
+			bool "DSM520 remote support"
+			default y
+		config REMOTE_AV_LS700L
+			bool "AV_LS700L  remote support"
+			default y if PRODUCT_EXT_AV_LS700L
+			default n
+		config REMOTE_IMEDIA_HD100
+			bool "IMEDIA_HD100  remote support"
+			default y if PRODUCT_EXT_IMEDIA_HD100
+			default n
+		config REMOTE_IMEDIA_HD100_V2
+			bool "IMEDIA_HD100_V2 remote support"
+			default y if PRODUCT_EXT_IMEDIA_HD100
+			default n
+		config REMOTE_FUNTWIST
+			bool "FUNTWIST  remote support"
+			default y if PRODUCT_EXT_FUNTWIST
+			default n
+		config REMOTE_LMP555
+			bool "Lacie LMP555 remote support"
+			default y if PRODUCT_EXT_LMP555
+			default n
+		config REMOTE_EM7075
+			bool "EM7075  remote support"
+			default y if PRODUCT_EXT_EM7075
+			default n
+		config  IRDA_LED_BLINKING
+			bool "IrDA LED Blinking"
+			default y if PRODUCT_EXT_LMP555
+		config  IRDA_NO_DIRECTION_HOLDKEY
+			bool "No holding key for up/down/left/right"
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			depends on IRDA_TANGO3_SIMPLE || IRDA_DFB_EVENT
+		config  IRDA_NO_DIRECTION_HOLDKEY
+			bool "No holding key for up/down/left/right"
+			default y if PRODUCT_EXT_WDTV_RV
+			default n
+			depends on IRDA_TANGO3_SIMPLE || IRDA_DFB_EVENT
+	endmenu
+	menu "Storage features"
+		config USB_HUB_SUPPORT
+			bool "To support USB hub"
+			default n
+			depends on PRODUCT_EXT_WDTV_RV 
+		config SKIP_4K_SECTOR_AND_LARGER_THAN_2T
+			bool "Do not support drive larger than 2T with 4K sector"
+			default n
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV 
+			help
+				The kernel we used are too old to support drive larger than 2T with 4k sector. 
+				So we try to block it out.
+				Currently, 2011/03/07, Sigma has released patches for it and it seems to be good.
+				So I try to disable this.
+			
+		config WD_APOLLO_DRIVE_UNLOCK_SUPPORT
+			bool "WD Apollo drive unlock support"
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV 
+		config STORAGE_SUPPORT
+			bool "Storage support"
+			default y
+
+		config REMOVABLE_DEVICE_MANAGER
+			bool 
+			default y
+			depends on STORAGE_SUPPORT
+
+		comment "Filesystem support"
+		config FUSE_MOUNT_SUPPORT
+			bool "Fuse mount support, increase DVD file performance."
+			depends on PTP_SUPPORT
+			default y
+			help
+				the performance is bad when DVD Navigtion play the dvd file from samba server.
+				So we use fuse to mount the virtual folder. it will force read 64K from samba server. otherwise it only read 2K.
+		config NTFS_SUPPORT
+			bool "NTFS support"
+			default y
+			depends on STORAGE_SUPPORT
+		config PARAGON_NTFS_HFS_SUPPORT
+			bool "Paragon NTFS & HFS+ support"
+			default n
+			depends on (PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA  || PRODUCT_EXT_WDTV_RV) && !BUILD_GPL_FIRMWARE
+		config NTFS_DOUBLE_MOUNT
+			bool "Mount NTFS twice to speed up reading"
+			default y if PRODUCT_EXT_WDTV_HOUSE
+			depends on NTFS_SUPPORT && PRODUCT_EXT_WDTV_HOUSE 
+			help 
+				In EM8634, the storages are connected via USB and the performance of USB is poor. For media
+				library, we have to both read and write on a NTFS partition. If we just read from NTFS using
+				NTFS-3G, some full-HD video won't be played smoothly. So we just mount a NTFS partition twice.
+				One with gereric NTFS driver for reading and another is NTFS-3G for writing. 
+
+				In EM8654, the CPU performance and USB performance is better than EM8634, so we don't have to
+				mount a NTFS partition twice and we just have to read and write from a NTFS partition using 
+				NTFS-3G.
+		config NTFS_3G_SUPPORT
+			bool "NTFS-3G support"
+			default y
+			depends on NTFS_SUPPORT && !PARAGON_NTFS_HFS_SUPPORT  
+		config NTFS_3G_COMMERCIAL_SUPPORT
+			bool "NTFS-3G commercial version support"
+			default n
+			depends on NTFS_3G_SUPPORT && ( PRODUCT_EXT_LMP555 || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_RV)
+		config NTFS_3G_COMMERCIAL_SUPPORT_IOSTREAMING
+			bool "Use iostreaming mode"
+			default n
+			depends on NTFS_3G_COMMERCIAL_SUPPORT
+		config TNTFS_HFS_SUPPORT
+			bool "Tuxera NTFS & HFS+ support"
+			default y if PRODUCT_EXT_LMP555
+			depends on NTFS_3G_COMMERCIAL_SUPPORT
+		config PARAGON_NTFS_SUPPORT
+			bool "Paragon NTFS support"
+			default y if PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_RV 
+			depends on NTFS_SUPPORT && !BUILD_GPL_FIRMWARE
+		config NTFSPROGS_SUPPORT
+			bool "mkfs for NTFS support"
+			default y if PRODUCT_EXT_LMP555
+			depends on NTFS_SUPPORT
+		config FAT_SUPPORT	
+			bool "FAT support"
+			default y
+			depends on STORAGE_SUPPORT
+		config DOSFSTOOLS
+			bool "filesystem check for VFAT"
+			default y
+			depends on FAT_SUPPORT 
+		config HFS_SUPPORT	
+			bool "HFS support"
+			default y
+			depends on STORAGE_SUPPORT
+		config PARAGON_HFS_FSCK_SUPPORT
+			bool "Paragon HFS fsck support"
+			default y
+			depends on PARAGON_NTFS_HFS_SUPPORT && HFS_SUPPORT
+		config HFS_FSCK_SUPPORT
+			bool "Opensource HFS fsck support"
+			default n
+			depends on HFS_SUPPORT 
+		config HFS_MKFS_SUPPORT
+			bool "mkfs for HFS support"
+			default y
+			depends on HFS_SUPPORT
+		config EXT2_SUPPORT	
+			bool "ext2 support"
+			default y
+			depends on STORAGE_SUPPORT
+		config EXT3_SUPPORT	
+			bool "ext3 support"
+			default y
+			depends on STORAGE_SUPPORT
+		config XFS_SUPPORT
+			bool "xfs support"
+			default y
+			depends on STORAGE_SUPPORT
+
+		comment "Interfaces for storages"
+
+		config MOUNT_LOCAL_SATA_DRIVE
+			bool "Local SATA drive support"
+			default y
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && STORAGE_SUPPORT
+		config ENSLAVE_LOCAL_SATA_DRIVE
+			bool "Enslave local SATA drive through JMICRO" 
+			default y
+			depends on MOUNT_LOCAL_SATA_DRIVE && PRODUCT_EXT_LMP555
+		config USE_SD_SDK_3_6_1_RC2_SATA_DRIVER
+			bool "Using Sigma Designs SDK 3.6.1RC2 SATA driver"
+			depends on PLATFORM_SMP8654 && STORAGE_SUPPORT && MOUNT_LOCAL_SATA_DRIVE
+			help
+				Sigma Designs SDK 3.7.0 default SATA driver is unstable. Enalbe this to use Sigma Designs 3.6.1RC2 SATA dirver, because this version is stable currently.
+
+		config SINGLE_USB_MOUNT
+			bool "Only one USB slot"
+			default y if PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_IMEDIA_HD100 || PRODUCT_EXT_FUNTWIST || PRODUCT_EXT_EM7075
+			depends on STORAGE_SUPPORT
+
+		comment "Mount path settings"
+
+		config USB_MNT_ROOT
+			string "usb mount path"
+			default "/tmp/media/usb"
+			depends on STORAGE_SUPPORT  
+
+		config MNT_POINT_FOR_SATA
+			string "mount point for SATA drive"
+			default "Local"
+		config EXPORT_STORAGE_MNT_POINT
+			string "usb export root"
+			default "/tmp/media/export"
+			depends on STORAGE_SUPPORT 
+			help
+				When server is enable, we must assign content-path to let user browse them. Originally, I
+				export USB_MNT_ROOT(/tmp/media/usb) path but customers give us a response that they doens't
+				want to see USB1/volume_id because user dones't know what is this. So, we export original
+				USB_MNT_ROOT(/tmp/media/usb) path to EXPORT_STORAGE_MNT_POINT(/tmp/media/export) and mount as
+				USB1/volume_name not USB1/volume_id. Why do we mount volume_name first? Because CAS will use
+				volume_id as key (???)
+			
+		config USB_MNT_POINT_FOR_PORT1
+			string "mount point for USB port 1"
+			default "USB1"
+			depends on STORAGE_SUPPORT 
+
+		config USB_MNT_POINT_FOR_PORT2
+			string "mount point for USB port 2"
+			default "USB2"
+			depends on STORAGE_SUPPORT 
+
+		config USB_MNT_POINT_FOR_PORT
+			string "mount point for USB port unknown"
+			default "USB"
+			depends on STORAGE_SUPPORT 
+
+		comment "Additional features for storages"
+
+		config RV_WITHOUT_LABEL_AND_NTFS_CHECKING 
+			bool "Don't check RV HDD's Lable AND Serial No."
+			depends on STORAGE_SUPPORT && PRODUCT_EXT_WDTV_RV 
+			default n
+			help
+				If enable this option, RV will check HDD's label and serial number.
+
+		config SUPPORT_STORAGE_DISK_MANAGER
+			bool "Support storage disk manager"
+			depends on STORAGE_SUPPORT
+			default y if PRODUCT_EXT_WDTV_RV 
+			help
+				If enable this option, user could browse disk information from setting/Disk manager.
+
+		config SATA_STORAGE_STANDBY_SUPPORT
+			bool "SATA standby timer support"
+			depends on MOUNT_LOCAL_SATA_DRIVE
+			default y
+			help
+				Use SATA command (from hdparm) to set SATA drive going to standby mode automatically
+
+		config SATA_STANDBY_TIMER_IN_NORMAL_MODE
+			int "SATA standy timer in normal mode"
+			depends on SATA_STORAGE_STANDBY_SUPPORT
+			default 240
+			help
+				Set the standby timer in normal mode.(For this parameter, please "man hdparm")
+		
+		config SATA_STANDBY_TIMER_IN_STANDBY_MODE
+			int "SATA standy timer in standby mode"
+			depends on SATA_STORAGE_STANDBY_SUPPORT
+			default 12
+			help
+				Set the standby timer in standby (video off) mode.(For this parameter, please "man hdparm")
+
+		config DBG_INFO_ON_USB
+			bool "Save debug info on USB (EDIE, crash log, etc)"
+			default y
+			depends on REMOVABLE_DEVICE_MANAGER && ( PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV) 
+
+		config REMOVABLE_DEVICE_MANAGER_VIRTUAL_FOLDER_FOR_LOCAL_BROWSE
+			bool "Virtual folder support"
+			default y
+			depends on REMOVABLE_DEVICE_MANAGER
+
+		choice
+			prompt "Mode to build virtual folder"
+			config REMOVABLE_DEVICE_MANAGER_VF_INODE
+				bool "Build real virtual folder with creating INode"
+				help
+					This will create virtual folder tree in /tmp which maps to storage folder tree.
+					This is 1st version virtual which used before Sigma 3.7 SDK.
+					However, in Sigma 3.7 SDK, the kernel page is 16KB, thus, the /tmp may run out of Inode when we have to create thousands of real folder.
+			config REMOVABLE_DEVICE_MANAGER_VF_LINKLIST
+				bool "Build virtual folder link list (not creating INode)"
+				help
+					This will create link list instead of create real virtual folder.
+					This mode is to fix the out of INode problem.
+		endchoice
+
+		config REMOVABLE_DEVICE_MANAGER_VF_SUPPORT_INOTIFY
+			bool "Virtual support inotify event notfication"
+			default n
+			depends on REMOVABLE_DEVICE_MANAGER_VF_LINKLIST
+			help
+				inotify can monitor filesystem changes.
+				The mounted storage may changes by UI or samba copy/move/remove  files and dirs.
+				We use this function to notify virtual folder thread to synchronize with files/dirs changes. 
+		
+			config REMOVABLE_DEVICE_MANAGER_VF_INOTIFY_REFRESH_DELAY
+				depends on REMOVABLE_DEVICE_MANAGER_VF_SUPPORT_INOTIFY
+				int "The refreshing time after all inotify events are gotten"
+				default 30
+				help
+					We may receives lot of continuous changes  in a short time interval because lots of files are copied.
+					Thus, we should need to set a time which defines the refresh will begin after how many seconds delay.
+
+		config REMOVABLE_DEVICE_MANAGER_VIRTUAL_FOLDER_FOR_LOCAL_BROWSE_PATH
+			string "Virtual folder path"
+			default "/tmp/virtual_folder"
+			depends on REMOVABLE_DEVICE_MANAGER_VF_INODE
+
+		config STOP_USB_HDD
+			bool "Stop HDD from spinning"
+			default y
+			depends on STORAGE_SUPPORT
+		config ONE_DEVICE_FOR_EACH_USB_PORT
+			bool "Mount only one HDD for one USB port"
+			default y
+			depends on STORAGE_SUPPORT
+		config CAS
+			bool "Media library support"
+			default y
+			depends on STORAGE_SUPPORT
+		choice
+			prompt "CAS for SATA/USB drive"
+			depends on CAS && (MOUNT_LOCAL_SATA_DRIVE)
+			default CAS_FOR_SATA_USB if PRODUCT_EXT_LMP555
+			default CAS_FOR_SATA_USB_NO_DEFINE if PRODUCT_EXT_UNO 
+
+			config CAS_FOR_INTERNAL_SATA_ONLY
+				bool "CAS for internal SATA drive only"
+
+			config CAS_FOR_SATA_USB
+				bool "CAS for SATA or USB drive"
+
+			config CAS_FOR_SATA_USB_NO_DEFINE
+				bool "CAS for SATA or USB drive fixed compiling error"
+				help
+					enable CAS_FOR_SATA_USB may encounter some compiling errors, choose this config if you have errors.
+				
+		endchoice
+		config CASII
+			bool "Using db manager (CASII)."
+			depends on CAS
+			default n
+			help
+				Enable this option to use db manager.
+		choice
+			prompt "CAS server created method"
+			depends on CASII
+			default SINGLE_CAS_SERVER
+			config SINGLE_CAS_SERVER
+				bool "Only creating one server on server handler for every db."
+				help
+					This method is designed for auto-selecting db. For example.
+					In old product like WDTV, the ui dont have data source option.
+					So we need a method to let page refresh if the db is updated.
+					And this method is designed for that.					
+
+			config NORMAL_CAS_SERVER
+				bool "Creating one server on server handler for every db. "
+				help
+					This method is nothing specially. Every db created will add a server on server handler.
+					You can display all db by serever handler, and let user select it.
+
+		endchoice
+		choice
+			prompt "CAS db position"
+			depends on CASII
+			default CREATE_DB_ON_USB_DEVICE
+			default CREATE_DB_ON_LOCAL_DEVICE if (PRODUCT_EXT_WDTV_RV && MOUNT_LOCAL_SATA_DRIVE)
+			config CREATE_DB_ON_USB_DEVICE
+				bool "create db on usb "
+				help 
+					Like wdtv / villa / lacia, we create db for all storage,
+					and save it on each device.  
+			config CREATE_DB_ON_LOCAL_DEVICE
+				bool "create db on sata storage "
+				help
+					Like RV, we create db for all storage,
+					and save them all on sata device.
+		endchoice
+		config	CASII_PARENTAL_CONTROL
+			bool "Enable/disable parental contol function on casii db."
+			depends on CASII
+			default n
+				help
+					With this option, the setup / system page will provide lock / unlock query
+					and set parental lock password.
+		config	CASII_PARENTAL_CONTROL_DEFAULT_PASSWD
+			string "parental control default password"
+			default "0000" if CASII_PARENTAL_CONTROL
+			default ""
+		config	CASII_SUPPORT_DB_MANAGER
+			bool "Enable db manager system."
+			depends on CASII
+			default n
+				help
+					Add manager system for db manully / schedule scan and aggregate samba db.
+		config	CASII_DEBUG_WITH_STATIC_PATH_ON_DB
+			bool "Easy to create db on x86 env."
+			depends on CASII
+			default n
+				help
+					With this option, the dbm will create an init db data.
+					You dont need plug / unplug usn device on x86 env.
+		config  DISABLE_PLAYLIST_HISTORY_WHEN_CAS_OFF
+			bool "When CAS off, don't create playlist history on storage."
+			default n
+			depends on CAS 
+			help
+				Normally, regardlss of CAS is enabled or disabled, 
+				device will create playlist history on stoarge.
+				When this option turns on, the device only create playlist history on storage
+				while CAS is enabled.
+		config TVDOCK_DB_DIR
+			string "DB directory"
+			default "/.wd_tv/"
+			depends on CAS
+		config TVDOCK_DB_NAME
+			string "DB name"
+			default "wdtv.cas"
+			depends on CAS
+		config TVDOCK_UNION_DB_NAME
+			string "Union DB name"
+			default "uniondb.cas"
+			depends on CAS
+		config TVDOCK_DB_MD5
+			string "MD5 sum extension"
+			default ".md5"
+			depends on CAS
+		config TVDOCK_DUPLICATE_FILTER
+			bool "Filter out duplicate file"
+			default n
+			depends on CAS
+		config CAS_FOLDER_CRC
+			bool "Folder CRC check for FAT"
+			default y
+			depends on CAS
+		config CAS_TIMER_INTERVAL
+			int "Content aggregation state checking interval (sec)"
+			default 10
+			depends on CAS
+			help
+				We need a timer to poll the virtual folder state. If it is dirty, we need to trigger CAS scan
+
+		config REMOVABLE_DEVICE_BROWSE
+			bool
+			default y
+			help
+				Obselete and stupid setting. 
+				This is just in order to make it able to compile
+		config PTP_SUPPORT
+			bool "support Picture Transfer Protocol"
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default y
+			help
+				Enable this to read Digital Camera like storage device
+		config PTP_EXPORT_ONLY_IMAGE
+			bool "export image only"
+			depends on PTP_SUPPORT
+			default y
+			
+		config GPHOTO2_IDLIST
+			string "Path of supported camera list"
+			default	"/etc/idlist"
+			depends on PTP_SUPPORT
+			help	
+				This file contains all supported camera list. This file is alone with libgphoto2 in bsp_repos
+		config FILE_CHECKR
+			bool "File status cache for watched or something"
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default y
+			help
+				This option will create a chain node to cache the file status, something like "watched / resume pos"
+		config POPEN_FIRMWARE_CHECKSUM
+			bool "Using popen to do firmware md5 checksum"
+			depends on PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			default y if PRODUCT_EXT_WDTV_RV
+			help
+				Using popen to replace block read to prevent system block during firmware md5 checksum.
+	endmenu
+	menu "Player features"
+		menu "Subtitles"
+			config SPU_API
+				default y
+				bool "Player subtitle support"
+			config FONT_FILE_PATH_STORE
+				string "Path to store font file"
+				default "/tmp/font_file_path"
+				depends on SPU_API
+			config SUPPORT_HW_VOBSUB
+				bool "Hardware support for VOBSUB"
+				default n
+				depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670 
+			config  SUBTITLE_SELECT
+		        bool "Subtitle select"
+				default y
+				depends on PRODUCT_EXT_LMP555
+				help
+				    Enable this to support select subtitle in playback.	
+			config	SUBTITLE_POSITION_ADJUSTMENT
+				bool "Subtitle positon adjustment"
+				default	n
+				help
+					Enable this to support adjusting subtitle position in playback.
+			config SUBTITLE_POSITION_ADJUSTMENT_DELTA
+				int "the default value for subtitle position adjustment"
+				default 5
+				depends on SUBTITLE_POSITION_ADJUSTMENT
+			config SUPPORT_MICRODVD_SUBTITLE
+				bool "Support MicroDVD subtitle"
+				default y
+				depends on PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555
+				help
+					Enable this to support MicroDVD subtitle.
+			config SUBTITLE_CHANGE_COLOR
+				bool "Support to change subtitle color"
+				default y
+				depends on PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+				help
+					Enable this to support to change subtitle color.
+			config SUBTITLE_TEXT_COLOR
+				bool "Support to change subtitle text color"
+				default y
+				depends on SUBTITLE_CHANGE_COLOR && PRODUCT_EXT_LMP555
+				help
+					Enable this to support to change subtitle text color.
+			config SUBTITLE_CHANGE_FONT_SIZE
+				bool "Support to change subtitle font size in playback"
+				default y
+				depends on PRODUCT_EXT_WDTV_RV
+				help
+					Enable this to support to change subtitle font size in playback"
+		endmenu
+		config  ONLINE_PLAYER_CACHE_SIZE
+			int  "Player cache size for online service"
+			default 63963136 
+			help
+				Player cache size for online services - Youtube, MediaFly, Facebook
+		config  AUTO_AUDIO_OUTPUT_SETTING
+			bool "AUDIO output follow HDMI EDID configuration"
+			default n
+			help
+				add auto setting for HDMI audio passthrough.
+				This option will read HDMI EDID configuration and pick up the best audio output.
+		config AVI_SUPPORT_MULTIAUDIO_STREAM
+			bool "AVI multi-audio stream support"
+			default y
+		config DMA_MLP_BOUNDED_WITH_RND
+			bool "MLP bounded with RND (What the hell?)"
+			default y
+		config PROCPIPE_PLAYER
+			bool "PROCPIPE player"
+			default y
+		config HW_BUFFERING
+			bool "HW buffering support"
+			default y
+		config ISO_FOLDER_SUPPORTED
+			bool "ISO folder support"
+			default y
+		menu "Audio Codec PassThrough Info"
+			depends on !AUTO_AUDIO_OUTPUT_SETTING
+			config DTS_DOWNMIX_COMPRESSED
+				bool "downmix and passthrough at the same time for DTS family"
+				default n
+				help
+					we can decode(dowmmix) and passthrough the DTS at the same time
+			config DTS_2CH_ANALOG_COMPRESSED
+				bool "DTS 2 channels analog compressed"
+				default y
+			config DTS_2CH_DIGITAL_COMPRESSED
+				bool "DTS 2 channels digital compressed"
+				default y
+			config DTS_6CH_ANALOG_COMPRESSED
+				bool "DTS 6 channels analog compressed"
+				default y
+			config DTS_6CH_DIGITAL_COMPRESSED
+				bool "DTS 6 channels digital compressed"
+				default y
+
+			config DTS_HRA_2CH_ANALOG_COMPRESSED
+				bool "DTS-HD High Resolution Audio, 2 channels analog compressed"
+				default y
+			config DTS_HRA_2CH_DIGITAL_COMPRESSED
+				bool "DTS-HD High Resolution Audio, 2 channels digital compressed"
+				default y
+			config DTS_HRA_6CH_ANALOG_COMPRESSED
+				bool "DTS-HD High Resolution Audio, 6 channels analog compressed"
+				default y
+			config DTS_HRA_6CH_DIGITAL_COMPRESSED
+				bool "DTS-HD High Resolution Audio, 6 channels digital compressed"
+				default y
+
+			config DTS_MA_2CH_ANALOG_COMPRESSED
+				bool "DTS-HD Master Audio, 2 channels analog compressed"
+				default y
+			config DTS_MA_2CH_DIGITAL_COMPRESSED
+				bool "DTS-HD Master Audio, 2 channels digital compressed"
+				default y
+			config DTS_MA_6CH_ANALOG_COMPRESSED
+				bool "DTS-HD Master Audio, 6 channels analog compressed"
+				default y
+			config DTS_MA_6CH_DIGITAL_COMPRESSED
+				bool "DTS-HD Master Audio, 6 channels digital compressed"
+				default y
+
+			config DOLBY_LL_UNSUPPORTED
+				bool "DOLBY LL unsupported"
+				default y
+				help
+					yes => we will treat DOLBY lost-less as unsupported audio and won't play it
+					no  => we can play DOLBY lost-less file
+			config DOLBY_LL_2CH_ANALOG_COMPRESSED
+				bool "DOLBY Digital TrueHD ,2 channels analog compressed"
+				default y
+			config DOLBY_LL_2CH_DIGITAL_COMPRESSED
+				bool "DOLBY Digital TrueHD , 2 channels digital compressed"
+				default y
+			config DOLBY_LL_6CH_ANALOG_COMPRESSED
+				bool "DOLBY Digital TrueHD , 6 channels analog compressed"
+				default y
+			config DOLBY_LL_6CH_DIGITAL_COMPRESSED
+				bool "DOLBY Digital TrueHD , 6 channels digital compressed"
+				default y
+
+			config DOLBY_PLUS_2CH_ANALOG_COMPRESSED
+				bool "DOLBY Digital plus,2 channels analog compressed"
+				default y
+			config DOLBY_PLUS_2CH_DIGITAL_COMPRESSED
+				bool "DOLBY Digital plus,2 channels digital compressed"
+				default y
+			config DOLBY_PLUS_6CH_ANALOG_COMPRESSED
+				bool "DOLBY Digital plus,6 channels analog compressed"
+				default y
+			config DOLBY_PLUS_6CH_DIGITAL_COMPRESSED
+				bool "DOLBY Digital plus,6 channels digital compressed"
+				default y
+
+			config DOLBY_PLUS_ANALOG_COMPRESSED_SPDIF
+				bool "passthrough DD+ via spdif when we decode it"
+				depends on !DOLBY_PLUS_6CH_ANALOG_COMPRESSED || !DOLBY_PLUS_2CH_ANALOG_COMPRESSED || !DOLBY_PLUS_2CH_DIGITAL_COMPRESSED
+				default n
+				help
+					we passthrough DD+ via spdif when we decode it on other output (analog and HDMI)
+					on sigma chip. when we play pure DD+ stream. and we use this function .the DD+ iptoken is necessary
+			config AC3_2CH_ANALOG_COMPRESSED
+				bool "AC3 2 channels analog compressed"
+				default y
+			config AC3_2CH_DIGITAL_COMPRESSED
+				bool "AC3 2 channels digital compressed"
+				default y
+			config AC3_6CH_ANALOG_COMPRESSED
+				bool "AC3 6 channels analog compressed"
+				default y
+			config AC3_6CH_DIGITAL_COMPRESSED
+				bool "AC3 6 channels digital compressed"
+				default y
+
+			config AAC_2CH_ANALOG_COMPRESSED
+				bool "AAC 2 channels analog compressed"
+				default y
+			config AAC_2CH_DIGITAL_COMPRESSED
+				bool "AAC 2 channels digital compressed"
+				default y
+			config AAC_6CH_ANALOG_COMPRESSED
+				bool "AAC 6 channels analog compressed"
+				default y
+			config AAC_6CH_DIGITAL_COMPRESSED
+				bool "AAC 6 channels digital compressed"
+				default y
+
+			config WMAPRO_UNSUPPORTED
+				bool "WMAPRO unsupported"
+				default y
+				help
+					yes => we will treat WMAPRO as unsupported audio and won't play it
+					no  => we can play WMAPRO file
+			config WMAPRO_2CH_ANALOG_COMPRESSED
+				bool "WMAPRO 2 channels analog compressed"
+				default y
+				help
+					yes => passthrough
+					no  => decode
+			config WMAPRO_2CH_DIGITAL_COMPRESSED
+				bool "WMAPRO 2 channels digital compressed"
+				default y
+				help
+					yes => passthrough
+					no  => decode
+			config WMAPRO_6CH_ANALOG_COMPRESSED
+				bool "WMAPRO 6 channels analog compressed"
+				default y
+				help
+					yes => passthrough
+					no  => decode
+			config WMAPRO_6CH_DIGITAL_COMPRESSED
+				bool "WMAPRO 6 channels digital compressed"
+				default y
+				help
+					yes => passthrough
+					no  => decode
+
+		endmenu
+		menu "Audio Decoder Info"
+			depends on AUTO_AUDIO_OUTPUT_SETTING
+			config AC3_DECODER
+				bool "HW AC3 decoder"
+				default y
+				help
+					there is ac3 decoder on this platform
+			config DDP_DECODER
+				bool "HW DOLBY Digital plus decoder"
+				default y
+				help
+					there is DOLBY Digital plus decoder on this platform
+
+			config TRUEHD_DECODER
+				bool "HW DOLBY Digital TrueHD decoder"
+				default n
+				help
+					there is DOLBY Digital TrueHD decoder on this platform
+
+			config DTS_DECODER
+				bool "HW DTS decoder"
+				default y
+				help
+					there is DTS decoder on this platform
+
+			config AAC_DECODER
+				bool "HW AAC decoder"
+				default y
+				help
+					there is AAC decoder on this platform
+
+			config WMA_DECODER
+				bool "HW WMA decoder"
+				default y
+				help
+					there is WMA decoder on this platform
+
+			config WMAPRO_DECODER
+				bool "HW WMA pro decoder"
+				default y
+				help
+					there is WMA pro decoder on this platform
+		endmenu
+		config PCM_FILE_SUPPORTED
+			bool "PCM file support"
+			default y
+
+		config MUSIC_DIFFERENT_SPEED
+			bool "Music different speed (What the hell?)"
+			default y
+
+		config MUSIC_OGG
+			bool "Music OGG"
+			default y
+		config MUSIC_FLAC
+			bool "Music FLAC"
+			default y
+		config FORMAT_MATROSKA
+			bool "Music MATROSKA"
+			default y
+
+		config SMOOTH_FASTFORWARD
+			bool "smooth fastforward"
+			default y
+
+		config DMA_HW_AES
+			bool "Sigma hardware AES support"
+			default y
+			depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670 
+		config NO_PIPE_FUNC
+			bool "No pipe support (What the hell?)"
+			default y
+		config PIPE_SG_PSF_PLAYER
+			bool "CONF_PIPE_SG_PSF_PLAYER (what the hell?)"
+			default y
+		config PIPE_AVI_PLAYER
+			bool "CONF_PIPE_AVI_PLAYER ??"
+			default y
+		config SPLIT_MEDIALOGIC
+			bool "CONF_SPLIT_MEDIALOGIC ??"
+			default y
+
+		config PLAYER_NOTUSE_DEVICE_MEM
+			bool "CONF_PLAYER_NOTUSE_DEVICE_MEM ??"
+			default y
+
+		config	HD_GFX_PHOTO_PLAYER
+			bool "the new photo player with gfx"
+			default n
+			help
+				The new photo player, it uses gfx to draw picture data.
+				the new photo player is use rgb data to draw the picture.
+				So, that means it needs more memory.
+
+		config BUFFER_WIDTH_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "the max decoded buffer width for photo player with gfx"
+			default 2047
+			help
+				the buffer to save the decoded picture data. 
+				it will use sw scaler to scale the resolution 
+				when the BUFFER_WIDTH_FOR_HD_GFX_PHOTO_PLAYER X 
+					BUFFER_HEIGHT_FOR_HD_GFX_PHOTO_PLAYER 
+				less than the resolution of photo
+
+		config BUFFER_HEIGHT_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "the max decoded buffer height for photo player with gfx"
+			default 2047
+			help
+				the buffer to save the decoded picture data. 
+				it will use sw scaler to scale the resolution 
+				when the BUFFER_WIDTH_FOR_HD_GFX_PHOTO_PLAYER X 
+					BUFFER_HEIGHT_FOR_HD_GFX_PHOTO_PLAYER 
+				less than the resolution of photo
+
+		config SCREEN_WIDTH_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "for 16-9 setting,the max screen width for photo player with gfx"
+			default 1920
+			help
+				the output scaler size in 16-9 setting
+
+		config SCREEN_HEIGHT_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "for 16-9 setting,the max screen height for photo player with gfx"
+			default 1080
+			help
+				the output scaler size in 16-9 setting
+
+		config SCREEN_NORNAL_WIDTH_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "for 4-3 setting,the max screen width for photo player with gfx"
+			default 1440
+			help
+				the output scaler size in 4-3 setting
+
+		config SCREEN_NORNAL_HEIGHT_FOR_HD_GFX_PHOTO_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			int "for 4-3 setting,the max screen height for photo player with gfx"
+			default 1080
+			help
+				the output scaler size in 4-3 setting
+	
+		config HW_PHOTO_DECODER
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "support the hw photo decoder, it needs more memory"
+			default y
+			help
+				use hw photo decoder (jpeg) to decode the photo.
+
+		config MULTI_PLAYER_CACHE
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "use one process to allocate cache buffer for av and pic player"
+			default y
+			help
+				Becasue we only cache the buffer for av player before. 
+				but we also need to it for pic player. 
+				so we implement a server to read malloc and free command 
+					from av and pic player
+
+		config MULTI_PLAYER_CACHE_FOR_AV_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "the av player needs the memory cache"
+			default y
+			help
+				this is for MULTI_PLAYER_CACHE server, 
+
+		config MULTI_PLAYER_CACHE_FOR_PIC_PLAYER
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "the pic player needs the memory cache"
+			default y
+			help
+				this is for MULTI_PLAYER_CACHE server, 
+				
+		config MULTI_PLAYER_CACHE_FOR_OSD
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "the osd ui needs the memory cache"
+			default n
+			help
+				this is for MULTI_PLAYER_CACHE server, 
+
+		config MULTI_PLAYER_CACHE_SIZE
+			depends on HD_GFX_PHOTO_PLAYER
+			int "unit is MB, the cache buffer size for av and pic player"
+			default 77
+			help
+				this is for MULTI_PLAYER_CACHE server, 
+				the server will allocate  MULTI_PLAYER_CACHE_SIZE(MB) buffer.
+		choice
+			prompt "MOV/MP4 player"
+			config PIPE_MP4_PLAYER
+				bool "Old version"
+				help
+					This is old mov/mp4 player.
+
+			config QUICKTIME_PLAYER
+				bool "New player for MOV and MP4 container"
+				help
+					New demuxer and player for MOV/MP4. Support embedded
+					subtitle and multi-audio streams.
+		endchoice	
+		config USE_LOWWEIGHT_SYSTEM_MEMORY_IN_PROCESS_MPEG
+			bool "Use low weight system memory while playing mpeg."
+			default y if PRODUCT_EXT_LMP555
+			default n
+			help
+				System will crash when play mpeg files if system memory is less than 20MB.
+		config 3GP_FILE_SUPPORT
+			bool "support 3gp file extension name"
+			default n
+			help
+				support 3gp file extension name.but it only support mpeg4 codec , just like mp4 file
+		config OGG_PLAYER
+			bool "Support ogg demuxer and player."
+			default n
+			help
+				Enable this config to support OGG demuxer and player.
+		config IPCAM_PLAYER
+			bool "Support ipcam(which made in alphanetworks.com) demuxer and player."
+			default n
+			help
+				Enable this config to support ipcam(which made in alphanetworks.com) demuxer and player.
+		config IPCAM_DISPLAY_ON_TOP_LAYER
+			bool "Display ipcam on the top layer."
+			default n
+			help
+				Enable this config to display ipcam on top layer.
+		config RELOAD_DECODER
+			bool "Run shell script to reload micro code when decoder dead."
+			default n
+			help
+				Enable this config to support micro code reload.
+		config SUBTITLE_DELAY
+			bool "to support the user can adjust the subtitle show time"
+			default n
+			help
+				the user can adust the subtitle showtime.
+				currently, we use right/left key to handle it.
+		config VIDEO_PENDING_RELOAD_MICROCODE
+			bool "reload micro code when video pending"
+			default n
+			help
+				reload microcode when video decoder pending. 
+				currently, we use it in sigma psfdemux
+		config DIVX_SUBTITLE_SUPPORT
+			bool "Support Divx Subtitle"
+			default n
+			help
+				Enalbe this to support Divx Subtitle
+		config FLV_PLAYER
+			bool "Support flv file format"
+			default n
+			help
+				support flv file 
+		config M4V_SUPPORT_TRICKMODE
+			bool "m4v support trickmode"
+			default y
+			help
+				make m4v extern filename supports trickmode
+		config PGS_SUBTITLE_SUPPORT
+			bool "Support PGS Subtitle"
+			default n
+			help
+				Enable this to support PGS Subtitle
+
+		config SW_DEMUX_PLAYER
+			bool "enable sw demux for ps and ts format"
+			default n
+			help
+				currently, we use sigma hw demux to play dvd
+				but, there is some problem on hw demux for lacie.
+				so we use sw demux to play dvd
+
+		config YOUTUBE_MOV_CACHE_PLAYER
+			bool "we use cache data to play mov youtube file"
+			default n
+			help
+				because some different playback method, we use different
+				player to play youtube mov file.
+		config SW_DEFAULT_BPS_FOR_YOUTUBE
+			int "the default byterate for youtube"
+			default 32768
+			depends on YOUTUBE_MOV_CACHE_PLAYER
+			help
+				if we can not get the byte rate for youbute , we will use this value.
+		config SW_MIN_BUFFERING_TIME_FOR_YOUTUBE
+			int "the min buffering time for youtube"
+			default 1
+			depends on YOUTUBE_MOV_CACHE_PLAYER
+			help
+				the min buffering time for youtube.
+		config SW_MAX_BUFFERING_TIME_FOR_YOUTUBE
+			int "the max buffering time for youtube"
+			default 15
+			depends on YOUTUBE_MOV_CACHE_PLAYER
+			help
+				the max buffering time for youtube.
+		config SW_FIRST_MAX_BUFFERING_TIME_FOR_YOUTUBE
+			int "the max buffering time for youtube firstly"
+			default 6
+			depends on YOUTUBE_MOV_CACHE_PLAYER
+			help
+				the max time when we do bffering for youtube firstly.
+		config FAKE_BD_PLAYBACK
+			bool "support fake BD playback"
+			default y
+			help
+				we use max filesize and pmt info. to guess the whole movie . so we can know which file we should playback
+		
+		config SAVE_PIC_ROTATE_INFO
+			depends on HD_GFX_PHOTO_PLAYER
+			bool "save picture player rotate infor"
+			default n
+			help
+				when we rotate the current picture. we will save the info into the same path. and if we can not save. we will save into memory array. then if we play the same file again. we will use last rotate info.
+
+		config DO_NOT_DOWNSAMPLE_FOR_ABOVE_48K_AUDIO
+			bool "for above 48k audio , we will not do downsample"
+			default n
+			help
+				for above 48k audio , we will not do downsample. TODO : we should check the HDMI EDID 
+
+		config UNO_ENABLE_FORCE_VIDEO_REPEAT_MODE
+			bool "to force video repeat mode for MP test"
+			default n
+			depends on PRODUCT_EXT_UNO
+			help
+				To force video repeat mode for MP test.
+		config SUPPORT_AUDIO_REPLAY_GAIN
+			bool "support audio replay gain function"
+			default n
+			help
+				support audio replay gain function, currently, we only support mp3 and flac format
+				the replay gain is we can set different volume for different file.
+	endmenu
+	menu "Misc. features"
+		config OSDKEY_MAPPING
+			bool "Support engine key mapping"
+			default n
+			help
+				Allow key mapping which can map the original osde_key to the newer key in engine. 
+				This can be used for WDTV RV so that color key can map to real key.
+		config KEYBOARD_IR_INJECTION
+			bool "Inject keyboard as IR"
+			default y
+			help
+				Currently, we are running dmaosd in the background.
+				So that we can't use keyboard to as IR. This is hard
+				for QA to run batch commands. So I create a FIFO /tmp/ir_inject
+				for QA to inject keys.
+		config WIZARD_IGNORE_QUEST_SERVER
+			bool "Wizard ignore quest server ??"
+			default y
+		config VOLUME_RNAGE_WORKAROUND
+			bool "fix up the volume control. FIXED_VOLUME_VALUE will be disable if you choose y."
+			default y if PRODUCT_EXT_LMP555
+			default n
+		config DEFAULT_VOLUME
+			int "default volume value"
+			default 40
+			depends on VOLUME_RNAGE_WORKAROUND
+		config VOLUME_SHOW_TIME
+			int "volume control bar show time"
+			default 4
+			depends on VOLUME_RNAGE_WORKAROUND
+		config FIXED_VOLUME_VALUE
+			int "Fixed volume value"
+			default 50
+			depends on !VOLUME_RNAGE_WORKAROUND
+		config OSD_VOLUME_KEY_WORK
+			bool "Enable volume adjustment"
+			default n 
+		config UNIFORM_BROWSE
+			bool "Uniform browse ??"
+			default y
+		config SAVEMETHOD_CRC
+			bool "CRC check for settings"
+			default y
+		config MAX_FILE_PATH_LENGTH
+			int "maximum file path length"
+			default 4353
+		config HTTP_HEADER_KEEP_ORIGINAL_HOSTNAME
+			bool "Do not resolve IP address while calling url_init."
+			help
+				"Do not call gethostbyname to get the IP address. Keep hostname passed to get_hostname function. MediaFly of online services counts on this. Please see src/util/src/httpAPI/url.c for detail."
+			default n
+		config ACCOUNT_MGR
+			bool "Supports account management"
+			default y 
+			
+			menu "Account Manager Options"
+				depends on ACCOUNT_MGR
+				config ACCOUNT_FACTORY_SETTINGS
+					depends on ACCOUNT_MGR
+					string "account factory settings"
+					default "account_list.xml"
+				config ACCOUNT_MSG_ONLING_YOUTUBE_SEARCH_MAX_ITEMS
+					int "Max items for YouTube auto complete search"
+					default 50
+				config ACCOUNT_MGR_LOCAL_SAMBA_MAX_ITEMS
+					int "Max items for Samba servers"
+					default 10
+				config ACCOUNT_MGR_LOCAL_NFS_MAX_ITEMS
+					int "Max items for NFS servers"
+					default 10
+			endmenu
+	endmenu
+
+	menu "Platform features"
+		config DMA_GPIO_API
+			bool "GPIO API by Steven Wang"
+			default y
+		choice 
+			prompt "LED control selection"
+			default GPIO_LED_BLINKING if PLATFORM_SMP8654_WISTRON_VILLA_BOARD || PLATFORM_SMP8654_WISTRON_VILLA_BOARD_D2 || PLATFORM_SMP8654_WISTRON_BOARD
+			default I2C_LED_BLINKING if PLATFORM_SMP8654_ALPHA_RV_BOARD || PLATFORM_SMP8654_ALPHA_RV_BOARD_256
+			config GPIO_LED_BLINKING
+				bool "Enable led gpio control in zboot"
+			config I2C_LED_BLINKING
+				bool "Enable i2c led control in zboot"
+		endchoice
+		config LED_GPIO_PIN
+			int "GPIO pin of the led"
+			depends on GPIO_LED_BLINKING
+			default 2 if PLATFORM_SMP8654_WISTRON_VILLA_BOARD || PLATFORM_SMP8654_WISTRON_VILLA_BOARD_D2 || PLATFORM_SMP8654_WISTRON_BOARD
+			
+	endmenu
+
+	menu "Debug features"
+		config CONSOLE_SNIFFER
+			bool "Sniffer all console outputs"
+			default n if PRODUCT_EXT_WDTV_RV  
+			help
+				This is requested by WD. We have to log all the console output for engineers to debug.
+				We need to patch kernel in order to create a 'console_peek' character device.
+				This device is written by William Chen. So your kernel should have 'tty_io.c' patched.
+				If it does, it creates 'console_peek' device and we can save all console log there.
+
+		config DFB_SHOW_CONFIG
+			bool "Show Video/Audio config information"
+			default n
+			depends on SUPPORT_DCCHD
+			help
+				Show Video/Audio config detail information.
+		config DEBUG_SECRET_TELNETD
+			bool "telnetd enabled by secret keys combination"
+			default y
+			help
+				combination: right/right/down/down/right/right/down 
+		config DMALLOC_DEBUG
+			bool "Use dmalloc to debug"
+			default n
+		config DMALLOC_DEBUG_APPLY_DMAOSD
+			depends on DMALLOC_DEBUG
+			bool "Apply on dmaosd"
+			default n
+		config DMALLOC_DEBUG_APPLY_MEDIALOGIC
+			depends on DMALLOC_DEBUG
+			bool "Apply on MediaLogic"
+
+		config DMALLOC_DEBUG_APPLY_DB_MANAGER
+			depends on DMALLOC_DEBUG
+			bool "Apply on db_manager"
+		
+	
+		config DMALLOC_MASK_LOG_STATUS
+			depends on DMALLOC_DEBUG
+			bool "log general statistics (0x1)"
+		config DMALLOC_MASK_LOG_NON_FREE
+			depends on DMALLOC_DEBUG
+			bool "log non-freed pointers (0x2)"
+		config DMALLOC_MASK_LOG_KNOWN
+			depends on DMALLOC_DEBUG
+			bool "log only known non-freed (0x4)"
+		config DMALLOC_MASK_LOG_TRANS
+			depends on DMALLOC_DEBUG
+			bool "log memory transactions (0x8)"
+		config DMALLOC_MASK_LOG_ADMIN
+			depends on DMALLOC_DEBUG
+			bool "log administrative info (0x20)"
+		config DMALLOC_MASK_LOG_BAD_SPACE
+			depends on DMALLOC_DEBUG
+			bool "dump space from bad pnt (0x100)"
+		config DMALLOC_MASK_LOG_NONFREE_SPACE
+			depends on DMALLOC_DEBUG
+			bool "dump space from non-freed pointers (0x200)"
+		config DMALLOC_MASK_LOG_ELAPSED_TIME
+			depends on DMALLOC_DEBUG
+			bool "log elapsed-time for allocated pointer (0x40000)"
+		config DMALLOC_MASK_LOG_CURRENT_TIME
+			depends on DMALLOC_DEBUG
+			bool "log current-time for allocated pointer (0x80000)"
+		config DMALLOC_MASK_CHECK_FENCE
+			depends on DMALLOC_DEBUG
+			bool "check fence-post errors (0x400)"
+		config DMALLOC_MASK_CHECK_HEAP
+			depends on DMALLOC_DEBUG
+			bool "check heap adm structs (0x800)"
+		config DMALLOC_MASK_CHECK_BLANK
+			depends on DMALLOC_DEBUG
+			bool "check mem overwritten by alloc-blank, free-blank (0x2000)"
+		config DMALLOC_MASK_CHECK_FUNCS
+			depends on DMALLOC_DEBUG
+			bool "check functions (0x4000)"
+		config DMALLOC_MASK_CHECK_SHUTDOWN
+			depends on DMALLOC_DEBUG
+			bool "check heap on shutdown (0x8000)"
+		config DMALLOC_MASK_CATCH_SIGNALS
+			depends on DMALLOC_DEBUG
+			bool "shutdown program on SIGHUP, SIGINT, SIGTERM (0x20000)"
+		config DMALLOC_MASK_REALLOC_COPY
+			depends on DMALLOC_DEBUG
+			bool "copy all re-allocations (0x100000)"
+		config DMALLOC_MASK_FREE_BLANK
+			depends on DMALLOC_DEBUG
+			bool "overwrite freed memory with \0337 byte (0xdf) (0x200000)"
+		config DMALLOC_MASK_ERROR_ABORT
+			depends on DMALLOC_DEBUG
+			bool "abort immediately on error (0x400000)"
+		config DMALLOC_MASK_ALLOC_BLANK
+			depends on DMALLOC_DEBUG
+			bool "overwrite allocated memory with \0332 byte (0xda) (0x800000)"
+		config DMALLOC_MASK_PRINT_MESSAGES
+			depends on DMALLOC_DEBUG
+			bool "write messages to stderr (0x2000000)"
+		config DMALLOC_MASK_CATCH_NULL
+			depends on DMALLOC_DEBUG
+			bool "abort if no memory available (0x4000000)"
+		config DMALLOC_MASK_NEVER_REUSE
+			depends on DMALLOC_DEBUG
+			bool "never re-use freed memory (0x8000000)"
+		config DMALLOC_MASK_ERROR_DUMP
+			depends on DMALLOC_DEBUG
+			bool "dump core on error, then continue (0x40000000)"
+		config DMALLOC_MASK_ERROR_FREE_NULL
+			depends on DMALLOC_DEBUG
+			bool "generate error when a 0L pointer is freed (0x10000000)"
+
+		config DMALLOC_LOGFILE_DIR
+			string "dmalloc logfile directory"
+			default "/tmp"
+			depends on DMALLOC_DEBUG
+		config NFS_DEBUG
+			bool "NFS for debug"
+			default n
+		config NO_SIGPIPE
+			bool "Don't receive SIGPIPE"
+			default y
+			help
+				The system keeps reporting SIGPIPE and it's annoying.
+				Turn this on to disable all SIGPIP signal.
+		config NETSERVICE_DEBUG
+			bool "Netservice debug"
+			default n
+			help
+				Turn on this option for netservice debug, this will print out
+				netservice statemachine state, events and further debug messages
+		
+		config X86_PLAYER_SUPPORT_ON_REMOTE_PART
+			bool "x86 player support on remote part"
+			depends on !PLATFORM_X86
+			default n
+			help
+				Play media on target board while using GUI on x86.
+				This is to build on target board part.
+
+		config X86_PLAYER_SUPPORT	
+			bool "x86 player support"
+			depends on PLATFORM_X86
+			default n
+			help
+				Play media on target board while using GUI on x86.
+		config X86_REMOTE_PLAYER_IP
+			string
+			depends on X86_PLAYER_SUPPORT
+			default "X86_REMOTE_PLAYER_IP"
+
+	endmenu
+	menu "DMAX fixes"
+		config SHOW_INFO_BAR_WHILE_SWITCHING_REPEAT_MODE
+			bool "Show info. bar while switching repeat mode for video and photo"
+			default y
+			help
+				When the info. bar is not on screen, if the user changes the repeat mode. 
+				The info bar will be shown for a while and disappear. 
+				This is requested by WD.
+				
+		config OSD_INFO_INDEPENDENCE
+			bool "Showing info or not is independnent from each browsing page"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_ALPHA || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				For browsing video/audio/music, showing info or not is 
+				independent from each mode.
+
+		config NOW_PLAYING_INFO_SHOWN_ALL_THE_TIME
+			bool "Show now playing info. for background music all the time"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_ALPHA || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help 
+				[WDITR 11639]"Now Playing" screen doesn't show up
+				So if there is background music playing, we have to show the now playing info. bar all the time
+
+		config BUG_2134_FIXED
+			bool "default input color space is BT.709"
+			default y
+			help
+				[WDITR 14057] Unflagged video decoded with BT.601 instead of BT.709
+				for sigma. default input color space is BT.601. but most unflagged video is BT.709. so we always set default is BT.709
+
+		config BUG_1332_FIXED
+			bool "Support 0x50 audio codec id for ts format"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 11820] Audio is not supported by playback TS file with mp2 audio format.
+				That is due to the audio codec id is 0x50, and we are not add it to player.
+				So, we detect it is unsupported audio.The 0x50 codec id is mpeg audio.
+
+		config BUG_798_FIXED
+			bool "Playing WMV9 files, FF/REV changes aspect ratio"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 9988]Playing WMV9 files, FF/REV changes aspect ratio. 
+				This is due to we reinit the HW player without reset 
+				the aspect ratio. And we reinit the HW player is 
+				because the sigma Bug 8324 : Avi files(div3 and wmv9) 
+				stutter after some trickmode functions .
+
+		config BUG_1189_FIXED
+			bool "support 24bits AIFF file"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 11310]AIF file sounds like static when played on WD FW.
+				This is due to we get incorrect audio data position.
+
+		config BUG_1767_FIXED
+			bool "always send the pts of h264 codec"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 13258] MKV audio out of sync
+				this is problem file. bug WD still want to fix it. the duration of video is not the same with audio
+		config BUG_1943_FIXED
+			bool "to fixed duration error for some problem file"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 13437] Playback: Issues surrounding files
+				there are some problem files. the duration will parse error due to the incorrect pts value.
+				in this case (pts bitrate is larger than 50Mb) , we will use timestamp duration.
+
+		config BUG_2972_FIXED
+			bool "to fix avi playback issue for non-inteleave file"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 15798] Playback: Video restarts halfway through playback
+				there is a problem when we implement index playback
+
+		config ENABLE_BACK_BUTTON_ON_VIDEO_RESUME_PAGE
+			bool "Enable back button on video resume page"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				open this option if you want to allow user press back button to cancel video playback
+				on video resume/cancel page
+				video resume/cancel page:
+				"Do you want to resume playback or restart the video?"	
+
+		config SMALL_FOLDER_ICON_FOR_FOLDER_THUMB
+			bool "Add a small folder icon for a folder thumbnail"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help 
+				If there is a thumbnail for a folder, it's hard to tell if it is 
+				a file or a folder. So we will place a small default folder icon
+				to indicate it's a folder instead of a file
+		config SUBTITLE_TURN_ON_OR_OFF_BY_DEFAULT
+			bool "add setting to turn on or off subtitle by default"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			help
+				Add a setting in Video setting for turn on or off subtitle by default
+		config SUBTITLE_OUTLINE_SHAPE
+			bool "add setting to adjust the subtitle outline shape"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			help
+				Add a setting in Video setting for adjust the subtitle outline shape
+		config PLAYLIST_SORT_BY_FILE
+			bool "sort the content of playlist by itself"
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				Enable to sort by original playlist, disable to sort by file name.
+			default y
+		config AUDIO_TRACK_DISPLAY
+			bool "Enable set audio browse display filename or title"
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_ALPHA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			depends on CAS 
+			help
+				Enable the setup optnion about setting the display of audio meta browse.
+			default y
+		config AUDIO_HIERARCHY_BROWSE
+			bool "Enable audio hierarchy browse"
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_LMP555 || PRODUCT_EXT_ALPHA || PRODUCT_EXT_AV_LS700L || PRODUCT_EXT_EM7075 || PRODUCT_EXT_WDTV_RV
+			help
+				Hierarchy: Genre / Artist / Album.
+			default y
+		config AUTOPLAY
+			bool "Enable / disable auto play support"
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			help
+				enable / disable auto play function, including setup option.
+			default y
+		config AUTO_PLAY_SELECT_DEVICE
+			bool "Select the device to auto play"
+			depends on AUTOPLAY && PRODUCT_EXT_LMP555 
+			help
+				allow users to select any device (e.g USB1 or USB2 or SATA) to auto play when system power on.
+			default y
+		config SORT_BY_TRACK_NUMBER_WITH_ALBUM
+			bool "Enable / disable sort by track number with album browse"
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				Enable / disable sort by track number with album browse.
+			default y
+		config VIDEO_PLAYLIST
+			bool "Enable video playlist"
+			default y if PRODUCT_EXT_WDTV_HUT
+			default n 
+		config FF_FB_LOOP_WITHOUT_NORMAL
+			bool "when pressing ff / fb continously, remove normal speed from the cycle"
+			default y if PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				When ff / fb to the max speed, set the player speed to 2x instead of 1x.
+			default n
+
+		config SEND_MUTE_SOUND_AT_BEGINNING
+			bool "bug 974, we send mute audio at beginning to workaround it."
+			default y
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && DMA_HDMI
+			help
+				because there is noise for some TV, 
+				we send mute audio at beginning to workaround it.
+				this is only on AV player.
+		config HDMI_SIMPLAY_recover_from_HDMI_apply_fail
+			bool "Simplay failed. HDMI no display after wake up from power off"
+			default y
+			depends on PRODUCT_EXT_WDTV_HOUSE || PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_ALPHA || PRODUCT_EXT_WDTV_RV
+			help
+				[WDITR 14644] Simplay failed.
+				This is the walk around for simplay.
+				There is a pending error during HDMI apply display option.
+				[parse_display_cmdline.* c:5651] Can not set PadsControl: Property 6125 on module 18, RM_PENDING.
+				The display will pending and cause the output fail.
+				so we will reinit HDMI and apply display option again.*/
+		config BUG_2127_FIX_NO_HDMI_OUTPUT_ON_RCA_TV
+			bool "bug 2127, fix no hdmi output on RCA tv"
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				This is a workaround for the RCA TV, 
+				but it will result in an out-of-spec AVI InfoFrame.
+
+				After this patch is applied inside MRUA_src, the AVI
+				InfoFrame is by default:
+				+-----------------------------------------------+
+				| AVI Info Frame, Type 0x82 Version 0x02 Len 13 |
+				+-----+-----+-----+-----+-----+-----+-----+-----+
+				|  0  | Y=2 (444) | A=0 |Bh=0 |Bv=0 |Su=0 |So=0 |
+				| C=0(None) | M=2(16:9) |     R=0x08(same)      |
+				|ITC=0| EC=0 (xvYCC601) | Q=0 (Def) |SCv=0|SCh=0|
+				|  0  |           VIC=04 720p 60Hz              |
+				| YQ=0(Lim) |CN=0(Graph)|          PR=0         |
+				| Top  hBar = 0         | Bottom hBar = 0       |
+				| Left vBar = 0         | Right  vBar = 0       |
+				+-----+-----+-----+-----+-----+-----+-----+-----+
+
+				The HDMI certification test in the Astro VA-1809 analyzer
+				does not complain about this.
+
+				Without this patch RCA's avi infoFrame will have incorrectly
+				value, Bottom hBar = 65535, Right  vBar = 65535.
+		config NO_FF_FB_AT_PLAYER_PAUSE
+			bool "A custoner request: ignore the ff/ fb key at pause state."
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV || PRODUCT_EXT_LMP555
+			help
+				This one is to enable no ff / fb when player state is at the pause state.
+		config VIDEO_PLAY_SEEK
+			bool "A capability to allow user to seek time when video playing"
+			default y
+			depends on PRODUCT_EXT_LMP555
+			help
+			This one is to enable user can enter time to jump to the duration where want to seek.
+		config BUG_2849_FIX_CRASH_WHEN_CHANGE_OUTPUT_FROM_HDMI_TO_COMPOSITE_NTSC
+			bool "[WDITR 15478] Resolution: Villa shows black screen when switch composite PAL to NTSC"
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				This issue will fix if we apply display optin twice. 
+				But it's work around.
+		config SORT_WITH_CASE_INSENSITIVE
+			bool "Add COLLATE NOCASE sql command to disable the case sensitive on sorting."
+			default y
+			depends on PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA || PRODUCT_EXT_WDTV_RV
+			help
+				The command is on the mail loop of sqlite wiki. Enable this config to change the order function to case insensitive.
+	endmenu
+	source config/Kconfig.features_dlna.in
+	source config/Kconfig.features_drm.in
+	source config/Kconfig.features_rally.in
+endmenu
+
+menu	"Path settings"
+
+	config	SETTING_ORIGINAL_CONFIG_FILE_DIR
+		string "directory to store default config files"
+		default "/conf_src"
+
+	config	SETTING_FACTORY_SETTINGS
+		string "factory settings"
+		default "config_factory_default"
+
+	config	SETTING_CONFIG_FILE_DIR
+		string "directory of current config file"
+		default "/tmp/conf/"
+
+	config	SETTING_CONFIG_FILE_NAME
+		string "filename of current settings"
+		default "config"
+		help 
+			This is the config file used to store config in memory. 
+			This file will be saved in flash by other utility.
+			Mostly, you don't have to change this setting.
+
+	config	RELATIVE_PATH_FOR_RESOURCES
+		string "Relative path for resources, including settings, etc."
+		default ""
+		help
+			This is most likely to be used while you are developing on a x86 platform. 
+			If you don't set anything to it, it will be replaced to the path to your building system
+			
+endmenu
+
+source	config/Kconfig.rootfs_installer.in
+source	config/Kconfig.rootfs_primary_system_installer.in
+source	config/Kconfig.firmware_maker.in
+source	config/Kconfig.external_packages.in
+
+

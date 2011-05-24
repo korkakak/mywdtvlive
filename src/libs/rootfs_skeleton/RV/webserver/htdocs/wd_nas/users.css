@@ -1,0 +1,117 @@
+.user_list_item{
+	height:23px;
+	/*width:280px;*/
+	background-image:url(images/panel_list_item_bg.png);
+	margin:5px 5px 2px 5px;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+	border:solid transparent 1px;
+	position:relative;
+}
+
+.user_list_item .user_name{
+	margin-left:10px;
+	margin-top:4px;
+	color:#616264;
+	font-size:11px;
+}
+
+.user_list_item .trash{
+	position:absolute;
+	right:5px;
+	top:3px;
+}
+
+.user_list_item:hover{
+	border-color:#0094ec;
+	cursor:pointer;
+}
+
+.user_list_item.selected{
+	border-color:#0094ec;
+	background-color:#7bc9ed;
+}
+
+#user_details_form{
+	padding-bottom: 20px;
+}
+
+#user_details_form .panel_form_row, .panel_form_row{
+	padding:2px 5px 2px 5px;
+	font-size:11px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#616264;
+	margin:5px 5px 2px 5px;
+	position:relative;
+	top:0px;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+
+#create_share .panel_form_row{
+	padding:2px 5px 2px 10px;
+}
+
+#manage_user_access_container{
+	padding:5px;
+}
+
+#user_details_form input[type=text], #create_user_panel input[type=text], #user_details_form input[type=password], #create_user_panel input[type=password]{
+	width: 173px;
+	height:17px;
+}
+
+#user_details_form .label, #create_user_panel .label, .panel_form_row .label{
+	width:85px;
+	display:inline-block;
+	font-weight:bold;
+	line-height:15px;
+	padding-top:2px;
+	padding-bottom:3px;
+}
+
+#create_share .panel_form_row .label{
+	padding-top:3px;
+	width:106px;
+}
+
+td.help{
+	padding:5px 0 5px 3px !important;
+	text-align:right;
+}
+
+#create_user_panel{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:-1px;
+	left:-1px;
+	color:red;
+	border:solid #d3d3d3 1px;
+	background-color:#fff;
+	display:none;
+	z-index:1;
+}
+
+#create_user_panel .checkbox label{
+	font-weight:bold !important;
+}
+
+#user_detail_share_access .share_scrollable_area{
+	height:172px;
+}
+
+#create_user_panel_share_access .share_scrollable_area{
+	height:92px;
+}
+
+.ui-helper-hidden-accessible{
+	display:none;
+}
+
+.update_password_label, .update_password_ckbx_label{
+	width:130px !important;
+}
+
+#scrollable_user_list{
+	position:relative;
+	height:483px;
+}

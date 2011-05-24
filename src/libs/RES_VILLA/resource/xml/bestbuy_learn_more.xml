@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page>
+	<ctrlgrp> 
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"/>
+		<linebreak/>
+		 <button valkey="OK"
+			normal_bg="image/bestbuy/bby_bt_n.png"
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			click_effect="tp"/>
+	</ctrlgrp>
+	<wrapper y="421" w="210" h="49" align="hcenter" fontsize="20" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029">
+		<imgbtn image="@@bg-OK" text="@@text-OK" active="@@act-OK" x="535"/>
+	</wrapper>
+	<wrapper x="193" w="886" h="22" fontsize="20" numlines="1" textcolor="0xffbababa" align="hcenter">
+		<text text="$$Due to licensing restrictions from our content providers, some movies may become unavailable for" y="232"/>
+		<text text="$$viewing for an unspecified period of time." y="256"/>
+		<text text="$$These movies usually become available again at the end of that period. We apologize for any" y="280"/>
+		<text text="$$inconvenience." y="304"/>
+		<text text="$$For more information, please review the CinemaNow Terms of Use at:" y="328"/>
+	</wrapper>
+	<text text="www.cinemanow.com/terms" x="213" y="362" w="856" h="22" fontsize="20" numlines="1" textcolor="0xfff2f2f2" align="hcenter"/>
+<!--	<text text="@@message" x="394" y="232" w="492" h="300" fontsize="20" numlines="11" textcolor="0xffbababa"/>-->
+	<include filename="./bestbuy_common.xml"/>
+</page>

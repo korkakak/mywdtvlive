@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="./image/villa_bg.png">
+  <text text="@@master_headline" x="97" y="115" w="600" h="52" fontsize="50" textcolor="0x07b5ff"/>
+    <text text="@@slave_headline" x="110" y="173" w="600" h="20" fontsize="30" textcolor="0xe2e2e2"/>
+
+  <include filename="./inc_keyboard.xml"/>
+  //  <image image="@@logo_icon" x="1072" y="590" w="126" h="56"/>
+
+<!--  <include filename="./inc_setup_headline_property.xml" /> -->
+</page>

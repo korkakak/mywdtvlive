@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<page background="image/villa_bg.png">
+  <ctrlgrp>
+    <button valkey="OK"
+    	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+  <text text="$$System information" x="249" y="132" w="610" h="42" fontsize="42" textcolor="0x07b5ff" align="left"/>
+  <table x="335" y="212" w="400" h="240" rows="6" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="$$Device name"/>
+    <text text="$$MAC Address"/>
+    <text text="$$IP Address"/>
+    <text text="$$Subnet Mask"/>
+    <text text="$$Gateway"/>
+    <text text="$$DNS"/>
+  </table>
+  <wrapper disable="@@disable-proxy">
+  <table x="335" y="452" w="400" h="80" rows="2" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="$$Proxy Server"/>
+    <text text="$$Proxy Port"/>
+  </table>
+  </wrapper>
+  
+  <table x="777" y="212" w="200" h="240" rows="6" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="@@value-device_name"/>
+    <text text="@@value-mac_address"/>
+    <text text="@@value-ip_address"/>
+    <text text="@@value-subnet_mask"/>
+    <text text="@@value-gateway"/>
+    <text text="@@value-dns"/>
+  </table>
+  <wrapper disable="@@disable-proxy">
+  <table x="777" y="452" w="200" h="80" rows="2" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="@@value-proxy_server"/>
+    <text text="@@value-proxy_port"/>
+  </table>
+  </wrapper>
+  <wrapper x="293" w="695" h="1" image="image/browser_list_line.png">
+    <image ymargin="0" bg="1" y="251"/>
+    <image ymargin="0" bg="1" y="291"/>
+    <image ymargin="0" bg="1" y="331"/>
+    <image ymargin="0" bg="1" y="371"/>
+    <image ymargin="0" bg="1" y="411"/>
+    <image ymargin="0" bg="1" y="451"/>
+  </wrapper>
+  <wrapper x="293" w="695" h="1" image="image/browser_list_line.png" disable="@@disable-proxy">
+    <image ymargin="0" bg="1" y="491"/>
+    <image ymargin="0" bg="1" y="531"/>
+  </wrapper>
+  <imgbtn image="@@bg-OK" text="$$OK" x="468" y="550" w="343" h="78" fontsize="20" align="hcenter" textcolor="0xffffff" active="@@act-OK"/>
+</page>

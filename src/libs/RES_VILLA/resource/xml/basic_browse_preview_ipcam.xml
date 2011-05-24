@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/villa_bg.png" type="basic">
+
+<text text="@@browse_title_icon" x="152" y="87" w="400" h="44" fontsize="42" textcolor="0x07b5ff"/>
+<text text="@@pagecounter" x="533" y="136" w="204" h="26" fontsize="24" align="right" textcolor="0xe2e2e2"/>
+
+<ctrlgrp valkey="options" autoenter="1" lbmask="LR">
+	<listbox valkey="browselist" move="page" cols="1" rows="8" lbmask="lr" loop_scroll="1" turbo_trigger="10" turbo_multi="10" autoenter="1"/>
+	<button valkey="PIP_ZOOM" focused_bg="image/villa_movies_full_screen_f.png" 	normal_bg="image/villa_movies_full_screen_n.png"/>
+	<linebreak/>
+	<button valkey="QML0"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_thumbnail_icon_n.png"
+		disabled_bg="image/villa_options_menu_thumbnail_icon_d.png"
+		normal_bg="image/villa_options_menu_thumbnail_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$Thumbnail mode"/>
+	<button valkey="QML1"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_list_icon_n.png"
+		disabled_bg="image/villa_options_menu_list_icon_d.png"
+		normal_bg="image/villa_options_menu_list_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$List mode"/>
+	<button valkey="QML2"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_preview_more_icon_n.png"
+		disabled_bg="image/villa_options_menu_preview_more_icon_d.png"
+		normal_bg="image/villa_options_menu_preview_more_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$Preview mode"/>
+	<button valkey="QML3"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/options_menu_ipcam_icon.png"
+		normal_bg="image/options_menu_ipcam_icon.png"
+		disabled_bg="image/options_menu_ipcam_icon.png"
+		group_valkey="OPTION"
+		group_focused_text="PIP"/>
+	<button valkey="QML4"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/options_menu_alert_icon.png"
+		normal_bg="image/options_menu_alert_icon.png"
+		disabled_bg="image/options_menu_alert_icon_d.png"
+		group_valkey="OPTION"
+		group_focused_text="Motion Detect"/>
+</ctrlgrp>
+
+    <image image="@@moreprev" x="436" y="131" w="40" h="29"/>
+    <table x="157" y="175" w="592" h="409"
+         cols="1" rows="8" colspacing="0" rowspacing="0"
+         lbimage="image/villa_movies_select_bar_left.png" fontsize="20" selected_fontsize="26">
+    <text text="@@browselist_0_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" speed="@@browse_0_speed" delay="2"/>
+
+    <text text="@@browselist_1_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" speed="@@browse_1_speed" delay="2"/>
+
+    <text text="@@browselist_2_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" speed="@@browse_2_speed" delay="2"/>
+
+    <text text="@@browselist_3_text" xmargin="87" ymargin="14"
+	    lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" speed="@@browse_3_speed" delay="2"/>
+
+    <text text="@@browselist_4_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" speed="@@browse_4_speed" delay="2"/>
+
+    <text text="@@browselist_5_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" speed="@@browse_5_speed" delay="2"/>
+
+    <text text="@@browselist_6_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" speed="@@browse_6_speed" delay="2"/>
+
+    <text text="@@browselist_7_text" xmargin="87" ymargin="14"
+          lightbar="@@lightbar-browselist-7" active="@@act-browselist-7" speed="@@browse_7_speed" delay="2"/>
+
+    </table>
+    <image image="@@morenext" x="436" y="599" w="40" h="29"/>
+
+<wrapper x="166" w="578" h="1">
+    <image image="@@browse_0_line" ymargin="0" y="225"/>
+    <image image="@@browse_1_line" ymargin="0" y="276"/>
+    <image image="@@browse_2_line" ymargin="0" y="327"/>
+    <image image="@@browse_3_line" ymargin="0" y="378"/>
+    <image image="@@browse_4_line" ymargin="0" y="429"/>
+    <image image="@@browse_5_line" ymargin="0" y="480"/>
+    <image image="@@browse_6_line" ymargin="0" y="531"/>
+    <image image="@@browse_7_line" ymargin="0" y="582"/>
+</wrapper>
+<wrapper x="187" w="50" h="50" align="hcenter" scale_type="fixratio" scale="100">
+    <image image="@@browse_0_thumbnail" default_image="@@browse_0_default_image" y="175"/>
+    <image image="@@browse_1_thumbnail" default_image="@@browse_1_default_image" y="226"/>
+    <image image="@@browse_2_thumbnail" default_image="@@browse_2_default_image" y="277"/>
+    <image image="@@browse_3_thumbnail" default_image="@@browse_3_default_image" y="328"/>
+    <image image="@@browse_4_thumbnail" default_image="@@browse_4_default_image" y="379"/>
+    <image image="@@browse_5_thumbnail" default_image="@@browse_5_default_image" y="430"/>
+    <image image="@@browse_6_thumbnail" default_image="@@browse_6_default_image" y="481"/>
+    <image image="@@browse_7_thumbnail" default_image="@@browse_7_default_image" y="532"/>
+</wrapper>
+<!-- movie infomation -->
+<wrapper x="788" w="194" h="20" fontsize="18" textcolor="0x999999">
+    <text text="$$File Size:" y="450"/>
+    <text text="$$File Type:" y="500"/>
+    <text text="$$Genre:" y="550"/>
+</wrapper>
+<wrapper x="982" w="120" h="20" fontsize="18" textcolor="0xffffff">
+    <text text="@@filesize" y="450"/>
+    <text text="@@filetype" y="500"/>
+    <text text="@@filegener" y="550"/>
+</wrapper>
+<wrapper x="779" w="332" h="1" image="image/villa_fileManagement_line_right.png" bg="1">
+    <image y="482"/>
+    <image y="533"/>
+    <image y="584"/>
+</wrapper>
+<!-- movie pip -->
+<image image="image/villa_movies_frame.png" x="749" y="159" w="393" h="282"/>
+<image image="@@preview_rect_image" default_image="@@default_preview_rect_image" x="779" y="188" w="333" h="222" textcolor="@@preview_rect_color" keycolor="1" ignore_keycolor="1"/>
+<image image="@@bg-PIP_ZOOM" x="749" y="159" w="393" h="282" disable="@@disable-PIP_ZOOM"/>
+<image image="@@movies_frame_top" x="749" y="159" w="393" h="282"/>
+<include filename="./inc_loading.xml"/>
+<include filename="./decoration.xml"/>
+<text x="450" y="160" w="372" h="26" text="@@text-options" fontsize="24" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+<include filename="inc_options_list_x5.xml"/>
+<include filename="./ipcam_pip_win.xml" />
+</page>

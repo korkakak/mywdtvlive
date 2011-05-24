@@ -1,0 +1,178 @@
+#!/bin/sh
+
+. /sysconfig
+
+OUTPUT=/dev/ttyS0
+DEVNAME=/dev/$MDEV
+MOUNT_POINT=/mnt/$MDEV
+
+mknod /dev/ttyS0 c 4 64
+mkdir -p $MOUNT_POINT
+
+echo "$DEVNAME sleep $1 seconds..." > $OUTPUT
+sleep $1
+echo "$DEVNAME sleep $1 seconds... done" > $OUTPUT
+
+FSTYPE=vfat
+mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+RET=$?
+
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed0: " $RET > $OUTPUT ;
+	FSTYPE=ufsd;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed1: " $RET > $OUTPUT ;
+	FSTYPE=msdos;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+	
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed2: " $RET > $OUTPUT ;
+	FSTYPE=ntfs;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed3: " $RET > $OUTPUT ;
+	FSTYPE=ext2;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed4: " $RET > $OUTPUT ;
+	FSTYPE=ext3;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET != "0" ]; then
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed5: " $RET > $OUTPUT ;
+	FSTYPE=hfsplus;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET != "0" ]; then
+	FSTYPE=hfs;
+	echo "mount " $DEVNAME " on " $MOUNT_POINT " with " $FSTYPE " failed6: " $RET > $OUTPUT ;
+	mount -v -t $FSTYPE $DEVNAME $MOUNT_POINT -o ro > $OUTPUT
+	RET=$?
+fi
+
+if [ $RET == "0" ]; then
+
+	echo "mounted /dev/" $MDEV " ok.." > $OUTPUT ;
+
+	if [ -f /tmp/find_romfs ];  then
+		echo "romfs.bin had been found, skip this usb disk.." > $OUTPUT;
+	fi
+
+	if [ -f $MOUNT_POINT/$SYSCONF_FIRMWARE_BIN ]; then
+		a=1
+		while [ $a -le 10 ];  do
+			if [ -f /tmp/find_romfs ]; then
+				break;
+			fi
+			a=`expr $a + 1`
+			echo " enter loop $a" > $OUTPUT;
+		done;
+
+		if [ $a -eq 11 ]; then
+			touch /tmp/find_romfs;
+			sync;
+
+			echo "Found romfs.bin..." > $OUTPUT;
+			mkdir -p /firmware;
+			cd /firmware;
+
+			if [ -f /firmware/romfs.bin ];  then
+				echo "romfs.bin had been copied, skip this usb disk.." > $OUTPUT;
+			else
+				if [ x$SYSCONF_FIRMWARE_WDTV_COMBO = xy ]; then
+					echo "Using fwextract(skip 32 bytes)..." > $OUTPUT;
+					/bin/fwextract $MOUNT_POINT/$SYSCONF_FIRMWARE_BIN 2 /firmware/romfs.bin 32 > $OUTPUT;
+					echo "fwextract donw..." > $OUTPUT;
+				else
+					echo "... ... ..." > $OUTPUT;
+				fi
+
+				mkdir -p /mnt/firmware;
+				mknod /dev/loop0 b 7 0;
+				mknod /dev/loop1 b 7 1;
+				mknod /dev/loop2 b 7 2;
+
+				echo "Mount APP firmware to /mnt/firmware.." > $OUTPUT;
+
+				export LO_DEV=`losetup -f`
+				if [ x$LO_DEV != x ]; then
+					losetup -o 32  $LO_DEV $MOUNT_POINT/$SYSCONF_FIRMWARE_BIN
+					echo "losetup -o $LO_DEV , ret=$? " > $OUTPUT;
+					mount $LO_DEV /mnt/firmware/
+					export RET=$?
+					echo "Mount RET = $RET" > $OUTPUT;
+				else
+					echo "losetup -f $LO_DEV fail, RET = $RET" > $OUTPUT;
+					export RET="255"
+				fi
+
+				if [ $RET == "0" ]; then
+					echo "Mount APP firmware ok.." > $OUTPUT;
+
+					if [ x$SYSCONF_BOOT_AUTH == xy ]; then
+						echo "Check the authentication of whole file.." > $OUTPUT
+						boot_auth -o 32 -p /mnt/mykey.pub -s /tmp/file.sig $MOUNT_POINT/$SYSCONF_FIRMWARE_BIN
+					else
+					    echo "Checking MD5..." > $OUTPUT;
+					    (cd /mnt/firmware;	md5sum -c md5sum.txt > $OUTPUT)
+					fi
+
+					RET=$?;
+					if [ $RET == "0" ]; then
+						export SYSCONF_FIRMWARE_BIN_OLD=$SYSCONF_FIRMWARE_BIN
+						. /mnt/firmware/sysconfig
+						if [ $SYSCONF_FIRMWARE_BIN_OLD == $SYSCONF_FIRMWARE_BIN ]; then
+							echo "Firmware is ok...." > $OUTPUT;
+							echo $MDEV > /firmware_ok;
+						else
+							echo "Fail to do MD5 checksum..." > $OUTPUT;
+							echo "Fail to do MD5 checksum..." > $OUTPUT;
+							echo "Fail to do MD5 checksum..." > $OUTPUT;
+							echo "Fail to do MD5 checksum..." > $OUTPUT;
+							echo "Fail to do MD5 checksum..." > $OUTPUT;
+							cd /;
+							umount /mnt/firmware;
+						fi
+					else
+						echo "Fail to do MD5 checksum...2..." > $OUTPUT;
+						cd /;
+						umount /mnt/firmware;
+					fi
+				else
+					echo "Fail to mount APP firmware to /mnt/firmware.." > $OUTPUT;
+				fi
+
+				if [ x$LO_DEV != x ]; then
+					echo "losetup -d $LO_DEV" > $OUTPUT;
+					losetup -d $LO_DEV;
+				fi
+			fi
+		else
+			echo "romfs.bin had been found, skip this usb disk.." > $OUTPUT;
+		fi
+	else
+		echo "No romfs.bin. Umount mount point.." > $OUTPUT;
+	fi
+	echo "umount $MOUNT_POINT" > $OUTPUT;
+	umount $MOUNT_POINT;
+else 
+	echo "mount /dev/"$MDEV " failed.." > $OUTPUT ;
+fi
+
+echo "find_firmware on /dev/"$MDEV " done.." > $OUTPUT ;

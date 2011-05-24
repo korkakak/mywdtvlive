@@ -1,0 +1,2323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Видео"
+
+msgid "Music"
+msgstr "Музыка"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "All Video"
+msgstr "Все видео"
+
+msgid "Date"
+msgstr "дата"
+
+msgid "Folders"
+msgstr "папки"
+
+msgid "Recent"
+msgstr "последние"
+
+msgid "Playlist"
+msgstr "Список воспроизведения"
+
+msgid "Playlist Videos"
+msgstr "Список воспроизведения"
+
+msgid "All Music"
+msgstr "Вся музыка"
+
+msgid "Artist"
+msgstr "исполнитель"
+
+msgid "Genre"
+msgstr "жанр"
+
+msgid "Album"
+msgstr "альбом"
+
+msgid "Now Playing"
+msgstr "Проигрывается"
+
+msgid "Now playing"
+msgstr "Проигрывается"
+
+msgid "New firmware found"
+msgstr "Обнаружена новая версия встроенного ПО"
+
+msgid "No storage present"
+msgstr "Запоминающее устройство не подключено"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Для компиляции библиотеки мультимедиа требуется больше места:"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "Сканирование подключенного запоминающего устройства. Первое сканирование может занять несколько минут. Подождите..."
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Нажмите [OK] для возобновления воспроизведения или [Отмена] для  воспроизведения видеозаписи с начала"
+
+msgid "Audio/Video"
+msgstr "Аудио и видео"
+
+msgid "Audio"
+msgstr "Аудио"
+
+msgid "Movie"
+msgstr ""
+
+msgid "System"
+msgstr "Система"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "Интервал"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "About"
+msgstr "О программе"
+
+msgid "Normal"
+msgstr "Обычный"
+
+msgid "Widescreen"
+msgstr "Широкий экран"
+
+msgid "Composite"
+msgstr "Композитный"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Авто"
+
+msgid "Stereo"
+msgstr "Стерео"
+
+msgid "Digital"
+msgstr "Цифровой"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Изменить разрешение видео?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Изменить разрешение формат видеовыхода?"
+
+msgid "Repeat one"
+msgstr "Повторить одну"
+
+msgid "Repeat all"
+msgstr "Повторить все"
+
+msgid "Repeat all and shuffle"
+msgstr "Повторить все в случайном порядке"
+
+msgid "Keep as original"
+msgstr "Сохранить в исходном виде"
+
+msgid "Fit to screen"
+msgstr "По размеру экрана"
+
+msgid "Shuffle"
+msgstr "В случайном порядке"
+
+msgid "Fade"
+msgstr "Затемнение"
+
+msgid "Random"
+msgstr "Случайный"
+
+msgid "3 Seconds"
+msgstr "3 секунды"
+
+msgid "5 Seconds"
+msgstr "5 секунд"
+
+msgid "10 Seconds"
+msgstr "10 секунд"
+
+msgid "20 Seconds"
+msgstr "20 секунд"
+
+msgid "30 Seconds"
+msgstr "30 секунд"
+
+msgid "1 Minute"
+msgstr "1 минута"
+
+msgid "3 Minutes"
+msgstr "3 минуты"
+
+msgid "5 Minutes"
+msgstr "5 минут"
+
+msgid "10 Minutes"
+msgstr "10 минут"
+
+msgid "15 Minutes"
+msgstr "15 минут"
+
+msgid "20 Minutes"
+msgstr "20 Минут(ы)"
+
+msgid "30 Minutes"
+msgstr "30 Минут(ы)"
+
+msgid "English"
+msgstr "Английский"
+
+msgid "French"
+msgstr "Французский"
+
+msgid "Italian"
+msgstr "Итальянский"
+
+msgid "German"
+msgstr "Немецкий"
+
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "Simplified Chinese"
+msgstr ""
+
+msgid "Traditional Chinese"
+msgstr ""
+
+msgid "Korean"
+msgstr "Корейский"
+
+msgid "Japanese"
+msgstr "Японский"
+
+msgid "On"
+msgstr "Включить"
+
+msgid "Off"
+msgstr "Выкл"
+
+msgid "CAS_On"
+msgstr "Включить"
+
+msgid "CAS_Off"
+msgstr "Выкл"
+
+msgid "Never"
+msgstr "Никогда"
+
+msgid "List mode"
+msgstr "Список"
+
+msgid "Thumbnail mode"
+msgstr "Режим эскизов"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Восстановить заводские настройки данного устройства?"
+
+msgid "WD TV HD Media Player"
+msgstr "Медиа-проигрыватель HD WD TV Live"
+
+msgid "WD TV Plus HD Media Player"
+msgstr "WD TV Live Plus HD Мультимедийный проигрыватель"
+
+msgid "Current version"
+msgstr "Текущая версия"
+
+msgid "Current version:"
+msgstr "Текущая версия:"
+
+msgid "New version"
+msgstr "Новая версия"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "Обнаружено новая версия встроенного ПО. Обновить имеющуюся версию встроенного ПО?"
+
+msgid "Rebooting"
+msgstr "Перезагрузка"
+
+msgid "Invalid firmware"
+msgstr ""
+
+msgid "Contains"
+msgstr "Содержит"
+
+msgid "Starts with"
+msgstr "Начинается с"
+
+msgid "Loading"
+msgstr "Загрузка"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "Не удалось распознать устройство, подключенное к порту USB"
+
+msgid "Storage can not aggregate"
+msgstr "Запоминающему устройству не удалось объединить данные"
+
+msgid "Next Song:"
+msgstr "Следующая композиция:"
+
+msgid "version"
+msgstr "Версия"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "All Photos"
+msgstr "Все фотографии"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "Библиотека мультимедиа не поддерживает записанную в журнале файловую систему. Воспроизведение поддерживается."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Невозможно создать библиотеку мультимедиа на запоминающем устройстве, доступном только для чтения."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Невозможно создать библиотеку мультимедиа. Проверьте настройки запоминающего устройства."
+
+msgid "Unrecognized USB device"
+msgstr "Нераспознанное USB-устройство"
+
+msgid "Scanning the attached USB device..."
+msgstr "Сканирование подключенного USB-устройства..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr ""
+
+msgid "Unsupported subtitle"
+msgstr "Неподдерживаемые субтитры"
+
+msgid "Audio Channel"
+msgstr "Аудиоканал"
+
+msgid "Audio channel"
+msgstr "Аудиоканал"
+
+msgid "Photos"
+msgstr "Фото"
+
+msgid "photos"
+msgstr "Фото"
+
+msgid "Firmware upgrade"
+msgstr "Обновление встроенного ПО"
+
+msgid "Video output"
+msgstr "Видеовыход"
+
+msgid "Display resolution"
+msgstr "Разрешение экрана"
+
+msgid "Aspect ratio"
+msgstr "Соотношение сторон экрана"
+
+msgid "Audio output"
+msgstr "Аудиовыход"
+
+msgid "Video sequence"
+msgstr "последовательность воспроизведения видео"
+
+msgid "Music sequence"
+msgstr "Последовательность воспроизведения музыки"
+
+msgid "Slideshow sequence"
+msgstr "Последовательность слайд-шоу"
+
+msgid "Photo scaling"
+msgstr "Масштабирование фотографий"
+
+msgid "Transition effect"
+msgstr "Эффект перехода"
+
+msgid "Screensaver delay"
+msgstr "Задержка экранной заставки"
+
+msgid "Browser display"
+msgstr "дисплей обозревателя"
+
+msgid "System reset"
+msgstr "Востановить значения по умолчанию"
+
+msgid "Display in full screen"
+msgstr "Отображать на весь экран"
+
+msgid "Wipe right"
+msgstr ""
+
+msgid "Wipe left"
+msgstr ""
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "Выполняется обновление мультимедийного HD-проигрывателя. НЕ отключайте питание и подключенные запоминающие устройства."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Обновление выполнено. Мультимедийный проигрыватель будет перезапущен."
+
+msgid "Please select the device you would like to eject."
+msgstr "Выберите диск, который требуется извлечь."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Извлечь этот диск?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr ""
+
+msgid "Subtitle off"
+msgstr "Отключить субтитры"
+
+msgid "No subtitle"
+msgstr "Нет субтитров"
+
+msgid "Media library"
+msgstr "Библиотека мультимедиа"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "Дополнительную информацию о медиа-проигрывателе HD см. в руководстве пользователя или на веб-сайте"
+
+msgid "Subtitle"
+msgstr "Субтитры"
+
+msgid "Firmware Version"
+msgstr "Версия встроенного ПО"
+
+msgid "Title"
+msgstr "Название"
+
+msgid "File name"
+msgstr "Имя файла"
+
+msgid "Search completed. No results found."
+msgstr "Поиск завершен. Поиск не дал результатов."
+
+msgid "Unsupported"
+msgstr "Не поддерживается"
+
+msgid "Space"
+msgstr "Пробел"
+
+msgid "No audio channel"
+msgstr "Нет аудиоканала"
+
+msgid "Untitled volume"
+msgstr "Том без названия"
+
+msgid "Subtitle font size"
+msgstr "Размер шрифта субтитров"
+
+msgid "Additional encoding support"
+msgstr "Поддержка дополнительной кодировки"
+
+msgid "Western Europe (ISO)"
+msgstr "Западная Европа (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Китайский традиционный (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Китайский упрощенный (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Японский (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "Корейский (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Кириллица (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Кириллица (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "Греческий (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Греческий (Windows-1253)"
+
+msgid "All"
+msgstr "Все"
+
+msgid "Equal to"
+msgstr "Равно"
+
+msgid "Not Equal to"
+msgstr "Не равно"
+
+msgid "Central Europe (ISO)"
+msgstr "Центральная Европа (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Центральная Европа (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "Не содержит"
+
+msgid "Display file size"
+msgstr "Показывать размер файла"
+
+msgid "Display file size during navigation"
+msgstr ""
+
+msgid "Western Europe"
+msgstr "Западноевропейская"
+
+msgid "Turkish"
+msgstr "Турецкий"
+
+msgid "Subtitle default"
+msgstr "Показывать субтитры по умолчанию"
+
+msgid "Subtitle border"
+msgstr "Границы субтитров"
+
+msgid "Thick"
+msgstr "Толстый"
+
+msgid "Thin"
+msgstr "Тонкий"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Недостаточно места на подключенном USB-устройстве. Для компиляции медиатеки требуется больше места."
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "Подключенное USB-устройство использует файловую систему HFS+ с журналированием. Медиатека не работает в данной файловой системе, но воспроизведение поддерживается. Отключите журналирование для включения всех функций мультимедийного проигрывателя."
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "Подключенное USB-устройство доступно только для чтения. Функция медиатеки не будет работать."
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Невозможно создать медиатеку на подключенном USB-устройстве. Проверьте настройки устройства."
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Недопустимое встроенное ПО. Загрузите рабочую версию встроенного ПО с веб-сайта http://www.wdc.com."
+
+msgid "File Management"
+msgstr "Управление файлами"
+
+msgid "Select source"
+msgstr "Выбрать источник"
+
+msgid "Select a destination"
+msgstr "Выберите пункт назначения"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "Включается перемещение файлов, фоновая музыка будет остановлена..."
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Delete"
+msgstr "Удалить"
+
+msgid "Move"
+msgstr "Переместить"
+
+msgid "Select all"
+msgstr "Выделить все"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Destination"
+msgstr "Пункт назначения"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Удалить выбранные файлы?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Копировать выбранные файлы?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Переместить выбранные файлы?"
+
+msgid "Deleting files..."
+msgstr "Удаление файлов..."
+
+msgid "Deleted"
+msgstr "Удалено"
+
+msgid "Copying files..."
+msgstr "Копирование файлов..."
+
+msgid "Moving files..."
+msgstr "Перемещение файлов..."
+
+msgid "Moved"
+msgstr "Перемещено"
+
+msgid "File delete complete."
+msgstr "Удаление файлов выполнено."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Сбой записи. Проверьте целевое устройство."
+
+msgid "Read fail. Please check the source device."
+msgstr "Сбой чтения. Проверьте исходное устройство."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Невозможно скопировать или переместить файл. Недостаточно места на целевом устройстве."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Невозможно записать на целевое устройство, доступное только для чтения."
+
+msgid "Unable to delete read-only file."
+msgstr "Невозможно удалить файл, доступный только для чтения."
+
+msgid "Press [BACK] to cancel."
+msgstr "Нажмите кнопку [BACK] для отмены."
+
+msgid "Are you sure you want to cancel?"
+msgstr "Отменить?"
+
+msgid "Auto play"
+msgstr "Автоматическое воспроизведение"
+
+msgid "Photo auto play"
+msgstr "Автоматическое воспроизведение фото"
+
+msgid "Video auto play"
+msgstr "Автоматическое воспроизведение видео"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr ""
+
+msgid "Camera"
+msgstr "Оператор"
+
+msgid "Camera 1"
+msgstr "Оператор 1"
+
+msgid "Camera 2"
+msgstr "Оператор 2"
+
+msgid "Chapters"
+msgstr "Разделы"
+
+msgid "file name"
+msgstr "Имя файла"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Нажмите кнопку [RIGHT] для выбора исходного устройства."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "Нажмите кнопку [OPTION] для копирования, перемещения или удаления."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Нажмите кнопку [RIGHT] для выбора целевого устройства."
+
+msgid "Press [OPTION] to confirm."
+msgstr "Для подтверждения нажмите кнопку [OPTION]."
+
+msgid "Standby mode"
+msgstr ""
+
+msgid "Audio track display"
+msgstr "Сведения об аудиозаписи"
+
+msgid "Action cancelled."
+msgstr "Действий, отменяется."
+
+msgid "Arabic"
+msgstr ""
+
+msgid "Hindu"
+msgstr ""
+
+msgid "Thailand"
+msgstr ""
+
+msgid "Preview mode"
+msgstr "Предпросмотр"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Push"
+msgstr "Выталкивание"
+
+msgid "Wipe"
+msgstr "Вытеснение"
+
+msgid "Zoom"
+msgstr "Растягивание"
+
+msgid "Access point detecting..."
+msgstr "Обнаружение беспроводной сети..."
+
+msgid "Detecting Wireless Access Point"
+msgstr "Обнаружение беспроводной сети..."
+
+msgid "The network encryption key is not valid."
+msgstr ""
+
+msgid "No Chapter"
+msgstr ""
+
+msgid "Home"
+msgstr "Главная"
+
+msgid "Live365 Home"
+msgstr "Live365 Главная"
+
+msgid "Last 7 days interesting"
+msgstr "Интересные за последние 7 дней"
+
+msgid "Most recent uploads"
+msgstr "Последние загрузки"
+
+msgid "Hot tags"
+msgstr "«Горячие» метки"
+
+msgid "Hot Tags"
+msgstr "«Горячие» метки"
+
+msgid "My contacts"
+msgstr "Мои контакты"
+
+msgid "My Contacts"
+msgstr "Мои контакты"
+
+msgid "My tags"
+msgstr "Мои метки"
+
+msgid "Explore"
+msgstr "Обзор"
+
+msgid "Keywords"
+msgstr "Ключевые слова"
+
+msgid "Flickr members"
+msgstr "Участники Flickr"
+
+msgid "Tags"
+msgstr "Метки"
+
+msgid "Tag"
+msgstr "Метки"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid "Search results"
+msgstr "Результаты поиска"
+
+msgid "Search Results"
+msgstr "Результаты поиска"
+
+msgid "Photo can not be access"
+msgstr "Невозможно получить доступ к фото"
+
+msgid "Download photo"
+msgstr "Загрузка фотографии"
+
+msgid "This member doesn't have anything available to you."
+msgstr "Вы не имеете доступа к данным этого участника."
+
+msgid "Photostream"
+msgstr "Фотопоток"
+
+msgid "Contacts"
+msgstr "Контакты"
+
+msgid "Featured Videos"
+msgstr "Видео от партнеров"
+
+msgid "Recent Videos"
+msgstr "Последние видео"
+
+msgid "Account"
+msgstr "Аккаунт"
+
+msgid "Top Favorited"
+msgstr "Лидеры в избранном"
+
+msgid "Today"
+msgstr "Сегодня"
+
+msgid "This Week"
+msgstr "На этой неделе"
+
+msgid "This Month"
+msgstr "В этом месяце"
+
+msgid "All Time"
+msgstr "За все время"
+
+msgid "Featured"
+msgstr "Популярные"
+
+msgid "Rated Videos"
+msgstr "Оцененные видеозаписи"
+
+msgid "Rate Video"
+msgstr "Оценить видеозапись"
+
+msgid "Rate video"
+msgstr "Оценить видеозапись"
+
+msgid "Download"
+msgstr "Загрузить"
+
+msgid "Play Again"
+msgstr "Воспроизвести снова"
+
+msgid "Download Video"
+msgstr "Загрузить видеофайл"
+
+msgid "Add to Favorites"
+msgstr "Добавить в Избранное"
+
+msgid "Back to Videos"
+msgstr "Вернуться к видеозаписям"
+
+msgid "Poor"
+msgstr "Не нравится"
+
+msgid "Nothing special"
+msgstr "Ничего особенного"
+
+msgid "Worth watching"
+msgstr "Стоит посмотреть"
+
+msgid "Pretty cool"
+msgstr "Здорово"
+
+msgid "Awesome"
+msgstr "Потрясающе"
+
+msgid "My Account"
+msgstr "Моя учетная запись"
+
+msgid "My Videos"
+msgstr "Мои видеозаписи"
+
+msgid "My Favorites"
+msgstr "Избранное"
+
+msgid "My Playlists"
+msgstr "Мой список воспроизведения"
+
+msgid "My videos"
+msgstr "Мои видеозаписи"
+
+msgid "My favorites"
+msgstr "Избранное"
+
+msgid "My playlists"
+msgstr "Мой список воспроизведения"
+
+msgid "Visit www.live365.com/vip to sign up. for more info or become a VIP."
+msgstr "Подписаться и стать VIP-участником можно на веб-сайте по адресу: www.live365.com/vip."
+
+msgid "Live365 - the world's largest internet radio network. Listen to select stations for free or get a VIP Membership for unlimited access to thousands of commercial-free stations from over 240 genres. Visit www.liver365.com/vip to sign up. Once purchased. your commercial-free VIP access is active on the Live365 website as well as participating devices."
+msgstr "Live365 – это самая крупная в мире сеть Интернет-радиостанций. Слушайте нас и выбирайте станции бесплатно или получите VIP-статус для неограниченного доступа к тысячам  станций без рекламы, вещающих музыку более чем 240 жанров. Подписаться можно на нашем веб-сайте по адресу: www.live365.com/vip. После приобретения VIP-доступ без рекламы действует на веб-сайте Live 365 и на участвующих в нашей программе устройствах."
+
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "Last Station"
+msgstr "Последняя станция"
+
+msgid "Last Stations"
+msgstr "Последняя станция"
+
+msgid "My presets"
+msgstr "Мои предустановки"
+
+msgid "My Presets"
+msgstr "Мои предустановки"
+
+msgid "Stations"
+msgstr "Станции"
+
+msgid "VIP Stations"
+msgstr "VIP-станции"
+
+msgid "Preferences"
+msgstr "Настройки"
+
+msgid "YouTube Preferences"
+msgstr "YouTube Параметры"
+
+msgid "Start up"
+msgstr "Начало работы"
+
+msgid "Sign In / Sign Out"
+msgstr "Вход/Выход"
+
+msgid "Sign out / Sign in"
+msgstr "Вход/Выход"
+
+msgid "Logout"
+msgstr "Выход"
+
+msgid "Sort Option"
+msgstr "Параметры сортировки"
+
+msgid "Sort Options"
+msgstr "Параметры сортировки"
+
+msgid "Audio settings"
+msgstr "Настройки звука"
+
+msgid "All Stations(8k-256k)"
+msgstr "Все станции(8k-256k)"
+
+msgid "Only High(96k-256k)"
+msgstr "Только высокий(96k-256k)"
+
+msgid "Medium to High(56k-256k)"
+msgstr "От среднего до высокого(56k-256k)"
+
+msgid "Low to Medium(8k-56k)"
+msgstr "От низкого до среднего(8k-56k)"
+
+msgid "Only Low(8k-32k)"
+msgstr "Только низкий(8k-32k)"
+
+msgid "Home page"
+msgstr "Главная страница"
+
+msgid "Presets page"
+msgstr "Страница настроенных станций"
+
+msgid "Play last station"
+msgstr "Прослушивание последней станции"
+
+msgid "Sort Station Alphabetically"
+msgstr "Сортировка станций по алфавиту"
+
+msgid "Sort Station by Popularity"
+msgstr "Сортировка станций по степени популярности"
+
+msgid "Please check your email for the track info."
+msgstr "Проверьте эл. почту для получения сведений о дорожках."
+
+msgid "We are sorry.Pandora service only for U.S.Listeners that language support only for English. "
+msgstr "В настоящее время служба Pandora доступна только в США. В связи с этим, доступен только английский язык."
+
+msgid "Network Setup"
+msgstr "Сетевые установки"
+
+msgid "Network setup"
+msgstr "Сетевые установки"
+
+msgid "Invalid username or password. Please try again."
+msgstr "Неверное имя пользователя или пароль. Повторите попытку."
+
+msgid "Failed to connect file server, the account/password may be changed, please check it."
+msgstr "Неверное имя пользователя или пароль. Повторите попытку."
+
+msgid "Wired"
+msgstr "Проводная ЛВС"
+
+msgid "Ethernet"
+msgstr "Ethernet"
+
+msgid "Wireless"
+msgstr "Беспроводная сеть"
+
+msgid "Please Specify your Network Type."
+msgstr "Укажите тип сети"
+
+msgid "Select Setup Method."
+msgstr "Выберите режим подключения"
+
+msgid "Manual"
+msgstr "Вручную"
+
+msgid "Automatic"
+msgstr "Автоматически"
+
+msgid "Enter your IP address and then press Submit"
+msgstr "Введите IP-адрес и нажмите Отправить"
+
+msgid "if you have a Subnet mask, enter it and then press Submit"
+msgstr "Если известна маска подсети, введите ее и нажмите Отправить"
+
+msgid "Auto search"
+msgstr "Автопоиск"
+
+msgid "Manually SSID"
+msgstr "Ручной ввод SSID"
+
+msgid "Enter SSID Key:"
+msgstr "Введите SSID"
+
+msgid "Site survey"
+msgstr "Тестирование местной сети"
+
+msgid "Signal"
+msgstr "Сигнал"
+
+msgid "Security Type"
+msgstr "Тип безопасности"
+
+msgid "Please enter your Encryption Key"
+msgstr "Введите пароль защиты сети"
+
+msgid "Key length error!\n If your key type is ASCII, the length should be 5, 13, or 16.\nIf your key type if Hex, the length should be 10, 26 or 32."
+msgstr "Недопустимый пароль защиты сети. Повторите попытку."
+
+msgid "Key length error!\n The length of WPAPSK should be 8~64!"
+msgstr "Недопустимый пароль защиты сети. Повторите попытку."
+
+msgid "Network not available!"
+msgstr "Устройству не удалось подключиться к сети"
+
+msgid "Please Wait..."
+msgstr "Подождите..."
+
+msgid "Network Setup Completed"
+msgstr "Настройка сети выполнена"
+
+msgid "Return Home"
+msgstr "На главную страницу"
+
+msgid "Device name"
+msgstr "Имя устройства"
+
+msgid "Samba Servers"
+msgstr "Сервер Samba"
+
+msgid "Media Servers"
+msgstr "Медиа-серверы"
+
+msgid "Delete the preset's password?"
+msgstr "Удалить сохраненные данные для входа?"
+
+msgid "Sign in"
+msgstr "Вход"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Connecting..."
+msgstr "Устанавливается соединение..."
+
+msgid "Unable to obtain an IP address. The media player has limited or no network connectivity."
+msgstr "Невозможно получить IP-адрес. Подключение мультимедийного проигрывателя к сети ограничено или отсутствует."
+
+msgid "RGB High"
+msgstr "RGB, высокий"
+
+msgid "RGB Low"
+msgstr "RGB, низкий"
+
+msgid "Reboot now"
+msgstr "Перезагрузить сейчас"
+
+msgid "Update Device"
+msgstr "Обновить устройство"
+
+msgid "Searching for update"
+msgstr "Выполняется поиск обновления"
+
+msgid "System information"
+msgstr "Сведения о системе"
+
+msgid "Local Drives"
+msgstr "Локальные диски"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Вы уверены, что хотите выйти?"
+
+msgid "Video Setting"
+msgstr "Настройки видео"
+
+msgid "Photo Setting"
+msgstr "Настройки фото"
+
+msgid "Music Setting"
+msgstr "Музыкальные настройки"
+
+msgid "Network Setting"
+msgstr "Сетевые настройки"
+
+msgid "RETRY"
+msgstr "Повтор"
+
+msgid "System Setting"
+msgstr "Системные настройки"
+
+msgid "Check Latest FW With WD TV Live HD Media Player"
+msgstr "Медиа-проигрыватель HD WD TV Live можно обновить через Интернет. Проверить наличие обновлений?"
+
+msgid "Check Latest FW With WD TV Plus HD Media Player"
+msgstr "Встроенное ПО мультимедийного HD-проигрывателя WD TV Live Plus можно обновить через Интернет. Проверить наличие нового обновления?"
+
+msgid "New version check"
+msgstr "Проверка новой версии"
+
+msgid "Check connection"
+msgstr "Проверить соединение"
+
+msgid "There was a problem connecting to the network. The device could not connect to the network"
+msgstr "Произошел сбой подключения к сети. Устройству не удалось подключиться к сети."
+
+msgid "Network is disconnected."
+msgstr "Произошел сбой подключения к сети. Устройству не удалось подключиться к сети."
+
+msgid "Replace"
+msgstr "Замещение"
+
+msgid "Checker Board"
+msgstr "табло программы проверки"
+
+msgid "Connect successfully!"
+msgstr "Проверьте соединение!"
+
+msgid "Select SSID Input Method."
+msgstr "выберите режим подключения"
+
+msgid "No Security"
+msgstr "без контроля безопасности"
+
+msgid "Free Stations"
+msgstr "Бесплатные станции"
+
+msgid "Recommendations"
+msgstr "Рекомендации"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Live365 Login"
+msgstr "Вход на Live365"
+
+msgid "Youtube Login"
+msgstr "Youtube Войти"
+
+msgid "YouTube sign in"
+msgstr "YouTube Вход"
+
+msgid "Pandora Login"
+msgstr "Pandora Вход"
+
+msgid "Mediafly Sign in"
+msgstr "Mediafly Вход"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "Add Account"
+msgstr "Добавить аккаунт"
+
+msgid "Related Videos"
+msgstr "Похожие видео"
+
+msgid "Finish"
+msgstr "Готово"
+
+msgid "Audio Options"
+msgstr "Аудио вариантов"
+
+msgid "Arabic (Windows-1256)"
+msgstr "Арабский (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Тайский (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "Разблокировать накопитель WD"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Разблокировать этот накопитель WD? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "Введите пароль для разблокирования накопителя."
+
+msgid "Password invalid"
+msgstr "Неверный пароль"
+
+msgid "Please enter your password again."
+msgstr "Введите пароль еще раз."
+
+msgid "Too many password attempts"
+msgstr "Слишком много попыток ввода пароля"
+
+msgid "There were too many password recovery attempts."
+msgstr "Предпринято слишком много попыток восстановления пароля."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Безопасно извлеките накопитель из WD TV,"
+
+msgid "reconnect it and try again."
+msgstr "снова подключите его и повторите попытку."
+
+msgid "Check network connection"
+msgstr "Проверить подключение к сети"
+
+msgid "Check IP address"
+msgstr "Проверить IP-адрес"
+
+msgid "Check DNS server"
+msgstr "Проверить сервер DNS"
+
+msgid "Check internet connection"
+msgstr "Проверить подключение к сети Интернет"
+
+msgid "Creative a new account"
+msgstr "Создать новую учетную запись"
+
+msgid "Save username only"
+msgstr "Сохранить только имя пользователя"
+
+msgid "Want to Rate Video? Sign in to YouTube now!"
+msgstr "Хотите оценить видео? Войдите на YouTube!"
+
+msgid "Want to add to Favorites? Sign in to YouTube now!"
+msgstr "Хотите добавить в избранное? Войдите на YouTube!"
+
+msgid "Invalid character(s) in first name."
+msgstr "Недопустимые символы в имени."
+
+msgid "Invalid character(s) in last name."
+msgstr "Недопустимые символы в фамилии."
+
+msgid "Registration was submitted, please check your email to complete the registration."
+msgstr "Регистрационные данные отправлены. Для завершения регистрации проверьте свою электронную почту."
+
+msgid "This product has been added to your registration account."
+msgstr "Данный продукт был добавлен в вашу зарегистрированную учетную запись."
+
+msgid "Our record indicates that the email address you provided is under another customer’s name, please verify your name and try it again, or log into your account at https://websupport.wdc.com/registration/index.asp to update your user profile."
+msgstr "В наших регистрационных данных указано, что указанный вами адрес электронной почты используется другим клиентом, проверьте написание своего имени и повторите попытку, либо войдите в свою учетную запись по адресу https://websupport.wdc.com/registration/index.asp для обновления своего профиля пользователя."
+
+msgid "E-mail address is invalid, please verify your e-mail address and try it again."
+msgstr "Недопустимый адрес электронной почты, проверьте указанный адрес электронной почты и повторите попытку."
+
+msgid "Maximum length of e-mail address is 80 characters"
+msgstr "Максимальная длина адреса электронной почты составляет 80 символов"
+
+msgid "Registration failed. Please try it again."
+msgstr "Сбой регистрации. Повторите попытку."
+
+msgid "Thank you for rating this track. Glad you like it!"
+msgstr "Благодарим вас за оценку этой записи. Мы рады, что она вам нравится!"
+
+msgid "Thank you for rating this track. Sorry it’s not to your taste!"
+msgstr "Благодарим вас за оценку этой записи. Жаль, что она не понравилась вам!"
+
+msgid "This station is already in your Presets."
+msgstr "Эта станция уже находится в списке предустановок."
+
+msgid "Genre:"
+msgstr "жанр:"
+
+msgid "File Size:"
+msgstr "Размер файла:"
+
+msgid "File Type:"
+msgstr "Тип файла:"
+
+msgid "Play mode"
+msgstr "Режим воспроизведения"
+
+msgid "Pan"
+msgstr "Сдвиг"
+
+msgid "Zoom in"
+msgstr "Увеличить"
+
+msgid "Zoom out"
+msgstr "Уменьшить"
+
+msgid "Info bar"
+msgstr "Информационная панель"
+
+msgid "Chapter"
+msgstr "Глава"
+
+msgid "Rotate left"
+msgstr "Повернуть влево"
+
+msgid "Rotate right"
+msgstr "Повернуть вправо"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Ошибка: исходная папка и папка назначения те же."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Ошибка: папка назначения является подпапкой папки источника."
+
+msgid "This folder is empty"
+msgstr "В текущей папке нет файлов мультимедиа."
+
+msgid "This folder is empty."
+msgstr "В текущей папке нет файлов мультимедиа."
+
+msgid "First Name"
+msgstr "Имя"
+
+msgid "Last Name"
+msgstr "Фамилия"
+
+msgid "Email"
+msgstr "Адрес электронной почты"
+
+msgid "Serial Number"
+msgstr "Серийный номер"
+
+msgid "Serial Number:"
+msgstr "Серийный номер:"
+
+msgid "Mac Address"
+msgstr "MAC-адрес"
+
+msgid "MAC Address"
+msgstr "MAC адрес"
+
+msgid "No content available."
+msgstr "Содержимое недоступно."
+
+msgid "No content available!"
+msgstr "Содержимое недоступно."
+
+msgid "State end. No content available."
+msgstr "Содержимое недоступно."
+
+msgid "Most Viewed"
+msgstr "Лидеры просмотров"
+
+msgid "Most Viewed Videos"
+msgstr "Лидеры просмотров"
+
+msgid "Most Popular"
+msgstr "Самые популярные"
+
+msgid "Most Popular Videos"
+msgstr "Самые популярные"
+
+msgid "Top Rated"
+msgstr "Лучшие оценки"
+
+msgid "Include HD video feeds"
+msgstr "Включить HD видео каналы"
+
+msgid "Listen to thousands of commercial-free Internet radio stations! Live365 has broadcasts from Radio Disney, Santana, David Byrne, Pat Metheny, and Paul Oakenfold, as well as stations created by music lovers just like you! Easily browse through popular genres such as rock, hip-hop, jazz, and new age. Or discover treasures in some of the less-traveled styles such as gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic, and 100s more."
+msgstr "Слушайте тысячи интернет-радиостанций без рекламы! Live365 транслирует передачи Radio Disney, Santana, David Byrne, Pat Metheny и Paul Oakenfold, а также радиостанций, созданных такими же любителями музыки, как вы! Выбирайте популярные жанры, например, рок, хип-хоп, джаз или нью-эйдж. Откройте для себя сокровищницу менее известных стилей, таких как госпел, комеди, аниме, хинди, трип-хоп, 30-е, глэм, трайбл, кельтская музыка и сотни других."
+
+msgid "If you don't have an Live365 account, please visit http://www.live365.com to get started with your membership or become a VIP."
+msgstr "Если вы не зарегистрированы на Live365, зарегистрируйтесь или приобретите VIP-статус на http://www.live365.com/wdtv."
+
+msgid "Sort"
+msgstr "Сортировка"
+
+msgid "Audio Quality"
+msgstr "Качество звука"
+
+msgid "No station available!"
+msgstr "Нет станции."
+
+msgid "You must be logged in to use this feature. Would you like to login now?"
+msgstr "Для использования этой функции необходимо войти в систему. Войти?"
+
+msgid "has been removed from my presets."
+msgstr "Эта станция уже удалена из списка предустановок."
+
+msgid "has been added to my presets."
+msgstr "Эта станция добавлена в список предустановок."
+
+msgid "Track info has been sent. Please check your email."
+msgstr "Информация об аудиозаписи отправлена. Проверьте электронную почту."
+
+msgid "info"
+msgstr "Профиль владельца"
+
+msgid "The device name can not contain any of following "
+msgstr "Имя устройства не должно содержать пробелов и следующих символов: "
+
+msgid "and blank characters. The device name can not over 15 characters."
+msgstr "Имя устройства должно содержать не более 15 символов."
+
+msgid "Network Shares"
+msgstr "Разделяемые ресурсы"
+
+msgid "Samba Server"
+msgstr "Открыть общий доступ к WDTV сети"
+
+msgid "Auto login"
+msgstr "Автоподключение к разделяемым ресурсам"
+
+msgid "Clear account information"
+msgstr "Удалить сведения о входе в систему для сетевой папки"
+
+msgid "DNS server"
+msgstr "DNS сервер"
+
+msgid "Internet connection"
+msgstr "Соединение с Интернет"
+
+msgid "Incorrect IP address. Please check your network setting and try again."
+msgstr "Недопустимый IP-адрес. Проверьте настройки вашей сети и повторите попытку!"
+
+msgid "Incorrect DNS server address. Please check your network setting and try again."
+msgstr "Недопустимый адрес DNS-сервера. Проверьте настройки вашей сети и повторите попытку!"
+
+msgid "Check Internet connection failed. Please check your broadband connection."
+msgstr "Проверьте подключение к Интернету. Проверьте широкополосное подключение. "
+
+msgid "Would you like to save this account?"
+msgstr "Сохранить эту учетную запись?"
+
+msgid "Don't have an account?"
+msgstr "Нет учетной записи?"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Вы уверены, что хотите удалить эту учетную запись?"
+
+msgid "The media player can only save"
+msgstr "Мультимедийный проигрыватель может сохранить только"
+
+msgid "user accounts for each service. Please delete an account if you wish to add a new one."
+msgstr "учетных записей пользователей для каждой службы. Удалите одну учетную запись, если необходимо добавить новую."
+
+msgid "Your media player is up to date."
+msgstr "Мультимедийный проигрыватель имеет последнюю версию."
+
+msgid "WD TV Live HD Media Player FW IS Top"
+msgstr "Последние обновления установлены на Ваш мультимедийный проигрыватель."
+
+msgid "WD TV Plus HD Media Player FW IS Top"
+msgstr "Последние обновления установлены на Ваш мультимедийный проигрыватель."
+
+msgid "The device could not download updates."
+msgstr "Невозможно загрузить обновления на устройство."
+
+msgid "System updates could not check for updates because of a network problem. Please check your network connections."
+msgstr "Не удалось проверить наличие обновлений системы из-за ошибки сети. Проверьте подключения к сети."
+
+msgid "Select connection method"
+msgstr "Выбор способа подключения"
+
+msgid "Please choose your network connection"
+msgstr "Пожалуйста, выберите подключение к сети"
+
+msgid "Please choose your network connection."
+msgstr "Пожалуйста, выберите подключение к сети."
+
+msgid "Select an Available Network"
+msgstr "Выбор доступной беспроводной сети"
+
+msgid "Connect Now"
+msgstr "Подключить сейчас"
+
+msgid "Done"
+msgstr "Готово"
+
+msgid "(Empty)"
+msgstr "(пустой)"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Favorites"
+msgstr "Избранное"
+
+msgid "Connection successful."
+msgstr "Соединение установлено!"
+
+msgid "Connect Successfully!"
+msgstr "Проверка сетевого подключения пройдена."
+
+msgid "The profile space is full!"
+msgstr "Память профилей исчерпана. Удалите существующий профиль для добавления нового."
+
+msgid "Do you want replace this profile?"
+msgstr "Перезаписать данный профиль?"
+
+msgid "Can not detect wireless module."
+msgstr "Невозможно обнаружить беспроводной USB-адаптер. "
+
+msgid "The SSID is Empty."
+msgstr "SSID не указано."
+
+msgid "Can not set this profile to favorite."
+msgstr "Невозможно сохранить этот профиль в список избранных профилей."
+
+msgid "Unable to connect to the wireless network."
+msgstr "Устройству не удалось подключиться к беспроводной сети."
+
+msgid "System registration"
+msgstr "Регистрация системы"
+
+msgid "Register Product"
+msgstr "Регистрация системы"
+
+msgid "Register"
+msgstr "Регистрация системы"
+
+msgid "Enter First Name"
+msgstr "Введите Имя"
+
+msgid "Enter Last Name"
+msgstr "Введите Фамилию"
+
+msgid "Enter Email"
+msgstr "Введите адрес Эл. Почты"
+
+msgid "Registration failed. Please go to http://register.wdc.com/ to register your product."
+msgstr "Сбой регистрации. Перейдите на веб-сайт http://register.wdc.com/ для регистрации продукта."
+
+msgid "Would you like to register now?"
+msgstr "Хотите зарегистрировать устройство?"
+
+msgid "Do you want to receive future email support survey or free newsletter with special member-only discounts and latest news from WD?"
+msgstr "Хотите в дальнейшем получать по электронной почте анкеты по качеству поддержки или бесплатную рассылку со специальными скидками только для участников и последними новостями от WD?"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "Мультимедийный проигрыватель перезапустится для инициации процесса обновления. Так как новая микропрограмма расположена на защищенном паролем диске, снова разблокируйте диск после перезагрузки."
+
+msgid "Please remove your drive from WD TV."
+msgstr "Извлеките накопитель из WD TV."
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Извлеките накопитель из WD TV,"
+
+msgid "Would you like to permanently delete the selected file?"
+msgstr "Удалить выбранный файл навсегда?"
+
+msgid "HDMI compatible mode"
+msgstr "HDMI совместим режиме"
+
+msgid "About Live365"
+msgstr "О сервисе Live365"
+
+msgid "About Live365 VIP"
+msgstr "О сервисе Live365"
+
+msgid "All Stations"
+msgstr "Все станции"
+
+msgid "Only high"
+msgstr "Только высокий"
+
+msgid "Medium to high"
+msgstr "От среднего до высокого"
+
+msgid "Low to medium"
+msgstr "От низкого до среднего"
+
+msgid "Only low"
+msgstr "Только низкий"
+
+msgid "Sign in/Sign out"
+msgstr "Вход/Выход"
+
+msgid "Sort stations alphabetically"
+msgstr "Сортировка станций по алфавиту"
+
+msgid "Sort stations by popularity"
+msgstr "Сортировка станций по степени популярности"
+
+msgid "IP address"
+msgstr "IP-адрес"
+
+msgid "IP Address"
+msgstr "IP-адрес"
+
+msgid "Subnet Mask"
+msgstr "Маска подсети"
+
+msgid "Gateway"
+msgstr "Шлюз"
+
+msgid "There was a problem connecting to the network.Check your settings and try again."
+msgstr "Отсутствует доступ к сети. Проверьте установки и сделайте повторную попытку."
+
+msgid "There was a problem connecting to the network. Please check your settings and try again."
+msgstr "Отсутствует доступ к сети. Проверьте установки и сделайте повторную попытку."
+
+msgid "Are you sure you want to delete all accounts?"
+msgstr "Вы уверены, что хотите удалить все записи?"
+
+msgid "The video has been successfully added!"
+msgstr "Видео успешно добавлено!"
+
+msgid "The video has been successfully rated!"
+msgstr "Видео Успешно оценено!"
+
+msgid "HDMI deep color"
+msgstr "Режим насыщенного цвета HDMI"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "Вы уверены, что хотите изменить deep color режим?"
+
+msgid "Wireless Favorites"
+msgstr "Избранные беспроводные сети"
+
+msgid "Check for new update"
+msgstr "Проверить наличие обновлений"
+
+msgid "Downloading new firmware"
+msgstr "Загрузка новой версии ПО"
+
+msgid "Updating firmware"
+msgstr "Обновление версии ПО"
+
+msgid "Firmware is being updated. Please DO NOT disconnect power."
+msgstr "Производится обновление ПО. НЕ ОТКЛЮЧАЙТЕ электропитание."
+
+msgid "Downloading new firmware for your WD TV. Please DO NOT disconnect power or internet connection."
+msgstr "Загрузка новой версии ПО для WD TV. НЕ ОТКЛЮЧАЙТЕ питание или подключение к Интернету."
+
+msgid "The device fails to check for new firmware update. Please check your network connection and try again."
+msgstr "Устройство не может проверить наличие обновленной версии ПО. Проверьте подключение к сети и повторите попытку."
+
+msgid "New firmware download failed. Please check your network connection and try again."
+msgstr "Сбой при загрузке новой версии ПО. Проверьте подключение к сети и повторите попытку."
+
+msgid "Setup Completed!"
+msgstr "Настройка завершена."
+
+msgid "This media server cannot be accessed."
+msgstr "Нет доступа к медиа-серверу."
+
+msgid "The device is busy. Please try later."
+msgstr "Нет доступа к совместно используемому ресурсу данной сети."
+
+msgid "The device has lost its connection with the media server."
+msgstr "Нет доступа к медиа-серверу."
+
+msgid "Current network setting"
+msgstr "Текущие сетевые настройки"
+
+msgid "Current network setting:"
+msgstr "Текущие сетевые настройки:"
+
+msgid "Join the largest worldwide video community! Please visit http://www.youtube.com/create_account to create your account."
+msgstr "Присоединитесь к самому большому в мире видеосообществу! Пожалуйста, посетите http://www.youtube.com/create_account для создания учетной записи."
+
+msgid "IP address is invalid, please verify your IP address and try again."
+msgstr "Недопустимый IP-адрес, проверьте указанный IP-адрес и повторите попытку."
+
+msgid "Subnet mask is invalid, please verify your Subnet Mask and try again."
+msgstr "Недопустимая Маска подсети, проверьте указанную Маску подсети и повторите попытку."
+
+msgid "Gateway is invalid, please verify your Gateway and try again."
+msgstr "Недопустимый Шлюз, проверьте указанный Шлюз и повторите попытку."
+
+msgid "DNS is invalid, please verify your DNS and try again."
+msgstr "Недопустимый DNS, проверьте указанный DNS и повторите попытку."
+
+msgid "Thumb up"
+msgstr "Благодарим вас за оценку этой записи. Мы рады, что она вам нравится!"
+
+msgid "Thumb down"
+msgstr "Благодарим вас за оценку этой дорожки. Жаль, что она не понравилась вам!"
+
+msgid "Add preset"
+msgstr "Эта станция уже зарегистрирована в настроенных станциях."
+
+msgid "Delete Account"
+msgstr "Удалить учетную запись"
+
+msgid "Delete All"
+msgstr "Удалить все учетные записи"
+
+msgid "Remove Station"
+msgstr "Удалить станцию"
+
+msgid "Add to My Presets"
+msgstr "Добавить в мои настройки"
+
+msgid "Owner profile"
+msgstr "Профиль владельца"
+
+msgid "Youtube"
+msgstr "YouTube"
+
+msgid "This file is currently unavailable. Please try again later."
+msgstr "Этот файл в данный момент недоступен. Повторите попытку позже."
+
+msgid "Cannot connect to "
+msgstr "Невозможно подключиться к "
+
+msgid ". An unknown network error has occurred. Please check your network setting and try again."
+msgstr ". Произошла неизвестная сетевая ошибка. Проверьте настройки и повторите попытку!"
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Выполняется компиляция медиатеки. Мультимедийное содержимое будет доступно после сканирования. Во время этого процесса возможно управление устройством."
+
+msgid "Access Point can not be found"
+msgstr "Беспроводная сеть не обнаружена. Проверьте настройки и повторите попытку."
+
+msgid "YouTube can’t be accessed at this moment. A new firmware upgrade may be needed. Would you like to check for new firmware now?"
+msgstr "В данный момент доступ к YouTube невозможен. Может потребоваться новое обновление встроенного ПО. Проверить наличие нового обновления сейчас?"
+
+msgid "New firmware download failed due to incomplete firmware download. Please check your network connection and try again."
+msgstr "Сбой при загрузке новой версии ПО из-за неполной загрузки программы. Проверьте широкополосное подключение."
+
+msgid "New firmware download failed due to unstable wireless connection. Please use a wired connection and try again."
+msgstr "Сбой при загрузке новой версии ПО из-за неустойчивого беспроводного соединения. Пожалуйста, используйте проводное соединение и попробуйте еще раз."
+
+msgid "Copied"
+msgstr "Копируемые"
+
+msgid "Thank you for registering your WDTV. Your registration has been submitted."
+msgstr "Благодарим вас за регистрацию медиаплеера WDTV. Ваши регистрационные данные отправлены."
+
+msgid "Thank you for registering your WDTV. Please check your email to confirm the registration."
+msgstr "Благодарим вас за регистрацию медиаплеера WDTV. Проверьте свою электронную почту, чтобы подтвердить регистрацию."
+
+msgid "SSID should not be empty!"
+msgstr "SSID не должна быть пустой."
+
+msgid "Please do not use blank space name for device name."
+msgstr "Имя устройства не должна быть пустой."
+
+msgid "The firmware was successfully downloaded. The device will now restart to complete the installation."
+msgstr "Обновленное ПО успешно загружено. Устройство перезагрузится для завершения установки."
+
+msgid "Upgrade firmware failed. The device will now restart. Please try again."
+msgstr "Сбой при обновлении ПО. Попробуйте еще раз после того, как устройство перезагрузится."
+
+msgid "There was a problem connecting to the wireless network. Please check your network setting and try again."
+msgstr "Произошел сбой подключения к беспроводной сети. Проверьте настройки и повторите попытку!"
+
+msgid "Wireless network connection lost."
+msgstr "Подключение к беспроводной сети потеряно."
+
+msgid "Delete one"
+msgstr "Удаление одного"
+
+msgid "Delete all"
+msgstr "Удалить все"
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Исключить этот пункт?"
+
+msgid "Are you sure you want to delete all items?"
+msgstr "Удалить все элементы?"
+
+msgid "Component"
+msgstr "Компонентный"
+
+msgid "Thanks for trying Live365! We hope you enjoyed your free trial of our commercial-free service. Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "Спасибо за то, Live365! Мы надеемся, что вам понравилось бесплатного ознакомления с нашим коммерческим бесплатной услугой. Получить информацию и стать VIP-участником можно на веб-сайте по адресу: www.live365.com/wdtv."
+
+msgid "Reserved for VIP subscribers"
+msgstr "Зарезервировано для абонентов VIP"
+
+msgid "Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "Получить информацию и стать VIP-участником можно на веб-сайте по адресу: www.live365.com/wdtv."
+
+msgid "8 bit"
+msgstr "8 кусочек"
+
+msgid "10 bit"
+msgstr "10 кусочек"
+
+msgid "12 bit"
+msgstr "12 кусочек"
+
+msgid "day left on your VIP Free Trial."
+msgstr "день  осталось до окончания действия бесплатного пробного VIP-статуса."
+
+msgid "days left on your VIP Free Trial."
+msgstr "дня (дней)   осталось до окончания действия бесплатного пробного VIP-статуса."
+
+msgid "hour left on your VIP Free Trial."
+msgstr "час осталось до окончания действия бесплатного пробного VIP-статуса."
+
+msgid "hours left on your VIP Free Trial."
+msgstr "часа(-ов) осталось до окончания действия бесплатного пробного VIP-статуса."
+
+msgid "New firmware download failed due to network connection error. Please check your network connection and try again."
+msgstr "Сбой при загрузке новой версии ПО из-за ошибки сетевого подключения. Пожалуйста, проверьте настройки сетевого подключения и повторите попытку."
+
+msgid "The auto play content could not be accessed."
+msgstr "Автоматическое воспроизведение содержание не может быть доступно."
+
+msgid "Local device is disconnected."
+msgstr "Предупреждение: пожалуйста, воспользуйтесь функцией безопасного отключения перед тем, как отсоединить устройство."
+
+msgid "User interface transition effect"
+msgstr "Эффект перехода пользовательского интерфейса"
+
+msgid "Fade in and fade out"
+msgstr "Появление и исчезание"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "Обнаружена фатальная ошибка системы. Устройство перезапустится..."
+
+msgid "YES"
+msgstr "Да"
+
+msgid "Yes to all"
+msgstr "Да для всех"
+
+msgid "NO"
+msgstr "Нет"
+
+msgid "This folder already contains a file named:"
+msgstr "В этой папке уже есть файл с именем:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Хотите перезаписать его?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Невозможно воспроизвести выбранный файл. Сведения о поддерживаемых файловых форматах см. в руководстве пользователя."
+
+msgid "Part Number:"
+msgstr "Номер продукта:"
+
+msgid "Press [Option] key for multi-lingual input"
+msgstr "Нажмите кнопку [OPTION] для ввода на разных языках"
+
+msgid "Would you like to setup a login protection?"
+msgstr "Установить защиту при входе в систему?"
+
+msgid "Current Location"
+msgstr "Текущее местоположение"
+
+msgid "Added"
+msgstr "Добавлено"
+
+msgid "Category"
+msgstr "Категория"
+
+msgid "Views"
+msgstr "Количество просмотров"
+
+msgid "Want to flag this video? Sign in to YouTube now!"
+msgstr "Хотите сообщить о нарушении видео? Войдите на YouTube сейчас!"
+
+msgid "Want to add to playlist? Sign in to YouTube now!"
+msgstr "Добавить в список воспроизведения? Зарегистрируйтесь в YouTube сейчас!"
+
+msgid "Add to playlist"
+msgstr "Добавить в плейлист"
+
+msgid "Add to Playlist"
+msgstr "Добавить в плейлист"
+
+msgid "Press [Search] key to use search history"
+msgstr "Нажмите кнопку [SEARCH] для просмотра истории поиска"
+
+msgid "From"
+msgstr "От"
+
+msgid "On with login protection"
+msgstr "Включено с защитой при входе в систему"
+
+msgid "Flagging"
+msgstr "Маркирование"
+
+msgid "We are sorry. Pandora service is only for U.S. audiences and your IP is not allowed."
+msgstr "Приносим свои извинения. Pandora услуга только для аудиторий США и Ваш IP не допускается."
+
+msgid "This video is restricted by the video content owner and it is not available on TV connected devices."
+msgstr "Это видео ограничена владелец видео контента и оно не доступно, на телевидении подключенных устройств."
+
+msgid "Workgroup name"
+msgstr "Имя рабочей группы"
+
+msgid "Search History"
+msgstr "История поиска"
+
+msgid "Samba Server Protection"
+msgstr "Защита сервера Samba"
+
+msgid "Check network status..."
+msgstr "Проверить состояние сети ..."
+
+msgid "Try to wake up system..."
+msgstr "Попробуйте просыпаться система ..."
+
+msgid "Worldwide"
+msgstr "Весь мир"
+
+msgid "Germany"
+msgstr "Германия"
+
+msgid "France"
+msgstr "Франция"
+
+msgid "Spain"
+msgstr "Испания"
+
+msgid "Italy"
+msgstr "Италия"
+
+msgid "Taiwan"
+msgstr "Тайвань"
+
+msgid "South Korea"
+msgstr "Южная Корея"
+
+msgid "Japan"
+msgstr "Япония"
+
+msgid "Russia"
+msgstr "Россия"
+
+msgid "The file you are playing doesn't support trick-mode."
+msgstr "Воспроизводимый файл не поддерживает функцию Trick Mode."
+
+msgid "Flag sent to YouTube."
+msgstr "Жалоба отправлена на YouTube."
+
+msgid "Create a new playlist"
+msgstr "Создать свой плейлист"
+
+msgid "Choose your current playlist"
+msgstr "Выбрать свой текущий плейлист"
+
+msgid "The video has been added to your playlist."
+msgstr "Видео добавлено в плейлист."
+
+msgid "Flagging Reason"
+msgstr "Причина сообщения о нарушении"
+
+msgid "Porn"
+msgstr "Порнография"
+
+msgid "Violence"
+msgstr "Насилие"
+
+msgid "Hate"
+msgstr "Пропаганда ненависти"
+
+msgid "Dangerous"
+msgstr "Опасность"
+
+msgid "Rights"
+msgstr "Нарушение прав"
+
+msgid "Spam"
+msgstr "Спам"
+
+msgid "Unable to play this video menu. Would you like to play video file?"
+msgstr "Невозможно воспроизвести меню данного видеофайла. Воспроизвести видеофайл?"
+
+msgid "My channels"
+msgstr "Мои каналы"
+
+msgid "Popular channels"
+msgstr "Популярные каналы"
+
+msgid "Browse content plug-ins"
+msgstr "Обзор подключаемых модулей контента"
+
+msgid "Dashboard"
+msgstr "Цифровая панель"
+
+msgid "Mediafly dashboard"
+msgstr "Цифровая панель Mediafly"
+
+msgid "Add to my channel"
+msgstr "Добавить в мои каналы"
+
+msgid "Remove from my channel"
+msgstr "Удалить из моих каналов"
+
+msgid "Rate/Favorite"
+msgstr "Оценить, избранное"
+
+msgid "View episodes"
+msgstr "Просмотр эпизодов"
+
+msgid "Show info"
+msgstr "Показать информацию"
+
+msgid "Content source was added successfully to your Mediafly dashboard."
+msgstr "Источник контента успешно добавлен на цифровую панель Mediafly."
+
+msgid "The device could not connect to the network."
+msgstr "Устройству не удалось подключиться к сети"
+
+msgid "All Episodes in this show"
+msgstr "Все эпизоды данного шоу"
+
+msgid "What would you like to remove?"
+msgstr "Что требуется удалить?"
+
+msgid "Would you like to rate for this show/episode?"
+msgstr "Хотите оценить это шоу или этот эпизод?"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Fail to add to your favorite. Additional options are available on Mediafly.com"
+msgstr "Не удалось добавить в избранное. Дополнительные функции доступны на веб-сайте Mediafly.com."
+
+msgid "Both"
+msgstr "И то, и другое"
+
+msgid "To set up your personalized channels you need to link your player with Mediafly account."
+msgstr "Для настройки персонализованных каналов требуется связать проигрыватель с учетной записью Mediafly."
+
+msgid "Mediafly accounts are completely free and allow you centralized control and management of your favorite free online content."
+msgstr "Учетные записи Mediafly совершенно бесплатны и позволяют централизованно управлять избранным бесплатным онлайновым контентом."
+
+msgid "Option 1: from your computer"
+msgstr "Вариант 1: с компьютера"
+
+msgid "Option 2: Enter your Mediafly ID and password."
+msgstr "Вариант 2: введите идентификатор и пароль Mediafly"
+
+msgid "Enter Mediafly User ID and Pwd now"
+msgstr "Введите идентификатор пользователя и пароль Mediafly"
+
+msgid "Manage Users"
+msgstr "Настройки пользователя"
+
+msgid "Media Plug-ins"
+msgstr "Мультимедийные подключаемые модули"
+
+msgid "Add Media Plug-in via mCode"
+msgstr "Добавить мультимедийный подключаемый модуль посредством mCode"
+
+msgid "Invalid mCode, please try again."
+msgstr "Недопустимый mCode, повторите попытку."
+
+msgid "Are you sure you want to add the show: "
+msgstr "Добавить канал: "
+
+msgid "This episode has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "Данный эпизод добавлен на ваш канал. Дополнительные функции доступны на веб-сайте Mediafly.com."
+
+msgid "This show has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "Данное шоу добавлено на ваш канал. Дополнительные функции доступны на веб-сайте Mediafly.com."
+
+msgid "This episode"
+msgstr "Этот эпизод"
+
+msgid "This episode has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "Данный эпизод удален с вашего канала. Дополнительные функции доступны на веб-сайте Mediafly.com."
+
+msgid "This show has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "Данное шоу удалено с вашего канала. Дополнительные функции доступны на веб-сайте Mediafly.com."
+
+msgid "my rating:"
+msgstr "Моя оценка:"
+
+msgid "my favorites:"
+msgstr "Избранное:"
+
+msgid "Thank you. Additional options are available on Mediafly.com."
+msgstr "Спасибо."
+
+msgid "and enter this code:"
+msgstr "И введите этот код:"
+
+msgid "Invalid assoc code"
+msgstr "Недопустимый код связи."
+
+msgid "Remove Media Plug-in"
+msgstr "Удалить мультимедийный подключаемый модуль"
+
+msgid "Resume"
+msgstr "Возобновить"
+
+msgid "Restart"
+msgstr "Перезапустить"
+
+msgid "eng"
+msgstr "Английский"
+
+msgid "en"
+msgstr "Английский"
+
+msgid "EN"
+msgstr "Английский"
+
+msgid "fre"
+msgstr "Французский"
+
+msgid "fra"
+msgstr "Французский"
+
+msgid "fr"
+msgstr "Французский"
+
+msgid "FR"
+msgstr "Французский"
+
+msgid "ita"
+msgstr "Итальянский"
+
+msgid "it"
+msgstr "Итальянский"
+
+msgid "IT"
+msgstr "Итальянский"
+
+msgid "ger"
+msgstr "Немецкий"
+
+msgid "deu"
+msgstr "Немецкий"
+
+msgid "de"
+msgstr "Немецкий"
+
+msgid "DE"
+msgstr "Немецкий"
+
+msgid "spa"
+msgstr "Испанский"
+
+msgid "es"
+msgstr "Испанский"
+
+msgid "ES"
+msgstr "Испанский"
+
+msgid "chi"
+msgstr "Китайский"
+
+msgid "zho"
+msgstr "Китайский"
+
+msgid "zh"
+msgstr "Китайский"
+
+msgid "ZH"
+msgstr "Китайский"
+
+msgid "kor"
+msgstr "Корейский"
+
+msgid "ko"
+msgstr "Корейский"
+
+msgid "KO"
+msgstr "Корейский"
+
+msgid "por"
+msgstr "Португальский"
+
+msgid "pt"
+msgstr "Португальский"
+
+msgid "PT"
+msgstr "Португальский"
+
+msgid "jpn"
+msgstr "Японский"
+
+msgid "ja"
+msgstr "Японский"
+
+msgid "JA"
+msgstr "Японский"
+
+msgid "gre"
+msgstr "Греческая"
+
+msgid "ell"
+msgstr "Греческая"
+
+msgid "el"
+msgstr "Греческая"
+
+msgid "EL"
+msgstr "Греческая"
+
+msgid "tur"
+msgstr "Турецкий"
+
+msgid "tr"
+msgstr "Турецкий"
+
+msgid "TR"
+msgstr "Турецкий"
+
+msgid "ara"
+msgstr "Арабский"
+
+msgid "ar"
+msgstr "Арабский"
+
+msgid "AR"
+msgstr "Арабский"
+
+msgid "hin"
+msgstr "Хинди"
+
+msgid "hi"
+msgstr "Хинди"
+
+msgid "HI"
+msgstr "Хинди"
+
+msgid "tha"
+msgstr "Тайский"
+
+msgid "th"
+msgstr "Тайский"
+
+msgid "TH"
+msgstr "Тайский"
+
+msgid "Would you like to resume play or restart from the beginning?"
+msgstr "Продолжить воспроизведение или начать с начала?"
+
+msgid "Screensaver mode"
+msgstr "Скринсейвер режиме"
+
+msgid "Logo"
+msgstr "Логотип"
+
+msgid "Digital without HDMI audio"
+msgstr "Цифровой без поддержки HDMI аудио"
+
+msgid "Match video framerate"
+msgstr "Согласование частоты кадров видео"
+
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Parental control"
+msgstr "Родительский контроль"
+
+msgid "Set the new password"
+msgstr "Изменить пароль"
+
+msgid "Remove password"
+msgstr "Удалить пароль"
+
+msgid "Would you like to setup parental control?"
+msgstr "Настроить родительский контроль?"
+
+msgid "Please enter your password."
+msgstr "Введите пароль."
+
+msgid "Re-enter your password."
+msgstr "Повторите ввод пароля."
+
+msgid "The password you entered do not match, please try again."
+msgstr "Введенный пароль не верен, попытайтесь снова."
+
+msgid "Setup completed. parental control can only be applied to folders saved in the internal storage."
+msgstr "Настройка завершена. Родительский контроль применяется только к папкам на внутреннем запоминающем устройстве."
+
+msgid "Please enter the old password."
+msgstr "Введите предыдущий пароль."
+
+msgid "Password has been removed."
+msgstr "Пароль удален."
+
+msgid "Your password has been changed."
+msgstr "Пароль изменен."
+
+msgid "Invalid password. Please try again."
+msgstr "Неверный пароль. Повторите попытку."
+
+msgid "Please enter the new password."
+msgstr "Введите новый пароль."
+
+msgid "Remove parental control"
+msgstr "Удалить родительский контроль"
+
+msgid "Lock this folder"
+msgstr "Заблокировать папку"
+
+msgid "Invalid input!"
+msgstr "Неверные входные данные!"
+
+msgid "Input is empty!"
+msgstr "Строка ввода пуста!"
+
+msgid "Proxy"
+msgstr "Прокси"
+
+msgid "Please enter proxy address"
+msgstr "Введите адрес прокси-сервера"
+
+msgid "Please enter proxy port"
+msgstr "Введите номер порта прокси сервера"
+
+msgid "Proxy Address"
+msgstr "Адрес прокси-сервера"
+
+msgid "Proxy Port"
+msgstr "Порт прокси-сервера"
+
+msgid "Restart network. Please wait... "
+msgstr "Повторное подключение к сети. Пожалуйста, подождите..."
+
+msgid "The Mediafly service is currently unavailable, please check again later."
+msgstr "Услуга ХХХХХ временно недоступна, повторите попытку позже."
+
+msgid "Internet Media"
+msgstr "Данные в Интернете"
+
+msgid "Episodes"
+msgstr "Эпизоды"
+
+msgid "of days left on your VIP Free Trial.Visit www.live365.com/wdc for info or to become a VIP."
+msgstr "дней осталось до окончания действия бесплатного пробного VIP-статуса. Получить информацию и стать VIP-участником можно на веб-сайте по адресу: http://www.live365.com/wdtv."
+
+msgid "Connection Successfully.Would you like to save this network connection Automatically?"
+msgstr "Соединение установлено! Сохранить  данное сетевое подключение автоматически?"
+
+msgid "arabic"
+msgstr "العربية"
+
+msgid "hebrew"
+msgstr "עברית"
+
+msgid "Change Location"
+msgstr "Смена расположения"
+
+msgid "Wall"
+msgstr "Стена"
+
+

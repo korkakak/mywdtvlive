@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2006, ALPHA Networks, inc. -->
+<!-- Author: Ken Zhao <ken_zhao@alphanetworks.com> -->
+<wrapper>
+<!--
+  <text text="@@title" x="241" y="124" w="500" h="42" 
+	fontsize="40" align="left" numlines="1" textcolor="0x07b5ff"/>
+--> 
+  <text text="@@message" x="330" y="254" w="620" h="145" 
+	fontsize="26" align="hcenter" numlines="5" textcolor="0xe2e2e2"/>
+</wrapper>

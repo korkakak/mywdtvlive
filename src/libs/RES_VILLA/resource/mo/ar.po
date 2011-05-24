@@ -1,0 +1,2325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "الفيديو"
+
+msgid "Music"
+msgstr "الموسيقى"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "All Video"
+msgstr "كل الفيديو"
+
+msgid "Date"
+msgstr "التاريخ"
+
+msgid "Folders"
+msgstr "المجلدات"
+
+msgid "Recent"
+msgstr "الحديث"
+
+msgid "Playlist"
+msgstr "لائحة التشغيل"
+
+msgid "Playlist Videos"
+msgstr "لائحة التشغيل"
+
+msgid "All Music"
+msgstr "كل الموسيقى"
+
+msgid "Artist"
+msgstr "الفنان"
+
+msgid "Genre"
+msgstr "النوع"
+
+msgid "Album"
+msgstr "الألبوم"
+
+msgid "Now Playing"
+msgstr "الجاري تشغيله"
+
+msgid "Now playing"
+msgstr "الجاري تشغيله"
+
+msgid "New firmware found"
+msgstr "تم العثور على برنامج ثابت جديد"
+
+msgid "No storage present"
+msgstr "لا توجد وحدة تخزين"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "يتطلب تصنيف مكتبة الموسيقى المزيد من مساحة التخزين:"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "مسح وحدة التخزين الموّصلة. قد تستغرق أول عملية مسح عدة دقائق. يرجى الانتظار..."
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "يرجى تحديد [موافق] لاستئناف التشغيل أو [إلغاء] لبدء تشغيل الفيديو من جديد"
+
+msgid "Audio/Video"
+msgstr "صوت/فيديو"
+
+msgid "Audio"
+msgstr "صوت"
+
+msgid "Movie"
+msgstr "فيلم"
+
+msgid "System"
+msgstr "النظام"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "المدة الفاصلة"
+
+msgid "Language"
+msgstr "اللغة"
+
+msgid "About"
+msgstr "حول"
+
+msgid "Normal"
+msgstr "عادي"
+
+msgid "Widescreen"
+msgstr "شاشة عريضة"
+
+msgid "Composite"
+msgstr "مُركّب"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "تلقائي"
+
+msgid "Stereo"
+msgstr "استريو"
+
+msgid "Digital"
+msgstr "رقمي"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "هل تريد بالتأكيد تغيير دقة الفيديو؟"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "هل تريد بالتأكيد تغيير صيغة خرج الفيديو؟"
+
+msgid "Repeat one"
+msgstr "تكرار واحد"
+
+msgid "Repeat all"
+msgstr "تكرار الكل"
+
+msgid "Repeat all and shuffle"
+msgstr "تكرار الكل مع التبديل العشوائي"
+
+msgid "Keep as original"
+msgstr "حفظ كالأصلي"
+
+msgid "Fit to screen"
+msgstr "ملاءمة الشاشة"
+
+msgid "Shuffle"
+msgstr "تبديل عشوائي"
+
+msgid "Fade"
+msgstr "تلاشٍ"
+
+msgid "Random"
+msgstr "عشوائي"
+
+msgid "3 Seconds"
+msgstr "3 ثوانٍ"
+
+msgid "5 Seconds"
+msgstr "5 ثوانٍ"
+
+msgid "10 Seconds"
+msgstr "10 ثوانٍ"
+
+msgid "20 Seconds"
+msgstr "20 ثانية"
+
+msgid "30 Seconds"
+msgstr "30 ثانية"
+
+msgid "1 Minute"
+msgstr "1 دقيقة"
+
+msgid "3 Minutes"
+msgstr "3 دقائق"
+
+msgid "5 Minutes"
+msgstr "5 دقائق"
+
+msgid "10 Minutes"
+msgstr "10 دقائق"
+
+msgid "15 Minutes"
+msgstr "15 دقيقة"
+
+msgid "20 Minutes"
+msgstr "20 دقيقة"
+
+msgid "30 Minutes"
+msgstr "30 دقيقة"
+
+msgid "English"
+msgstr "الإنجليزية"
+
+msgid "French"
+msgstr "الفرنسية"
+
+msgid "Italian"
+msgstr "الإيطالية"
+
+msgid "German"
+msgstr "الألمانية"
+
+msgid "Spanish"
+msgstr "الإسبانية"
+
+msgid "Simplified Chinese"
+msgstr "الصينية المُبسّطة"
+
+msgid "Traditional Chinese"
+msgstr "الصينية التقليدية"
+
+msgid "Korean"
+msgstr "الكورية"
+
+msgid "Japanese"
+msgstr "اليابانية"
+
+msgid "On"
+msgstr "تشغيل"
+
+msgid "Off"
+msgstr "إيقاف"
+
+msgid "CAS_On"
+msgstr "تشغيل"
+
+msgid "CAS_Off"
+msgstr "إيقاف"
+
+msgid "Never"
+msgstr "مطلقًا"
+
+msgid "List mode"
+msgstr "وضع اللائحة"
+
+msgid "Thumbnail mode"
+msgstr "وضع الصور المصغرة"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "هل تريد بالتأكيد إرجاع هذا الجهاز إلى إعدادات المصنع؟"
+
+msgid "WD TV HD Media Player"
+msgstr "مشغل الوسائط WD TV Live HD"
+
+msgid "WD TV Plus HD Media Player"
+msgstr "مشغل الوسائط WD TV Live Plus HD"
+
+msgid "version"
+msgstr "الإصدار"
+
+msgid "Current version"
+msgstr "الإصدار الحالي"
+
+msgid "Current version:"
+msgstr "الإصدار الحالي:"
+
+msgid "New version"
+msgstr "إصدار جديد"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "تم العثور على برنامج ثابت جديد. هل تريد الترقية؟"
+
+msgid "Rebooting"
+msgstr "إعادة تشغيل"
+
+msgid "Invalid firmware"
+msgstr "البرنامج الثابت غير صالح"
+
+msgid "Contains"
+msgstr "يحتوي على"
+
+msgid "Starts with"
+msgstr "يبدأ بـ"
+
+msgid "Loading"
+msgstr "تحميل"
+
+msgid "Loading..."
+msgstr "تم الآن التحميل..."
+
+msgid "OK"
+msgstr "موافق"
+
+msgid "Cancel"
+msgstr "إلغاء"
+
+msgid "Yes"
+msgstr "موافق"
+
+msgid "No"
+msgstr "إلغاء"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "يتعذر التعرف على الجهاز الموّصل بمنفذ USB "
+
+msgid "Storage can not aggregate"
+msgstr "لا يمكن حساب إجمالي وحدة التخزين"
+
+msgid "Next Song:"
+msgstr "الأغنية التالية:"
+
+msgid "Current Song"
+msgstr "الأغنية الحالية"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "All Photos"
+msgstr "كل الصور"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "لا تدعم مكتبة الوسائط نظام الملفات Journaling. ولا يزال التشغيل مدعومًا."
+
+msgid "Unable to create media library on read only storage."
+msgstr "يتعذر إنشاء مكتبة وسائط على وحدة التخزين المخصصة للقراءة فقط."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "يتعذر إنشاء مكتبة وسائط. يرجى التحقق من إعداد وحدة التخزين."
+
+msgid "Unrecognized USB device"
+msgstr "لم يتم التعرف على جهاز USB"
+
+msgid "Scanning the attached USB device..."
+msgstr "يتم الآن مسح جهاز USB الموّصل..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "ملف الفيديو الذي تحاول تشغيله يحتوي على العديد من مخارج قنوات الصوت غير المدعومة. يرجى التبديل إلى خرج صوت رقمي وتوصيل مشغل الوسائط Live HD Media Player بجهاز استقبال صوت/فيديو (AV) يدعم نظام تشفير/فك تشفير الصوت."
+
+msgid "Unsupported subtitle"
+msgstr "الترجمة غير مدعومة"
+
+msgid "Audio Channel"
+msgstr "قناة الصوت"
+
+msgid "Audio channel"
+msgstr "قناة الصوت"
+
+msgid "Photos"
+msgstr "صورة"
+
+msgid "photos"
+msgstr "صور"
+
+msgid "Firmware upgrade"
+msgstr "ترقية البرنامج الثابت"
+
+msgid "Video output"
+msgstr "خرج الفيديو"
+
+msgid "Display resolution"
+msgstr "دقة العرض"
+
+msgid "Aspect ratio"
+msgstr "نسبة العرض إلى الارتفاع"
+
+msgid "Audio output"
+msgstr "خرج الصوت"
+
+msgid "Video sequence"
+msgstr "تسلسل الفيديو"
+
+msgid "Music sequence"
+msgstr "تسلسل الموسيقى"
+
+msgid "Slideshow sequence"
+msgstr "تسلسل عرض الشرائح"
+
+msgid "Photo scaling"
+msgstr "تغيير حجم الصورة"
+
+msgid "Transition effect"
+msgstr "مؤثر الانتقال"
+
+msgid "Screensaver delay"
+msgstr "تأخر شاشة التوقف"
+
+msgid "Browser display"
+msgstr "عرض المتصفح"
+
+msgid "System reset"
+msgstr "إعادة ضبط على إعدادات المصنع الافتراضية"
+
+msgid "Display in full screen"
+msgstr "عرض على الشاشة بأكملها"
+
+msgid "Wipe right"
+msgstr "محو لليمين"
+
+msgid "Wipe left"
+msgstr "محو لليسار"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "تتم حاليًا ترقية مشغل الوسائط HD Media Player. يرجى عدم فصل الطاقة أو وحدة التخزين الموّصلة."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "اكتملت الترقية. ستتم إعادة تشغيل مشغل الوسائط الآن."
+
+msgid "Please select the device you would like to eject."
+msgstr "يرجى تحديد الجهاز الذي ترغب في إخراجه."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "هل تريد بالتأكيد إزالة هذا الجهاز؟"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "مع إعداد خرج الصوت الرقمي، يلزم توفر جهاز استقبال صوت/فيديو (AV) مع الدعم الملائم لصيغة الصوت من أجل تشغيل المادة الصوتية بالصوت المحيطي."
+
+msgid "Subtitle off"
+msgstr "إيقاف الترجمة"
+
+msgid "No subtitle"
+msgstr "لا توجد ترجمة"
+
+msgid "Media library"
+msgstr "مكتبة الوسائط"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "لمزيد من المعلومات حول مشغل الوسائط HD Media Player، يرجى الاطلاع على \"دليل المستخدم\" أو التفضل بزيارة "
+
+msgid "Subtitle"
+msgstr "الترجمة"
+
+msgid "Firmware Version"
+msgstr "إصدار البرنامج الثابت"
+
+msgid "Title"
+msgstr "العنوان"
+
+msgid "File name"
+msgstr "اسم الملف"
+
+msgid "Search completed. No results found."
+msgstr "اكتمل البحث. لم يتم العثور على نتائج."
+
+msgid "Unsupported"
+msgstr "غير مدعوم"
+
+msgid "Space"
+msgstr "المساحة"
+
+msgid "No audio channel"
+msgstr "لا توجد قناة صوت"
+
+msgid "Untitled volume"
+msgstr "مستوى الصوت غير محدد"
+
+msgid "Subtitle font size"
+msgstr "حجم خط الترجمة"
+
+msgid "Additional encoding support"
+msgstr "دعم تشفير إضافي"
+
+msgid "Western Europe (ISO)"
+msgstr "أوروبا الغربية (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "الصينية التقليدية (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "الصينية المُبسّطة (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "اليابانية (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "الكورية (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "السريلانكية (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "السريلانكية (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "اليونانية (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "اليونانية (Windows-1253)"
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Equal to"
+msgstr "مكافئ لـ"
+
+msgid "Not Equal to"
+msgstr "غير مكافئ لـ"
+
+msgid "Central Europe (ISO)"
+msgstr "أوروبا الوسطى (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "أوروبا الوسطى (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "لا يحتوي على"
+
+msgid "Display file size"
+msgstr "عرض حجم الملف"
+
+msgid "Display file size during navigation"
+msgstr "عرض حجم الملف أثناء التنقل"
+
+msgid "Western Europe"
+msgstr "أوروبا الغربية"
+
+msgid "Turkish"
+msgstr "التركية"
+
+msgid "Subtitle default"
+msgstr "وضع الترجمة الافتراضي"
+
+msgid "Subtitle border"
+msgstr "حد الترجمة"
+
+msgid "Thick"
+msgstr "سميك"
+
+msgid "Thin"
+msgstr "رفيع"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "لا تتوفر مساحة كافية في جهاز USB الموّصل. يتطلب تصنيف مكتبة الموسيقى المزيد من مساحة التخزين"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "جهاز USB الموّصل يستخدم نظام الملفات HFS+ Journaling. لا تعمل مكتبة الوسائط مع نظام الملفات هذا، ولكن لا يزال التشغيل مدعومًا. يرجى تعطيل نظام Journaling لتمكين الوظائف الكاملة لمشغل الوسائط"
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "جهاز USB الموّصل مضبوط على وضع \"القراءة فقط\". لن يتم دعم وظيفة مكتبة الوسائط"
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "يتعذر إنشاء مكتبة وسائط في جهاز USB الموّصل. يرجى التحقق من إعداد الجهاز"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "البرنامج الثابت غير صالح. يرجى تنزيل البرنامج الثابت الصحيح من http://www.wdc.com"
+
+msgid "File Management"
+msgstr "إدارة الملفات"
+
+msgid "Select source"
+msgstr "حدد المصدر"
+
+msgid "Select a destination"
+msgstr "حدد وجهة"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "يتم الآن تمكين وظيفة نقل الملفات، سيتم إيقاف الموسيقى التصويرية الآن..."
+
+msgid "Copy"
+msgstr "نسخ"
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Move"
+msgstr "نقل"
+
+msgid "Select all"
+msgstr "تحديد الكل"
+
+msgid "Source"
+msgstr "المصدر"
+
+msgid "Destination"
+msgstr "الوجهة"
+
+msgid "Would you like to delete the selected files?"
+msgstr "هل ترغب في حذف الملفات المحددة؟"
+
+msgid "Would you like to copy the selected files?"
+msgstr "هل ترغب في نسخ الملفات المحددة؟"
+
+msgid "Would you like to move the selected files?"
+msgstr "هل ترغب في نقل الملفات المحددة؟"
+
+msgid "Deleting files..."
+msgstr "يتم الآن حذف الملفات..."
+
+msgid "Deleted"
+msgstr "تم الحذف"
+
+msgid "Copying files..."
+msgstr "يتم الآن نسخ الملفات..."
+
+msgid "Moving files..."
+msgstr "يتم الآن نقل الملفات..."
+
+msgid "Moved"
+msgstr "تم النقل"
+
+msgid "File delete complete."
+msgstr "اكتمل حذف الملف."
+
+msgid "Write fail. Please check the destination device."
+msgstr "فشل الكتابة. يرجى فحص الجهاز الوجهة."
+
+msgid "Read fail. Please check the source device."
+msgstr "فشل القراءة. يرجى فحص الجهاز المصدر."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "يتعذر نسخ أو نقل الملف. لا تتوفر مساحة كافية في الوجهة."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "تتعذر الكتابة على الجهاز المخصص للقراءة فقط في الوجهة."
+
+msgid "Unable to delete read-only file."
+msgstr "يتعذر حذف الملف المخصص للقراءة فقط."
+
+msgid "Press [BACK] to cancel."
+msgstr "اضغط على [رجوع] للإلغاء."
+
+msgid "Are you sure you want to cancel?"
+msgstr "هل تريد بالتأكيد الإلغاء؟"
+
+msgid "Auto play"
+msgstr "تشغيل تلقائي"
+
+msgid "Photo auto play"
+msgstr "تشغيل تلقائي للصور"
+
+msgid "Video auto play"
+msgstr "تشغيل تلقائي للفيديو"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "هل تريد بالتأكيد تغيير إعداد الفيديو؟"
+
+msgid "Camera"
+msgstr "الكاميرا"
+
+msgid "Camera 1"
+msgstr "الكاميرا 1"
+
+msgid "Camera 2"
+msgstr "الكاميرا 2"
+
+msgid "Chapters"
+msgstr "الفصول"
+
+msgid "file name"
+msgstr "اسم الملف"
+
+msgid "Press [RIGHT] to select source."
+msgstr "اضغط على [يمين] لتحديد المصدر."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "اضغط على [خيارات] للنسخ أو النقل أو الحذف."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "اضغط على [يمين] لتحديد الوجهة."
+
+msgid "Press [OPTION] to confirm."
+msgstr "اضغط على [خيارات] للتأكيد."
+
+msgid "Standby mode"
+msgstr "وضع الاستعداد"
+
+msgid "Audio track display"
+msgstr "عرض المادة الصوتية"
+
+msgid "Action cancelled."
+msgstr "تم إلغاء الإجراء"
+
+msgid "Arabic"
+msgstr "العربية"
+
+msgid "Hindu"
+msgstr "الهندية"
+
+msgid "Thailand"
+msgstr "التايلاندية"
+
+msgid "Preview mode"
+msgstr "وضع المعاينة"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "فشل ترقية البرنامج الثابت. ستتم إعادة تشغيل الجهاز."
+
+msgid "Empty"
+msgstr "فارغ"
+
+msgid "Push"
+msgstr "دفع"
+
+msgid "Wipe"
+msgstr "محو"
+
+msgid "Zoom"
+msgstr "زوم"
+
+msgid "Access point detecting..."
+msgstr "يتم الآن اكتشاف الشبكة اللاسلكية..."
+
+msgid "Detecting Wireless Access Point"
+msgstr "يتم الآن اكتشاف الشبكة اللاسلكية..."
+
+msgid "The network encryption key is not valid."
+msgstr "مفتاح تشفير الشبكة غير صالح."
+
+msgid "No Chapter"
+msgstr "لا يوجد فصل"
+
+msgid "Home"
+msgstr "الصفحة الرئيسية"
+
+msgid "Live365 Home"
+msgstr "صفحة Live365 الرئيسية"
+
+msgid "Last 7 days interesting"
+msgstr "الشيقة خلال آخر 7 أيام"
+
+msgid "Most recent uploads"
+msgstr "أحدث التحميلات"
+
+msgid "Hot tags"
+msgstr "التصنيفات الرائجة"
+
+msgid "Hot Tags"
+msgstr "التصنيفات الرائجة"
+
+msgid "My contacts"
+msgstr "جهات الاتصال الخاصة بي"
+
+msgid "My Contacts"
+msgstr "جهات الاتصال الخاصة بي"
+
+msgid "My tags"
+msgstr "تصنيفاتي"
+
+msgid "Explore"
+msgstr "اسكتشاف"
+
+msgid "Keywords"
+msgstr "الكلمات المفتاحية"
+
+msgid "Flickr members"
+msgstr "أعضاء Flickr"
+
+msgid "Tags"
+msgstr "التصنيفات"
+
+msgid "Tag"
+msgstr "التصنيفات"
+
+msgid "Submit"
+msgstr "إرسال"
+
+msgid "Search results"
+msgstr "نتائج البحث"
+
+msgid "Search Results"
+msgstr "نتائج البحث"
+
+msgid "Photo can not be access"
+msgstr "لا يمكن الوصول إلى الصورة"
+
+msgid "Download photo"
+msgstr "تنزيل الصورة"
+
+msgid "This member doesn't have anything available to you."
+msgstr "هذا العضو لا يمتلك شيئًا متاحًا لك."
+
+msgid "Photostream"
+msgstr "تدفق الصور"
+
+msgid "Contacts"
+msgstr "جهات الاتصال"
+
+msgid "Featured Videos"
+msgstr "مقاطع الفيديو المميزة"
+
+msgid "Recent Videos"
+msgstr "مقاطع الفيديو الحديثة"
+
+msgid "Account"
+msgstr "الحساب"
+
+msgid "Top Favorited"
+msgstr "أعلى المفضلات"
+
+msgid "Today"
+msgstr "اليوم"
+
+msgid "This Week"
+msgstr "هذا الأسبوع"
+
+msgid "This Month"
+msgstr "هذا الشهر"
+
+msgid "All Time"
+msgstr "طوال الوقت"
+
+msgid "Featured"
+msgstr "المميز"
+
+msgid "Rated Videos"
+msgstr "مقاطع الفيديو المُقيّمة"
+
+msgid "Rate Video"
+msgstr "تقييم الفيديو"
+
+msgid "Rate video"
+msgstr "تقييم الفيديو"
+
+msgid "Download"
+msgstr "تنزيل"
+
+msgid "Play Again"
+msgstr "تشغيل مرة أخرى"
+
+msgid "Download Video"
+msgstr "تنزيل الفيديو"
+
+msgid "Add to Favorites"
+msgstr "إضافة إلى المفضلات"
+
+msgid "Back to Videos"
+msgstr "رجوع إلى مقاطع الفيديو"
+
+msgid "Poor"
+msgstr "رديء"
+
+msgid "Nothing special"
+msgstr "عادي"
+
+msgid "Worth watching"
+msgstr "جدير بالمشاهدة"
+
+msgid "Pretty cool"
+msgstr "رائع"
+
+msgid "Awesome"
+msgstr "مرعب"
+
+msgid "My Account"
+msgstr "حسابي"
+
+msgid "My Videos"
+msgstr "مقاطع الفيديو الخاصة بي"
+
+msgid "My Favorites"
+msgstr "مفضلاتي"
+
+msgid "My Playlists"
+msgstr "لوائح التشغيل الخاصة بي"
+
+msgid "My videos"
+msgstr "مقاطع الفيديو"
+
+msgid "My favorites"
+msgstr "المفضلات"
+
+msgid "My playlists"
+msgstr "لوائح التشغيل"
+
+msgid "Visit www.live365.com/vip to sign up. for more info or become a VIP."
+msgstr "تفضل بزيارة www.live365.com/vip للاشتراك أو الحصول على المزيد من المعلومات أو لكي تصبح عضو VIP."
+
+msgid "Live365 - the world's largest internet radio network. Listen to select stations for free or get a VIP Membership for unlimited access to thousands of commercial-free stations from over 240 genres. Visit www.liver365.com/vip to sign up. Once purchased. your commercial-free VIP access is active on the Live365 website as well as participating devices."
+msgstr "Live365 - أكبر شبكة راديو عالمية على الإنترنت. استمع مجانًا لمجموعة منتقاة من المحطات أو احصل على عضوية VIP لتتمتع بالوصول غير المحدود إلى آلاف من المحطات المجانية من أكثر من 240 نوعًا. تفضل بزيارة www.live365.com/vip للاشتراك. وبمجرد الشراء، سيتم تنشيط وصول VIP المجاني الخاص بك على موقع Live 365 إلى جانب الأجهزة المشاركة أيضًا."
+
+msgid "Continue"
+msgstr "متابعة"
+
+msgid "Last Station"
+msgstr "آخر محطة"
+
+msgid "Last Stations"
+msgstr "آخر محطة"
+
+msgid "My presets"
+msgstr "محطاتي سابقة الضبط"
+
+msgid "My Presets"
+msgstr "محطاتي سابقة الضبط"
+
+msgid "Stations"
+msgstr "المحطات"
+
+msgid "VIP Stations"
+msgstr "محطات VIP"
+
+msgid "Preferences"
+msgstr "التفضيلات"
+
+msgid "YouTube Preferences"
+msgstr "تفضيلات YouTube"
+
+msgid "Start up"
+msgstr "بدء التشغيل"
+
+msgid "Sign In / Sign Out"
+msgstr "تسجيل الدخول/تسجيل الخروج"
+
+msgid "Sign out / Sign in"
+msgstr "تسجيل الدخول/تسجيل الخروج"
+
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+msgid "Sort Option"
+msgstr "خيار الفرز"
+
+msgid "Sort Options"
+msgstr "خيارات الفرز"
+
+msgid "Audio settings"
+msgstr "إعدادات الصوت"
+
+msgid "All Stations(8k-256k)"
+msgstr "كل المحطات(8-256 كيلو هرتز)"
+
+msgid "Only High(96k-256k)"
+msgstr "العالية فقط (96-256 كيلو هرتز)"
+
+msgid "Medium to High(56k-256k)"
+msgstr "المتوسطة إلى العالية (56-256 كيلو هرتز)"
+
+msgid "Low to Medium(8k-56k)"
+msgstr "المنخفضة إلى المتوسطة (8-56 كيلو هرتز)"
+
+msgid "Only Low(8k-32k)"
+msgstr "المنخفضة فقط (8-32 كيلو هرتز)"
+
+msgid "Home page"
+msgstr "الصفحة الرئيسية"
+
+msgid "Presets page"
+msgstr "صفحة المحطات سابقة الضبط"
+
+msgid "Play last station"
+msgstr "تشغيل آخر محطة"
+
+msgid "Sort Station Alphabetically"
+msgstr "فرز المحطات أبجديًا"
+
+msgid "Sort Station by Popularity"
+msgstr "فرز المحطات حسب الشعبية"
+
+msgid "Please check your email for the track info."
+msgstr "تم إرسال معلومات المادة. يرجى الاطلاع على بريدك الإلكتروني."
+
+msgid "We are sorry.Pandora service only for U.S.Listeners that language support only for English. "
+msgstr "خدمة Pandora متاحة حاليًا في الولايات المتحدة فقط. ولهذا السبب، فهي متاحة باللغة الإنجليزية فقط."
+
+msgid "Network Setup"
+msgstr "إعداد الشبكة"
+
+msgid "Network setup"
+msgstr "إعداد الشبكة"
+
+msgid "Invalid username or password. Please try again."
+msgstr "اسم المستخدم أو كلمة المرور غير صالحة. يرجى إعادة المحاولة."
+
+msgid "Failed to connect file server, the account/password may be changed, please check it."
+msgstr "اسم المستخدم أو كلمة المرور غير صالحة. يرجى إعادة المحاولة."
+
+msgid "Wired"
+msgstr "سلكي"
+
+msgid "Ethernet"
+msgstr "إيثرنت"
+
+msgid "Wireless"
+msgstr "لاسلكي"
+
+msgid "Please Specify your Network Type."
+msgstr "يرجى تحديد نوع الشبكة"
+
+msgid "Select Setup Method."
+msgstr "حدد وضع الاتصال"
+
+msgid "Manual"
+msgstr "يدوي"
+
+msgid "Automatic"
+msgstr "تلقائي"
+
+msgid "Enter your IP address and then press Submit"
+msgstr "أدخل عنوان IP ثم انقر فوق \"إرسال\""
+
+msgid "if you have a Subnet mask, enter it and then press Submit"
+msgstr "إذا كان لديك قناع شبكة فرعية، فأدخله ثم انقر فوق \"إرسال\""
+
+msgid "Auto search"
+msgstr "بحث تلقائي"
+
+msgid "Manually SSID"
+msgstr "أدخل مُعرّف SSID يدويًا"
+
+msgid "Enter SSID Key:"
+msgstr "يرجى إدخال مُعرّف SSID"
+
+msgid "Site survey"
+msgstr "فحص الموقع"
+
+msgid "Signal"
+msgstr "الإشارة"
+
+msgid "Security Type"
+msgstr "نوع الحماية"
+
+msgid "Please enter your Encryption Key"
+msgstr "يرجى إدخال كلمة مرور حماية الشبكة"
+
+msgid "Key length error!\n If your key type is ASCII, the length should be 5, 13, or 16.\nIf your key type if Hex, the length should be 10, 26 or 32."
+msgstr "كلمة مرور حماية الشبكة غير صالحة. يرجى إعادة المحاولة."
+
+msgid "Key length error!\n The length of WPAPSK should be 8~64!"
+msgstr "كلمة مرور حماية الشبكة غير صالحة. يرجى إعادة المحاولة."
+
+msgid "Network not available!"
+msgstr "تعذر على الجهاز الاتصال بالشبكة"
+
+msgid "Please Wait..."
+msgstr "يرجى الانتظار..."
+
+msgid "Network Setup Completed"
+msgstr "اكتمل إعداد الشبكة"
+
+msgid "Return Home"
+msgstr "رجوع إلى الرئيسية"
+
+msgid "Device name"
+msgstr "اسم الجهاز"
+
+msgid "Samba Servers"
+msgstr "خوادم Samba"
+
+msgid "Media Servers"
+msgstr "خوادم الوسائط"
+
+msgid "Delete the preset's password?"
+msgstr "هل تريد بالتأكيد مسح معلومات تسجيل الدخول المحفوظة؟"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Username"
+msgstr "اسم المستخدم"
+
+msgid "Password"
+msgstr "كلمة المرور"
+
+msgid "Connecting..."
+msgstr "يتم الآن الاتصال..."
+
+msgid "Unable to obtain an IP address. The media player has limited or no network connectivity."
+msgstr "يتعذر الحصول على عنوان IP. لا يتوفر اتصال بالشبكة لمشغل الوسائط أو أن الاتصال محدود."
+
+msgid "RGB High"
+msgstr "RGB عالٍ"
+
+msgid "RGB Low"
+msgstr "RGB منخفض"
+
+msgid "Reboot now"
+msgstr "إعادة التشغيل الآن"
+
+msgid "Update Device"
+msgstr "تحديث الجهاز"
+
+msgid "Searching for update"
+msgstr "بحث عن تحديث"
+
+msgid "System information"
+msgstr "معلومات النظام"
+
+msgid "Local Drives"
+msgstr "المحركات المحلية"
+
+msgid "Are you sure you want to sign out?"
+msgstr "هل تريد بالتأكيد تسجيل الخروج؟"
+
+msgid "Video Setting"
+msgstr "إعدادات الفيديو"
+
+msgid "Photo Setting"
+msgstr "إعدادات الصور"
+
+msgid "Music Setting"
+msgstr "إعدادات الموسيقى"
+
+msgid "Network Setting"
+msgstr "إعدادات الشبكة"
+
+msgid "RETRY"
+msgstr "إعادة المحاولة"
+
+msgid "System Setting"
+msgstr "إعدادات النظام"
+
+msgid "Check Latest FW With WD TV Live HD Media Player"
+msgstr "يمكن ترقية البرنامج الثابت لمشغل الوسائط WD TV Live HD عبر الإنترنت. هل ترغب في التحقق من توفر أي تحديث جديد؟"
+
+msgid "Check Latest FW With WD TV Plus HD Media Player"
+msgstr "يمكن ترقية البرنامج الثابت لمشغل الوسائط WD TV Live Plus HD عبر الإنترنت. هل ترغب في التحقق من توفر أي تحديث جديد؟"
+
+msgid "New version check"
+msgstr "التحقق من توفر إصدار جديد"
+
+msgid "Check connection"
+msgstr "فحص الاتصال"
+
+msgid "There was a problem connecting to the network. The device could not connect to the network"
+msgstr "حدثت مشكلة في الاتصال بالشبكة. تعذر على الجهاز الاتصال بالشبكة."
+
+msgid "Network is disconnected."
+msgstr "حدثت مشكلة في الاتصال بالشبكة. تعذر على الجهاز الاتصال بالشبكة."
+
+msgid "Replace"
+msgstr "استبدال"
+
+msgid "Checker Board"
+msgstr "لوحة الشطرنج"
+
+msgid "Connect successfully!"
+msgstr "تم الاتصال بنجاح!"
+
+msgid "Select SSID Input Method."
+msgstr "حدد طريقة إدخال مُعرّف SSID"
+
+msgid "No Security"
+msgstr "لا توجد حماية"
+
+msgid "Free Stations"
+msgstr "المحطات المجانية"
+
+msgid "Recommendations"
+msgstr "التوصيات"
+
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+msgid "Live365 Login"
+msgstr "تسجيل الدخول إلى Live365"
+
+msgid "Youtube Login"
+msgstr "تسجيل الدخول إلى Youtube"
+
+msgid "YouTube sign in"
+msgstr "تسجيل الدخول إلى Youtube"
+
+msgid "Pandora Login"
+msgstr "تسجيل الدخول إلى Pandora"
+
+msgid "Mediafly Sign in"
+msgstr "تسجيل الدخول إلى Mediafly"
+
+msgid "Back"
+msgstr "رجوع"
+
+msgid "Add Account"
+msgstr "إضافة حساب"
+
+msgid "Related Videos"
+msgstr "مقاطع الفيديو ذات الصلة"
+
+msgid "Finish"
+msgstr "إنهاء"
+
+msgid "Audio Options"
+msgstr "خيارات الصوت"
+
+msgid "Arabic (Windows-1256)"
+msgstr "العربية (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "التايلاندية (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "فتح قفل محرك WD"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "هل ترغب في فتح قفل محرك WD هذا؟ "
+
+msgid "Enter your password to unlock the drive."
+msgstr "أدخل كلمة المرور لفتح قفل المحرك."
+
+msgid "Password invalid"
+msgstr "كلمة المرور غير صالحة"
+
+msgid "Please enter your password again."
+msgstr "يرجى إدخال كلمة المرور مرة أخرى."
+
+msgid "Too many password attempts"
+msgstr "محاولات إدخال كلمة المرور كثيرة للغاية"
+
+msgid "There were too many password recovery attempts."
+msgstr "تم إجراء العديد من محاولات استرداد كلمة المرور."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "يرجى إزالة المحرك بأمان من WD TV،"
+
+msgid "reconnect it and try again."
+msgstr "وأعد توصيله ثم حاول مجددًا."
+
+msgid "Check network connection"
+msgstr "فحص الاتصال بالشبكة"
+
+msgid "Check IP address"
+msgstr "فحص عنوان IP"
+
+msgid "Check DNS server"
+msgstr "فحص خادم DNS"
+
+msgid "Check internet connection"
+msgstr "فحص الاتصال بالإنترنت"
+
+msgid "Creative a new account"
+msgstr "إنشاء حساب جديد"
+
+msgid "Save username only"
+msgstr "حفظ اسم المستخدم فقط"
+
+msgid "Want to Rate Video? Sign in to YouTube now!"
+msgstr "هل تريد تقييم الفيديو? تسجيل الدخول إلى YouTube الآن!"
+
+msgid "Want to add to Favorites? Sign in to YouTube now!"
+msgstr "هل تريد الإضافة إلى المفضلات? تسجيل الدخول إلى YouTube الآن!"
+
+msgid "Invalid character(s) in first name."
+msgstr "يوجد حرف (أحرف) غير صالح في الاسم الأول."
+
+msgid "Invalid character(s) in last name."
+msgstr "يوجد حرف (أحرف) غير صالح في الاسم الأخير."
+
+msgid "Registration was submitted, please check your email to complete the registration."
+msgstr "تم إرسال التسجيل، يرجى الاطلاع على بريدك الإلكتروني لإكمال التسجيل."
+
+msgid "This product has been added to your registration account."
+msgstr "تمت إضافة هذا المنتج إلى حساب التسجيل الخاص بك."
+
+msgid "Our record indicates that the email address you provided is under another customer’s name, please verify your name and try it again, or log into your account at https://websupport.wdc.com/registration/index.asp to update your user profile."
+msgstr "تشير سجلاتنا إلى أن عنوان البريد الإلكتروني الذي أدخلته يخص اسم عميل آخر، فيرجى التحقق من اسمك وإعادة المحاولة، أو قم بتسجيل الدخول إلى حسابك على العنوان https://websupport.wdc.com/registration/index.asp لتحديث ملف تعريف المستخدم الخاص بك."
+
+msgid "E-mail address is invalid, please verify your e-mail address and try it again."
+msgstr "عنوان البريد الإلكتروني غير صالح، فيرجى التحقق من عنوان بريدك الإلكتروني وإعادة المحاولة."
+
+msgid "Maximum length of e-mail address is 80 characters"
+msgstr "أقصى طول لعنوان البريد الإلكتروني هو 80 حرفًا"
+
+msgid "Registration failed. Please try it again."
+msgstr "فشل التسجيل. يرجى إعادة المحاولة."
+
+msgid "Thank you for rating this track. Glad you like it!"
+msgstr "نشكرك على تقييم هذه المادة. يسرنا تفضيلك لها!"
+
+msgid "Thank you for rating this track. Sorry it’s not to your taste!"
+msgstr "نشكرك على تقييم هذه المادة. نأسف لأنها لا تلائم ذوقك الخاص!"
+
+msgid "This station is already in your Presets."
+msgstr "توجد هذه المحطة بالفعل في \"المحطات سابقة الضبط\" الخاصة بك."
+
+msgid "Genre:"
+msgstr "النوع:"
+
+msgid "File Size:"
+msgstr "حجم الملف:"
+
+msgid "File Type:"
+msgstr "نوع الملف:"
+
+msgid "Play mode"
+msgstr "وضع التشغيل"
+
+msgid "Pan"
+msgstr "تدوير"
+
+msgid "Zoom in"
+msgstr "تكبير"
+
+msgid "Zoom out"
+msgstr "تصغير"
+
+msgid "Info bar"
+msgstr "شريط المعلومات"
+
+msgid "Chapter"
+msgstr "الفصل"
+
+msgid "Rotate left"
+msgstr "تدوير لليسار"
+
+msgid "Rotate right"
+msgstr "تدوير لليمين"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "خطأ: المجلد المصدر والمجلد الوجهة متطابقان."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "خطأ: المجلد الوجهة هو مجلد فرعي بالمجلد المصدر."
+
+msgid "This folder is empty"
+msgstr "لا توجد وسائط في المجلد الحالي."
+
+msgid "This folder is empty."
+msgstr "لا توجد وسائط في المجلد الحالي."
+
+msgid "First Name"
+msgstr "الاسم الأول"
+
+msgid "Last Name"
+msgstr "الاسم الأخير"
+
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+msgid "Serial Number"
+msgstr "الرقم المسلسل"
+
+msgid "Serial Number:"
+msgstr "الرقم المسلسل:"
+
+msgid "Mac Address"
+msgstr "عنوان MAC"
+
+msgid "MAC Address"
+msgstr "عنوان MAC"
+
+msgid "No content available."
+msgstr "لا يتوفر محتوى."
+
+msgid "No content available!"
+msgstr "لا يتوفر محتوى."
+
+msgid "State end. No content available."
+msgstr "لا يتوفر محتوى."
+
+msgid "Most Viewed"
+msgstr "الأكثر مشاهدة"
+
+msgid "Most Viewed Videos"
+msgstr "الأكثر مشاهدة"
+
+msgid "Most Popular"
+msgstr "الأكثر شعبية"
+
+msgid "Most Popular Videos"
+msgstr "الأكثر شعبية"
+
+msgid "Top Rated"
+msgstr "الأكثر تقييمًا"
+
+msgid "Include HD video feeds"
+msgstr "يتضمن مواجز فيديو عالية الوضوح (HD)"
+
+msgid "Listen to thousands of commercial-free Internet radio stations! Live365 has broadcasts from Radio Disney, Santana, David Byrne, Pat Metheny, and Paul Oakenfold, as well as stations created by music lovers just like you! Easily browse through popular genres such as rock, hip-hop, jazz, and new age. Or discover treasures in some of the less-traveled styles such as gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic, and 100s more."
+msgstr "استمع لآلاف من محطات الراديو المجانية على الإنترنت! تتضمن شبكة Live365 إذاعات من Radio Disney وSantana وDavid Byrne وPat وMetheny وPaul Oakenfold إلى جانب المحطات التي يقوم بإنشائها محبو الموسيقى مثلك! تصفح بسهولة خلال أنواع الموسيقى الشهيرة، مثل الروك والهيب هوب والجاز وموسيقى العصر الجديد. أو اكتشف الكنوز الكامنة في بعض الأنماط الأقل زيارة مثل، الموسيقى الإنجيلية والكوميدية والأنمي والهندية والتريب هوب والثلاثينيات والجلام والقبلية والسلتية إلى جانب المئات من الأنواع الأخرى."
+
+msgid "If you don't have an Live365 account, please visit http://www.live365.com to get started with your membership or become a VIP."
+msgstr "إذا لم يكن لديك حساب على Live365، فيرجى زيارة http://www.live365.com/wdtv للحصول على عضويتك أو لكي تصبح عضو VIP."
+
+msgid "Sort"
+msgstr "فرز"
+
+msgid "Audio Quality"
+msgstr "جودة الصوت"
+
+msgid "No station available!"
+msgstr "لا توجد محطة."
+
+msgid "You must be logged in to use this feature. Would you like to login now?"
+msgstr "يجب تسجيل الدخول لاستخدام هذه الميزة. هل ترغب في تسجيل الدخول الآن?"
+
+msgid "has been removed from my presets."
+msgstr "تمت إزالة هذه المحطة من محطاتك سابقة الضبط."
+
+msgid "has been added to my presets."
+msgstr "تمت إضافة هذه المحطة إلى محطاتك سابقة الضبط."
+
+msgid "Track info has been sent. Please check your email."
+msgstr "تم إرسال معلومات المادة. يرجى الاطلاع على بريدك الإلكتروني."
+
+msgid "info"
+msgstr "ملف تعريف المالك"
+
+msgid "The device name can not contain any of following "
+msgstr "لا يمكن أن يحتوي اسم الجهاز على مسافات أو أي مما يلي "
+
+msgid "and blank characters. The device name can not over 15 characters."
+msgstr "لا يمكن أن يحتوي اسم الجهاز على أكثر من 15 حرفًا."
+
+msgid "Network Shares"
+msgstr "أجزاء الشبكة المشتركة"
+
+msgid "Samba Server"
+msgstr "مشاركة WDTV على شبكتك"
+
+msgid "Auto login"
+msgstr "تسجيل الدخول تلقائيًا إلى جزء الشبكة المشترك"
+
+msgid "Clear account information"
+msgstr "مسح معلومات تسجيل الدخول لجزء الشبكة المشترك"
+
+msgid "DNS server"
+msgstr "خادم DNS"
+
+msgid "Internet connection"
+msgstr "الاتصال بالإنترنت"
+
+msgid "Incorrect IP address. Please check your network setting and try again."
+msgstr "عنوان IP غير صحيح. يرجى فحص إعداد الشبكة وإعادة المحاولة."
+
+msgid "Incorrect DNS server address. Please check your network setting and try again."
+msgstr "عنوان خادم DNS غير صحيح. يرجى فحص إعداد الشبكة وإعادة المحاولة."
+
+msgid "Check Internet connection failed. Please check your broadband connection."
+msgstr "فشل فحص الاتصال بالإنترنت. يرجى فحص الاتصال واسع النطاق."
+
+msgid "Would you like to save this account?"
+msgstr "هل ترغب في حفظ هذا الحساب؟"
+
+msgid "Don't have an account?"
+msgstr "ليس لديك حساب؟"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "هل تريد بالتأكيد حذف هذا الحساب؟"
+
+msgid "The media player can only save"
+msgstr "لا يمكن لمشغل الوسائط إلا حفظ"
+
+msgid "user accounts for each service. Please delete an account if you wish to add a new one."
+msgstr "حسابات المستخدم لكل خدمة. يرجى حذف أحد الحسابات إذا كنت ترغب في إضافة واحد جديد."
+
+msgid "Your media player is up to date."
+msgstr "مشغل الوسائط مُحدّث."
+
+msgid "WD TV Live HD Media Player FW IS Top"
+msgstr "مشغل الوسائط WD TV Live HD مُحدّث."
+
+msgid "WD TV Plus HD Media Player FW IS Top"
+msgstr "مشغل الوسائط WD TV Live Plus HD مُحدّث."
+
+msgid "The device could not download updates."
+msgstr "تعذر على الجهاز تنزيل التحديثات."
+
+msgid "System updates could not check for updates because of a network problem. Please check your network connections."
+msgstr "تعذر على النظام الفحص بحثًا عن تحديثات نتيجة لمشكلة بالشبكة. يرجى فحص اتصالات الشبكة."
+
+msgid "Select connection method"
+msgstr "حدد طريقة الاتصال"
+
+msgid "Please choose your network connection"
+msgstr "يرجى اختيار اتصال الشبكة المستخدم"
+
+msgid "Please choose your network connection."
+msgstr "يرجى اختيار اتصال الشبكة المستخدم."
+
+msgid "Select an Available Network"
+msgstr "حدد شبكة لاسلكية متاحة"
+
+msgid "Connect Now"
+msgstr "اتصال الآن"
+
+msgid "Done"
+msgstr "تم"
+
+msgid "(Empty)"
+msgstr "(فارغ)"
+
+msgid "Default"
+msgstr "افتراضي"
+
+msgid "Favorites"
+msgstr "المفضلات"
+
+msgid "Connection successful."
+msgstr "تم الاتصال بنجاح!"
+
+msgid "Connect Successfully!"
+msgstr "تم اجتياز فحص اتصال الشبكة."
+
+msgid "The profile space is full!"
+msgstr "مساحة ملف التعريف ممتلئة. يرجى إزالة أحد ملفات التعريف الموجودة حتى يمكن إضافة واحد جديد."
+
+msgid "Do you want replace this profile?"
+msgstr "هل تريد استبدال ملف التعريف هذا؟"
+
+msgid "Can not detect wireless module."
+msgstr "يتعذر اكتشاف محول USB اللاسلكي."
+
+msgid "The SSID is Empty."
+msgstr "مُعرّف SSID هذا فارغ."
+
+msgid "Can not set this profile to favorite."
+msgstr "يتعذر حفظ ملف التعريف هذا إلى مفضلاتك."
+
+msgid "Unable to connect to the wireless network."
+msgstr "يتعذر الاتصال بالشبكة اللاسلكية."
+
+msgid "System registration"
+msgstr "تسجيل النظام"
+
+msgid "Register Product"
+msgstr "تسجيل النظام"
+
+msgid "Register"
+msgstr "تسجيل النظام"
+
+msgid "Enter First Name"
+msgstr "أدخل الاسم الأول"
+
+msgid "Enter Last Name"
+msgstr "أدخل الاسم الأخير"
+
+msgid "Enter Email"
+msgstr "أدخل البريد الإلكتروني"
+
+msgid "Registration failed. Please go to http://register.wdc.com/ to register your product."
+msgstr "فشل التسجيل. يرجى الانتقال إلى http://register.wdc.com/ لتسجيل المنتج."
+
+msgid "Would you like to register now?"
+msgstr "هل ترغب في التسجيل الآن؟"
+
+msgid "Do you want to receive future email support survey or free newsletter with special member-only discounts and latest news from WD?"
+msgstr "هل تريد تلقي استبيانات الدعم عبر البريد الإلكتروني أو الإصدارات الصحفية المجانية بتخفيضات مجانية للأعضاء فقط وآخر الأخبار من WD مستقبلاً؟"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "ستتم إعادة تشغيل مشغل الوسائط الآن لبدء عملية الترقية. ونظرًا لوجود البرنامج الثابت الجديد على محرك محمي بكلمة مرور، فيرجى فتح قفل المحرك مرة أخرى بعد إعادة التشغيل."
+
+msgid "Please remove your drive from WD TV."
+msgstr "يرجى إزالة المحرك من WD TV."
+
+msgid "Please remove your drive from WD TV,"
+msgstr "يرجى إزالة المحرك من WD TV."
+
+msgid "Would you like to permanently delete the selected file?"
+msgstr "هل ترغب في حذف الملف المحدد بشكل نهائي؟"
+
+msgid "HDMI compatible mode"
+msgstr "وضع HDMI المتوافق"
+
+msgid "About Live365"
+msgstr "حول Live365"
+
+msgid "About Live365 VIP"
+msgstr "حول Live365"
+
+msgid "All Stations"
+msgstr "كل المحطات"
+
+msgid "Only high"
+msgstr "العالية فقط"
+
+msgid "Medium to high"
+msgstr "المتوسطة إلى العالية"
+
+msgid "Low to medium"
+msgstr "المنخفضة إلى المتوسطة"
+
+msgid "Only low"
+msgstr "المنخفضة فقط"
+
+msgid "Sign in/Sign out"
+msgstr "تسجيل الدخول/تسجيل الخروج"
+
+msgid "Sort stations alphabetically"
+msgstr "فرز المحطات أبجديًا"
+
+msgid "Sort stations by popularity"
+msgstr "فرز المحطات حسب الشعبية"
+
+msgid "IP address"
+msgstr "عنوان IP"
+
+msgid "IP Address"
+msgstr "عنوان IP"
+
+msgid "Subnet Mask"
+msgstr "قناع الشبكة الفرعية"
+
+msgid "Gateway"
+msgstr "المدخل"
+
+msgid "There was a problem connecting to the network.Check your settings and try again."
+msgstr "حدثت مشكلة في الاتصال بالشبكة. يرجى فحص الإعدادات وإعادة المحاولة."
+
+msgid "There was a problem connecting to the network. Please check your settings and try again."
+msgstr "حدثت مشكلة في الاتصال بالشبكة. يرجى فحص الإعدادات وإعادة المحاولة."
+
+msgid "Are you sure you want to delete all accounts?"
+msgstr "هل تريد بالتأكيد حذف كل الحسابات؟"
+
+msgid "The video has been successfully added!"
+msgstr "تمت إضافة الفيديو بنجاح!"
+
+msgid "The video has been successfully rated!"
+msgstr "تم تقييم الفيديو بنجاح!"
+
+msgid "HDMI deep color"
+msgstr "وضع HDMI عميق الألوان"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "هل تريد بالتأكيد تغيير وضع HDMI عميق الألوان?"
+
+msgid "Wireless Favorites"
+msgstr "المفضلات اللاسلكية"
+
+msgid "Check for new update"
+msgstr "فحص بحثًا عن تحديث جديد"
+
+msgid "Downloading new firmware"
+msgstr "تنزيل البرنامج الثابت الجديد"
+
+msgid "Updating firmware"
+msgstr "تحديث البرنامج الثابت"
+
+msgid "Firmware is being updated. Please DO NOT disconnect power."
+msgstr "يتم الآن تحديث البرنامج الثابت. يرجى عدم فصل الطاقة."
+
+msgid "Downloading new firmware for your WD TV. Please DO NOT disconnect power or internet connection."
+msgstr "تنزيل البرنامج الثابت الجديد لـ WD TV. يرجى عدم فصل الطاقة أو اتصال بالإنترنت."
+
+msgid "The device fails to check for new firmware update. Please check your network connection and try again."
+msgstr "فشل قيام الجهاز بالفحص بحثًا عن تحديث جديد للبرنامج الثابت. يرجى فحص اتصال الشبكة وإعادة المحاولة."
+
+msgid "New firmware download failed. Please check your network connection and try again."
+msgstr "فشل تنزيل البرنامج الثابت الجديد. يرجى فحص اتصال الشبكة وإعادة المحاولة."
+
+msgid "Setup Completed!"
+msgstr "اكتمل الإعداد!"
+
+msgid "This media server cannot be accessed."
+msgstr "لا يمكن الوصول إلى خادم الوسائط هذا."
+
+msgid "The device is busy. Please try later."
+msgstr "لا يمكن الوصول إلى جزء الشبكة المشترك هذا."
+
+msgid "The device has lost its connection with the media server."
+msgstr "لا يمكن الوصول إلى خادم الوسائط هذا."
+
+msgid "Current network setting"
+msgstr "إعداد الشبكة الحالي"
+
+msgid "Current network setting:"
+msgstr "إعداد الشبكة الحالي:"
+
+msgid "Join the largest worldwide video community! Please visit http://www.youtube.com/create_account to create your account."
+msgstr "انضم إلى أكبر مجمتع عالمي للفيديو! يرجى زيارة http://www.youtube.com/create_account لإنشاء حسابك."
+
+msgid "IP address is invalid, please verify your IP address and try again."
+msgstr "عنوان IP غير صالح، فيرجى التحقق من عنوان IP وإعادة المحاولة."
+
+msgid "Subnet mask is invalid, please verify your Subnet Mask and try again."
+msgstr "قناع الشبكة الفرعية غير صالح، فيرجى التحقق من قناع الشبكة الفرعية وإعادة المحاولة."
+
+msgid "Gateway is invalid, please verify your Gateway and try again."
+msgstr "المدخل غير صالح، فيرجى التحقق من المدخل وإعادة المحاولة."
+
+msgid "DNS is invalid, please verify your DNS and try again."
+msgstr "DNS غير صالح، فيرجى التحقق من DNS وإعادة المحاولة."
+
+msgid "Thumb up"
+msgstr "نشكرك على تقييم هذه المادة. يسرنا تفضيلك لها!"
+
+msgid "Thumb down"
+msgstr "نشكرك على تقييم هذه المادة. نأسف لأنها لا تلائم ذوقك الخاص!"
+
+msgid "Add preset"
+msgstr "توجد هذه المحطة بالفعل في محطاتك سابقة الضبط."
+
+msgid "Delete Account"
+msgstr "حذف حساب"
+
+msgid "Delete All"
+msgstr "حذف كل الحسابات"
+
+msgid "Remove Station"
+msgstr "إزالة محطة"
+
+msgid "Add to My Presets"
+msgstr "إضافة إلى محطاتي سابقة الضبط"
+
+msgid "Owner profile"
+msgstr "ملف تعريف المالك"
+
+msgid "Youtube"
+msgstr "YouTube"
+
+msgid "This file is currently unavailable. Please try again later."
+msgstr "هذا الملف غير متاح حاليًا. يرجى إعادة المحاولة لاحقًا."
+
+msgid "Cannot connect to "
+msgstr "لا يمكن الاتصال بـ "
+
+msgid ". An unknown network error has occurred. Please check your network setting and try again."
+msgstr ". حدث خطأ غير معروف بالشبكة. يرجى فحص إعداد الشبكة وإعادة المحاولة."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "يتم الآن تصنيف مكتبة الوسائط. وسيصبح محتوى الوسائط متاحًا عند مسحها. ولا يزال بإمكانك التنقل خلال الجهاز أثناء هذه العملية."
+
+msgid "Access Point can not be found"
+msgstr "لم يتم العثور على الشبكة اللاسلكية. يرجى فحص الإعدادات وإعادة المحاولة."
+
+msgid "YouTube can’t be accessed at this moment. A new firmware upgrade may be needed. Would you like to check for new firmware now?"
+msgstr "لا يمكن الوصول إلى YouTube في هذا الحين. قد يلزم إجراء ترقية جديدة للبرنامج الثابت. هل ترغب في الفحص بحثًا عن برنامج ثابت جديد الآن؟"
+
+msgid "New firmware download failed due to incomplete firmware download. Please check your network connection and try again."
+msgstr "فشل تنزيل البرنامج الثابت الجديد نظرًا لعدم اكتمال تنزيل البرنامج الثابت. يرجى فحص اتصال الشبكة وإعادة المحاولة."
+
+msgid "New firmware download failed due to unstable wireless connection. Please use a wired connection and try again."
+msgstr "فشل تنزيل البرنامج الثابت الجديد نظرًا لعدم استقرار الاتصال اللاسلكي. يرجى استخدام اتصال سلكي وإعادة المحاولة."
+
+msgid "Copied"
+msgstr "تم النسخ"
+
+msgid "Thank you for registering your WDTV. Your registration has been submitted."
+msgstr "نشكرك على تسجيل WDTV. تم إرسال تسجيلك."
+
+msgid "Thank you for registering your WDTV. Please check your email to confirm the registration."
+msgstr "نشكرك على تسجيل WDTV. يرجى الاطلاع على بريدك الإلكتروني لتأكيد التسجيل."
+
+msgid "SSID should not be empty!"
+msgstr "لا ينبغي ترك مُعرّف SSID فارغًا."
+
+msgid "Please do not use blank space name for device name."
+msgstr "لا ينبغي ترك اسم الجهاز فارغًا."
+
+msgid "The firmware was successfully downloaded. The device will now restart to complete the installation."
+msgstr "تم تنزيل البرنامج الثابت بنجاح. ستتم الآن إعادة تشغيل الجهاز لإكمال عملية التثبيت."
+
+msgid "Upgrade firmware failed. The device will now restart. Please try again."
+msgstr "فشل ترقية البرنامج الثابت. ستتم إعادة تشغيل الجهاز الآن. يرجى إعادة المحاولة."
+
+msgid "There was a problem connecting to the wireless network. Please check your network setting and try again."
+msgstr "حدثت مشكلة في الاتصال بالشبكة اللاسلكية. يرجى فحص إعداد الشبكة وإعادة المحاولة."
+
+msgid "Wireless network connection lost."
+msgstr "تم فقد اتصال الشبكة اللاسلكية."
+
+msgid "Delete one"
+msgstr "حذف واحد"
+
+msgid "Delete all"
+msgstr "حذف الكل"
+
+msgid "Are you sure you want to delete this item?"
+msgstr "هل تريد بالتأكيد حذف هذا العنصر؟"
+
+msgid "Are you sure you want to delete all items?"
+msgstr "هل تريد بالتأكيد حذف كل العناصر؟"
+
+msgid "Component"
+msgstr "المكون"
+
+msgid "Thanks for trying Live365! We hope you enjoyed your free trial of our commercial-free service. Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "نشكرك على تجربة Live365! نأمل أن تكون قد استمتعت بتجربتك المجانية لخدمتنا المجانية. تفضل بزيارة www.live365.com/wdtv لمعرفة المعلومات أو لكي تصبح عضو VIP."
+
+msgid "Reserved for VIP subscribers"
+msgstr "محجوز للمشتركين الـ VIP"
+
+msgid "Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "تفضل بزيارة www.live365.com/wdtv لمعرفة المعلومات أو لكي تصبح عضو VIP."
+
+msgid "8 bit"
+msgstr "8 بت"
+
+msgid "10 bit"
+msgstr "10 بت"
+
+msgid "12 bit"
+msgstr "12 بت"
+
+msgid "day left on your VIP Free Trial."
+msgstr "يوم متبقٍ في تجربة VIP المجانية لك."
+
+msgid "days left on your VIP Free Trial."
+msgstr "أيام متبقية في تجربة VIP المجانية لك."
+
+msgid "hour left on your VIP Free Trial."
+msgstr "ساعة متبقية في تجربة VIP المجانية لك."
+
+msgid "hours left on your VIP Free Trial."
+msgstr "ساعات متبقية في تجربة VIP المجانية لك."
+
+msgid "New firmware download failed due to network connection error. Please check your network connection and try again."
+msgstr "فشل تنزيل البرنامج الثابت الجديد نظرًا لحدوث خطأ باتصال الشبكة. يرجى فحص اتصال الشبكة وإعادة المحاولة."
+
+msgid "The auto play content could not be accessed."
+msgstr "تعذر الوصول إلى محتوى التشغيل التلقائي."
+
+msgid "Local device is disconnected."
+msgstr "تحذير: يرجى فصل جهاز USB بأمان قبل إزالته."
+
+msgid "User interface transition effect"
+msgstr "مؤثر انتقال واجهة المستخدم"
+
+msgid "Fade in and fade out"
+msgstr "تلاشٍ للداخل وتلاشٍ للخارج"
+
+msgid "None"
+msgstr "لا شيء"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "تم اكتشاف خطأ جسيم بالنظام. ستتم إعادة تشغيل الجهاز..."
+
+msgid "YES"
+msgstr "نعم"
+
+msgid "Yes to all"
+msgstr "نعم للكل"
+
+msgid "NO"
+msgstr "لا"
+
+msgid "This folder already contains a file named:"
+msgstr "يحتوي هذا المجلد بالفعل على ملف يحمل الاسم:"
+
+msgid "Would you like to overwrite it?"
+msgstr "هل ترغب في استبداله؟"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "يتعذر تشغيل الملف المحدد. يرجى الاطلاع على \"دليل المستخدم\" للحصول على لائحة بصيغ الملفات المدعومة."
+
+msgid "Part Number:"
+msgstr "رقم الجزء:"
+
+msgid "Press [Option] key for multi-lingual input"
+msgstr "اضغط على [خيارات] للإدخال متعدد اللغات"
+
+msgid "Would you like to setup a login protection?"
+msgstr "هل ترغب في إعداد حماية تسجيل الدخول؟"
+
+msgid "Current Location"
+msgstr "الموقع الحالي"
+
+msgid "Added"
+msgstr "تمت الإضافة"
+
+msgid "Category"
+msgstr "الفئة"
+
+msgid "Views"
+msgstr "المشاهدات"
+
+msgid "Want to flag this video? Sign in to YouTube now!"
+msgstr "هل تريد وضع علامة على هذا الفيديو؟ تسجيل الدخول إلى YouTube الآن!"
+
+msgid "Want to add to playlist? Sign in to YouTube now!"
+msgstr "هل تريد الإضافة إلى لائحة التشغيل? تسجيل الدخول إلى YouTube الآن!"
+
+msgid "Add to playlist"
+msgstr "إضافة إلى لائحة التشغيل"
+
+msgid "Add to Playlist"
+msgstr "إضافة إلى لائحة التشغيل"
+
+msgid "Press [Search] key to use search history"
+msgstr "اضغط على [بحث] لاستخدام ميزة البحث في المحفوظات"
+
+msgid "From"
+msgstr "من"
+
+msgid "On with login protection"
+msgstr "تشغيل مع حماية تسجيل الدخول"
+
+msgid "Flagging"
+msgstr "وضع علامة"
+
+msgid "We are sorry. Pandora service is only for U.S. audiences and your IP is not allowed."
+msgstr "نأسف. خدمة Pandora متاحة لجماهير الولايات المتحدة فقط، ولا يُسمح بعنوان IP الخاص بك."
+
+msgid "This video is restricted by the video content owner and it is not available on TV connected devices."
+msgstr "هذا الفيديو مُقيّد من قِبل مالك محتوى الفيديو، وهو غير متاح على أجهزة التلفاز الموّصلة."
+
+msgid "Workgroup name"
+msgstr "اسم مجموعة العمل"
+
+msgid "Search History"
+msgstr "بحث في المحفوظات"
+
+msgid "Samba Server Protection"
+msgstr "حماية خادم Samba"
+
+msgid "Check network status..."
+msgstr "فحص حالة الشبكة..."
+
+msgid "Try to wake up system..."
+msgstr "محاولة تنشيط النظام..."
+
+msgid "Worldwide"
+msgstr "عالمي"
+
+msgid "Germany"
+msgstr "ألمانيا"
+
+msgid "France"
+msgstr "فرنسا"
+
+msgid "Spain"
+msgstr "إسبانيا"
+
+msgid "Italy"
+msgstr "إيطاليا"
+
+msgid "Taiwan"
+msgstr "تايوان"
+
+msgid "South Korea"
+msgstr "كوريا الجنوبية"
+
+msgid "Japan"
+msgstr "اليابان"
+
+msgid "Russia"
+msgstr "روسيا"
+
+msgid "The file you are playing doesn't support trick-mode."
+msgstr "الملف الذي تقوم بتشغيله لا يدعم وضع الحيلة."
+
+msgid "Flag sent to YouTube."
+msgstr "تم إرسال العلامة إلى YouTube."
+
+msgid "Create a new playlist"
+msgstr "إنشاء لائحة تشغيل"
+
+msgid "Choose your current playlist"
+msgstr "اختر لائحة التشغيل الحالية"
+
+msgid "The video has been added to your playlist."
+msgstr "تمت إضافة الفيديو إلى لائحة التشغيل."
+
+msgid "Flagging Reason"
+msgstr "سبب وضع العلامة"
+
+msgid "Porn"
+msgstr "إباحي"
+
+msgid "Violence"
+msgstr "عنف"
+
+msgid "Hate"
+msgstr "كراهية"
+
+msgid "Dangerous"
+msgstr "خطر"
+
+msgid "Rights"
+msgstr "حقوق"
+
+msgid "Spam"
+msgstr "عشوائي"
+
+msgid "Unable to play this video menu. Would you like to play video file?"
+msgstr "يتعذر تشغيل قائمة الفيديو هذه. هل ترغب في تشغيل ملف الفيديو?"
+
+msgid "My channels"
+msgstr "قنواتي"
+
+msgid "Popular channels"
+msgstr "القنوات الشهيرة"
+
+msgid "Browse content plug-ins"
+msgstr "تصفح مكونات المحتوى الإضافية"
+
+msgid "Dashboard"
+msgstr "لوحة المعلومات"
+
+msgid "Mediafly dashboard"
+msgstr "لوحة معلومات Mediafly"
+
+msgid "Add to my channel"
+msgstr "إضافة إلى قنواتي"
+
+msgid "Remove from my channel"
+msgstr "إزالة من قنواتي"
+
+msgid "Rate/Favorite"
+msgstr "تقييم/مفضل"
+
+msgid "View episodes"
+msgstr "عرض الحلقات"
+
+msgid "Show info"
+msgstr "إظهار المعلومات"
+
+msgid "Content source was added successfully to your Mediafly dashboard."
+msgstr "تمت إضافة مصدر المحتوى بنجاح إلى لوحة معلومات Mediafly."
+
+msgid "The device could not connect to the network."
+msgstr "تعذر على الجهاز الاتصال بالشبكة"
+
+msgid "All Episodes in this show"
+msgstr "كل الحلقات في هذا العرض"
+
+msgid "What would you like to remove?"
+msgstr "ما الذي ترغب في إزالته؟"
+
+msgid "Would you like to rate for this show/episode?"
+msgstr "هل ترغب في تقييم هذا العرض/الحلقة؟"
+
+msgid "Save"
+msgstr "حفظ"
+
+msgid "Fail to add to your favorite. Additional options are available on Mediafly.com"
+msgstr "فشل الإضافة إلى مفضلاتك. تتوفر خيارات إضافية على موقع Mediafly.com."
+
+msgid "Both"
+msgstr "كلاهما"
+
+msgid "To set up your personalized channels you need to link your player with Mediafly account."
+msgstr "لإعداد قنواتك الشخصية، تحتاج إلى توصيل المشغل بحسابك على Mediafly."
+
+msgid "Mediafly accounts are completely free and allow you centralized control and management of your favorite free online content."
+msgstr "تسمح لك حسابات Mediafly المجانية بالتحكم والإدارة المركزية للمحتوى المجاني الذي تفضله على الإنترنت."
+
+msgid "Option 1: from your computer"
+msgstr "الخيار 1: من الكمبيوتر"
+
+msgid "Option 2: Enter your Mediafly ID and password."
+msgstr "الخيار 2: أدخل مُعرّف وكلمة مرور Mediafly الخاصة بك"
+
+msgid "Enter Mediafly User ID and Pwd now"
+msgstr "أدخل مُعرّف وكلمة مرور مستخدم Mediafly الآن"
+
+msgid "Manage Users"
+msgstr "إدارة المستخدمين"
+
+msgid "Media Plug-ins"
+msgstr "مكونات الوسائط الإضافية"
+
+msgid "Add Media Plug-in via mCode"
+msgstr "إضافة مكون وسائط إضافي عبر mCode"
+
+msgid "Invalid mCode, please try again."
+msgstr "mCode غير صالح، يرجى إعادة المحاولة."
+
+msgid "Are you sure you want to add the show: "
+msgstr "هل تريد بالتأكيد إضافة العرض: "
+
+msgid "This episode has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "تمت إضافة هذه الحلقة إلى قنواتك. تتوفر خيارات إضافية على موقع Mediafly.com."
+
+msgid "This show has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "تمت إضافة هذا العرض إلى قنواتك. تتوفر خيارات إضافية على موقع Mediafly.com."
+
+msgid "This episode"
+msgstr "هذه الحلقة"
+
+msgid "This episode has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "تمت إزالة هذه الحلقة من قنواتك. تتوفر خيارات إضافية على موقع Mediafly.com."
+
+msgid "This show has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "تمت إزالة هذا العرض من قنواتك. تتوفر خيارات إضافية على موقع Mediafly.com."
+
+msgid "my rating:"
+msgstr "تقييمي:"
+
+msgid "my favorites:"
+msgstr "مفضلاتي:"
+
+msgid "Thank you. Additional options are available on Mediafly.com."
+msgstr "شكرًا لك."
+
+msgid "and enter this code:"
+msgstr "وأدخل هذا الكود:"
+
+msgid "Invalid assoc code"
+msgstr "الكود المصاحب غير صالح."
+
+msgid "Remove Media Plug-in"
+msgstr "إزالة مكون الوسائط الإضافي"
+
+msgid "Resume"
+msgstr "استئناف"
+
+msgid "Restart"
+msgstr "إعادة تشغيل"
+
+msgid "eng"
+msgstr "الإنجليزية"
+
+msgid "en"
+msgstr "الإنجليزية"
+
+msgid "EN"
+msgstr "الإنجليزية"
+
+msgid "fre"
+msgstr "الفرنسية"
+
+msgid "fra"
+msgstr "الفرنسية"
+
+msgid "fr"
+msgstr "الفرنسية"
+
+msgid "FR"
+msgstr "الفرنسية"
+
+msgid "ita"
+msgstr "الإيطالية"
+
+msgid "it"
+msgstr "الإيطالية"
+
+msgid "IT"
+msgstr "الإيطالية"
+
+msgid "ger"
+msgstr "الألمانية"
+
+msgid "deu"
+msgstr "الألمانية"
+
+msgid "de"
+msgstr "الألمانية"
+
+msgid "DE"
+msgstr "الألمانية"
+
+msgid "spa"
+msgstr "الإسبانية"
+
+msgid "es"
+msgstr "الإسبانية"
+
+msgid "ES"
+msgstr "الإسبانية"
+
+msgid "chi"
+msgstr "الصينية"
+
+msgid "zho"
+msgstr "الصينية"
+
+msgid "zh"
+msgstr "الصينية"
+
+msgid "ZH"
+msgstr "الصينية"
+
+msgid "kor"
+msgstr "الكورية"
+
+msgid "ko"
+msgstr "الكورية"
+
+msgid "KO"
+msgstr "الكورية"
+
+msgid "por"
+msgstr "البرتغالية"
+
+msgid "pt"
+msgstr "البرتغالية"
+
+msgid "PT"
+msgstr "البرتغالية"
+
+msgid "jpn"
+msgstr "اليابانية"
+
+msgid "ja"
+msgstr "اليابانية"
+
+msgid "JA"
+msgstr "اليابانية"
+
+msgid "gre"
+msgstr "اليونانية"
+
+msgid "ell"
+msgstr "اليونانية"
+
+msgid "el"
+msgstr "اليونانية"
+
+msgid "EL"
+msgstr "اليونانية"
+
+msgid "tur"
+msgstr "التركية"
+
+msgid "tr"
+msgstr "التركية"
+
+msgid "TR"
+msgstr "التركية"
+
+msgid "ara"
+msgstr "العربية"
+
+msgid "ar"
+msgstr "العربية"
+
+msgid "AR"
+msgstr "العربية"
+
+msgid "hin"
+msgstr "الهندية"
+
+msgid "hi"
+msgstr "الهندية"
+
+msgid "HI"
+msgstr "الهندية"
+
+msgid "tha"
+msgstr "التايلاندية"
+
+msgid "th"
+msgstr "التايلاندية"
+
+msgid "TH"
+msgstr "التايلاندية"
+
+msgid "Would you like to resume play or restart from the beginning?"
+msgstr "هل ترغب في استئناف التشغيل أم البدء من جديد؟"
+
+msgid "Screensaver mode"
+msgstr "وضع شاشة التوقف"
+
+msgid "Logo"
+msgstr "الشعار"
+
+msgid "Digital without HDMI audio"
+msgstr "رقمي دون صوت HDMI"
+
+msgid "Match video framerate"
+msgstr "مطابقة معدل إطارات الفيديو"
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Parental control"
+msgstr "التحكم الأبوي"
+
+msgid "Set the new password"
+msgstr "اضبط كلمة المرور الجديدة"
+
+msgid "Remove password"
+msgstr "إزالة كلمة المرور"
+
+msgid "Would you like to setup parental control?"
+msgstr "هل ترغب في إعداد التحكم الأبوي؟"
+
+msgid "Please enter your password."
+msgstr "يرجى إدخال كلمة المرور."
+
+msgid "Re-enter your password."
+msgstr "أعد إدخال كلمة المرور."
+
+msgid "The password you entered do not match, please try again."
+msgstr "كلمة المرور التي أدخلتها غير متطابقة، فيرجى إعادة المحاولة."
+
+msgid "Setup completed. parental control can only be applied to folders saved in the internal storage."
+msgstr "اكتمل الإعداد. يمكن فقط تطبيق التحكم الأبوي على المجلدات المحفوظة في وحدة التخزين الداخلية."
+
+msgid "Please enter the old password."
+msgstr "يرجى إدخال كلمة المرور القديمة."
+
+msgid "Password has been removed."
+msgstr "تمت إزالة كلمة المرور."
+
+msgid "Your password has been changed."
+msgstr "تم تغيير كلمة المرور."
+
+msgid "Invalid password. Please try again."
+msgstr "كلمة المرور غير صالحة. يرجى إعادة المحاولة."
+
+msgid "Please enter the new password."
+msgstr "يرجى إدخال كلمة المرور الجديدة."
+
+msgid "Remove parental control"
+msgstr "إزالة التحكم الأبوي"
+
+msgid "Lock this folder"
+msgstr "قفل هذا المجلد"
+
+msgid "Invalid input!"
+msgstr "إدخال غير صالح!"
+
+msgid "Input is empty!"
+msgstr "الإدخال فارغ!"
+
+msgid "Proxy"
+msgstr "البروكسي"
+
+msgid "Please enter proxy address"
+msgstr "يرجى إدخال عنوان البروكسي"
+
+msgid "Please enter proxy port"
+msgstr "يرجى إدخال منفذ البروكسي"
+
+msgid "Proxy Address"
+msgstr "عنوان البروكسي"
+
+msgid "Proxy Port"
+msgstr "منفذ البروكسي"
+
+msgid "Restart network. Please wait... "
+msgstr "أعد تشغيل الشبكة. يرجى الانتظار... "
+
+msgid "The Mediafly service is currently unavailable, please check again later."
+msgstr "خدمة Mediafly غير متاحة حاليًا، فيرجى التحقق مرة أخرى لاحقًا."
+
+msgid "Internet Media"
+msgstr "وسائط الإنترنت"
+
+msgid "Episodes"
+msgstr "الحلقات"
+
+msgid "of days left on your VIP Free Trial.Visit www.live365.com/wdc for info or to become a VIP."
+msgstr "متبقية في تجربة VIP المجانية لك. تفضل بزيارة http://www.live365.com/wdtv لمعرفة المعلومات أو لكي تصبح عضو VIP."
+
+msgid "Connection Successfully.Would you like to save this network connection Automatically?"
+msgstr "تم الاتصال بنجاح! هل ترغب في حفظ هذه الشبكة اللاسلكية بلائحة مفضلاتك تلقائيًا."
+
+msgid "arabic"
+msgstr "العربية"
+
+msgid "hebrew"
+msgstr "עברית"
+
+msgid "Change Location"
+msgstr "ﺖﻐﻴﻳﺭ ﺎﻠﻣﻮﻘﻋ"
+
+msgid "Wall"
+msgstr "ﺎﻠﺣﺎﺌﻃ"
+

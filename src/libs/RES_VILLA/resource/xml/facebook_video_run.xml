@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<page>
+  <ctrlgrp>
+	<button valkey="CLOSE"/> 
+	<linebreak/>
+	<button valkey="LIKE"/> 
+	<button valkey="UNLIKE"/> 
+	<linebreak/>
+	<button valkey="COMMENTS"/>
+  </ctrlgrp>
+
+  <!-- information time info -->
+
+  <wrapper disable="@@disable_time_info">
+	<image image="image/facebook/facebook_Photo_playback_mask.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	<image image="image/facebook/youtube_playing_bar_bg.png" x="70" y="644" w="1141" h="50"/>
+	<text text="@@filename" x="85" y="545" w="860" h="48" fontsize="44" textcolor="0xffffff" speed="1" delay="2" align="left" auto_translate="1"/>
+	<text text="@@text-like" x="75" y="610" w="66" h="26" fontsize="24" textcolor="0xc1c1c1" align="right"/>
+	<image image="image/facebook/facebook_playback_comments_like.png" x="154" y="605" w="21" h="27"/>
+	<text text="@@text-comments" x="203" y="610" w="66" h="26" fontsize="24" textcolor="0xc1c1c1" align="right"/>
+	<image image="image/facebook/facebook_playback_comments_msg_notify.png" x="284" y="608" w="23" h="26"/>
+
+	<image image="@@speed_state" x="89" y="658" w="30" h="23"/>
+	<text text="@@speed_value" x="122" y="659" w="33" h="20" fontsize="20" align="left"/>
+
+	<progress_bar name="video_time_bar" x="165" y="662" w="836" h="14" pb_back_img="image/facebook/facebook_video_playback_playing_progress_bg.png" pb_front_img="image/facebook/facebook_video_playback_playing_progress_bar.png" pb_point_img="image/facebook/playing_progress_bar_point.png" pb_delay="500"  pb_enable_buffer="1"/>
+
+	<text text="@@current_time" x="999" y="661" w="103" h="22" fontsize="20" align="right"/>
+	<text text="@@duration_time" x="1108" y="661" w="96" h="22" fontsize="20" align="left"/>
+  </wrapper>
+
+  <text x="961" y="522" w="240" h="27"  text="$$Close" align="right"
+		fontsize="30" textcolor="0xc1c1c1"  active="@@act-CLOSE" selected="sel-CLOSE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-CLOSE"/>
+  <text x="961" y="564" w="240" h="27"  text="$$Like" align="right"
+		fontsize="30" textcolor="0xc1c1c1"  active="@@act-LIKE" selected="sel-LIKE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-LIKE"/>
+  <text x="961" y="564" w="240" h="27"  text="$$Unlike" align="right"
+		fontsize="30" textcolor="0xc1c1c1"  active="@@act-UNLIKE" selected="sel-UNLIKE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-UNLIKE"/>
+  <text x="961" y="606" w="240" h="27"  text="$$Comments" align="right"
+		fontsize="30" textcolor="0xc1c1c1"  active="@@act-COMMENTS" selected="sel-COMMENTS"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-COMMENTS"/>
+
+  <!-- 
+  <image image="@@shufle-ico" x="1234" y="599" w="48" h="36"/>
+  -->
+  <wrapper>
+	<image image="@@wrongkeyicon" x="563" y="282" w="154" h="155" align="hcenter" />
+	<image image="@@keyicon" x="1063" y="71" w="65" h="45" align="hcenter" />
+	<text text="@@info_now_playing" x="65" y="18" w="243" h="31" fontsize="26"/>
+  </wrapper>
+  <include filename="./ipcam_pip_win.xml" />
+  <text text="@@mod_txt" x="162" y="186" w="958" h="34" fontsize="30" textcolor="0xffffff" align="hcenter" auto_translate="1"/>
+  <text x="450" y="160" w="372" h="26" text="@@text-OPTION" fontsize="24" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+  <image image="@@mod_img" x="1063" y="71" w="107" h="107"/> 
+
+  <include filename="./inc_loading.xml"/>
+</page>

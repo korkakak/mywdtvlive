@@ -1,0 +1,2326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-07-10 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Music"
+msgstr "Muzyka"
+
+msgid "Settings"
+msgstr "Ustawienia"
+
+msgid "All Video"
+msgstr "Wszystkie video"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Folders"
+msgstr "Foldery"
+
+msgid "Recent"
+msgstr "Ostatnie"
+
+msgid "Playlist"
+msgstr "Lista odtwarzania"
+
+msgid "Playlist Videos"
+msgstr "Lista odtwarzania"
+
+msgid "All Music"
+msgstr "Cała muzyka"
+
+msgid "Artist"
+msgstr "Wykonawca"
+
+msgid "Genre"
+msgstr "Gatunek"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Now Playing"
+msgstr "Teraz odtwarzane"
+
+msgid "Now playing"
+msgstr "Teraz odtwarzane"
+
+msgid "New firmware found"
+msgstr "Znaleziono nowy firmware"
+
+msgid "No storage present"
+msgstr "Brak pamięci masowej"
+
+msgid "Media library compilation requires more storage space:"
+msgstr "Kompilacja biblioteki multimediów wymaga więcej miejsca w pamięci:"
+
+msgid "Scanning the attached storage. The first time scanning may take longer. Please wait..."
+msgstr "Wyszukiwanie dołączonej pamięci. Pierwsze wyszukiwanie trwa kilka minut. Zaczekaj..."
+
+msgid "Please select [OK] to resume playback or [Cancel]  to restart the video"
+msgstr "Wybierz [OK], aby wznowić odtwarzanie lub [Anuluj], aby ponownie uruchomić video"
+
+msgid "Audio/Video"
+msgstr "Audio/Video"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Movie"
+msgstr "Film"
+
+msgid "System"
+msgstr "System"
+
+msgid "NTSC/PAL"
+msgstr "NTSC/PAL"
+
+msgid "Interval time"
+msgstr "Czas odstępu"
+
+msgid "Language"
+msgstr "Język"
+
+msgid "About"
+msgstr "Informacje"
+
+msgid "Normal"
+msgstr "Normalne"
+
+msgid "Widescreen"
+msgstr "Szeroki ekran"
+
+msgid "Composite"
+msgstr "Composite"
+
+msgid "HDMI"
+msgstr "HDMI"
+
+msgid "Auto"
+msgstr "Automatyczny"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Digital"
+msgstr "Cyfrowy"
+
+msgid "NTSC"
+msgstr "NTSC"
+
+msgid "PAL"
+msgstr "PAL"
+
+msgid "Are you sure you want to change the video resolution?"
+msgstr "Czy na pewno chcesz zmienić rozdzielczość video?"
+
+msgid "Are you sure you want to change the video output format?"
+msgstr "Czy na pewno chcesz zmienić format wyjścia video?"
+
+msgid "Repeat one"
+msgstr "Powtórz jeden"
+
+msgid "Repeat all"
+msgstr "Powtórz wszystkie"
+
+msgid "Repeat all and shuffle"
+msgstr "Powtórz wszystkie i wymieszaj"
+
+msgid "Keep as original"
+msgstr "Zachowaj jako oryginał"
+
+msgid "Fit to screen"
+msgstr "Dopasuj do ekranu"
+
+msgid "Shuffle"
+msgstr "Wymieszaj"
+
+msgid "Fade"
+msgstr "Wyciszenie"
+
+msgid "Random"
+msgstr "Losowe"
+
+msgid "3 Seconds"
+msgstr "3 sekund"
+
+msgid "5 Seconds"
+msgstr "5 sekund"
+
+msgid "10 Seconds"
+msgstr "10 sekund"
+
+msgid "20 Seconds"
+msgstr "20 sekund"
+
+msgid "30 Seconds"
+msgstr "30 sekund"
+
+msgid "1 Minute"
+msgstr "1 minuta"
+
+msgid "3 Minutes"
+msgstr "3 minut"
+
+msgid "5 Minutes"
+msgstr "5 minut"
+
+msgid "10 Minutes"
+msgstr "10 minut"
+
+msgid "15 Minutes"
+msgstr "15 minut"
+
+msgid "20 Minutes"
+msgstr "20 minut"
+
+msgid "30 Minutes"
+msgstr "30 minut"
+
+msgid "English"
+msgstr "Angielski"
+
+msgid "French"
+msgstr "Francuski"
+
+msgid "Italian"
+msgstr "Włoski"
+
+msgid "German"
+msgstr "Niemiecki"
+
+msgid "Spanish"
+msgstr "Hiszpański"
+
+msgid "Simplified Chinese"
+msgstr "Uproszczony Chiński"
+
+msgid "Traditional Chinese"
+msgstr "Tradycyjny Chiński"
+
+msgid "Korean"
+msgstr "Koreański"
+
+msgid "Japanese"
+msgstr "Japoński"
+
+msgid "On"
+msgstr "Wł."
+
+msgid "Off"
+msgstr "Wył."
+
+msgid "CAS_On"
+msgstr "Wł."
+
+msgid "CAS_Off"
+msgstr "Wył."
+
+msgid "Never"
+msgstr "Nigdy"
+
+msgid "List mode"
+msgstr "Tryb Lista"
+
+msgid "Thumbnail mode"
+msgstr "Tryb miniaturek"
+
+msgid "Are you sure you want to restore this device to factory settings?"
+msgstr "Czy na pewno chcesz przywrócić fabryczne ustawienia tego urządzenia?"
+
+msgid "WD TV HD Media Player"
+msgstr "Odtwarzacz WD TV Live HD Media Player"
+
+msgid "WD TV Plus HD Media Player"
+msgstr "Odtwarzacz WD TV Live Plus HD Media Player"
+
+msgid "version"
+msgstr "wersja"
+
+msgid "Current version"
+msgstr "Bieżąca wersja"
+
+msgid "Current version:"
+msgstr "Bieżąca wersja:"
+
+msgid "New version"
+msgstr "Nowa wersja"
+
+msgid "New firmware found. Do you want to upgrade?"
+msgstr "Znaleziono nowy firmware. Czy chcesz wykonać aktualizację?"
+
+msgid "Rebooting"
+msgstr "Ponowne uruchamianie"
+
+msgid "Invalid firmware"
+msgstr "Nieprawidłowy firmware"
+
+msgid "Contains"
+msgstr "Zawartość"
+
+msgid "Starts with"
+msgstr "Rozpocznij z"
+
+msgid "Loading"
+msgstr "Ładowanie"
+
+msgid "Loading..."
+msgstr "Ładowanie..."
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Cancel"
+msgstr "Anuluj"
+
+msgid "Yes"
+msgstr "OK"
+
+msgid "No"
+msgstr "Anuluj"
+
+msgid "Unable to recognize attached device at USB port "
+msgstr "Nie można rozpoznać urządzenia podłączonego do portu USB "
+
+msgid "Storage can not aggregate"
+msgstr "Nie można zsumować pamięci"
+
+msgid "Next Song:"
+msgstr "Następna piosenka:"
+
+msgid "Current Song"
+msgstr "Bieżąca piosenka"
+
+msgid "Search"
+msgstr "Szukaj"
+
+msgid "All Photos"
+msgstr "Wszystkie zdjęcia"
+
+msgid "Media library does not support journaled file system. Playback is still supported."
+msgstr "Biblioteka multimediów nie obsługuje systemu plików z księgowaniem. Odtwarzanie jest nadal obsługiwane."
+
+msgid "Unable to create media library on read only storage."
+msgstr "Nie można utworzyć biblioteki multimediów w pamięci tylko do odczytu."
+
+msgid "Unable to create media library. Please check your storage setting."
+msgstr "Nie można utworzyć biblioteki multimediów. Należy sprawdzić ustawienie pamięci."
+
+msgid "Unrecognized USB device"
+msgstr "Nierozpoznane urządzenie USB"
+
+msgid "Scanning the attached USB device..."
+msgstr "Wyszukiwanie podłączonego urządzenia USB..."
+
+msgid "The video file you attempted to play contains multiple audio channel outputs which is not supported. Please switch to digital audio output and connect your HD Media Player to an AV receiver that supports the audio codec."
+msgstr "Plik video do odtwarzanie zawiera wiele nieobsługiwanych wyjść kanałów audio. Przełącz na cyfrowe wyjście audio i podłącz odtwarzacz Live HD Media Player do odbiornika AV  z obsługą kodeka audio."
+
+msgid "Unsupported subtitle"
+msgstr "Nieobsługiwane napisy"
+
+msgid "Audio Channel"
+msgstr "Kanał audio"
+
+msgid "Audio channel"
+msgstr "Kanał audio"
+
+msgid "Photos"
+msgstr "Zdjęcie"
+
+msgid "photos"
+msgstr "Zdjęcia"
+
+msgid "Firmware upgrade"
+msgstr "Aktualizacja firmware"
+
+msgid "Video output"
+msgstr "Wyjśce video"
+
+msgid "Display resolution"
+msgstr "Rozdzielczość wyświetlania"
+
+msgid "Aspect ratio"
+msgstr "Współczynnik proporcji"
+
+msgid "Audio output"
+msgstr "Wyjście audio"
+
+msgid "Video sequence"
+msgstr "Sekwencja video"
+
+msgid "Music sequence"
+msgstr "Sekwencja muzyki"
+
+msgid "Slideshow sequence"
+msgstr "Sekwencja pokazu slajdów"
+
+msgid "Photo scaling"
+msgstr "Skalowanie zdjęcia"
+
+msgid "Transition effect"
+msgstr "Efekt przejścia"
+
+msgid "Screensaver delay"
+msgstr "Opóźnienie wygaszacza ekranu"
+
+msgid "Browser display"
+msgstr "Wyświetlanie przeglądarki"
+
+msgid "System reset"
+msgstr "Resetuj do domyślnych ustawień fabrycznych"
+
+msgid "Display in full screen"
+msgstr "Wyświetl na pełnym ekranie"
+
+msgid "Wipe right"
+msgstr "Wytrzyj w prawo"
+
+msgid "Wipe left"
+msgstr "Wytrzyj w lewo"
+
+msgid "Your HD Media Player is being upgraded. Please DO NOT disconnect power or the attached storage."
+msgstr "Aktualizacja odtwarzacza HD Media Player. NIE należy odłączać zasialnia lub podłączonej pamięci."
+
+msgid "Upgrade complete. The media player will now restart."
+msgstr "Aktualizacja zakończona. Nastąpi teraz ponowne uruchomienie odtwarzacza multimediów."
+
+msgid "Please select the device you would like to eject."
+msgstr "Wybierz urządzenie do wysunięcia."
+
+msgid "Are you sure you want to remove this device?"
+msgstr "Czy na pewno chcesz usunąć to urządzenie?"
+
+msgid "Under digital audio output setting, an AV receiver with proper audio format support is required in order to play audio track with surround sound."
+msgstr "W ustawieniu cyfrowego wyjścia audio, do odtwarzania ścieżki audio z dźwiękiem surround, wymagany jest odbiornik AV z obsługiwanym prawidłowym formatem audio."
+
+msgid "Subtitle off"
+msgstr "Wyłączone napisy"
+
+msgid "No subtitle"
+msgstr "Brak napisów"
+
+msgid "Media library"
+msgstr "Biblioteka multimediów"
+
+msgid "For additional information regarding your HD Media Player, please refer to the user manual or visit"
+msgstr "Dodatkowe informacje dotyczące odtwarzacza HD Media Player, można znaleźć w podręczniku użytkownika lub można odwiedzić "
+
+msgid "Subtitle"
+msgstr "Napisy"
+
+msgid "Firmware Version"
+msgstr "Wersja firmware"
+
+msgid "Title"
+msgstr "Tytuł"
+
+msgid "File name"
+msgstr "Nazwa pliku"
+
+msgid "Search completed. No results found."
+msgstr "Szukanie zakończone. Nie znaleziono wyników."
+
+msgid "Unsupported"
+msgstr "Nieobsługiwany"
+
+msgid "Space"
+msgstr "Miejsce"
+
+msgid "No audio channel"
+msgstr "Brak kanału audio"
+
+msgid "Untitled volume"
+msgstr "Wolumin bez tytułu"
+
+msgid "Subtitle font size"
+msgstr "Rozmiar czcionki napisów"
+
+msgid "Additional encoding support"
+msgstr "Obsługa dodatkowego kodowania"
+
+msgid "Western Europe (ISO)"
+msgstr "Europa Zachodnia (ISO)"
+
+msgid "Traditional Chinese (Big5)"
+msgstr "Tradycyjny Chiński (Big5)"
+
+msgid "Simplified Chinese (GB18030)"
+msgstr "Uproszczony Chiński (GB18030)"
+
+msgid "Japanese (Shift-JIS)"
+msgstr "Japoński (Shift-JIS)"
+
+msgid "Korean (EUC-KR)"
+msgstr "Koreański (EUC-KR)"
+
+msgid "Cyrillic (Windows-1251)"
+msgstr "Cyrylica (Windows-1251)"
+
+msgid "Cyrillic (KOI8-R)"
+msgstr "Cyrylica (KOI8-R)"
+
+msgid "Greek (ISO)"
+msgstr "Grecki (ISO)"
+
+msgid "Greek (Windows-1253)"
+msgstr "Grecki (Windows-1253)"
+
+msgid "All"
+msgstr "Wszystkie"
+
+msgid "Equal to"
+msgstr "Równe"
+
+msgid "Not Equal to"
+msgstr "Nierówne"
+
+msgid "Central Europe (ISO)"
+msgstr "Europa Środkowa (ISO)"
+
+msgid "Central Europe (Windows-1250)"
+msgstr "Europa Środkowa (Windows-1250)"
+
+msgid "Does not contain"
+msgstr "Nie zawiera"
+
+msgid "Display file size"
+msgstr "Wyświetl wielkość pliku"
+
+msgid "Display file size during navigation"
+msgstr "Wyświetl wielkość pliku podczas nawigacji"
+
+msgid "Western Europe"
+msgstr "Europa Zachodnia"
+
+msgid "Turkish"
+msgstr "Turecki"
+
+msgid "Subtitle default"
+msgstr "Domyślne napisy"
+
+msgid "Subtitle border"
+msgstr "Krawędź napisów"
+
+msgid "Thick"
+msgstr "Gruba"
+
+msgid "Thin"
+msgstr "Cienka"
+
+msgid "Insufficient space in atached USB device. Media library compilation requires more storage space"
+msgstr "Za mało miejsca w podłączonym urządzeniu USB. Kompilacja biblioteki multimediów wymaga więcej miejsca w pamięci"
+
+msgid "The attached USB device is using HFS+ Journaling file system. Media library does not function under this file system, but playback is still supported. Please disable Journaling to allow full function of your media player"
+msgstr "Podłączone urządzenie USB wykorzystuje system plików z księgowaniem HFS+. Biblioteka multimediów nie działa w tym systemie plików, ale odtwarzanie jest nadal obsługiwane. Wyłącz księgowanie, aby umożliwić działanie odtwarzacza multimediów"
+
+msgid "The attached USB device is set to Read Only. The media library function will not be supported"
+msgstr "Podłączone urządzenie USB jest ustawione jako tylko do odczytu. Biblioteka multimediów nie będzie obsługiwana"
+
+msgid "Unable to create media library in the attached USB device. Please check your device's setting"
+msgstr "Nie można utworzyć biblioteki multimediów w podłączonym urzadzeniu USB. Sprawdź ustawienie urządzenia"
+
+msgid "Invalid firmware. Please download the correct firmware from http://www.wdc.com"
+msgstr "Nieprawidłowy firmware. Pobierz prawidłowy firmware pod adresem http://www.wdc.com"
+
+msgid "File Management"
+msgstr "Zarządzanie plikami"
+
+msgid "Select source"
+msgstr "Wybierz źródło"
+
+msgid "Select a destination"
+msgstr "Wybierz miejsce docelowe"
+
+msgid "Enabling file movement, background music will now be stopped..."
+msgstr "Włączenie przeniesienia plików, zatrzymanie muzyki w tle..."
+
+msgid "Copy"
+msgstr "Kopiuj"
+
+msgid "Delete"
+msgstr "Usuń"
+
+msgid "Move"
+msgstr "Przenieś"
+
+msgid "Select all"
+msgstr "Zaznacz wszystko"
+
+msgid "Source"
+msgstr "Źródło"
+
+msgid "Destination"
+msgstr "Miejsce docelowe"
+
+msgid "Would you like to delete the selected files?"
+msgstr "Czy chcesz usunąć wybrane pliki?"
+
+msgid "Would you like to copy the selected files?"
+msgstr "Czy chcesz usunąć wybrane pliki?"
+
+msgid "Would you like to move the selected files?"
+msgstr "Czy chcesz przenieść wybrane pliki?"
+
+msgid "Deleting files..."
+msgstr "Usuwanie plików..."
+
+msgid "Deleted"
+msgstr "Usunięty"
+
+msgid "Copying files..."
+msgstr "Kopiowanie plików..."
+
+msgid "Moving files..."
+msgstr "Przenoszenie plików..."
+
+msgid "Moved"
+msgstr "Przeniesiony"
+
+msgid "File delete complete."
+msgstr "Usuwanie pliku zakończone."
+
+msgid "Write fail. Please check the destination device."
+msgstr "Zapisanie nie powiodło się. Sprawdź urządzenie docelowe."
+
+msgid "Read fail. Please check the source device."
+msgstr "Odczytanie nie powiodło się. Sprawdź urządzenie źródłowe."
+
+msgid "Unable to copy or move file. Not enough space at destination."
+msgstr "Nie można skopiować lub przenieść pliku. Za mało miejsca w urządzeniu docelowym."
+
+msgid "Unable to write to read-only device at destination."
+msgstr "Nie można zapisać w urządzeniu tylko do odczytu."
+
+msgid "Unable to delete read-only file."
+msgstr "Nie można usunąć pliku tylko do odczytu."
+
+msgid "Press [BACK] to cancel."
+msgstr "Naciśni [COFNIJ] aby anulować."
+
+msgid "Are you sure you want to cancel?"
+msgstr "Czy na pewno chcesz anulować?"
+
+msgid "Auto play"
+msgstr "Automatyczne odtwarzanie"
+
+msgid "Photo auto play"
+msgstr "Autoamtyczne odtwarzanie zdjęć"
+
+msgid "Video auto play"
+msgstr "Automatyczne odtwarzanie video"
+
+msgid "Are you sure you want to chage the video setting?"
+msgstr "Czy na pewno chcesz zmienić ustawienie video?"
+
+msgid "Camera"
+msgstr "Kamera"
+
+msgid "Camera 1"
+msgstr "Kamera 1"
+
+msgid "Camera 2"
+msgstr "Kamera 2"
+
+msgid "Chapters"
+msgstr "Rozdziały"
+
+msgid "file name"
+msgstr "nazwa pliku"
+
+msgid "Press [RIGHT] to select source."
+msgstr "Naciśnij [W PRAWO], aby wybrać źródło."
+
+msgid "Press [OPTION] to copy, move or delete."
+msgstr "Naciśnij [OPCJA], aby skopiować, przenieść lub usunąć."
+
+msgid "Press [RIGHT] to select destination."
+msgstr "Naciśnij [W PRAWO], aby wybrać cel."
+
+msgid "Press [OPTION] to confirm."
+msgstr "Naciśnij [OPCJA] w celu potwierdzenia."
+
+msgid "Standby mode"
+msgstr "Tryb czuwania"
+
+msgid "Audio track display"
+msgstr "Wyświetlanie ścieżki audio"
+
+msgid "Action cancelled."
+msgstr "Akcja anulowana"
+
+msgid "Arabic"
+msgstr "Arabski"
+
+msgid "Hindu"
+msgstr "Hinduski"
+
+msgid "Thailand"
+msgstr "Tajlandia"
+
+msgid "Preview mode"
+msgstr "Tryb podglądu"
+
+msgid "Firmware upgrade failed. The device will restart."
+msgstr "Aktualizacja firmware nie powiodła się. Nastąpi ponowne uruchomienie urządzenia."
+
+msgid "Empty"
+msgstr "Pusta"
+
+msgid "Push"
+msgstr "Naciśnij"
+
+msgid "Wipe"
+msgstr "Wytrzyj"
+
+msgid "Zoom"
+msgstr "Powiększenie"
+
+msgid "Access point detecting..."
+msgstr "Wykrywanie sieci bezprzewodowej..."
+
+msgid "Detecting Wireless Access Point"
+msgstr "Wykrywanie sieci bezprzewodowej..."
+
+msgid "The network encryption key is not valid."
+msgstr "Nieprawidłowy klucz szyfrowania sieci."
+
+msgid "No Chapter"
+msgstr "Brak rozdziału"
+
+msgid "Home"
+msgstr "Główna"
+
+msgid "Live365 Home"
+msgstr "Główna Live365"
+
+msgid "Last 7 days interesting"
+msgstr "Interesujące ostatnie 7 dni"
+
+msgid "Most recent uploads"
+msgstr "Ostatnio przesłane"
+
+msgid "Hot tags"
+msgstr "Znaczniki interesujących elementów"
+
+msgid "Hot Tags"
+msgstr "Znaczniki interesujących elementów"
+
+msgid "My contacts"
+msgstr "Moje kontakty"
+
+msgid "My Contacts"
+msgstr "Moje kontakty"
+
+msgid "My tags"
+msgstr "Moje znaczniki"
+
+msgid "Explore"
+msgstr "Eksploruj"
+
+msgid "Keywords"
+msgstr "Słowa kluczowe"
+
+msgid "Flickr members"
+msgstr "Członkowie Flickr"
+
+msgid "Tags"
+msgstr "Znaczniki"
+
+msgid "Tag"
+msgstr "Znaczniki"
+
+msgid "Submit"
+msgstr "Prześlij"
+
+msgid "Search results"
+msgstr "Wyniki wyszukiwania"
+
+msgid "Search Results"
+msgstr "Wyniki wyszukiwania"
+
+msgid "Photo can not be access"
+msgstr "Brak dostępu do zdjęcia"
+
+msgid "Download photo"
+msgstr "Pobierz zdjęcie"
+
+msgid "This member doesn't have anything available to you."
+msgstr "Ten członek nie nic dla ciebie."
+
+msgid "Photostream"
+msgstr "Strumień zdjęć"
+
+msgid "Contacts"
+msgstr "Kontakty"
+
+msgid "Featured Videos"
+msgstr "Video tematyczne"
+
+msgid "Recent Videos"
+msgstr "Najnowsze video"
+
+msgid "Account"
+msgstr "Konto"
+
+msgid "Top Favorited"
+msgstr "Najlepsze ulubione"
+
+msgid "Today"
+msgstr "Dzisiaj"
+
+msgid "This Week"
+msgstr "W tym tygodniu"
+
+msgid "This Month"
+msgstr "W tym miesiącu"
+
+msgid "All Time"
+msgstr "Cały czas"
+
+msgid "Featured"
+msgstr "Tematyczne"
+
+msgid "Rated Videos"
+msgstr "Oceniane video"
+
+msgid "Rate Video"
+msgstr "Ocena video"
+
+msgid "Rate video"
+msgstr "Ocena video"
+
+msgid "Download"
+msgstr "Pobierz"
+
+msgid "Play Again"
+msgstr "Odtwórz ponownie"
+
+msgid "Download Video"
+msgstr "Pobierz video"
+
+msgid "Add to Favorites"
+msgstr "Dodaj do ulubionych"
+
+msgid "Back to Videos"
+msgstr "Cofnij do video"
+
+msgid "Poor"
+msgstr "Słabe"
+
+msgid "Nothing special"
+msgstr "Nic specjalnego"
+
+msgid "Worth watching"
+msgstr "Warte obejrzenia"
+
+msgid "Pretty cool"
+msgstr "Niezłe"
+
+msgid "Awesome"
+msgstr "Fantastyczne"
+
+msgid "My Account"
+msgstr "Moje konto"
+
+msgid "My Videos"
+msgstr "Moje video"
+
+msgid "My Favorites"
+msgstr "Moje ulubione"
+
+msgid "My Playlists"
+msgstr "Moje listy odtwarzania"
+
+msgid "My videos"
+msgstr "Video"
+
+msgid "My favorites"
+msgstr "Ulubione"
+
+msgid "My playlists"
+msgstr "Listy odtwarzania"
+
+msgid "Visit www.live365.com/vip to sign up. for more info or become a VIP."
+msgstr "Odwiedź www.live365.com/vip w celu rejestracji, dalszych informacji lub uzyskania statusu VIP."
+
+msgid "Live365 - the world's largest internet radio network. Listen to select stations for free or get a VIP Membership for unlimited access to thousands of commercial-free stations from over 240 genres. Visit www.liver365.com/vip to sign up. Once purchased. your commercial-free VIP access is active on the Live365 website as well as participating devices."
+msgstr "Live365 - największa na świecie internetowa sieć radiowa. Słuchaj bezpłatnie wybranych stacji lub uzyskaj członkostwo VIP i nielimitowany dostęp do tysięcy wolnych od reklam stacji i ponad 240 gatunków muzyki. Odwiedź www.live365.com/vip w celu rejestracji. Po zakupieniu, dostęp VIP bez reklam będzie aktywny na stronie sieci web Live 365 oraz w powiązanych urządzeniach."
+
+msgid "Continue"
+msgstr "Kontynuuj"
+
+msgid "Last Station"
+msgstr "Ostatnia stacja"
+
+msgid "Last Stations"
+msgstr "Ostatnia stacja"
+
+msgid "My presets"
+msgstr "Moje wstępne ustawienia"
+
+msgid "My Presets"
+msgstr "Moje wstępne ustawienia"
+
+msgid "Stations"
+msgstr "Stacje"
+
+msgid "VIP Stations"
+msgstr "Stacje VIP"
+
+msgid "Preferences"
+msgstr "Preferencje"
+
+msgid "YouTube Preferences"
+msgstr "Preferencje YouTube"
+
+msgid "Start up"
+msgstr "Uruchamianie"
+
+msgid "Sign In / Sign Out"
+msgstr "Zarejestruj/Wyrejestruj"
+
+msgid "Sign out / Sign in"
+msgstr "Zarejestruj/Wyrejestruj"
+
+msgid "Logout"
+msgstr "Zarejestruj"
+
+msgid "Sort Option"
+msgstr "Opcja sortowania"
+
+msgid "Sort Options"
+msgstr "Opcje sortowania"
+
+msgid "Audio settings"
+msgstr "Ustawienia audio"
+
+msgid "All Stations(8k-256k)"
+msgstr "Wszystkie stacje (8k-256k)"
+
+msgid "Only High(96k-256k)"
+msgstr "Tylko wysoka jakość (96k-256k)"
+
+msgid "Medium to High(56k-256k)"
+msgstr "Średnia do wysokiej (56k-256k)"
+
+msgid "Low to Medium(8k-56k)"
+msgstr "Niska do średniej (8k-56k)"
+
+msgid "Only Low(8k-32k)"
+msgstr "Tylko niska (8k-32k)"
+
+msgid "Home page"
+msgstr "Strona główna"
+
+msgid "Presets page"
+msgstr "Strona ustawień wstępnych"
+
+msgid "Play last station"
+msgstr "Odtwarzaj ostatnią stację"
+
+msgid "Sort Station Alphabetically"
+msgstr "Sortuj stacje alfabetycznie"
+
+msgid "Sort Station by Popularity"
+msgstr "Sortuj stacje według popularności"
+
+msgid "Please check your email for the track info."
+msgstr "Wysłano informacje o ścieżce. Sprawdź e-mail."
+
+msgid "We are sorry.Pandora service only for U.S.Listeners that language support only for English. "
+msgstr "Serwis Pandora jest aktualnie dostępny jedynie w Stanach Zjednoczonych. Dlatego, dostępny jest jedynie język angielski."
+
+msgid "Network Setup"
+msgstr "Ustawienia sieci"
+
+msgid "Network setup"
+msgstr "Ustawienia sieci"
+
+msgid "Invalid username or password. Please try again."
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj ponownie."
+
+msgid "Failed to connect file server, the account/password may be changed, please check it."
+msgstr "Nieprawidłowa nazwa użytkownika lub hasło. Spróbuj ponownie."
+
+msgid "Wired"
+msgstr "Przewodowa"
+
+msgid "Ethernet"
+msgstr "Ethernet"
+
+msgid "Wireless"
+msgstr "Bezprzewodowa"
+
+msgid "Please Specify your Network Type."
+msgstr "Podaj rodzaj sieci"
+
+msgid "Select Setup Method."
+msgstr "Wybierz tryb połączenia"
+
+msgid "Manual"
+msgstr "Ręczne"
+
+msgid "Automatic"
+msgstr "Automatyczne"
+
+msgid "Enter your IP address and then press Submit"
+msgstr "Wprowadź swój adres IP, a następnie kliknij Prześlij"
+
+msgid "if you have a Subnet mask, enter it and then press Submit"
+msgstr "jeśli masz maskę podsieci, wprowadź ją, a następnie kliknij Prześlij"
+
+msgid "Auto search"
+msgstr "Automatyczne wyszukiwanie"
+
+msgid "Manually SSID"
+msgstr "Ręczne wprowadzanie SSID"
+
+msgid "Enter SSID Key:"
+msgstr "Wprowadź SSID"
+
+msgid "Site survey"
+msgstr "Wykrywanie urządzeń"
+
+msgid "Signal"
+msgstr "Sygnał"
+
+msgid "Security Type"
+msgstr "Typ zabezpieczenia"
+
+msgid "Please enter your Encryption Key"
+msgstr "Wprowadź hasło zabezpieczenia sieci"
+
+msgid "Key length error!\n If your key type is ASCII, the length should be 5, 13, or 16.\nIf your key type if Hex, the length should be 10, 26 or 32."
+msgstr "Hasło zabezpieczenia sieci jest nieprawidłowe. Spróbuj ponownie."
+
+msgid "Key length error!\n The length of WPAPSK should be 8~64!"
+msgstr "Hasło zabezpieczenia sieci jest nieprawidłowe. Spróbuj ponownie."
+
+msgid "Network not available!"
+msgstr "Nie można połączyć urządzenia z siecią"
+
+msgid "Please Wait..."
+msgstr "Zaczekaj..."
+
+msgid "Network Setup Completed"
+msgstr "Ustawienia sieci zakończone"
+
+msgid "Return Home"
+msgstr "Powrót na stronę główną"
+
+msgid "Device name"
+msgstr "Nazwa urządzenia"
+
+msgid "Samba Servers"
+msgstr "Serwery Samba"
+
+msgid "Media Servers"
+msgstr "Serwery multimediów"
+
+msgid "Delete the preset's password?"
+msgstr "Czy na pewno chcesz usunąć zapisane informacje logowania?"
+
+msgid "Sign in"
+msgstr "Zarejestruj"
+
+msgid "Username"
+msgstr "Nazwa użytkownika"
+
+msgid "Password"
+msgstr "Hasło"
+
+msgid "Connecting..."
+msgstr "Łączenie..."
+
+msgid "Unable to obtain an IP address. The media player has limited or no network connectivity."
+msgstr "Nie można uzyskać adresu IP. Odtwarzacz multimediów ma ograniczone możliwości połączenia z siecią lub brak."
+
+msgid "RGB High"
+msgstr "RGB wysoka"
+
+msgid "RGB Low"
+msgstr "RGB niska"
+
+msgid "Reboot now"
+msgstr "Uruchom ponownie teraz"
+
+msgid "Update Device"
+msgstr "Aktualizuj urządzenie"
+
+msgid "Searching for update"
+msgstr "Wyszukiwanie aktualizacji"
+
+msgid "System information"
+msgstr "Informacje o systemie"
+
+msgid "Local Drives"
+msgstr "Lokalne napędy"
+
+msgid "Are you sure you want to sign out?"
+msgstr "Czy na pewno chcesz zarejestrować?"
+
+msgid "Video Setting"
+msgstr "Ustawienia video"
+
+msgid "Photo Setting"
+msgstr "Ustawienia zdjęć"
+
+msgid "Music Setting"
+msgstr "Ustawienia muzyki"
+
+msgid "Network Setting"
+msgstr "Ustawienia sieci"
+
+msgid "RETRY"
+msgstr "Spróbuj ponownie"
+
+msgid "System Setting"
+msgstr "Ustawienia systemu"
+
+msgid "Check Latest FW With WD TV Live HD Media Player"
+msgstr "Aktualizację firmware odtwarzacza WD TV Live HD Media Player można wykonać przez internet. Czy chcesz sprawdzić obecność nowych aktualizacji?"
+
+msgid "Check Latest FW With WD TV Plus HD Media Player"
+msgstr "Aktualizację firmware odtwarzacza WD TV Live Plus HD Media Player można wykonać przez internet. Czy chcesz sprawdzić obecność nowych aktualizacji?"
+
+msgid "New version check"
+msgstr "Sprawdzenie nowej wersji"
+
+msgid "Check connection"
+msgstr "Sprawdź połączenie"
+
+msgid "There was a problem connecting to the network. The device could not connect to the network"
+msgstr "Wystąpił problem połączenia z siecią. Nie można połączyć urządzenia z siecią."
+
+msgid "Network is disconnected."
+msgstr "Wystąpił problem połączenia z siecią. Nie można połączyć urządzenia z siecią."
+
+msgid "Replace"
+msgstr "Zamień"
+
+msgid "Checker Board"
+msgstr "Szachownica"
+
+msgid "Connect successfully!"
+msgstr "Połączenie powiodło się!"
+
+msgid "Select SSID Input Method."
+msgstr "Wybierz metodę wprowadznia SSID"
+
+msgid "No Security"
+msgstr "Brak zabezpieczenia"
+
+msgid "Free Stations"
+msgstr "Bezpłatne stacje"
+
+msgid "Recommendations"
+msgstr "Zalecenia"
+
+msgid "Login"
+msgstr "Zaloguj"
+
+msgid "Live365 Login"
+msgstr "Rejestracja Live365"
+
+msgid "Youtube Login"
+msgstr "Zaloguj do Youtube"
+
+msgid "YouTube sign in"
+msgstr "Zarejestruj do YouTube"
+
+msgid "Pandora Login"
+msgstr "Zrejestruj do Pandora"
+
+msgid "Mediafly Sign in"
+msgstr "Zarejestruj do Mediafly"
+
+msgid "Back"
+msgstr "Cofnij"
+
+msgid "Add Account"
+msgstr "Dodaj konto"
+
+msgid "Related Videos"
+msgstr "Powiązane video"
+
+msgid "Finish"
+msgstr "Zakończ"
+
+msgid "Audio Options"
+msgstr "Opcje audio"
+
+msgid "Arabic (Windows-1256)"
+msgstr "Arabski (Windows-1256)"
+
+msgid "Thai (Windows-874)"
+msgstr "Tajski (Windows-874)"
+
+msgid "Unlock your WD drive"
+msgstr "Odblokuj napęd WD"
+
+msgid "Would you like to unlock this WD drive?"
+msgstr "Czy chcesz odblokować ten napęd WD? "
+
+msgid "Enter your password to unlock the drive."
+msgstr "Wprowadź hasło w celu odblokowania napędu."
+
+msgid "Password invalid"
+msgstr "Nieprawidłowe hasło"
+
+msgid "Please enter your password again."
+msgstr "Wprowadź ponownie hasło."
+
+msgid "Too many password attempts"
+msgstr "Za wiele prób wprowadzenia hasła"
+
+msgid "There were too many password recovery attempts."
+msgstr "Za wiele prób odzyskania hasła."
+
+msgid "Please safely remove your drive from WD TV,"
+msgstr "Usuń bezpiecznie napęd z WD TV,"
+
+msgid "reconnect it and try again."
+msgstr "podłącz ponownie i spróbuj jeszcze raz."
+
+msgid "Check network connection"
+msgstr "Sprawdź połączenie sieciowe"
+
+msgid "Check IP address"
+msgstr "Sprawdź adres IP"
+
+msgid "Check DNS server"
+msgstr "Sprawdź serwer DNS"
+
+msgid "Check internet connection"
+msgstr "Sprawdź połączenie z Internetem"
+
+msgid "Creative a new account"
+msgstr "Tworzenie nowego konta"
+
+msgid "Save username only"
+msgstr "Zapisz wyłącznie nazwę użytkownika"
+
+msgid "Want to Rate Video? Sign in to YouTube now!"
+msgstr "Czy chcesz ocenić video? Zarejestruj teraz w YouTube!"
+
+msgid "Want to add to Favorites? Sign in to YouTube now!"
+msgstr "Czy chcesz dodać do ulubionych? Zarejestruj teraz w YouTube!"
+
+msgid "Invalid character(s) in first name."
+msgstr "Nieprawidłowe znaki w imieniu."
+
+msgid "Invalid character(s) in last name."
+msgstr "Nieprawidłowe znaki w nazwisku."
+
+msgid "Registration was submitted, please check your email to complete the registration."
+msgstr "Rejestracja została przesłana, wprowadź swój adres e-mail w celu dokończenia rejestracji."
+
+msgid "This product has been added to your registration account."
+msgstr "Ten produkt został dodany do konta rejestracji."
+
+msgid "Our record indicates that the email address you provided is under another customer’s name, please verify your name and try it again, or log into your account at https://websupport.wdc.com/registration/index.asp to update your user profile."
+msgstr "Nasze zapisy wskazują, że dostarczony adres e-mail jest powiązany z nazwą innego klienta, sprawdź swoją nazwę i spróbuj ponownie lub zaloguj się na swoje konto pod adresem https://websupport.wdc.com/registration/index.asp w celu aktualizacji profilu użytkownika."
+
+msgid "E-mail address is invalid, please verify your e-mail address and try it again."
+msgstr "Nieprawidłowy adres e-mail, sprawdź swój adres e-mail i spróbuj ponownie."
+
+msgid "Maximum length of e-mail address is 80 characters"
+msgstr "Maksymalna długość adresu e-mail wynosi 80 znaków"
+
+msgid "Registration failed. Please try it again."
+msgstr "Rejestracja nie powiodła się. Spróbuj ponownie później."
+
+msgid "Thank you for rating this track. Glad you like it!"
+msgstr "Dziękujemy za ocenę tego utworu. Cieszymy się, że się podoba!"
+
+msgid "Thank you for rating this track. Sorry it’s not to your taste!"
+msgstr "Dziękujemy za ocenę tego utworu. Przepraszamy, że nie trafił w twój gust!"
+
+msgid "This station is already in your Presets."
+msgstr "Ta stacja znajduje się już we wstępnie ustawionych."
+
+msgid "Genre:"
+msgstr "Gatunek:"
+
+msgid "File Size:"
+msgstr "Wielkość pliku:"
+
+msgid "File Type:"
+msgstr "Typ pliku:"
+
+msgid "Play mode"
+msgstr "Tryb odtwarzania"
+
+msgid "Pan"
+msgstr "Panoramowanie"
+
+msgid "Zoom in"
+msgstr "Powiększenie"
+
+msgid "Zoom out"
+msgstr "Zmniejszenie"
+
+msgid "Info bar"
+msgstr "Pasek informacji"
+
+msgid "Chapter"
+msgstr "Rozdział"
+
+msgid "Rotate left"
+msgstr "Obróć w lewo"
+
+msgid "Rotate right"
+msgstr "Obróć w prawo"
+
+msgid "Error: The source folder and destination folder are the same."
+msgstr "Błąd: Folder źródłowy i folder docelowy są takie same."
+
+msgid "Error: The destination folder is a subfolder of the source folder."
+msgstr "Błąd: Folder docelowy to podfolder foldera źródłowego."
+
+msgid "This folder is empty"
+msgstr "Brak multimediów w bieżącym folderze."
+
+msgid "This folder is empty."
+msgstr "Brak multimediów w bieżącym folderze."
+
+msgid "First Name"
+msgstr "Imię"
+
+msgid "Last Name"
+msgstr "Nazwisko"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Serial Number"
+msgstr "Numer seryjny"
+
+msgid "Serial Number:"
+msgstr "Numer seryjny:"
+
+msgid "Mac Address"
+msgstr "Adres MAC"
+
+msgid "MAC Address"
+msgstr "Adres MAC"
+
+msgid "No content available."
+msgstr "Brak dostępnych treści."
+
+msgid "No content available!"
+msgstr "Brak dostępnych treści."
+
+msgid "State end. No content available."
+msgstr "Brak dostępnych treści."
+
+msgid "Most Viewed"
+msgstr "Najczęściej oglądane"
+
+msgid "Most Viewed Videos"
+msgstr "Najczęściej oglądane"
+
+msgid "Most Popular"
+msgstr "Najbardziej popularne"
+
+msgid "Most Popular Videos"
+msgstr "Najbardziej popularne"
+
+msgid "Top Rated"
+msgstr "Najlepiej oceniane"
+
+msgid "Include HD video feeds"
+msgstr "Obejmuje zasilanie video HD"
+
+msgid "Listen to thousands of commercial-free Internet radio stations! Live365 has broadcasts from Radio Disney, Santana, David Byrne, Pat Metheny, and Paul Oakenfold, as well as stations created by music lovers just like you! Easily browse through popular genres such as rock, hip-hop, jazz, and new age. Or discover treasures in some of the less-traveled styles such as gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic, and 100s more."
+msgstr "Słuchaj tysiący wolnych od reklam Internetowych stacji radiowych! Live365 nadaje Radio Disney, Santana, David Byrne, Pat Metheny oraz Paul Oakenfold, a także stacje utworzone przez miłośników muzyki, takich jak ty! Łatwe przeglądanie przez popularne gatunki takie jak rock, hip-hop, jazz i new age. Lub odkrywanie skarbów w niektórych mniej spenetrowanych stylach, takich jak gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic i setki innych."
+
+msgid "If you don't have an Live365 account, please visit http://www.live365.com to get started with your membership or become a VIP."
+msgstr "Jeśli nie posiadasz konta Live365, odywiedź http://www.live365.com/wdtv, aby uzyskać członkostwo lub status członka VIP."
+
+msgid "Sort"
+msgstr "Sortowanie"
+
+msgid "Audio Quality"
+msgstr "Jakość audio"
+
+msgid "No station available!"
+msgstr "Brak stacji."
+
+msgid "You must be logged in to use this feature. Would you like to login now?"
+msgstr "Aby korzystać z tej funkcji należy się zalogować. Czy chcesz się teraz zalogować?"
+
+msgid "has been removed from my presets."
+msgstr "Ta stacja została usunięta ze wstępnie ustawionych."
+
+msgid "has been added to my presets."
+msgstr "Ta stacja została dodana do wstępnie ustawionych."
+
+msgid "Track info has been sent. Please check your email."
+msgstr "Wysłano informacje o ścieżce. Sprawdź swój e-mail."
+
+msgid "info"
+msgstr "Profil właściciela"
+
+msgid "The device name can not contain any of following "
+msgstr "Nazwa urządzenia nie może zawierać pustych miejsc lub żadnych następujących "
+
+msgid "and blank characters. The device name can not over 15 characters."
+msgstr "Nazwa urządzenia jest ograniczona do 15 znaków."
+
+msgid "Network Shares"
+msgstr "Udziały sieciowe"
+
+msgid "Samba Server"
+msgstr "Udostępnij WDTV w sieci"
+
+msgid "Auto login"
+msgstr "Automatyczne logowanie do udziału sieciowego"
+
+msgid "Clear account information"
+msgstr "Usuń informacje o logowaniu dla udziału sieciowego"
+
+msgid "DNS server"
+msgstr "Serwer DNS"
+
+msgid "Internet connection"
+msgstr "Połączenie z internetem"
+
+msgid "Incorrect IP address. Please check your network setting and try again."
+msgstr "Nieprawidłowy adres IP. Sprawdź ustawienie sieci i spróbuj ponownie."
+
+msgid "Incorrect DNS server address. Please check your network setting and try again."
+msgstr "Nieprawidłowy adres serwera DNS. Sprawdź ustawienie sieci i spróbuj ponownie."
+
+msgid "Check Internet connection failed. Please check your broadband connection."
+msgstr "Sprawdzenie połączenia z Internetem nie powiodło się. Sprawdź połączenie szerokopasmowe."
+
+msgid "Would you like to save this account?"
+msgstr "Czy chcesz zapisać to konto?"
+
+msgid "Don't have an account?"
+msgstr "Nie masz konta?"
+
+msgid "Are you sure you want to delete this account?"
+msgstr "Czy na pewno chcesz usunąć to konto?"
+
+msgid "The media player can only save"
+msgstr "Odtwarzacz multimediów może jedynie zapisać"
+
+msgid "user accounts for each service. Please delete an account if you wish to add a new one."
+msgstr "konta użytkowników dla każdej usługi. Usuń konto, aby dodać nowe."
+
+msgid "Your media player is up to date."
+msgstr "Odtwarzacz multimediów jest uaktualniony."
+
+msgid "WD TV Live HD Media Player FW IS Top"
+msgstr "Odtwarzacz WD TV Live HD Media Player jest uaktualniony."
+
+msgid "WD TV Plus HD Media Player FW IS Top"
+msgstr "Odtwarzacz WD TV Live Plus HD Media Player jest uaktualniony."
+
+msgid "The device could not download updates."
+msgstr "Urządzenie nie może pobrać aktualizacji."
+
+msgid "System updates could not check for updates because of a network problem. Please check your network connections."
+msgstr "Funkcja aktualizacji systemu nie może spawdzić aktualizacji z powodu problemu z siecią. Sprawdź połączenia sieciowe."
+
+msgid "Select connection method"
+msgstr "Wybierz metodę połączenia"
+
+msgid "Please choose your network connection"
+msgstr "Wybierz połączenie sieciowe"
+
+msgid "Please choose your network connection."
+msgstr "Wybierz połączenie sieciowe."
+
+msgid "Select an Available Network"
+msgstr "Wybierz dostępną sieć bezprzewodową"
+
+msgid "Connect Now"
+msgstr "Połącz teraz"
+
+msgid "Done"
+msgstr "Wykonane"
+
+msgid "(Empty)"
+msgstr "(Pusty)"
+
+msgid "Default"
+msgstr "Domyślne"
+
+msgid "Favorites"
+msgstr "Ulubione"
+
+msgid "Connection successful."
+msgstr "Połączenie powiodło się."
+
+msgid "Connect Successfully!"
+msgstr "Sprawdzenie połączenia sieciowego powiodło się."
+
+msgid "The profile space is full!"
+msgstr "Pełne miejsce na profil. Usuń istniejący profil, aby można było dodać nowy."
+
+msgid "Do you want replace this profile?"
+msgstr "Czy chcesz zastąpić ten profil?"
+
+msgid "Can not detect wireless module."
+msgstr "Nie można wykryć adaptera USB połączenia bezprzewodowego."
+
+msgid "The SSID is Empty."
+msgstr "Ten SSID jest pusty."
+
+msgid "Can not set this profile to favorite."
+msgstr "Nie można zapisać tego profilu w ulubionych."
+
+msgid "Unable to connect to the wireless network."
+msgstr "Nie można połączyć się z siecią bezprzewodową."
+
+msgid "System registration"
+msgstr "Rejestracja systemu"
+
+msgid "Register Product"
+msgstr "Rejestracja systemu"
+
+msgid "Register"
+msgstr "Rejestracja systemu"
+
+msgid "Enter First Name"
+msgstr "Wprowadź imię"
+
+msgid "Enter Last Name"
+msgstr "Wprowadź nazwisko"
+
+msgid "Enter Email"
+msgstr "Wprowadź e-mail"
+
+msgid "Registration failed. Please go to http://register.wdc.com/ to register your product."
+msgstr "Rejestracja nie powiodła się. Przejdź do http://register.wdc.com/ w celu rejestracji produktu."
+
+msgid "Would you like to register now?"
+msgstr "Czy chcesz się teraz zarejestrować?"
+
+msgid "Do you want to receive future email support survey or free newsletter with special member-only discounts and latest news from WD?"
+msgstr "Czy chcesz odbierać w przyszłości ankiety przez e-mail lub bepłatne newslettery ze specjalnymi zniżkami wyłącznie dla członków i najnowsze wiadomości z WD?"
+
+msgid "The media player will not restart to initiate the upgrade process. Since the new firmware is located on an password protected drive, please unlock the drive again after reboot."
+msgstr "Nastąpi teraz ponowne uruchomienie odtwarzacza multimediów w celu zainicjowania procesu aktualizacji. Ponieważ nowy firmware znajduje się w napędzie zabezpieczonym hasłem, odblokuj ponownie napęd po ponownym uruchomieniu."
+
+msgid "Please remove your drive from WD TV."
+msgstr "Usuń bezpiecznie napęd z WD TV."
+
+msgid "Please remove your drive from WD TV,"
+msgstr "Usuń bezpiecznie napęd z WD TV."
+
+msgid "Would you like to permanently delete the selected file?"
+msgstr "Czy chcesz trwale usunąć wybrany plik?"
+
+msgid "HDMI compatible mode"
+msgstr "Tryb zgodności z HDMI"
+
+msgid "About Live365"
+msgstr "Informacje o Live365"
+
+msgid "About Live365 VIP"
+msgstr "Informacje o Live365"
+
+msgid "All Stations"
+msgstr "Wszystkie stacje"
+
+msgid "Only high"
+msgstr "Wyłącznie wysoka"
+
+msgid "Medium to high"
+msgstr "Średnia do wysokiej"
+
+msgid "Low to medium"
+msgstr "Niska do średniej"
+
+msgid "Only low"
+msgstr "Wyłącznie niska"
+
+msgid "Sign in/Sign out"
+msgstr "Zarejestruj/Wyrejestruj"
+
+msgid "Sort stations alphabetically"
+msgstr "Alfabetyczne sortowanie stacji"
+
+msgid "Sort stations by popularity"
+msgstr "Sortuj stacje według popularności"
+
+msgid "IP address"
+msgstr "Ares IP"
+
+msgid "IP Address"
+msgstr "Ares IP"
+
+msgid "Subnet Mask"
+msgstr "Maska podsieci"
+
+msgid "Gateway"
+msgstr "Brama"
+
+msgid "There was a problem connecting to the network.Check your settings and try again."
+msgstr "Wystąpił problem połączenia z siecią. Sprawdź ustawienia sieci i spróbuj ponownie."
+
+msgid "There was a problem connecting to the network. Please check your settings and try again."
+msgstr "Wystąpił problem połączenia z siecią. Sprawdź ustawienia sieci i spróbuj ponownie."
+
+msgid "Are you sure you want to delete all accounts?"
+msgstr "Czy na pewno chcesz usunąć wszystkie konta?"
+
+msgid "The video has been successfully added!"
+msgstr "Video zostało pomyślnie dodane!"
+
+msgid "The video has been successfully rated!"
+msgstr "Video zostało pomyślnie ocenione!"
+
+msgid "HDMI deep color"
+msgstr "Tryb głębokich kolorów HDMI"
+
+msgid "Are you sure you want to change the HDMI deep color?"
+msgstr "Czy na pewno chcesz zmienić tryb głębokich kolorów HDMI?"
+
+msgid "Wireless Favorites"
+msgstr "Ulubione połączenia bezprzewodowe"
+
+msgid "Check for new update"
+msgstr "Sprawdź nowe aktualizacje"
+
+msgid "Downloading new firmware"
+msgstr "Pobieranie nowego firmware"
+
+msgid "Updating firmware"
+msgstr "Aktualizacja firmware"
+
+msgid "Firmware is being updated. Please DO NOT disconnect power."
+msgstr "Trwa aktualizacja firmware. NIE należy odłączać zasilania."
+
+msgid "Downloading new firmware for your WD TV. Please DO NOT disconnect power or internet connection."
+msgstr "Pobieranie nowego firmware dla WD TV. NIE należy odłączać zasilania lub połączenia z internetem."
+
+msgid "The device fails to check for new firmware update. Please check your network connection and try again."
+msgstr "Nie powiodło się sprawdzenie aktualizacji nowego firmware przez urządzenie. Sprawdź połączenie z siecią i spróbuj ponownie."
+
+msgid "New firmware download failed. Please check your network connection and try again."
+msgstr "Pobranie nowego firmware nie powiodło się. Sprawdź połączenie z siecią i spróbuj ponownie."
+
+msgid "Setup Completed!"
+msgstr "Ustawienia zakończone!"
+
+msgid "This media server cannot be accessed."
+msgstr "Brak dostępu do tego serwera multimediów."
+
+msgid "The device is busy. Please try later."
+msgstr "Brak dostępu do tego udziału sieciowego."
+
+msgid "The device has lost its connection with the media server."
+msgstr "Brak dostępu do tego serwera multimediów."
+
+msgid "Current network setting"
+msgstr "Bieżące ustawienia sieci"
+
+msgid "Current network setting:"
+msgstr "Bieżące ustawienia sieci:"
+
+msgid "Join the largest worldwide video community! Please visit http://www.youtube.com/create_account to create your account."
+msgstr "Przyłącz się do największej społeczności video na całym świecie! Sprawdź http://www.youtube.com/create_account w celu utworzenia konta."
+
+msgid "IP address is invalid, please verify your IP address and try again."
+msgstr "Nieprawidłowy adres IP, sprawdź adres IP i spróbuj ponownie."
+
+msgid "Subnet mask is invalid, please verify your Subnet Mask and try again."
+msgstr "Nieprawidłowa maska podsieci, sprawdź maskę podsieci i spróbuj ponownie."
+
+msgid "Gateway is invalid, please verify your Gateway and try again."
+msgstr "Nieprawidłowa brama, sprawdź bramę i spróbuj ponownie."
+
+msgid "DNS is invalid, please verify your DNS and try again."
+msgstr "Nieprawidłowy DNS, sprawdź DNS i spróbuj ponownie."
+
+msgid "Thumb up"
+msgstr "Dziękujemy za ocenę tego utworu. Cieszymy się, że się podoba!"
+
+msgid "Thumb down"
+msgstr "Dziękujemy za ocenę tego utworu. Przepraszamy, że nie trafił w twój gust!"
+
+msgid "Add preset"
+msgstr "Ta stacja znajduje się już we wstępnie ustawionych."
+
+msgid "Delete Account"
+msgstr "Usuń konto"
+
+msgid "Delete All"
+msgstr "Usuń wszystkie konta"
+
+msgid "Remove Station"
+msgstr "Usuń stację"
+
+msgid "Add to My Presets"
+msgstr "Dodaj do moich wstępnie ustawionych"
+
+msgid "Owner profile"
+msgstr "Profil właściciela"
+
+msgid "Youtube"
+msgstr "YouTube"
+
+msgid "This file is currently unavailable. Please try again later."
+msgstr "Ten plik jest aktualnie niedostępny. Spróbuj ponownie później."
+
+msgid "Cannot connect to "
+msgstr "Nie można połączyć z "
+
+msgid ". An unknown network error has occurred. Please check your network setting and try again."
+msgstr ". Wystąpił nieznany błąd sieci. Sprawdź ustawienie sieci i spróbuj ponownie."
+
+msgid "Media library compilation in process. Media content will become available accordingly as they are scanned. Device navigation is still supported during this process."
+msgstr "Trwa kompilacja biblioteki multimediów. Treści multimediów będą dostępne po wyszukaniu. Nawigacja urządzenia jest nadal obsługiwana podczas tego procesu."
+
+msgid "Access Point can not be found"
+msgstr "Nie znaleziono sieci bezprzewodowej. Sprawdź ustawienia sieci i spróbuj ponownie."
+
+msgid "YouTube can’t be accessed at this moment. A new firmware upgrade may be needed. Would you like to check for new firmware now?"
+msgstr "Brak dostęu do YouTube w tym momencie. Moę być potrzebna nowa aktualizacja firmware. Czy chcesz teraz sprawdzić nowe firmware?"
+
+msgid "New firmware download failed due to incomplete firmware download. Please check your network connection and try again."
+msgstr "Pobranie nowego firmware nie powiodło się z powodu niekompletnego firmware. Sprawdź połączenie z siecią i spróbuj ponownie."
+
+msgid "New firmware download failed due to unstable wireless connection. Please use a wired connection and try again."
+msgstr "Pobranie nowego firmware nie powiodło się z powodu niestabilnego połączenia bezprzewodowego. Sprawdź połączenie z siecią przewodową i spróbuj ponownie."
+
+msgid "Copied"
+msgstr "Skopiowane"
+
+msgid "Thank you for registering your WDTV. Your registration has been submitted."
+msgstr "Dziękujemy za rejestrację WDTV. Rejestracja została przesłana."
+
+msgid "Thank you for registering your WDTV. Please check your email to confirm the registration."
+msgstr "Dziękujemy za rejestrację WDTV. Sprawdź e-mail w celu potwierdzenia rejestracji."
+
+msgid "SSID should not be empty!"
+msgstr "SSID nie powinien być pusty."
+
+msgid "Please do not use blank space name for device name."
+msgstr "Nazwa urządzenia nie powinna być pusta."
+
+msgid "The firmware was successfully downloaded. The device will now restart to complete the installation."
+msgstr "Pobranie firmware powiodło się. Urządzenie zostanie uruchomione ponownie w celu dokończenia instalacji."
+
+msgid "Upgrade firmware failed. The device will now restart. Please try again."
+msgstr "Aktualizacja firmware nie powiodła się. Nastąpi ponowne uruchomienie urządzenia. Spróbuj ponownie."
+
+msgid "There was a problem connecting to the wireless network. Please check your network setting and try again."
+msgstr "Wystąpił problem połączenia z siecią bezprzewodową. Sprawdź ustawienie sieci i spróbuj ponownie."
+
+msgid "Wireless network connection lost."
+msgstr "Utracone zostało połączenie z siecią bezprzewodową."
+
+msgid "Delete one"
+msgstr "Usuń jeden"
+
+msgid "Delete all"
+msgstr "Usuń wszystko"
+
+msgid "Are you sure you want to delete this item?"
+msgstr "Czy na pewno chcesz usunąć ten element?"
+
+msgid "Are you sure you want to delete all items?"
+msgstr "Czy na pewno chcesz usunąć wszystkie elementy?"
+
+msgid "Component"
+msgstr "Komponent"
+
+msgid "Thanks for trying Live365! We hope you enjoyed your free trial of our commercial-free service. Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "Dziękujemy za wypróbowanie Live365! Mamy nadzięję, że pozytywnie oceniasz bezpłatny test naszej wolnej od reklam usługi. Odwiedź www.live365.com/wdtv w celu uzyskania informacji o tym, jak zostać członkiem VIP."
+
+msgid "Reserved for VIP subscribers"
+msgstr "Zastrzeżone dla subskrybentów VIP"
+
+msgid "Visit www.live365.com/wdtv for info or to become a VIP."
+msgstr "Odwiedź www.live365.com/wdtv w celu uzyskania informacji o tym, jak zostać członkiem VIP."
+
+msgid "8 bit"
+msgstr "8 bitowe"
+
+msgid "10 bit"
+msgstr "10 bitowe"
+
+msgid "12 bit"
+msgstr "12 bitowe"
+
+msgid "day left on your VIP Free Trial."
+msgstr "pozostał jeden dzień bezpłatnego członkostwa VIP."
+
+msgid "days left on your VIP Free Trial."
+msgstr "pozostało dni bezpłatnego członkostwa VIP."
+
+msgid "hour left on your VIP Free Trial."
+msgstr "pozostała godzina bezpłatnego członkostwa VIP."
+
+msgid "hours left on your VIP Free Trial."
+msgstr "pozostało godzin bezpłatnego członkostwa VIP."
+
+msgid "New firmware download failed due to network connection error. Please check your network connection and try again."
+msgstr "Pobranie nowego firmware nie powiodło się z powodu błędu połączenia z siecią. Sprawdź połączenie z siecią i spróbuj ponownie."
+
+msgid "The auto play content could not be accessed."
+msgstr "Brak dostępu do automatycznego odtwarzania treści."
+
+msgid "Local device is disconnected."
+msgstr "Ostrzeżenie: bezpieczne wysunięcie urządzenia USB przed jego wyjęciem."
+
+msgid "User interface transition effect"
+msgstr "Efekt przejścia interfejs użytkownika"
+
+msgid "Fade in and fade out"
+msgstr "Rozjaśnienie i przyciemnienie"
+
+msgid "None"
+msgstr "Brak"
+
+msgid "A fatal system error is detected. The device will restart..."
+msgstr "Wykryty został krytyczny błąd systemu. Nastąpi ponowne uruchomienie urządzenia..."
+
+msgid "YES"
+msgstr "Tak"
+
+msgid "Yes to all"
+msgstr "Tak na wszystkie"
+
+msgid "NO"
+msgstr "Nie"
+
+msgid "This folder already contains a file named:"
+msgstr "Ten folder już zawiera plik o nazwie:"
+
+msgid "Would you like to overwrite it?"
+msgstr "Czy chcesz go teraz zastąpić?"
+
+msgid "Unable to play the selected file. Please refer to the user manual on how to change the file to a supported format."
+msgstr "Nie można odtworzyć wybranego pliku. Sprawdź listę obsługiwanych formatów plików w podręczniku użytkownika."
+
+msgid "Part Number:"
+msgstr "Numer części:"
+
+msgid "Press [Option] key for multi-lingual input"
+msgstr "Naciśnij [OPCJA] dla wprowadzania wielojęzycznego"
+
+msgid "Would you like to setup a login protection?"
+msgstr "Czy chcesz ustawić zabezpieczenie logowania?"
+
+msgid "Current Location"
+msgstr "Bieżąca lokalizacja"
+
+msgid "Added"
+msgstr "Dodane"
+
+msgid "Category"
+msgstr "Kategoria"
+
+msgid "Views"
+msgstr "Widoki"
+
+msgid "Want to flag this video? Sign in to YouTube now!"
+msgstr "Czy chcesz oflagować to video? Zarejestruj teraz w YouTube!"
+
+msgid "Want to add to playlist? Sign in to YouTube now!"
+msgstr "Czy chcesz dodać do listy odtwarzania? Zarejestruj teraz w YouTube!"
+
+msgid "Add to playlist"
+msgstr "Dodaj do listy odtwarzania"
+
+msgid "Add to Playlist"
+msgstr "Dodaj do listy odtwarzania"
+
+msgid "Press [Search] key to use search history"
+msgstr "Naciśnij [SZUKAJ], aby wyszukać historię"
+
+msgid "From"
+msgstr "Z"
+
+msgid "On with login protection"
+msgstr "Włączone zabezpieczenie logowania"
+
+msgid "Flagging"
+msgstr "Flagowanie"
+
+msgid "We are sorry. Pandora service is only for U.S. audiences and your IP is not allowed."
+msgstr "Przepraszamy. Usługa Pandora jest przeznaczona wyłącznie dla użytkowników z USA, a twoje IP nie jest dozwolone."
+
+msgid "This video is restricted by the video content owner and it is not available on TV connected devices."
+msgstr "To video jest zastrzeżone przez właściciela treści video i nie jest dostępne w podłączonych urządzeniach TV."
+
+msgid "Workgroup name"
+msgstr "Nazwa grupy roboczej"
+
+msgid "Search History"
+msgstr "Historia wyszukiwania"
+
+msgid "Samba Server Protection"
+msgstr "Zabezpieczenie serwera Samba"
+
+msgid "Check network status..."
+msgstr "Sprawdzenie stanu sieci..."
+
+msgid "Try to wake up system..."
+msgstr "Spróbuj wybudzić system..."
+
+msgid "Worldwide"
+msgstr "Ogólnoświatowe"
+
+msgid "Germany"
+msgstr "Niemcy"
+
+msgid "France"
+msgstr "Francja"
+
+msgid "Spain"
+msgstr "Hiszpania"
+
+msgid "Italy"
+msgstr "Włochy"
+
+msgid "Taiwan"
+msgstr "Tajwan"
+
+msgid "South Korea"
+msgstr "Korea Południowa"
+
+msgid "Japan"
+msgstr "Japonia"
+
+msgid "Russia"
+msgstr "Rosja"
+
+msgid "The file you are playing doesn't support trick-mode."
+msgstr "Odtwarzany plik nie obsługuje trybu trickowego."
+
+msgid "Flag sent to YouTube."
+msgstr "Oflaguj wysyłane do YouTube."
+
+msgid "Create a new playlist"
+msgstr "Utwórz listę odtwarzania"
+
+msgid "Choose your current playlist"
+msgstr "Wybierz bieżącą listę odtwarzania"
+
+msgid "The video has been added to your playlist."
+msgstr "To video zostało dodane do listy odtwarzania."
+
+msgid "Flagging Reason"
+msgstr "Powód flagowania"
+
+msgid "Porn"
+msgstr "Pornografia"
+
+msgid "Violence"
+msgstr "Przemoc"
+
+msgid "Hate"
+msgstr "Nienawiść"
+
+msgid "Dangerous"
+msgstr "Niebezpieczne"
+
+msgid "Rights"
+msgstr "Prawa"
+
+msgid "Spam"
+msgstr "Spam"
+
+msgid "Unable to play this video menu. Would you like to play video file?"
+msgstr "Nie można odtworzyć tego menu video. Czy chcesz odtworzyć plik video?"
+
+msgid "My channels"
+msgstr "Moje kanały"
+
+msgid "Popular channels"
+msgstr "Popularne kanały"
+
+msgid "Browse content plug-ins"
+msgstr "Przeglądaj plug-iny treści"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Mediafly dashboard"
+msgstr "Panel Mediafly"
+
+msgid "Add to my channel"
+msgstr "Dodaj do moich kanałów"
+
+msgid "Remove from my channel"
+msgstr "Usuń z moich kanałów"
+
+msgid "Rate/Favorite"
+msgstr "Ocena/Ulubione"
+
+msgid "View episodes"
+msgstr "Widok epizodów"
+
+msgid "Show info"
+msgstr "Pokaż informacje"
+
+msgid "Content source was added successfully to your Mediafly dashboard."
+msgstr "Źródło treści zostało dodane do panela Mediafly."
+
+msgid "The device could not connect to the network."
+msgstr "Nie można połączyć urządzenia z siecią"
+
+msgid "All Episodes in this show"
+msgstr "Wszystkie epizody w tym pokazie"
+
+msgid "What would you like to remove?"
+msgstr "Co chcesz usunąć?"
+
+msgid "Would you like to rate for this show/episode?"
+msgstr "Czy chcesz ocenić ten pokaz/epizod?"
+
+msgid "Save"
+msgstr "Zapisz"
+
+msgid "Fail to add to your favorite. Additional options are available on Mediafly.com"
+msgstr "Nie powiodło się dodanie do ulubionych. Dodatkowe opcje są dostępne pod adresem Mediafly.com."
+
+msgid "Both"
+msgstr "Obydwa"
+
+msgid "To set up your personalized channels you need to link your player with Mediafly account."
+msgstr "W celu ustawienia spersonalizownych kanałów należy połączyć odtwarzacz z kontem Mediafly."
+
+msgid "Mediafly accounts are completely free and allow you centralized control and management of your favorite free online content."
+msgstr "Konta Mediafly są bezpłatne i umożliwiają scentralizowane sterowanie i zarządzanie ulubionymi, bezpłatnymi treściami online."
+
+msgid "Option 1: from your computer"
+msgstr "Opcja 1: Z komputera"
+
+msgid "Option 2: Enter your Mediafly ID and password."
+msgstr "Opcja 2: Wprowadź ID Mediafly i hasło"
+
+msgid "Enter Mediafly User ID and Pwd now"
+msgstr "Wprowadź teraz ID użytkownika Mediafly i hasło"
+
+msgid "Manage Users"
+msgstr "Zarzadzaj użytkownikiem"
+
+msgid "Media Plug-ins"
+msgstr "Pluginy multimediów"
+
+msgid "Add Media Plug-in via mCode"
+msgstr "Dodaj plug-in multimediów przez mCode"
+
+msgid "Invalid mCode, please try again."
+msgstr "Nieprawidłowy mCode, spróbuj ponownie."
+
+msgid "Are you sure you want to add the show: "
+msgstr "Czy na pewno chcesz dodać pokaz: "
+
+msgid "This episode has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "Ten epizod został dodany do kanału. Dodatkowe opcje są dostępne pod adresem Mediafly.com."
+
+msgid "This show has been added to your channel. Additional options are available on Mediafly.com."
+msgstr "Ten pokaz został dodany do kanału. Dodatkowe opcje są dostępne pod adresem Mediafly.com."
+
+msgid "This episode"
+msgstr "Ten epizod"
+
+msgid "This episode has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "Ten epizod został usunięty z kanału. Dodatkowe opcje są dostępne pod adresem Mediafly.com."
+
+msgid "This show has been removed from your channel. Additional options are available on Mediafly.com."
+msgstr "Ten pokaz został usunięty z kanału. Dodatkowe opcje są dostępne pod adresem Mediafly.com."
+
+msgid "my rating:"
+msgstr "Moja ocena:"
+
+msgid "my favorites:"
+msgstr "Moje ulubione:"
+
+msgid "Thank you. Additional options are available on Mediafly.com."
+msgstr "Dziękujemy."
+
+msgid "and enter this code:"
+msgstr "i wprowadź ten kod:"
+
+msgid "Invalid assoc code"
+msgstr "Nieprawidłowy kod powiązania."
+
+msgid "Remove Media Plug-in"
+msgstr "Usuń plugin multimediów"
+
+msgid "Resume"
+msgstr "Wznów"
+
+msgid "Restart"
+msgstr "Uruchom ponownie"
+
+msgid "eng"
+msgstr "Angielski"
+
+msgid "en"
+msgstr "Angielski"
+
+msgid "EN"
+msgstr "Angielski"
+
+msgid "fre"
+msgstr "Francuski"
+
+msgid "fra"
+msgstr "Francuski"
+
+msgid "fr"
+msgstr "Francuski"
+
+msgid "FR"
+msgstr "Francuski"
+
+msgid "ita"
+msgstr "Włoski"
+
+msgid "it"
+msgstr "Włoski"
+
+msgid "IT"
+msgstr "Włoski"
+
+msgid "ger"
+msgstr "Niemiecki"
+
+msgid "deu"
+msgstr "Niemiecki"
+
+msgid "de"
+msgstr "Niemiecki"
+
+msgid "DE"
+msgstr "Niemiecki"
+
+msgid "spa"
+msgstr "Hiszpański"
+
+msgid "es"
+msgstr "Hiszpański"
+
+msgid "ES"
+msgstr "Hiszpański"
+
+msgid "chi"
+msgstr "Chiński"
+
+msgid "zho"
+msgstr "Chiński"
+
+msgid "zh"
+msgstr "Chiński"
+
+msgid "ZH"
+msgstr "Chiński"
+
+msgid "kor"
+msgstr "Koreański"
+
+msgid "ko"
+msgstr "Koreański"
+
+msgid "KO"
+msgstr "Koreański"
+
+msgid "por"
+msgstr "Portugalski"
+
+msgid "pt"
+msgstr "Portugalski"
+
+msgid "PT"
+msgstr "Portugalski"
+
+msgid "jpn"
+msgstr "Japoński"
+
+msgid "ja"
+msgstr "Japoński"
+
+msgid "JA"
+msgstr "Japoński"
+
+msgid "gre"
+msgstr "Grecki"
+
+msgid "ell"
+msgstr "Grecki"
+
+msgid "el"
+msgstr "Grecki"
+
+msgid "EL"
+msgstr "Grecki"
+
+msgid "tur"
+msgstr "Turecki"
+
+msgid "tr"
+msgstr "Turecki"
+
+msgid "TR"
+msgstr "Turecki"
+
+msgid "ara"
+msgstr "Arabski"
+
+msgid "ar"
+msgstr "Arabski"
+
+msgid "AR"
+msgstr "Arabski"
+
+msgid "hin"
+msgstr "Hinduski"
+
+msgid "hi"
+msgstr "Hinduski"
+
+msgid "HI"
+msgstr "Hinduski"
+
+msgid "tha"
+msgstr "Tajski"
+
+msgid "th"
+msgstr "Tajski"
+
+msgid "TH"
+msgstr "Tajski"
+
+msgid "Would you like to resume play or restart from the beginning?"
+msgstr "Czy chcesz wznowić odtwarzanie lub uruchomić ponownie od początku?"
+
+msgid "Screensaver mode"
+msgstr "Tryb wygaszacza ekranu"
+
+msgid "Logo"
+msgstr "Logo"
+
+msgid "Digital without HDMI audio"
+msgstr "Cyfrowy bez audio HDMI"
+
+msgid "Match video framerate"
+msgstr "Dopasowanie szybkości przesyłania klatek video"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Parental control"
+msgstr "Kontrola rodzicielska"
+
+msgid "Set the new password"
+msgstr "Ustaw nowe hasło"
+
+msgid "Remove password"
+msgstr "Usuń hasło"
+
+msgid "Would you like to setup parental control?"
+msgstr "Czy chcesz ustawić kontrolę rodzicielską?"
+
+msgid "Please enter your password."
+msgstr "Wprowadź hasło."
+
+msgid "Re-enter your password."
+msgstr "Wprowadź ponownie hasło."
+
+msgid "The password you entered do not match, please try again."
+msgstr "Wprowadzone hasło nie pasuje, spróbuj ponownie."
+
+msgid "Setup completed. parental control can only be applied to folders saved in the internal storage."
+msgstr "Ustawienia zakończone. Kontrola rodzicielska może być zastosowana wyłącznie do folderów zapisanych w pamięci wewnętrznej."
+
+msgid "Please enter the old password."
+msgstr "Wprowadź stare hasło."
+
+msgid "Password has been removed."
+msgstr "Hasło zostało usunięte."
+
+msgid "Your password has been changed."
+msgstr "Hasło zostało zmienione."
+
+msgid "Invalid password. Please try again."
+msgstr "Nieprawidłowe hasło. Spróbuj ponownie."
+
+msgid "Please enter the new password."
+msgstr "Wprowadź nowe hasło."
+
+msgid "Remove parental control"
+msgstr "Usuń kontrolę rodzicielską"
+
+msgid "Lock this folder"
+msgstr "Zablokuj ten folder"
+
+msgid "Invalid input!"
+msgstr "Nieprawidłowe wprowadzane dane!"
+
+msgid "Input is empty!"
+msgstr "Puste pole wprowadzania!"
+
+msgid "Proxy"
+msgstr "Proxy"
+
+msgid "Please enter proxy address"
+msgstr "Wprowadź adres Proxy"
+
+msgid "Please enter proxy port"
+msgstr "Wprowadź port Proxy"
+
+msgid "Proxy Address"
+msgstr "Adres Proxy"
+
+msgid "Proxy Port"
+msgstr "Port Proxy"
+
+msgid "Restart network. Please wait... "
+msgstr "Uruchom ponownie sieć. Zaczekaj... "
+
+msgid "The Mediafly service is currently unavailable, please check again later."
+msgstr "Usługa Mediafly jest aktualnie niedostępna, sprawdź ponownie później."
+
+msgid "Internet Media"
+msgstr "Multimedia internetowe"
+
+msgid "Episodes"
+msgstr "Epizody"
+
+msgid "of days left on your VIP Free Trial.Visit www.live365.com/wdc for info or to become a VIP."
+msgstr "pozostało bezpłatnego członkostwa VIP. Odwiedź www.live365.com/wdtv w celu uzyskania informacji o tym, jak zostać członkiem VIP."
+
+msgid "Connection Successfully.Would you like to save this network connection Automatically?"
+msgstr "Połączenie powiodło się. Czy chcesz zapisać tę sieć bezprzewodową na liście ulubionych automatycznie?"
+
+msgid "arabic"
+msgstr "العربية"
+
+msgid "hebrew"
+msgstr "עברית"
+
+msgid "Change Location"
+msgstr "Zmień lokalizację"
+
+msgid "Wall"
+msgstr "Ściana"
+
+

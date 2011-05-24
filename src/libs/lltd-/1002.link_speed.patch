@@ -1,0 +1,229 @@
+diff -ur LLTD-PortingKit/Sample_Code/src/osl-linux.c LLTD-PortingKit.modify/Sample_Code/src/osl-linux.c
+--- LLTD-PortingKit/Sample_Code/src/osl-linux.c	2009-11-18 10:20:31.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/src/osl-linux.c	2009-11-18 10:19:17.000000000 +0800
+@@ -25,6 +25,7 @@
+ #include <net/ethernet.h>
+ #include <net/if_arp.h>
+ #include <sys/ioctl.h>
++#include <linux/sockios.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
+@@ -738,6 +739,9 @@
+ 
+     uint16_t	morate;
+ 
++    if (strcmp(g_interface, "eth0") == 0)
++    	return TLV_GET_FAILED;
++
+     morate = htons(108);	/* (OpenWRT, 802.11g) 54 Mbs / 0.5 Mbs = 108 */
+     memcpy(data, &morate, 2);
+ 
+@@ -759,23 +763,191 @@
+     return TLV_GET_SUCCEEDED;
+ }
+ 
++#define SPEED_10		10
++#define SPEED_100		100
++typedef unsigned int u32;
++typedef unsigned short u16;
++typedef unsigned char u8;
++/* This should work for both 32 and 64 bit userland. */
++struct ethtool_cmd {
++	u32	cmd;
++	u32	supported;	/* Features this interface supports */
++	u32	advertising;	/* Features this interface advertises */
++	u16	speed;		/* The forced speed, 10Mb, 100Mb, gigabit */
++	u8	duplex;		/* Duplex, half or full */
++	u8	port;		/* Which connector port */
++	u8	phy_address;
++	u8	transceiver;	/* Which tranceiver to use */
++	u8	autoneg;	/* Enable or disable autonegotiation */
++	u32	maxtxpkt;	/* Tx pkts before generating tx int */
++	u32	maxrxpkt;	/* Rx pkts before generating rx int */
++	u32	reserved[4];
++};
++
++/* for passing single values */
++struct ethtool_value {
++	u32	cmd;
++	u32	data;
++};
++/* This structure is used in all SIOCxMIIxxx ioctl calls */
++struct mii_ioctl_data {
++	u16		phy_id;
++	u16		reg_num;
++	u16		val_in;
++	u16		val_out;
++};
++
++#define ETHTOOL_GLINK              0x0000000a /* Get link status */
++#define ETHTOOL_NWAY_RST           0x00000009 /* Restart autonegotiation. */
++#define MII_BMCR                   0x00       /* Basic mode control register  */
++#define MII_BMSR                   0x01       /* Basic mode status register  */
++#define MII_ANAR                   0x04       /* Auto-Negotiation Advertisement Register */
++#define MII_ANLPAR                 0x05       /* Auto-Negotiation Link Partner Ability Register */
++
++#define MII_BMCR_AN_ENA        0x1000
++#define MII_BMCR_100MBIT       0x2000
++#define MII_BMCR_DUPLEX        0x0100
++#define MII_BMCR_RESTART       0x0200
++#define MII_BMSR_LSTATUS       0x0004     /* Link status                 */
++#define MII_BMSR_AN_COMPLETE   0x0020
++#define MII_AN_100BASET4       0x0200
++#define MII_AN_100BASETX_FD    0x0100
++#define MII_AN_100BASETX_HD    0x0080
++#define MII_AN_10BASET_FD      0x0040
++#define MII_AN_10BASET_HD      0x0020
++#define MII_PHYSID1		0x02	   /* PHYS ID 1			  */
++#define MII_PHYSID2		0x03	   /* PHYS ID 2			  */
++#define MII_ADVERTISE		0x04	   /* Advertisement control reg	  */
++#define MII_LPA			0x05	   /* Link partner ability reg	  */
++
++#define BMCR_ANENABLE  0x1000
++#define BMCR_SPEED100  0x2000
++
++#define ETHTOOL_GSET		0x00000001 /* Get settings. */
++int netsrv_get_lan_speed( char* ifname,int namelen)
++{
++	int skfd;
++	struct ifreq ifr;
++	struct ethtool_cmd ecmd;
++	struct mii_ioctl_data mdata;
++	struct mii_ioctl_data * mii_data;
++	u16 bmcr;
++	u16 bmsr;
++	u16 advert;
++	u16 lkpar;
++
++	if (( skfd = socket( AF_INET, SOCK_DGRAM, 0 ) ) < 0 ) {
++		printf("socket error\n");
++		return 0;
++	}
++	ecmd.cmd = ETHTOOL_GSET;
++	strncpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name)-1);
++	ifr.ifr_data = (char *) &ecmd;
++	if (ioctl(skfd, SIOCETHTOOL, &ifr) >= 0) {
++		close(skfd);
++		return (ecmd.speed==SPEED_100 ? 100 : 10);
++	}
++
++	// ethtool fail, try mii ioctl
++	strncpy(ifr.ifr_name, ifname, sizeof(ifr.ifr_name)-1);
++	ifr.ifr_data = (char *) &mdata;
++	if (ioctl(skfd, SIOCGMIIPHY, &ifr) < 0) {
++		printf("%s:%d errno=%d (%s)\n", __FUNCTION__, __LINE__, errno, strerror(errno));
++		close(skfd);
++		return 0;
++	}
++	
++	memset(&mii_data, 0, sizeof(struct mii_ioctl_data));
++	mii_data = (struct mii_ioctl_data *) &(ifr.ifr_data);
++	mii_data->reg_num = MII_BMSR;
++	if (ioctl(skfd, SIOCGMIIREG, &ifr) < 0) {
++		printf("%s:%d errno=%d (%s)\n", __FUNCTION__, __LINE__, errno, strerror(errno));
++		close(skfd);
++		return 0;
++	}
++	bmsr = mii_data->val_out;
++	
++	memset(&mii_data, 0, sizeof(struct mii_ioctl_data));
++	mii_data = (struct mii_ioctl_data *) &(ifr.ifr_data);
++	mii_data->reg_num = MII_BMCR;
++	if (ioctl(skfd, SIOCGMIIREG, &ifr) < 0) {
++		printf("%s:%d errno=%d (%s)\n", __FUNCTION__, __LINE__, errno, strerror(errno));
++		close(skfd);
++		return 0;
++	}
++	bmcr = mii_data->val_out;
++	
++	memset(&mii_data, 0, sizeof(struct mii_ioctl_data));
++	mii_data = (struct mii_ioctl_data *) &(ifr.ifr_data);
++	mii_data->reg_num = MII_ANAR;
++	if (ioctl(skfd, SIOCGMIIREG, &ifr) < 0) {
++		printf("%s:%d errno=%d (%s)\n", __FUNCTION__, __LINE__, errno, strerror(errno));
++		close(skfd);
++		return 0;
++	}
++	advert = mii_data->val_out;
++	
++	memset(&mii_data, 0, sizeof(struct mii_ioctl_data));
++	mii_data = (struct mii_ioctl_data *) &(ifr.ifr_data);
++	mii_data->reg_num = MII_ANLPAR;
++	if (ioctl(skfd, SIOCGMIIREG, &ifr) < 0) {
++		printf("%s:%d errno=%d (%s)\n", __FUNCTION__, __LINE__, errno, strerror(errno));
++		close(skfd);
++		return 0;
++	}
++	lkpar = mii_data->val_out;
++	
++	close(skfd);
++
++	if (!(bmsr & MII_BMSR_LSTATUS))	// no link
++		return 0;
++	if (bmcr & MII_BMCR_AN_ENA) {	// auto negotiate
++		if (!(bmsr & MII_BMSR_AN_COMPLETE))
++			return 0;
++		if ((advert & lkpar) & (MII_AN_100BASET4|MII_AN_100BASETX_FD|MII_AN_100BASETX_HD))
++			return 100;
++		if ((advert & lkpar) & (MII_AN_10BASET_FD|MII_AN_10BASET_HD))
++			return 10;
++		return 0;
++	}
++	else {
++		if (bmcr & MII_BMCR_100MBIT)
++			return 100;
++		else
++			return 10;
++	}
++}
+ 
+ int
+ get_link_speed(void *data)
+ {
+ /*    TLVDEF( uint32_t,         link_speed,          , 0xC,  Access_unset ) // 100bps increments */
+ 
+-    uint32_t   speed;
++	uint32_t   speed;
++	int ret;
++
++	if (strcmp(g_interface, "eth0") == 0) {
++		if ((ret = netsrv_get_lan_speed(g_interface, strlen(g_interface))) == 0) {
++			speed = htonl(0);
++			memcpy(data, &speed, 4);
++
++			return TLV_GET_FAILED;
++		}
++		speed = htonl(ret * 10000);
++		memcpy(data, &speed, 4);
+ 
+-    /* OpenWRT:
+-     * Since this is a bridged pair of interfaces (br0 = vlan0 + eth1), I am returning the
+-     * wireless speed (eth1), which is the lowest of the upper limits on the two interfaces... */
++		return TLV_GET_SUCCEEDED;
++	}
+ 
+-    speed = htonl(540000);  // 54Mbit wireless... (540k x 100 = 54Mbs)
++	/* OpenWRT:
++	 * Since this is a bridged pair of interfaces (br0 = vlan0 + eth1), I am returning the
++	 * wireless speed (eth1), which is the lowest of the upper limits on the two interfaces... */
+ 
+-    memcpy(data, &speed, 4);
++	speed = htonl(540000);  // 54Mbit wireless... (540k x 100 = 54Mbs)
+ 
+-    return TLV_GET_SUCCEEDED;
++	memcpy(data, &speed, 4);
++
++	return TLV_GET_SUCCEEDED;
+ }
+ 
+ 
+diff -ur LLTD-PortingKit/Sample_Code/src/tlvdef.h LLTD-PortingKit.modify/Sample_Code/src/tlvdef.h
+--- LLTD-PortingKit/Sample_Code/src/tlvdef.h	2009-03-31 19:24:56.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/src/tlvdef.h	2009-11-18 10:19:29.000000000 +0800
+@@ -46,4 +46,4 @@
+     TLVDEF( assns_t,      accesspt_assns,      , 0x16, Access_unset, FALSE ) // RLS: Large_TLV only
+     TLVDEF( lg_icon_t,    jumbo_icon,          , 0x18, Access_dynamic, FALSE ) // RLS: Large_TLV only
+     TLVDEF( uint16_t,     sees_max,            , 0x19, Access_unset, TRUE )
+-    TLVDEF( comptbl_t,    component_tbl,       , 0x1A, Access_unset, FALSE ) // RLS: Large_TLV only
++//    TLVDEF( comptbl_t,    component_tbl,       , 0x1A, Access_unset, FALSE ) // RLS: Large_TLV only

@@ -1,0 +1,29 @@
+--- freetype-2.3.7/src/sfnt/sfobjs.c	2008-05-28 14:59:49.000000000 -0700
++++ freetype-2.3.7/src/sfnt/sfobjs.c	2008-10-07 14:47:29.000000000 -0700
+@@ -921,21 +921,21 @@
+           root->height = (FT_Short)( ( root->height * 115 + 50 ) / 100 );
+ #endif
+ 
+-#if 0
++#if 1  /* Enabled by Philips */
+ 
+         /* some fonts have the OS/2 "sTypoAscender", "sTypoDescender" & */
+         /* "sTypoLineGap" fields set to 0, like ARIALNB.TTF             */
+         if ( face->os2.version != 0xFFFFU && root->ascender )
+         {
+-          FT_Int  height;
++          /*FT_Int  height;*/
+ 
+ 
+           root->ascender  =  face->os2.sTypoAscender;
+           root->descender = -face->os2.sTypoDescender;
+ 
+-          height = root->ascender + root->descender + face->os2.sTypoLineGap;
+-          if ( height > root->height )
+-            root->height = height;
++          root->height = (FT_Short)(root->ascender + root->descender + face->os2.sTypoLineGap);
++          /*if ( height > root->height )
++            root->height = height;*/
+         }
+ 
+ #endif /* 0 */

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level skinID="1">
+	<board>
+		<element x="0" y="9" type="SPECIAL" />
+		<element x="1" y="1" type="BLOCK" />
+		<element x="1" y="6" type="BLOCK" />
+		<element x="2" y="10" type="BLOCK" />
+		<element x="3" y="2" type="BLOCK" />
+		<element x="5" y="9" type="BLOCK" />
+		<element x="6" y="1" type="BLOCK" />
+		<element x="4" y="4" type="SPECIAL" />
+		<element x="8" y="10" type="BLOCK" />
+		<element x="9" y="2" type="BLOCK" />
+		<element x="9" y="7" type="BLOCK" />
+		<element x="11" y="2" type="BLOCK" />
+		<element x="11" y="3" type="EXIT" />
+		<element x="11" y="4" type="BLOCK" />
+		<element x="12" y="2" type="BLOCK" />
+	</board>
+	<start x="1" y="2" />
+</level>

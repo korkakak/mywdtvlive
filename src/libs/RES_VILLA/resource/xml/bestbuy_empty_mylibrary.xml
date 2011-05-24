@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<page background="image/bestbuy/bby_browse_bg.jpg" ignore_desktop_settings="1">
+	<ctrlgrp lbmask="LRud">
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"
+			disabled_bg="image/bestbuy/bby_browse_back_n.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"
+			disabled_bg="image/bestbuy/bby_browse_home_n.png"/>
+		<linebreak/>
+		<listbox valkey="browselist" 
+			hormove="1" autoenter="1" move="row" autoswitch="0" 
+			cols="5" rows="1" lbmask="ud" loop_scroll="1" turbo_trigger="10" turbo_multi="10"
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			clicked_bg="image/bestbuy/bby_bt_n.png"/>
+		<linebreak/>
+	</ctrlgrp>
+
+	<table x="105" y="140" w="1070" h="49" fontsize="20" cols="5" rows="1" align="hcenter" colspacing="5" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0x186ca7">
+		<imgbtn image="@@bg-browselist-0" text="@@browselist_0_text" 
+			active="@@act-browselist-0" selected="@@sel-browselist-0" click="@@click-browselist-0" 
+			clicked="@@clicked-browselist-0" disable="@@disable-browselist" speed="5" delay="2"/>
+		<imgbtn image="@@bg-browselist-1" text="@@browselist_1_text" 
+			active="@@act-browselist-1" selected="@@sel-browselist-1" click="@@click-browselist-1" 
+			clicked="@@clicked-browselist-1" disable="@@disable-browselist" speed="5" delay="2"/>
+		<imgbtn image="@@bg-browselist-2" text="@@browselist_2_text" 
+			active="@@act-browselist-2" selected="@@sel-browselist-2" click="@@click-browselist-2" 
+			clicked="@@clicked-browselist-2" disable="@@disable-browselist" speed="5" delay="2"/>
+		<imgbtn image="@@bg-browselist-3" text="@@browselist_3_text" 
+			active="@@act-browselist-3" selected="@@sel-browselist-3" click="@@click-browselist-3" 
+			clicked="@@clicked-browselist-3" disable="@@disable-browselist" speed="5" delay="2"/>
+		<imgbtn image="@@bg-browselist-4" text="@@browselist_4_text" 
+			active="@@act-browselist-4" selected="@@sel-browselist-4" click="@@click-browselist-4" 
+			clicked="@@clicked-browselist-4" disable="@@disable-browselist" speed="5" delay="2"/>
+	</table>
+
+	<text text="@@inform_text" x="100" y="340" w="1040" h="50" numlines="2" align="hcenter" fontsize="20" textcolor="0xff727272"/>
+
+	<image image="@@browselist-next" x="1183" y="153" w="14" h="22"/>
+	<image image="@@browselist-prev" x="80" y="153" w="14" h="22"/>
+
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+
+	<text text="@@inform_text" x="100" y="340" w="1040" h="50" numlines="2" align="hcenter" fontsize="20" textcolor="0xff727272"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

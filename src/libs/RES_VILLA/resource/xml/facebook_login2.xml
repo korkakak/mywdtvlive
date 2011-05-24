@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<page background="./image/facebook/facebook_encoding_bg.png">
+        <image image="./image/facebook/facebook_logo.png" x="63" y="36" w="235" h="50"/>
+	<image image="./image/keyboard_mask_bg.png" x="0" y="0" w="1280" h="720"/>
+	<image image="./image/global_messagebox_large_bg.png" x="226" y="108" w="832" h="515"/>
+  	<text text="@@title" x="254" y="139" w="778" h="38" fontsize="36" textcolor="0xffffff"/>
+
+	<ctrlgrp>
+		<ctrlgrp valkey="ACTION" autoenter="1" disable_light_bar_click="1">
+		<button valkey="USERNAME"
+			group_valkey="ACTION"
+			focused_bg="./image/signin_search_box_f.png"
+			normal_bg="./image/signin_search_box.png"/>
+		<linebreak/>
+		<button valkey="PASSWORD"
+			group_valkey="ACTION"
+			focused_bg="./image/signin_search_box_f.png"
+			normal_bg="./image/signin_search_box.png"/>
+		<!--
+		<linebreak/>
+		<checkbox valkey="REMEMBER" value="checkbox-REMEMBER-value"
+			group_valkey="ACTION"
+			focused_bg="./image/remember_me_box_f_orange.png"
+			normal_bg="./image/remember_me_box_n.png"
+			normal_checked="./image/remember_me_icon_n.png"
+			focused_checked="./image/remember_me_icon_f_orange.png"/>
+		-->
+		</ctrlgrp>
+		<ctrlgrp valkey="CONFIRM" autoenter="1">
+		<button valkey="CANCEL"
+			group_valkey="CONFIRM"
+			focused_bg="./image/global_cancel_bt_f.png"
+			normal_bg="./image/global_cancel_bt_n.png"/>
+		<button valkey="OK"
+			group_valkey="CONFIRM"
+			focused_bg="./image/global_ok_bt_f.png"
+			normal_bg="./image/global_ok_bt_n.png"/>
+		</ctrlgrp>
+ 	</ctrlgrp>
+ 
+
+	<image image="./image/username_icon.png" x="281" y="211" w="29" h="29"/>
+	<text text="$$Email" x="333" y="214" w="677" h="32" align="left" fontsize="30" textcolor="0xc1c1c1"/>
+	<imgbtn image="@@bg-USERNAME" text="" active="@@act-USERNAME" textcolor="0x000000" x="269" y="260" w="743" h="54" align="left" fontsize="36"/>
+	<text text="@@USERNAME" x="286" y="274" w="709" h="32" align="left" fontsize="30" textcolor="0x000000"/>
+
+	<image image="./image/password_icon.png" x="281" y="331" w="29" h="29"/>
+	<text text="$$Password" x="333" y="334" w="677" h="32" align="left" fontsize="30" textcolor="0xc1c1c1"/>
+   	<imgbtn image="@@bg-PASSWORD" text="" active="@@act-PASSWORD" textcolor="0x000000" x="269" y="380" w="743" h="54" align="left" fontsize="36"/>
+	<text text="@@PASSWORD" x="286" y="394" w="709" h="32" align="left" fontsize="30" textcolor="0x000000"/>
+
+
+	<!--
+	<imgbtn image="@@bg-REMEMBER" active="@@act-REMEMBER" x="281" y="548" w="30" h="30"/>
+	<text text="$$Remember Me" x="329" y="550" w="677" h="32" fontsize="30" textcolor="0xc1c1c1" align="left"/>	
+	-->
+
+	<imgbtn image="@@bg-OK" active="@@act-OK" x="1096" y="303" w="116" h="116"/> 
+	<imgbtn image="@@bg-CANCEL" active="@@act-CANCEL" x="1096" y="303" w="116" h="116"/> 
+	<image image="@@status_icon" x="573" y="320" w="133" h="133" /> <!--loading icon-->
+</page>

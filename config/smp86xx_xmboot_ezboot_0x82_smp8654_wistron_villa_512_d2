@@ -1,0 +1,513 @@
+##############################################################################
+# 8654 ES4 on 922-A2 board
+##############################################################################
+# commented out values are the default values (or the preboot values)
+# the maximum size of zbootxenv.bin is 16KByte
+
+# mandatory --- offset of ezboot.xload in phyblock#0
+# must be aligned on 11bit (a nand flash page boundary)
+# else, force ub execution
+#x.boot = 0xffffffff
+x.boot = 0x5800
+
+# mandatory --- where you send stage1
+# constraints:
+# - align by 18bit [LOG2_EZBOOT]
+# - make it compatible with mmv7 (ruamm0 / ruamm1)
+# - further load of yamon/linux/ce should not clobber
+z.stage1_ga = 0x81600000
+
+# see http://bugs.soft.sdesigns.com/show_bug.cgi?id=9761#c8
+x.pll.1.pll = 0x01000024
+x.mux = 0x201
+
+# minimize cpu output. It will still show xmb version and the zxenv reading,
+# e.g. up to the point it reads this variable, then be silent (uart0 and SSD) if 0.
+# z.verbose = 1
+
+##############################################################################
+# authoritative in http://bugs.soft.sdesigns.com/twiki/bin/view/Main/DDR2Setup
+
+# Density --->  0   1   2   3   4   5   6   7
+# Mbit /Chip   256 256 512 512  1G  1G  2G  NA 
+# Width/Chip   x16  x8 x16  x8 x16  x8 x16  NA   
+# MByte tot.   64  128 128 256 256 512 512  NA
+# The special value: 0xffffffff means that controller is not stuffed, a valid scenario for bank#1.
+# size_bytes = $[1<<(((density+1)>>1)+26)]
+
+# ddr-2 bank#0 and bank#1 are 256MBytes
+x.ddr.0.density = 4
+x.ddr.1.density = 4
+
+# Grade   --->  0   1   2   3   4   5   6   7
+# -xx          NA  5E  NA  37E  3  3E  25  25E
+
+x.ddr.grade = 4
+
+# those will resurface when implementing freq scaling (bug#9037)
+x.ddr.fmin_mhz = 200
+x.ddr.fmax_mhz = 333
+
+# x.ddr.method = unset means: use default
+# first hex digit: 0: fixed settings
+# first hex digit: 1: find optimized settings
+# first hex digit: 2: get from zxenv: x.t3mem [buffer of sizeof(struct mt3_hw_settings_t)=140 --- get it from lrro.t3mem]
+x.ddr.method = 0x10015858
+
+# 0 or 1. If 1, dumps to uart0 the progress and conclusions of t3mem
+x.ddr.verbose = 1
+
+# DDR2 poisoning.  Set to 0 to not do the poisoning
+# Poisoning is filling memory with random and is helpful to trigger bugs.
+# Unless you're in the last phase of system startup speed optimization --- don't disable poisoning.
+#x.poison = 0
+
+##############################################################################
+# clock tree
+
+# More mux control: if unspecified, keep preboot
+#a.premux = 0x200
+
+# cd7->rclk3, cd6->rclk2, cd5/4->rclk1, cd4->rclk0
+a.avclk_mux = 0x17400000 
+
+a.hostclk_mux = 0x110
+
+# Clean dividers frequencies (0 means shutdown. Not specified = keep)
+a.cd0_freq = 0
+a.cd1_freq = 0
+# feeds usb with cd2/2
+a.cd2_freq =  96000000 
+# was intended to feed sata --- dead per hwbug#349
+a.cd3_freq = 0
+# feeds pci [rclk0]
+a.cd4_freq =  33333333
+a.cd5_freq = 0
+# --- dead per hwbug#349
+a.cd6_freq = 0
+a.cd7_freq = 0
+a.cd8_freq = 0
+a.cd9_freq = 0
+a.cd10_freq = 0
+# routed nowhere
+a.cd11_freq = 0
+
+##############################################################################
+# gpio, pci, cpu interrupt lines
+
+# Edge trigger detection settings
+# Rise = 0, Fall = 0, active high, level trigger
+# Rise = 1, Fall = 0, rising edge trigger
+# Rise = 0, Fall = 1, falling edge trigger
+# Rise = 1, Fall = 1, active low, level trigger
+
+# frombits.bash 9 11 14 15 19 21 24 25 26 27 28 29 30 31
+a.irq_rise_edge_lo = 0xff28ca00 
+
+# frombits.bash 0 1 2 3 4 7 20 26 27
+a.irq_rise_edge_hi = 0x0c10009f 
+
+# frombits.bash 14 15
+a.irq_fall_edge_lo = 0x0000c000 
+
+a.irq_fall_edge_hi = 0x00000000
+
+# GPIO IRQ map to IRQ#16-13 (MSB-LSB)
+# NA (IRQ16)
+# 0xa: USB OC   (IRQ15)
+# 0x8: PCI INT  (IRQ14)
+# NA (IRQ13)
+a.gpio_irq_map  = 0x000a0800
+
+# PCI IRQ routing (0xddccbbaa for PCI INTD-A off IRQ#13)
+# Valid number for each is from 0-3
+a.pcidev1_irq_route = 0x01010101
+a.pcidev2_irq_route = 0x01010101
+a.pcidev3_irq_route = 0x01010101
+a.pcidev4_irq_route = 0x01010101
+
+# GPIO setting 0/1 = input/output for 32 pins
+# 0/1: I2CM
+# 2/3/4/5/6: NA
+# 7: AUX/PIO Reset (PCI: 1=un-reset)
+# 8: PCI_INT
+# 9: HDMI_INT
+# 10: USB_OC#
+# 11: USB PwrEn (1=enable)
+# 12: IR
+# 13: HDMI_CEC
+# 14/15: NA
+# 16-31: NA
+#
+# encoding: lower 16bit: system gpio's. higher 16bit: eth gpio's
+#
+a.gpio_dir   = 0x00000880
+a.gpio_data  = 0x00000880
+
+# for 10000 usec reset
+a.gpio7_pulse = "10000"
+
+##############################################################################
+# speed
+
+# Peripheral bus settings 
+a.pb_def_timing		= 0x03080202
+a.pb_cs_config 		= 0x00330003
+a.pb_cs_config1		= 0x0
+a.pb_cs_ctrl		= 0x0
+# a.pb1_def_timing		= 0x03080202
+# a.pb1_cs_config 		= 0x00330003
+# a.pb1_cs_config1		= 0x0
+# a.pb1_cs_ctrl		= 0x0
+
+# ST NAND flash
+a.pb_timing0		= 0x03080202
+a.pb_use_timing0 	= 0x000003f3
+# a.pb1_timing0		= 0x03080202
+# a.pb1_use_timing0 	= 0x000003f3
+
+
+##############################################################################
+# muxing on uart - gpio - scard - jtag
+#
+# DO NOT REASSIGN UART0 TX AND RX. UART0 DIV AND SEL ARE READ-ONLY PER XOS2D19
+#
+#0x6c138...uart0(0x6c100)
+#       ...gpio (0x6c130)
+#
+#0x6cb00...jtag (chain 1:ipu 2:cpu)
+#       ...gpio/uart...0x6c238...uart1(0x6c200)
+#                             ...gpio (0x6c230)
+
+a.uart0_gpio_mode = 0x6e
+a.uart0_gpio_dir = 0
+a.uart0_gpio_data = 0
+
+a.uart1_gpio_mode = 0x6e
+a.uart1_gpio_dir = 0x04
+a.uart1_gpio_data = 0x04
+
+# against coding style item D1, but we need to homogenize with uart0
+a.uart1_baudrate = 57600
+
+# Smartcard CTL[0..2] assignments
+a.scard_5v_pin  = 0
+a.scard_cmd_pin = 1
+a.scard_off_pin = 2
+a.scard1_5v_pin  = 0
+a.scard1_cmd_pin = 1
+a.scard1_off_pin = 2
+
+##############################################################################
+# software view
+
+# Board specific name. No way to get this information from software
+a.board_id = "villa_d2"
+
+# Enabled Devices 1 = Enabled
+# ISAIDE_SHIFT		0
+# BMIDE_SHIFT		1
+# PCIHOST_SHIFT		2
+# ETHERNET_SHIFT	3
+# IR_SHIFT		4
+# FIP_SHIFT		5	
+# I2CM_SHIFT		6
+# I2CS_SHIFT		7
+# SDIO_SHIFT		8
+# USB_SHIFT		9
+# PCI1_SHIFT		10
+# PCI2_SHIFT		11
+# PCI3_SHIFT		12
+# PCI4_SHIFT		13
+# PCI5_SHIFT		14
+# PCI6_SHIFT		15
+# SATA_SHIFT		16
+# SCARD_SHIFT		17
+# SCARD1_SHIFT          19
+# ETHERNET1_SHIFT       20
+
+# frombits.bash 2 3 4 5 6 7 9 10 11 12 13 16 17 19 20
+a.enable_devices = 0x001b3efc
+
+# Mac address, if any
+a.eth_mac  = "00:16:e8"
+a.eth1_mac = "00:16:e8"
+
+# SATA Channel Configuration
+# RX SSC on port 0     -    [0] : 1 = enable, 0 = disable
+# RX SSC on port 1     -    [1] : 1 = enable, 0 = disable
+# TX SSC on both ports -    [2] : 1 = enable, 0 = disable
+# Frequency select (n) -    [7..4] :
+#    n = 0     : 120 MHz
+#    n = 1     : 100 MHz
+#    n = 2     : 60 MHz
+#    n = 3     : 50 MHz
+#    n = 4     : 30 MHz
+#    n = 5     : 25 MHz
+#    n = 6..15 : Reserved
+# Force gen1 speed     -   [14] : 1 = force gen1 speed, 0 = auto-negotiate
+# Use internal clock   -   [15] : 1 = use internal clock, 0 = use external clock
+# frombits.bash 0 1 2
+a.sata_channel_cfg = 0x0007
+
+# --------------
+# zboot specific
+# --------------
+# Bootable container 0/1 offset
+z.boot0 = 0x00080000
+z.boot1 = 0x000c0000
+z.boot2 = 0x003c0000
+
+
+#imat romfs. must contain at least:
+#   itask_loader.iload
+#(!) update the "y.imu" key below if you change these
+z.imatromfs_offset=0x006c0000
+z.imatromfs_failsafe_offset=0x008c0000
+#max size is 0x01000000
+z.imatromfs_size=0x01000000
+z.imatromfs_mm=1
+
+
+#xmat romfs. must contain at least:
+#  xtask_loader.xload
+#(!) update the "y.xmu" key below if you change these
+z.xmatromfs_offset=0x016c0000
+#max size is 0x00800000
+z.xmatromfs_size=0x00100000
+z.xmatromfs_mm=1
+
+z.default_boot = 1
+
+# Interactive boot index selection. Set to 1 to enable, else disabled.
+z.interactive_boot_idx_sel = 1
+
+# Boot order specification
+# A list of boot device / chip selects that ezboot should try to use.  Each element in the list is 1 byte,
+# with the upper nibble specifying the device type and the lower nibble specifying the chip select / port:
+#    Device Types:
+#      0 - NAND
+#      2 - SATA
+#      3 - SPI NOR
+z.bootdev_order = { 0x00 0x01 0x20 0x21 }
+#z.bootdev_order = { 0x00 0x01 }
+
+##############################################################################
+# YAMON
+#
+# --- bug #9236 Comment #2 from Yu-Ming Wu <Yu-Ming_Wu@sdesigns.com>  2008-02-27 13:26:04 ---
+# The memory address < 0xa5000000 (0x85000000) or >= 0xa7000000 (0x87000000) are
+# basically safe to use for the temporary memory usage without causing the
+# exception or destroying the data of Yamon.
+
+# Yamon's network settings
+#y.ipaddr = "192.168.1.17"
+#y.subnetmask = "255.255.255.0"
+#y.gateway = "192.168.1.1"
+
+# Yamon's autoexec settings
+#y.start = "dump -32 0xb0100000"
+#y.startdelay = "5"
+
+# Default baudrate
+# a.baudrate = 115200
+
+# as a replacement for on-the-fly keypress. Instead of `1', wait YAMON and do 'b1 enter'
+y.testvar = "yamonfoo"
+y.b0="nflash read 0x080000 0xa4a00000 0x040000 0; dump romfs 0xa4a00000; load zbf 0xa4a00080; go"
+y.b1="nflash read 0x0c0000 0xa7000000 0x740000 0; dump romfs 0xa7000000; load zbf 0xa7000090; go"
+y.b2="nflash read 0x000000 0xa4a00000 0x080000 0; dump romfs 0xa4a00000; load zbf 0xa4a00080; go"
+
+# if you feel comfortable with cache...
+y.fb0="nflash read 0x080000 0x84a00000 0x040000 0; dump romfs 0x84a00000; load zbf 0x84a00080; go"
+y.fb1="nflash read 0x0c0000 0x87000000 0x740000 0; dump romfs 0x87000000; load zbf 0x87000090; go"
+y.fb2="nflash read 0x480000 0x84a00000 0x080000 0; dump romfs 0x84a00000; load zbf 0x84a00080; go"
+
+# run $spug then bash$ uuencode x <noarch/xmb74-ezboot43-nand_st2/phyblock0-74.43-0x20000padded >/dev/ttyS0
+y.spug="load uu 0xa4a00000; cksum 0xa4a00000 0x20000; nflash erase -p 0 0x20000 0; nflash write -p 0 0xa4a00000 0x20000 0; nflash read -p 0 0xa4a00001 0x20000 0; cksum 0xa4a00001 0x20000"
+
+# but if you have network, just net init and:
+y.pug="load -b tftp://172.30.2.212/ES4/phyblock0-latest-0x20000padded.922-A2 0xa4a00000; cksum 0xa4a00000 0x20000; nflash erase -p 0 0x20000 0; nflash write -p 0 0xa4a00000 0x20000 0; nflash read -p 0 0xa4a00001 0x20000 0; cksum 0xa4a00001 0x20000"
+y.yug="load -b tftp://172.30.2.212/ES4/zbimage-yamon-xload-latest-0x40000padded 0xa4a00000; cksum 0xa4a00000 0x40000; nflash write 0x80000 0xa4a00000 0x40000 0; nflash read 0x80000 0xa4a00001 0x40000 0; cksum 0xa4a00001 0x40000"
+y.lug="load -b tftp://172.30.2.212/ES4/zbimage-linux-xload-latest-0x500000padded 0xa7000000; cksum 0xa7000000 0x740000; nflash write 0xc0000 0xa7000000 0x740000 0; nflash read 0xc0000 0xa7000001 0x740000 0; cksum 0xa7000001 0x740000"
+
+y.imu="load -b tftp://172.30.2.212/imaterial/imaterial.romfs.latest 0xa7000000; nflash erase 0x00800000 0x00900000 0; nflash write 0x00800000 0xa7000000 0x00900000 0; nflash read 0x00800000 0xa7000010 0x00900000 0; dump romfs 0xa7000010"
+y.xmu="load -b tftp://172.30.2.212/xmaterial/xmaterial.romfs.latest 0xa4a00000; nflash erase 0x01800000 0x00200000 0; nflash write 0x01800000 0xa4a00000 0x00200000 0; nflash read 0x01800000 0xa4a00010 0x00200000 0; dump romfs 0xa4a00010"
+
+# for whoever tests xmb/ezboot
+y.pugUNSTABLE="load -b tftp://172.30.2.212/ES2/phyblock0-UNSTABLE-0x20000padded 0xa4a00000; cksum 0xa4a00000 0x20000; nflash erase -p 0 0x20000 0; nflash write -p 0 0xa4a00000 0x20000 0; nflash read -p 0 0xa4a00001 0x20000 0; cksum 0xa4a00001 0x20000"
+
+# create a mapping ``copy'' understands 
+# load phyblock0
+# overload with new xenv [yamon macro : $xenv_addr]
+# erase
+# write.
+y.commit="nflash read -p 0 0xa4a00000 0x20000 0; copy $xenv_addr 0xa4a00000 0x4000; nflash erase -p 0 0x20000 0; nflash write -p 0 0xa4a00000 0x20000 0"
+y.ub="go 0xa00e5284"
+
+y.nwk="load -b tftp://172.30.2.212/ES2/vmlinux-latest.bin 0x84000000"
+y.nwg="go . root=/dev/nfs nfsroot=172.30.63.13:/roots/debinst-yourlogin ip=::::::dhcp rdinit=/none console=ttyS0 mem=135MB"
+
+##############################################################################
+# Linux
+
+#change
+# Nflash size on CS0,1 (0 = none)
+# NAND flash on CS0 (minimum logical capacity: 128MB)
+# 256 MB
+l.cs0_size = 0x10000000
+# Number of partitions
+l.cs0_parts = 11
+# Partition info (MSB of size: 1 = read-only)
+# CE bootloader (512KB) (Not used)
+l.cs0_part1_offset = 0x00000000
+l.cs0_part1_size   = 0x00080000
+# Yamon (256KB)
+l.cs0_part2_offset = 0x00080000
+l.cs0_part2_size   = 0x00040000
+# Linux Kernel (3072KB) : Primary system 1
+l.cs0_part3_offset = 0x000c0000
+l.cs0_part3_size   = 0x00300000
+# Linux Kernel (3072KB) : Primary system 2
+l.cs0_part4_offset = 0x003c0000
+l.cs0_part4_size   = 0x00300000
+# IMAT (16MB)
+l.cs0_part5_offset = 0x006c0000
+l.cs0_part5_size   = 0x01000000
+# XMAT (8MB)
+l.cs0_part6_offset = 0x016c0000
+l.cs0_part6_size   = 0x00800000
+# rootfs partition number
+l.rootfs_part=7 
+# rootfs (90MB)
+l.cs0_part7_offset = 0x01ec0000
+l.cs0_part7_size   = 0x05a00000
+# rootfs (90MB)
+l.cs0_part8_offset = 0x078c0000
+l.cs0_part8_size   = 0x05a00000
+# Setting 1 (128KB)
+l.cs0_part9_offset = 0x0d2c0000
+l.cs0_part9_size   = 0x00020000
+# Setting 2 (128KB)
+l.cs0_part10_offset = 0x0d2e0000
+l.cs0_part10_size   = 0x00020000
+# Static config (128KB)
+l.cs0_part11_offset = 0x0d300000
+l.cs0_part11_size   = 0x00020000
+
+l.cs1_size = 0x00000000
+
+# Linux kernel command line
+a.linux_cmd = "console=ttyS0 mem=200M"
+
+##############################################################################
+# Memory map v7
+#
+# The tango3 memory map & boot specification says the cpu has to locate suitable
+# ddr boundaries somehow (built in the bootloader, from network, many choices actually) and
+# write them to local ram as lrrw.0.uzdata_offset etc.
+#
+#  pot: must be power of two
+# 14ba: must align on 14bit (4 pages)
+#
+# The choice here is to give sizes / allocator preference and let zboot compute the offsets / allocate;
+# all boundaries are contrived to worst alignment to exercise the driver.
+# YMMV and go for a scheme were everything is static, with round figures everywhere.
+#
+# e.g. 4MB. Minimum 14 (16KByte), less means non existent
+z.log2_xpu0_size=23
+# must align on 14bit (4 pages) (given in bytes --- for instance, here it's 111 * 4pages)
+z.dsp0_size=1818624
+# must align on 14bit (4 pages)
+z.zdata0_size=16384 
+# must align on 14bit (4 pages)
+z.uzdata0_size=49152
+
+# e.g. 2MB. Minimum 14 (16KByte), less means non existent (ex: there is no bank#1)
+z.log2_xpu1_size=21  
+# must align on 14bit (4 pages)
+z.dsp1_size=540672  
+# must align on 14bit (4 pages)
+z.zdata1_size=32768 
+# must align on 14bit (4 pages)
+z.uzdata1_size=81920
+
+# this means we put Linux in second bank and will lock 3*64MB of remaps. 
+# as you see in this example, end of the kernel does not coincide exactly with ruamm*_offset
+# It may be desirable to have a bigphysarea in the gap.
+#
+# think about ezboot itself code+data, probably running from start of bank#0 or #1, when 
+# filling those values. Do not corrupt it when doing the first allocations.
+#
+# stage2: YAMON wants minimum, 48MBytes (bug#9236).
+# stage2: must be larger than mem=... in a.linux_cmd as well.
+#
+z.ruamm0_offset=0
+z.ruamm1_offset=0xca00000 
+
+# the stage2 is either yamon/linux/ce, e.g. some large software thing
+# STAGE2_VA is a macro defined to 0x84000000 and not configurable [architecturally tied to CPU_remap2]
+
+# ruamm*_offset was not enough to know where you run stage2. Here you indicate it.
+z.stage2_ga=0xc0000000 
+# how many remaps should be set: a priori 2 3 4. Then, Linux may retailor to 5, 6... more based on mem=
+
+# mmv7 step 14
+# step 14: cpu allocates xpu public area. ga aligned on next power of two (>=size).
+z.xos_public_mm=1
+# xos_public_ga has to be aligned to its size
+z.log2_xos_public_size=17 
+
+# mmv7 step 30
+# step 30: cpu allocates channel index
+z.channel_index_mm=1
+
+# mmv7 step 31
+# step 32: cpu allocates irqhandler api
+z.ih_api_mm=1
+
+# mmv7 step 32
+# step 32: cpu allocates ios area. gbus address aligned on next power of two (>=size)
+z.ios_mm=0
+# minimum 2MByte. size does not have to be aligned, but ios_ga has to be aligned on next power of two of size
+z.ios_size=7000001 
+
+#### used by splashscreen itask #####
+
+#see emhwlib_categories.h for the magic numbers
+i.sp.scaler=4
+
+#0:disable, 1:enable
+i.sp.digital_enable=1
+i.sp.component_enable=1
+i.sp.analog_enable=1
+
+#see emhwlib_videoformats.h for the magic numbers
+i.sp.digital_standard=0x21
+i.sp.component_standard=0x71
+i.sp.analog_standard=0x7b
+
+#name of the picture file
+i.sp.picture="splash.sdd"
+
+# 0 is no hdmi, 1 is internal chip, 2 is external
+i.sp.hdmi_chip=1
+# 0 is disable animation, 1 is enable animation
+i.sp.animation_enable=1
+
+### used by power management
+
+# low frequency mode (126/126/126MHz)
+a.ps.mt3_hs = { 0x0100201b 0x00000301 0x00000401 0x3514001a 0x4565132b 0x00010021 0x3514001a 0x4565132b 0x00010021 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0b0b0b0b 0x0c0c0c0c 0x80808080 0x7f7d7f7d 0x05050505 0x05050505 0x0c0c0c0c 0x80808080 0x7a7a7c7c 0x05050505 0x05050505 }
+a.ps.pll2=0x0101203b
+a.ps.pll0=0x0
+
+# standby mode (54/54/54MHz)
+a.standby.mt3_hs = { 0x0100602f 0x00000301 0x00000401 }
+a.standby.pll2=0x0
+a.standby.pll0=0x0
+
+# Turn off USB power in standby mode
+a.standby.gpio_dir=0x800
+a.standby.gpio_data=0
+

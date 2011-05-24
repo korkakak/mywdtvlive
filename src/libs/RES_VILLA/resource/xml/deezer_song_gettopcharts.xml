@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png" type="basic">
+	<ctrlgrp> 
+		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="page" cols="1" rows="6" lbmask="lr" loop_scroll="1"/>
+		<include filename="./inc_optionmenu_ctrlgrp.xml"/>
+	</ctrlgrp>
+	<include filename="./inc_optionmenu_widgets.xml"/>
+
+	<image image="./image/deezer/deezer_Country_frame_bg.png" x="783" y="160" w="328" h="32"/>
+
+	<table x="786" y="163" w="324" h="27" cols="4" textcolor="0xffffffff" align="hcenter" fontsize="14">
+		<image image="@@icon-0" w="81"/>
+		<image image="@@icon-1" w="81"/>
+		<image image="@@icon-2" w="81"/>
+		<image image="@@icon-3" w="81"/>
+	</table>
+
+	<table x="786" y="163" w="324" h="27" cols="4" textcolor="0xffffffff" align="hcenter" fontsize="14">
+		<text text="FR" w="81"/>
+		<text text="BE" w="81"/>
+		<text text="UK" w="81"/>
+		<text text="US" w="81"/>
+	</table>
+
+	<include filename="./inc_deezer_short_list_browse.xml"/> 
+	<include filename="./inc_loading.xml"/>
+	<!-- fixed --> 
+	<include filename="./decoration.xml"/>
+	<image image="./image/deezer/deezer_logo.png" x="1049" y="610" w="135" h="46"/>
+</page>

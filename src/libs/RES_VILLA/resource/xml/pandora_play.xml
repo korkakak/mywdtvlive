@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+	<ctrlgrp valkey="options" autoenter="1" lbmask="LR"> 
+		<button valkey="CMD0"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_thumb_up_icon.png"
+			disabled_bg="image/pandora_ontrols_thumb_up_icon.png"
+			normal_bg="image/pandora_ontrols_thumb_up_icon.png"
+			group_valkey="buttons"
+			group_focused_text="I like this song"/>
+		<button valkey="CMD1"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_thumb_down_icon.png"
+			disabled_bg="image/pandora_ontrols_thumb_down_icon.png"
+			normal_bg="image/pandora_ontrols_thumb_down_icon.png"
+			group_valkey="buttons"
+			group_focused_text="I don't like this song"/>
+		<button valkey="CMD2"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_bookmark_icon.png"
+			disabled_bg="image/pandora_ontrols_bookmark_icon.png"
+			normal_bg="image/pandora_ontrols_bookmark_icon.png"
+			group_valkey="buttons"
+			group_focused_text="Bookmark"/>
+		<button valkey="CMD3"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_Don't_Play_for_a_month_icon.png"
+			disabled_bg="image/pandora_ontrols_Don't_Play_for_a_month_icon.png"
+			normal_bg="image/pandora_ontrols_Don't_Play_for_a_month_icon.png"
+			group_valkey="buttons"
+			group_focused_text="I'm tired of this song"/>
+		<button valkey="CMD4"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_info_icon.png"
+			disabled_bg="image/pandora_ontrols_info_icon.png"
+			normal_bg="image/pandora_ontrols_info_icon.png"
+			group_valkey="buttons"
+			group_focused_text="Why was this song selected?"/>
+		<linebreak/>
+		<include filename="./inc_optionmenu_ctrlgrp.xml"/>
+		<linebreak/>
+	</ctrlgrp>
+
+	<include filename="./inc_optionmenu_widgets.xml"/>
+	<text x="454" y="160" w="372" h="20" text="@@text-options" fontsize="18" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+
+	<image x="0" y="205" w="1280" h="239" image="image/music_player_function_frame_bg.png" bg="1"/> 
+
+	<image x="302" y="182" w="291" h="290" image="image/pandora_playing_frame_bg_n.png" bg="1"/>
+	<image x="328" y="208" w="238" h="238" image="@@album_icon" default_image="image/music_player_frame_albumart_icon.png" xmargin="0" ymargin="0" umargin="0" dmargin="0" bg="1" scale_type="fixratio" scale="100" align="hcenter"/>
+
+	<progress_bar name="point_bar" x="647" y="268" w="288" h="28" pb_back_img="image/music_player_line_bg.png" pb_front_img="image/music_player_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="500"/>
+
+
+	<image image="@@play_state" x="597" y="263" w="40" h="40"/>
+
+	<text x="930" y="271" w="60" h="22" fontsize="20" text="@@audio_currenttime" align="left" textcolor="0xffffff"/>
+
+	<image x="366" y="461" w="555" h="5" image="image/photo_thumb_line_01.png" bg="1"/>
+
+	<text text="@@songname" x="366" y="469" w="555" h="30" fontsize="26" numlines="1" textcolor="0x07b5ff" speed="1" delay="2" align="hcenter"/>
+
+	<image x="366" y="506" w="555" h="1" image="image/photo_thumb_line_02.png" bg="1"/>
+
+	<image x="388" y="516" w="24" h="24" image="image/music_player_artist_icon_n.png"/>
+	<text text="@@artist" x="427" y="513" w="466" h="24" fontsize="20" align="left" speed="1" delay="2" textcolor="0xe2e2e2"/> 
+	<image x="366" y="544" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+	<image x="388" y="554" w="24" h="24" image="image/music_player_album_icon_n.png"/>
+	<text text="@@album" x="427" y="554" w="466" h="24" fontsize="20" align="left" speed="1" delay="2" textcolor="0xe2e2e2"/>
+	<image x="366" y="585" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+	<image x="388" y="595" w="24" h="24" image="image/pandora_station_icon_n.png"/>
+	<text x="427" y="595" w="466" h="24" text="@@station" fontsize="20" textcolor="0xe2e2e2" speed="1" delay="2" align="left"/>
+	<image x="366" y="626" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+	
+	<!-- fixed -->
+
+	<image x="648" y="306" w="47" h="47" image="@@lbimage-CMD0"/>
+	<image x="695" y="306" w="47" h="47" image="@@lbimage-CMD1"/>
+	<image x="742" y="306" w="47" h="47" image="@@lbimage-CMD2"/>
+	<image x="789" y="306" w="47" h="47" image="@@lbimage-CMD3"/>
+	<image x="836" y="306" w="47" h="47" image="@@lbimage-CMD4"/>
+
+	<image x="648" y="306" w="47" h="47" image="@@bg-CMD0"/>
+	<image x="695" y="306" w="47" h="47" image="@@bg-CMD1"/>
+	<image x="742" y="306" w="47" h="47" image="@@bg-CMD2"/>
+	<image x="789" y="306" w="47" h="47" image="@@bg-CMD3"/>
+	<image x="836" y="306" w="47" h="47" image="@@bg-CMD4"/>
+
+	<image x="648" y="306" w="47" h="47" image="@@thumb_up"/>
+	<image x="695" y="306" w="47" h="47" image="@@thumb_down"/>
+
+	<text text="@@text-buttons" disable="@@disable-text-buttons" x="646" y="365" w="336" h="22" fontsize="18" textcolor="0x07b5ff" align="left" />
+
+	<include filename="decoration.xml"/>
+	<image image="image/pandora_logo.png" x="1069" y="591" w="158" h="65"/>
+</page>

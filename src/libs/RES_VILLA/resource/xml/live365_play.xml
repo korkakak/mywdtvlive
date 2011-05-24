@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+	<ctrlgrp valkey="options" autoenter="1" lbmask="LR"> 
+		<button valkey="CMD0"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_thumb_up_icon.png"
+			disabled_bg="image/pandora_ontrols_thumb_up_icon.png"
+			normal_bg="image/pandora_ontrols_thumb_up_icon.png"/>
+		<button valkey="CMD1"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_thumb_down_icon.png"
+			disabled_bg="image/pandora_ontrols_thumb_down_icon.png"
+			normal_bg="image/pandora_ontrols_thumb_down_icon.png"/>
+		<button valkey="CMD2"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/live365_ontrols_thumb_add_icon.png"
+			disabled_bg="image/live365_ontrols_thumb_add_icon.png"
+			normal_bg="image/live365_ontrols_thumb_add_icon.png"/>
+		<button valkey="CMD3"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/live365_ontrols_thumb_mail_icon.png"
+			disabled_bg="image/live365_ontrols_thumb_mail_icon.png"
+			normal_bg="image/live365_ontrols_thumb_mail_icon.png"/>
+<!--			
+		<button valkey="CMD4"
+			lightbar_bg="image/pandora_ontrols_select_button.png"
+			focused_bg="image/pandora_ontrols_info_icon.png"
+			disabled_bg="image/pandora_ontrols_info_icon.png"
+			normal_bg="image/pandora_ontrols_info_icon.png"/>
+-->			
+		<linebreak/>
+	</ctrlgrp>
+
+	<text x="454" y="160" w="372" h="20" text="@@text-options" fontsize="18" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+
+	<image x="0" y="205" w="1280" h="239" image="image/music_player_function_frame_bg.png" bg="1"/> 
+
+	<image x="302" y="182" w="291" h="290" image="image/pandora_playing_frame_bg_n.png" bg="1"/>
+	<image x="328" y="208" w="238" h="238" image="@@album_icon" default_image="image/music_player_frame_albumart_icon.png" xmargin="0" ymargin="0" umargin="0" dmargin="0" bg="1" scale_type="fixratio" scale="100" align="hcenter"/>
+
+	<image x="319" y="199" w="256" h="256" image="image/music_player_frame_blister.png" bg="1"/>
+
+	<!--
+	<progress_bar name="point_bar" x="627" y="307" w="288" h="28" pb_back_img="image/music_player_line_bg.png" pb_front_img="image/music_player_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="500"/>
+	-->
+
+	<text x="627" y="287" w="288" h="24" text="@@station" fontsize="20" textcolor="0xe2e2e2"/>
+
+	<image image="@@play-state" x="896" y="301" w="40" h="40"/>
+
+	<text x="810" y="596" w="100" h="22" fontsize="20" text="@@audio_currenttime" align="right" textcolor="0xe2e2e2"/>
+	<text x="810" y="623" w="100" h="22" fontsize="20" text="@@station_biterate" align="right" textcolor="0xe2e2e2"/>
+
+	<image x="366" y="461" w="555" h="5" image="image/photo_thumb_line_01.png" bg="1"/>
+
+	<text text="@@songname" x="460" y="472" w="348" h="30" fontsize="26" numlines="1" textcolor="0x07b5ff" speed="1" delay="2" align="hcenter" auto_translate="1"/> 
+
+	<image x="366" y="506" w="555" h="1" image="image/photo_thumb_line_02.png" bg="1"/>
+
+	<image x="388" y="516" w="24" h="24" image="image/music_player_artist_icon_n.png"/>
+	<text text="@@artist" x="427" y="517" w="466" h="30" fontsize="20" align="left" speed="1" delay="2" auto_translate="1"/> 
+
+	<image x="366" y="544" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+	<image x="388" y="554" w="24" h="24" image="image/music_player_album_icon_n.png"/>
+	<text text="@@album" x="427" y="558" w="466" h="30" fontsize="20" align="left" speed="1" delay="2" auto_translate="1"/>
+
+	<image x="366" y="585" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+	<!-- fixed -->
+
+	<image x="628" y="322" w="47" h="47" image="@@bg-CMD0" lbimage="@@lbimage-CMD0" active="@@act-CMD0" lightbar="@@lightbar-CMD0"/>
+	<image x="675" y="322" w="47" h="47" image="@@bg-CMD1" lbimage="@@lbimage-CMD1" active="@@act-CMD1" lightbar="@@lightbar-CMD1"/>
+	<image x="722" y="322" w="47" h="47" image="@@bg-CMD2" lbimage="@@lbimage-CMD2" active="@@act-CMD2" lightbar="@@lightbar-CMD2"/>
+	<image x="769" y="322" w="47" h="47" image="@@bg-CMD3" lbimage="@@lbimage-CMD3" active="@@act-CMD3" lightbar="@@lightbar-CMD3"/>
+	<image x="816" y="322" w="47" h="47" image="@@bg-CMD4" lbimage="@@lbimage-CMD4" active="@@act-CMD4" lightbar="@@lightbar-CMD4"/>
+
+	<include filename="decoration.xml"/>
+	<include filename="./inc_loading.xml"/>
+	<include filename="./inc_live365_icon.xml"/>
+</page>

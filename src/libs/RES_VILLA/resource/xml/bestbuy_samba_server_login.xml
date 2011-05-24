@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<page>
+	<ctrlgrp lbmask="LRud">
+		<button valkey="Back"
+			normal_bg="image/bestbuy/bby_browse_back_n.png"
+			focused_bg="image/bestbuy/bby_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"/>
+		<linebreak/>
+		<button valkey="Schedule"
+			normal_bg="image/bestbuy/bby_bt_n.png"
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			clicked_bg="image/bestbuy/bby_bt_n.png" click_effect="tp"/>
+		<button valkey="Notification"
+			normal_bg="image/bestbuy/bby_bt_n.png"
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			clicked_bg="image/bestbuy/bby_bt_n.png" click_effect="tp"/>
+		<button valkey="FileLocation"
+			normal_bg="image/bestbuy/bby_bt_n.png"
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			clicked_bg="image/bestbuy/bby_bt_n.png" click_effect="tp"/>
+		<linebreak/>
+		<button valkey="USERNAME"
+			normal_bg="image/bestbuy/bby_prefrernce_signin_box_n.png"
+			click_bg="image/bestbuy/bby_prefrernce_signin_box_c.png"
+			focused_bg="image/bestbuy/bby_prefrernce_signin_box_f.png" />
+		<linebreak/>
+		<button valkey="PASSWORD"
+			normal_bg="image/bestbuy/bby_prefrernce_signin_box_n.png"
+			click_bg="image/bestbuy/bby_prefrernce_signin_box_c.png"
+			focused_bg="image/bestbuy/bby_prefrernce_signin_box_f.png" />
+		<linebreak/>
+		<button valkey="CANCEL" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<button valkey="OK" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+	</ctrlgrp>
+
+	<text x="233" y="86" w="400" h="26" fontsize="24" textcolor="0x186ca7" text="@@server_name"/>
+
+	<table x="105" y="140" w="1070" h="49" fontsize="20" cols="5" rows="1" align="hcenter" colspacing="5" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xff186ca7">
+		<imgbtn image="image/bestbuy/bby_bt_n.png" text=""/>
+		<imgbtn image="@@bg-Schedule" text="$$Download Schedule" 
+			active="@@act-Schedule" selected="@@sel-Schedule" click="@@click-Schedule" 
+			clicked="@@clicked-Schedule"/>
+		<imgbtn image="@@bg-Notification" text="$$Notification" 
+			active="@@act-Notification" selected="@@sel-Notification" click="@@click-Notification" 
+			clicked="@@clicked-Notification"/>
+		<imgbtn image="@@bg-FileLocation" text="$$Select File Location" 
+			active="@@act-FileLocation" selected="@@sel-FileLocation" click="@@click-FileLocation" 
+			clicked="@@clicked-FileLocation"/>
+		<imgbtn image="image/bestbuy/bby_bt_n.png" text=""/>
+	</table>
+
+	<text x="327" y="283" align="right" fontsize="24" w="150" h="26" textcolor="0xf2f2f2" text="$$Account:"/>
+	<imgbtn image="@@bg-USERNAME" text="" active="@@act-USERNAME" selected="@@sel-USERNAME" click="@@click-USERNAME" clicked="@@clicked-USERNAME"
+		x="500" y="267" w="374" h="50" />
+	<text x="518" y="281" align="left" fontsize="24" w="228" h="26" text="@@USERNAME" textcolor="0xfff2f2f2" />
+
+	<text x="327" y="377" align="right" fontsize="24" w="150" h="26" text="$$Password:" textcolor="0xfff2f2f2" />
+	<imgbtn image="@@bg-PASSWORD" text="" active="@@act-PASSWORD" selected="@@sel-PASSWORD" click="@@click-PASSWORD" clicked="@@clicked-PASSWORD"
+		x="500" y="361" w="374" h="50" />
+	<text x="518" y="375" align="left" fontsize="24" w="228" h="26" text="@@PASSWORD" textcolor="0xfff2f2f2"/>
+
+	<wrapper textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029" y="582" w="210" h="49" fontsize="20" align="hcenter">
+	<imgbtn x="427" text="$$Cancel" image="@@bg-CANCEL" x_offset="@@action_1_xoffset" 
+		disable="@@disable-CANCEL" active="@@act-CANCEL" selected="@@sel-CANCEL" click="@@click-CANCEL"/>
+	<imgbtn x="642" text="$$OK" image="@@bg-OK" x_offset="@@action_1_xoffset" 
+		disable="@@disable-OK" active="@@act-OK" selected="@@sel-OK" click="@@click-OK"/>
+	</wrapper>
+
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

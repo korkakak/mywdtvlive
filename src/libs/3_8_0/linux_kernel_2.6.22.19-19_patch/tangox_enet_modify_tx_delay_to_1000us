@@ -1,0 +1,29 @@
+--- drivers/net/tangox_enet.c.orig	2009-11-09 21:39:24.000000000 +0800
++++ drivers/net/tangox_enet.c	2009-11-10 11:16:27.000000000 +0800
+@@ -380,7 +380,11 @@
+ 
+ 	val = enet_readl(ENET_TXC_CR(priv->enet_mac_base)) & 0xffff;
+ #ifndef ENABLE_TX_CHAINING
++#ifdef CONFIG_TANGOX_ENET_TX_DELAY_1000US
++#define MAX_TX_TIMEOUT	1000	/* usec */
++#else
+ #define MAX_TX_TIMEOUT	100	/* usec */
++#endif
+ 	for (len = 0; len < MAX_TX_TIMEOUT; len++) {
+ 		val = enet_readl(ENET_TXC_CR(priv->enet_mac_base)) & 0xffff;
+ 		if (val & TCR_EN)
+--- drivers/net/Kconfig.orig	2009-11-10 11:09:22.000000000 +0800
++++ drivers/net/Kconfig	2009-11-10 11:13:52.000000000 +0800
+@@ -1924,6 +1924,12 @@
+ 	  This led chip brand is C+ and the model is IP101A. The option use
+ 	  MII set phy some register bit to turn on or off the ethernet LED.
+ 
++config TANGOX_ENET_TX_DELAY_1000US
++	bool "Modify tx delay to be 1000us in worse case"
++	depends on TANGOX_ENET
++	help
++		The tangox enent driver losts package sometimes. Change the TX delay time to be 1000us in worse case. The default is 100us.
++
+ config ACENIC
+ 	tristate "Alteon AceNIC/3Com 3C985/NetGear GA620 Gigabit support"
+ 	depends on PCI

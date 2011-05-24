@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page background="image/cinemanow/CN_browse_bg.jpg">
+	<ctrlgrp> 
+		<button valkey="Back" 
+			normal_bg="image/cinemanow/cn_browse_back_n.png" 
+			focused_bg="image/cinemanow/cn_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/cinemanow/cn_browse_home_n.png"
+			focused_bg="image/cinemanow/cn_browse_home_f.png"/>
+		<linebreak/>
+		 <button valkey="CANCEL"
+			normal_bg="image/cinemanow/cn_bt_n.png"
+			focused_bg="image/cinemanow/cn_bt_f.png"
+			click_bg="image/cinemanow/cn_bt_c.png"
+			click_effect="tp"/>
+	</ctrlgrp>
+	<wrapper y="421" w="210" h="49" align="hcenter" fontsize="20" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029">
+		<imgbtn image="@@bg-CANCEL" text="@@text-CANCEL" active="@@act-CANCEL" x="535"/>
+	</wrapper>
+	<include filename="./inc_cinemanow_messagebox.xml"/>
+	<include filename="./cinemanow_common.xml"/>
+</page>

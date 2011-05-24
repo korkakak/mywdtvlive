@@ -1,0 +1,11 @@
+--- pngrtran_org.c	2008-12-29 04:37:55.000000000 +0800
++++ pngrtran.c	2008-12-29 04:38:34.000000000 +0800
+@@ -831,7 +831,7 @@
+    }
+ 
+    if ((png_ptr->transformations & (PNG_GAMMA | PNG_RGB_TO_GRAY)) &&
+-        png_ptr->gamma != 0.0)
++        (!(png_ptr->gamma == 0.0)))
+    {
+       png_build_gamma_table(png_ptr);
+ #if defined(PNG_READ_BACKGROUND_SUPPORTED)

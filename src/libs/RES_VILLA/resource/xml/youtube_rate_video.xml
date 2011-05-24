@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/Villa_bg.png" type="basic">
+	<ctrlgrp>
+		<button valkey="LEVEL"/>
+		<linebreak/>
+		<button valkey="YES"
+			focused_bg="image/Villa_button_blue_f_01.png"
+			normal_bg="image/Villa_button_blue_n_01.png"/>
+		<button valkey="NO"
+			focused_bg="image/Villa_button_blue_f_01.png"
+			normal_bg="image/Villa_button_blue_n_01.png"/>
+	</ctrlgrp>
+	<text text="@@title" x="97" y="115" w="600" h="52" fontsize="42" textcolor="0x07b5ff"/>
+	<image image="@@video_thumb_outline" x="380" y="216" w="142" h="93"/>
+	<image image="@@video_thumb_icon" x="389" y="225" w="120" h="72" align="hcenter" scale="100"/>
+	<text text="@@video_title" x="540" y="230" w="500" h="28" fontsize="26" textcolor="0xe2e2e2"/>
+	<text text="@@video_desc" x="540" y="268" w="400" h="38" fontsize="12" textcolor="0xe2e2e2" numlines="2"/>
+
+	<image image="@@level_bg_img" x="382" y="314" w="359" h="87"/>
+	<image image="@@level_mask_img" x="382" y="314" w="359" h="87"/>
+	<text text="@@grade" x="767" y="346" w="274" h="28" fontsize="26" textcolor="0xe2e2e2"/>
+
+	<image image="@@bg-YES" x="479" y="417" w="156" h="52"/>
+	<image image="@@bg-NO" x="638" y="417" w="156" h="52"/>
+	<text text="$$OK" x="479" y="417" w="156" h="52" fontsize="18" align="hcenter" textcolor="0xffffff"/>
+	<text text="$$Cancel" x="638" y="417" w="156" h="52" fontsize="18" align="hcenter" textcolor="0xffffff"/>
+	<image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+</page>

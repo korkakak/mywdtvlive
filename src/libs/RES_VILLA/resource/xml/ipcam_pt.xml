@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page background="image/welcome_background_bg.jpg" wait_seconds="1">
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+
+	<image image="image/browser_list_arrow_up.png" x="640" y="22" w="32" h="35"/>
+	<image image="image/browser_list_arrow_down.png" x="640" y="680" w="32" h="35"/>
+	<image image="image/pip_live_left.png" x="106" y="360" w="32" h="35"/>
+	<image image="image/pip_live_right.png" x="1180" y="360" w="32" h="35"/>
+</page>

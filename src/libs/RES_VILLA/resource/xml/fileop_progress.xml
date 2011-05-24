@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page type="basic" overlay="1">
+
+
+	<ctrlgrp>
+			<ctrlgrp valkey="CONFIRM" lbmask="LR">
+					<button valkey="OK"
+							focused_bg="image/Villa_button_blue_f_01.png"
+							normal_bg="image/Villa_button_blue_n_01.png"/>
+					<button valkey="CANCEL"
+							focused_bg="image/Villa_button_blue_f_01.png"
+							normal_bg="image/Villa_button_blue_n_01.png"/>
+			</ctrlgrp>
+			<!--  // TBD: Cancel in progressing
+			<ctrlgrp valkey="PROGRESS" lbmask="LR">
+					<button valkey="CANCEL"
+							focused_bg="image/Villa_button_blue_f_01.png"
+							normal_bg="image/Villa_button_blue_n_01.png"/>
+			</ctrlgrp>
+			-->
+			<ctrlgrp valkey="DONE" lbmask="LR">
+					<button valkey="FINISH"
+							focused_bg="image/Villa_button_blue_f_01.png"
+							normal_bg="image/Villa_button_blue_n_01.png"/>
+			</ctrlgrp>
+	</ctrlgrp>
+
+	<image image="@@img-confirm" x="936" y="225" w="125" h="142" />
+	<table x="820" y="370" w="332" h="120" rows="3" cols="1" hrow0="0" hrow2="0">
+			<image image="image/villa_fileManagement_line_right.png" ymargin="0"/>
+			<text text="@@text-confirm" fontsize="20" textcolor="0xe2e2e2" align="hcenter" numlines="2"/>
+			<image image="image/villa_fileManagement_line_right.png" ymargin="0"/>
+	</table>
+
+	<table x="820" y="504" w="333" h="52" rows="1" cols="2" disable="@@disable-CONFIRM">
+			<imgbtn image="@@bg-OK" text="$$YES" active="@@act-OK" actnoseltextcolor="0xffffff" align="hcenter" fontsize="18"/>
+			<imgbtn image="@@bg-CANCEL" text="$$NO" active="@@act-CANCEL" actnoseltextcolor="0xffffff" align="hcenter" fontsize="18"/>
+	</table>
+
+	<progress_bar name="fileop_progress_bar" x="813" y="504" w="355" h="32" align="hcenter" pb_back_img="image/villa_fileManagement_progress_bar_n.png" pb_front_img="image/villa_fileManagement_progress_bar_f.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_start_delay="0" pb_delay="500" disable="@@disable-PROGRESS"/>
+
+	<text x="820" y="575" w="333" h="80" fontsize="20" align="left" numlines="4" disable="@@disable-CONFIRM_ONLY" textcolor="0xe2e2e2" 
+			text="$$Enabling file movement, background music will now be stopped..." />
+
+	<text x="820" y="575" w="333" h="80" fontsize="20" align="left" numlines="4" disable="@@disable-PROGRESS" textcolor="0xe2e2e2" 
+			text="$$Press [BACK] to cancel." />
+
+	<table x="820" y="504" w="333" h="52" rows="1" cols="1" disable="@@disable-DONE">
+			<imgbtn image="@@bg-FINISH" text="$$OK" active="@@act-FINISH" actnoseltextcolor="0xffffff" align="hcenter" fontsize="18"/>
+	</table>
+
+	<include filename="./decoration.xml"/>
+
+</page>

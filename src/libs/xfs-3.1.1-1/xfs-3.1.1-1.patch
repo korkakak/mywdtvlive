@@ -1,0 +1,23 @@
+diff -uBbNr xfs-3.1.1-1/include/builddefs.in xfs-3.1.1-1.modify/include/builddefs.in
+--- xfs-3.1.1-1/include/builddefs.in	2010-03-12 09:52:36.000000000 +0800
++++ xfs-3.1.1-1.modify/include/builddefs.in	2010-03-12 19:41:36.000000000 +0800
+@@ -98,7 +98,7 @@
+ HAVE_GETMNTINFO = @have_getmntinfo@
+ HAVE_FALLOCATE = @have_fallocate@
+ 
+-GCCFLAGS = -funsigned-char -fno-strict-aliasing -Wall 
++GCCFLAGS = -funsigned-char -fno-strict-aliasing -Wall -I$(TOPDIR)/../../uuid-$(CONF_UUID_VERSION)/uuid-$(CONF_UUID_VERSION)/lib/
+ #	   -Wbitwise -Wno-transparent-union -Wno-old-initializer -Wno-decl
+ 
+ ifeq ($(PKG_PLATFORM),linux)
+diff -uBbNr xfs-3.1.1-1/Makefile xfs-3.1.1-1.modify/Makefile
+--- xfs-3.1.1-1/Makefile	2010-03-12 09:52:36.000000000 +0800
++++ xfs-3.1.1-1.modify/Makefile	2010-03-12 19:42:23.000000000 +0800
+@@ -18,6 +18,7 @@
+ MAKEOPTS = --no-print-directory Q=$(Q)
+ 
+ TOPDIR = .
++include $(TOPDIR)/../../../../Target.options
+ HAVE_BUILDDEFS = $(shell test -f $(TOPDIR)/include/builddefs && echo yes || echo no)
+ 
+ ifeq ($(HAVE_BUILDDEFS), yes)

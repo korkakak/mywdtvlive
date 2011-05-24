@@ -1,0 +1,40 @@
+@charset "utf-8";
+.Online_panel_text {
+	font-family:Tahoma,Geneva,sans-serif;
+	color:#616264;
+	font-size:11px;
+	padding-left: 25%;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999999;
+}
+#live365 {
+	background-image: url(online/live365_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+
+
+
+#blockbuster {
+	background-image: url(online/blockbust_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#Mediafly {
+	background-image: url(online/mediafly_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 160px;
+}
+#Netflix {
+	background-image: url(online/netflix_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#Pandora {
+	background-image: url(online/pandora_logo.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}

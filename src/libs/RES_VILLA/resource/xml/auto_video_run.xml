@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page type="Basic" numitems="6">
+
+	<include filename="./inc_loading.xml"/>
+
+  <image image="@@keyicon_ex" x="547" y="54" w="45" h="45" align="hcenter" ignore_keycolor="1"/>
+  <image image="@@state" x="599" y="54" w="45" h="45" align="hcenter" ignore_keycolor="1"/>
+  <image image="@@volume" x="225" y="370" w="275" h="41" ignore_keycolor="1"/>
+</page>

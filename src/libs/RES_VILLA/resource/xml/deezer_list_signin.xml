@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" type="basic">
+	<include filename="./inc_setup_headline.xml"/>
+	<listbox valkey="account_list" autoenter="1" autoswitch="0"  move="page" cols="1" rows="7" lbmask="lr"  loop_scroll="1"/>
+	<text text="@@title" x="97" y="122" w="540" h="44" align="left" fontsize="42" textcolor="0x07B5FF" />
+
+	<table x="281" y="235" w="720" h="357" rows="7" rowspacing="0" lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png">
+		<image lightbar="@@lightbar-account_list-0" active="@@act-account_list-0"/>
+		<image lightbar="@@lightbar-account_list-1" active="@@act-account_list-1"/>
+		<image lightbar="@@lightbar-account_list-2" active="@@act-account_list-2"/>
+		<image lightbar="@@lightbar-account_list-3" active="@@act-account_list-3"/>
+		<image lightbar="@@lightbar-account_list-4" active="@@act-account_list-4"/>
+		<image lightbar="@@lightbar-account_list-5" active="@@act-account_list-5"/>
+		<image lightbar="@@lightbar-account_list-6" active="@@act-account_list-6"/>
+	</table>
+
+	<wrapper x="293" w="695" h="1">
+		<image image="@@browse_0_line" ymargin="0" bg="1" y="285"/>
+		<image image="@@browse_1_line" ymargin="0" bg="1" y="336"/>
+		<image image="@@browse_2_line" ymargin="0" bg="1" y="387"/>
+		<image image="@@browse_3_line" ymargin="0" bg="1" y="438"/>
+		<image image="@@browse_4_line" ymargin="0" bg="1" y="489"/>
+		<image image="@@browse_5_line" ymargin="0" bg="1" y="540"/>
+		<image image="@@browse_6_line" ymargin="0" bg="1" y="591"/>
+	</wrapper>
+
+	<table x="281" y="235" w="720" h="357" lmargin="50" rmargin="50" cols="1" rows="7" colspacing="0" rowspacing="0" 
+		textcolor="@@account_textcolor" actnoseltextcolor="@@account_noseltextcolor" 
+		fontsize="@@account_fontsize" selected_fontsize="@@account_selected_fontsize"
+		speed="1" delay="2" align="hcenter">
+		<text text="@@account_0_text" 
+			textcolor="@@account_0_textcolor" actnoseltextcolor="@@account_0_noseltextcolor" 
+			fontsize="@@account_0_fontsize" selected_fontsize="@@account_0_selected_fontsize"
+			active="@@act-account_list-0"/>
+		<text text="@@account_1_text"
+			textcolor="@@account_1_textcolor" actnoseltextcolor="@@account_1_noseltextcolor" 
+			fontsize="@@account_1_fontsize" selected_fontsize="@@account_1_selected_fontsize"
+			active="@@act-account_list-1"/>
+		<text text="@@account_2_text" active="@@act-account_list-2"/>
+		<text text="@@account_3_text" active="@@act-account_list-3"/>
+		<text text="@@account_4_text" active="@@act-account_list-4"/>
+		<text text="@@account_5_text" active="@@act-account_list-5"/>
+		<text text="@@account_6_text" active="@@act-account_list-6"/>
+	</table>
+
+	<wrapper x="321" w="11" h="48">
+		<image image="@@ss-favorite-0" y="235" active="@@act-profile_list-0"/>
+		<image image="@@ss-favorite-1" y="286" active="@@act-profile_list-1"/>
+		<image image="@@ss-favorite-2" y="337" active="@@act-profile_list-2"/>
+		<image image="@@ss-favorite-3" y="388" active="@@act-profile_list-3"/>
+		<image image="@@ss-favorite-4" y="439" active="@@act-profile_list-4"/>
+		<image image="@@ss-favorite-5" y="490" active="@@act-profile_list-5"/>
+		<image image="@@ss-favorite-6" y="541" active="@@act-profile_list-6"/>
+	</wrapper>
+
+	<image image="@@ss-prev" x="616" y="195" w="38" h="27"/>
+	<image image="@@ss-more" x="616" y="605" w="38" h="27"/>
+	<image image="@@wrongkeyicon" x="1100" y="71" w="52" h="53" align="left" />
+
+	<image image="./image/deezer/deezer_logo.png" x="1049" y="610" w="135" h="46"/>
+	<include filename="./inc_loading.xml"/>
+</page>

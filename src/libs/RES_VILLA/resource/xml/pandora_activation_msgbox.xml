@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+  <ctrlgrp>
+     <button valkey="OK"
+	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+     <button valkey="CANCEL"
+	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+
+  <imgbtn image="@@bg-CANCEL" text="Cancel" active="@@act-CANCEL" actnoseltextcolor="0xffffff" x="644" y="490" w="343" h="78" align="hcenter" fontsize="18"/>
+  <imgbtn image="@@bg-OK" text="Continue" active="@@act-OK" actnoseltextcolor="0xffffff" x="301" y="490" w="343" h="78" align="hcenter" fontsize="18"/>
+  
+  <text text="@@title" x="97" y="112" w="620" h="46" fontsize="42" align="left" textcolor="0x07b5ff"/>
+  <text text="@@message" x="230" y="239" w="820" numlines="2" h="84" fontsize="24" align="left" textcolor="0xffffff"/>
+  <text text="Your Activation Code is:" x="230" y="341" w="320" h="26" fontsize="24" align="left" textcolor="0xffffff"/>
+  <text text="@@active_code" x="550" y="341" w="327" h="26" fontsize="26" align="left" textcolor="0x990000"/>
+  <text text="When you are done with that, come back to this screen and press 'continue'." x="230" y="391" w="820" h="84" fontsize="24" numlines="2" align="left" textcolor="0xffffff"/>
+
+  <image image="image/pandora_logo.png" x="1069" y="591" w="158" h="65"/>
+</page>

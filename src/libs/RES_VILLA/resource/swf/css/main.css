@@ -1,0 +1,705 @@
+/* 
+ * supported attribs:
+ * 
+ * text-align, 
+ * font-size, 
+ * text-decoration, 
+ * margin-left, 
+ * margin-right, 
+ * font-weight, 
+ * font-style, 
+ * text-index, 
+ * font-family, 
+ * color, and 
+ * display
+ */
+ 
+div.white14arial
+{
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: left;
+    
+}
+
+div.white14ariallightgray1border
+{
+    font-family: Arial;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-align: left;
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #1f1f1f;
+    
+}
+
+div.white15arial
+{
+    font-family: Arial;
+    font-size: 15px;
+    color: #FFFFFF;
+    
+}
+
+div.white16arial
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #FFFFFF;
+    
+}
+
+div.green16arial
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #99cc33;
+    
+}
+
+div.white16ariallh18
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.8;
+    
+}
+
+div.green16ariallh18
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #99cc33;
+    line-height: 1.8;
+    
+}
+
+div.white18ariallh16center
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.6;
+    text-align: center;
+    
+}
+
+div.green18ariallh16center
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #99cc33;
+    line-height: 1.6;
+    text-align: center;
+    
+}
+
+div.gray16arialright
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #535353;
+    text-align: right;
+    
+}
+
+div.gray22arialcenter
+{
+    font-family: Arial;
+    font-size: 24px;
+    color: #AAAAAA;
+    text-align: center;
+    
+}
+
+div.white16ariallh16
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #FFFFFF;    
+    line-height: 1.6;
+    overflow:hidden;
+    
+}
+
+div.white16ariallh15
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #FFFFFF;    
+    line-height: 1.5;
+    overflow:hidden;
+    
+}
+
+div.green16ariallh15
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #99cc33;
+    line-height: 1.5;
+    overflow:hidden;
+    
+}
+
+div.white24arialboldcenter
+{
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+div.white27futuracenter
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 27px;
+    color: #FFFFFF;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    
+}
+div.white16arialcenter
+{
+    font-family: Arial;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+
+div.white18arialcenter
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+
+div.white17arialcenter
+{
+    font-family: Arial;
+    font-size: 17px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+
+div.white17arial
+{
+    font-family: Arial;
+    font-size: 17px;
+    color: #FFFFFF;
+    
+}
+
+div.white17arialcenterlh16
+{
+    font-family: Arial;
+    font-size: 17px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.6;
+    
+}
+
+div.white18arialcenterlh16
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.6;
+    
+}
+
+div.white18arialcenterlh18
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.8;
+    
+}
+
+div.gray18arialcenterlh18
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #666666;
+    text-align: center;
+    line-height: 1.8;
+    
+}
+
+div.ddd18arialcenterlh18
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #DDDDDD;
+    text-align: center;
+    line-height: 1.8;
+    
+}
+
+div.bbb18arial
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #BBBBBB;
+    
+}
+
+div.bbb15ariallh14
+{
+    font-family: Arial;
+    font-size: 15px;
+    color: #BBBBBB;
+    line-height: 1.4;
+    
+}
+
+div.bbb22arialbold
+{
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: bold;
+    color: #BBBBBB;
+    
+}
+
+div.green22arialboldcenter
+{
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: bold;
+    color: #99cc33;
+    text-align: center;
+    
+}
+
+div.green20arialcenter
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #99cc33;
+    text-align: center;
+    
+}
+
+div.gray20arialcenter
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #808080;
+    text-align: center;
+    
+}
+
+div.white20arialcenter
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+div.green20arial
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #99cc33;
+    
+}
+
+div.white20arial
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #FFFFFF;
+    
+}
+div.gray20arial
+{
+    font-family: Arial;
+    font-size: 20px;
+    color: #808080;
+    
+}
+
+div.white23arial
+{
+    font-family: Arial;
+    font-size: 23px;
+    color: #FFFFFF;
+    
+}
+
+
+
+div.white24arialbold
+{
+    font-family: Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    
+}
+
+div.gray14arial
+{
+    font-family:Arial;
+    font-size: 14px;
+    color: #808080;
+    
+}
+
+div.gray14arialcenter
+{
+    font-family:Arial;
+    font-size: 14px;
+    color: #808080;
+    text-align: center;
+    
+}
+
+div.green14arialcenter
+{
+    font-family:Arial;
+    font-size: 14px;
+    color: #99cc33;
+    text-align: center;
+    
+}
+
+div.white12arial
+{
+    font-family:Arial;
+    font-size: 12px;
+    color: #FFFFFF;
+    
+}
+
+div.white18arial
+{
+    font-family:Arial;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+div.gray18arial
+{
+    font-family:Arial;
+    font-size: 18px;
+    color: #808080;
+    
+}
+
+div.aaa18arial
+{
+    font-family:Arial;
+    font-size: 18px;
+    color: #AAAAAA;
+    
+}
+
+div.red18arialcenter
+{
+    font-family:Arial;
+    font-size: 18px;
+    color: #FF0000;
+    text-align: center;
+    
+}
+
+div.puke18arialbold
+{
+    font-family:Arial;
+    font-size: 18px;
+    font-weight: bold;
+    color: #99cc33;
+    
+}
+
+div.puke18arialcenterlh18
+{
+    font-family: Arial;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.8;
+    color: #99cc33;
+    
+}
+
+div.puke18arialcenterlh16
+{
+    font-family: Arial;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.6;
+    color: #99cc33;
+    
+}
+
+div.puke17arialcenterlh16
+{
+    font-family: Arial;
+    font-size: 17px;
+    text-align: center;
+    line-height: 1.6;
+    color: #99cc33;
+    
+}
+
+div.blue22arial
+{
+   font-family:Arial;
+    font-size: 22px;
+    font-weight: bold;
+    color: #0000FF; 
+    
+}
+
+div.gray18arialcenter
+{
+    font-family:Arial;
+    font-size: 18px;
+    font-weight: normal;
+    color: #999999;
+    text-align: center;
+    
+}
+
+div.gray24arialboldcenter
+{
+    font-family:Arial;
+    font-size: 24px;
+    font-weight: bold;
+    color: #999999;
+    text-align: center;
+    
+}
+
+div.gray24futuraboldcenter
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 24px;
+    color: #999999;
+    text-align: center;
+    
+}
+
+
+div.gray16arial
+{
+    font-family:Arial;
+    font-size: 16px;
+    font-weight: normal;
+    color: #999999;
+    
+}
+
+div.gray12arial
+{
+    font-family:Arial;
+    font-size: 12px;
+    font-weight: normal;
+    color: #AAAAAA;
+    
+}
+
+div.gray12arialboldleft
+{
+    font-family:Arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: left;
+    
+}
+
+div.gray12arialboldright
+{
+    font-family:Arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: #AAAAAA;
+    text-align: right;
+    
+}
+
+div.darkgray18arial
+{
+    font-family:Arial;
+    font-size: 18px;
+    font-weight: normal;
+    color: #666666;
+    
+}
+
+div.puke18futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 18px;
+    color: #99cc33;
+    
+}
+div.white18futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+    
+}
+div.white18futuraclip
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+}
+div.white16futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+    
+}
+div.white16futuraclip
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+div.white24futurabold
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: left;
+    
+}
+
+
+div.gray18futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 18px;
+    color: #808080;
+    
+}
+
+div.gray22futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 22px;
+    color: #808080;
+    
+}
+
+
+div.gray14futura
+{
+    font-family:FUTURAM; /* Substitute */
+    font-size: 14px;
+    color: #808080;
+    
+}
+
+div.white24futuraboldcenter
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 24px;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+
+div.white20futura
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 20px;
+    color: #FFFFFF;
+    
+}
+
+div.white23futura2linemax
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 23px;
+    color: #FFFFFF;
+    overflow: hidden;
+    max-height: 54px;
+}
+
+div.white23futura
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 23px;
+    color: #FFFFFF;
+    
+}
+
+div.white32futuraboldcenter
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 32px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    
+}
+
+div.green22futuraboldcenter
+{
+    font-family: FUTURAM; /* Substitute */
+    font-size: 22px;
+    color: #99cc33;
+    text-align: center;
+    
+}
+
+div.yellow28arial
+{
+    font-family:Arial;
+    font-size: 28px;
+    color: #FFFF00; 
+    text-align: center;
+}
+
+div.black28arial
+{
+    font-family:Arial;
+    font-size: 28px;
+    color: #000000; 
+    text-align: center;
+    
+}
+
+/* suggest-matched-text comes from 
+   http://www.hulu.com/videos/suggest?format=xml&search=s 
+   The default font for that div is gray16arial */
+span.suggest-matched-text
+{
+    font-family:Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    
+}

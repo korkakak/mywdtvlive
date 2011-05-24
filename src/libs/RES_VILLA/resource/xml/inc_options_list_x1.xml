@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/options_menu_bg.png" x="253" y="0" w="775" h="173" bg="1" disable="@@disable-options_bg"/>
+	<table x="594" y="32" h="84" w="93" cols="1" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@bg-QML3"/>
+	</table>
+	<table x="594" y="32" h="84" w="93" cols="1" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@lightbar-QML3" bg="1"/>
+	</table>
+
+</wrapper>
+

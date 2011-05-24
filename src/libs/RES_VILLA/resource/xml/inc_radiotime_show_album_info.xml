@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<wrapper>
+	<text text="@@focused_title" x="174" y="417" w="330" h="22" fontsize="20" textcolor="0x07b5ff" align="left"/>
+
+	<text text="@@focused_genre" x="174" y="447" w="330" h="22" fontsize="16" textcolor="0xd3d3d3" align="left"/>
+
+	<image image="./image/deezer/deezer_left_info_line.png" x="174" y="498" w="329" h="1"/>
+	<text text="@@focused_info" x="174" y="509" w="330" h="70" fontsize="12" textcolor="0xe2e2e2" align="left" numlines="3"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="174" y="586" w="329" h="1"/>
+</wrapper>

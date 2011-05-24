@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+	<ctrlgrp lbmask="l">
+	    <button valkey="OK"
+	    	    focused_bg="image/Villa_button_blue_f_01.png"
+		    normal_bg="image/Villa_button_blue_n_01.png"/>
+	</ctrlgrp>
+	<text text="$$Register Product" x="249" y="132" w="600" h="44" fontsize="42" textcolor="0x07b5ff"/>
+	<image image="image/villa_Fail_message_bg.png"x="319" y="186" w="641" h="308"/>
+	<text text="@@msg" x="384" y="293" w="511" h="78" fontsize="24" align="hcenter" numlines="3" textcolor="0xe2e2e2"/>
+	<image image="@@bg-OK" x="562" y="388" w="156" h="52"/>
+	<text text="$$OK" x="570" y="404" w="139" h="20" fontsize="18" textcolor="0xffffff" align="hcenter"/>
+</page>
+

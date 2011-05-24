@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+	<ctrlgrp>
+		<button valkey="OK"
+			focused_bg="image/Villa_button_blue_f_02.png"
+			normal_bg="image/Villa_button_blue_n_02.png"/>
+	</ctrlgrp>
+
+  <table x="477" y="390" w="343" h="78" cols="1" colspacing="0" fontsize="20" align="hcenter">
+    <imgbtn image="@@bg-OK" text="OK" active="@@act-OK" actnoseltextcolor="0xffffff" align="hcenter"/>
+  </table> 
+  <text text="@@message" x="330" y="160" w="620" h="220" 
+	fontsize="26" align="hcenter" numlines="7" textcolor="0xe2e2e2"/>
+
+</page>

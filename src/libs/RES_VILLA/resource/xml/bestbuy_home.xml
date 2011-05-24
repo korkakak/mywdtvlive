@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<page background="image/bestbuy/bby_common_bg.jpg" ignore_desktop_settings="1">
+	<ctrlgrp lbmask="LR">
+		<button valkey="Movies" 
+			normal_bg="image/bestbuy/bby_main_movies_n.png"
+			focused_bg="image/bestbuy/bby_main_movies_f.png"
+			disabled_bg="image/bestbuy/bby_main_movies_c.png"/>
+		<button valkey="TVShows" 
+			normal_bg="image/bestbuy/bby_main_tv_shows_n.png"
+			focused_bg="image/bestbuy/bby_main_tv_shows_f.png"
+			disabled_bg="image/bestbuy/bby_main_tv_shows_c.png"/>
+		<button valkey="SearchAll" 
+			normal_bg="image/bestbuy/bby_main_search_all_n.png"
+			focused_bg="image/bestbuy/bby_main_search_all_f.png" 
+			disabled_bg="image/bestbuy/bby_main_search_all_c.png"/>
+		<button valkey="DownloadManager"/>
+		<linebreak/>
+		<button valkey="MyVideos" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png"
+			click_bg="image/bestbuy/bby_bt_c.png"
+			click_effect="tp"/>
+		<button valkey="WishLists" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			click_bg="image/bestbuy/bby_bt_c.png" 
+			click_effect="tp"/>
+		<button valkey="Settings" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			click_bg="image/bestbuy/bby_bt_c.png" 
+			click_effect="tp"/>
+		<button valkey="Preference" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			click_bg="image/bestbuy/bby_bt_c.png" 
+			click_effect="tp"/>
+		<button valkey="Help" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			click_bg="image/bestbuy/bby_bt_c.png" 
+			click_effect="tp"/>
+	</ctrlgrp>
+
+	<image image="image/bestbuy/bby_logo.png" x="111" y="84" w="288" h="58"/>
+
+	<table x="210" y="221" w="860" h="304" rows="1" cols="4" colspacing="20">
+		<image image="@@bg-Movies" active="@@act-Movies"/>
+		<image image="@@bg-TVShows" active="@@act-TVShows"/>
+		<image image="@@bg-SearchAll" active="@@act-SearchAll"/>
+		<image image="@@dlman_icon"/>
+
+	</table>	
+	<table x="105" y="533" w="1050" h="49" fontsize="20" rows="1" cols="5" colspacing="4" align="hcenter" textcolor="0xff727272" actoverlistcolor="0xfff2f2f2" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029">
+		<imgbtn image="@@bg-MyVideos" text="My Videos" active="@@act-MyVideos" selected="@@sel-MyVideos" click="@@click-MyVideos"/>
+		<imgbtn image="@@bg-WishLists" text="Wish List" active="@@act-WishLists" selected="@@sel-WishLists" click="@@click-WishLists"/>
+		<imgbtn image="@@bg-Settings" text="Settings" active="@@act-Settings" selected="@@sel-Settings" click="@@click-Settings"/>
+		<imgbtn image="@@bg-Preference" text="Preference" active="@@act-Preference" selected="@@sel-Preference" click="@@click-Preference"/>
+		<imgbtn image="@@bg-Help" text="Help" active="@@act-Help" selected="@@sel-Help" click="@@click-Help"/>
+	</table>
+	<image image="image/blockbuster/bb_connect_storage_icon.png" x="100" y="638" w="33" h="36" disable="@@disable-storage"/>
+	<text text="$$Please connect a USB hard drive." x="142" y="649" w="700" h="22" fontsize="20" textcolor="0xffffffff" disable="@@disable-storage"/>
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<image image="image/bestbuy/bb_cn_logo.png" x="974" y="643" w="241" h="36" />
+	<image image="@@notify_image" x="812" y="39" w="109" h="109" bg="1"/>
+</page>

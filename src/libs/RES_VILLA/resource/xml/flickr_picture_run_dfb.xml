@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page>
+  <image image="fillrect" x="0" y="0" w="1280" h="720" keycolor="1" ignore_keycolor="1" bg="1" textcolor="0x01000000"/>
+    <ctrlgrp valkey="options" autoenter="1" lbmask="LR"> 
+    <button valkey="QML0"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_user_info_icon.png"
+            normal_bg="image/villa_options_menu_user_info_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Info"/>
+    <button valkey="QML1"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+	    focused_bg="image/villa_options_menu_pan_icon.png"
+            normal_bg="image/villa_options_menu_pan_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Pan"/>
+    <button valkey="QML2"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_90clockwise_icon.png"
+            normal_bg="image/villa_options_menu_90clockwise_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Rotate right"/>
+    <button valkey="QML3"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_90counter_cw_icon.png"
+            normal_bg="image/villa_options_menu_90counter_cw_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Rotate left"/>
+    <button valkey="QML4"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+	    focused_bg="image/villa_options_menu_zoom_in_icon.png"
+	    normal_bg="image/villa_options_menu_zoom_in_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Zoom in"/>
+    <button valkey="QML5"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_zoom_out_icon.png"
+            normal_bg="image/villa_options_menu_zoom_out_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Zoom out"/>
+    <button valkey="QML6"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_download_photo_icon.png"
+            normal_bg="image/villa_options_menu_download_photo_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Download photo"/>
+    <button valkey="QML7"
+	    lightbar_bg="image/villa_options_menu_select_bar.png"
+            focused_bg="image/villa_options_menu_info_icon.png"
+            normal_bg="image/villa_options_menu_info_icon.png"
+	    group_valkey="OPTION"
+            group_focused_text="$$Info bar"/>
+    </ctrlgrp>
+
+    <image image="image/video_control_frame_bg.png" x="0" y="535" w="1280" h="165" disable="@@photo_info_disable" bg="1"/>
+
+	<progress_bar name="slideshow_timebar" x="162" y="603" w="504" h="28" pb_back_img="image/video_control_time_played_line_bg.png" pb_front_img="image/Video_Player_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="500" disable="@@photo_info_disable"/>
+
+	<!--	
+	<progress_bar name="slideshow_timebar" x="171" y="583" w="560" h="28" pb_back_img="image/slideshow_player_time_played_line_bg.png" pb_front_img="image/slideshow_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="1000" disable="@@photo_info_disable"/>
+	-->
+
+	<image image="@@slideshow_state" x="124" y="597" w="44" h="50" disable="@@photo_info_disable"/>
+
+	<text text="@@info_filename" x="647" y="599" w="180" h="20" fontsize="18" textcolor="0xffffff" speed="1" delay="2" disable="@@photo_info_disable" align="left" auto_translate="1"/>
+
+	<text text="@@artist" x="647" y="620" w="180" h="16" fontsize="14" textcolor="0xffffff" speed="1" delay="2" disable="@@photo_info_disable" align="left" auto_translate="1"/>
+	<!--
+	<text text="@@info_cur_pos" x="968" y="580" w="106" h="32" fontsize="24" textcolor="0xffffff" disable="@@photo_info_disable" align="right"/>
+
+	<text text="@@info_total_count" x="1074" y="592" w="96" h="20" fontsize="18" textcolor="0x999999" disable="@@photo_info_disable" align="left"/>
+
+	<image image="@@info_trackicon" x="185" y="618" w="35" h="38" disable="@@photo_info_disable"/>
+	<text text="@@info_trackname" x="232" y="624" w="425" h="36" fontsize="24" textcolor="0x07b5ff" speed="1" delay="2" disable="@@photo_info_disable" align="left" auto_translate="1"/>
+
+	<text text="@@info_photo_detail" x="675" y="618" w="268" h="20" fontsize="18" textcolor="0x999999" speed="1" delay="2" disable="@@photo_info_disable" align="left"/>
+	-->
+	<image image="image/video_control_compart_line.png" x="836" y="592" w="2" h="51" disable="@@photo_info_disable"/>
+
+	<!--
+	<image image="@@repeat-ico" x="968" y="618" w="48" h="36" disable="@@photo_info_disable"/>
+	<image image="@@shuffle-ico" x="1018" y="618" w="48" h="36" disable="@@photo_info_disable"/>
+	-->
+	<include filename="decoration.xml"/>
+	<include filename="inc_flickr_options_picture_run.xml"/>
+
+	<text text="@@mod_txt" x="162" y="186" w="958" h="32" fontsize="30" textcolor="0xffffff" align="hcenter" auto_translate="1"/>
+	<image image="@@mod_img" x="1063" y="71" w="107" h="107"/> 
+	<image image="image/villa_flickr_logo.png" x="1072" y="590" w="126" h="56" disable="@@photo_info_disable"/>
+
+   <text x="450" y="160" w="372" h="26" text="@@text-OPTION" fontsize="24" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+</page>

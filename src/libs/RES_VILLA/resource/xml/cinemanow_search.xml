@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/cinemanow/CN_common_bg.jpg">
+	<ctrlgrp valkey="main">
+		<button valkey="Back"
+			normal_bg="image/cinemanow/cn_browse_back_n.png"
+			focused_bg="image/cinemanow/cn_browse_back_f.png"/>
+		<button valkey="ToHome"
+			normal_bg="image/cinemanow/cn_browse_home_n.png"
+			focused_bg="image/cinemanow/cn_browse_home_f.png"/>
+		<linebreak/>
+		<eventbox_keyboard valkey="keyboard" autoenter="1"/>
+		<linebreak/>
+		<listbox valkey="browselist" move="page" cols="1" rows="7" autoenter="1"
+			focused_bg="image/cinemanow/cn_select_bar_f.png"
+			click_bg="image/cinemanow/cn_select_bar_c.png"/>
+	</ctrlgrp>
+
+	<widget_keyboard ctrlname="keyboard" x="107" y="267" w="374" h="258" cols="8" rows="6" align="hcenter" 
+		textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029" 
+		changed="@@keyboard_changed" extra_height="10" extra_index="0"/>
+
+	<image image="image/cinemanow/keyboard_search_box.png" x="107" y="204" w="374" h="50" bg="1"/>
+	<texttail text="@@input_01_text" x="123" y="219" w="342" h="26"  textcolor="0xfff2f2f2" fontsize="24" ignore_translate="1"/>
+
+	<image image="@@logo" x="947" y="65" w="288" h="58"/>
+
+	<table x="526" y="212" w="648" h="357" fontsize="20" cols="1" rows="7" align="hcenter" colspacing="5" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029">
+		<imgbtn image="@@bg-browselist-0" text="@@browselist_0_text"
+			active="@@act-browselist-0" selected="@@sel-browselist-0" click="@@click-browselist-0"
+			clicked="@@clicked-browselist-0" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-1" text="@@browselist_1_text"
+			active="@@act-browselist-1" selected="@@sel-browselist-1" click="@@click-browselist-1"
+			clicked="@@clicked-browselist-1" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-2" text="@@browselist_2_text"
+			active="@@act-browselist-2" selected="@@sel-browselist-2" click="@@click-browselist-2"
+			clicked="@@clicked-browselist-2" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-3" text="@@browselist_3_text"
+			active="@@act-browselist-3" selected="@@sel-browselist-3" click="@@click-browselist-3"
+			clicked="@@clicked-browselist-3" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-4" text="@@browselist_4_text"
+			active="@@act-browselist-4" selected="@@sel-browselist-4" click="@@click-browselist-4"
+			clicked="@@clicked-browselist-4" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-5" text="@@browselist_5_text"
+			active="@@act-browselist-5" selected="@@sel-browselist-5" click="@@click-browselist-5"
+			clicked="@@clicked-browselist-5" disable="@@disable-browselist"/>
+		<imgbtn image="@@bg-browselist-6" text="@@browselist_6_text"
+			active="@@act-browselist-6" selected="@@sel-browselist-6" click="@@click-browselist-6"
+			clicked="@@clicked-browselist-6" disable="@@disable-browselist"/>
+	</table>
+
+	<image x="838" y="543" w="26" h="19" image="@@browselist-prev"/>
+	<image x="838" y="576" w="26" h="19" image="@@browselist-next"/>
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<include filename="./cinemanow_common.xml"/>
+</page>

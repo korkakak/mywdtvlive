@@ -1,0 +1,128 @@
+diff -uBbNr howl-1.0.0/src/autoipd/autoip.c howl-1.0.0.modify/src/autoipd/autoip.c
+--- howl-1.0.0/src/autoipd/autoip.c	2005-01-27 11:08:50.000000000 +0800
++++ howl-1.0.0.modify/src/autoipd/autoip.c	2010-04-23 18:58:17.000000000 +0800
+@@ -32,6 +32,12 @@
+ #include <salt/debug.h>
+ #include <stdio.h>
+ 
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <unistd.h>
++
++#define RECORD_CURRENT_AUTOIP_FILE      "/tmp/previous_autoip"
++
+ #define SW_ERROR -1
+ #define CHANGE_ADDRESS
+ 
+@@ -94,6 +100,7 @@
+ 								sw_autoip_network_interface	self,
+ 								sw_time								timeout);
+ 
++static void record_current_ip(char *IP);
+ 
+ /* 
+  * autoip_generate_random_llip()
+@@ -130,10 +137,25 @@
+ 	err = sw_ipv4_address_init_from_name(addr, name);
+ 	sw_check_okay(err, exit);
+ 
++	record_current_ip(name);
++
+ exit:
+ 	return err;
+ }
+ 
++static void record_current_ip(char *IP)
++{
++	FILE *fp = NULL;
++
++	if(!IP || !IP[0])
++		return;
++
++	fp = fopen(RECORD_CURRENT_AUTOIP_FILE, "w");
++	if(fp) {
++		fprintf(fp, "%s", IP);
++		fclose(fp);
++	}
++}
+ 
+ /*
+  * seed the random number generator from the mac
+@@ -148,6 +170,8 @@
+ 	int			i;
+ 	sw_result	err;
+ 
++	FILE *fp = NULL;
++
+ 	ipaddr = sw_platform_autoip_network_interface_initial_address();
+ 
+ 	pseed = (sw_uint8*)&seed;
+@@ -173,6 +197,9 @@
+ 	}
+ 	else				/* seed the ip address from the mac */
+ 	{
++		struct stat info;
++		int apply_previous_ip = 0;
++
+ 		sw_debug(SW_LOG_VERBOSE, "generating random ip address from the mac\n");
+ 
+ 		sw_ipv4_address_init_from_saddr(&(self->m_ip_addr), seed);
+@@ -180,9 +207,24 @@
+ 		/*
+ 		 * generate a random initial ip
+ 		 */
++		if(stat(RECORD_CURRENT_AUTOIP_FILE, &info) == 0 && info.st_size > 0) {
++			char IPAddr[16];
++
++			fp = fopen(RECORD_CURRENT_AUTOIP_FILE, "r");
++			if(fp) {
++				fscanf(fp, "%s", IPAddr);
++				err = sw_ipv4_address_init_from_name(&(self->m_ip_addr), IPAddr);
++				fclose(fp);
++				sw_check_okay(err, generate_ip);
++				apply_previous_ip = 1;
++			}
++		}
++generate_ip:
++		if(!apply_previous_ip) {
+ 		err = sw_autoip_network_interface_generate_random_llip(&(self->m_ip_addr));
+ 		sw_check_okay(err, exit);
+ 	}
++	}
+ 
+ exit:
+ 
+@@ -420,8 +462,8 @@
+ 			 */
+ 			err = sw_autoip_network_interface_send_arp_announcement(self);
+ 			sw_check_okay(err, exit);
+-			err = sw_autoip_network_interface_send_arp_announcement(self);
+-			sw_check_okay(err, exit);
++			//err = sw_autoip_network_interface_send_arp_announcement(self);
++			//sw_check_okay(err, exit);
+ 
+ #ifdef CHANGE_ADDRESS
+ 			/*
+@@ -441,8 +483,8 @@
+ 			/*
+ 			 * let's move quickly on to claiming
+ 			 */
+-			new_timeout.m_secs 	= 0;
+-			new_timeout.m_usecs 	= 50;
++			new_timeout.m_secs 	= 2;
++			new_timeout.m_usecs 	= 0;
+ 			err = sw_autoip_network_interface_register_timeout(self, new_timeout);
+ 			sw_check_okay(err, exit);
+ 
+@@ -450,8 +492,10 @@
+ 			 * send our second announcementx
+ 			 */
+ 			// SW_TRY(sw_autoip_network_interface_send_arp_announcement(self));
++			err = sw_autoip_network_interface_send_arp_announcement(self);
++			sw_check_okay(err, exit);
+ 
+-			sw_debug(SW_LOG_VERBOSE, "MONITORING\n");
++			//sw_debug(SW_LOG_VERBOSE, "MONITORING\n");
+ 			self->m_state = AUTOIP_STATE_MONITORING;
+ 		}
+ 		break;

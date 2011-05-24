@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<wrapper>
+	<text text="@@browse_title_text" x="97" y="115" w="660" h="44" fontsize="42" textcolor="0xff07b5ff"/>
+	<text text="@@browse_subtitle_text" x="181" y="150" w="400" h="26" fontsize="24" textcolor="0xffffffff" align="left"/>
+	<wrapper x="293" w="695" h="1">
+		<image image="@@browse_0_line" ymargin="0" y="276"/>
+		<image image="@@browse_1_line" ymargin="0" y="325"/>
+		<image image="@@browse_2_line" ymargin="0" y="374"/>
+		<image image="@@browse_3_line" ymargin="0" y="423"/>
+		<image image="@@browse_4_line" ymargin="0" y="472"/>
+		<image image="@@browse_5_line" ymargin="0" y="521"/>
+		<image image="@@browse_6_line" ymargin="0" y="570"/>
+	</wrapper>
+
+	<table x="281" y="228" w="720" h="342" fontsize="20" selected_fontsize="26" cols="1" rows="7" colspacing="0" rowspacing="0" lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png" textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1" align="hcenter">
+		<text text="@@browse_0_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+		<text text="@@browse_1_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+		<text text="@@browse_2_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+		<text text="@@browse_3_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+    		<text text="@@browse_4_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" selected="@@browse_4_select" speed="@@browse_4_speed" delay="2"/>
+		<text text="@@browse_5_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" selected="@@browse_5_select" speed="@@browse_5_speed" delay="2"/>
+		<text text="@@browse_6_text" xmargin="87" ymargin="14" lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" selected="@@browse_6_select" speed="@@browse_6_speed" delay="2"/>
+	</table>
+  
+  	<table x="318" y="228" w="32" h="342" cols="1" rows="7" colspacing="0" rowspacing="0" scale_type="fixratio" scale="100">
+		<image image="@@browse_0_icon" y="238" h="32"/>
+		<image image="@@browse_1_icon" y="286" h="32"/>
+		<image image="@@browse_2_icon" y="334" h="32"/>
+		<image image="@@browse_3_icon" y="382" h="32"/>
+		<image image="@@browse_4_icon" y="430" h="32"/>
+		<image image="@@browse_5_icon" y="478" h="32"/>
+		<image image="@@browse_6_icon" y="526" h="32"/>
+	</table>
+  
+  	<image image="@@moreprev" x="619" y="185" w="40" h="29"/>
+  	<image image="@@morenext" x="619" y="585" w="40" h="29"/>
+</wrapper>

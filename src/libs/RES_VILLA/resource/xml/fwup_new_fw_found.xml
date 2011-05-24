@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+  <ctrlgrp>
+    <button valkey="NEW_FW_UPGRADE_LATER"
+      	focused_bg="image/Villa_button_blue_f_02.png"
+      	normal_bg="image/Villa_button_blue_n_02.png"/>
+    <button valkey="NEW_FW_UPGRADE_NOW"
+      	focused_bg="image/Villa_button_blue_f_02.png"
+      	normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+
+  <text text="@@msg-value0" x="409" y="250" w="577" h="30" fontsize="24" textcolor="0xe2e2e2"/>
+
+  <text text="@@msg-value1" x="409" y="290" w="540" h="30" fontsize="24" textcolor="0xe3e2e2"/>
+
+  <text text="$$New firmware found. Do you want to upgrade?" x="409" y="350" w="477" h="60" fontsize="24" textcolor="0xe3e2e2" numlines="2"/>
+
+  <imgbtn x="297" y="425" w="343" h="78" image="@@bg-NEW_FW_UPGRADE_LATER" text="$$Cancel" align="hcenter" fontsize="19" textcolor="0xffffff"  active="@@act-NEW_FW_UPGRADE_LATEr" actnoseltextcolor="0xffffff"/>
+  <imgbtn x="624" y="425" w="343" h="78" image="@@bg-NEW_FW_UPGRADE_NOW" text="$$OK" align="hcenter" fontsize="19" textcolor="0xffffff"  active="@@act-NEW_FW_UPGRADE_NOW" actnoseltextcolor="0xffffff"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

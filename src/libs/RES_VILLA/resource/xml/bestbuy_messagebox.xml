@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page background="image/bestbuy/bby_browse_bg.jpg" ignore_desktop_settings="1">
+	<ctrlgrp> 
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"/>
+	</ctrlgrp>
+
+	<include filename="./inc_bestbuy_messagebox.xml"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

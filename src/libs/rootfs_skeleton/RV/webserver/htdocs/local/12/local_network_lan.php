@@ -1,0 +1,10 @@
+<?php
+$lang0='接続タイプ：';
+	$lang1='SSID:';
+$lang2='IPアドレス:';
+$lang3='ネットマスク:';
+$lang4='ゲートウェイ:';
+$lang5='DNSサーバー:';
+	$lang6='Workgroup:';
+	$lang7='Wired';
+?>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+  <ctrlgrp>
+    <button valkey="FW_FTP_FILE_NOT_FOUND_CANCEL"
+      focused_bg="image/Villa_button_blue_f_02.png"
+      normal_bg="image/Villa_button_blue_n_02.png"
+      click_bg="image/Villa_button_blue_f_02.png" />
+  </ctrlgrp>
+
+	<text text="$$Check for new update" x="191" y="149" w="900" h="42" align="left" fontsize="40" textcolor="0x07b5ff"/>
+
+	<text text="$$The device fails to check for new firmware update. Please check your network connection and try again." x="250" y="260" w="780" h="90" align="hcenter" fontsize="26" numlines="3" textcolor="0xe2e2e2"/>
+
+  <imgbtn x="469" y="488" w="343" h="78" image="@@bg-FW_FTP_FILE_NOT_FOUND_CANCEL" text="$$OK" align="hcenter" fontsize="20" textcolor="0xffffff" active="@@act-FW_FTP_FILE_NOT_FOUND_CANCEL" actnoseltextcolor="0xffffff"/>
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

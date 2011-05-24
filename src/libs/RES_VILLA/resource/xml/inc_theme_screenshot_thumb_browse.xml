@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<wrapper>
+<!--	<text text="@@pagecounter" x="841" y="118" h="24" w="200" fontsize="24" align="right" textcolor="0xe2e2e2"/>-->
+    <table x="179" y="593" w="921" h="67" 
+         cols="7" rows="1" colspacing="26" align="hcenter">
+    <image image="@@thumb_active_0" disable="@@disable-browse"/>
+    <image image="@@thumb_active_1" disable="@@disable-browse"/>
+    <image image="@@thumb_active_2" disable="@@disable-browse"/>
+    <image image="@@thumb_active_3" disable="@@disable-browse"/>
+    <image image="@@thumb_active_4" disable="@@disable-browse"/>
+    <image image="@@thumb_active_5" disable="@@disable-browse"/>
+    <image image="@@thumb_active_6" disable="@@disable-browse"/>
+  </table>
+  <!--<table x="187" y="596" w="905" h="61"
+         cols="7" rows="1" colspacing="42" align="hcenter" scale_type="fixratio" scale="100">-->
+  <table x="187" y="596" w="905" h="61"
+         cols="7" rows="1" colspacing="42" align="hcenter" scale="100">
+    <image name="th0" image="@@browse_0_thumbnail" default_image="@@browse_0_default_image" disable="@@disable-browse"/>
+    <image name="th1" image="@@browse_1_thumbnail" default_image="@@browse_1_default_image" disable="@@disable-browse"/>
+    <image name="th2" image="@@browse_2_thumbnail" default_image="@@browse_2_default_image" disable="@@disable-browse"/>
+    <image name="th3" image="@@browse_3_thumbnail" default_image="@@browse_3_default_image" disable="@@disable-browse"/>
+    <image name="th4" image="@@browse_4_thumbnail" default_image="@@browse_4_default_image" disable="@@disable-browse"/>
+    <image name="th5" image="@@browse_5_thumbnail" default_image="@@browse_5_default_image" disable="@@disable-browse"/>
+    <image name="th6" image="@@browse_6_thumbnail" default_image="@@browse_6_default_image" disable="@@disable-browse"/>
+  </table>
+    <table x="179" y="593" w="921" h="67" 
+         cols="7" rows="1" colspacing="26" align="hcenter">
+		 <image image="@@browse_0_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_1_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_2_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_3_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_4_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_5_mask" disable="@@disable-browse"/>
+		 <image image="@@browse_6_mask" disable="@@disable-browse"/>
+  </table>
+
+  <image  x="136" y="604" w="38" h="27" image="@@moreprev"/>
+  <image  x="1113" y="604" w="38" h="27" image="@@morenext"/>
+</wrapper>
+
+

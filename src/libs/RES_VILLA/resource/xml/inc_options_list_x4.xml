@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/villa_options_menu_bg_04.png" x="433" y="0" w="138" h="174" bg="1" disable="@@disable-options_bg"/>
+	<table x="464" y="59" h="74" w="354" cols="4" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@bg-QML0"/>
+		<image image="@@bg-QML1"/>
+		<image image="@@bg-QML2"/>
+		<image image="@@bg-QML3"/>
+	</table>
+	<table x="454" y="0" h="151" w="372" cols="4" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@lightbar-QML0" bg="1"/>
+		<image image="@@lightbar-QML1" bg="1"/>
+		<image image="@@lightbar-QML2" bg="1"/>
+		<image image="@@lightbar-QML3" bg="1"/>
+	</table>
+</wrapper>

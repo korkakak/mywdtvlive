@@ -1,0 +1,129 @@
+diff -ruN libmms-0.5-radiotime/src/mms.c mms/mms.c
+--- libmms-0.5-radiotime/src/mms.c	2010-12-02 13:04:53.000000000 +0800
++++ mms/mms.c	2010-12-03 16:38:53.000000000 +0800
+@@ -86,6 +86,12 @@
+ #define ASF_HEADER_PACKET_ID_TYPE 2
+ #define ASF_MEDIA_PACKET_ID_TYPE	4
+ 
++static Cancel_Handler_t p_alpha_mms_canceller = NULL;
++
++void alpha_mms_register_cancel_function(int (*CancelTester)(void))
++{
++	p_alpha_mms_canceller = CancelTester;
++}
+ 
+ typedef struct mms_buffer_s mms_buffer_t;
+ struct mms_buffer_s {
+@@ -176,6 +182,13 @@
+ 	res = select(socket+1, (state == MMS_IO_READ_READY) ? &set : NULL,
+ 		(state == MMS_IO_WRITE_READY) ? &set : NULL, NULL, &tv);
+ 
++	if((p_alpha_mms_canceller) && (*p_alpha_mms_canceller)()){
++		fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		g_bStopMms = 1;
++		return MMS_IO_STATUS_ERROR;
++	}
+ 
+ 	if (res==0)
+ 		res = MMS_IO_STATUS_TIMEOUT;
+@@ -193,6 +206,14 @@
+ 	errno = 0;
+ 	while (len < num && !g_bStopMms)
+ 	{
++		if((p_alpha_mms_canceller) && (*p_alpha_mms_canceller)()){
++			fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			fprintf(stderr, "%s %s %d MMS HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			g_bStopMms = 1;
++			return -1;
++		}
++
+ 		ret = (off_t)read(socket, buf + len, num - len);
+ 		if(ret == 0)
+ 			break; /* EOF */
+diff -ruN libmms-0.5-radiotime/src/mms.h mms/mms.h
+--- libmms-0.5-radiotime/src/mms.h	2010-12-02 13:04:53.000000000 +0800
++++ mms/mms.h	2010-12-03 16:38:53.000000000 +0800
+@@ -84,6 +84,8 @@
+ 
+ void mms_stop(mms_t* instance);
+ 
++void alpha_mms_register_cancel_function(int (*CancelTester)(void));
++
+ #ifdef __cplusplus
+ }
+ #endif /* __cplusplus */
+diff -ruN libmms-0.5-radiotime/src/mmsh.c mms/mmsh.c
+--- libmms-0.5-radiotime/src/mmsh.c	2010-12-02 13:04:53.000000000 +0800
++++ mms/mmsh.c	2010-12-03 16:38:53.000000000 +0800
+@@ -86,6 +86,13 @@
+ 
+ #define SCRATCH_SIZE				1024
+ 
++static Cancel_Handler_t p_alpha_mmsh_canceller = NULL;
++
++void alpha_mmsh_register_cancel_function(int (*CancelTester)(void))
++{
++	p_alpha_mmsh_canceller = CancelTester;
++}
++
+ static const char* mmsh_FirstRequest =
+ 	"GET %s HTTP/1.0\r\n"
+ 	"Accept: */*\r\n"
+@@ -219,6 +226,15 @@
+ 	struct timeval tv = { timeout_msec / 1000, (timeout_msec % 1000) * 1000};
+ 	FD_ZERO(&set);
+ 	FD_SET(socket, &set);
++
++	if((p_alpha_mmsh_canceller) && (*p_alpha_mmsh_canceller)()){
++		fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++		g_bStopMmsh = 1;
++		return MMS_IO_STATUS_ERROR;
++	}
++
+ 	res= select(socket+1, (state == MMS_IO_READ_READY) ? &set : NULL,
+ 		(state == MMS_IO_WRITE_READY) ? &set : NULL, NULL, &tv);
+ 	
+@@ -237,6 +253,14 @@
+ 	errno = 0;
+ 	while (len < num && !g_bStopMmsh)
+ 	{
++		if((p_alpha_mmsh_canceller) && (*p_alpha_mmsh_canceller)()){
++			fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			fprintf(stderr, "%s %s %d MMSH HAS BEEN CANCELLED!\n",__FILE__,__FUNCTION__,__LINE__);
++			g_bStopMmsh = 1;
++			return -1;
++		}
++
+ 		ret = (off_t)read(socket, buf + len, num - len);
+ 		if(ret == 0)
+ 			break; /* EOF */
+diff -ruN libmms-0.5-radiotime/src/mmsh.h mms/mmsh.h
+--- libmms-0.5-radiotime/src/mmsh.h	2010-12-02 13:04:53.000000000 +0800
++++ mms/mmsh.h	2010-12-03 16:38:53.000000000 +0800
+@@ -58,6 +58,8 @@
+ 
+ void mmsh_stop(mmsh_t* instance);
+ 
++void alpha_mmsh_register_cancel_function(int (*CancelTester)(void));
++
+ #ifdef __cplusplus
+ }
+ #endif /* __cplusplus */
+diff -ruN libmms-0.5-radiotime/src/mmsio.h mms/mmsio.h
+--- libmms-0.5-radiotime/src/mmsio.h	2010-12-02 13:04:53.000000000 +0800
++++ mms/mmsio.h	2010-12-03 16:38:53.000000000 +0800
+@@ -86,6 +86,8 @@
+ void mms_set_default_io_impl(const mms_io_t *io);
+ const mms_io_t* mms_get_default_io_impl();
+ 
++typedef int (*Cancel_Handler_t)(void);
++
+ #ifdef __cplusplus
+ }
+ #endif /* __cplusplus */

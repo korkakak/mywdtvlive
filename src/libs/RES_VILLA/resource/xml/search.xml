@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/villa_bg.png" wait_seconds="1">
+  <listbox valkey="searchlist" move="row" cols="1" rows="7" lbmask="l" more_select="right"/>
+	<image image="@@listprev" x="619" y="194" w="38" h="27"/>
+	<include filename="./info.xml"/>
+
+	<text text="$$Search" x="240" y="124" w="610" h="45" fontsize="40" textcolor="0x07b5ff" align="left"/>	
+  <wrapper x="293" w="695" h="1">
+	<image image="@@search_0_line" ymargin="0" bg="1" y="285"/>
+	<image image="@@search_1_line" ymargin="0" bg="1" y="336"/>
+	<image image="@@search_2_line" ymargin="0" bg="1" y="387"/>
+	<image image="@@search_3_line" ymargin="0" bg="1" y="438"/>
+	<image image="@@search_4_line" ymargin="0" bg="1" y="489"/>
+	<image image="@@search_5_line" ymargin="0" bg="1" y="540"/>
+	<image image="@@search_6_line" ymargin="0" bg="1" y="591"/>
+  </wrapper>
+  <table x="281" y="235" w="720" h="357" fontsize="20" selected_fontsize="26"
+         cols="1" rows="7" colspacing="0" rowspacing="0"
+		 lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png"  
+	 textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@search_0_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-0" active="@@act-searchlist-0"
+	  selected="@@search_0_select" speed="@@search_0_speed" delay="2"/>
+    
+    <text text="@@search_1_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-1" active="@@act-searchlist-1" 
+	  selected="@@search_1_select" speed="@@search_1_speed" delay="2"/>
+    
+    <text text="@@search_2_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-2" active="@@act-searchlist-2" 
+	  selected="@@search_2_select" speed="@@search_2_speed" delay="2"/>
+    
+    <text text="@@search_3_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-3" active="@@act-searchlist-3" 
+	  selected="@@search_3_select" speed="@@search_3_speed" delay="2"/>
+    
+    <text text="@@search_4_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-4" active="@@act-searchlist-4" 
+	  selected="@@search_4_select" speed="@@search_4_speed" delay="2"/>
+    
+    <text text="@@search_5_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-5" active="@@act-searchlist-5" 
+	  selected="@@search_5_select" speed="@@search_5_speed" delay="2"/>
+
+    <text text="@@search_6_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-searchlist-6" active="@@act-searchlist-6" 
+	  selected="@@search_6_select" speed="@@search_6_speed" delay="2"/>
+  </table>
+	
+	<image image="@@listmore" x="619" y="605" w="38" h="27"/>
+</page>

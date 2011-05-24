@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/deezer/villa_options_menu_bg_01.png" x="575" y="0" w="138" h="173" bg="1" disable="@@disable-options_bg"/>
+	<table x="598" y="0" h="151" w="93" cols="1" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@bg-QML0"/>
+	</table>
+	<table x="598" y="0" h="151" w="93" cols="1" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@lightbar-QML0" bg="1"/>
+	</table>
+
+</wrapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+  <ctrlgrp valkey="main" lbmask="LR">
+	<eventbox_keyboard valkey="keyboard" autoenter="1" lbmask="LRlr"/>
+  	<listbox valkey="browselist" move="row" cols="1" rows="3" autoenter="1" lbmask="lr"/>
+  </ctrlgrp>
+    <widget_keyboard ctrlname="keyboard" x="97" y="223" w="742" h="273" cols="14" rows="5"
+  		     align="hcenter" textcolor="0xFFFFFF"  activetextcolor="0x07b5ff"
+		     changed="@@keyboard_changed" extra_height="10" extra_index="0"/>
+
+  <image image="image/keyboard_search_box.png" x="99" y="227" w="633" h="60" bg="1"/>
+  <texttail text="@@input_01_text" x="121" y="243" w="554" h="28"  textcolor="0x000000" ignore_translate="1"/>
+	<text text="@@master_headline" x="97" y="132" w="600" h="44" align="left" fontsize="42" textcolor="0x07b5ff"/>
+	<image image="@@logo" x="1069" y="591" w="158" h="65"/>
+	<wrapper x="879" w="302">
+		<image y="296" h="1" image="image/pandora_new_station_line.png"/>
+		<image y="344" h="1" image="image/pandora_new_station_line.png"/>
+		<image y="392" h="1" image="image/pandora_new_station_line.png"/>
+		<image y="440" h="1" image="image/pandora_new_station_line.png"/>
+	</wrapper>
+
+	<image x="1010" y="245" w="40" h="29" image="@@listprev"/>
+	<image x="1010" y="464" w="40" h="29" image="@@listnext"/>
+
+	<table x="875" y="296" w="309" h="150" fontsize="20" selected_fontsize="26" cols="1" rows="3" colspacing="0" rowspacing="0" lbimage="@@lbimage" clickimage="image/pandora_new_station_select_bar.png" textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" activetextcolor="0xffffff" selectedtextcolor="0xffffff" auto_translate="1" align="hcenter">
+		<text text="@@browselist_0_text" y="296" xmargin="5" lightbar="@@lightbar-browselist-0" active="@@act-browselist" selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+		<text text="@@browselist_1_text" y="344" xmargin="5" lightbar="@@lightbar-browselist-1" active="@@act-browselist" selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+		<text text="@@browselist_2_text" y="392" xmargin="5" lightbar="@@lightbar-browselist-2" active="@@act-browselist" selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+	</table>
+	<include filename="./inc_loading.xml"/>
+ 	<include filename="./decoration.xml"/>
+</page>

@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<page overlay="1">
+	<image image="./image/keyboard_mask_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	<include filename="./inc_loading.xml"/>
+</page>

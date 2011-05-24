@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<wrapper>
+   <include filename="./inc_generic_now_playing.xml" />
+   <include filename="./inc_radiotime_now_playing.xml" />
+   <include filename="./inc_live365_now_playing.xml" />
+   <include filename="./inc_pandora_now_playing.xml" />
+</wrapper>

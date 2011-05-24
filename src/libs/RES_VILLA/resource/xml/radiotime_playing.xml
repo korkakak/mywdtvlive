@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+	<ctrlgrp valkey="options" autoenter="1" lbmask="LR">
+		<include filename="./inc_optionmenu_ctrlgrp.xml"/>
+	</ctrlgrp>
+	<include filename="./inc_optionmenu_widgets.xml"/>
+  	<text x="315" y="124" w="651" h="22" text="@@text-OPTION" fontsize="20" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+	<image x="0" y="175" w="1280" h="239" image="image/music_player_function_frame_bg.png" bg="1"/> 
+
+	<image x="220" y="141" w="456" h="303" image="image/music_player_frame_bg_n.png" bg="1"/>
+	<image x="319" y="174" w="238" h="238" image="@@album_icon" default_image="image/music_player_frame_albumart_icon.png" xmargin="0" ymargin="0" umargin="0" dmargin="0" bg="1" scale_type="fixratio" scale="100" align="hcenter"/>
+	<image x="312" y="165" w="256" h="256" image="image/music_player_frame_blister.png" bg="1"/>
+
+	<progress_bar name="point_bar" x="625" y="285" w="288" h="28" pb_back_img="image/music_player_line_bg.png" pb_front_img="image/music_player_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="500"/>
+
+	<text x="764" y="337" w="94" h="22" fontsize="20" text="@@audio_currenttime" align="right" textcolor="0xffffff"/>
+	<text x="858" y="341" w="70" h="18" fontsize="16" text="@@audio_totaltime" align="left" textcolor="0x999999"/>
+
+	<image x="366" y="455" w="695" h="1" image="image/photo_thumb_line_01.png" bg="1"/>
+	<text text="@@songname" x="380" y="469" w="527" h="28" fontsize="26" numlines="1" textcolor="0x07b5ff" speed="1" delay="2" align="hcenter" auto_translate="1"/>
+	<image x="366" y="501" w="695" h="1" image="image/photo_thumb_line_01.png" bg="1"/>
+
+<!--	<image x="388" y="484" w="24" h="24" image="image/music_player_album_icon_n.png" bg="1"/>-->
+	<text text="@@album" x="380" y="513" w="527" h="22" fontsize="20" align="hcenter" speed="1" delay="2" auto_translate="1"/>
+	<image x="366" y="542" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+<!--	<image x="388" y="524" w="24" h="24" image="image/music_player_artist_icon_n.png" bg="1"/>-->
+	<text text="@@artist" x="380" y="554" w="527" h="22" fontsize="20" align="hcenter" speed="1" delay="2" auto_translate="1"/>
+	<image x="366" y="583" w="555" h="1" image="image/music_player_line.png" bg="1"/>
+
+	<text text="On Next:" x="602" y="591" w="315" h="22" fontsize="20" textcolor="0xe6e6e6" align="right" speed="1" delay="2" auto_translate="1"/>
+	<text text="@@on_next" x="602" y="616" w="315" h="22" fontsize="18" textcolor="0xa4a4a4" align="right" speed="1" delay="2" auto_translate="1"/>
+<!--	
+	<text text="$$Next Song:" x="602" y="591" w="315" h="24" fontsize="20" bg="1" textcolor="0xe6e6e6" align="right"/>
+	<text text="@@next" x="602" y="616" w="315" h="26" fontsize="18" numlines="1" textcolor="0xa4a4a4" align="right" speed="1" delay="2" auto_translate="1"/>
+-->
+	<!-- fixed -->
+<!--	
+	<image x="625" y="314" w="48" h="36" image="@@repeat-ico"/>
+	<image x="676" y="314" w="48" h="36" image="@@shuffle-ico"/>
+-->	
+	<image x="730" y="235" w="44" h="50" image="@@play_state"/>
+	<image x="910" y="285" w="39" h="21" image="@@speed_state"/>
+
+	<include filename="decoration.xml"/>
+<!--	
+	<include filename="inc_options_audio_run.xml"/> 
+-->	
+	<image image="./image/radiotime/tuneinradio_logo.png" x="1026" y="606" w="168" h="58"/>
+</page>

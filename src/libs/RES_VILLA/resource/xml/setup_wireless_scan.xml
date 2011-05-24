@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2006, ALPHA Networks, inc. -->
+<page background="./image/villa_bg.png">
+
+  <text text="$$Network Setup" x="258" y="126" w="670" h="42" fontsize="40" textcolor="0x07b5ff"/>
+  <text text="$$Site survey" x="258" y="171" w="370" h="26" fontsize="24" align="left"/>
+  <text text="$$Detecting Wireless Access Point" x="330" y="243" w="620" h="26" fontsize="24" textcolor="0xffffff" align="hcenter"/>
+  <image image="@@watting_img" x="587" y="286" w="133" h="133"/>
+</page>

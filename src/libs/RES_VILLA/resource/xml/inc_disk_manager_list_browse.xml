@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<wrapper>
+  <text id="pagecounter" text="@@pagecounter"/>
+  <image image="@@moreprev" x="952" y="189" w="38" h="27"/>
+  <wrapper x="317" w="622" h="97">
+	  <image image="@@browse_0_bg" ymargin="0" y="183"/>
+  	  <image image="@@browse_1_bg" ymargin="0" y="289"/>
+  	  <image image="@@browse_2_bg" ymargin="0" y="395"/>
+      	  <image image="@@browse_3_bg" ymargin="0" y="501"/>
+  </wrapper>
+  <!--
+  <table x="281" y="235" w="720" h="204" fontsize="20" selected_fontsize="26"
+         cols="1" rows="4" colspacing="0" rowspacing="0"
+	 lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png"  
+	 textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+	 activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+    <text text="@@browse_0_text" xmargin="65" ymargin="5"
+	   
+	    lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+	  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+    
+    <text text="@@browse_1_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" 
+	  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+    
+    <text text="@@browse_2_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" 
+	  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+    
+    <text text="@@browse_3_text" xmargin="65" ymargin="5"
+	  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" 
+	  selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+    
+  </table>
+	 -->
+  
+  <wrapper x="317" w="622" h="97" lbimage="image/diskmanager_select_bar_f.png" clickimage="image/diskmanager_select_bar_f.png">
+	  <image lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" selected="@@browse_0_select" y="183"/>
+	  <image lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" selected="@@browse_1_select" y="289"/>
+	  <image lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" selected="@@browse_2_select" y="395"/>
+	  <image lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" selected="@@browse_3_select" y="501"/>
+  </wrapper>
+
+  <wrapper x="345" w="106" h="97">
+	  <image image="@@browse_0_icon" ymargin="0" y="183"/>
+  	  <image image="@@browse_1_icon" ymargin="0" y="289"/>
+  	  <image image="@@browse_2_icon" ymargin="0" y="395"/>
+      	  <image image="@@browse_3_icon" ymargin="0" y="501"/>
+  </wrapper>
+  
+  <wrapper x="477" w="429" h="28" fontsize="24" textcolor="0xFFFFFF" actnoseltextcolor="0x07b5ff" actoverlistcolor="0x07b5ff" activetextcolor="0x07b5ff" selectedtextcolor="0x07b5ff">
+	  <text text="@@browse_0_name" ymargin="0" y="196" active="@@act-browselist-0" selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+	  <text text="@@browse_1_name" ymargin="0" y="302" active="@@act-browselist-1" selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+	  <text text="@@browse_2_name" ymargin="0" y="408" active="@@act-browselist-2" selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+	  <text text="@@browse_3_name" ymargin="0" y="514" active="@@act-browselist-3" selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+  </wrapper>
+
+  <wrapper x="477" w="240" h="20" fontsize="18" textcolor="0xB8B8B8" align="left">
+	  <text text="@@browse_0_freesize" ymargin="0" y="252"/>
+  	  <text text="@@browse_1_freesize" ymargin="0" y="358"/>
+  	  <text text="@@browse_2_freesize" ymargin="0" y="464"/>
+      	  <text text="@@browse_3_freesize" ymargin="0" y="570"/>
+  </wrapper>
+
+  <wrapper x="726" w="180" h="20" fontsize="18" textcolor="0xB8B8B8" align="right">
+	  <text text="@@browse_0_totalsize" ymargin="0" y="252"/>
+  	  <text text="@@browse_1_totalsize" ymargin="0" y="358"/>
+  	  <text text="@@browse_2_totalsize" ymargin="0" y="464"/>
+      	  <text text="@@browse_3_totalsize" ymargin="0" y="570"/>
+  </wrapper>
+
+  <progress_bar name="browse_0_progress_bar" x="477" y="229" w="429" h="16" pb_back_img="image/diskmanager_progress_bar_bg.png" pb_front_img="image/diskmanager_progress_bar.png" pb_delay="500" disable="@@browse_0_progress_bar_disable"/>
+  <progress_bar name="browse_1_progress_bar" x="477" y="335" w="429" h="16" pb_back_img="image/diskmanager_progress_bar_bg.png" pb_front_img="image/diskmanager_progress_bar.png" pb_delay="500" disable="@@browse_1_progress_bar_disable"/>
+  <progress_bar name="browse_2_progress_bar" x="477" y="441" w="429" h="16" pb_back_img="image/diskmanager_progress_bar_bg.png" pb_front_img="image/diskmanager_progress_bar.png" pb_delay="500" disable="@@browse_2_progress_bar_disable"/>
+  <progress_bar name="browse_3_progress_bar" x="477" y="547" w="429" h="16" pb_back_img="image/diskmanager_progress_bar_bg.png" pb_front_img="image/diskmanager_progress_bar.png" pb_delay="500" disable="@@browse_3_progress_bar_disable"/>
+
+  <image image="@@morenext" x="952" y="563" w="38" h="27"/>
+</wrapper>

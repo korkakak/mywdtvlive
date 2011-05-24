@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="./image/villa_bg.png">
+  <text text="$$Register Product" x="249" y="132" w="600" h="44" align="left" fontsize="42" textcolor="0x07b5ff"/>
+
+  <table x="281" y="228" w="719" h="255"
+         cols="1" rows="5" colspacing="0" rowspacing="0" align="left" xmargin="20" fontsize="26" textcolor="0xe2e2e2">
+	<text text="$$First Name"/>
+	<text text="$$Last Name"/>
+	<text text="$$Email"/>
+	<text text="$$Serial Number"/>
+	<text text="$$Mac Address"/>
+  </table>
+
+  <wrapper x="293" w="695" h="1">
+	<image image="./image/browser_list_line.png" y="277"/>
+	<image image="./image/browser_list_line.png" y="328"/>
+	<image image="./image/browser_list_line.png" y="379"/>
+	<image image="./image/browser_list_line.png" y="430"/>
+	<image image="./image/browser_list_line.png" y="481"/>
+  </wrapper>
+  
+  <imgbtn image="image/Villa_button_blue_f_02.png" text="$$OK" textcolor="0xe2e2e2" x="500" y="505" w="343" h="78" fontsize="18" align="hcenter"/>
+
+  <wrapper x="730" w="230" h="51" align="right" textcolor="0xe2e2e2">
+  	<text text="@@first_name_value" y="228" fontsize="26"/>
+  	<text text="@@last_name_value" y="279" fontsize="26"/>
+  	<text text="@@email_value" y="330" fontsize="26"/>
+  	<text text="@@serial_number_value" y="381" fontsize="26"/>
+  	<text text="@@mac_address_value" y="432" fontsize="26"/>
+  </wrapper>
+</page>

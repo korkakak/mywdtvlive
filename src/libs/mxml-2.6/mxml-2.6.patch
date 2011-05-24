@@ -1,0 +1,117 @@
+diff -uBbNr mxml-2.6/Makefile.in mxml-2.6.bak/Makefile.in
+--- mxml-2.6/Makefile.in	2008-12-06 12:20:38.000000000 +0800
++++ mxml-2.6.bak/Makefile.in	2011-01-10 11:37:06.217409305 +0800
+@@ -88,7 +88,7 @@
+ 			mxml-node.o mxml-search.o mxml-set.o
+ LIBOBJS		=	$(PUBLIBOBJS) mxml-private.o mxml-string.o
+ OBJS		=	mxmldoc.o testmxml.o $(LIBOBJS)
+-TARGETS		=	$(LIBMXML) mxmldoc testmxml mxml.xml doc/mxml.man
++TARGETS		=	$(LIBMXML) mxmldoc-static
+ 
+ 
+ #
+@@ -135,7 +135,6 @@
+ 
+ install:	$(TARGETS) install-$(LIBMXML) install-libmxml.a
+ 	$(INSTALL_DIR) $(BUILDROOT)$(bindir)
+-	$(INSTALL_BIN) mxmldoc $(BUILDROOT)$(bindir) 
+ 	$(INSTALL_DIR) $(BUILDROOT)$(docdir)
+ 	for file in $(DOCFILES); do \
+ 		$(INSTALL_MAN) $$file $(BUILDROOT)$(docdir); \
+@@ -144,10 +143,6 @@
+ 	$(INSTALL_DATA) mxml.h $(BUILDROOT)$(includedir)
+ 	$(INSTALL_DIR) $(BUILDROOT)$(libdir)/pkgconfig
+ 	$(INSTALL_DATA) mxml.pc $(BUILDROOT)$(libdir)/pkgconfig
+-	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/man1
+-	$(INSTALL_MAN) doc/mxmldoc.man $(BUILDROOT)$(mandir)/man1/mxmldoc.1
+-	$(INSTALL_DIR) $(BUILDROOT)$(mandir)/man3
+-	$(INSTALL_MAN) doc/mxml.man $(BUILDROOT)$(mandir)/man3/mxml.3
+ 
+ install-libmxml.a:
+ 	$(INSTALL_DIR) $(BUILDROOT)$(libdir)
+diff -uBbNr mxml-2.6/mxml-file.c mxml-2.6.bak/mxml-file.c
+--- mxml-2.6/mxml-file.c	2009-05-17 13:20:52.000000000 +0800
++++ mxml-2.6.bak/mxml-file.c	2011-01-10 11:40:51.397409806 +0800
+@@ -113,6 +113,10 @@
+ 			  return (ch == ' ' || ch == '\t' || ch == '\r' ||
+ 			          ch == '\n');
+ 			}
++static inline int	mxml_isenter(int ch)
++			{
++			  return (ch == '\n');
++			}
+ static mxml_node_t	*mxml_load_data(mxml_node_t *top, void *p,
+ 			                mxml_load_cb_t cb,
+ 			                _mxml_getc_cb_t getc_cb,
+@@ -1426,6 +1430,7 @@
+ 		*parent;		/* Current parent node */
+   int		ch,			/* Character from file */
+ 		whitespace;		/* Non-zero if whitespace seen */
++  int		isenter;
+   char		*buffer,		/* String buffer */
+ 		*bufptr;		/* Pointer into buffer */
+   int		bufsize;		/* Size of buffer */
+@@ -1459,6 +1464,7 @@
+   parent     = top;
+   first      = NULL;
+   whitespace = 0;
++  isenter = 0;
+   encoding   = ENCODE_UTF8;
+ 
+   if (cb && parent)
+@@ -1490,6 +1496,8 @@
+ 
+ 	case MXML_REAL :
+             node = mxmlNewReal(parent, strtod(buffer, &bufptr));
++	    if(whitespace)
++		    node->value.text.isenter = isenter;
+ 	    break;
+ 
+ 	case MXML_TEXT :
+@@ -1534,6 +1542,7 @@
+ 
+       bufptr     = buffer;
+       whitespace = mxml_isspace(ch) && type == MXML_TEXT;
++      isenter = mxml_isenter(ch) && type == MXML_TEXT;
+ 
+       if (!node && type != MXML_IGNORE)
+       {
+@@ -1557,8 +1566,10 @@
+       if (!first && node)
+         first = node;
+     }
+-    else if (mxml_isspace(ch) && type == MXML_TEXT)
++    else if (mxml_isspace(ch) && type == MXML_TEXT) {
+       whitespace = 1;
++      isenter = mxml_isenter(ch) && type == MXML_TEXT;
++    }
+ 
+    /*
+     * Add lone whitespace node if we have an element and existing
+@@ -1568,6 +1579,7 @@
+     if (ch == '<' && whitespace && type == MXML_TEXT)
+     {
+       node = mxmlNewText(parent, whitespace, "");
++      node->value.text.isenter = isenter;
+ 
+       if (sax_cb)
+       {
+@@ -1581,6 +1593,7 @@
+         first = node;
+ 
+       whitespace = 0;
++      isenter = 0;
+     }
+ 
+     if (ch == '<')
+diff -uBbNr mxml-2.6/mxml.h mxml-2.6.bak/mxml.h
+--- mxml-2.6/mxml.h	2009-03-19 13:38:52.000000000 +0800
++++ mxml-2.6.bak/mxml.h	2011-01-10 11:51:18.385937729 +0800
+@@ -114,6 +114,7 @@
+ typedef struct mxml_text_s		/**** An XML text value. ****/
+ {
+   int			whitespace;	/* Leading whitespace? */
++  int			isenter;
+   char			*string;	/* Fragment string */
+ } mxml_text_t;
+ 

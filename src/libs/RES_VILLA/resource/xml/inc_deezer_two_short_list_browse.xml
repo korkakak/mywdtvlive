@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<wrapper>
+	<text text="@@browse_title_text" x="97" y="115" w="600" h="44" fontsize="42" textcolor="0xff07b5ff" align="left"/>
+	<text text="@@blogname" x="103" y="165" w="300" h="28" fontsize="24" textcolor="0xe2e2e2"/>
+	<!--- Column 1 -->
+	<table x="168" y="220" w="461" h="333" cols="1" rows="5">
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+	</table>
+
+	<table x="168" y="220" w="461" h="333" cols="1" rows="5" colspacing="0" rowspacing="0" lbimage="image/deezer/deezer_top10_Thumbnails_Select_frame_f.png" align="top" fontsize="30" textcolor="0xb8b8b8" selectedtextcolor="0xff07b5ff">
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-6" active="@@act-browselist-6" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-8" active="@@act-browselist-8" disable="@@disable-browselist"/>
+	</table>
+ 
+	<wrapper x="291" w="320" h="22" fontsize="20" textcolor="0xffffffff" selectedtextcolor="0xff07b5ff">
+		<text text="@@browselist_0_text" y="234" speed="@@browse_0_speed" delay="2" active="@@act-browselist-0"/>	
+		<text text="@@browselist_2_text" y="301" speed="@@browse_2_speed" delay="2" active="@@act-browselist-2"/>	
+		<text text="@@browselist_4_text" y="368" speed="@@browse_4_speed" delay="2" active="@@act-browselist-4"/>	
+		<text text="@@browselist_6_text" y="435" speed="@@browse_6_speed" delay="2" active="@@act-browselist-6"/>	
+		<text text="@@browselist_8_text" y="502" speed="@@browse_8_speed" delay="2" active="@@act-browselist-8"/>	
+	</wrapper>
+
+	<wrapper x="291" w="320" h="16" align="top" fontsize="14" textcolor="0xffb8b8b8" selectedtextcolor="0xff07d5ff">
+		<text text="@@browse_0_duration" y="261" speed="@@browse_0_speed" delay="2" active="@@act-browselist-0"/>
+		<text text="@@browse_2_duration" y="328" speed="@@browse_2_speed" delay="2" active="@@act-browselist-2"/>
+		<text text="@@browse_4_duration" y="396" speed="@@browse_4_speed" delay="2" active="@@act-browselist-4"/>
+		<text text="@@browse_6_duration" y="462" speed="@@browse_6_speed" delay="2" active="@@act-browselist-6"/>
+		<text text="@@browse_8_duration" y="529" speed="@@browse_8_speed" delay="2" active="@@act-browselist-8"/>
+	</wrapper>
+
+	<table x="183" y="220" w="40" h="333" align="top" cols="1" rows="5" colspacing="0" rowspacing="0" fontsize="30" textcolor="0xffb8b8b8" selectedtextxolor="0xff07d5ff">
+		<text text="@@browse_0_num" ymargin="21" active="@@act-browselist-0"/>
+		<text text="@@browse_2_num" ymargin="21" active="@@act-browselist-2"/>
+		<text text="@@browse_4_num" ymargin="21" active="@@act-browselist-4"/>
+		<text text="@@browse_6_num" ymargin="21" active="@@act-browselist-6"/>
+		<text text="@@browse_8_num" ymargin="21" active="@@act-browselist-8"/>
+	</table>
+
+	<wrapper x="225" w="51" h="51" align="hcenter" scale="100"> 
+		<image image="@@browse_0_icon" ymargin="0" y="227"/>
+		<image image="@@browse_2_icon" ymargin="0" y="294"/>
+		<image image="@@browse_4_icon" ymargin="0" y="361"/>
+		<image image="@@browse_6_icon" ymargin="0" y="428"/>
+		<image image="@@browse_8_icon" ymargin="0" y="495"/>
+	</wrapper>
+
+	<!--- Column 2 --> 
+	<table x="651" y="220" w="461" h="333" cols="1" rows="5">
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+		<image image="image/deezer/deezer_top10_Thumbnails_Select_frame_n.png" w="555" h="65"/>
+	</table>
+
+	<table x="651" y="220" w="461" h="333" cols="1" rows="5" colspacing="0" rowspacing="0" lbimage="image/deezer/deezer_top10_Thumbnails_Select_frame_f.png" align="top" fontsize="30" textcolor="0xb8b8b8" selectedtextcolor="0xff07b5ff">
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" selected="@@browse_1_select" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" selected="@@browse_3_select" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" selected="@@browse_5_select" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-7" active="@@act-browselist-7" selected="@@browse_7_select" disable="@@disable-browselist"/>
+		<text text="" xmargin="15" ymargin="21" lightbar="@@lightbar-browselist-9" active="@@act-browselist-9" selected="@@browse_9_select" disable="@@disable-browselist"/>
+	</table>
+ 
+	<wrapper x="774" w="320" h="22" fontsize="20" textcolor="0xffffffff" selectedtextcolor="0xff07b5ff">
+		<text text="@@browselist_1_text" y="234" speed="@@browse_1_speed" delay="2" active="@@act-browselist-1"/>	
+		<text text="@@browselist_3_text" y="301" speed="@@browse_3_speed" delay="2" active="@@act-browselist-3"/>	
+		<text text="@@browselist_5_text" y="368" speed="@@browse_5_speed" delay="2" active="@@act-browselist-5"/>	
+		<text text="@@browselist_7_text" y="435" speed="@@browse_7_speed" delay="2" active="@@act-browselist-7"/>	
+		<text text="@@browselist_9_text" y="502" speed="@@browse_9_speed" delay="2" active="@@act-browselist-9"/>	
+	</wrapper>
+
+	<wrapper x="774" w="320" h="16" align="top" fontsize="14" textcolor="0xffb8b8b8" selectedtextcolor="0xff07d5ff">
+		<text text="@@browse_1_duration" y="261" speed="@@browse_1_speed" delay="2" active="@@act-browselist-1"/>
+		<text text="@@browse_3_duration" y="328" speed="@@browse_3_speed" delay="2" active="@@act-browselist-3"/>
+		<text text="@@browse_5_duration" y="396" speed="@@browse_5_speed" delay="2" active="@@act-browselist-5"/>
+		<text text="@@browse_7_duration" y="462" speed="@@browse_7_speed" delay="2" active="@@act-browselist-7"/>
+		<text text="@@browse_9_duration" y="529" speed="@@browse_9_speed" delay="2" active="@@act-browselist-9"/>
+	</wrapper>
+
+	<table x="666" y="220" w="40" h="333" cols="1" rows="5" colspacing="0" rowspacing="0" lbimage="image/deezer/deezer_top10_Thumbnails_Select_frame_f.png" align="top" fontsize="30" textcolor="0xb8b8b8" selectedtextcolor="0xff07b5ff">
+		<text text="@@browse_1_num" ymargin="21" active="@@act-browselist-1"/>
+		<text text="@@browse_3_num" ymargin="21" active="@@act-browselist-3"/>
+		<text text="@@browse_5_num" ymargin="21" active="@@act-browselist-5"/>
+		<text text="@@browse_7_num" ymargin="21" active="@@act-browselist-7"/>
+		<text text="@@browse_9_num" ymargin="21" active="@@act-browselist-9"/>
+	</table>
+
+	<wrapper x="708" w="51" h="51" align="hcenter" scale="100"> 
+		<image image="@@browse_1_icon" ymargin="0" y="227"/>
+		<image image="@@browse_3_icon" ymargin="0" y="294"/>
+		<image image="@@browse_5_icon" ymargin="0" y="361"/>
+		<image image="@@browse_7_icon" ymargin="0" y="428"/>
+		<image image="@@browse_9_icon" ymargin="0" y="495"/>
+	</wrapper>
+
+	<text text="@@option_title" x="372" y="159" w="514" h="28" fontsize="26" textcolor="0x07b5ff" speed="1" delay="2"/>
+</wrapper>

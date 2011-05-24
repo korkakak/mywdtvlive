@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">
+	<text text="$$Network Setup" x="249" y="132" w="600" h="44" align="left" fontsize="42" textcolor="0x07b5ff"/>
+	<text text="$$Network Setup Completed" x="293" y="366" w="695" h="26" align="hcenter" fontsize="24" textcolor="0xe2e2e2"/>
+	<image image="image/villa_networksetup_complete_icon.png" x="590" y="239" w="108" h="140" bg="1"/>
+
+	<ctrlgrp>
+		<button valkey="OK"
+			focused_bg="image/Villa_button_blue_f_02.png"
+			normal_bg="image/Villa_button_blue_n_02.png"/>
+	</ctrlgrp>
+
+	<imgbtn x="464" y="450" w="343" h="78" image="@@bg-OK" text="$$OK" 
+		align="hcenter" fontsize="18" textcolor="0xffffff"  active="@@act-OK" actnoseltextcolor="0xffffff"/>
+</page>

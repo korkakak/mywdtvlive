@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="./image/deezer/deezer_radio_icon.png" x="177" y="439" w="40" h="40"/>
+	<text text="@@focused_title" x="222" y="451" w="260" h="22" fontsize="20" textcolor="0xffd3d3d3" align="left"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="177" y="481" w="329" h="1"/>
+	<text text="@@focused_description" x="176" y="490" w="325" h="72" fontsize="12" textcolor="0xffe2e2e2" align="left" numlines="5"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="177" y="570" w="329" h="1"/>
+</wrapper>

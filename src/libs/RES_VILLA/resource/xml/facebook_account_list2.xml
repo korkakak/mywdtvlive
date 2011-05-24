@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">
+	<ctrlgrp>
+		<listbox valkey="browselist" autoenter="1" autoswitch="0"  move="page" cols="1" rows="5" lbmask="lr"  loop_scroll="1"/>
+		<button valkey="DEL-0"
+			focused_bg="image/facebook/facebook_delete_button_f.png"
+			normal_bg="image/facebook/facebook_delete_button_n.png"/>
+		<button valkey="DEL-1"
+			focused_bg="image/facebook/facebook_delete_button_f.png"
+			normal_bg="image/facebook/facebook_delete_button_n.png"/>
+		<button valkey="DEL-2"
+			focused_bg="image/facebook/facebook_delete_button_f.png"
+			normal_bg="image/facebook/facebook_delete_button_n.png"/>
+		<button valkey="DEL-3"
+			focused_bg="image/facebook/facebook_delete_button_f.png"
+			normal_bg="image/facebook/facebook_delete_button_n.png"/>
+		<button valkey="DEL-4"
+			focused_bg="image/facebook/facebook_delete_button_f.png"
+			normal_bg="image/facebook/facebook_delete_button_n.png"/>
+	</ctrlgrp>
+
+	<image image="image/facebook/facebook_encoding_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	<image image="image/facebook/facebook_logo.png" x="63" y="36" w="235" h="50"/>
+	<text text="$$Login" x="344" y="150" fontsize="36" w="594" h="38" textcolor="0x365893" align="left"/>
+        <image image="image/facebook/facebook_login_line.png" x="344" y="193" w="594" h="1"/>
+
+	<wrapper x="340" w="602" h="68">
+    		<image image="@@browse_0_bg" y="235"/>
+    		<image image="@@browse_1_bg" y="315"/>
+    		<image image="@@browse_2_bg" y="395"/>
+    		<image image="@@browse_3_bg" y="475"/>
+    		<image image="@@browse_4_bg" y="555"/>
+	</wrapper>
+
+	<!--
+	<wrapper x="340" w="602" h="68" lbimage="image/facebook/facebook_list_box_f.png" clickimage="image/facebook/facebook_list_box_f.png">
+    		<image y="164" lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"/>
+	    	<image y="244" lightbar="@@lightbar-browselist-1" active="@@act-browselist-1"/>
+	    	<image y="324" lightbar="@@lightbar-browselist-2" active="@@act-browselist-2"/>
+	    	<image y="404" lightbar="@@lightbar-browselist-3" active="@@act-browselist-3"/>
+	    	<image y="484" lightbar="@@lightbar-browselist-4" active="@@act-browselist-4"/>
+	</wrapper>
+	-->
+	<wrapper x="340" w="602" h="68">
+    		<image image="@@browse_0_lightbar" y="235"/>
+	    	<image image="@@browse_1_lightbar" y="315"/>
+	    	<image image="@@browse_2_lightbar" y="395"/>
+	    	<image image="@@browse_3_lightbar" y="475"/>
+	    	<image image="@@browse_4_lightbar" y="555"/>
+	</wrapper>
+
+	<wrapper x="352" w="54" h="54" align="hcenter" scale="100" scale_type="fixratio">
+		<image image="@@browse_0_icon" y="242"/>
+		<image image="@@browse_1_icon" y="322"/>
+		<image image="@@browse_2_icon" y="402"/>
+		<image image="@@browse_3_icon" y="482"/>
+		<image image="@@browse_4_icon" y="562"/>
+	</wrapper>
+
+      	<!--wrapper x="293" w="695" h="1">
+		<image image="@@browse_0_line" ymargin="0" bg="1" y="285"/>
+		<image image="@@browse_1_line" ymargin="0" bg="1" y="336"/>
+		<image image="@@browse_2_line" ymargin="0" bg="1" y="387"/>
+		<image image="@@browse_3_line" ymargin="0" bg="1" y="438"/>
+		<image image="@@browse_4_line" ymargin="0" bg="1" y="489"/>
+	</wrapper-->
+
+	<wrapper x="417" w="558" h="32" textcolor="0x6284CC" actnoseltextcolor="0x365893" fontsize="30" selected_fontsize="30" speed="1" delay="2" align="left">
+    		<text text="@@account_0_text" y="256" active="@@act-browselist-0"/>
+	    	<text text="@@account_1_text" y="336" active="@@act-browselist-1"/>
+	    	<text text="@@account_2_text" y="416" active="@@act-browselist-2"/>
+	    	<text text="@@account_3_text" y="496" active="@@act-browselist-3"/>
+	    	<text text="@@account_4_text" y="576" active="@@act-browselist-4"/>
+  	</wrapper>
+
+	<wrapper x="950" w="68" h="68">
+		<image image="@@bg-DEL-0" y="235"/>
+		<image image="@@bg-DEL-1" y="315"/>
+		<image image="@@bg-DEL-2" y="395"/>
+		<image image="@@bg-DEL-3" y="475"/>
+		<image image="@@bg-DEL-4" y="555"/>
+	</wrapper>
+
+  <wrapper x="321" w="11" h="48">
+	  <image image="@@ss-favorite-0" y="235" active="@@act-profile_list-0"/>
+	  <image image="@@ss-favorite-1" y="286" active="@@act-profile_list-1"/>
+	  <image image="@@ss-favorite-2" y="337" active="@@act-profile_list-2"/>
+	  <image image="@@ss-favorite-3" y="388" active="@@act-profile_list-3"/>
+	  <image image="@@ss-favorite-4" y="439" active="@@act-profile_list-4"/>
+  </wrapper>
+
+  <image image="@@prev_icon" x="622" y="202" w="35" h="21"/>
+  <image image="@@next_icon" x="622" y="631" w="35" h="21"/>
+
+  <include filename="./inc_loading.xml"/>
+  <include filename="./decoration.xml"/>
+</page>

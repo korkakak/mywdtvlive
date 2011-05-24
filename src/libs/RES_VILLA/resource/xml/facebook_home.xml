@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<page>
+
+	<ctrlgrp>
+    		<listbox valkey="homelist" autoenter="1" autoswitch="0" move="row" cols="7" rows="1" loop_scroll="1" hormove="1"/>
+	</ctrlgrp>
+	
+	<!-- normal bg -->
+	<wrapper y="441" w="156" h="189">
+                <image image="@@item_img0" x="58" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img1" x="226" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img2" x="394" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img3" x="562" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img4" x="730" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img5" x="898" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@item_img6" x="1066" scale_type="fixratio" scale="100" align="hcenter"/>
+	</wrapper>
+	
+        <!-- focus -->
+	<wrapper y="441" w="156" h="189">
+                <image image="@@focus_img0" x="58" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img1" x="226" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img2" x="394" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img3" x="562" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img4" x="730" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img5" x="898" scale_type="fixratio" scale="100" align="hcenter"/>
+		<image image="@@focus_img6" x="1066" scale_type="fixratio" scale="100" align="hcenter"/>
+	</wrapper>
+	
+	<!-- text -->
+	<wrapper w="142" h="22" y="600" align="hcenter" fontsize="20" textcolor="0x0000">
+   		<text text="@@item_text0" x="65"/>
+	   	<text text="@@item_text1" x="233"/>
+   		<text text="@@item_text2" x="401"/>
+	   	<text text="@@item_text3" x="569"/>
+	    	<text text="@@item_text4" x="737"/>
+                <text text="@@item_text5" x="905"/>
+                <text text="@@item_text6" x="1073"/>
+      	</wrapper>
+
+	<image image="image/facebook/facebook_encoding_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	<image image="image/facebook/facebook_logo.png" x="61" y="30" w="235" h="50"/>
+	<image image="image/facebook/facebook_avatar_bg.png" x="61" y="163" w="98" h="98"/>
+	<image image="@@user_icon" x="62" y="164" w="96" h="96" scale_type="pan" scale="100" align="top"/>
+	<text text="@@user_name" x="178" y="180" w="800" h="42" fontsize="40" textcolor="0x3B5998" align="left"/>
+	<image image="image/facebook/facebook_dashboard_msg_box.png" x="163" y="225" w="1056" h="174"/>
+	<text text="@@user_post_message" x="197" y="245" w="1000" h="110" fontsize="30" textcolor="0x3B5998" align="left" numlines="3"/>
+	<text text="@@user_post_time" x="197" y="363" w="1000" h="22" fontsize="20" textcolor="0x757575" align="left"/>
+	<include filename="./decoration.xml"/> 
+</page>

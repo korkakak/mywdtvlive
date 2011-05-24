@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/villa/home_top_info_background.png" disable="@@info_bar_bg_disable" x="340" y="0" w="584" h="122"/>
+	<image image="image/villa/home_top_info_red_cross_icon.png" disable="@@info_bar_inhibited_icon_disable" x="390" y="39" w="52" h="53"/>
+	<image image="@@status_icon"  x="390" y="27" w="74" h="74"/>
+	<text text="@@info_bar_cas_msg" x="464" y="55" w="410" h="22" fontsize="20" speed="1" delay="2" 
+		align="left" textcolor="0xafafaf"/>
+	<include filename="./inc_villa_home_generic_now_playing.xml" />
+	<include filename="./inc_villa_home_live365_now_playing.xml" />
+	<include filename="./inc_villa_home_pandora_now_playing.xml" />
+</wrapper>

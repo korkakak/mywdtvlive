@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2006, ALPHA Networks, inc. -->
+<!-- Author: Charles Wang <cwang@alphanetworks.com> -->
+<page background="image/villa_bg.png" numitems="10">
+  <ctrlgrp valkey="options" autoenter="1" lbmask="LR">
+	<button valkey="DT_OK" 
+		focused_bg="image/Villa_button_blue_f_01.png" 
+		normal_bg="image/Villa_button_blue_n_01.png"
+		disabled_bg="image/Villa_button_blue_n_01.png"/>
+	<button valkey="DT_CANCEL" 
+		focused_bg="image/Villa_button_blue_f_01.png" 
+		normal_bg="image/Villa_button_blue_n_01.png"
+		disabled_bg="image/Villa_button_blue_n_01.png"/>
+    <linebreak/>
+    <listbox valkey="browselist" autoenter="1" autoswitch="0" move="row" cols="7" rows="1" lbmask="ud" loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+  </ctrlgrp>
+  <include filename="./info.xml"/>
+  <text text="@@browse_title_icon" x="181" y="104" w="600" h="46" fontsize="42" textcolor="0x07b5ff"/>
+  
+	<image image="./image/wd_browse_theme_frame.png" x="167" y="165" w="343" h="205"/>
+	<image image="@@focused_icon" x="181" y="179" w="315" h="177" align="hcenter" scale="100"/>
+
+	<text text="@@focused_title" x="172" y="380" w="333" h="22" fontsize="20" textcolor="0x07b5ff" align="left"/>
+	<image image="@@focused_stars" x="172" y="406" w="100" h="19"/>
+
+	<image image="./image/wd_browse_theme_left_info_line.png" x="174" y="433" w="329" h="1"/>
+	<text text="@@focused_author_name" x="174" y="444" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+
+	<image image="./image/wd_browse_theme_left_info_line.png" x="174" y="470" w="329" h="1"/>
+	<text text="@@focused_date_name" x="174" y="481" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+
+	<image image="./image/wd_browse_theme_left_info_line.png" x="174" y="507" w="329" h="1"/>
+	<text text="@@focused_filesize_name" x="174" y="518" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+
+	<image image="./image/wd_browse_theme_left_info_line.png" x="174" y="544" w="329" h="1"/>
+	<text text="@@focused_downloads_name" x="174" y="555" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+
+	<image image="./image/wd_browse_theme_left_info_line.png" x="174" y="581" w="329" h="1"/>
+
+	<text text="$$Description" x="545" y="175" w="546" h="18" fontsize="16" align="left" numlines="1" textcolor="0xe2e2e2"/>
+	<image image="./image/wd_browse_theme_preview_screen_short_description_line.png" x="538" y="198" w="559" h="1"/>
+	<text text="@@focused_description" x="545" y="208" w="546" h="310" fontsize="14" align="left" numlines="15" textcolor="0xe2e2e2"/>
+<!--
+	<text text="@@focused_author" x="274" y="444" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+	<text text="@@focused_date" x="274" y="481" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+	<text text="@@focused_filesize" x="274" y="518" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+	<text text="@@focused_downloads" x="274" y="555" w="329" h="18" fontsize="16" textcolor="0xe2e2e2" align="left"/>
+-->
+
+
+  <include filename="./inc_theme_screenshot_thumb_browse.xml"/>
+<!--
+ <image image="@@bg-DT_OK" x="949" y="529" w="156" h="52" disable="@@disable-DT_CANCEL"/>
+ <image image="@@bg-DT_CANCEL" x="785" y="529" w="156" h="52" disable="@@disable-DT_OK"/>
+ <text text="@@text-DT_OK" x="957" y="545" w="139" h="20" fontsize="18" align="hcenter" textcolor="0xffffff" speed="1" delay="2"/>
+ <text text="@@text-DT_CANCEL" x="793" y="545" w="139" h="20" fontsize="18" align="hcenter" textcolor="0xffffff" speed="1" delay="2"/>
+-->
+ <image image="@@bg-DT_CANCEL" x="949" y="529" w="156" h="52" disable="@@disable-DT_CANCEL"/>
+ <image image="@@bg-DT_OK" x="785" y="529" w="156" h="52" disable="@@disable-DT_OK"/>
+ <text text="@@text-DT_CANCEL" x="957" y="545" w="139" h="20" fontsize="18" align="hcenter" textcolor="0xffffff" speed="1" delay="2"/>
+ <text text="@@text-DT_OK" x="793" y="545" w="139" h="20" fontsize="18" align="hcenter" textcolor="0xffffff" speed="1" delay="2"/>
+
+  <include filename="./inc_loading.xml"/>
+  <include filename="./decoration.xml"/>
+  <text x="450" y="160" w="372" h="26" text="@@text-options" fontsize="24" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+</page>
+

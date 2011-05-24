@@ -1,0 +1,15 @@
+--- freetype-2.3.7/src/base/ftobjs.c	2008-06-09 21:57:53.000000000 -0700
++++ freetype-2.3.7/src/base/ftobjs.c	2008-10-07 14:53:43.000000000 -0700
+@@ -2225,10 +2225,10 @@
+     metrics->descender   = FT_PIX_FLOOR( FT_MulFix( face->descender,
+                                                     metrics->y_scale ) );
+ 
+-    metrics->height      = FT_PIX_ROUND( FT_MulFix( face->height,
++    metrics->height      = FT_PIX_CEIL( FT_MulFix( face->height,
+                                                     metrics->y_scale ) );
+ 
+-    metrics->max_advance = FT_PIX_ROUND( FT_MulFix( face->max_advance_width,
++    metrics->max_advance = FT_PIX_CEIL( FT_MulFix( face->max_advance_width,
+                                                     metrics->x_scale ) );
+ #else /* !GRID_FIT_METRICS */
+     metrics->ascender    = FT_MulFix( face->ascender,

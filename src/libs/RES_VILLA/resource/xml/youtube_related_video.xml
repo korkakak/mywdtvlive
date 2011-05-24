@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--<page type="basic" overlay="1">-->
+<page background="image/youtube_cover_up.png">
+   	<listbox valkey="browselist" autoenter="1" move="page" cols="1" rows="5" loop_scroll="1" />
+
+	<table x="833" y="101" w="377" h="445" cols="1" rows="5">
+		<image image="image/youtube/youtube_related_video_Thumbnails_Select_frame_n.png" w="377" h="89"/>
+		<image image="image/youtube/youtube_related_video_Thumbnails_Select_frame_n.png" w="377" h="89"/>
+		<image image="image/youtube/youtube_related_video_Thumbnails_Select_frame_n.png" w="377" h="89"/>
+		<image image="image/youtube/youtube_related_video_Thumbnails_Select_frame_n.png" w="377" h="89"/>
+		<image image="image/youtube/youtube_related_video_Thumbnails_Select_frame_n.png" w="377" h="89"/>
+	</table>
+
+  
+	<table x="833" y="101" w="377" h="445" fontsize="20" selected_fontsize="20"
+         cols="1" rows="5" colspacing="0" rowspacing="0"
+		 lbimage="image/youtube/youtube_related_video_Thumbnails_Select_frame_f.png" clickimage=""  
+		 textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" 
+		 activetextcolor="0xffffff" selectedtextcolor="0xffffff" auto_translate="1" align="top">
+		<text text="@@browse_0_views" lmargin="146" ymargin="60"
+		  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+		  selected="@@browse_0_select"/>
+		<text text="@@browse_1_views" lmargin="146" ymargin="60"
+		  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1"
+		  selected="@@browse_1_select"/>
+		<text text="@@browse_2_views"  lmargin="146" ymargin="60"
+		  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" 
+		  selected="@@browse_2_select"/>
+		<text text="@@browse_3_views" lmargin="146" ymargin="60"
+		  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" 
+		  selected="@@browse_3_select"/>
+		<text text="@@browse_4_views" lmargin="146" ymargin="60"
+		  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" 
+		  selected="@@browse_4_select"/>
+
+	</table>
+ 
+	<wrapper x="979" w="218" h="22" fontsize="20" textcolor="0xffffff">
+		<text text="@@browselist_0_text" y="114"  speed="@@browse_0_speed" delay="2"/>
+		<text text="@@browselist_1_text" y="203"  speed="@@browse_1_speed" delay="2"/>
+		<text text="@@browselist_2_text" y="292"  speed="@@browse_2_speed" delay="2"/>
+		<text text="@@browselist_3_text" y="381"  speed="@@browse_3_speed" delay="2"/>
+		<text text="@@browselist_4_text" y="470"  speed="@@browse_4_speed" delay="2"/> 
+	</wrapper>
+
+	<!-- Stars -->
+	<wrapper x="979" w="100" h="19">
+		<image image="@@browse_0_stars" ymargin="0" y="138"/>
+		<image image="@@browse_1_stars" ymargin="0" y="227"/>
+		<image image="@@browse_2_stars" ymargin="0" y="316"/>
+		<image image="@@browse_3_stars" ymargin="0" y="405"/>
+		<image image="@@browse_4_stars" ymargin="0" y="494"/>
+	</wrapper>
+
+
+<!--	<wrapper x="443" w="120" h="70" align="hcenter" scale_type="fixratio" scale="100">-->
+	<wrapper x="844" w="120" h="70" align="hcenter" scale="100">
+	    <image image="@@browse_0_icon" ymargin="0" y="110"/>
+    	<image image="@@browse_1_icon" ymargin="0" y="199"/>
+	    <image image="@@browse_2_icon" ymargin="0" y="288"/>
+    	<image image="@@browse_3_icon" ymargin="0" y="377"/>
+	    <image image="@@browse_4_icon" ymargin="0" y="466"/>
+  	</wrapper>
+
+	<text text="@@option_title" x="840" y="38" w="400" h="28" fontsize="24" textcolor="0x07b5ff"/>
+	<image image="image/villa_arrow_up.png" x="1035" y="68" w="40" h="29"/>
+	<image image="image/villa_arrow_down.png" x="1035" y="552" w="40" h="29" />
+
+</page>

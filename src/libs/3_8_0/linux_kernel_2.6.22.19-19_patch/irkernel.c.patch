@@ -1,0 +1,12 @@
+--- drivers/char/irkernel.c.orig	2010-04-02 19:02:54.000000000 +0800
++++ drivers/char/irkernel.c	2010-04-02 17:57:37.000000000 +0800
+@@ -311,7 +311,8 @@
+ 			printk(KERN_DEBUG "%s: repetition too fast\n", ir_devname);
+ #endif
+ 			goto out; 	/* Key repeats too fast, drop it */
+-		} else if (time_before(priv->last_jiffies + (wait_period * 4), jiffies)) {
++//		} else if (time_before(priv->last_jiffies + (wait_period * 4), jiffies)) {
++		} else if (time_before(priv->last_jiffies + (2*wp_var>40?40:2*wp_var), jiffies)) {
+ #ifdef DEBUG_IR
+ 			printk(KERN_DEBUG "%s: got slow repetition, glitch?\n", ir_devname);
+ #endif

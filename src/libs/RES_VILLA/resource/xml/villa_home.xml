@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" >
+	<menuctrl valkey="menuctrl1"/>
+	<menuview ctrlname="menuctrl1" changed="@@menuctrl1_changed" slice_count="10"  
+		x="0" y="0" w="1280" h="720" main_list_x="596" main_list_y="165" icon_spacing="70" 
+		display_item_count="4" focus_index="2" stack_display_item_count="1" stack_focus_index="1"
+		stack_display_deep="4" stack_use_focus_icon="0" style="0" main_focus_icon="image/home_horizontal_select_bar.png"/>
+	<image image="image/villa/home_main_function_frame_bg.png" x="0" y="222" w="1280" h="241" bg="1"/>
+	<image image="image/villa/home_select_bar.png" x="572" y="265" w="139" h="154" bg="1"/>
+	<image image="@@prev-icon" x="634" y="254" w="17" h="12"/>
+	<image image="@@next-icon" x="634" y="420" w="17" h="12"/>
+	<text text="@@current_node_name" x="746" y="328" w="504" h="34" fontsize="30" align="left" textcolor="0x07b5ff" speed="1" delay="2"/>
+	<text text="@@root_node_name" x="755" y="554" w="450" h="54" fontsize="50" align="right" textcolor="0x07b5ff"/>
+	<text text="@@parent_node_name" x="755" y="611" w="450" h="34" fontsize="30" align="right" textcolor="0xb8b8b8"/>
+	<include filename="./villa_home_info.xml" />
+	<include filename="./ipcam_pip_win.xml" />
+</page>
+

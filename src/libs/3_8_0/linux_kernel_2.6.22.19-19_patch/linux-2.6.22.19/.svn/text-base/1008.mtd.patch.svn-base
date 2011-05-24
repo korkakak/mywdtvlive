@@ -1,0 +1,620 @@
+diff -Naur --exclude=CVS --exclude='*.o' --exclude='*.a' --exclude='*.so' --exclude='*.elf' --exclude=System.map --exclude=Makefile.d --exclude='*log' --exclude='*log2' --exclude='*~' --exclude='.*~' --exclude='.#*' --exclude='*.bak' --exclude='*.orig' --exclude='*.rej' --exclude='core.[0-9]*' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=vmlinux --exclude=vmlinux.bin --exclude=yamon-02.06-SIGMADESIGNS-01_el.bin linux-2.6.22.16.ref/drivers/mtd/chips/cfi_cmdset_0002.c linux-2.6.22.16/drivers/mtd/chips/cfi_cmdset_0002.c
+--- linux-2.6.22.16.ref/drivers/mtd/chips/cfi_cmdset_0002.c	2008-01-14 17:17:32.000000000 -0800
++++ linux-2.6.22.16/drivers/mtd/chips/cfi_cmdset_0002.c	2008-04-04 19:09:51.000000000 -0700
+@@ -448,6 +448,22 @@
+  * correctly and is therefore not done	(particulary with interleaved chips
+  * as each chip must be checked independantly of the others).
+  */
++#ifdef CONFIG_TANGOX
++/* For TANGOX, verify content in start address as well */
++static int __xipram chip_ready(struct map_info *map, unsigned long addr, unsigned long start, map_word z_val)
++{
++	map_word d, t, z;
++
++	d = map_read(map, addr);
++	mb();
++	t = map_read(map, addr);
++	mb();
++	z = map_read(map, start);
++	mb();
++
++	return map_word_equal(map, d, t) && map_word_equal(map, z, z_val);
++}
++#else
+ static int __xipram chip_ready(struct map_info *map, unsigned long addr)
+ {
+ 	map_word d, t;
+@@ -457,6 +473,7 @@
+ 
+ 	return map_word_equal(map, d, t);
+ }
++#endif
+ 
+ /*
+  * Return true if the chip is ready and has the correct value.
+@@ -490,6 +507,9 @@
+ 	struct cfi_private *cfi = map->fldrv_priv;
+ 	unsigned long timeo;
+ 	struct cfi_pri_amdstd *cfip = (struct cfi_pri_amdstd *)cfi->cmdset_priv;
++#ifdef CONFIG_TANGOX
++	map_word z_val = map_read(map, chip->start);
++#endif
+ 
+  resettime:
+ 	timeo = jiffies + HZ;
+@@ -498,8 +518,13 @@
+ 
+ 	case FL_STATUS:
+ 		for (;;) {
++#ifdef CONFIG_TANGOX
++			if (chip_ready(map, adr, chip->start, z_val))
++				break;
++#else
+ 			if (chip_ready(map, adr))
+ 				break;
++#endif
+ 
+ 			if (time_after(jiffies, timeo)) {
+ 				printk(KERN_ERR "Waiting for chip to be ready timed out.\n");
+@@ -530,6 +555,12 @@
+ 		    )))
+ 			goto sleep;
+ 
++		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
++		 * Sentivision FIX: map_write here whole flash operation freeze on VIP1216 STB.
++		 *   So we just will sleep waitting for state change: */
++		goto sleep;
++		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
++
+ 		/* We could check to see if we're trying to access the sector
+ 		 * that is currently being erased. However, no user will try
+ 		 * anything like that so we just wait for the timeout. */
+@@ -542,8 +573,13 @@
+ 		chip->state = FL_ERASE_SUSPENDING;
+ 		chip->erase_suspended = 1;
+ 		for (;;) {
++#ifdef CONFIG_TANGOX
++			if (chip_ready(map, adr, chip->start, z_val))
++				break;
++#else
+ 			if (chip_ready(map, adr))
+ 				break;
++#endif
+ 
+ 			if (time_after(jiffies, timeo)) {
+ 				/* Should have suspended the erase by now.
+@@ -999,6 +1035,9 @@
+ 	int ret = 0;
+ 	map_word oldd;
+ 	int retry_cnt = 0;
++#ifdef CONFIG_TANGOX
++	map_word z_val;
++#endif
+ 
+ 	adr += chip->start;
+ 
+@@ -1018,6 +1057,9 @@
+ 	 * data at other locations when 0xff is written to a location that
+ 	 * already contains 0xff.
+ 	 */
++#ifdef CONFIG_TANGOX
++	z_val = ((adr == chip->start) ? datum : map_read(map, chip->start));
++#endif
+ 	oldd = map_read(map, adr);
+ 	if (map_word_equal(map, oldd, datum)) {
+ 		DEBUG( MTD_DEBUG_LEVEL3, "MTD %s(): NOP\n",
+@@ -1056,15 +1098,25 @@
+ 			continue;
+ 		}
+ 
+-		if (time_after(jiffies, timeo) && !chip_ready(map, adr)){
++#ifdef CONFIG_TANGOX
++		if (time_after(jiffies, timeo) && !chip_ready(map, adr, chip->start, z_val))
++#else
++		if (time_after(jiffies, timeo) && !chip_ready(map, adr))
++#endif
++		{
+ 			xip_enable(map, chip, adr);
+ 			printk(KERN_WARNING "MTD %s(): software timeout\n", __func__);
+ 			xip_disable(map, chip, adr);
+ 			break;
+ 		}
+ 
++#ifdef CONFIG_TANGOX
++		if (chip_ready(map, adr, chip->start, z_val))
++			break;
++#else
+ 		if (chip_ready(map, adr))
+ 			break;
++#endif
+ 
+ 		/* Latency issues. Drop the lock, wait a while and retry */
+ 		UDELAY(map, chip, adr, 1);
+@@ -1247,6 +1299,9 @@
+ 	unsigned long cmd_adr;
+ 	int z, words;
+ 	map_word datum;
++#ifdef CONFIG_TANGOX
++	map_word z_val;
++#endif
+ 
+ 	adr += chip->start;
+ 	cmd_adr = adr;
+@@ -1267,6 +1322,9 @@
+ 	ENABLE_VPP(map);
+ 	xip_disable(map, chip, cmd_adr);
+ 
++#ifdef CONFIG_TANGOX
++	z_val = ((adr == chip->start) ? datum : map_read(map, chip->start));
++#endif
+ 	cfi_send_gen_cmd(0xAA, cfi->addr_unlock1, chip->start, map, cfi, cfi->device_type, NULL);
+ 	cfi_send_gen_cmd(0x55, cfi->addr_unlock2, chip->start, map, cfi, cfi->device_type, NULL);
+ 	//cfi_send_gen_cmd(0xA0, cfi->addr_unlock1, chip->start, map, cfi, cfi->device_type, NULL);
+@@ -1298,7 +1356,7 @@
+ 
+ 	INVALIDATE_CACHE_UDELAY(map, chip,
+ 				adr, map_bankwidth(map),
+-				chip->word_write_time);
++				chip->buffer_write_time);
+ 
+ 	timeo = jiffies + uWriteTimeout;
+ 
+@@ -1317,10 +1375,20 @@
+ 			continue;
+ 		}
+ 
++#ifdef CONFIG_TANGOX
++		if (time_after(jiffies, timeo) && !chip_ready(map, adr, chip->start, z_val))
++			break;
++#else
+ 		if (time_after(jiffies, timeo) && !chip_ready(map, adr))
+ 			break;
++#endif
+ 
+-		if (chip_ready(map, adr)) {
++#ifdef CONFIG_TANGOX
++		if (chip_ready(map, adr, chip->start, z_val)) 
++#else
++		if (chip_ready(map, adr)) 
++#endif
++		{
+ 			xip_enable(map, chip, adr);
+ 			goto op_done;
+ 		}
+@@ -1438,6 +1506,10 @@
+ 	unsigned long int adr;
+ 	DECLARE_WAITQUEUE(wait, current);
+ 	int ret = 0;
++#ifdef CONFIG_TANGOX
++	map_word z_val;
++	z_val.x[0] = ((map->bankwidth == 1) ? 0xff : 0xffff);
++#endif
+ 
+ 	adr = cfi->addr_unlock1;
+ 
+@@ -1468,7 +1540,7 @@
+ 
+ 	INVALIDATE_CACHE_UDELAY(map, chip,
+ 				adr, map->size,
+-				chip->erase_time*500);
++				chip->erase_time*1000);
+ 
+ 	timeo = jiffies + (HZ*20);
+ 
+@@ -1490,8 +1562,13 @@
+ 			chip->erase_suspended = 0;
+ 		}
+ 
++#ifdef CONFIG_TANGOX
++		if (chip_ready(map, adr, chip->start, z_val))
++			break;
++#else
+ 		if (chip_ready(map, adr))
+ 			break;
++#endif
+ 
+ 		if (time_after(jiffies, timeo)) {
+ 			printk(KERN_WARNING "MTD %s(): software timeout\n",
+@@ -1526,6 +1603,9 @@
+ 	unsigned long timeo = jiffies + HZ;
+ 	DECLARE_WAITQUEUE(wait, current);
+ 	int ret = 0;
++#ifdef CONFIG_TANGOX
++	map_word z_val;
++#endif
+ 
+ 	adr += chip->start;
+ 
+@@ -1539,6 +1619,13 @@
+ 	DEBUG( MTD_DEBUG_LEVEL3, "MTD %s(): ERASE 0x%.8lx\n",
+ 	       __func__, adr );
+ 
++#ifdef CONFIG_TANGOX
++	if (adr == chip->start)
++		z_val.x[0] = ((map->bankwidth == 1) ? 0xff : 0xffff);
++	else
++		z_val = map_read(map, chip->start);
++#endif
++
+ 	XIP_INVAL_CACHED_RANGE(map, adr, len);
+ 	ENABLE_VPP(map);
+ 	xip_disable(map, chip, adr);
+@@ -1556,7 +1643,7 @@
+ 
+ 	INVALIDATE_CACHE_UDELAY(map, chip,
+ 				adr, len,
+-				chip->erase_time*500);
++				chip->erase_time*1000);
+ 
+ 	timeo = jiffies + (HZ*20);
+ 
+@@ -1572,13 +1659,18 @@
+ 			continue;
+ 		}
+ 		if (chip->erase_suspended) {
+-			/* This erase was suspended and resumed.
++		/* This erase was suspended and resumed.
+ 			   Adjust the timeout */
+ 			timeo = jiffies + (HZ*20); /* FIXME */
+ 			chip->erase_suspended = 0;
+ 		}
+ 
+-		if (chip_ready(map, adr)) {
++#ifdef CONFIG_TANGOX
++		if (chip_ready(map, adr, chip->start, z_val))
++#else
++		if (chip_ready(map, adr)) 
++#endif
++		{
+ 			xip_enable(map, chip, adr);
+ 			break;
+ 		}
+diff -Naur --exclude=CVS --exclude='*.o' --exclude='*.a' --exclude='*.so' --exclude='*.elf' --exclude=System.map --exclude=Makefile.d --exclude='*log' --exclude='*log2' --exclude='*~' --exclude='.*~' --exclude='.#*' --exclude='*.bak' --exclude='*.orig' --exclude='*.rej' --exclude='core.[0-9]*' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=vmlinux --exclude=vmlinux.bin --exclude=yamon-02.06-SIGMADESIGNS-01_el.bin linux-2.6.22.16.ref/drivers/mtd/Kconfig linux-2.6.22.16/drivers/mtd/Kconfig
+--- linux-2.6.22.16.ref/drivers/mtd/Kconfig	2008-01-14 17:17:32.000000000 -0800
++++ linux-2.6.22.16/drivers/mtd/Kconfig	2008-04-04 19:07:29.000000000 -0700
+@@ -49,7 +49,7 @@
+ 
+ config MTD_REDBOOT_PARTS
+ 	tristate "RedBoot partition table parsing"
+-	depends on MTD_PARTITIONS
++	depends on MTD_PARTITIONS && !TANGOX
+ 	---help---
+ 	  RedBoot is a ROM monitor and bootloader which deals with multiple
+ 	  'images' in flash devices by putting a table one of the erase
+@@ -99,7 +99,7 @@
+ 
+ config MTD_CMDLINE_PARTS
+ 	bool "Command line partition table parsing"
+-	depends on MTD_PARTITIONS = "y" && MTD = "y"
++	depends on MTD_PARTITIONS = "y" && MTD = "y" && !TANGOX_XENV_READ
+ 	---help---
+ 	  Allow generic configuration of the MTD partition tables via the kernel
+ 	  command line. Multiple flash resources are supported for hardware where
+diff -Naur --exclude=CVS --exclude='*.o' --exclude='*.a' --exclude='*.so' --exclude='*.elf' --exclude=System.map --exclude=Makefile.d --exclude='*log' --exclude='*log2' --exclude='*~' --exclude='.*~' --exclude='.#*' --exclude='*.bak' --exclude='*.orig' --exclude='*.rej' --exclude='core.[0-9]*' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=vmlinux --exclude=vmlinux.bin --exclude=yamon-02.06-SIGMADESIGNS-01_el.bin linux-2.6.22.16.ref/drivers/mtd/maps/Kconfig linux-2.6.22.16/drivers/mtd/maps/Kconfig
+--- linux-2.6.22.16.ref/drivers/mtd/maps/Kconfig	2008-01-14 17:17:32.000000000 -0800
++++ linux-2.6.22.16/drivers/mtd/maps/Kconfig	2008-04-04 19:07:29.000000000 -0700
+@@ -6,6 +6,7 @@
+ 
+ config MTD_COMPLEX_MAPPINGS
+ 	bool "Support non-linear mappings of flash chips"
++	depends on MTD && TANGOX_XENV_READ!=y
+ 	help
+ 	  This causes the chip drivers to allow for complicated
+ 	  paged mappings of flash chips.
+@@ -23,7 +24,7 @@
+ 
+ config MTD_PHYSMAP_START
+ 	hex "Physical start address of flash mapping"
+-	depends on MTD_PHYSMAP
++	depends on MTD_PHYSMAP && TANGOX_XENV_READ!=y
+ 	default "0x8000000"
+ 	help
+ 	  This is the physical memory location at which the flash chips
+@@ -35,8 +36,8 @@
+ 
+ config MTD_PHYSMAP_LEN
+ 	hex "Physical length of flash mapping"
+-	depends on MTD_PHYSMAP
+-	default "0"
++	depends on MTD_PHYSMAP && TANGOX_XENV_READ!=y
++        default "0x4000000"
+ 	help
+ 	  This is the total length of the mapping of the flash chips on
+ 	  your particular board. If there is space, or aliases, in the
+@@ -47,9 +48,9 @@
+ 	  Ignore this option if you use run-time physmap configuration
+ 	  (i.e., run-time calling physmap_configure()).
+ 
+-config MTD_PHYSMAP_BANKWIDTH
++config MTD_PHYSMAP_BANKWIDTH 
+ 	int "Bank width in octets"
+-	depends on MTD_PHYSMAP
++	depends on MTD_PHYSMAP && TANGOX_XENV_READ!=y
+ 	default "2"
+ 	help
+ 	  This is the total width of the data bus of the flash devices
+diff -Naur --exclude=CVS --exclude='*.o' --exclude='*.a' --exclude='*.so' --exclude='*.elf' --exclude=System.map --exclude=Makefile.d --exclude='*log' --exclude='*log2' --exclude='*~' --exclude='.*~' --exclude='.#*' --exclude='*.bak' --exclude='*.orig' --exclude='*.rej' --exclude='core.[0-9]*' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=vmlinux --exclude=vmlinux.bin --exclude=yamon-02.06-SIGMADESIGNS-01_el.bin linux-2.6.22.16.ref/drivers/mtd/maps/physmap.c linux-2.6.22.16/drivers/mtd/maps/physmap.c
+--- linux-2.6.22.16.ref/drivers/mtd/maps/physmap.c	2008-01-14 17:17:32.000000000 -0800
++++ linux-2.6.22.16/drivers/mtd/maps/physmap.c	2008-04-04 19:07:29.000000000 -0700
+@@ -21,6 +21,52 @@
+ #include <linux/mtd/partitions.h>
+ #include <linux/mtd/physmap.h>
+ #include <asm/io.h>
++#if defined(CONFIG_TANGOX) && defined(CONFIG_TANGOX_XENV_READ)
++
++#ifdef CONFIG_TANGO2
++#include <asm/tango2/emhwlib_registers_tango2.h>
++#include <asm/tango2/tango2_gbus.h>
++#elif defined(CONFIG_TANGO3)
++#include <asm/tango3/emhwlib_registers_tango3.h>
++#include <asm/tango3/tango3_gbus.h>
++#endif
++
++#define XENV_MAX_FLASH    4
++#define XENV_MAX_FLASH_PARTITIONS   16
++static struct mtd_info *mymtds[XENV_MAX_FLASH] = { NULL, NULL, NULL, NULL };
++static struct mtd_partition *mtd_parts[XENV_MAX_FLASH] = { NULL, NULL, NULL, NULL };
++static unsigned int p_cnts[XENV_MAX_FLASH] = { 0, 0, 0, 0 };
++static unsigned int f_sizes[XENV_MAX_FLASH] = { 0, 0, 0, 0 };
++
++struct map_info physmap_maps[XENV_MAX_FLASH] = {
++        {
++                .name = "CS0: Physically mapped flash",
++                .phys = 0x40000000,
++                .size = 0, /* To be filled by XENV */
++                .bankwidth = 2, /* To be checked by PBI registers */
++        },
++        {
++                .name = "CS1: Physically mapped flash",
++                .phys = 0x44000000,
++                .size = 0, /* To be filled by XENV */
++                .bankwidth = 2, /* To be checked by PBI registers */
++        },
++        {
++                .name = "CS2: Physically mapped flash",
++                .phys = 0x48000000,
++                .size = 0, /* To be filled by XENV */
++                .bankwidth = 2, /* To be checked by PBI registers */
++        },
++        {
++                .name = "CS3: Physically mapped flash",
++                .phys = 0x4c000000,
++                .size = 0, /* To be filled by XENV */
++                .bankwidth = 2, /* To be checked by PBI registers */
++        },
++};
++int tangox_flash_get_info(int cs, unsigned int *size, unsigned int *part_count);
++int tangox_flash_get_parts(int cs, unsigned int offset[], unsigned int size[]);
++#endif
+ 
+ struct physmap_flash_info {
+ 	struct mtd_info		*mtd;
+@@ -35,6 +81,30 @@
+ 
+ static int physmap_flash_remove(struct platform_device *dev)
+ {
++#if defined(CONFIG_TANGOX) && defined(CONFIG_TANGOX_XENV_READ)
++        int cs, p;
++        struct mtd_partition *part_ptr;
++
++        for (cs = 0; cs < XENV_MAX_FLASH; cs++) {
++                if (f_sizes[cs] != 0) {
++                        if (p_cnts[cs] != 0) {
++                                for (part_ptr = mtd_parts[cs], p = 0; p < p_cnts[cs]; p++, part_ptr++) {
++                                        if (part_ptr->name) {
++                                                kfree(part_ptr->name);
++                                                part_ptr->name = NULL;
++                                        }
++                                }
++                                del_mtd_partitions(mymtds[cs]);
++                                kfree(mtd_parts[cs]);
++                                mtd_parts[cs] = NULL;
++                        }
++                        del_mtd_device(mymtds[cs]);
++                        map_destroy(mymtds[cs]);
++                        iounmap(physmap_maps[cs].virt);
++                        physmap_maps[cs].virt = NULL;
++                }
++        }
++#else
+ 	struct physmap_flash_info *info;
+ 	struct physmap_flash_data *physmap_data;
+ 
+@@ -68,14 +138,17 @@
+ 		release_resource(info->res);
+ 		kfree(info->res);
+ 	}
+-
++#endif
+ 	return 0;
+ }
+ 
+ static const char *rom_probe_types[] = { "cfi_probe", "jedec_probe", "map_rom", NULL };
++
++#ifndef CONFIG_TANGOX
+ #ifdef CONFIG_MTD_PARTITIONS
+ static const char *part_probe_types[] = { "cmdlinepart", "RedBoot", NULL };
+ #endif
++#endif
+ 
+ static int physmap_flash_probe(struct platform_device *dev)
+ {
+@@ -84,6 +157,117 @@
+ 	const char **probe_type;
+ 	int err;
+ 
++#if defined(CONFIG_TANGOX) && defined(CONFIG_TANGOX_XENV_READ)
++        int cs;
++        int part_num = 0;
++        unsigned long csconfig = gbus_read_reg32(REG_BASE_host_interface + PB_CS_config) & 0xf;
++
++        for (cs = 0; cs < XENV_MAX_FLASH; cs++) {
++
++                /* Check XENV for availability */
++                f_sizes[cs] = p_cnts[cs] = 0;
++
++                tangox_flash_get_info(cs, &f_sizes[cs], &p_cnts[cs]);
++                if (f_sizes[cs] == 0)
++                        continue;
++                else {
++                        physmap_maps[cs].size = f_sizes[cs];
++                        physmap_maps[cs].bankwidth = ((csconfig >> cs) & 0x1) ? 1 : 2;
++                }
++
++                printk(KERN_NOTICE "physmap flash device CS%d: 0x%x at 0x%x\n",
++                                cs, (u32)physmap_maps[cs].size, (u32)physmap_maps[cs].phys);
++                physmap_maps[cs].virt = ioremap(physmap_maps[cs].phys, physmap_maps[cs].size);
++
++                if (!physmap_maps[cs].virt) {
++                        printk("Failed to ioremap\n");
++                        continue;
++                }
++
++                simple_map_init(&physmap_maps[cs]);
++
++                mymtds[cs] = NULL;
++                probe_type = rom_probe_types;
++                for(; !mymtds[cs] && *probe_type; probe_type++) {
++                        mymtds[cs] = do_map_probe(*probe_type, &physmap_maps[cs]);
++                }
++
++                if (mymtds[cs] && (mymtds[cs]->size != f_sizes[cs])) {
++                        /* Redo ioremap if size specified is not the same as detected */
++                        iounmap((void *)physmap_maps[cs].virt);
++                        physmap_maps[cs].size = mymtds[cs]->size;
++                        physmap_maps[cs].virt = ioremap(physmap_maps[cs].phys, physmap_maps[cs].size);
++
++                        if (!physmap_maps[cs].virt) {
++                                printk(KERN_NOTICE "Failed to ioremap at 0x%08x, size 0x%08x\n",
++                                                (u32)physmap_maps[cs].phys, (u32)physmap_maps[cs].size);
++                                continue;
++                        }
++                        printk(KERN_NOTICE "CS%d: flash size mismatched, re-do probing/initialization.\n", cs);
++                        printk(KERN_NOTICE "physmap flash device CS%d: 0x%x at 0x%x (remapped 0x%x)\n",
++                                        cs, (u32)physmap_maps[cs].size, (u32)physmap_maps[cs].phys, (u32)physmap_maps[cs].virt);
++
++                        /* Re-do initialization */
++                        simple_map_init(&physmap_maps[cs]);
++                        mymtds[cs] = NULL;
++                        probe_type = rom_probe_types;
++                        for(; !mymtds[cs] && *probe_type; probe_type++) {
++                                mymtds[cs] = do_map_probe(*probe_type, &physmap_maps[cs]);
++                        }
++                }
++
++                if (mymtds[cs]) {
++                        mymtds[cs]->owner = THIS_MODULE;
++                        add_mtd_device(mymtds[cs]);
++                        part_num++;
++
++#ifdef CONFIG_MTD_PARTITIONS
++                        if (p_cnts[cs] > 0) {
++                                int p, pcnt;
++                                struct mtd_partition *part_ptr;
++                                unsigned int offsets[XENV_MAX_FLASH_PARTITIONS];
++                                unsigned int szs[XENV_MAX_FLASH_PARTITIONS];
++
++                                if ((mtd_parts[cs] = (struct mtd_partition *)kmalloc(
++                                                sizeof(struct mtd_partition) * p_cnts[cs], GFP_KERNEL)) == NULL) {
++                                        printk(KERN_NOTICE "Out of memory.\n");
++                                        return -ENOMEM;
++                                }
++                                memset(mtd_parts[cs], 0, sizeof(struct mtd_partition) * p_cnts[cs]);
++                                tangox_flash_get_parts(cs, offsets, szs);
++
++                                printk(KERN_NOTICE "Using physmap partition definition\n");
++
++                                /* Initialize each partition */
++                                for (pcnt = 0, part_ptr = mtd_parts[cs], p = 0; p < p_cnts[cs]; p++) {
++                                        if (((szs[p] & 0x7fffffff) + offsets[p]) > physmap_maps[cs].size) {
++                                                printk(KERN_NOTICE "CS%d-Part%d (offset:0x%x, size:0x%x) outside physical map, removed.\n",
++                                                                cs, p + 1, offsets[p], szs[p] & 0x7fffffff);
++                                                        continue;
++                                        }
++                                        part_ptr->size = szs[p] & 0x7fffffff;
++                                        part_ptr->offset = offsets[p];
++                                        if (part_ptr->size & 0x80000000)
++                                                part_ptr->mask_flags = MTD_WRITEABLE;
++                                        part_ptr->name = (char *)kmalloc(16, GFP_KERNEL);
++                                        if (part_ptr->name != NULL)
++                                                sprintf(part_ptr->name, "CS%d-Part%d", cs, p + 1);
++                                        pcnt++;
++                                        part_ptr++;
++                                }
++                                p_cnts[cs] = pcnt;
++
++                                if (p_cnts[cs] > 0) {
++                                        printk(KERN_NOTICE "Adding partition #%d-#%d\n", part_num, part_num + p_cnts[cs] - 1);
++                                        add_mtd_partitions(mymtds[cs], mtd_parts[cs], p_cnts[cs]);
++                                        part_num += p_cnts[cs];
++                                }
++                        }
++#endif /* CONFIG_MTD_PARTITIONS */
++                }
++        }
++        return 0;
++#else
+ 	physmap_data = dev->dev.platform_data;
+ 	if (physmap_data == NULL)
+ 		return -ENODEV;
+@@ -155,6 +339,7 @@
+ err_out:
+ 	physmap_flash_remove(dev);
+ 	return err;
++#endif /* CONFIG_TANGOX && CONFIG_TANGOX_XENV_READ */
+ }
+ 
+ #ifdef CONFIG_PM
+@@ -188,7 +373,7 @@
+ static struct platform_driver physmap_flash_driver = {
+ 	.probe		= physmap_flash_probe,
+ 	.remove		= physmap_flash_remove,
+-#ifdef CONFIG_PM
++#if  defined(CONFIG_PM) && !defined(CONFIG_TANGOX)  
+ 	.suspend	= physmap_flash_suspend,
+ 	.resume		= physmap_flash_resume,
+ 	.shutdown	= physmap_flash_shutdown,
+@@ -255,11 +440,20 @@
+ 		platform_device_register(&physmap_flash);
+ #endif
+ 
++#ifdef CONFIG_TANGOX
++	/* a hack to force probing here */
++	err = physmap_flash_probe(NULL);
++#endif
++
+ 	return err;
+ }
+ 
+ static void __exit physmap_exit(void)
+ {
++#ifdef CONFIG_TANGOX
++	physmap_flash_remove(NULL);
++#endif
++
+ #ifdef PHYSMAP_COMPAT
+ 	platform_device_unregister(&physmap_flash);
+ #endif
+diff -Naur --exclude=CVS --exclude='*.o' --exclude='*.a' --exclude='*.so' --exclude='*.elf' --exclude=System.map --exclude=Makefile.d --exclude='*log' --exclude='*log2' --exclude='*~' --exclude='.*~' --exclude='.#*' --exclude='*.bak' --exclude='*.orig' --exclude='*.rej' --exclude='core.[0-9]*' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=.depend --exclude='.*.o.flags' --exclude='*.gz' --exclude=vmlinux --exclude=vmlinux.bin --exclude=yamon-02.06-SIGMADESIGNS-01_el.bin linux-2.6.22.16.ref/README.1008.mtd.patch linux-2.6.22.16/README.1008.mtd.patch
+--- linux-2.6.22.16.ref/README.1008.mtd.patch	1969-12-31 16:00:00.000000000 -0800
++++ linux-2.6.22.16/README.1008.mtd.patch	2008-04-04 19:10:32.000000000 -0700
+@@ -0,0 +1,19 @@
++Feature:
++--------
++Customization of MTD layer for SMP86xx chips
++
++Prerequisite patch numbers:
++---------------------------
++0000
++1000
++
++Primary author:
++---------------
++YH Lin
++
++Related to which chip version SMP86xx xx=?
++------------------------------------------
++Tango2 ES6/RevA or above, or Tango3 ES1 or above
++
++(linux patches) which CONFIG_... are provided:
++----------------------------------------------

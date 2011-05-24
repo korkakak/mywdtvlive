@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<page background="image/cinemanow/cn_Screen_mask_70%.png">
+	<ctrlgrp> 
+		<button valkey="OK"
+			normal_bg="image/cinemanow/cn_bt_n.png"
+			focused_bg="image/cinemanow/cn_bt_f.png"
+			click_bg="image/cinemanow/cn_bt_c.png"
+			click_effect="tp"/>
+		 <button valkey="CANCEL"
+			normal_bg="image/cinemanow/cn_bt_n.png"
+			focused_bg="image/cinemanow/cn_bt_f.png"
+			click_bg="image/cinemanow/cn_bt_c.png"
+			click_effect="tp"/>
+	</ctrlgrp>
+	<image image="image/cinemanow/cn_errors_message_bg_for_two_btn.png" x="438" y="222" w="404" h="285"/>
+	<text text="@@message" x="468" y="252" w="344" h="116" fontsize="18" align="hcenter" numlines="4" textcolor="0xffbababa"/>
+	<wrapper x="535" w="210" h="49" align="hcenter" fontsize="20" textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfff54029">
+		<imgbtn image="@@bg-OK" text="@@text-OK" active="@@act-OK" y="374"/>
+		<imgbtn image="@@bg-CANCEL" text="@@text-CANCEL" active="@@act-CANCEL" y="436"/>
+	</wrapper>
+</page>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" >
+	<ctrlgrp valkey="youtube_home_ctrl">
+		<menuctrl valkey="menuctrl1" autoenter="1" myinc="2" lbmask="ud"/>
+		<linebreak/>
+    	<button valkey="CMD0" 
+	    	lightbar_bg="image/list356_vip_station_list_plus_plus_button.png"
+		    focused_bg="image/list356_vip_station_list_remove_icon_f.png"
+		    disabled_bg="image/list356_vip_station_list_remove_icon_n.png"
+	    	normal_bg="image/list356_vip_station_list_remove_icon_n.png"/>
+<!--	    <linebreak/>-->
+	</ctrlgrp>
+
+	<menuview ctrlname="menuctrl1" changed="@@menuctrl1_changed" x="0" y="0" w="1280" h="720" main_list_x="97" main_list_y="295" icon_spacing="40" scale="100"
+		enable_outline="1" slice_count="5" 
+		outline_normal_icon="image/youtube_home_Thumbnails_Select_frame_n.png"
+		outline_focus_icon="image/youtube_home_Thumbnails_Select_frame_f.png"
+		display_item_count="7" focus_index="4" stack_display_item_count="1" stack_focus_index="1"
+		stack_display_deep="1" stack_use_focus_icon="0" style="2" main_focus_icon="image/home_horizontal_select_bar.png"/>
+
+	<image image="@@status_icon" x="573" y="267" w="133" h="133"/>
+	<include filename="./inc_live365_icon.xml"/>
+	<text text="@@options" x="90" y="598" w="800" h="52" align="left" fontsize="50" textcolor="0x07B5FF" />
+
+	<image image="image/live365_vip_stations_list_title_line_up.png" x="366" y="461" w="555" h="5"/>
+
+	<text text="@@title" x="453" y="474" w="374" h="28" align="hcenter" fontsize="26" textcolor="0x07b5ff"/>
+
+	<image image="image/live365_vip_stations_list_title_line_down.png" x="366" y="506" w="555" h="1"/>
+
+	<text text="@@gener" x="453" y="517" w="374" h="22" align="hcenter" fontsize="20" textcolor="0xE2E2E2"/>
+
+	<image image="image/live365_vip_stations_List_line.png" x="366" y="544" w="555" h="1"/>
+
+	<image image="@@rating" x="590" y="556" w="100" h="19"/>
+
+	<image image="image/live365_vip_stations_List_line.png" x="366" y="585" w="555" h="1"/>
+
+	<image x="797" y="210" w="200" h="39" image="@@lightbar-CMD0"/>
+	<image x="758" y="210" w="38" h="39" image="@@bg-CMD0"/>
+	<text text="@@preset" x="810" y="221" w="172" h="18" fontsize="16" textcolor="0xE2E2E2" />
+
+</page>
+

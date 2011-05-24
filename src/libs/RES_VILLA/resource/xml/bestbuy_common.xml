@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="@@bg-Back" x="105" y="68" w="43" h="40" active="@@act-Back"/>
+	<image image="@@bg-ToHome" x="167" y="68" w="43" h="40" active="@@act-ToHome"/>
+	<image image="image/bestbuy/bby_logo.png" x="926" y="70" w="288" h="58"/>
+	<image image="image/bestbuy/bb_cn_logo.png" x="974" y="643" w="241" h="36" />
+	<image image="@@notify_image" x="812" y="39" w="109" h="109"/>
+</wrapper>

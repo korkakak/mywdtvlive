@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+<ctrlgrp>
+	<button valkey="BUTTON"
+		focused_bg="image/Villa_button_blue_f_02.png"
+		normal_bg="image/Villa_button_blue_n_02.png"/>
+</ctrlgrp>
+<image image="image/villa_Fail_message_bg.png" x="319" y="186" w="641" h="308"/>
+<text text="@@msg_str" x="384" y="259" w="511" h="82" numlines="2" align="hcenter" textcolor="0xffffff" fontsize="24"/> 
+<image image="@@bg-BUTTON" x="464" y="346" w="343" h="78"/>
+<text text="@@button-text" x="464" y="346" w="343" h="78" textcolor="0xffffff" align="hcenter" fontsize="18"/>
+<image image="image/villa_flickr_logo.png" x="1072" y="590" w="126" h="56"/>
+</page>

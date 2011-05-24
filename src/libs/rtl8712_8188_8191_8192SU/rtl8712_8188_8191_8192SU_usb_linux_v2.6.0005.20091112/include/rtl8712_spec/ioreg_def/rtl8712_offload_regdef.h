@@ -1,0 +1,11 @@
+
+#ifndef __RTL8712_OFFLOAD_REGDEF_H__
+#define __RTL8712_OFFLOAD_REGDEF_H__
+
+#define TXPOLL				( RTL8712_OFFLOAD_ + 0x00)
+#define TPPOLL				( RTL8712_OFFLOAD_ + 0x04)
+
+
+
+#endif // __RTL8712_OFFLOAD_REGDEF_H__
+

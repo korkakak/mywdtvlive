@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<page background="image/welcome_background_bg.jpg">
+	<text text="$$Preferences" x="247" y="131" w="610" h="45" align="left" fontsize="40" textcolor="0x7b5ff"/>
+	<listbox valkey="preferencelist" autoenter="1" autoswitch="0" move="page" cols="1" rows="6"
+	       	lbmask="lr"  loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+  <text text="$$SSID" x="310" y="249" w="200" h="28" fontsize="26" textcolor="0xe2e2e2" align="left"/>
+  <text text="$$Security Type" x="621" y="249" w="240" h="28" fontsize="26" textcolor="0xe2e2e2" align="hcenter"/>
+  <text text="$$Signal" x="862" y="249" w="100" h="28" align="right" fontsize="26" textcolor="0xe2e2e2"/>
+  
+  <image image="@@ss-prev" x="1000" y="286" w="39" h="22"/>
+  <wrapper x="281" w="719" h="48" lbimage="image/browser_list_btn.png">
+    <image lightbar="@@lightbar-preferencelist-0" y="286" active="@@act-preferencelist-0"/>
+    <image lightbar="@@lightbar-preferencelist-1" y="335" active="@@act-preferencelist-1"/>
+    <image lightbar="@@lightbar-preferencelist-2" y="384" active="@@act-preferencelist-2"/>
+    <image lightbar="@@lightbar-preferencelist-3" y="433" active="@@act-preferencelist-3"/>
+    <image lightbar="@@lightbar-preferencelist-4" y="482" active="@@act-preferencelist-4"/>
+    <image lightbar="@@lightbar-preferencelist-5" y="531" active="@@act-preferencelist-5"/>
+  </wrapper>
+  <wrapper x="293" w="695" h="1">
+    <image image="@@browse_0_line" y="334" ymargin="0" bg="1"/>
+    <image image="@@browse_1_line" y="383" ymargin="0" bg="1"/>
+    <image image="@@browse_2_line" y="432" ymargin="0" bg="1"/>
+    <image image="@@browse_3_line" y="481" ymargin="0" bg="1"/>
+    <image image="@@browse_4_line" y="530" ymargin="0" bg="1"/>
+    <image image="@@browse_5_line" y="579" ymargin="0" bg="1"/>
+  </wrapper>
+  <wrapper x="310" w="340" h="48" textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" fontsize="26" selected_fontsize="26">
+	  <text text="@@ss-essid-0" y="286" active="@@act-preferencelist-0" speed="1" delay="2"/>
+	  <text text="@@ss-essid-1" y="335" active="@@act-preferencelist-1" speed="1" delay="2"/>
+	  <text text="@@ss-essid-2" y="384" active="@@act-preferencelist-2" speed="1" delay="2"/>
+	  <text text="@@ss-essid-3" y="433" active="@@act-preferencelist-3" speed="1" delay="2"/>
+	  <text text="@@ss-essid-4" y="482" active="@@act-preferencelist-2" speed="1" delay="2"/>
+	  <text text="@@ss-essid-5" y="531" active="@@act-preferencelist-3" speed="1" delay="2"/>
+  </wrapper>
+
+  <wrapper x="721" w="48" h="48">
+    <image image="@@ss-wep-0" y="286"/>
+    <image image="@@ss-wep-1" y="335"/>
+    <image image="@@ss-wep-2" y="384"/>
+    <image image="@@ss-wep-3" y="433"/>
+    <image image="@@ss-wep-4" y="482"/>
+    <image image="@@ss-wep-5" y="531"/>
+  </wrapper>
+
+  <wrapper x="890" w="79" h="48">
+    <image image="@@ss-signal-percent-icon-0" y="286"/>
+    <image image="@@ss-signal-percent-icon-1" y="335"/>
+    <image image="@@ss-signal-percent-icon-2" y="384"/>
+    <image image="@@ss-signal-percent-icon-3" y="433"/>
+    <image image="@@ss-signal-percent-icon-4" y="482"/>
+    <image image="@@ss-signal-percent-icon-5" y="531"/>
+  </wrapper>
+  <image image="@@ss-more" x="1000" y="553" w="39" h="22"/>
+</page>

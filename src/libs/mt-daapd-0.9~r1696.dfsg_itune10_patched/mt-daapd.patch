@@ -1,0 +1,90 @@
+diff -uBbNr mt-daapd-0.9~r1696.dfsg_itune10_patched.org/configure mt-daapd-0.9~r1696.dfsg_itune10_patched/configure
+--- mt-daapd-0.9~r1696.dfsg_itune10_patched.org/configure	2010-09-22 08:59:40.000000000 +0800
++++ mt-daapd-0.9~r1696.dfsg_itune10_patched/configure	2011-02-17 18:24:22.395699001 +0800
+@@ -21309,14 +21309,14 @@
+ 
+ echo "$as_me:$LINENO: checking whether setpgrp takes no argument" >&5
+ echo $ECHO_N "checking whether setpgrp takes no argument... $ECHO_C" >&6
+-if test "${ac_cv_func_setpgrp_void+set}" = set; then
+-  echo $ECHO_N "(cached) $ECHO_C" >&6
+-else
+-  if test "$cross_compiling" = yes; then
+-  { { echo "$as_me:$LINENO: error: cannot check setpgrp when cross compiling" >&5
+-echo "$as_me: error: cannot check setpgrp when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-else
++#if test "${ac_cv_func_setpgrp_void+set}" = set; then
++#  echo $ECHO_N "(cached) $ECHO_C" >&6
++#else
++#  if test "$cross_compiling" = yes; then
++#  { { echo "$as_me:$LINENO: error: cannot check setpgrp when cross compiling" >&5
++#echo "$as_me: error: cannot check setpgrp when cross compiling" >&2;}
++#   { (exit 1); exit 1; }; }
++#else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -21359,8 +21359,8 @@
+ ac_cv_func_setpgrp_void=yes
+ fi
+ rm -f core *.core gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+-fi
+-fi
++#fi
++#fi
+ echo "$as_me:$LINENO: result: $ac_cv_func_setpgrp_void" >&5
+ echo "${ECHO_T}$ac_cv_func_setpgrp_void" >&6
+ if test $ac_cv_func_setpgrp_void = yes; then
+diff -uBbNr mt-daapd-0.9~r1696.dfsg_itune10_patched.org/src/conf.c mt-daapd-0.9~r1696.dfsg_itune10_patched/src/conf.c
+--- mt-daapd-0.9~r1696.dfsg_itune10_patched.org/src/conf.c	2007-10-23 12:58:25.000000000 +0800
++++ mt-daapd-0.9~r1696.dfsg_itune10_patched/src/conf.c	2011-02-17 18:24:22.395699001 +0800
+@@ -142,6 +142,7 @@
+     { 0, 0, CONF_T_INT,"scanning","process_xml" },
+     { 0, 0, CONF_T_INT,"scanning","ignore_appledouble" },
+     { 0, 0, CONF_T_INT,"scanning","ignore_dotfiles" },
++    { 0, 0, CONF_T_MULTIPATH,"scanning","ignore_directory" },
+     { 0, 0, CONF_T_INT,"scanning","concat_compilations" },
+     { 0, 0, CONF_T_INT,"scanning","case_sensitive" },
+     { 0, 0, CONF_T_INT,"scanning","follow_symlinks" },
+diff -uBbNr mt-daapd-0.9~r1696.dfsg_itune10_patched.org/src/mp3-scanner.c mt-daapd-0.9~r1696.dfsg_itune10_patched/src/mp3-scanner.c
+--- mt-daapd-0.9~r1696.dfsg_itune10_patched.org/src/mp3-scanner.c	2007-09-25 15:55:23.000000000 +0800
++++ mt-daapd-0.9~r1696.dfsg_itune10_patched/src/mp3-scanner.c	2011-02-17 18:25:45.091698992 +0800
+@@ -302,6 +302,25 @@
+     return err;
+ }
+ 
++int scan_is_ignoredir(char *path) {
++	char current = 0;
++	static char **ignore_directory_path = NULL;
++
++	if(!conf_get_array("scanning", "ignore_directory", &ignore_directory_path))
++		return FALSE;
++
++	while(ignore_directory_path[current]) {
++		if(strcasecmp(path, ignore_directory_path[current]) == 0) {
++                        printf("\033[1;33;41m%s[%d], ignore [%s]\033[0m\n", __FILE__, __LINE__, path);
++                        conf_dispose_array(ignore_directory_path);
++                        return TRUE;
++                }
++                current++;
++        }
++        conf_dispose_array(ignore_directory_path);
++        return FALSE;
++}
++
+ /**
+  * check to see if a particular path is a complation path
+  *
+@@ -403,6 +422,12 @@
+                           pde->d_name[0] == '.') {
+                     DPRINTF(E_DBG,L_SCAN,"Skipping dotfile\n");
+                 } else {
++			int is_ignoredir = 0;
++
++			is_ignoredir = scan_is_ignoredir(mp3_path);
++			if(is_ignoredir)
++				continue;
++
+                     DPRINTF(E_DBG,L_SCAN,"Found %s.. recursing\n",pde->d_name);
+                     scan_path(mp3_path);
+                }

@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<page background="image/villa_bg.png">
+  <ctrlgrp>
+    <button valkey="OK"
+    	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+  <text text="$$System information" x="249" y="132" w="610" h="44" fontsize="42" textcolor="0x07b5ff" align="left"/>
+  <table x="335" y="182" w="400" h="320" rows="8" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="$$Device name"/>
+    <text text="$$MAC Address"/>
+    <text text="$$SSID"/>
+    <text text="$$Signal"/>
+    <text text="$$IP Address"/>
+    <text text="$$Subnet Mask"/>
+    <text text="$$Gateway"/>
+    <text text="$$DNS"/>
+  </table>
+  <wrapper disable="@@disable-proxy">
+  <table x="335" y="502" w="400" h="80" rows="2" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="$$Proxy Server"/>
+    <text text="$$Proxy Port"/>
+  </table>
+  </wrapper>
+  <table x="777" y="182" w="200" h="320" rows="8" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="@@value-device_name"/>
+    <text text="@@value-mac_address"/>
+    <text text="@@value-ssid"/>
+    <image image="@@ss-signal-percent-icon"/>
+    <text text="@@value-ip_address"/>
+    <text text="@@value-subnet_mask"/>
+    <text text="@@value-gateway"/>
+    <text text="@@value-dns"/>
+  </table>
+  <wrapper disable="@@disable-proxy">
+  <table x="777" y="502" w="200" h="80" rows="2" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="@@value-proxy_server"/>
+    <text text="@@value-proxy_port"/>
+  </table>
+  </wrapper>
+  <wrapper x="293" w="695" h="1" image="image/browser_list_line.png">
+    <image ymargin="0" bg="1" y="221"/>
+    <image ymargin="0" bg="1" y="261"/>
+    <image ymargin="0" bg="1" y="301"/>
+    <image ymargin="0" bg="1" y="341"/>
+    <image ymargin="0" bg="1" y="381"/>
+    <image ymargin="0" bg="1" y="421"/>
+    <image ymargin="0" bg="1" y="461"/>
+    <image ymargin="0" bg="1" y="501"/>
+  </wrapper>
+  <wrapper x="293" w="695" h="1" image="image/browser_list_line.png" disable="@@disable-proxy">
+    <image ymargin="0" bg="1" y="541"/>
+    <image ymargin="0" bg="1" y="581"/>
+  </wrapper>
+  <imgbtn image="@@bg-OK" text="$$OK" x="468" y="585" w="343" h="78" fontsize="20" align="hcenter" textcolor="0xffffff" active="@@act-OK"/>
+</page>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<wrapper>
+  <ctrlgrp>
+    <eventbox_keyboard valkey="keyboard" autoenter="1"/>
+  </ctrlgrp>
+  <wrapper>
+    <widget_keyboard ctrlname="keyboard" x="262" y="147" w="742" h="353" cols="14" rows="5"
+  		     align="hcenter" textcolor="0xFFFFFF"  activetextcolor="0xff8400"
+		     changed="@@keyboard_changed" extra_height="80" extra_index="0"/>
+  </wrapper>
+  <image image="image/login_keyboard_bg.png" x="200" y="115" w="863" h="423" bg="1"/>
+  <image image="image/keyboard_search_box.png" x="262" y="187" w="633" h="60" bg="1"/>
+  <texttail text="@@input_01_text" x="282" y="205" w="450" h="28"  textcolor="0x000000" cursor_pos="@@input_text_cursor_pos" cursor_image="image/keyboard_cursor.png" cursor_image_x_offset="6" cursor_image_y_offset="5" ignore_translate="1"/>
+  <text text="$$Prev Page" x="272" y="255" w="350" h="22" align="left" fontsize="20" textcolor="0x6f6f6f"/>
+  <text text="$$Next Page" x="642" y="255" w="350" h="22" align="right" fontsize="20" textcolor="0x6f6f6f"/>
+
+</wrapper>

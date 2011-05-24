@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" >
+	<ctrlgrp valkey="youtube_home_ctrl">
+		<menuctrl valkey="menuctrl1" autoenter="1" myinc="2"/>
+		<listbox valkey="account_list" move="row" cols="1" rows="3" lbmask="lrud" autoenter="1"
+			disable_light_bar_click="1"/>
+		<listbox valkey="time_list" move="row" cols="1" rows="3" lbmask="lrud" autoenter="1"
+			disable_light_bar_click="1"/>
+	</ctrlgrp>
+
+	<menuview ctrlname="menuctrl1" changed="@@menuctrl1_changed" x="0" y="0" w="1280" h="720" main_list_x="97" main_list_y="295" icon_spacing="40" scale="100"
+		enable_outline="1" slice_count="5" 
+		outline_normal_icon="image/youtube_home_Thumbnails_Select_frame_n.png"
+		outline_focus_icon="image/youtube_home_Thumbnails_Select_frame_f.png"
+		display_item_count="7" focus_index="4" stack_display_item_count="1" stack_focus_index="1"
+		stack_display_deep="1" stack_use_focus_icon="0" style="2" main_focus_icon="image/home_horizontal_select_bar.png"/>
+
+  <image image="@@status_icon" x="573" y="267" w="133" h="133"/>
+	<image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+	<text text="@@title" x="250" y="432" w="775" h="30" align="hcenter" fontsize="26" textcolor="0xE2E2E2"
+			speed="1" delay="2"/>
+	<text text="@@description" x="405" y="488" w="480" h="102" align="left" fontsize="12" textcolor="0xE2E2E2" numlines="5"/>
+	<text text="@@date" x="525" y="469" w="300" h="16" align="left" fontsize="12" textcolor="0xE2E2E2"/>
+	<text text="@@views" x="756" y="469" w="200" h="16" align="left" fontsize="12" textcolor="0xE2E2E2"/>
+	<image image="@@rating" x="405" y="464" w="100" h="19"/>
+
+	<text text="@@options" x="90" y="598" w="800" h="52" align="left" fontsize="50" textcolor="0x07B5FF" />
+
+	<table x="0" y="130" w="307" h="146"
+    	   	cols="1" rows="3" colspacing="0" rowspacing="0"
+       		lbimage="image/youtube_submenu_select_bar.png"
+	    	fontsize="22" selected_fontsize="22"
+    	   	textcolor="0xe2e2e2">
+	    <text text="@@account_0_text" lmargin="95" ymargin="14"
+        	  lightbar="@@lightbar-account_list-0" active="@@act-account_list"
+				selected="@@sel-account_list" disable="@@disable-account_list" speed="1" delay="2" /> 
+
+    	<text text="@@account_1_text" lmargin="95" ymargin="14"
+        	  lightbar="@@lightbar-account_list-1" active="@@act-account_list"
+				selected="@@sel-account_list" disable="@@disable-account_list" speed="1" delay="2" /> 
+
+	    <text text="@@account_2_text" lmargin="95" ymargin="14"
+    	      lightbar="@@lightbar-account_list-2" active="@@act-account_list"
+				selected="@@sel-account_list" disable="@@disable-account_list" speed="1" delay="2" /> 
+
+	</table>
+	<wrapper x="0" w="307" h="1">
+    	<image image="@@account_0_line" ymargin="0" y="177"/>
+	    <image image="@@account_1_line" ymargin="0" y="225"/>
+    	<image image="@@account_2_line" ymargin="0" y="273"/>
+	</wrapper>
+
+<!-- Time listbox widgets -->
+	<table x="0" y="130" w="307" h="146"
+    	   	cols="1" rows="3" colspacing="0" rowspacing="0"
+       		lbimage="image/youtube_submenu_select_bar.png"
+	    	fontsize="22" selected_fontsize="22"
+    	   	textcolor="0xe2e2e2">
+	    <text text="@@time_0_text" lmargin="95" ymargin="14" speed="1" delay="2" 
+        	  lightbar="@@lightbar-time_list-0" selected="@@sel-time_list-0" active="@@act-time_list" disable="@@disable-time_list"/> 
+
+    	<text text="@@time_1_text" lmargin="95" ymargin="14" speed="1" delay="2" 
+        	  lightbar="@@lightbar-time_list-1" selected="@@sel-time_list-1" active="@@act-time_list"  disable="@@disable-time_list"/> 
+
+	    <text text="@@time_2_text" lmargin="95" ymargin="14" speed="1" delay="2" 
+    	      lightbar="@@lightbar-time_list-2" selected="@@sel-time_list-2" active="@@act-time_list" disable="@@disable-time_list"/> 
+
+	</table>
+	<wrapper x="0" w="307" h="1">
+	    <image image="@@time_0_line" ymargin="0" y="177"/>
+    	<image image="@@time_1_line" ymargin="0" y="225"/>
+    	<image image="@@time_2_line" ymargin="0" y="273"/>
+	</wrapper>
+<!-- End of Time listbox widgets -->
+</page>
+

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level skinID="1">
+	<board>
+		<element x="0" y="0" type="EXIT" />
+	</board>
+	<start x="0" y="0" />
+</level>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrapper>
+	<wrapper disable="@@generic_now_playing_disable">
+	<image image="image/villa/slideshow_player_musicsm_icon.png" x="406" y="36" w="35" h="38"/>
+	<image image="image/villa/music_player_artist_icon_n.png" x="735" y="36" w="24" h="24"/>
+	<text text="@@info_bar_track_name" x="451" y="36" w="240" h="20" fontsize="18" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	<text text="@@info_bar_artist_name" x="774" y="38" w="114" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xd3d3d3"/>
+	<text text="@@info_bar_current_time" x="451" y="58" w="86" h="20" fontsize="18" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	<text text="@@info_bar_total_time" x="537" y="60" w="98" h="18" fontsize="16" speed="1" delay="2" align="left" textcolor="0x999999"/>
+	</wrapper>
+</wrapper>

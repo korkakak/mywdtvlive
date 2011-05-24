@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png" type="basic">
+	<listbox valkey="settings" autoenter="1" autoswitch="0" move="page" cols="1" rows="2" lbmask="lr"  loop_scroll="1"/>
+
+	<text x="450" y="160" w="372" h="20" text="@@text-options" fontsize="18" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+	<text text="@@settings_title" x="97" y="122" w="540" h="44" fontsize="42" textcolor="0x07b5ff"/>
+
+	<wrapper x="379" w="520">
+		<image y="263" h="1" image="image/pandora_list_line_thin.png"/>
+		<image y="312" h="1" image="image/pandora_list_line_thin.png"/>
+		<image y="361" h="1" image="image/pandora_list_line_thin.png"/>
+	</wrapper>
+
+	<image x="620" y="214" w="40" h="29" image="@@morenext"/>
+	<image x="620" y="529" w="40" h="29" image="@@moreprev"/>
+
+	<table x="375" y="264" w="529" h="98" fontsize="20" selected_fontsize="26" cols="1" rows="2" colspacing="0" rowspacing="0" lbimage="image/pandora_list_btn.png" clickimage="image/pandora_list_btn.png" textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" activetextcolor="0xffffff" selectedtextcolor="0xffffff" auto_translate="1">
+		<text text="@@settings_0_text" xmargin="68" lightbar="@@lightbar-settings-0" active="@@act-settings-0" selected="@@settings_0_select" speed="@@settings_0_speed" delay="2"/>
+		<text text="@@settings_1_text" xmargin="68" lightbar="@@lightbar-settings-1" active="@@act-settings-1" selected="@@settings_1_select" speed="@@settings_1_speed" delay="2"/>
+	</table>
+
+	<table x="396" y="263" w="26" h="98" cols="1" rows="2" colspacing="0" rowspacing="0">
+		<image image="@@settings_0_checked" ymargin="0"/>
+		<image image="@@settings_1_checked" ymargin="0"/>
+	</table>
+
+	<image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+	<include filename="./inc_loading.xml"/>
+	<!-- fixed --> 
+	<include filename="./inc_headline_property.xml"/>
+	<include filename="./decoration.xml"/>
+</page>

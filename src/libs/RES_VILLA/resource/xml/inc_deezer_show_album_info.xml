@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="./image/deezer/deezer_song_icon.png" x="177" y="439" w="40" h="40"/>
+	<text text="@@focused_title" x="222" y="451" w="260" h="22" fontsize="20" textcolor="0xffd3d3d3" align="left"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="177" y="481" w="329" h="1"/>
+
+	<image image="./image/deezer/deezer_album_icon.png" x="177" y="483" w="40" h="40"/>
+	<text text="@@focused_album" x="222" y="495" w="260" h="22" fontsize="20" textcolor="0xffd3d3d3" align="left"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="177" y="524" w="329" h="1"/>
+
+	<image image="./image/deezer/deezer_artist_icon.png" x="177" y="527" w="40" h="40"/>
+	<text text="@@focused_artist" x="222" y="540" w="260" h="22" fontsize="20" textcolor="0xffd3d3d3" align="left"/>
+	<image image="./image/deezer/deezer_left_info_line.png" x="177" y="568" w="329" h="1"/>
+</wrapper>

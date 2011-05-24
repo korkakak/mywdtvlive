@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="@@bg-Back" x="105" y="68" w="43" h="40"/>
+	<image image="@@bg-ToHome" x="167" y="68" w="43" h="40"/>
+	<image image="image/cinemanow/cn_logo.png" x="947" y="65" w="288" h="58"/>
+</wrapper>

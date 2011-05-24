@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/dmax/!svn/ver/81052/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch
+END
+squashfs3.4-patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/dmax/!svn/ver/73157/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/squashfs3.4-patch
+END
+setup.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/setup.c.patch
+END
+irkernel_support_released_key.patch
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/dmax/!svn/ver/73887/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/irkernel_support_released_key.patch
+END
+unaligned.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/dmax/!svn/ver/68526/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/unaligned.c.patch
+END
+ir_hold_key.patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/ir_hold_key.patch
+END
+wdtv_rv_Kconfig_Makefile.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/72347/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/wdtv_rv_Kconfig_Makefile.patch
+END
+avls700l_led.patch
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/avls700l_led.patch
+END
+irkernel.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/dmax/!svn/ver/72772/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/irkernel.c.patch
+END
+irkernel.c
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/dmax/!svn/ver/80629/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/irkernel.c
+END
+tangox_enet_fix_up_package_length.patch
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/dmax/!svn/ver/70315/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/tangox_enet_fix_up_package_length.patch
+END
+fuse.patch
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/dmax/!svn/ver/79914/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/fuse.patch
+END
+lmp555_gpio.patch
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/lmp555_gpio.patch
+END
+build_cpu_xload.bash.patch
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/dmax/!svn/ver/79661/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/build_cpu_xload.bash.patch
+END
+wd_led_rst.c
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/dmax/!svn/ver/70242/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/wd_led_rst.c
+END
+r8169.c
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/dmax/!svn/ver/72669/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/r8169.c
+END
+avls700l_led.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/avls700l_led.c
+END
+r8169.h
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/dmax/!svn/ver/72424/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/r8169.h
+END
+usbnet.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/dmax/!svn/ver/80566/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/usbnet.c.patch
+END
+8av500le_gpio.patch
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/dmax/!svn/ver/71099/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/8av500le_gpio.patch
+END
+thermal_g751.c
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/dmax/!svn/ver/68468/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/thermal_g751.c
+END
+i2c_hal.c
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/dmax/!svn/ver/72623/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/i2c_hal.c
+END
+tango2_enet.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/tango2_enet.c.patch
+END
+wdtv_rv_microp.c
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/dmax/!svn/ver/74227/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/wdtv_rv_microp.c
+END
+sata_tango3-v3_6_1_RC2.c
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/dmax/!svn/ver/67983/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/sata_tango3-v3_6_1_RC2.c
+END
+tangox_enet_modify_tx_delay_to_1000us
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/dmax/!svn/ver/72609/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/tangox_enet_modify_tx_delay_to_1000us
+END
+lmp555_gpio.c
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/dmax/!svn/ver/71073/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/lmp555_gpio.c
+END
+i2c_hal.h
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/dmax/!svn/ver/67942/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/i2c_hal.h
+END
+wd_led_reset.patch
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/wd_led_reset.patch
+END
+i2c_hal_and_thermal_g751.patch
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/dmax/!svn/ver/67942/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/i2c_hal_and_thermal_g751.patch
+END
+noverbose.patch
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/noverbose.patch
+END
+1007.usb.patch_original
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/1007.usb.patch_original
+END
+1007.usb.patch_sigma_craig
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/dmax/!svn/ver/67575/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/1007.usb.patch_sigma_craig
+END
+8av500le_gpio.c
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/dmax/!svn/ver/71109/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/8av500le_gpio.c
+END
+tangox_enet_ethernet_led.c.patch
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/dmax/!svn/ver/72609/trunk/bsp_repos/sigma_sdk/SMP8654/linux_kernel_2.6.22.19-19_patch/tangox_enet_ethernet_led.c.patch
+END

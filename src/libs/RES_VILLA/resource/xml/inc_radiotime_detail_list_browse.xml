@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<wrapper>
+	<text text="@@browse_title_text" x="181" y="104" w="400" h="44" fontsize="42" textcolor="0xff07b5ff" align="left"/>
+
+	<text text="@@browse_subtitle_text" x="181" y="150" w="400" h="26" fontsize="24" textcolor="0xffffffff" align="left"/>
+
+	<table x="558" y="189" w="555" h="400" cols="1" rows="6">
+		<image image="@@browse_0_line3" w="555" h="65"/>
+		<image image="@@browse_1_line3" w="555" h="65"/>
+		<image image="@@browse_2_line3" w="555" h="65"/>
+		<image image="@@browse_3_line3" w="555" h="65"/>
+		<image image="@@browse_4_line3" w="555" h="65"/>
+		<image image="@@browse_5_line3" w="555" h="65"/>
+	</table>
+ 
+ 	<!-- Information -->
+	<image image="./image/deezer/deezer_frame.png" x="234" y="203" w="210" h="210"/>
+	<image image="@@focused_icon" x="245" y="214" w="187" h="187" align="hcenter" scale="100" scale_type="fixratio"/>
+	<image image="./image/deezer/deezer_frame_blister.png" x="234" y="203" w="210" h="210"/>
+
+	<table x="558" y="189" w="555" h="400" cols="1" rows="6" colspacing="0" rowspacing="0" lbimage="image/deezer/deezer_Thumbnails_Select_frame_f.png" align="top">
+		<text text="" lightbar="@@lightbar-browselist-0" active="@@act-browselist-0" selected="@@browse_0_select" disable="@@disable-browselist"/>
+		<text text="" lightbar="@@lightbar-browselist-1" active="@@act-browselist-1" selected="@@browse_1_select" disable="@@disable-browselist"/>
+		<text text="" lightbar="@@lightbar-browselist-2" active="@@act-browselist-2" selected="@@browse_2_select" disable="@@disable-browselist"/>
+		<text text="" lightbar="@@lightbar-browselist-3" active="@@act-browselist-3" selected="@@browse_3_select" disable="@@disable-browselist"/>
+		<text text="" lightbar="@@lightbar-browselist-4" active="@@act-browselist-4" selected="@@browse_4_select" disable="@@disable-browselist"/>
+		<text text="" lightbar="@@lightbar-browselist-5" active="@@act-browselist-5" selected="@@browse_5_select" disable="@@disable-browselist"/>
+	</table>
+ 
+	<wrapper x="631" w="470" h="22" fontsize="20" textcolor="0xffffffff" selectedtextcolor="0xff07b5ff" activetextcolor="0xff07b5ff">
+		<text text="@@browse_0_text" y="202" speed="@@browse_0_speed" delay="2" active="@@act-browselist-0"/>	
+		<text text="@@browse_1_text" y="269" speed="@@browse_1_speed" delay="2" active="@@act-browselist-1"/>	
+		<text text="@@browse_2_text" y="336" speed="@@browse_2_speed" delay="2" active="@@act-browselist-2"/>	
+		<text text="@@browse_3_text" y="403" speed="@@browse_3_speed" delay="2" active="@@act-browselist-3"/>	
+		<text text="@@browse_4_text" y="470" speed="@@browse_4_speed" delay="2" active="@@act-browselist-4"/>	
+		<text text="@@browse_5_text" y="537" speed="@@browse_5_speed" delay="2" active="@@act-browselist-5"/>	
+	</wrapper>
+
+	<wrapper x="631" w="470" h="16" fontsize="14" textcolor="0xffb8b8b8" selectedtextcolor="0xff07b5ff" activetextcolor="0xff07b5ff">
+		<text text="@@browse_0_subtext" y="230" speed="@@browse_0_speed" delay="2" active="@@act-browselist-0"/>	
+		<text text="@@browse_1_subtext" y="297" speed="@@browse_1_speed" delay="2" active="@@act-browselist-1"/>	
+		<text text="@@browse_2_subtext" y="364" speed="@@browse_2_speed" delay="2" active="@@act-browselist-2"/>	
+		<text text="@@browse_3_subtext" y="431" speed="@@browse_3_speed" delay="2" active="@@act-browselist-3"/>	
+		<text text="@@browse_4_subtext" y="498" speed="@@browse_4_speed" delay="2" active="@@act-browselist-4"/>	
+		<text text="@@browse_5_subtext" y="565" speed="@@browse_5_speed" delay="2" active="@@act-browselist-5"/>	
+	</wrapper>
+
+	<wrapper x="565" w="51" h="51" align="hcenter" scale="100"> 
+		<image image="@@browse_0_icon" ymargin="0" y="196"/>
+		<image image="@@browse_1_icon" ymargin="0" y="263"/>
+		<image image="@@browse_2_icon" ymargin="0" y="330"/>
+		<image image="@@browse_3_icon" ymargin="0" y="397"/>
+		<image image="@@browse_4_icon" ymargin="0" y="464"/>
+		<image image="@@browse_5_icon" ymargin="0" y="531"/>
+	</wrapper>
+
+	<text text="@@option_title" x="372" y="159" w="514" h="28" fontsize="26" textcolor="0x07b5ff" speed="1" delay="2"/>
+	<image image="@@moreprev" x="1126" y="197" w="40" h="29"/>
+	<image image="@@morenext" x="1126" y="553" w="40" h="29" />
+</wrapper>

@@ -1,0 +1,10 @@
+--- scripts/build_cpu_xload.bash.org	2011-01-17 09:42:07.000000000 +0800
++++ scripts/build_cpu_xload.bash	2011-01-17 09:42:53.000000000 +0800
+@@ -44,6 +44,6 @@
+ 
+ echo CPUPKG Image Map : size=$SIZE
+ 
+-openssl sha1 -sign $PRIVATE_KEY < $CPUPKG_BIN | revbytes.pl > $CPUPKG_SIG
++openssl sha1 -sign $PRIVATE_KEY -passin env:CONF_SECURITY_USE_CPU_BINDING_PASSWORD < $CPUPKG_BIN | revbytes.pl > $CPUPKG_SIG
+ mkxload.bash $XSDK_ROOT $REV $CERTID $CPUPKG_BIN $CPUPKG_SIG $XLOAD_BIN
+ 

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="./image/villa_bg.png">
+  <ctrlgrp>
+  	<listbox valkey="browselist" autoenter="1" autoswitch="0" move="row"
+		cols="1" rows="7" lbmask="ud"  loop_scroll="1" turbo_trigger="10" turbo_multi="10"/>
+  </ctrlgrp>
+
+  <text text="$$Netmask Setup" x="254" y="77" w="733" h="40" align="left" fontsize="36" textcolor="0x07b5ff"/>
+
+  <table x="286" y="140" w="721" h="462"
+	             cols="1" rows="7" colspacing="0" rowspacing="0" >
+	<image image="@@browselist-lightbar_0"/>
+	<image image="@@browselist-lightbar_1"/>
+	<image image="@@browselist-lightbar_2"/>
+	<image image="@@browselist-lightbar_3"/>
+	<image image="@@browselist-lightbar_4"/>
+	<image image="@@browselist-lightbar_5"/>
+	<image image="@@browselist-lightbar_6"/>
+  </table>
+  <table x="306" y="140" w="332" h="462"
+             cols="1" rows="7" align="left" fontsize="30" textcolor="0xc1c1c1">
+	<text text="@@browselist-mask_0" />
+	<text text="@@browselist-mask_1" />
+	<text text="@@browselist-mask_2"/>
+	<text text="@@browselist-mask_3"/>
+	<text text="@@browselist-mask_4"/>
+	<text text="@@browselist-mask_5"/>
+	<text text="@@browselist-mask_6"/>
+  </table>
+
+  <wrapper x="306" w="695" h="1">
+	<image image="@@browselist-line_0" y="194"/>
+	<image image="@@browselist-line_1" y="260"/>
+	<image image="@@browselist-line_2" y="326"/>
+	<image image="@@browselist-line_3" y="392"/>
+	<image image="@@browselist-line_4" y="458"/>
+	<image image="@@browselist-line_5" y="524"/>
+	<image image="@@browselist-line_6" y="590"/>
+  </wrapper>
+
+  <image image="@@prev" x="618" y="610" w="38" h="27"/>
+  <image image="@@more" x="658" y="610" w="38" h="27"/>
+
+</page>

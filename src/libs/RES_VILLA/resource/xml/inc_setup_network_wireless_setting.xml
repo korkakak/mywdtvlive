@@ -1,0 +1,31 @@
+
+<?xml version="1.0"?>
+<wrapper>
+  <text text="$$Current network setting:" x="335" y="368" w="686" h="22" align="left" fontsize="20" textcolor="0xe2e2e2"/>
+  
+  <table x="335" y="394" w="400" h="240" rows="6" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="$$SSID"/>
+    <text text="$$Signal"/>
+    <text text="$$IP Address"/>
+    <text text="$$Subnet Mask"/>
+    <text text="$$Gateway"/>
+    <text text="$$DNS"/>
+  </table>
+  <table x="777" y="394" w="200" h="240" rows="6" textcolor="0xe2e2e2" fontsize="20" align="left">
+    <text text="@@value-ssid"/>
+    <image image="@@ss-signal-percent-icon"/>
+    <text text="@@value-ip_address"/>
+    <text text="@@value-subnet_mask"/>
+    <text text="@@value-gateway"/>
+    <text text="@@value-dns"/>
+  </table>
+  <wrapper x="293" w="695" h="1" image="image/browser_list_line.png">
+    <image ymargin="0" bg="1" y="393"/>
+    <image ymargin="0" bg="1" y="433"/>
+    <image ymargin="0" bg="1" y="473"/>
+    <image ymargin="0" bg="1" y="513"/>
+    <image ymargin="0" bg="1" y="553"/>
+    <image ymargin="0" bg="1" y="593"/>
+    <image ymargin="0" bg="1" y="633"/>
+  </wrapper>
+</wrapper>

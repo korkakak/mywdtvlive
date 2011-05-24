@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png">
+	<listbox valkey="add_to_playlist" autoenter="1" autoswitch="0" move="page" cols="1" rows="4" loop_scroll="1"/>
+
+	<text text="@@title" x="97" y="122" w="540" h="44" fontsize="42" textcolor="0x07b5ff"/>
+
+	<wrapper x="293" w="695" h="1" ymargin="0" bg="1">
+		<image y="285" image="@@add_to_playlist_0_line"/>
+		<image y="335" image="@@add_to_playlist_1_line"/>
+		<image y="387" image="@@add_to_playlist_2_line"/>
+		<image y="438" image="@@add_to_playlist_3_line"/>
+	</wrapper>
+
+	<table x="281" y="235" w="720" h="204" fontsize="20" selected_fontsize="26" 
+		cols="1" rows="4" colspacing="0" rowspacing="0" 
+		lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png" align="hcenter" 
+		textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" activetextcolor="0xffffff" selectedtextcolor="0xffffff">
+		<text text="@@add_to_playlist_0_text" lightbar="@@lightbar-add_to_playlist-0" active="@@act-add_to_playlist-0" selected="@@add_to_playlist_0_select"/>
+		<text text="@@add_to_playlist_1_text" lightbar="@@lightbar-add_to_playlist-1" active="@@act-add_to_playlist-1" selected="@@add_to_playlist_1_select"/>
+		<text text="@@add_to_playlist_2_text" lightbar="@@lightbar-add_to_playlist-2" active="@@act-add_to_playlist-2" selected="@@add_to_playlist_2_select"/>
+		<text text="@@add_to_playlist_3_text" lightbar="@@lightbar-add_to_playlist-3" active="@@act-add_to_playlist-3" selected="@@add_to_playlist_3_select"/>
+	</table>
+
+  	<image image="@@status_icon" x="573" y="267" w="133" h="133"/>
+	<include filename="./inc_youtube_logo.xml"/>
+	<include filename="./decoration.xml"/>
+</page>

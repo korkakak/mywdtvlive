@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<levelcodes>
+
+	<element code="4357" level="1" />
+	<element code="8254" level="2" />
+	<element code="2321" level="3" />
+	<element code="9577" level="4" />
+	<element code="3436" level="5" />
+	<element code="8865" level="6" />
+	<element code="3719" level="7" />
+	<element code="9842" level="8" />
+	<element code="4211" level="9" />
+
+	<element code="1699" level="10" />	
+	<element code="5591" level="11" />
+	<element code="7432" level="12" />
+	<element code="8329" level="13" />
+	<element code="3412" level="14" />
+	<element code="5379" level="15" />
+	<element code="2798" level="16" />
+	<element code="8122" level="17" />
+	<element code="6389" level="18" />
+	<element code="9476" level="19" />	
+	
+	<element code="4721" level="20" />	
+	<element code="8725" level="21" />
+	<element code="7341" level="22" />
+	<element code="6791" level="23" />
+	<element code="6862" level="24" />
+	<element code="5699" level="25" />
+	<element code="9231" level="26" />
+	<element code="5274" level="27" />
+	<element code="7839" level="28" />
+	<element code="9182" level="29" />	
+	
+	<element code="6832" level="30" />	
+	<element code="4661" level="31" />
+	<element code="4741" level="32" />
+	<element code="7230" level="33" />
+	<element code="5962" level="34" />
+	<element code="1256" level="35" />
+	<element code="2936" level="36" />
+	<element code="1438" level="37" />
+	<element code="6753" level="38" />
+	<element code="5860" level="39" />	
+	
+	<element code="4408" level="40" />	
+	<element code="9104" level="41" />
+	<element code="4762" level="42" />
+	<element code="8031" level="43" />
+	<element code="3643" level="44" />
+	<element code="7870" level="45" />
+
+</levelcodes>

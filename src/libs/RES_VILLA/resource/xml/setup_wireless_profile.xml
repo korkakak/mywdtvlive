@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<page background="./image/welcome_background_bg.jpg">
+  <ctrlgrp>
+    <listbox valkey="profile_list" autoenter="1" move="row" cols="1" rows="5" lbmask="lr" loop_scroll="1"
+		disable_light_bar_click="1"/>
+    <linebreak/>
+	<ctrlgrp valkey="SELECT" autoenter="1" lbmask="LRud">
+    	<button group_valkey="SELECT" valkey="CONNECT" focused_bg="image/Villa_button_blue_f_03.png" normal_bg="image/Villa_button_blue_n_03.png"/>
+	    <button group_valkey="SELECT" valkey="FAVORITE" focused_bg="image/Villa_button_blue_f_03.png" normal_bg="image/Villa_button_blue_n_03.png"/>
+    	<button group_valkey="SELECT" valkey="DELETE" focused_bg="image/Villa_button_blue_f_03.png" normal_bg="image/Villa_button_blue_n_03.png"/>
+	</ctrlgrp>
+  </ctrlgrp>
+
+ <text text="$$Wireless" x="249" y="132" w="600" h="44" fontsize="42" textcolor="0x07b5ff"/>
+  <text text="$$Favorites" x="249" y="178" w="600" h="26" fontsize="24" textcolor="0xe2e2e2"/>
+
+  <wrapper x="281" w="719" h="48" lbimage="image/browser_list_btn.png">
+    <image lightbar="@@lightbar-profile_list-0" y="237" active="@@act-profile_list-0"/>
+    <image lightbar="@@lightbar-profile_list-1" y="286" active="@@act-profile_list-1"/>
+    <image lightbar="@@lightbar-profile_list-2" y="335" active="@@act-profile_list-2"/>
+    <image lightbar="@@lightbar-profile_list-3" y="384" active="@@act-profile_list-3"/>
+    <image lightbar="@@lightbar-profile_list-4" y="433" active="@@act-profile_list-4"/>
+ </wrapper>
+
+
+  <wrapper x="293" w="695" h="2">
+    <image image="@@browse_0_line" y="285" ymargin="0" bg="1"/>
+    <image image="@@browse_1_line" y="334" ymargin="0" bg="1"/>
+    <image image="@@browse_2_line" y="383" ymargin="0" bg="1"/>
+    <image image="@@browse_3_line" y="432" ymargin="0" bg="1"/>
+    <image image="@@browse_4_line" y="481" ymargin="0" bg="1"/>
+  </wrapper>
+
+  <wrapper x="324" w="30" h="48" textcolor="0xFFFFFF" actnoseltextcolor="0xffffff" fontsize="26" selected_fontsize="26">
+	  <text text="1." y="237" active="@@act-profile_list-0"/>
+	  <text text="2." y="286" active="@@act-profile_list-1"/>
+	  <text text="3." y="335" active="@@act-profile_list-2"/>
+	  <text text="4." y="384" active="@@act-profile_list-3"/>
+	  <text text="5." y="433" active="@@act-profile_list-4"/>
+  </wrapper>
+
+  <wrapper x="360" w="560" h="48" textcolor="0xFFFFFF" actnoseltextcolor="0xffffff" fontsize="26" selected_fontsize="26">
+	  <text text="@@ss-profile-0" y="237" active="@@act-profile_list-0"/>
+	  <text text="@@ss-profile-1" y="286" active="@@act-profile_list-1"/>
+	  <text text="@@ss-profile-2" y="335" active="@@act-profile_list-2"/>
+	  <text text="@@ss-profile-3" y="384" active="@@act-profile_list-3"/>
+	  <text text="@@ss-profile-4" y="433" active="@@act-profile_list-4"/>
+  </wrapper>
+
+  <wrapper x="300" w="11" h="48" textcolor="0xFFFFFF" actnoseltextcolor="0xffffff" fontsize="20" selected_fontsize="26">
+	  <image image="@@ss-favorite-0" y="237" active="@@act-profile_list-0"/>
+	  <image image="@@ss-favorite-1" y="286" active="@@act-profile_list-1"/>
+	  <image image="@@ss-favorite-2" y="335" active="@@act-profile_list-2"/>
+	  <image image="@@ss-favorite-3" y="384" active="@@act-profile_list-3"/>
+	  <image image="@@ss-favorite-4" y="433" active="@@act-profile_list-4"/>
+  </wrapper>
+
+  <wrapper x="921" w="48" h="48" textcolor="0xFFFFFF" actnoseltextcolor="0xffffff" fontsize="20" selected_fontsize="26">
+	  <image image="@@ss-associated-0" y="237" active="@@act-profile_list-0"/>
+	  <image image="@@ss-associated-1" y="286" active="@@act-profile_list-1"/>
+	  <image image="@@ss-associated-2" y="335" active="@@act-profile_list-2"/>
+	  <image image="@@ss-associated-3" y="384" active="@@act-profile_list-3"/>
+	  <image image="@@ss-associated-4" y="433" active="@@act-profile_list-4"/>
+  </wrapper>
+
+  <imgbtn image="@@bg-CONNECT" text="$$Connect Now" align="hcenter" x="281" y="508" w="214" h="54" fontsize="18" selected_fontsize="18" active="@@act-CONNECT"/>
+  <imgbtn image="@@bg-FAVORITE" text="$$Default" align="hcenter" x="530" y="508" w="214" h="54" fontsize="18" selected_fontsize="18" active="@@act-FAVORITE"/>
+  <imgbtn image="@@bg-DELETE" text="$$Delete" align="hcenter" x="782" y="508" w="214" h="54" fontsize="18" selected_fontsize="18" active="@@act-DELETE"/>
+
+
+</page>

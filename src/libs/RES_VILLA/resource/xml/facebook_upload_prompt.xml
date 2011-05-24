@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<page overlay="1">
+	<image image="./image/global_messagebox_large_bg.png" x="226" y="108" w="832" h="515"/>
+  	<text text="@@title" x="253" y="134" w="772" h="37" fontsize="36" textcolor="0xffffff"/>
+
+	<ctrlgrp>
+		<checkbox valkey="REMEMBER" value="checkbox-REMEMBER-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<button valkey="OK"
+			focused_bg="./image/global_ok_bt_f.png"
+			normal_bg="./image/global_ok_bt_n.png"/>
+ 	</ctrlgrp>
+ 
+
+	<text text="@@upload_prompt_msg" x="300" y="250" w="700" h="300" fontsize="30" textcolor="0xFFFFFF" numlines="8"/>
+	<imgbtn image="@@bg-REMEMBER" active="@@act-REMEMBER" x="287" y="517" w="41" h="41"/>
+	<text text="$$Don't ask me again!" x="331" y="524" w="700" h="37" fontsize="36" textcolor="0xc1c1c1"/>	
+
+	<imgbtn image="@@bg-OK" active="@@act-OK" x="1096" y="303" w="116" h="116"/> 
+	<image image="@@status_icon" x="573" y="320" w="133" h="133" /> <!--loading icon-->
+</page>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<page background="">
+	<ctrlgrp lbmask="LRud">
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"
+			disabled_bg="image/bestbuy/bby_browse_back_n.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"
+			disabled_bg="image/bestbuy/bby_browse_home_n.png"/>
+		<linebreak/>
+		<button valkey="TokenOp" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<linebreak/>
+		<button valkey="RentOnly"/>
+	</ctrlgrp>
+	<text text="@@TokenOp_desc" x="322" y="172" w="606" h="100" numlines="4" fontsize="20" textcolor="0xfff2f2f2" align="hcenter"/>
+	<imgbtn x="535" y="323" w="210" h="49" text="@@TokenOp_text" image="@@bg-TokenOp" fontsize="20" align="hcenter"
+		textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xff186ca7"
+		disable="@@disable-TokenOp" active="@@act-TokenOp" selected="@@sel-TokenOp" click="@@click-TokenOp" bg="1"/>
+	<image image="image/bestbuy/bby_setting_separator.png" x="107" y="436" w="1067" h="19"/>
+	<image image="@@RentOnly_image" x="395" y="520" w="61" h="60"/>
+	<text text="$$Show titles for RENT ONLY in browse results." x="479" y="542" w="695" h="24" fontsize="20" textcolor="0xfff2f2f2" align="left"/>
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

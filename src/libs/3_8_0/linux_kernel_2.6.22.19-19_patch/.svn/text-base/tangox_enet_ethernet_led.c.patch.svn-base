@@ -1,0 +1,51 @@
+--- drivers/net/tangox_enet.c	2009-05-07 19:09:13.000000000 +0800
++++ ../linux_kernel_2.6.22.19-12/drivers/net/tangox_enet.c	2009-05-07 11:13:47.000000000 +0800
+@@ -946,6 +946,15 @@
+ 
+ 	priv = netdev_priv(dev);
+ 
++#ifdef CONFIG_ETHERENET_LED_ON_OFF_IP101A
++	{
++	int mii_bmcr_val;
++	mii_bmcr_val=priv->mii.mdio_read(dev,priv->mii.phy_id,MII_BMCR);
++	mii_bmcr_val &= ~(1<<11);
++	priv->mii.mdio_write(dev,priv->mii.phy_id,MII_BMCR,mii_bmcr_val);
++	}
++#endif
++
+ 	/* check link */
+ 	if (mii_check_media(&priv->mii, 1, 1))
+ 		enet_link_reconfigure(dev);
+@@ -1036,6 +1045,16 @@
+ 	rx->config |= DESC_EOC;
+ 	priv->rx_eoc = RX_DESC_COUNT - 1;
+ 	mb();
++
++#ifdef CONFIG_ETHERENET_LED_ON_OFF_IP101A
++	{
++	int mii_bmcr_val;
++	mii_bmcr_val=priv->mii.mdio_read(dev,priv->mii.phy_id,MII_BMCR);
++	mii_bmcr_val |= 1<<11;
++	priv->mii.mdio_write(dev,priv->mii.phy_id,MII_BMCR,mii_bmcr_val);
++	}
++#endif
++
+ 	return 0;
+ }
+ 
+--- drivers/net/Kconfig	2009-05-07 11:13:07.000000000 +0800
++++ ../linux_kernel_2.6.22.19-12/drivers/net/Kconfig	2009-05-07 11:13:47.000000000 +0800
+@@ -1917,6 +1917,13 @@
+ 	 controller.  This driver uses NAPI and generic Linux MII
+ 	 support.
+ 
++config ETHERENET_LED_ON_OFF_IP101A
++	bool "Turn on or off the ethernet led"
++	depends on TANGOX_ENET
++	help
++	  This led chip brand is C+ and the model is IP101A. The option use
++	  MII set phy some register bit to turn on or off the ethernet LED.
++
+ config ACENIC
+ 	tristate "Alteon AceNIC/3Com 3C985/NetGear GA620 Gigabit support"
+ 	depends on PCI

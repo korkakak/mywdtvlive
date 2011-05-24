@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<wrapper>
+	<wrapper disable="@@pandora_now_playing_disable">
+	<image image="image/music_option_menu_song_icon.png" x="384" y="26" w="24" h="26"/>
+	<image image="image/villa/music_player_artist_icon_n.png" x="384" y="61" w="24" h="24"/>
+	<image image="image/villa/music_player_album_icon_n.png" x="641" y="26" w="24" h="24"/>
+	<text text="@@info_bar_track_name" x="418" y="30" w="204" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	<text text="@@info_bar_artist_name" x="418" y="64" w="204" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	<text text="@@info_bar_album_name" x="675" y="30" w="204" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	</wrapper>
+</wrapper>

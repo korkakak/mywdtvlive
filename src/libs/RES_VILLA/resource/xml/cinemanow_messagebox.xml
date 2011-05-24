@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page background="image/cinemanow/CN_browse_bg.jpg">
+	<ctrlgrp> 
+		<button valkey="Back" 
+			normal_bg="image/cinemanow/cn_browse_back_n.png" 
+			focused_bg="image/cinemanow/cn_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/cinemanow/cn_browse_home_n.png"
+			focused_bg="image/cinemanow/cn_browse_home_f.png"/>
+	</ctrlgrp>
+
+	<include filename="./inc_cinemanow_messagebox.xml"/>
+	<include filename="./cinemanow_common.xml"/>
+</page>

@@ -1,0 +1,10 @@
+--- drivers/usb/storage/usb.c.org	2009-07-02 13:32:12.000000000 +0800
++++ drivers/usb/storage/usb.c	2009-07-02 11:59:52.000000000 +0800
+@@ -967,6 +967,7 @@
+ 		return -ENOMEM;
+ 	}
+ 
++	host->max_cmd_len = 16;
+ 	us = host_to_us(host);
+ 	memset(us, 0, sizeof(struct us_data));
+ 	mutex_init(&(us->dev_mutex));

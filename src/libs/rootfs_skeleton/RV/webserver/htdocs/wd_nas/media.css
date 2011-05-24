@@ -1,0 +1,156 @@
+/* Twonky section */
+
+#twonkySectionHead {
+	background-image:url(jquery_ui/themes/default/images/twonky_logo.png);
+	background-position:left center;
+	background-repeat:no-repeat;
+	border-bottom:dotted 1px #5d5d5d;
+	color:#616264;
+	font-family:Helvetica,sans-serif;
+	padding-left:115px;
+	position:relative;
+	top:-15px;
+	padding-top:10 !important;
+	font-size:12px !important;
+}
+
+.itunesText{
+	position:relative;
+	top:-15px;
+	padding-top:0 !important;
+	font-size:12px !important;
+	padding-bottom:5px !important;
+}
+
+.twonkyStatusTable {
+    clear:left;
+    margin-left:20px;
+    margin-bottom:10px;
+    width:98%;
+}
+.twonkyStatusTable tr td {
+    border-bottom:solid 1px #c4e9f3;
+    padding-bottom:5px;
+    padding-top:5px;
+}
+.twonkyStatusLabel {
+    width:140px;
+}
+.twonkyStatusLabel label {
+    /*line-height:14px !important;*/
+}
+.twonkyButtonContainer {
+    padding-left:160px;
+    margin-bottom:10px;
+}
+.twonkyButtonDisabled {
+
+}
+
+.twonkyProcess {
+    padding-left:30px;
+    background-image:url('images/loader.gif');
+    background-position:0px 3px;
+    background-repeat:no-repeat;
+    width:120px;
+    margin-top:5px;
+    margin-left:159px;
+    font-size:11px;
+	font-weight:bold;
+}
+#twonky_options {
+	display:none;
+}
+/*.twonky_player_rescan {
+    margin-left:38%;
+    width:97px;
+}*/
+.twonkyMediaTable {
+    width:100%;
+    color:#616264;
+    font-family:Tahoma,Geneva,sans-serif;
+    font-size:12px;
+    line-height:21px;
+}
+
+.twonkyMediaAccordion {
+    margin-top:20px !important;
+}
+.twonky_alternating_row {
+    padding:10px !important;
+}
+.twonkyMediaTableContainer {
+    padding-top:10px !important;
+    padding-bottom:0 !important;
+	display:none;
+}
+.twonkyMediaTable tr th, .twonkyMediaTable tr td {
+    text-align:center;
+    border-bottom:dotted 1px #616264;
+    border-right:dotted 1px #616264;
+	padding:6px;
+	line-height:16px;
+	font-size:11px;
+}
+
+.twonkyMediaTable tr td.twonky_description_cell{
+	width:170px;
+}
+
+.twonkyMediaTable tr td.checkbox_cell{
+	padding-top:2px;
+}
+
+.twonkyMediaTable tr th.last, .twonkyMediaTable tr td.last {
+    border-right:none;
+}
+.twonkyMediaTable tr td {
+    text-align:center;
+}
+.twonkyMediaTable tr td span.ui-checkbox{
+    margin-left:5px;
+	top:0px;
+}
+
+.twonkyMediaTable tr td .ui-helper-hidden-accessible{
+	display:none;
+}
+
+.twonkyDeviceRescanContainer {
+    margin:8px auto;
+}
+.twonkyDeviceRescanStatus {
+    height:28px;
+    padding-top:5px;
+}
+
+#twonky_options_hide {
+	display:none;
+}
+
+#twonky_media_show {
+	display:none;
+}
+
+/* itunes */
+
+.itunesSectionHead {
+    border-bottom:dotted 1px #616264;
+    padding:10px;
+    margin-bottom:10px;
+    padding-left:0px !important;
+}
+.itunesRescanContainer {
+    padding-left:195px !important;
+    height:40px;
+    clear:both;
+}
+#itunePanel {
+	margin-top: 10px;
+}
+#media_twonkey_from .alternating_row alternating_row_0 .helpLink  img {
+	margin-top: -5px;
+}
+.madia_btn {
+	margin-top: 4px;
+}

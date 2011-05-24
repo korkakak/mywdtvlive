@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/villa_options_menu_bg_03.png" x="478" y="0" w="327" h="173" bg="1" disable="@@disable-options_bg"/>
+	<table x="501" y="0" h="151" w="281" cols="3" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@bg-QML0"/>
+		<image image="@@bg-QML1"/>
+		<image image="@@bg-QML2"/>
+	</table>
+	<table x="501" y="0" h="151" w="281" cols="3" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@lightbar-QML0" bg="1"/>
+		<image image="@@lightbar-QML1" bg="1"/>
+		<image image="@@lightbar-QML2" bg="1"/>
+	</table>
+
+</wrapper>
+<text x="450" y="160" w="372" h="26" text="@@text-OPTION" fontsize="24" textcolor="0x07b5ff" align="hcenter" disable="@@disable-text-options"/>
+<include filename="decoration.xml"/>

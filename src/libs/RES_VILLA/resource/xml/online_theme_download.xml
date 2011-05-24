@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page background="image/video_encoding_bg.png" overlay="1">
+	<image image="image/Browse_Theme_online_download_icon.png" x="580" y="182" w="126" h="137" />
+	<text text="@@download_theme"  x="310" y="340" w="660" h="28" fontsize="24" textcolor="0xe2e2e2" align="hcenter" numlines="1"/>
+<!--	<progress_bar name="theme_dl_progress_bar" x="340" y="381" w="600" h="28" align="hcenter" pb_back_img="image/Browse_Theme_online_download_progress_bar_n.png" pb_front_img="image/Browse_Theme_online_download_progress_bar_f.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_start_delay="0" pb_delay="500" disable="@@disable-PROGRESS"/>-->
+	<progress_bar name="theme_dl_progress_bar" x="263" y="380" w="757" h="1" align="hcenter" pb_back_img="image/video_playback_metadata_scanning_bar_bg.png" pb_front_img="image/video_playback_metadata_scanning_bar.png" pb_start_delay="0" pb_delay="500" disable="@@disable-PROGRESS"/>
+
+	<text text="@@percent"  x="310" y="421" w="660" h="28" fontsize="24" textcolor="0xe2e2e2" align="hcenter" numlines="1"/>
+	<include filename="./decoration.xml"/>
+</page>

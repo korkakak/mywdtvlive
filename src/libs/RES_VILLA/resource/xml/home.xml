@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page background="./image/villa_bg.png" large_image_cache_num="3" medium_image_cache_num="16" small_image_cache_num="13">
+	<ctrlgrp>
+		<crossbar valkey="homecrossbar" autoenter="1" autoswitch="0" master_items="4" master_direction="v" master_active="3" master_lbmask="UD" slave_items="3" slave_direction="h" slave_active="1" slave_lbmask="LR" loop_scroll="1"/>
+	</ctrlgrp>
+
+	<image image="./image/home_main_function_frame_bg.png" x="0" y="253" w="1280" h="239" bg="1"/>
+
+	<wgt_mlist name="VERT_MLIST" image="" x="359" y="127" w="110" h="400" fontsize="26" duration="250" motion_type="decrease" textcolor="0xffffff" align="hcenter" direction="vert" itemcount="4" extra_index="3" extra_len="60"/>
+
+	<wgt_mlist name="HORI_MLIST" x="523" y="320" w="384" h="103" fontsize="20" duration="250" motion_type="decrease" textcolor="0xffffff" align="hcenter" direction="hori" itemcount="3"/>
+
+	<text text="@@VERT_TITLE_TEXT_1" x="583" y="575" w="623" h="84" align="right" fontsize="76" textcolor="0x07b5ff"/>
+	<text text="@@VERT_TITLE_TEXT_2" x="583" y="519" w="623" h="84" align="right" fontsize="76" textcolor="0x07b5ff"/>
+	<text text="@@curitem" x="583" y="605" w="623" h="44" fontsize="40" textcolor="0xb8b8b8" align="right"/>
+
+	<image image="@@VERT_FOCUS_ICON" x="337" y="304" w="162" h="136"/>
+
+	<image image="@@HORIBAR_FOCUS_BG" x="520" y="295" w="128" h="154" bg="1"/>
+	<image image="@@HORIBAR_FOCUS_BG_CENTER" x="651" y="295" w="128" h="154" bg="1"/>
+
+	<image image="@@HORIBAR_LEFT_ICON" x="509" y="369" w="13" h="18" bg="1"/>
+	<image image="@@HORIBAR_RIGHT_ICON" x="913" y="369" w="13" h="18" bg="1"/>
+
+	<image image="@@WARNING_BG" x="340" y="0" w="584" h="122"/>
+	<image image="@@WARNING_ICON" x="418" y="39" w="52" h="53"/>
+	<text text="@@WARNING_MSG1" x="481" y="55" w="402" h="22" fontsize="20" textcolor="0xafafaf" align="left" speed="1" delay="2"/>
+
+	<image image="@@now_music_ico" x="406" y="36" w="35" h="38" disable="@@nowplaying_disable"/>
+	<text text="@@now_filename" x="451" y="36" w="240" h="20" fontsize="18" textcolor="0xffffff" speed="1" delay="2" disable="@@nowplaying_disable" auto_translate="1"/>
+	<text text="@@now_currenttime" x="451" y="58" w="86" h="20" fontsize="18" textcolor="0xffffff" disable="@@nowplaying_disable"/>
+	<text text="@@now_totaltime" x="537" y="60" w="98" h="18" fontsize="16" textcolor="0x999999" disable="@@nowplaying_disable"/>
+	<image image="@@now_artist_ico" x="735" y="36" w="24" h="24" disable="@@nowplaying_disable"/>
+	<text text="@@now_artist" x="774" y="38" w="114" h="22" fontsize="20" textcolor="0xd3d3d3" disable="@@nowplaying_disable" speed="1" delay="2" auto_translate="1"/>
+
+	<image image="@@status_icon" x="406" y="27" w="74" h="74"/>
+
+</page>

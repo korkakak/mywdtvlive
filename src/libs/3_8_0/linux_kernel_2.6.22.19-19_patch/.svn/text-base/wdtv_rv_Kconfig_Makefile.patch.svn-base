@@ -1,0 +1,38 @@
+--- drivers/char/Kconfig.org	2010-03-11 10:55:56.000000000 +0800
++++ drivers/char/Kconfig	2010-03-11 19:19:44.000000000 +0800
+@@ -4,6 +4,23 @@
+ 
+ menu "Character devices"
+ 
++config I2C_HAL_BY_GPIO
++	tristate "I2C HAL by GPIO"
++	default m
++	---help---
++	  This is software I2C HAL implement by GPIO.
++config THERMAL_SENSOR_G751
++       tristate "THERMAL_SENSOR_G751" if I2C_HAL_BY_GPIO
++       default m
++       ---help---
++         This is thermal sensor IC driver based on I2C_HAL_BY_GPIO.
++
++config WDTV_RV_MICROP
++	tristate "WDTV RV MicroP support" if I2C_HAL_BY_GPIO
++	default m
++	---help---
++	  This is for WDTV RV MicroP support
++
+ config VT
+ 	bool "Virtual terminal" if EMBEDDED
+ 	depends on !S390
+--- drivers/char/Makefile.org	2010-03-11 10:57:45.000000000 +0800
++++ drivers/char/Makefile	2010-03-11 19:20:47.000000000 +0800
+@@ -9,6 +9,9 @@
+ 
+ obj-y	 += mem.o random.o tty_io.o n_tty.o tty_ioctl.o
+ 
++obj-$(CONFIG_I2C_HAL_BY_GPIO)	+= i2c_hal.o
++obj-$(CONFIG_THERMAL_SENSOR_G751)+= thermal_g751.o
++obj-$(CONFIG_WDTV_RV_MICROP)	+= wdtv_rv_microp.o
+ obj-$(CONFIG_LEGACY_PTYS)	+= pty.o
+ obj-$(CONFIG_UNIX98_PTYS)	+= pty.o
+ obj-y				+= misc.o

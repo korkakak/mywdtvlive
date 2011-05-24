@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+  <ctrlgrp>
+     <button valkey="CANCEL"
+	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+     <button valkey="OK"
+	focused_bg="image/Villa_button_blue_f_02.png"
+	normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+
+  <imgbtn image="@@bg-CANCEL" text="Cancel" active="@@act-CANCEL" actnoseltextcolor="0xffffff" x="313" y="390" w="343" h="78" align="hcenter" fontsize="20"/>
+  <imgbtn image="@@bg-OK" text="OK" active="@@act-OK" actnoseltextcolor="0xffffff" x="640" y="390" w="343" h="78" align="hcenter" fontsize="20"/>
+  
+  <include filename="./inc_messagebox.xml" />
+</page>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<page background="./image/villa_bg.png" type="basic">
+
+	<include filename="./inc_setup_headline.xml"/>
+
+  <listbox valkey="setup_entry_basic" autoenter="1" move="row" cols="1" rows="7" lbmask="lr"  loop_scroll="1"/>
+
+  <table x="281" y="235" w="720" h="357" rows="7" rowspacing="0"
+	  lbimage="image/browser_list_btn.png" clickimage="image/browser_list_btn.png">
+    <image lightbar="@@lightbar-setup_entry_basic-0" active="@@act-setup_entry_basic-0"/>
+    <image lightbar="@@lightbar-setup_entry_basic-1" active="@@act-setup_entry_basic-1"/>
+    <image lightbar="@@lightbar-setup_entry_basic-2" active="@@act-setup_entry_basic-2"/>
+    <image lightbar="@@lightbar-setup_entry_basic-3" active="@@act-setup_entry_basic-3"/>
+    <image lightbar="@@lightbar-setup_entry_basic-4" active="@@act-setup_entry_basic-4"/>
+    <image lightbar="@@lightbar-setup_entry_basic-5" active="@@act-setup_entry_basic-5"/>
+    <image lightbar="@@lightbar-setup_entry_basic-6" active="@@act-setup_entry_basic-6"/>
+  </table>
+
+  <wrapper x="293" w="695" h="1">
+    <image image="@@browse_0_line" ymargin="0" bg="1" y="285"/>
+	<image image="@@browse_1_line" ymargin="0" bg="1" y="336"/>
+	<image image="@@browse_2_line" ymargin="0" bg="1" y="387"/>
+    <image image="@@browse_3_line" ymargin="0" bg="1" y="438"/>
+    <image image="@@browse_4_line" ymargin="0" bg="1" y="489"/>
+    <image image="@@browse_5_line" ymargin="0" bg="1" y="540"/>
+    <image image="@@browse_6_line" ymargin="0" bg="1" y="591"/>
+  </wrapper>
+
+  <table x="303" y="235" w="390" h="357"
+    cols="1" rows="7" colspacing="0" rowspacing="0"  
+    textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" fontsize="20" selected_fontsize="20" speed="1" delay="2">
+    <text text="@@setup_entry_basic_id-0" active="@@act-setup_entry_basic-0"/>
+    <text text="@@setup_entry_basic_id-1" active="@@act-setup_entry_basic-1"/>
+    <text text="@@setup_entry_basic_id-2"  active="@@act-setup_entry_basic-2"/>
+    <text text="@@setup_entry_basic_id-3"  active="@@act-setup_entry_basic-3"/>
+    <text text="@@setup_entry_basic_id-4" active="@@act-setup_entry_basic-4"/>
+    <text text="@@setup_entry_basic_id-5" active="@@act-setup_entry_basic-5"/>
+    <text text="@@setup_entry_basic_id-6" active="@@act-setup_entry_basic-6"/>
+  </table>
+
+
+  <table x="693" y="235" w="285" h="357"
+	  cols="1" rows="7" colspacing="0" rowspacing="0" 
+	  textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" align="hcenter" fontsize="20" selected_fontsize="20" speed="1" delay="2">
+	  <text text="@@setup_entry_basic_value-0"   active="@@act-setup_entry_basic-0"/>
+	  <text text="@@setup_entry_basic_value-1"   active="@@act-setup_entry_basic-1"/>
+	  <text text="@@setup_entry_basic_value-2"   active="@@act-setup_entry_basic-2"/>
+	  <text text="@@setup_entry_basic_value-3"   active="@@act-setup_entry_basic-3"/>
+	  <text text="@@setup_entry_basic_value-4"   active="@@act-setup_entry_basic-4"/>
+	  <text text="@@setup_entry_basic_value-5"   active="@@act-setup_entry_basic-5"/>
+	 <text text="@@setup_entry_basic_value-6"   active="@@act-setup_entry_basic-6"/>
+   </table>
+
+
+  <table x="281" y="235" w="33" h="357"  cols="1" rows="7" rowspacing="0">
+   <image image="@@setup_entry_basic_icon-0" />
+   <image image="@@setup_entry_basic_icon-1" />
+   <image image="@@setup_entry_basic_icon-2" />
+   <image image="@@setup_entry_basic_icon-3" />
+   <image image="@@setup_entry_basic_icon-4" />
+   <image image="@@setup_entry_basic_icon-5" />
+   <image image="@@setup_entry_basic_icon-6" />
+  </table>
+
+  <image image="@@ss-prev" x="616" y="195" w="38" h="27"/>
+  <image image="@@ss-more" x="616" y="605" w="38" h="27"/>
+  <image image="@@wrongkeyicon" x="1100" y="71" w="52" h="53" align="left" />
+
+  <include filename="./inc_setup_headline_property.xml" />
+</page>

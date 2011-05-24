@@ -1,0 +1,8 @@
+
+#ifndef __RTL8712_OFFLOAD_BITDEF_H__
+#define __RTL8712_OFFLOAD_BITDEF_H__
+
+
+
+#endif // __RTL8712_DEBUGCTRL_BITDEF_H__
+

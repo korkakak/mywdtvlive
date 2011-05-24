@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<wrapper>
+	<image image="image/Video_player_options_menu_bg_x5.png" x="385" y="0" w="513" h="174" bg="1" disable="@@disable-options_bg"/>
+	<table x="409" y="59" h="75" w="465" cols="5" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@bg-QML0"/>
+		<image image="@@bg-QML1"/>
+		<image image="@@bg-QML2"/>
+		<image image="@@bg-QML3"/>
+		<image image="@@bg-QML4"/>
+	</table>
+	<table x="409" y="0" h="158" w="465" cols="5" align="hcenter" disable="@@disable-options_bg">
+		<image image="@@lightbar-QML0" bg="1"/>
+		<image image="@@lightbar-QML1" bg="1"/>
+		<image image="@@lightbar-QML2" bg="1"/>
+		<image image="@@lightbar-QML3" bg="1"/>
+		<image image="@@lightbar-QML4" bg="1"/>
+	</table>
+
+</wrapper>

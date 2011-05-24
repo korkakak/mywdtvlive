@@ -1,0 +1,32 @@
+diff -uBbr drivers/char/Kconfig /home/steven_wang/backup/linux_kernel_2.6.22.19-12NEW/drivers/char/Kconfig
+--- drivers/char/Kconfig	2009-02-27 12:23:03.000000000 +0800
++++ /home/steven_wang/backup/linux_kernel_2.6.22.19-12NEW/drivers/char/Kconfig	2009-06-24 11:26:37.000000000 +0800
+@@ -4,6 +4,16 @@
+ 
+ menu "Character devices"
+ 
++config I2C_HAL_BY_GPIO
++	tristate "I2C HAL by GPIO"
++	default m
++	---help---
++	  This is software I2C HAL implement by GPIO.
++config THERMAL_SENSOR_G751
++	tristate "THERMAL_SENSOR_G751" if I2C_HAL_BY_GPIO
++	default m
++	---help---
++	  This is thermal sensor IC driver based on I2C_HAL_BY_GPIO.
+ config VT
+ 	bool "Virtual terminal" if EMBEDDED
+ 	depends on !S390
+diff -uBbr drivers/char/Makefile /home/steven_wang/backup/linux_kernel_2.6.22.19-12NEW/drivers/char/Makefile
+--- drivers/char/Makefile	2009-06-24 11:31:11.000000000 +0800
++++ /home/steven_wang/backup/linux_kernel_2.6.22.19-12NEW/drivers/char/Makefile	2009-06-24 11:29:01.000000000 +0800
+@@ -9,6 +9,8 @@
+ 
+ obj-y	 += mem.o random.o tty_io.o n_tty.o tty_ioctl.o
+ 
++obj-$(CONFIG_I2C_HAL_BY_GPIO)		+= i2c_hal.o
++obj-$(CONFIG_THERMAL_SENSOR_G751)	+= thermal_g751.o
+ obj-$(CONFIG_LEGACY_PTYS)	+= pty.o
+ obj-$(CONFIG_UNIX98_PTYS)	+= pty.o
+ obj-y				+= misc.o

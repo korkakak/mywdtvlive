@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<wrapper>
+	<wrapper disable="@@live365_now_playing_disable">
+	<image image="image/music_option_menu_song_icon.png" x="419" y="43" w="24" h="26"/>
+	<image image="image/villa/music_player_artist_icon_n.png" x="419" y="69" w="24" h="24"/>
+	<text text="@@info_bar_track_name" x="451" y="46" w="360" h="22" fontsize="18" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	<text text="@@info_bar_artist_name" x="451" y="68" w="360" h="22" fontsize="18" speed="1" delay="2" align="left" textcolor="0xffffff"/>
+	</wrapper>
+</wrapper>

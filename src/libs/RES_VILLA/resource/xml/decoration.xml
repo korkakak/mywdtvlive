@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<wrapper>
+  <image image="@@wrongkeyicon" x="1100" y="71" w="52" h="53" align="hcenter" />
+  <image image="@@keyicon" x="1063" y="71" w="65" h="45" align="hcenter" />
+  <image image="@@keyicon_ex" x="997" y="54" w="65" h="45" align="hcenter" />
+  <image image="@@state" x="1063" y="71" w="45" h="45" align="hcenter"/>
+</wrapper>

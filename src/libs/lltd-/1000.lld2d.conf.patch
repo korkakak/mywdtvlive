@@ -1,0 +1,8 @@
+diff -uBbNr LLTD-PortingKit/Sample_Code/src/lld2d.conf LLTD-PortingKit.modify/Sample_Code/src/lld2d.conf
+--- LLTD-PortingKit/Sample_Code/src/lld2d.conf	2009-03-31 19:25:15.000000000 +0800
++++ LLTD-PortingKit.modify/Sample_Code/src/lld2d.conf	2009-10-30 11:47:24.000000000 +0800
+@@ -1,2 +1,2 @@
+-icon = /etc/icon.ico
+-jumbo-icon = /etc/wrt54g.large.ico
++icon = /osd/image/icon_logo4wmc_48x48.ico
++jumbo-icon = /osd/image/icon_logo4wmc_48x48.ico

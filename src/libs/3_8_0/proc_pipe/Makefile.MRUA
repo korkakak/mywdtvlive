@@ -1,0 +1,101 @@
+TARGET_TYPE := RELOCATABLE_OBJECT
+TARGET := proc_pipe.o
+SRC = device.c pipe.c
+
+COMPILKIND += kernel uclinux
+COMPILKIND := $(filter-out withthreads, $(COMPILKIND))
+
+ifneq "$(filter -DEM86XX_CHIP=EM86XX_CHIPID_TANGO3,$(RMCFLAGS))" ""
+CROSS = mipsel-linux-
+RMPLATFORM = RMPLATFORMID_TANGO3
+else
+ifneq "$(filter -DEM86XX_CHIP=EM86XX_CHIPID_TANGO2,$(RMCFLAGS))" ""
+CROSS = mipsel-linux-
+RMPLATFORM = RMPLATFORMID_TANGO2
+else
+ifneq "$(filter -DEM86XX_CHIP=EM86XX_CHIPID_TANGO15,$(RMCFLAGS))" ""
+CROSS = arm-elf-
+RMPLATFORM = RMPLATFORMID_JASPERMAMBO
+RMCFLAGS += -DLLAD_DIRECT -D__arm__
+else
+$(error EM86XX_CHIP is not set in RMCFLAGS: refer to emhwlib/include/emhwlib_chips.h)
+endif
+endif
+endif
+
+CFLAGS += -DCONFIG_PROC_PIPE_64_BITS_SUPPORT
+
+DISABLE_WARNINGS = 1
+
+ifdef LINUX_KERNEL
+KERNEL_DIR := $(LINUX_KERNEL)
+endif
+
+ifdef UCLINUX_KERNEL
+KERNEL_DIR := $(UCLINUX_KERNEL)
+endif
+
+ifdef MUM_KI
+KERNEL_DIR := $(subst /include,,$(subst -I,,$(MUM_KI)))
+endif
+
+VERSION_H := $(wildcard $(KERNEL_DIR)/include/linux/version.h)
+AUTOCONF_H := $(wildcard $(KERNEL_DIR)/include/linux/autoconf.h)
+UTSRELEASE_H := $(wildcard $(KERNEL_DIR)/include/linux/utsrelease.h)
+
+ifeq ($(VERSION_H),)
+$(error (UC)LINUX_KERNEL, or MUM_KI seems to be pointed to wrong location, or kernel is not configured.)
+endif
+ifeq ($(AUTOCONF_H),)
+$(error (UC)LINUX_KERNEL, or MUM_KI seems to be pointed to wrong location, or kernel is not configured.)
+endif
+
+UTS_RELEASE := $(shell grep UTS_RELEASE $(VERSION_H))
+
+ifeq ($(UTS_RELEASE),)
+# May be newer 2.6 linux kernel?
+ifeq ($(UTSRELEASE_H),)
+$(error (UC)LINUX_KERNEL, or MUM_KI seems to be pointed to wrong location, or kernel is not configured.)
+endif
+UTS_RELEASE := $(shell grep UTS_RELEASE $(UTSRELEASE_H))
+endif
+
+ifneq ($(findstring 2.6., $(UTS_RELEASE)),2.6.)
+# building for 2.4
+include ../scripts/inc.Makefile
+
+EXTRA_DIST_FILES = ../scripts/inc.Makefile
+
+device.o: override CFLAGS := $(filter-out -Werror, $(CFLAGS))
+pipe.o: override CFLAGS := $(filter-out -Werror, $(CFLAGS))
+
+
+else
+# building for 2.6
+kernel_dir := $(KERNEL_DIR)
+
+obj-m := proc_pipe.o
+proc_pipe-objs := $(addsuffix .o, $(basename $(SRC)))
+
+ifneq ($(findstring release, $(COMPILKIND)), release)
+CFLAGS += -D_DEBUG=1
+endif
+
+CFLAGS += $(RMCFLAGS) -DEXPORT_SYMTAB
+
+.PHONY: all
+all: proc_pipe.ko
+
+proc_pipe.ko: FORCE
+	KBUILD_VERBOSE=1 $(MAKE) -C $(kernel_dir) M="$$PWD" modules
+
+.PHONY: cleanall
+cleanall:
+	KBUILD_VERBOSE=1 $(MAKE) -C $(kernel_dir) M="$$PWD" clean
+.PHONY: FORCE
+FORCE:
+
+endif
+
+
+

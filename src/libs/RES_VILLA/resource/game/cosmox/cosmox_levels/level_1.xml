@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<level skinID="1">
+	<board>
+		<element x="2" y="5" type="EXIT" />
+		<element x="4" y="9" type="BLOCK" />
+		<element x="5" y="2" type="BLOCK" />
+		<element x="5" y="4" type="BLOCK" />
+		<element x="6" y="7" type="BLOCK" />
+		<element x="7" y="8" type="BLOCK" />
+		<element x="8" y="5" type="BLOCK" />
+		<element x="9" y="1" type="BLOCK" />
+		<element x="10" y="7" type="BLOCK" />
+	</board>
+	<start x="7" y="9" />
+</level>

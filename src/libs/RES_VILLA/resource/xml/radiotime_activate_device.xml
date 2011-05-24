@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/Villa_bg.png">
+	<ctrlgrp>
+		<button valkey="OK"
+			focused_bg="image/Villa_button_blue_f_02.png"
+			normal_bg="image/Villa_button_blue_n_02.png"/>
+	</ctrlgrp>
+
+  <table x="469" y="468" w="343" h="78" cols="1" colspacing="0" fontsize="20" align="hcenter">
+    <imgbtn image="@@bg-OK" text="Continue" active="@@act-OK" actnoseltextcolor="0xffffff" align="hcenter"/>
+  </table> 
+  	<text x="128" y="208" w="1024" h="240" text="@@register_code" fontsize="26" textcolor="0xe2e2e2" align="hcenter" numlines="5"/>
+	<include filename="./inc_loading.xml"/>
+	<!-- fixed --> 
+	<include filename="./decoration.xml"/>
+	<image image="./image/radiotime/tuneinradio_logo.png" x="1026" y="606" w="168" h="58"/>
+</page>

@@ -1,0 +1,21 @@
+--- util-linux/fdisk.c.org	2010-06-25 07:33:24.000000000 +0800
++++ util-linux/fdisk.c	2010-06-25 07:29:43.000000000 +0800
+@@ -1233,6 +1233,7 @@
+ 	g_cylinders = total_number_of_sectors / (g_heads * g_sectors * sec_fac);
+ 	if (!g_cylinders)
+ 		g_cylinders = user_cylinders;
++	sector_offset = 2048;
+ }
+ 
+ /*
+@@ -2326,6 +2327,10 @@
+ 		}
+ 	}
+ 
++	stop += 0x7ff;
++	stop &= ~0x7ff;
++	stop--;
++
+ 	set_partition(n, 0, start, stop, sys);
+ 	if (n > 4)
+ 		set_partition(n - 1, 1, ptes[n].offset, stop, EXTENDED);

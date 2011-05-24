@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<page type="basic" overlay="1">
+	<ctrlgrp>
+    		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="row" cols="1" rows="4" lbmask="ud" loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+	</ctrlgrp>
+
+	<image image="image/facebook/facebook_notification_bg.png" x="0" y="142" w="1280" h="35"/>
+	<image image="image/facebook/facebook_notifications_tab.png" x="0" y="177" w="1280" h="543"/>
+	<text text="$$Notifications" x="390" y="153" w="500" h="22" fontsize="20" textcolor="0x001542" align="hcenter"/>
+	<image image="@@alert_icon" x="703" y="129" w="50" h="39"/>
+	<text text="@@notification_cnt" x="708" y="136" w="40" h="20" fontsize="18" textcolor="0xFFFFFF" align="hcenter"/>
+
+  	<wrapper x="59" w="1161" h="104">
+		<image image="@@browselist-lightbar_0" y="196"/>
+   		<image image="@@browselist-lightbar_1" y="313"/>
+   		<image image="@@browselist-lightbar_2" y="430"/>
+   		<image image="@@browselist-lightbar_3" y="547"/>
+	</wrapper>
+
+	<!-- user icon bg -->
+	<wrapper x="73" w="76" h="76">
+		<image image="@@browselist-friend-bg_0" y="210"/>
+		<image image="@@browselist-friend-bg_1" y="327"/>
+		<image image="@@browselist-friend-bg_2" y="444"/>
+		<image image="@@browselist-friend-bg_3" y="561"/>
+	</wrapper>
+
+	<!-- user icon -->
+	<wrapper x="74" w="74" h="74">
+		<image image="@@browselist-friend-icon_0" y="211" scale_type="fixratio" scale="100" align="hcenter" default_image="@@browselist-friend-default-icon_0"/>
+		<image image="@@browselist-friend-icon_1" y="328" scale_type="fixratio" scale="100" align="hcenter" default_image="@@browselist-friend-default-icon_1"/>
+		<image image="@@browselist-friend-icon_2" y="445" scale_type="fixratio" scale="100" align="hcenter" default_image="@@browselist-friend-default-icon_2"/>
+		<image image="@@browselist-friend-icon_3" y="562" scale_type="fixratio" scale="100" align="hcenter" default_image="@@browselist-friend-default-icon_3"/>
+	</wrapper>
+
+	<!-- like/comment icon -->
+	<wrapper x="169" w="33" h="34">
+		<image image="@@browselist-notification-state_0" y="218"/>
+		<image image="@@browselist-notification-state_1" y="335"/>
+		<image image="@@browselist-notification-state_2" y="452"/>
+		<image image="@@browselist-notification-state_3" y="569"/>
+	</wrapper>
+
+	<!-- notification message -->
+      	<wrapper x="209" w="990" h="32" fontsize="30" textcolor="0x3B5998">
+   		<text text="@@browselist-notification-text_0" y="220" speed="@@browselist-notification-text-scrolling_0" delay="2"/>
+	   	<text text="@@browselist-notification-text_1" y="337" speed="@@browselist-notification-text-scrolling_1" delay="2"/>
+   		<text text="@@browselist-notification-text_2" y="454" speed="@@browselist-notification-text-scrolling_2" delay="2"/>
+	   	<text text="@@browselist-notification-text_3" y="571" speed="@@browselist-notification-text-scrolling_3" delay="2"/>
+      	</wrapper>
+
+	<!-- notification timer -->
+      	<wrapper x="209" w="990" h="22" fontsize="20" textcolor="0x757575">
+   		<text text="@@browselist-notification-time-text_0" y="256"/>
+	   	<text text="@@browselist-notification-time-text_1" y="373"/>
+   		<text text="@@browselist-notification-time-text_2" y="490"/>
+	   	<text text="@@browselist-notification-time-text_3" y="607"/>
+      	</wrapper>
+
+  	<!--
+	<text text="@@pagecounter_up" x="391" y="649" w="230" h="28" fontsize="26" textcolor="0xff8400" align="right"/>
+	<text text="@@pagecounter_down" x="661" y="649" w="230" h="28" fontsize="26" textcolor="0x3b5998" align="left"/>
+      	<text text="/" x="621" y="649" w="40" h="28" fontsize="26" textcolor="0x3b5998" align="hcenter"/>
+	-->
+	<image image="@@moreprev" x="582" y="653" w="35" h="21"/>
+      	<image image="@@morenext" x="662" y="653" w="35" h="21"/>
+
+	<include filename="./inc_loading.xml"/>
+      	<include filename="./decoration.xml"/>
+</page>

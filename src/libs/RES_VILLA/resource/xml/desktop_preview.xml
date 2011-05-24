@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/RV-BG.jpg">
+
+<ctrlgrp valkey="options" autoenter="1" lbmask="lr">
+	<button valkey="DT_SET_BG"/>
+	<linebreak/>	
+	<button valkey="DT_VIEW_INFO" />
+</ctrlgrp>
+
+<image image="image/video_browse_gallery_overlay.png"  x="0" y="0" w="1280" h="720"/>
+
+<text text="@@filename" x="41" y="600" w="708" h="65" fontsize="60" textcolor="0xffffff"/>
+<image image="@@favorite" x="176"  y="680" w="20" h="19"/>
+<image image="@@rating" x="44" y="680" w="107" h="19"/>
+
+<image image="@@artist_icon"  x="34" y="553" w="128" h="128" scale="100"/>
+<text text="@@bgset_name" x="184" y="595" w="708" h="65" fontsize="60" textcolor="0xffffff"/>
+<text text="@@artist_name" x="184" y="661" w="357" h="29" fontsize="24" textcolor="0xc1c1c1"/>
+<text text="@@text-DT_SET_BG" x="923" y="612" w="317" h="36" fontsize="30" align="right" active="@@act-DT_SET_BG" actnoseltextcolor="0xff8400" activetextcolor="0xffffff"/>
+<text text="@@text-DT_VIEW_INFO" x="923" y="653" w="317" h="36" fontsize="30" align="right" active="@@act-DT_VIEW_INFO" actnoseltextcolor="0xff8400" activetextcolor="0xffffff"/>
+</page>
+

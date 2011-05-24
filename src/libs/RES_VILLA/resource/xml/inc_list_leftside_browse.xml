@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<wrapper>
+
+	<text text="@@pagecounter" x="584" y="140" w="160" h="30" fontsize="20" align="right" textcolor="0xe2e2e2"/>
+
+  <image image="@@moreprev" x="430" y="140" w="38" h="27"/>
+
+  <wrapper x="125" w="627" h="1">
+    <image image="@@browse_0_line" ymargin="0" y="183"/>
+    <image image="@@browse_1_line" ymargin="0" y="234"/>
+    <image image="@@browse_2_line" ymargin="0" y="285"/>
+	<image image="@@browse_3_line" ymargin="0" y="336"/>
+	<image image="@@browse_4_line" ymargin="0" y="387"/>
+    <image image="@@browse_5_line" ymargin="0" y="438"/>
+    <image image="@@browse_6_line" ymargin="0" y="489"/>
+    <image image="@@browse_7_line" ymargin="0" y="540"/>
+    <image image="@@browse_8_line" ymargin="0" y="591"/>
+  </wrapper>
+
+  <table x="121" y="184" w="630" h="409" fontsize="20" selected_fontsize="26"
+		  cols="1" rows="8" colspacing="0" rowspacing="0"
+		  lbimage="image/villa_fileManagement_select_button_left.png" clickimage=""  
+		  textcolor="0xe2e2e2" actnoseltextcolor="0xe2e2e2" actoverlistcolor="0xe2e2e2" 
+		  activetextcolor="0xe2e2e2" selectedtextcolor="0xe2e2e2" auto_translate="1">
+
+		  <text text="@@browselist_0_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-0" active="@@act-browselist-0"
+				  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+
+		  <text text="@@browselist_1_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-1" active="@@act-browselist-1"
+				  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+		  
+		  <text text="@@browselist_2_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-2" active="@@act-browselist-2"
+				  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+
+		  <text text="@@browselist_3_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-3" active="@@act-browselist-3"
+				  selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+
+		  <text text="@@browselist_4_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-4" active="@@act-browselist-4"
+				  selected="@@browse_4_select" speed="@@browse_4_speed" delay="2"/>
+
+		  <text text="@@browselist_5_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-5" active="@@act-browselist-5"
+				  selected="@@browse_5_select" speed="@@browse_5_speed" delay="2"/>
+
+		  <text text="@@browselist_6_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-6" active="@@act-browselist-6"
+				  selected="@@browse_6_select" speed="@@browse_6_speed" delay="2"/>
+
+		  <text text="@@browselist_7_text" lmargin="88" ymargin="0" xmargin="20"
+				  lightbar="@@lightbar-browselist-7" active="@@act-browselist-7"
+				  selected="@@browse_7_select" speed="@@browse_7_speed" delay="2"/>
+  </table>
+  
+  <table x="150" y="185" w="60" h="409"
+           cols="1" rows="8" colspacing="0" rowspacing="0" >
+    <image image="@@browse_0_icon" ymargin="0" />
+    <image image="@@browse_1_icon" ymargin="0" />
+    <image image="@@browse_2_icon" ymargin="0" />
+    <image image="@@browse_3_icon" ymargin="0" />
+    <image image="@@browse_4_icon" ymargin="0" />
+    <image image="@@browse_5_icon" ymargin="0" />
+    <image image="@@browse_6_icon" ymargin="0" />
+    <image image="@@browse_7_icon" ymargin="0" />
+  </table>
+  
+  <table x="132" y="185" w="122" h="409"
+           cols="1" rows="8" colspacing="0" rowspacing="0" >
+    <image image="@@browse_0_checked" ymargin="0" />
+    <image image="@@browse_1_checked" ymargin="0" />
+    <image image="@@browse_2_checked" ymargin="0" />
+    <image image="@@browse_3_checked" ymargin="0" />
+    <image image="@@browse_4_checked" ymargin="0" />
+    <image image="@@browse_5_checked" ymargin="0" />
+    <image image="@@browse_6_checked" ymargin="0" />
+    <image image="@@browse_7_checked" ymargin="0" />
+  </table>
+  
+  <image image="@@morenext" x="430" y="608" w="38" h="27"/>
+</wrapper>

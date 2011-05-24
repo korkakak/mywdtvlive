@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="./image/Villa_bg.png" bg="1">
+  <ctrlgrp valkey="main" lbmask="LR" >
+        <eventbox_keyboard valkey="keyboard" autoenter="1" lbmask="LRlr"/>
+        <listbox valkey="browselist" move="row" cols="1" rows="6" autoenter="1" lbmask="lr"  disable_light_bar_click="1"/>
+  </ctrlgrp>
+    <widget_keyboard ctrlname="keyboard" x="97" y="223" w="742" h="273" cols="14" rows="5"
+                     align="hcenter" textcolor="0xFFFFFF"  activetextcolor="0xff8400"
+                     changed="@@keyboard_changed" extra_height="5" extra_index="0"/>
+
+  <image image="image/keyboard_search_box.png" x="97" y="223" w="633" h="60" bg="1"/>
+  <texttail text="@@input_01_text" x="119" y="240" w="544" h="22" textcolor="0x000000" cursor_pos="@@input_text_cursor_pos" cursor_image="image/keyboard_cursor.png" cursor_image_x_offset="6" cursor_image_y_offset="5" ignore_translate="1"/>
+   <text text="$$Search" x="97" y="122" w="600" h="44" align="left" fontsize="42" textcolor="0x07b5ff" speed="1" delay="2"/>
+
+        <image x="1010" y="162" w="40" h="29" image="@@listprev"/>
+        <image x="1010" y="526" w="40" h="29" image="@@listnext"/>
+
+	<table x="875" y="212" w="309" h="293" fontsize="20" selected_fontsize="26" cols="1" rows="6" colspacing="0" rowspacing="0" lbimage="image/pandora_new_station_select_bar.png" clickimage="" textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" activetextcolor="0xffffff" selectedtextcolor="0xffffff" auto_translate="1" align="hcenter">
+		<text text="@@browselist_0_text" xmargin="0" lightbar="@@lightbar-browselist-0" active="@@act-browselist" selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+		<text text="@@browselist_1_text" xmargin="0" lightbar="@@lightbar-browselist-1" active="@@act-browselist" selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+		<text text="@@browselist_2_text" xmargin="0" lightbar="@@lightbar-browselist-2" active="@@act-browselist" selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+             <text text="@@browselist_3_text" xmargin="0" lightbar="@@lightbar-browselist-3" active="@@act-browselist" selected="@@browse_3_select" speed="@@browse_3_speed" delay="2"/>
+             <text text="@@browselist_4_text" xmargin="0" lightbar="@@lightbar-browselist-4" active="@@act-browselist" selected="@@browse_4_select" speed="@@browse_4_speed" delay="2"/>
+             <text text="@@browselist_5_text" xmargin="0" lightbar="@@lightbar-browselist-5" active="@@act-browselist" selected="@@browse_5_select" speed="@@browse_5_speed" delay="2"/>
+	</table>
+
+	  <wrapper x="879" w="302" h="1">
+	    <image image="@@browse_0_line" ymargin="0" bg="1" y="260"/>
+	    <image image="@@browse_1_line" ymargin="0" bg="1" y="309"/>
+	    <image image="@@browse_2_line" ymargin="0" bg="1" y="358"/>
+	    <image image="@@browse_3_line" ymargin="0" bg="1" y="407"/>
+	    <image image="@@browse_4_line" ymargin="0" bg="1" y="456"/>
+	    <image image="@@browse_5_line" ymargin="0" bg="1" y="505"/>
+	  </wrapper>
+	
+	<include filename="./inc_loading.xml"/>
+ 	<include filename="./decoration.xml"/>
+        <!--include filename="./inc_keyboard.xml"/-->
+</page>
+

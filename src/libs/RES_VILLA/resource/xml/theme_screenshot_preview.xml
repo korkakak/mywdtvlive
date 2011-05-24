@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/villa_bg.png" type="basic">
+<image name="PREVIEW" image="@@screenshot" x="0" y="0" w="1280" h="720"  scale="100" />
+<include filename="./inc_loading.xml"/> 
+</page>
+
+
+

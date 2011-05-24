@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<page>
+	<ctrlgrp lbmask="LRud">
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"/>
+		<linebreak/>
+		<button valkey="GoBack" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+	</ctrlgrp>
+
+	<text x="213" y="205" fontsize="20" w="856" h="75" align="hcenter" textcolor="0xbababa" text="Customer Care is available 7 days a week between 9 am - midnight EST at 1-877-793-7485. For the best support, be sure to tell the Customer Care agent your device player’s model number. For additional 24/7 support, please visit www.cinemanow.com/support." numlines="3"/>
+
+	<wrapper y="333" fontsize="20" h="25" textcolor="0xbababa">
+		<text x="290" w="346" text="@@device_name_tag" align="right" />
+		<text x="644" w="424" text="@@device_name" />
+	</wrapper>
+	<wrapper y="358" fontsize="20" h="25" textcolor="0xbababa">
+		<text x="290" w="346" text="@@device_id_tag" align="right"/>
+		<text x="644" w="424" text="@@device_id" />
+	</wrapper>
+	<wrapper y="383" fontsize="20" h="25" textcolor="0xbababa">
+		<text x="290" w="346" text="@@version_tag" align="right"/>
+		<text x="644" w="424" text="@@version" />
+	</wrapper>
+
+	<imgbtn x="535" y="477" w="210" h="49" fontsize="20" align="hcenter" text="Go Back" image="@@bg-GoBack" disable="@@disable-GoBack" active="@@act-GoBack" selected="@@sel-GoBack" click="@@click-GoBack" />
+
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<image image="image/bestbuy/bby_return_icon.png" x="109" y="644" w="24" h="21"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>

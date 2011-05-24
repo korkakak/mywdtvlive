@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<wrapper>
+  <wrapper disable="@@info_pandora_now_playing_disable">	
+  <image image="@@info_inforbar" x="340" y="0" w="608" h="174"/>
+  <image image="@@info_trackicon" x="384" y="52" w="24" h="26"/>
+  <image image="@@info_artisticon" x="384" y="93" w="24" h="24"/>
+  <image image="@@info_albumicon" x="641" y="52" w="24" h="24"/>
+
+  <text text="@@info_trackname" x="418" y="56" w="204" h="22" fontsize="20" speed="1" delay="2" align="left" textcolor="0xffffff" auto_translate="1"/>
+  <text text="@@info_artist" x="418" y="97" w="204" h="22" align="left" fontsize="20" textcolor="0xffffff" speed="1" delay="2" auto_translate="1"/>
+  <text text="@@info_album" x="675" y="56" w="204" h="22" align="left" fontsize="20" textcolor="0xffffff" speed="1" delay="2" auto_translate="1"/>
+  </wrapper>
+</wrapper>

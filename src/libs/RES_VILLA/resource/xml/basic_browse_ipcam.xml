@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/welcome_background_bg.jpg" type="basic">
+<ctrlgrp valkey="OPTION">
+	<listbox valkey="browselist" autoenter="1" autoswitch="0" move="page" cols="1" rows="7" lbmask="lr"  loop_scroll="1"/>
+	<linebreak/>
+	<button valkey="QML0"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_thumbnail_icon_n.png"
+		disabled_bg="image/villa_options_menu_thumbnail_icon_d.png"
+		normal_bg="image/villa_options_menu_thumbnail_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$Thumbnail mode"/>
+	<button valkey="QML1"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_list_icon_n.png"
+		disabled_bg="image/villa_options_menu_list_icon_d.png"
+		normal_bg="image/villa_options_menu_list_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$List mode"/>
+	<button valkey="QML2"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/villa_options_menu_preview_more_icon_n.png"
+		disabled_bg="image/villa_options_menu_preview_more_icon_d.png"
+		normal_bg="image/villa_options_menu_preview_more_icon_n.png"
+		group_valkey="options"
+		group_focused_text="$$Preview mode"/>
+	<button valkey="QML3"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/options_menu_ipcam_icon.png"
+		normal_bg="image/options_menu_ipcam_icon.png"
+		disabled_bg="image/options_menu_ipcam_icon.png"
+		group_valkey="OPTION"
+		group_focused_text="PIP"/>
+	<button valkey="QML4"
+		lightbar_bg="image/villa_options_menu_select_bar.png"
+		focused_bg="image/options_menu_alert_icon.png"
+		normal_bg="image/options_menu_alert_icon.png"
+		disabled_bg="image/options_menu_alert_icon_d.png"
+		group_valkey="OPTION"
+		group_focused_text="Motion Detect"/>
+</ctrlgrp>
+
+<include filename="./info.xml"/>
+<text id="headline" text="@@browse_title_icon" fontsize="40" textcolor="0xffb300"/>
+<!--image x="350" y="110" w="380" h="340" image="@@browse_background_icon" bg="1" align="hcenter"/-->
+<include filename="./inc_list_browse.xml"/>
+<!-- fixed --> 
+<include filename="././inc_headline_property.xml"/>
+<include filename="./decoration.xml"/>
+<include filename="./inc_options_list_x5.xml"/>
+<include filename="./ipcam_pip_win.xml" />
+</page>

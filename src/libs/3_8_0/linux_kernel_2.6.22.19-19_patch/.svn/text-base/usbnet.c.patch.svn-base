@@ -1,0 +1,30 @@
+--- linux-2.6.22.19/drivers/net/usb/usbnet.c.org	2011-03-15 13:22:26.000000000 +0800
++++ linux-2.6.22.19/drivers/net/usb/usbnet.c	2011-03-15 13:19:16.000000000 +0800
+@@ -1133,7 +1133,8 @@
+ 	status = -ENOMEM;
+ 
+ 	// set up our own records
+-	net = alloc_etherdev(sizeof(*dev));
++	//net = alloc_etherdev(sizeof(*dev));
++	net = alloc_netdev( sizeof(*dev), "usbeth%d", ether_setup );
+ 	if (!net) {
+ 		dbg ("can't kmalloc dev");
+ 		goto out;
+@@ -1158,7 +1159,7 @@
+ 
+ 	SET_MODULE_OWNER (net);
+ 	dev->net = net;
+-	strcpy (net->name, "usb%d");
++	strcpy (net->name, "usbeth%d");
+ 	memcpy (net->dev_addr, node_id, sizeof node_id);
+ 
+ 	/* rx and tx sides can use different message sizes;
+@@ -1193,7 +1194,7 @@
+ 		// can rename the link if it knows better.
+ 		if ((dev->driver_info->flags & FLAG_ETHER) != 0
+ 				&& (net->dev_addr [0] & 0x02) == 0)
+-			strcpy (net->name, "eth%d");
++			strcpy (net->name, "usbeth%d");
+ 
+ 		/* maybe the remote can't receive an Ethernet MTU */
+ 		if (net->mtu > (dev->hard_mtu - net->hard_header_len))

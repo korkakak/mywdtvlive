@@ -1,0 +1,84 @@
+.interior_panel{
+	width:303px;
+	position:relative;
+	background-color:#ffffff;
+	border:solid #d3d3d3 1px;
+}
+
+.right_interior_panel.users, .left_interior_panel.users{
+	height:470px;
+}
+
+.right_interior_panel.shares, .left_interior_panel.shares{
+	height:520px;
+}
+
+.right_interior_panel.support, .left_interior_panel.support{
+	height:220px;
+}
+
+.right_interior_panel.backups, .left_interior_panel.backups{
+	height:470px;
+}
+
+.right_interior_panel{
+	text-align:left;
+}
+
+.panel_section_title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	color:#616264;
+	padding:0 5px 0 13px;
+	background-color:#e8e8e8;
+	border-bottom:solid #d3d3d3 1px;
+	border-top:solid #d3d3d3 1px;
+	height:36px;
+	line-height:36px;
+	position:relative;
+}
+
+.vertical_panel_spacer{
+	height:15px;
+	position:relative;
+}
+
+.hide_borders_spacer{
+	position:absolute;
+	top:0px;
+	left:-1px;
+	height:100%;
+	width:100%;
+	border-top:solid #d3d3d3 1px;
+	border-left:solid #f1f1f1 1px;
+	border-right:solid #f1f1f1 1px;
+	background:#f1f1f1;
+}
+
+.panel_section_title .big_button{
+	position:absolute;
+	right:5px;
+	top:4px;
+}
+
+.panel_section_title .save_btn{
+	margin:0 5px 0 10px;
+}
+
+.panel_section_title .cancel_btn{
+	font-weight:normal;
+	font-size:11px;
+}
+
+
+.panel_section_title.no_top{
+	border-top:none;
+}
+
+.help_text_link_container{
+	padding:15px;
+	font-size:11px;
+}input {
+	width: 120px;
+}

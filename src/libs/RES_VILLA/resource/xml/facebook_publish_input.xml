@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">
+<wrapper>
+        <image image="image/video_encoding_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+   <text text="@@master_headline" x="267" y="164" w="400" h="42" align="left" fontsize="36" textcolor="0xe2e2e2" speed="1" delay="2"/>      
+</wrapper>
+      	<include filename="./inc_keyboard.xml"/>
+	<image image="@@logo" x="1069" y="534" w="158" h="65"/>
+</page>

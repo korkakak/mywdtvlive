@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png" type="basic">
+	<ctrlgrp valkey="options" autoenter="1" lbmask="LR"> 
+		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="page" cols="1" rows="6" lbmask="lr"  loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+		<include filename="./inc_optionmenu_ctrlgrp.xml"/>
+	</ctrlgrp>
+	<include filename="./inc_optionmenu_widgets.xml"/>
+
+	<include filename="./inc_deezer_short_list_browse.xml"/>
+	<include filename="./inc_deezer_show_album_info.xml"/>
+	<include filename="./inc_loading.xml"/>
+	<!-- fixed --> 
+	<include filename="./decoration.xml"/>
+	<image image="./image/deezer/deezer_logo.png" x="1049" y="610" w="135" h="46"/>
+</page>

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page>
+<ctrlgrp>
+	<button valkey="CLOSE"/> 
+	<!--
+	<linebreak/>
+	<button valkey="LIKE"/> 
+	<button valkey="UNLIKE"/> 
+	-->
+	<linebreak/>
+	<button valkey="COMMENTS"/>
+</ctrlgrp>
+
+  <!-- information file info -->
+  <wrapper disable="@@disable_file_info">
+	  <image image="image/facebook/facebook_Photo_playback_mask.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	  <text text="@@filename" x="98" y="595" w="840" h="50" fontsize="48" textcolor="0xffffff" speed="1" delay="2" align="left" auto_translate="1"/>
+	  <!--
+	  <text text="@@text-like" x="98" y="661" w="66" h="26" fontsize="24" textcolor="0xc1c1c1" align="right"/>
+	  <image image="image/facebook/facebook_playback_comments_like.png" x="167" y="655" w="21" h="27"/>
+	  <text text="@@text-comments" x="216" y="661" w="66" h="26" fontsize="24" textcolor="0xc1c1c1" align="right"/>
+	  <image image="image/facebook/facebook_playback_comments_msg_notify.png" x="297" y="657" w="23" h="26"/>
+	  -->
+  </wrapper>
+	<text x="961" y="595" w="240" h="27"  text="$$Close" align="right"
+		fontsize="24" textcolor="0xc1c1c1"  active="@@act-CLOSE" selected="sel-CLOSE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-CLOSE"/>
+	<!--
+	<text x="961" y="630" w="240" h="27"  text="$$Like" align="right"
+		fontsize="24" textcolor="0xc1c1c1"  active="@@act-LIKE" selected="sel-LIKE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-LIKE"/>
+	<text x="961" y="630" w="240" h="27"  text="$$Unlike" align="right"
+		fontsize="24" textcolor="0xc1c1c1"  active="@@act-UNLIKE" selected="sel-UNLIKE"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-UNLIKE"/>
+	<text x="961" y="665" w="240" h="27"  text="$$Comments" align="right"
+		fontsize="24" textcolor="0xc1c1c1"  active="@@act-COMMENTS" selected="sel-COMMENTS"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-COMMENTS"/>
+	-->
+	<text x="961" y="630" w="240" h="27"  text="$$Comments" align="right"
+		fontsize="24" textcolor="0xc1c1c1"  active="@@act-COMMENTS" selected="sel-COMMENTS"
+		actnoseltextcolor="0xff8400" activetextcolor="0xff8400" disable="@@disable-COMMENTS"/>
+
+	<include filename="./inc_decoration_player.xml"/>
+	<image image="@@wrongkeyicon" x="563" y="282" w="154" h="155" align="hcenter" />
+	<image image="@@keyicon" x="1063" y="71" w="65" h="45" align="hcenter" />
+
+</page>

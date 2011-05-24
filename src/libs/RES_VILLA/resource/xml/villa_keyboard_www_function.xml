@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page type="basic" overlay="1">
+<ctrlgrp>
+	<button valkey="COM"/>
+	<linebreak/>
+	<button valkey="WWW"/>
+	<linebreak/>
+	<button valkey="NET"/>
+	<linebreak/>
+	<button valkey="ORG"/>
+	<linebreak/>
+	<button valkey="BIZ"/>
+	<linebreak/>
+	<button valkey="TV"/>
+</ctrlgrp>
+<image image="image/keyboard_funchion_expanded_btn.png" x="897" y="330" w="103" h="209"/>
+<wrapper x="919" w="92" h="30" textcolor="0xffffff" actnoseltextcolor="0x07b5ff">
+	<text text=".com" y="342" active="@@act-COM"/>
+	<text text="www." y="373" active="@@act-WWW"/>
+	<text text=".net" y="404" active="@@act-NET"/>
+	<text text=".org" y="435" active="@@act-ORG"/>
+	<text text=".biz" y="466" active="@@act-BIZ"/>
+	<text text=".tv" y="497" active="@@act-TV"/>
+</wrapper>
+  
+</page>

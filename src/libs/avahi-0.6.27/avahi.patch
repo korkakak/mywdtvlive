@@ -1,0 +1,11 @@
+--- avahi-daemon/sd-daemon.c.org	2010-09-22 09:55:53.000000000 +0800
++++ avahi-daemon/sd-daemon.c	2010-09-22 09:56:10.000000000 +0800
+@@ -353,7 +353,7 @@
+                 goto finish;
+         }
+ 
+-        if ((fd = socket(AF_UNIX, SOCK_DGRAM|SOCK_CLOEXEC, 0)) < 0) {
++        if ((fd = socket(AF_UNIX, SOCK_DGRAM, 0)) < 0) {
+                 r = -errno;
+                 goto finish;
+         }

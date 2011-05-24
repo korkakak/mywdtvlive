@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">	  
+  <ctrlgrp>
+    <button valkey="TARGET_TYPE_FILENAME"
+	    focused_bg="image/browser_list_btn.png" 
+	    click_bg="image/browser_list_btn.png"/>
+    <linebreak />
+    <button valkey="TARGET_TYPE_TITLE"
+	    focused_bg="image/browser_list_btn.png"
+	    click_bg="image/browser_list_btn.png"/>
+    <linebreak />
+    <button valkey="TARGET_TYPE_ARTIST"
+	    focused_bg="image/browser_list_btn.png" 
+	    click_bg="image/browser_list_btn.png"/>
+    <linebreak />
+    <button valkey="TARGET_TYPE_ALBUM"
+	    focused_bg="image/browser_list_btn.png" 
+	    click_bg="image/browser_list_btn.png"/>
+  </ctrlgrp>
+  <text id="headline" text="$$Search" fontsize="40" textcolor="0x07b5ff" />
+
+ 
+  <image image="@@browse_line_1" x="281" y="299" w="720" h="2"/>
+  <image image="@@browse_line_2" x="281" y="350" w="720" h="2"/>
+  <image image="@@browse_line_3" x="281" y="401" w="720" h="2"/>
+  <image image="@@browse_line_4" x="281" y="452" w="720" h="2"/>
+
+  <image x="284" y="248" w="720" h="51" image="@@bg-TARGET_TYPE_FILENAME" align="hcenter" active="@@act-TARGET_TYPE_FILENAME"/>
+  <image x="284" y="299" w="720" h="51" image="@@bg-TARGET_TYPE_TITLE" align="hcenter" active="@@act-TARGET_TYPE_TITLE"/>
+  <image x="284" y="350" w="720" h="51" image="@@bg-TARGET_TYPE_ARTIST" align="hcenter" active="@@act-TARGET_TYPE_ARTIST"/>
+  <image x="284" y="401" w="720" h="51" image="@@bg-TARGET_TYPE_ALBUM" align="hcenter" active="@@act-TARGET_TYPE_ALBUM"/>
+ 
+  <text x="284" y="248" w="720" h="51" text="$$File name" align="hcenter" fontsize="20" active="@@act-TARGET_TYPE_FILENAME" actnoseltextcolor="0xe2e2e2" textcolor="0xe2e2e2" selected_fontsize="20"/>
+  <text x="284" y="299" w="720" h="51" text="@@target_title" align="hcenter" fontsize="20" active="@@act-TARGET_TYPE_TITLE" actnoseltextcolor="0xe2e2e2" textcolor="0xe2e2e2" disable="disable-TARGET_TYPE_TITLE" selected_fontsize="20"/>
+  <text x="284" y="350" w="720" h="51" text="@@target_artist" align="hcenter" fontsize="20" active="@@act-TARGET_TYPE_ARTIST" actnoseltextcolor="0xe2e2e2" textcolor="0xe2e2e2" disable="disable-TARGET_TYPE_ARTIST" selected_fontsize="20"/>
+  <text x="284" y="401" w="720" h="51" text="@@target_album" align="hcenter" fontsize="20" active="@@act-TARGET_TYPE_ALBUM" actnoseltextcolor="0xe2e2e2" textcolor="0xe2e2e2"  disable="disable-TARGET_TYPE_ALBUM" selected_fontsize="20"/>
+  <include filename="./inc_headline_property.xml" />
+  <include filename="./decoration.xml"/>
+</page>

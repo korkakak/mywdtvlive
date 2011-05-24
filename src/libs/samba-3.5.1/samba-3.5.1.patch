@@ -1,0 +1,294 @@
+diff -uBbNr samba-3.5.1/source3/configure samba-3.5.1.modify/source3/configure
+--- samba-3.5.1/source3/configure	2010-03-09 03:37:06.000000000 +0800
++++ samba-3.5.1.modify/source3/configure	2010-07-08 21:26:05.000000000 +0800
+@@ -2487,7 +2487,7 @@
+ shift; shift
+ # Remember, the first character of IFS is used to create $*,
+ # except with old shells:
+-host_os=$*
++host_os="gnu"
+ IFS=$ac_save_IFS
+ case $host_os in *\ *) host_os=`echo "$host_os" | sed 's/ /-/g'`;; esac
+ 
+@@ -12997,7 +12997,7 @@
+ See \`config.log' for more details." >&5
+ $as_echo "$as_me: error: cannot run test program while cross compiling
+ See \`config.log' for more details." >&2;}
+-   { (exit 1); exit 1; }; }; }
++   { (exit 1); }; }; }
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -13577,7 +13577,7 @@
+         old_CPPFLAGS="$CPPFLAGS"
+         CPPFLAGS="-D_LARGEFILE64_SOURCE $CPPFLAGS"
+         if test "$cross_compiling" = yes; then
+-  SINIX_LFS_SUPPORT=cross
++  SINIX_LFS_SUPPORT=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -13677,7 +13677,7 @@
+         old_CPPFLAGS="$CPPFLAGS"
+         CPPFLAGS="-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_GNU_SOURCE $CPPFLAGS"
+        if test "$cross_compiling" = yes; then
+-  LINUX_LFS_SUPPORT=cross
++  LINUX_LFS_SUPPORT=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -13803,7 +13803,7 @@
+         old_CPPFLAGS="$CPPFLAGS"
+         CPPFLAGS="-D_LARGEFILE64_SOURCE -D_GNU_SOURCE $CPPFLAGS"
+         if test "$cross_compiling" = yes; then
+-  GLIBC_LFS_SUPPORT=cross
++  GLIBC_LFS_SUPPORT=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -54311,7 +54311,7 @@
+ else
+ 
+ if test "$cross_compiling" = yes; then
+-  samba_cv_have_longlong=cross
++  samba_cv_have_longlong=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -54850,7 +54850,7 @@
+ else
+ 
+ if test "$cross_compiling" = yes; then
+-  samba_cv_SIZEOF_INO_T=cross
++  samba_cv_SIZEOF_INO_T=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -61204,7 +61204,7 @@
+ else
+ 
+ if test "$cross_compiling" = yes; then
+-  samba_cv_USE_SETEUID=cross
++  samba_cv_USE_SETEUID=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -61541,7 +61541,7 @@
+ else
+ 
+   if test "$cross_compiling" = yes; then
+-  samba_cv_HAVE_STRUCT_FLOCK64=cross
++  samba_cv_HAVE_STRUCT_FLOCK64=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -76978,7 +76978,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   if test "$cross_compiling" = yes; then
+-  fu_cv_sys_stat_statvfs64=cross
++  fu_cv_sys_stat_statvfs64=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+@@ -77827,6 +77827,8 @@
+ 
+ cat >>confdefs.h <<\_ACEOF
+ #define HAVE_EXPLICIT_LARGEFILE_SUPPORT 1
++#define _LARGEFILE64_SOURCE 1
++#define _LARGE_FILES 1
+ _ACEOF
+ 
+ fi
+@@ -95916,7 +95918,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   if test "$cross_compiling" = yes; then
+-  fu_cv_sys_stat_statvfs64=cross
++  fu_cv_sys_stat_statvfs64=yes
+ else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+diff -uBbNr samba-3.5.1/source3/include/safe_string.h samba-3.5.1.modify/source3/include/safe_string.h
+--- samba-3.5.1/source3/include/safe_string.h	2010-03-09 03:34:39.000000000 +0800
++++ samba-3.5.1.modify/source3/include/safe_string.h	2010-07-08 21:26:05.000000000 +0800
+@@ -31,6 +31,7 @@
+ #endif /* bcopy */
+ #define bcopy(src,dest,size) __ERROR__XX__NEVER_USE_BCOPY___;
+ 
++#if 0
+ #ifdef strcpy
+ #undef strcpy
+ #endif /* strcpy */
+@@ -60,6 +61,8 @@
+ #endif
+ #define strncasecmp __ERROR__XX__NEVER_USE_STRNCASECMP__;
+ 
++#endif
++
+ #endif /* !_SPLINT_ */
+ 
+ #ifdef DEVELOPER
+diff -uBbNr samba-3.5.1/source3/Makefile.in samba-3.5.1.modify/source3/Makefile.in
+--- samba-3.5.1/source3/Makefile.in	2010-03-09 03:34:39.000000000 +0800
++++ samba-3.5.1.modify/source3/Makefile.in	2010-07-08 21:26:05.000000000 +0800
+@@ -173,6 +173,10 @@
+ # the directory where pid files go
+ PIDDIR = @piddir@
+ 
++LIBPOPT=bin/libpopt.a
++LIBPOPT_MAJOR=0
++LIBPOPT_MINOR=1
++
+ FLAGS = -I. \
+ 	-I$(srcdir) \
+ 	@FLAGS1@ \
+@@ -212,7 +216,7 @@
+ 
+ BIN_PROGS1 = bin/smbclient@EXEEXT@ bin/net@EXEEXT@ bin/smbspool@EXEEXT@ \
+ 	bin/testparm@EXEEXT@ bin/smbstatus@EXEEXT@ bin/smbget@EXEEXT@
+-BIN_PROGS2 = bin/smbcontrol@EXEEXT@ bin/smbtree@EXEEXT@ $(TDBBACKUP) \
++BIN_PROGS2 = bin/smbcontrol@EXEEXT@ $(TDBBACKUP) \
+ 	bin/nmblookup@EXEEXT@ bin/pdbedit@EXEEXT@ $(TDBDUMP) \
+ 	$(TDBTOOL)
+ BIN_PROGS3 = bin/smbpasswd@EXEEXT@ bin/rpcclient@EXEEXT@ bin/smbcacls@EXEEXT@ \
+@@ -1345,7 +1349,7 @@
+ ######################################################################
+ all:: SHOWFLAGS basics libs $(SBIN_PROGS) $(BIN_PROGS) $(ROOT_SBIN_PROGS) \
+ 	$(MODULES) $(NSS_MODULES) $(PAM_MODULES) @CIFSUPCALL_PROGS@ \
+-	$(EXTRA_ALL_TARGETS)
++	$(EXTRA_ALL_TARGETS) libpopt
+ 
+ basics::
+ 
+@@ -1416,7 +1420,7 @@
+ 
+ 
+ everything:: all libtalloc libsmbclient libnetapi debug2html smbfilter talloctort replacetort smbconftort modules torture \
+-	$(EVERYTHING_PROGS)
++	$(EVERYTHING_PROGS) libpopt
+ 
+ .SUFFIXES:
+ .SUFFIXES: .c .o .lo
+@@ -1822,6 +1826,9 @@
+ 	@echo Linking $@
+ 	@$(CC) $(FLAGS) -o $@ $(VERSION_OBJ) lib/version_test.o
+ 
++bin/libpopt.a: $(POPT_OBJ)
++	@echo Linking libpopt non-shared library $@
++	@-$(AR) -rc $@ $(POPT_OBJ)
+ 
+ #####################################################################
+ #
+@@ -1882,6 +1889,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBTALLOC_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBTALLOC_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libtalloc.a $(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(LIBTALLOC_HEADERS) $(DESTDIR)${prefix}/include
+ 
+@@ -1962,6 +1970,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBTDB_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBTDB_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libtdb.a $(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(LIBTDB_HEADERS) $(DESTDIR)${prefix}/include
+ 
+@@ -2058,6 +2067,7 @@
+ 	fi
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(LIBWBCLIENT_HEADERS) $(DESTDIR)${prefix}/include
++	cp -f bin/libwbclient.a $(LIBDIR)
+ 
+ uninstalllibwbclient::
+ 	-rm -f $(DESTDIR)$(LIBDIR)/`basename $(LIBWBCLIENT_SHARED_TARGET)`
+@@ -2131,6 +2141,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBADDNS_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBADDNS_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libaddns.a $(LIBDIR)
+ 
+ uninstalllibaddns::
+ 	-$(UNINSTALLLIBCMD_SH) $(DESTDIR)$(LIBDIR)/`basename $(LIBADDNS_SHARED_TARGET_SONAME)`
+@@ -2233,6 +2244,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBNETAPI_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBNETAPI_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libnetapi.a $(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(srcdir)/lib/netapi/netapi.h $(DESTDIR)${prefix}/include
+ 
+@@ -2311,6 +2323,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBSMBCLIENT_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBSMBCLIENT_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libsmbclient.a $(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(LIBSMBCLIENT_HEADERS) $(DESTDIR)${prefix}/include
+ 
+@@ -2396,6 +2409,7 @@
+ 			$(DESTDIR)$(LIBDIR)/`basename $(LIBSMBSHAREMODES_SHARED_TARGET)` ; \
+ 	fi
+ 	-$(INSTALLLIBCMD_A) $(LIBSMBSHAREMODES_STATIC_TARGET) $(DESTDIR)$(LIBDIR)
++	cp -f bin/libsmbsharemodes.a $(LIBDIR)
+ 	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS_BIN) $(DESTDIR) ${prefix}/include
+ 	-$(INSTALLCMD) -m $(INSTALLPERMS_DATA) $(LIBSMBSHAREMODES_HEADERS) $(DESTDIR)${prefix}/include
+ 
+@@ -2441,6 +2455,22 @@
+ 		@SONAMEFLAG@`basename $@`.$(LIBBIGBALLOFMUD_MAJOR)
+ 	ln -snf libbigballofmud.so bin/libbigballofmud.so.0
+ 
++#-------------------------------------------------------------------
++#
++# libpopt
++#
++#-------------------------------------------------------------------
++
++libpopt: $(LIBPOPT)
++
++installlibpopt: installdirs libpopt
++	@$(SHELL) $(srcdir)/script/installdirs.sh $(INSTALLPERMS) $(DESTDIR) $(LIBDIR)
++	-$(INSTALLLIBCMD_A) bin/libpopt.a $(DESTDIR)$(LIBDIR)
++	cp -f bin/libpopt.a $(LIBDIR)
++
++uninstalllibpopt:
++	-$(UNINSTALLLIBCMD_A) $(DESTDIR)$(LIBDIR)/libpopt.a
++
+ # It would be nice to build a static bigballofmud too, but when I try
+ # I get linker errors about dl_open and similar things.  I'm not sure if
+ # it can be fixed or if they just can't be called from a static
+@@ -2938,7 +2968,7 @@
+ 
+ install:: installservers installbin @INSTALL_CIFSMOUNT@ @INSTALL_CIFSUMOUNT@ @INSTALL_CIFSUPCALL@ installman \
+ 		installscripts installdat installmodules @SWAT_INSTALL_TARGETS@ \
+-		@INSTALL_PAM_MODULES@ installlibs installmo
++		@INSTALL_PAM_MODULES@ installlibs installmo installlibpopt installlibaddns installlibwbclient
+ 
+ install-everything:: install installmodules
+ 
+diff -uBbNr samba-3.5.1/source3/passdb/pdb_tdb.c samba-3.5.1.modify/source3/passdb/pdb_tdb.c
+--- samba-3.5.1/source3/passdb/pdb_tdb.c	2010-03-09 03:34:39.000000000 +0800
++++ samba-3.5.1.modify/source3/passdb/pdb_tdb.c	2010-07-08 21:28:03.000000000 +0800
+@@ -1255,7 +1255,7 @@
+ 	/* save the path for later */
+ 
+ 	if (!location) {
+-		if (asprintf(&tdbfile, "%s/%s", lp_private_dir(),
++		if (asprintf(&tdbfile, "%s/%s", "/tmp/private",
+ 			     PASSDB_FILE_NAME) < 0) {
+ 			return NT_STATUS_NO_MEMORY;
+ 		}
+diff -uBbNr samba-3.5.1/source3/passdb/secrets.c samba-3.5.1.modify/source3/passdb/secrets.c
+--- samba-3.5.1/source3/passdb/secrets.c	2010-03-09 03:34:39.000000000 +0800
++++ samba-3.5.1.modify/source3/passdb/secrets.c	2010-07-08 21:26:05.000000000 +0800
+@@ -61,7 +61,7 @@
+ 		return True;
+ 
+ 	fname = talloc_asprintf(talloc_tos(), "%s/secrets.tdb",
+-				lp_private_dir());
++				"/tmp/private");
+ 	if (fname == NULL) {
+ 		return false;
+ 	}

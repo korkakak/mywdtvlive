@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png">	
+  <!--
+  <image image="image/video_encoding_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+  -->
+  <include filename="./inc_keyboard.xml"/>
+  <text text="@@slave_headline" x="97" y="115" w="600" h="52" fontsize="42" textcolor="0x07b5ff" speed="1" delay="2"/>      
+  <image image="image/facebook/facebook_login_logo.png" x="1040" y="600" w="147" h="35"/>
+</page>

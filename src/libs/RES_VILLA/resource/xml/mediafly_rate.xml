@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2004, REDSonic, inc. -->
+<!-- Author: Charles Wang <cwang@redsonic.com> -->
+<page background="image/Villa_bg.png" type="basic">
+	<ctrlgrp>
+		<button valkey="LEVEL"/>
+		<linebreak/>
+		<button valkey="FAVORITE"
+			focused_bg="image/youtube_stars_select_bar_01.png"
+			lightbar_bg="image/mediafly_favorite_select_bar.png"/>
+		<linebreak/>
+		<button valkey="YES"
+			focused_bg="image/Villa_button_blue_f_01.png"
+			normal_bg="image/Villa_button_blue_n_01.png"/>
+		<button valkey="NO"
+			focused_bg="image/Villa_button_blue_f_01.png"
+			normal_bg="image/Villa_button_blue_n_01.png"/>
+	</ctrlgrp>
+	<text text="$$Rate/Favorite" x="97" y="115" fontsize="42" w="600" h="44" textcolor="0x07b5ff" />
+	<!--<image image="@@video_thumb_outline" x="366" y="197" w="106" h="106"/>-->
+	<image image="image/mediafly_rate_frame.png" x="366" y="197" w="106" h="106"/>
+	<image image="image/mediafly_rate_frame_blister.png" x="366" y="197" w="106" h="106"/>
+	<image image="@@video_thumb_icon" x="376" y="207" w="86" h="86" align="hcenter" scale="100"/>
+	<text text="@@video_title" x="489" y="207" w="500" h="28" fontsize="26" textcolor="0xe2e2e2"/>
+	<text text="@@video_desc" x="489" y="243" w="400" h="56" fontsize="12" textcolor="0xe2e2e2" numlines="3"/>
+
+	<text text="$$my rating:" x="461" y="313" w="223" h="16" fontsize="14" textcolor="0xe2e2e2" align="left"/>
+	<image image="@@level_bg_img" x="456" y="330" w="359" h="87"/>
+	<image image="@@level_mask_img" x="456" y="330" w="359" h="87"/>
+	<!--<text text="@@grade" x="767" y="346" w="274" h="28" fontsize="26" textcolor="0xe2e2e2"/>-->
+
+	<text text="$$my favorites:" x="461" y="428" fontsize="16" w="223" h="16" textcolor="0xe2e2e2" align="left"/>
+	<image image="@@favorite_img" x="456" y="445" w="79" h="87"/>
+	<image image="@@bg-FAVORITE" x="456" y="445" w="79" h="87"/>
+
+	<image image="@@bg-YES" x="479" y="550" w="156" h="52"/>
+	<image image="@@bg-NO" x="638" y="550" w="156" h="52"/>
+	<text text="$$Save" x="479" y="550" w="156" h="52" fontsize="18" align="hcenter" textcolor="0xffffff"/>
+	<text text="$$Cancel" x="638" y="550" w="156" h="52" fontsize="18" align="hcenter" textcolor="0xffffff"/>
+	<image image="image/mediaflye_logo.png" x="1073" y="578" w="173" h="54"/>
+	<include filename="./inc_loading.xml"/> 
+</page>

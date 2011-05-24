@@ -1,0 +1,923 @@
+
+menu "External packages"
+
+	config	BUILD_SIGMA_SDK
+		depends on PLATFORM_SMP8634 || PLATFORM_SMP8654 || PLATFORM_SMP8670 
+		bool "Build Sigma SDK"
+		default y
+
+	choice
+		depends on BUILD_SIGMA_SDK
+		prompt "Kernel version"
+		config LINUX_KERNEL_VERSION_2_6_15
+			bool "2.6.15"
+			depends on PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22
+			bool "2.6.22"
+			depends on PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8670_SDK_2_6_22_19_40_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_29
+			bool "2.6.29"
+			depends on PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH 
+	endchoice
+	choice
+		depends on BUILD_SIGMA_SDK
+		prompt "Kernel configuration"
+		default LINUX_KERNEL_VERSION_2_6_22_19_CONFIG_WDTV_HUT_SMP8654_WISTRON if LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH && (PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA)
+		default LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_WDTV_HUT_SMP8654_WISTRON if LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && (PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA)
+		default LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_GOOGLE_UNO_SMP8652_256 if LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_UNO
+		default LINUX_KERNEL_VERSION_2_6_22_CONFIG_WDTV_RV if LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		default LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_WDTV_RV if LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		default LINUX_KERNEL_VERSION_2_6_29_17_CONFIG_WDTV_RV if LINUX_KERNEL_VERSION_2_6_29 && PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		config LINUX_KERNEL_VERSION_2_6_15_CONFIG_GENERIC
+			bool "2.6.15 generic config"
+			depends on LINUX_KERNEL_VERSION_2_6_15
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_GENERIC
+			bool "2.6.22 generic config"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_GENERIC
+			bool "2.6.22.19-29 generic config"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_AV_LS700L
+			bool "2.6.22 avls700l config"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_IMEDIA_HD100
+			bool "2.6.22 imediahd100 config"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_FUNTWIST
+			bool "2.6.22 funtwist config"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_EM7075
+                        bool "2.6.22 em7075 config"
+                        depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_19_CONFIG_WDTV_HUT_SMP8654_WISTRON
+			bool "2.6.22.19 tuned for WDTV Hut"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH && (PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA)
+		config LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_WDTV_HUT_SMP8654_WISTRON
+			bool "2.6.22.19-29 tuned for WDTV Hut"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && (PRODUCT_EXT_WDTV_HUT || PRODUCT_EXT_WDTV_VILLA)
+		config LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_GOOGLE_UNO_SMP8652_256
+			bool "2.6.22.19-29 tuned for Google UNO SMP8652 256MB"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_UNO
+		config LINUX_KERNEL_VERSION_2_6_22_19_40_CONFIG_GOOGLE_UNO_SMP8670
+			bool "2.6.22.19-40 tuned for Google UNO SMP8670"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8670_SDK_2_6_22_19_40_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_UNO
+		config LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			bool "2.6.22.19-12 lmp555"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_8AV500LE
+			bool "2.6.22.19-19 Alpha generic board (8AV500LE)"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_8AV500LE
+			bool "2.6.22.19-29 Alpha generic board (8AV500LE)"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH
+		config LINUX_KERNEL_VERSION_2_6_22_CONFIG_WDTV_RV
+			bool "2.6.22.19-19 WDTV RV ALPHA board"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		config LINUX_KERNEL_VERSION_2_6_22_19_29_CONFIG_WDTV_RV
+			bool "2.6.22.19-29 WDTV RV ALPHA board"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		config LINUX_KERNEL_VERSION_2_6_22_19_40_CONFIG_WDTV_PALACE_SMP8670
+			bool "2.6.22.19-29 WDTV RV ALPHA board"
+			depends on LINUX_KERNEL_VERSION_2_6_22 && PLATFORM_SMP8670_SDK_2_6_22_19_40_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+		config LINUX_KERNEL_VERSION_2_6_29_17_CONFIG_WDTV_RV
+			bool "2.6.29-17 WDTV RV ALPHA board"
+			depends on LINUX_KERNEL_VERSION_2_6_29 && PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH && PRODUCT_EXT_WDTV_RV
+	endchoice
+
+	menu "Linux patches from Alphanetworks"
+
+		config 	PORT_CIFS_KO_FROM_2_6_24_17_TO_2_6_22_19
+			bool "cifs.ko from 2.6.24.17"
+			default n
+			depends on LINUX_KERNEL_VERSION_2_6_22
+			help
+				The cifs.ko in 2.6.22.19 is buggy. It's pron to crash and 
+				the performance doesn't seem to be good. So I port cifs.ko 
+				from 2.6.24.17 to 2.6.22.19. It seems to be fine.
+
+	endmenu
+
+ 	 
+	config BUILD_ZBOOT
+		depends on BUILD_SIGMA_SDK
+		bool "Build ZBOOT"
+		default y
+	config SQUEEZE_XENV_ZBOOT_YAMON
+		depends on BUILD_ZBOOT
+		bool "squzze xenv, zboot and yamon"
+		default y
+		depends on BUILD_ZBOOT
+
+
+
+	config	FONTS
+		bool "Select font library"
+
+	menu "Fonts Library "
+		config	FREETYPE
+			bool "freetype"
+			default	y
+
+		choice
+			depends on FREETYPE
+			prompt "freetype"
+			default FREETYPE_2_1_3 if !SUPPORT_DCCHD
+			default FREETYPE_2_3_7 if SUPPORT_DCCHD
+			config	FREETYPE_1_3_1
+				bool "freetype-1.3.1"
+				depends on !SUPPORT_DCCHD
+			config	FREETYPE_2_1_3
+				bool "freetype-2.1.3"
+				depends on !SUPPORT_DCCHD
+			config	FREETYPE_2_1_8
+				bool "freetype-2.1.8"
+				depends on !SUPPORT_DCCHD
+			config	FREETYPE_2_3_7
+				bool "freetype-2.3.7"
+		endchoice
+
+		config	FREETYPE_STATIC_LIB
+			bool "Force link freetype static library"
+			depends on FREETYPE
+			default	y
+
+		config	FREETYPE_VERSION
+			string
+			default "1.3.1" if FREETYPE_1_3_1
+			default "2.1.3" if FREETYPE_2_1_3
+			default "2.1.8" if FREETYPE_2_1_8
+			default "2.3.7" if FREETYPE_2_3_7
+
+		choice
+			depends on FONTS
+			prompt "fonts"
+			config	FONT_ARPHIC
+				bool "Arphic"
+			config	FONT_ARIALBD
+				bool "Arialbd"
+			config	FONT_DYNAVIEW
+				bool "Dynaview"
+			config	FONT_HELR45W
+				bool "HELR45W"
+		endchoice
+
+		choice
+			depends on FONT_ARPHIC
+			prompt "Arphic font type"
+			config FONT_ARPHIC_HIFONT
+				bool "Arphic Hifont (*.vcp)"
+			config FONT_ARPHIC_MOBILE_FONT
+				bool "Arphic Mobile Font (*.mbf) (Support Arabic/Hindi/Thai)"
+		endchoice
+
+		config FONTS_VERSION
+			string	
+			default "arphic" if FONT_ARPHIC_HIFONT
+			default "arphic_mbf" if FONT_ARPHIC_MOBILE_FONT
+			default "Arialbd" if FONT_ARIALBD
+			default "Dynaview" if FONT_DYNAVIEW
+			default "HELR45W" if FONT_HELR45W
+
+		choice
+			prompt "Arphic font type"
+			default FONTS_LIB_TYPE_ARCHIVE
+			config FONTS_LIB_TYPE_ARCHIVE
+				depends on FONT_ARPHIC_HIFONT || FONT_ARPHIC_MOBILE_FONT
+				bool "Install archive files(*.a)"
+			config FONTS_LIB_TYPE_SO
+				depends on FONT_ARPHIC_HIFONT || FONT_ARPHIC_MOBILE_FONT
+				bool "Install archive files(*.so)"
+			config FONTS_LIB_TYPE_ALL
+				bool "Install all lib files(*.a + *.so)"
+		endchoice
+	
+		choice
+			depends on SPU_API
+			prompt "SPU font type"
+			config FONT_SPU_PLAYER_USE_FREETYPE
+				bool "SPU use Freetype API"
+			config FONT_SPU_PLAYER_USE_MBF
+				depends on FONT_ARPHIC_MOBILE_FONT
+				bool "SPU use mobile font which support Arabic/Hindi/Thai"
+		endchoice	
+	endmenu
+
+	config	DMALLOC
+		bool "dmalloc"
+		default y
+		depends on DMALLOC_DEBUG
+		choice 
+			depends on DMALLOC
+			prompt "dmalloc"
+			config	DMALLOC_5_5_2
+				bool "dmalloc-5.5.2"
+		endchoice
+		config	DMALLOC_VERSION
+			string
+			default "5.5.2" if DMALLOC_5_5_2
+		
+	config	FLAC
+		default	y
+		bool "flac"
+		choice
+			depends on FLAC
+			prompt "flac"
+			config FLAC_1_2_1
+				bool "flac-1.2.1"
+		endchoice
+	config FLAC_VERSION
+		string
+		default "1.2.1" if FLAC_1_2_1
+
+	config	LIBICONV
+		bool "libiconv"
+		default y
+		choice
+			depends on LIBICONV
+			prompt	"libiconv"
+				config	LIBICONV_1_12
+					bool "libiconv_1.12"
+		endchoice	
+	config	LIBICONV_VERSION
+		string
+		default "1.12" if LIBICONV_1_12
+
+	config	LIBJPEG	
+		bool "libjpeg"
+		default	y
+		choice
+			depends on LIBJPEG
+			prompt	"libjpeg"
+				config	LIBJPEG_V6B
+					bool "libjpeg-v6b"
+		endchoice	
+	config	LIBJPEG_VERSION
+		string
+		default "v6b" if LIBJPEG_V6B
+	
+	config	LIBPNG
+		bool "libpng"
+		default	y
+		choice
+			depends on LIBPNG
+			prompt	"libpng"
+				config	LIBPNG_1_2_14	
+					bool "libpng-1.2.14"
+		endchoice	
+	config	LIBPNG_VERSION
+		string
+		default "1.2.14" if LIBPNG_1_2_14
+
+	config	LIBUNGIF
+		bool "libungif"
+		default	y
+		choice
+			depends on LIBUNGIF
+			prompt	"libungif"
+				config	LIBUNGIF_4_1_3
+					bool "libungif_4.1.3"
+		endchoice	
+	config	LIBUNGIF_VERSION
+		string
+		default "4.1.3" if LIBUNGIF_4_1_3
+
+	config	LIBCX	
+		bool 
+		default	y if WIRELESS_SUPPORT || OSSP
+		choice
+			depends on LIBCX
+			prompt	"libcx"
+				config	LIBCX_1_1_1
+					bool "libcx-1.1.1"
+		endchoice	
+	config	LIBCX_VERSION
+		string
+		default "1.1.1" if LIBCX_1_1_1
+
+	choice
+		prompt "UI Kit"
+		config	MICROWIN	
+			bool "microwin"
+			depends on !SUPPORT_DCCHD
+		config DIRECTFB
+			bool "DirectFB"
+			depends on SUPPORT_DCCHD
+	endchoice	
+	choice
+		depends on MICROWIN
+		prompt	"microwin"
+			config	MICROWIN_0_90
+			bool "microwin-0.90"
+	endchoice	
+	choice	
+		depends on MICROWIN 
+		prompt "Microwon configuration"
+		config MICROWIN_CONFIG_GENERIC
+			depends on !PLATFORM_X86
+			bool "generic configuration"
+		config MICROWIN_CONFIG_GENERIC_X86
+			depends on PLATFORM_X86
+			bool "generic configuration for x86"
+	endchoice
+	config	MICROWIN_VERSION
+		string
+		default "0.90" if MICROWIN_0_90
+	config	MICROWIN_CONFIG
+		string
+		default "microwin-0.90-config" if MICROWIN_CONFIG_GENERIC
+		default "microwin-0.90-config-x86" if MICROWIN_CONFIG_GENERIC_X86
+
+	config	TINYXML
+		default	y if SUPPORT_DCCHD_DVD_BD_NAVIGATION
+		bool "tinyxml"
+		choice
+			depends on TINYXML
+			prompt	"tinyxml"
+				config	TINYXML_2_5_3
+					bool "tinyxml_2_5_3"
+		endchoice	
+	config	TINYXML_VERSION
+		string
+		default "2_5_3" if TINYXML_2_5_3
+	
+	config	MXML
+		default	y
+		bool "mxml"
+		choice
+			depends on MXML
+			default MXML_2_6
+			prompt	"mxml"
+				config	MXML_2_2
+					bool "mxml-2.2"
+				config	MXML_2_6
+					bool "mxml-2.6"
+		endchoice	
+	config	MXML_VERSION
+		string
+		default "2.2" if MXML_2_2
+		default "2.6" if MXML_2_6
+	
+	config	TIFF	
+		default	y
+		bool "tiff"
+		choice
+			depends on TIFF
+			prompt	"tiff"
+				config	TIFF_3_7_1	
+					bool "tiff-3.7.1"
+		endchoice	
+	config	TIFF_VERSION
+		string
+		default "3.7.1" if TIFF_3_7_1
+
+	config	TREMOR
+		default	y
+		bool "tremor"
+		choice
+			depends on TREMOR
+			prompt "tremor"
+				config	TREMOR_1_0_SVN
+					bool "tremor-1.0-svn"
+		endchoice
+	config	TREMOR_VERSION
+		string
+		default "1.0-svn" if TREMOR_1_0_SVN
+
+	config	DHCPCD
+		bool "dhcpcd"
+		choice
+			depends on DHCPCD
+			prompt "dhcpcd"
+				config DHCPCD_1_3_22_PL1
+					bool "1.3.22-pl1"
+		endchoice
+	config	DHCPCD_VERSION
+		string
+		default "1.3.22-pl1" if DHCPCD_1_3_22_PL1
+
+	config	CURL
+		depends on ENABLE_NETWORKING
+		default y
+		bool "libcurl (FTP)"
+		help
+			We use it to do FTP to download firmware
+		choice
+			depends on CURL
+			prompt "curl library"
+				config CURL_7_21_5
+					bool "7.21.5"
+				config CURL_7_21_4
+					bool "7.21.4"
+				config CURL_7_19_3
+					bool "7.19.3"
+				config CURL_7_16_0
+					bool "7.16.0"
+				config CURL_7_11_0
+					bool "7.11.0"
+		endchoice
+
+	config	CURL_VERSION
+		string
+		depends on CURL
+		default "7.21.5" if CURL_7_21_5
+		default "7.21.4" if CURL_7_21_4
+		default "7.19.3" if CURL_7_19_3
+		default "7.16.0" if CURL_7_16_0
+		default "7.11.0" if CURL_7_11_0
+
+	config	JSON_C
+		default y
+		bool "libjson-c (WebGUI util)"
+		help
+			We use it to parse JSON string
+		choice
+			depends on JSON_C
+			prompt "json-c library"
+				config JSON_C_0_9
+					bool "0.9"
+		endchoice
+
+	config	JSON_C_VERSION
+		string
+		depends on JSON_C
+		default "0.9" if JSON_C_0_9
+
+	config OPENSSH
+		default n
+		bool "sshd server support (Only for development)"
+		help 
+			This sshd is request by WD only. 
+			PLEASE DO NOT OPEN THIS IN OFFICIAL RELEASE
+
+	config OPENSSL
+		bool "OpenSSL"
+		depends on ENABLE_NETWORKING || HFS_MKFS_SUPPORT || SUPPORT_DCCHD_DVD_BD_NAVIGATION 
+		default y
+		help
+			OpenSSL : Open Source Embedded SSL
+		choice
+			depends on OPENSSL
+			prompt	"openssl library"
+				config	OPENSSL_0_9_8_k
+					bool "openssl-0.9.8k"
+				config	OPENSSL_1_0_0D
+					bool "openssl-1.0.0d"
+		endchoice	
+	config	OPENSSL_VERSION
+		string
+		default "0.9.8k" if OPENSSL_0_9_8_k
+		default "1.0.0d" if OPENSSL_1_0_0D
+
+	config OPENVPN
+		depends on OPENSSL
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "OpenVPN"
+		help
+			OpenVPN: This is required by WDTV RV.
+			They want to break through the firewall.
+
+	config MATRIXSSL
+		depends on ENABLE_NETWORKING
+		default n
+		bool "MatrixSSL"
+		help
+			MatrixSSL : Open Source Embedded SSL
+
+	config MATRIXSSL_VERSION
+		string
+		depends on MATRIXSSL
+		default "1.2.2"
+
+	config SUPPORT_RSYNC
+		default y if SUPPORT_LOCAL_SYNC || SUPPORT_NETWORK_SYNC || SUPPORT_NETWORK_SYNC_DAEMON
+		bool "support rsync"
+
+
+	config	TWONKYMEDIA_SERVER
+		depends on TWONKYMEDIA_SERVER_SUPPORT 
+		default y
+		bool "twonkymedia server"
+	
+	choice
+		depends on TWONKYMEDIA_SERVER
+		prompt "twonkymedia server"
+		config TWONKYMEDIA_SERVER_4_4_1_SMP8634
+			bool "4.4.1"
+			depends on PLATFORM_SMP8634
+		config TWONKYMEDIA_SERVER_4_4_1_SMP8654
+			bool "4.4.1"
+			depends on PLATFORM_SMP8654 && !PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_0_0_X86
+			bool "5.0.0"
+			depends on PLATFORM_X86
+		config TWONKYMEDIA_SERVER_4_4_14_SMP8654
+			bool "4.4.14"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_4_4_18_SMP8654
+			bool "4.4.18"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_0_SMP8654
+			bool "5.1.0"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_6_SMP8654
+			bool "5.1.6"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_7_SMP8654
+			bool "5.1.7"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_8_SMP8654
+			bool "5.1.8"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_9_SMP8654
+			bool "5.1.9"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_5_1_10_SMP8654
+			bool "5.1.10"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_6_0_0_SMP8654
+			bool "6.0.0"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+		config TWONKYMEDIA_SERVER_6_0_1_SMP8654
+			bool "6.0.1"
+			depends on (PLATFORM_SMP8654 || PLATFORM_SMP8670) && PLATFORM_SMP8654_TOOLCHAIN_GNU_4_3_2
+	endchoice
+
+	config	TWONKYMEDIA_SERVER_VERSION
+		string
+		default "4.4.1-SMP8634" if TWONKYMEDIA_SERVER_4_4_1_SMP8634
+		default "4.4.1-SMP8654" if TWONKYMEDIA_SERVER_4_4_1_SMP8654
+		default "5.0.0-X86" if TWONKYMEDIA_SERVER_5_0_0_X86
+		default "4.4.14-SMP8654" if TWONKYMEDIA_SERVER_4_4_14_SMP8654
+		default "4.4.18-SMP8654" if TWONKYMEDIA_SERVER_4_4_18_SMP8654
+		default "5.1.0-SMP8654" if TWONKYMEDIA_SERVER_5_1_0_SMP8654
+		default "5.1.6-SMP8654" if TWONKYMEDIA_SERVER_5_1_6_SMP8654
+		default "5.1.7-SMP8654" if TWONKYMEDIA_SERVER_5_1_7_SMP8654
+		default "5.1.8-SMP8654" if TWONKYMEDIA_SERVER_5_1_8_SMP8654
+		default "5.1.9-SMP8654" if TWONKYMEDIA_SERVER_5_1_9_SMP8654
+		default "5.1.10-SMP8654" if TWONKYMEDIA_SERVER_5_1_10_SMP8654
+		default "6.0.0-SMP8654" if TWONKYMEDIA_SERVER_6_0_0_SMP8654
+		default "6.0.1-SMP8654" if TWONKYMEDIA_SERVER_6_0_1_SMP8654
+
+	choice 
+		depends on PARAGON_NTFS_SUPPORT 
+		prompt "Paragon NTFS version"
+		config PARAGON_NTFS_20090720
+			bool "20090720 (2.6.22.19-19-4)"
+			depends on !PARAGON_NTFS_HFS_SUPPORT && (PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH)
+			depends on !PARAGON_NTFS_HFS_SUPPORT
+		config PARAGON_NTFS_20090817
+			bool "20090817 (2.6.22.19-19-4)"
+			depends on PARAGON_NTFS_HFS_SUPPORT && (PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH)
+			help
+				1. fixed in 10000 files in root directory issue.
+				2. Stable and used in VILLA and Bunglow.
+
+		config PARAGON_NTFS_20100830
+			bool "20100830 (RV) (2.6.22.19-29-4)"
+			depends on PLATFORM_SMP8654_SDK_3_7_0_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8654_SDK_3_8_2_ORIGINAL_KERNEL_PATCH || PLATFORM_SMP8670_SDK_2_6_22_19_40_ORIGINAL_KERNEL_PATCH
+			help
+				It should fix the HFS+ becomes read only issue. 
+				I work with Paragon software before RV gets golden.
+		config PARAGON_NTFS_20110201
+			bool "20110201 (2.6.29-17)"
+			depends on PLATFORM_SMP8654_SDK_2_6_29_17_ORIGINAL_KERNEL_PATCH
+			help
+				for linux 2.6.29-17.
+
+	endchoice
+	config	PARAGON_NTFS_VERSION
+		string
+		default "20090720" if PARAGON_NTFS_20090720
+		default "20090817" if PARAGON_NTFS_20090817
+		default "20100415" if PARAGON_NTFS_20100415
+		default "20100820" if PARAGON_NTFS_20100820
+		default "20100823" if PARAGON_NTFS_20100823
+		default "20100824" if PARAGON_NTFS_20100824
+		default "20100827" if PARAGON_NTFS_20100827
+		default "20100830" if PARAGON_NTFS_20100830
+		default "20110201" if PARAGON_NTFS_20110201
+
+	config	PARAGON_NTFS_TOOLS
+		depends on PARAGON_NTFS_SUPPORT 
+		bool
+		default y
+		depends on PARAGON_NTFS_SUPPORT
+	choice
+		depends on PARAGON_NTFS_TOOLS
+		prompt "Paragon NTFS tools support"
+		config	PARAGON_NTFS_TOOLS_20100825
+			bool "20100825"
+	endchoice
+
+	config	PARAGON_NTFS_TOOLS_VERSION
+		string
+		default "20100825" if PARAGON_NTFS_TOOLS_20100825
+
+	choice
+		depends on PARAGON_HFS_FSCK_SUPPORT
+		prompt "Paragon HFS fsck support"
+		config	PARAGON_HFS_FSCK_20090824
+			bool "20090824"
+		config	PARAGON_HFS_FSCK_20100825
+			bool "20100825"
+	endchoice
+	config	PARAGON_HFS_FSCK_VERSION
+		string
+		default "20090824" if PARAGON_HFS_FSCK_20090824
+		default "20100825" if PARAGON_HFS_FSCK_20100825
+
+	choice
+		depends on NTFS_3G_SUPPORT
+		prompt "NTFS-3G version"
+		config NTFS_3G_2009_4_4
+			bool "2009.4.4"
+		config NTFS_3G_2009_2_1
+			bool "2009.2.1"
+	endchoice
+	config	NTFS_3G_VERSION
+		string
+		default "2009.2.1" if NTFS_3G_2009_2_1
+		default "2009.4.4" if NTFS_3G_2009_4_4
+
+	choice
+		depends on NTFS_3G_COMMERCIAL_SUPPORT
+		prompt "NTFS-3G commercial version"
+		config TNTFS_3G_20101207
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			bool "20101207(linux kernel 2.6.22.19-12)"
+			help
+				- add new tuxera ntfs driver (tuxera-file-systems-3010.9.20-mips.tgz) for linux kernel 2.6.22.19-12 (sdk 3.7.0)
+				- The only change is the fix for HFS+ remount error which was reported recently to us by Alpha Networks Realtek team.
+
+		config TNTFS_3G_20101121
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_29_LMP555
+			bool "20101121(linux kernel 2.6.22.19-29)"
+			help
+				- add new tuxera ntfs driver (tuxera-file-systems-3010.9.21-mips.tgz) for linux kernel 2.6.22.19-29 (sdk 3.8.5 / 3.8.7)
+				- This should be same source code as 20100916
+		config TNTFS_3G_20100916
+			bool "20100916"
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			help
+				- Files included are Tuxera NTFS and HFS+ drivers, mkntfs, tuxera.bench, and README.
+  				- Much improved NAS (Samba/CIFS, FTP, etc) write performance, upto 100%.
+				- Improved Cached Write (20-60%) and Effective Write (5-20%) performance.
+				- Improved small block size write performance.
+				- Online fsck improvements. E.g. corrupted volume could became read-only but these scenarios are repaired on-the-fly now.
+				- Sigma Design chipset specific enhancements.
+				- Speed and memory optimized NTFS format utility (mkntfs). mkntfs from ntfsprogs has problems with huge volumes, for instance it can run out of memory and it is too slow on embedded devices.
+				- HFS+ module is included. You need to reconfigure your kernel and make HFS+ to be a module. Usage is the same as for vanilla HFS+ kernel driver. Feedback is welcome.
+				- tuxera.bench calculates average and maximum cached and effective read and write speeds.
+				- Fixed POSIX filename space support: non-WIN32 characters were filtered out which resulted "Failed to update a directory index entry of inode xxxxx" error messages.
+				- Fixed potential file creation failure during low memory conditions.
+		config TNTFS_3G_20100318
+			bool "20100318 (buggy, crash)"
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			help
+				 - Fixed POSIX filename space support: non-WIN32 characters were filtered
+				   out which resulted "Failed to update a directory index entry of inode
+				   xxxxx" error messages.
+				 - Fixed potential file creation failure during low memory conditions.
+		config TNTFS_3G_20100129
+			bool "20100129"
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			help
+				  - Write performance is 15-30% or (much) more better. We expect this 
+				    results significantly better Samba/CIFS performance as well.
+				  - Resolved a Vista and later interoperability issue which may resulted
+				    some Vista and later may seeing a volume RAW. We have found that both
+				    some Windows NTFS and our drivers could create such scenario because 
+				    not all Microsoft NTFS drivers confirm to the on-disk NTFS specification.
+				  - Added posix_allocate() which was asked by some of our customers
+				    doing connected consumer devices. It may be useful for you too.
+		config TNTFS_3G_20091118
+			bool "20091118"
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+			help
+				Enhance small block performance
+		config TNTFS_3G_20090927
+			bool "20090927"
+			depends on LINUX_KERNEL_VERSION_2_6_22_19_12_LMP555
+	endchoice
+	config	TNTFS_VERSION
+		string
+		default "20090927" if TNTFS_3G_20090927
+		default "20091118" if TNTFS_3G_20091118
+		default "20100129" if TNTFS_3G_20100129
+		default "20100318" if TNTFS_3G_20100318
+		default "20100916" if TNTFS_3G_20100916
+		default "20101121" if TNTFS_3G_20101121
+		default "20101207" if TNTFS_3G_20101207
+
+	choice
+		depends on NETATALK
+		prompt "select NETATALK version"
+		config NETATALK_2_0_3
+			bool "2.0.3"
+	endchoice
+
+	config NETATALK_VERSION
+		string
+		default "2.0.3" if NETATALK_2_0_3
+
+	config BERKELEY_DB
+		bool "Support BERKELEY database"
+		default y if NETATALK 
+
+	choice
+		depends on BERKELEY_DB
+		prompt "select berkeley-db version"
+		config BERKELEY_DB_4_2_52
+			bool "4.2.52"
+	endchoice
+	
+	config BERKELEY_DB_VERSION
+		string
+		default "4.2.52" if BERKELEY_DB_4_2_52
+	config FLICKR
+		bool "library flickr curl"
+		depends on DMA_FLICKR
+		default y
+	config XML2
+		bool "library xml2"
+		depends on FLICKR || WEB_SERVER_PHP
+		default y
+
+        choice
+                depends on HOWL
+                prompt "select HOWL version"
+                config HOWL_1_0_0
+                        bool "1.0.0"
+        endchoice
+
+        config HOWL_VERSION
+                string
+                default "1.0.0" if HOWL_1_0_0
+
+	config SDPARM
+		bool "sdparm"
+		default y
+
+	config SMARTMONTOOLS
+		bool "smartmontools"
+		default n
+		default y if PRODUCT_EXT_WDTV_RV
+		help
+			This is "S.M.A.R.T." utility used to monitor various disk status
+		
+	config LIBMCRYPT
+		bool "libmcrypt"
+		default y if DMA_DEEZER
+
+	config NTP
+		bool "ntp"
+		default y if DMA_NETFLIX
+
+	config EXPAT
+		bool
+		default y if DMA_NETFLIX || DBUS 
+
+	config UUID	
+		default y if XFS_SUPPORT 
+		bool
+	config UUID_VERSION
+		string 
+		depends on UUID
+		default "1.41.10"
+		
+	config XFS
+		default y if XFS_SUPPORT 
+		bool
+
+	config PARTED
+		depends on UUID
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "Support parted"
+		help
+			This is used to mangle the partition table.
+			It is used for product with internal drive
+
+	config PCRE
+		default y if METADATA_TAGGING
+		bool "Support PCRE"
+		help
+			Perl Compatible Regular Expressions
+
+	config PCRE_VERSION
+		string
+		default "8.02" if PCRE
+	
+	config	TRANSMISSION
+		depends on DMA_BT
+		bool
+		default	y if DMA_BT
+		choice
+			depends on TRANSMISSION
+			prompt	"transmission"
+				config	TRANSMISSION_2_21
+					bool "transmission-2.21"
+		endchoice
+
+	config	LIBEVENT
+		depends on TRANSMISSION
+		bool
+		default	y
+		choice
+			depends on LIBEVENT
+			prompt	"libevent"
+				config	LIBEVENT_2_0_10_STABLE
+					bool "libevent-2.0.10-stable"
+		endchoice
+	config PG8169
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "Tool to change ethernet mac address for Realtek 8169"
+		help
+			Enalbe this to build pgdrv module. This could change 8169 mac address. 
+
+	config BONNIE
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "bonnie++ tool to benchmark a file system"
+		help
+			This is a common utility to benchmark a filesystem. 
+			I make it default enable for RV since we have to tune the performance to certain level.
+	config MINIUPNPC
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "miniupnpc for configuration of router"
+		help
+			This is a request form WD and should be enalbed on in RV.
+
+	config IOZONE3
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "IOZone3 to benchmark filesystem"
+		help
+			IOZone3 is a common used utility to benchmark a filesystem.
+			I choose this to exam whether or not the filesystem is stable enough.
+	
+	config E2FSPROGS
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "build e2fsprogs"
+		help 
+			This is needed if you want to use ext2 or ext3 filesystem.
+			Or you'd like to use 'badblocks'.
+
+	config LZO
+		default y if PRODUCT_EXT_WDTV_RV
+		bool "LZO real-time data compression library"
+		help 
+			This is requested by WD's iPhone team.
+		
+	config	LIBMMS	
+		bool "libmms" 
+		default	y 
+		choice
+			depends on LIBMMS
+			prompt	"libmms"
+				config	LIBMMS_0_5
+					bool "libmms-0.5-radiotime"
+		endchoice	
+	config	LIBMMS_VERSION
+		string
+		default "0.5-radiotime" if LIBMMS_0_5
+		
+	config	SQLITE
+		bool
+		default y 
+
+	config	PYTHON
+		bool "Python support"
+		default n 
+
+	config	IPTABLES
+		bool "iptables support"
+		default y if WD_ORION_BLOCK_80_PORT_WAN_ACCESS 
+
+	config	TCPDUMP
+		bool "tcpdump support"
+		default n
+
+	config	LIBPCAP
+		bool
+		default y if TCPDUMP
+
+	config 	LIBMRSS
+		bool "Parse and generate RSS data."
+		default n
+		choice
+			depends on LIBMRSS
+			prompt	"libmrss for rss parser/generator."
+				config	LIBMRSS_0_19_2
+					bool "libmrss-0.19.2"
+		endchoice
+
+	config	LIBNXML
+		bool "Another XML parser. (libmrss use this)"
+		default	y if LIBMRSS
+		choice
+			depends on LIBNXML
+			prompt	"libnxml library for xml parser/generator."
+				config	LIBNXML_0_18_3
+					bool "libnxml-0.18.3"
+		endchoice
+endmenu
+
+

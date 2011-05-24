@@ -1,0 +1,38 @@
+--- configure.org	2010-09-22 09:37:59.000000000 +0800
++++ configure	2010-09-22 09:39:18.000000000 +0800
+@@ -13786,14 +13786,14 @@
+ 
+ { $as_echo "$as_me:$LINENO: checking whether setpgrp takes no argument" >&5
+ $as_echo_n "checking whether setpgrp takes no argument... " >&6; }
+-if test "${ac_cv_func_setpgrp_void+set}" = set; then
+-  $as_echo_n "(cached) " >&6
+-else
+-  if test "$cross_compiling" = yes; then
+-  { { $as_echo "$as_me:$LINENO: error: cannot check setpgrp when cross compiling" >&5
+-$as_echo "$as_me: error: cannot check setpgrp when cross compiling" >&2;}
+-   { (exit 1); exit 1; }; }
+-else
++#if test "${ac_cv_func_setpgrp_void+set}" = set; then
++#  $as_echo_n "(cached) " >&6
++#else
++#  if test "$cross_compiling" = yes; then
++#  { { $as_echo "$as_me:$LINENO: error: cannot check setpgrp when cross compiling" >&5
++#$as_echo "$as_me: error: cannot check setpgrp when cross compiling" >&2;}
++#   { (exit 1); exit 1; }; }
++#else
+   cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -13845,10 +13845,10 @@
+ fi
+ rm -rf conftest.dSYM
+ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
+-fi
++#fi
+ 
+ 
+-fi
++#fi
+ { $as_echo "$as_me:$LINENO: result: $ac_cv_func_setpgrp_void" >&5
+ $as_echo "$ac_cv_func_setpgrp_void" >&6; }
+ if test $ac_cv_func_setpgrp_void = yes; then

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<wrapper>
+  <ctrlgrp>
+    <eventbox_keyboard valkey="keyboard" autoenter="1"/>
+  </ctrlgrp>
+  <wrapper>
+    <widget_keyboard ctrlname="keyboard" x="262" y="174" w="739" h="494" cols="14" rows="9"
+  		     align="hcenter" textcolor="0xFFFFFF"  activetextcolor="0x07b5ff"
+		     changed="@@keyboard_changed" extra_height="10" extra_index="0"/>
+  </wrapper>
+
+  <image image="image/keyboard_search_box.png" x="260" y="180" w="633" h="60" bg="1"/>
+  <texttail text="@@input_01_text" x="282" y="193" w="554" h="28"  textcolor="0x000000" ignore_translate="1"/>
+</wrapper>

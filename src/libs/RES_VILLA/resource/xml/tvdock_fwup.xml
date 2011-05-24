@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">
+
+  <text text="$$Updating firmware" x="241" y="149" w="700" h="42" align="left" fontsize="40" textcolor="0x07b5ff"/>
+
+  <text text="@@msg-value" x="330" y="254" w="620" h="112" fontsize="26" numlines="4" align="hcenter" textcolor="0xe2e2e2" />
+
+  <progress_bar name="point_bar" x="440" y="406" w="400" h="28"  pb_back_img="image/music_player_line_bg.png" pb_front_img="image/music_player_time_played_line_n_01.png" pb_point_img="image/slideshow_player_time_played_line_mark.png" pb_delay="500"/>
+
+  <text text="@@msg-value1" x="330" y="440" w="620" h="26" fontsize="24" align="hcenter" textcolor="0xe2e2e2"/>
+
+</page>

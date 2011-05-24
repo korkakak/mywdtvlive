@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<page overlay="1">
+	<ctrlgrp>
+		<button valkey="LIKE"/>
+		<linebreak/>
+		<button valkey="UNLIKE"/>
+		<linebreak/>
+		<button valkey="HIDE"/>
+		<linebreak/>
+		<button valkey="COMMENT"/>
+		<linebreak/>
+    		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="row" cols="1" rows="2" lbmask="udlr" loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+	</ctrlgrp>
+  <!--User Post Basic Data-->
+  <image image="image/facebook/keyboard_mask_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+  <image image="@@media_icon" x="61" y="30" w="209" h="138" scale_type="fixratio" scale="100" xmargin="0" ymargin="0" umargin="0" dmargin="0"/>
+  <text text="@@media_title" x="307" y="80" w="600" h="62" fontsize="60" textcolor="0xe2e2e2" align="left"/>
+  <wrapper disable="@@disable-like-comment">
+	  <text text="@@media_like_nums" x="307" y="146" w="40" h="32" fontsize="30" textcolor="0xe2e2e2" align="left"/>
+	  <text text="@@media_comment_nums" x="393" y="146" w="40" h="32" fontsize="30" textcolor="0xe2e2e2" align="left"/>
+	  <image image="image/facebook/facebook_playback_comments_like.png" x="348" y="146" w="21" h="27"/>
+	  <image image="image/facebook/facebook_playback_comments_msg_notify.png" x="435" y="146" w="23" h="26"/>
+  </wrapper>
+
+  <!--Options-->
+  <wrapper x="915" w="300" h="32" fontsize="30" align="right">
+    <text text="$$Like" y="96" textcolor="0xc1c1c1" activetextcolor="0xff8400" active="@@act-LIKE" disable="@@disable-LIKE"/>
+    <text text="$$Unlike" y="96" textcolor="0xc1c1c1" activetextcolor="0xff8400" active="@@act-UNLIKE" disable="@@disable-UNLIKE"/>
+    <text text="$$Hide Comments" y="136" textcolor="0xc1c1c1" activetextcolor="0xff8400" active="@@act-HIDE"/>
+  </wrapper>
+
+  <!--Divide Line-->
+  <wrapper x="60" w="1160" h="1">
+    <image image="image/facebook/facebook_playback_comments_line.png" y="197"/>
+    <image image="image/facebook/facebook_playback_comments_line.png" y="261"/>
+  </wrapper>
+ 
+  <!--Options-->
+  <text text="$$Write a Comment..." x="64" y="217" w="1147" h="32" fontsize="30" textcolor="0xc1c1c1" activetextcolor="0xff8400" align="left" active="@@act-COMMENT"/>
+
+  <!--Msg Box-->
+  <wrapper x="161" w="1057" h="102">
+    <image image="@@browselist-messagebox_0" y="343"/>
+    <image image="@@browselist-messagebox_1" y="533"/>
+  </wrapper>
+
+  <!--Focused Msg Box-->
+  <wrapper x="161" w="1057" h="102">
+    <image image="@@browselist-messagebox-lightbar_0" y="343"/>
+    <image image="@@browselist-messagebox-lightbar_1" y="533"/>
+  </wrapper>
+
+  <!--Avatar BG-->
+  <wrapper x="61" w="98" h="98">
+    <image image="@@browselist-friend-icon-bg_0" y="283"/>
+    <image image="@@browselist-friend-icon-bg_1" y="473"/>
+  </wrapper>
+
+  <!--Avatar-->
+  <wrapper x="62" w="96" h="96" align="top">
+    <image image="@@browselist-friend-icon_0" y="284" scale_type="pan" scale="100" default_image="@@browselist-friend-default-icon_0"/>
+    <image image="@@browselist-friend-icon_1" y="474" scale_type="pan" scale="100" default_image="@@browselist-friend-default-icon_1"/>
+  </wrapper>
+
+  <!--User-->
+  <wrapper x="182" w="800" h="42" fontsize="40" textcolor="0xe2e2e2" align="left">
+    <text text="@@browselist-friend-name_0" y="300"/>
+    <text text="@@browselist-friend-name_1" y="492"/>
+  </wrapper>
+
+
+  <!--Comments-->
+  <wrapper x="196" w="1000" h="32" fontsize="30" textcolor="0xe2e2e2" align="left">
+    <text text="@@browselist-friend-post-comment_0" y="366" speed="@@browselist-friend-post-comment-speed_0" delay="2"/>
+    <text text="@@browselist-friend-post-comment_1" y="556" speed="@@browselist-friend-post-comment-speed_1" delay="2"/>
+  </wrapper>
+
+  <!--Comment Time-->
+  <wrapper x="196" w="1000" h="22" fontsize="20" textcolor="0xc3cada" align="left">
+    <text text="@@browselist-friend-post-comment-time_0" y="408"/>
+    <text text="@@browselist-friend-post-comment-time_1" y="598"/>
+  </wrapper>
+
+  <!--Scroll Hint-->
+  <wrapper y="653" w="37" h="24">
+    <image image="@@moreprev" x="582"/>
+    <image image="@@morenext" x="662"/>
+  </wrapper>
+
+  <include filename="./inc_loading.xml"/>
+  <include filename="./decoration.xml"/>
+</page>
+

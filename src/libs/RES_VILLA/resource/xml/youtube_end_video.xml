@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<!--<page type="basic" overlay="1">-->
+<page background="image/youtube_cover_up.png">
+	<ctrlgrp lbmask="LR">
+    	<listbox valkey="browselist" autoenter="1" move="page" cols="1" rows="3" lbmask="lr"  loop_scroll="1" disable_light_bar_click="1"/>
+		<listbox valkey="end_video_options" move="row" autoenter="1" cols="1" rows="5" lbmask="lr" disable_light_bar_click="1"/>
+	</ctrlgrp>
+
+	<table x="432" y="248" w="446" h="267" cols="1" rows="3">
+		<image image="image/youtube_end_video_Thumbnails_Select_frame_n.png" w="446" h="89"/>
+		<image image="image/youtube_end_video_Thumbnails_Select_frame_n.png" w="446" h="89"/>
+		<image image="image/youtube_end_video_Thumbnails_Select_frame_n.png" w="446" h="89"/>
+	</table>
+
+  
+	<table x="432" y="248" w="446" h="267" fontsize="20" selected_fontsize="20"
+         cols="1" rows="3" colspacing="0" rowspacing="0"
+		 lbimage="image/youtube_end_video_Thumbnails_Select_frame_f.png" clickimage=""  
+		 textcolor="0xffffff" actnoseltextcolor="0xffffff" actoverlistcolor="0xffffff" 
+		 activetextcolor="0xffffff" selectedtextcolor="0xffffff" align="top">
+    	<text text="@@browselist_0_text" lmargin="146" ymargin="13"
+		  lightbar="@@lightbar-browselist-0" active="@@act-browselist"
+		  selected="@@browse_0_select" speed="@@browse_0_speed" delay="2"/>
+    
+	    <text text="@@browselist_1_text" lmargin="146" ymargin="13"
+		  lightbar="@@lightbar-browselist-1" active="@@act-browselist" 
+		  selected="@@browse_1_select" speed="@@browse_1_speed" delay="2"/>
+    
+    	<text text="@@browselist_2_text" lmargin="146" ymargin="13"
+		  lightbar="@@lightbar-browselist-2" active="@@act-browselist" 
+		  selected="@@browse_2_select" speed="@@browse_2_speed" delay="2"/>
+	</table>
+ 
+	<!-- Stars -->
+	<wrapper x="578" w="100" h="19">
+		<image image="@@browse_0_stars" ymargin="0" y="285"/>
+		<image image="@@browse_1_stars" ymargin="0" y="375"/>
+		<image image="@@browse_2_stars" ymargin="0" y="464"/>
+	</wrapper>
+
+	<!-- Views -->
+	<wrapper x="578" w="166" h="14" fontsize="12" textcolor="0xe2e2e2"> 
+		<text text="@@browse_0_views" y="312"/>
+		<text text="@@browse_1_views" y="401"/>
+		<text text="@@browse_2_views" y="490"/>
+	</wrapper>
+
+<!--	<wrapper x="443" w="120" h="70" align="hcenter" scale_type="fixratio" scale="100">-->
+	<wrapper x="443" w="120" h="70" align="hcenter" scale="100">
+	    <image image="@@browse_0_icon" ymargin="0" y="257"/>
+    	<image image="@@browse_1_icon" ymargin="0" y="346"/>
+	    <image image="@@browse_2_icon" ymargin="0" y="435"/>
+  	</wrapper>
+
+	<text text="@@option_title" x="439" y="184" w="400" h="28" fontsize="24" textcolor="0x07b5ff"/>
+	<image image="image/villa_arrow_up.png" x="633" y="214" w="40" h="29"/>
+	<image image="image/villa_arrow_down.png" x="633" y="519" w="40" h="29" />
+
+	<image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+<!--
+	<text text="@@options" x="90" y="598" w="500" h="52" align="left" fontsize="50" textcolor="0x07B5FF" />
+-->
+
+	<table x="0" y="259" w="307" h="244"
+    		cols="1" rows="5" colspacing="0" rowspacing="0"
+    		lbimage="image/youtube_submenu_select_bar.png"
+    		fontsize="18" selected_fontsize="18"
+   			textcolor="0xe2e2e2" align="hcenter">
+    	<text text="@@options_0_text" lmargin="0" ymargin="14"
+          	lightbar="@@lightbar-end_video_options-0" active="@@act-end_video_options"/>
+
+    	<text text="@@options_1_text" lmargin="0" ymargin="14"
+          	lightbar="@@lightbar-end_video_options-1" active="@@act-end_video_options"/>
+
+    	<text text="@@options_2_text" lmargin="0" ymargin="14"
+          	lightbar="@@lightbar-end_video_options-2" active="@@act-end_video_options"/>
+
+    	<text text="@@options_3_text" lmargin="0" ymargin="14"
+          	lightbar="@@lightbar-end_video_options-3" active="@@act-end_video_options"/>
+
+    	<text text="@@options_4_text" lmargin="0" ymargin="14"
+        	  lightbar="@@lightbar-end_video_options-4" active="@@act-end_video_options"/>
+
+	</table>
+	<wrapper x="0" w="307" h="1">
+    	<image image="@@options_0_line" ymargin="0" y="307"/>
+	    <image image="@@options_1_line" ymargin="0" y="355"/>
+    	<image image="@@options_2_line" ymargin="0" y="403"/>
+	    <image image="@@options_3_line" ymargin="0" y="451"/>
+    	<image image="@@options_4_line" ymargin="0" y="499"/>
+	</wrapper>
+
+</page>

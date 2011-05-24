@@ -1,0 +1,21 @@
+Index: Kconfig.firmware_maker.in
+===================================================================
+--- Kconfig.firmware_maker.in	(revision 81207)
++++ Kconfig.firmware_maker.in	(working copy)
+@@ -10,7 +10,7 @@
+ 				Mark flag at end of romfs partition and upgrade after boot from USB.(House/Hut style)
+ 		config FIRMWARE_UPGRADE_PLUGIN
+ 			bool "Use firmware upgrade plug-in (Support both USB and Networking upgrade)"
+-			depends on ENABLE_NETWORKING
++			depends on ENABLE_NETWORKING && !BUILD_GPL_FIRMWARE
+ 			help
+ 				Enable firmware plug-in which support download firmware from USB/FTP. Other download methods are TBD.
+ 	endchoice
+@@ -424,6 +424,7 @@
+ 	config INSTALL_ROOTFS2
+ 		bool "Install 2nd rootfs"
+ 		default y if FIRMWARE_DOWNLOAD_TO_STORAGE_DEVICE
++		depends on !BUILD_GPL_FIRMWARE
+ 		help
+ 			In RV, the firmware is now too large to put on original rootfs partition, 
+ 			so we have to put rootfs on 2nd flash partition.

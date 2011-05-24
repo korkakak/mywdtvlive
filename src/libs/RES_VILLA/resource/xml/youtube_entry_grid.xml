@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">
+	<ctrlgrp>
+		<listbox valkey="browselist" move="row" cols="6" rows="2" lbmask="ud" autoenter="1" loop_scroll="1"/>
+	</ctrlgrp>
+
+	<!-- info -->
+	<wrapper x="1156" w="40" h="29">
+		<image image="@@moreprev" y="131"/>
+		<image image="@@morenext" y="485"/>
+	</wrapper>
+
+	<text text="@@info_title" x="143" y="554" w="995" h="52" fontsize="50" textcolor="0xff07b5ff" align="right"/>
+	<!-- end of info -->
+
+	<!--frame-->
+	<wrapper y="129" w="165" h="184">
+		<image image="@@normal_frame_0" x="143"/>
+		<image image="@@normal_frame_1" x="309"/>
+		<image image="@@normal_frame_2" x="475"/>
+		<image image="@@normal_frame_3" x="641"/>
+		<image image="@@normal_frame_4" x="807"/>
+		<image image="@@normal_frame_5" x="973"/>
+	</wrapper>
+
+	<wrapper y="332" w="165" h="184">
+		<image image="@@normal_frame_6" x="143"/>
+		<image image="@@normal_frame_7" x="309"/>
+		<image image="@@normal_frame_8" x="475"/>
+		<image image="@@normal_frame_9" x="641"/>
+		<image image="@@normal_frame_10" x="807"/>
+		<image image="@@normal_frame_11" x="973"/>
+	</wrapper>
+
+	<wrapper y="129" w="165" h="184">
+		<image image="@@frame_0" x="143"/>
+		<image image="@@frame_1" x="309"/>
+		<image image="@@frame_2" x="475"/>
+		<image image="@@frame_3" x="641"/>
+		<image image="@@frame_4" x="807"/>
+		<image image="@@frame_5" x="973"/>
+	</wrapper>
+
+	<wrapper y="332" w="165" h="184">
+		<image image="@@frame_6" x="143"/>
+		<image image="@@frame_7" x="309"/>
+		<image image="@@frame_8" x="475"/>
+		<image image="@@frame_9" x="641"/>
+		<image image="@@frame_10" x="807"/>
+		<image image="@@frame_11" x="973"/>
+	</wrapper>
+
+	<!--thumbnail-->
+	<wrapper y="129" w="165" h="184">
+		<image image="@@thumbnail_0" x="143"/>
+		<image image="@@thumbnail_1" x="309"/>
+		<image image="@@thumbnail_2" x="475"/>
+		<image image="@@thumbnail_3" x="641"/>
+		<image image="@@thumbnail_4" x="807"/>
+		<image image="@@thumbnail_5" x="973"/>
+	</wrapper>
+
+	<wrapper y="332" w="165" h="184">
+		<image image="@@thumbnail_6" x="143"/>
+		<image image="@@thumbnail_7" x="309"/>
+		<image image="@@thumbnail_8" x="475"/>
+		<image image="@@thumbnail_9" x="641"/>
+		<image image="@@thumbnail_10" x="807"/>
+		<image image="@@thumbnail_11" x="973"/>
+	</wrapper>
+</page>

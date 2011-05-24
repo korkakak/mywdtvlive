@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<page background="image/villa_bg.png">
+	<ctrlgrp lbmask="lrud">
+		<button valkey="OK" 
+				focused_bg="image/Villa_button_blue_f_02.png"
+				normal_bg="image/Villa_button_blue_n_02.png"
+				click_bg="image/Villa_button_blue_f_02.png"/>
+	</ctrlgrp>
+
+	<text text="$$About Live365 VIP" x="97" y="115" w="600" h="52" align="left" fontsize="42" textcolor="0x07b5ff"/>
+	<imgbtn image="@@bg-OK" text="$$Back" x="464" y="471" w="343" h="78" fontsize="18" align="hcenter" textcolor="0xffffff" active="@@act-OK" actnoseltextcolor="0xe2e2e2"/>
+
+	<text text="$$Listen to thousands of commercial-free Internet radio stations! Live365 has broadcasts from Radio Disney, Santana, David Byrne, Pat Metheny, and Paul Oakenfold, as well as stations created by music lovers just like you! Easily browse through popular genres such as rock, hip-hop, jazz, and new age. Or discover treasures in some of the less-traveled styles such as gospel, comedy, anime, Hindi, trip hop, 30s, glam, tribal, Celtic, and 100s more." x="204" y="202" w="872" h="267" textcolor="0xffffff" numlines="8" align="hcenter" fontsize="24"/>
+
+	<include filename="./inc_live365_icon.xml"/>
+</page>

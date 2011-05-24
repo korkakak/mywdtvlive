@@ -1,0 +1,63 @@
+/* Dialog
+----------------------------------*/
+.ui-dialog { position: relative; padding: 0; width: 300px; border:solid #404040 10px !important; font-size:12px !important;}
+.ui-dialog .ui-dialog-titlebar { padding: .5em .3em .3em 1em; position: relative;  border:none !important;}
+.ui-dialog .ui-dialog-title { float: left; margin: .1em 0 .2em;} 
+.ui-dialog .ui-dialog-titlebar-close { position: absolute; right: .3em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 1px; height: 18px; }
+.ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px; }
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
+.ui-dialog .ui-dialog-content { border: 0; padding: .5em 1em; background: none; overflow: auto; zoom: 1; }
+.ui-dialog .ui-dialog-buttonpane { text-align: right; border-width: 1px 0 0 0; background-image: none; margin: .5em 1em 0 1em; padding: .5em .4em .5em .4em; border-color:#848484 !important}
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: .5em .4em .5em .4em;
+	cursor: pointer;
+	width:auto;
+	overflow:visible;
+	background-color:none !important;
+	background-image:url(../../../images/blue_big_btn_bg.jpg) !important;
+	font-weight:bold !important;
+	color:#fff !important;
+	font-size:11px !important;
+	text-decoration:none;
+	padding: 6px 10px 6px 10px !important;
+	font-size:11px !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border:none !important;
+	line-height:19px !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover {
+	color:#000000  !important;
+}
+
+.ui-dialog .ui-resizable-se { width: 14px; height: 14px; right: 3px; bottom: 3px; }
+.ui-draggable .ui-dialog-titlebar { cursor: move; }
+
+.ui-dialog-titlebar-close { display: none !important; } 
+
+.ui-dialog-titlebar{
+	background-image:none !important;
+	background-color:#e7e7e7 !important;
+	border:none; !important;
+}
+
+.ui-dialog-title{
+	color:#6a6b6d !important;
+	font-family:Arial, Helvetica, sans-serif !important;
+	font-size:20px !important;
+	font-weight:normal !important;
+}
+
+.warning_dialog .ui-dialog-titlebar{
+	background-color:#ed1b24 !important;
+}
+
+.warning_dialog .ui-dialog-title{
+	color:#ffffff !important;
+}
+
+.ui-dialog-buttonpane .ui-state-default{
+	background-image:url(images/blue_btn_bg.jpg) !important;
+	background-color:#none !important;
+}

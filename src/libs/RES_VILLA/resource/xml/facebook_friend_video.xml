@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<page background="image/villa_bg.png">
+	<ctrlgrp>
+		<listbox valkey="FriendOptionList" autoenter="1" autoswitch="0" move="row"
+		        cols="1" rows="3" lbmask="ud"  loop_scroll="1" turbo_trigger="10" turbo_multi="10"/>
+    		<linebreak/>
+    		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="page" cols="3" rows="2" lbmask="ud" loop_scroll="1" turbo_trigger="10" turbo_multi="10" hormove="1"/>
+	</ctrlgrp>
+
+	<image image="image/facebook/facebook_encoding_bg.png" x="0" y="0" w="1280" h="720" bg="1"/>
+	<image image="image/facebook/facebook_logo.png" x="61" y="30" w="235" h="50"/>
+
+	<image image="image/facebook/facebook_avatar_bg.png" x="61" y="163" w="98" h="98"/>
+	<image image="@@user_icon" x="62" y="164" w="97" h="97" align="top" scale_type="pan" scale="100"/>
+	<text text="@@user_name" x="179" y="182" w="800" h="42" fontsize="40" textcolor="0x3B5998"/>
+
+	<image image="image/facebook/facebook_friends_video_msg_box.png" x="163" y="225" w="823" h="98"/>
+	<text text="@@user_post_message" x="200" y="246" w="772" h="32" fontsize="30" textcolor="0x3B5998" align="left" speed="1" delay="2"/>
+	<text text="@@user_post_time" x="200" y="286" w="772" h="22" fontsize="20" textcolor="0x757575" align="left"/>
+
+  	<image image="image/facebook/facebook_friends_video_divide.png" x="60" y="340" w="1160" h="1"/>
+	<image image="image/facebook/facebook_friends_video_divide.png" x="60" y="618" w="1160" h="1"/>
+
+	<!-- photos/videos/wall option-->
+	<wrapper x="1005" w="214" h="32" fontsize="30" align="right">
+		<text text="@@FriendOptionList-text_0" y="219" active="@@act-FriendOptionList-0" selected="@@sel-FriendOptionList-0" textcolor="@@FriendOptionList-color_0"/>
+		<text text="@@FriendOptionList-text_1" y="259" active="@@act-FriendOptionList-1" selected="@@sel-FriendOptionList-1" textcolor="@@FriendOptionList-color_1"/>
+		<text text="@@FriendOptionList-text_2" y="299" active="@@act-FriendOptionList-2" selected="@@sel-FriendOptionList-2" textcolor="@@FriendOptionList-color_2"/>
+	</wrapper>
+        <!--
+	<widgetghost valkey="marquee" x="41" y="373" w="1180" h="250" ctrlname="browselist" step="10">
+	-->
+	<wrapper w="377" h="103">
+		<image image="@@browselist-bg_0" x="55" y="373"/>
+		<image image="@@browselist-bg_1" x="449" y="373"/>
+		<image image="@@browselist-bg_2" x="843" y="373"/>
+		<image image="@@browselist-bg_3" x="55" y="484"/>
+		<image image="@@browselist-bg_4" x="449" y="484"/>
+		<image image="@@browselist-bg_5" x="843" y="484"/>
+	</wrapper>
+	
+	<wrapper w="377" h="103">
+		<image image="@@browselist-lightbar_0" x="55" y="373"/>
+		<image image="@@browselist-lightbar_1" x="449" y="373"/>
+		<image image="@@browselist-lightbar_2" x="843" y="373"/>
+		<image image="@@browselist-lightbar_3" x="55" y="484"/>
+		<image image="@@browselist-lightbar_4" x="449" y="484"/>
+		<image image="@@browselist-lightbar_5" x="843" y="484"/>
+	</wrapper>
+
+	<wrapper w="124" h="95">
+		<image image="@@browselist-thumbnail_0" x="59" y="377" scale_type="fixratio" scale="100"/>
+		<image image="@@browselist-thumbnail_1" x="453" y="377" scale_type="fixratio" scale="100"/>
+		<image image="@@browselist-thumbnail_2" x="847" y="377" scale_type="fixratio" scale="100"/>
+		<image image="@@browselist-thumbnail_3" x="59" y="488" scale_type="fixratio" scale="100"/>
+		<image image="@@browselist-thumbnail_4" x="453" y="488" scale_type="fixratio" scale="100"/>
+		<image image="@@browselist-thumbnail_5" x="847" y="488" scale_type="fixratio" scale="100"/>
+	</wrapper>
+  
+	<wrapper w="226" h="28" fontsize="26" textcolor="0x000000">
+   		<text text="@@browselist-title_0" x="193" y="396" speed="@@browselist-title-speed_0" delay="2"/>
+	   	<text text="@@browselist-title_1" x="587" y="396" speed="@@browselist-title-speed_1" delay="2"/>
+   		<text text="@@browselist-title_2" x="981" y="396" speed="@@browselist-title-speed_2" delay="2"/>
+	   	<text text="@@browselist-title_3" x="193" y="506" speed="@@browselist-title-speed_3" delay="2"/>
+   		<text text="@@browselist-title_4" x="587" y="506" speed="@@browselist-title-speed_4" delay="2"/>
+	   	<text text="@@browselist-title_5" x="981" y="506" speed="@@browselist-title-speed_5" delay="2"/>
+	</wrapper>
+
+	<!--
+      	<wrapper w="74" h="32" fontsize="30" textcolor="0x3b5998" align="right">
+   		<text text="@@browselist-like-cnt_0" x="193" y="436"/>
+	   	<text text="@@browselist-like-cnt_1" x="587" y="436"/>
+   		<text text="@@browselist-like-cnt_2" x="981" y="436"/>
+	   	<text text="@@browselist-like-cnt_3" x="193" y="546"/>
+   		<text text="@@browselist-like-cnt_4" x="587" y="546"/>
+	   	<text text="@@browselist-like-cnt_5" x="981" y="546"/>
+      	</wrapper>
+ 
+      	<wrapper w="29" h="29">
+   		<image image="@@browselist-like-icon_0" x="266" y="434"/>
+	   	<image image="@@browselist-like-icon_1" x="660" y="434"/>
+   		<image image="@@browselist-like-icon_2" x="1054" y="434"/>
+	   	<image image="@@browselist-like-icon_3" x="266" y="544"/>
+   		<image image="@@browselist-like-icon_4" x="660" y="544"/>
+	   	<image image="@@browselist-like-icon_5" x="1054" y="544"/>
+      	</wrapper>
+
+      	<wrapper w="74" h="32" fontsize="30" textcolor="0x3b5998" align="right">
+   		<text text="@@browselist-comment-cnt_0" x="313" y="436"/>
+	   	<text text="@@browselist-comment-cnt_1" x="707" y="436"/>
+   		<text text="@@browselist-comment-cnt_2" x="1101" y="436"/>
+	   	<text text="@@browselist-comment-cnt_3" x="313" y="546"/>
+   		<text text="@@browselist-comment-cnt_4" x="707" y="546"/>
+	   	<text text="@@browselist-comment-cnt_5" x="1101" y="546"/>
+      	</wrapper>
+
+      	<wrapper w="29" h="30">
+   		<image image="@@browselist-comment-icon_0" x="391" y="434"/>
+	   	<image image="@@browselist-comment-icon_1" x="785" y="434"/>
+   		<image image="@@browselist-comment-icon_2" x="1179" y="434"/>
+	   	<image image="@@browselist-comment-icon_3" x="391" y="544"/>
+   		<image image="@@browselist-comment-icon_4" x="785" y="544"/>
+	   	<image image="@@browselist-comment-icon_5" x="1179" y="544"/>
+      	</wrapper>
+	-->
+	<!--
+	</widgetghost>
+	-->
+
+	<text text="@@pagecounter_up" x="391" y="649" w="230" h="28" fontsize="26" textcolor="0xff8400" align="right"/>
+      	<text text="/" x="621" y="649" w="40" h="28" fontsize="26" textcolor="0x3b5998" align="hcenter"/>
+      	<text text="@@pagecounter_down" x="661" y="649" w="230" h="28" fontsize="26" textcolor="0x3b5998" align="left"/>
+        <image image="@@moreprev" x="69" y="641" w="21" h="35"/>
+        <image image="@@morenext" x="1189" y="641" w="21" h="35"/>
+        <include filename="./decoration.xml"/>
+        <include filename="./inc_loading.xml"/>
+</page>

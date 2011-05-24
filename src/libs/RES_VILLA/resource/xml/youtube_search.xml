@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="image/Villa_bg.png">
+
+  <text id="subheadline" text="$$Search" x="97" y="115" w="600" h="52" fontsize="42" textcolor="0x07b5ff"/>
+
+  <include filename="./inc_keyboard.xml"/>
+  <image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+
+<!--  <include filename="./inc_setup_headline_property.xml" /> -->
+</page>

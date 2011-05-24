@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<page overlay="2">
+	<ctrlgrp>
+		<button valkey="CONFIRM"
+			focused_bg="./image/global_ok_bt_f.png"
+			normal_bg="./image/global_ok_bt_n.png"/>
+		<linebreak/>
+		<button valkey="KEYBOARD"
+			focused_bg="./image/video_playback_metadata_keyboard_f.png"
+			normal_bg="./image/video_playback_metadata_keyboard_n.png"/>
+	</ctrlgrp>
+	<image image="./image/facebook/facebook_upload_bg.png" x="226" y="108" w="832" h="514"/>
+	<text text="$$Upload to Facebook" x="254" y="139" w="778" h="38" fontsize="36" align="left" textcolor="0xFFFFFF"/>
+	<image image="@@upload_icon" x="274" y="204" w="224" h="148" scale_type="fixratio" scale="100"/>
+	<text text="@@input_dialog_title" x="274" y="368" w="737" h="32" fontsize="30" align="left" textcolor="0xC1C1C1"/>	
+	<text text="@@input_dialog_msg" x="288" y="423" w="708" h="146" fontsize="30" align="left" textcolor="0x000000" numlines="3"/>
+
+	<imgbtn image="@@bg-CONFIRM" active="@@act-CONFIRM" x="1098" y="303" w="112" h="112" disable="disable-CONFIRM"/>
+	<imgbtn image="@@bg-KEYBOARD" active="@@act-KEYBOARD" x="1098" y="423" w="112" h="112" disable="disable-KEYBOARD"/>
+</page>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page background="image/Villa_bg.png" type="basic">
+<ctrlgrp>
+	<button valkey="BUTTON"
+		focused_bg="image/Villa_button_blue_f_02.png"
+		normal_bg="image/Villa_button_blue_n_02.png"/>
+</ctrlgrp>
+<image image="@@mask" x="319" y="186" w="641" h="308"/>
+<text text="@@msg_str" x="384" y="259" w="511" h="145" numlines="5" align="hcenter" textcolor="0xffffff" fontsize="26"/> 
+<image image="@@bg-BUTTON" x="464" y="346" w="343" h="78"/>
+<text text="@@button-text" x="464" y="346" w="343" h="78" textcolor="0xffffff" align="hcenter" fontsize="18"/>
+<image image="image/youtube_logo.png" x="1073" y="578" w="118" h="75"/>
+</page>

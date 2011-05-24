@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<meta  version="0.01" service="wdtv" ptype="villa" date="2010/08/01"/>
+<theme id="0001">
+        <title>Mochi (Default)</title>
+	 <screen_shot title="home" thumbnail="http://service.wdc.com/api/thumbnail1.jpg"> http://service.wdc.com/api/screenshot_1.jpg</screen_shot>
+	 <screen_shot title="browse"  thumbnail="http://service.wdc.com/api/thumbnail2.jpg"> http://service.wdc.com/api/screenshot_2.jpg</screen_shot>
+	 <author>Western Digital</author>
+	 <publish_date>2010/08/01</publish_date>
+	 <rating>05</rating>
+	 <downloads>0</downloads>
+	 <description>This is the default user interface theme for WD TV Live Hub created by Western Digital.</description>
+	 <package_url>http://service.wdc.com/api/default.theme </package_url>
+	 <review>TBD</review>
+</theme>
+

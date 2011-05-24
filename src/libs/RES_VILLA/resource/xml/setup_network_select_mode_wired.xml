@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2007, ALPHA Networks, inc. -->
+<page background="./image/villa_bg.png">
+  <ctrlgrp>
+     <button valkey="DHCP"
+	 focused_bg="image/Villa_button_blue_f_02.png"
+	 normal_bg="image/Villa_button_blue_n_02.png"/>
+     <button valkey="STATICIP"
+	 focused_bg="image/Villa_button_blue_f_02.png"
+	 normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+ 
+  <text text="$$Network Setup" x="249" y="132" w="600" h="44" align="left" fontsize="42" textcolor="0x07b5ff"/>
+  <text text="$$Select Setup Method." x="379" y="212" w="686" h="28" align="left" fontsize="26" textcolor="0xe2e2e2"/>
+  <image image="./image/villa_network_setup_info_icon.png" x="300" y="193" w="66" h="65"/>
+
+  <include filename="./inc_setup_network_wired_setting.xml"/>
+
+  <imgbtn x="297" y="264" w="343" h="78" image="@@bg-DHCP" text="$$Automatic" align="hcenter" 
+	  fontsize="18" textcolor="0xffffff"  active="@@act-DHCP" actnoseltextcolor="0xffffff"/>
+  <imgbtn x="640" y="264" w="343" h="78" image="@@bg-STATICIP" text="$$Manual" align="hcenter" 
+	  fontsize="18" textcolor="0xffffff"  active="@@act-STATICIP" actnoseltextcolor="0xffffff"/>
+
+</page>

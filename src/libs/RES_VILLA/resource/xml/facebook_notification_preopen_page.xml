@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<page type="basic" overlay="2">
+	<ctrlgrp>
+    		<listbox valkey="browselist" autoenter="1" autoswitch="0" move="row" cols="1" rows="4" lbmask="ud" loop_scroll="1" turbo_trigger="10" turbo_multi="10" />
+	</ctrlgrp>
+
+	<include filename="./inc_loading.xml"/>
+      	<include filename="./decoration.xml"/>
+</page>

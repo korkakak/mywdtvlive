@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<page background="./image/villa_bg.png" type="basic">
+<!--for the detail item-->
+	<include filename="./inc_setup_headline.xml"/>
+	<include filename="./subtitle.xml" />
+	
+	<ctrlgrp>
+		<checkbox valkey="AAC" value="checkbox-AAC-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<checkbox valkey="AC3" value="checkbox-AC3-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<checkbox valkey="DDPLUS" value="checkbox-DDPLUS-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<checkbox valkey="DTS" value="checkbox-DTS-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<checkbox valkey="TRUEHD" value="checkbox-TRUEHD-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<checkbox valkey="WMA" value="checkbox-WMA-value"
+			focused_bg="./image/global_rememberme_box_small_f.png"
+			normal_bg="./image/global_rememberme_box_small_n.png"
+			normal_checked="./image/global_rememberme_box_small_n.png"
+			focused_checked="./image/global_rememberme_box_small_s.png"/>
+		<linebreak/>
+		<button valkey="OK"
+			focused_bg="image/Villa_button_blue_f_02.png"
+			normal_bg="image/Villa_button_blue_n_02.png"/>
+ 	</ctrlgrp>
+
+	<imgbtn image="@@bg-AAC" active="@@act-AAC" x="287" y="217" w="41" h="41"/>
+	<imgbtn image="@@bg-AC3" active="@@act-AC3" x="287" y="267" w="41" h="41"/>
+	<imgbtn image="@@bg-DDPLUS" active="@@act-DDPLUS" x="287" y="317" w="41" h="41"/>
+	<imgbtn image="@@bg-DTS" active="@@act-DTS" x="287" y="367" w="41" h="41"/>
+	<imgbtn image="@@bg-TRUEHD" active="@@act-TRUEHD" x="287" y="417" w="41" h="41"/>
+	<imgbtn image="@@bg-WMA" active="@@act-WMA" x="287" y="467" w="41" h="41"/>
+	<imgbtn image="@@bg-OK" active="@@act-OK" x="428" y="576" w="323" h="78"/>
+    <wrapper x="293"  w="695" h="1">
+    <image image="./image/browser_list_line.png" y="260"/>
+    <image image="./image/browser_list_line.png" y="310"/>
+    <image image="./image/browser_list_line.png" y="360"/>
+    <image image="./image/browser_list_line.png" y="410"/>
+	<image image="./image/browser_list_line.png" y="460"/>
+    <image image="./image/browser_list_line.png" y="510"/>
+	</wrapper>
+	<text text="$$AAC capable receiver" active="@@act-AAC" x="351" y="224" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+	<text text="$$Dobly Digital capable receiver" active="@@act-AC3" x="351" y="274" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+	<text text="$$Dobly Digital Plus capable receiver" active="@@act-DDPLUS" x="351" y="324" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+	<text text="$$DTS capable receiver" active="@@act-DTS" x="351" y="374" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+	<text text="$$Dolby TrueHD capable receiver" active="@@act-TRUEHD" x="351" y="424" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+	<text text="$$WMA Pro capable receiver" active="@@act-WMA" x="351" y="474" w="700" h="37" fontsize="26" textcolor="0xc1c1c1" activetextcolor="0xff8400"/>	
+
+  	<text text="$$Finish" x="428" y="576" w="323" h="78" active="@@act-OK" fontsize="26" textcolor="0xffffff" activetextcolor="0xffffff" align="hcenter"/>
+
+	<include filename="./decoration.xml"/>
+</page>
+

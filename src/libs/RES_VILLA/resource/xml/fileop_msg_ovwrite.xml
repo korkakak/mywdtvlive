@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Copyright (C) 2006, ALPHA Networks, inc. -->
+<page background="image/villa_bg.png" wait_seconds="300">
+  <ctrlgrp>
+     <button valkey="YES_TO_ONE" focused_bg="image/Villa_button_blue_f_02.png" 	normal_bg="image/Villa_button_blue_n_02.png"/>
+     <button valkey="YES_TO_ALL" focused_bg="image/Villa_button_blue_f_02.png" 	normal_bg="image/Villa_button_blue_n_02.png"/>
+	 <linebreak/>
+     <button valkey="SKIP_ONE"   focused_bg="image/Villa_button_blue_f_02.png"  normal_bg="image/Villa_button_blue_n_02.png"/>
+     <button valkey="CANCEL"     focused_bg="image/Villa_button_blue_f_02.png"  normal_bg="image/Villa_button_blue_n_02.png"/>
+  </ctrlgrp>
+
+  <text text="$$File Management" x="152" y="66" w="600" h="44" fontsize="42" textcolor="0x07b5ff"/>
+
+  <table  x="240" y="200" w="800" h="220" textcolor="0xe2e2e2" fontsize="26" rows="3" cols="1">
+     <text text="$$This folder already contains a file named:"  align="hcenter" numlines="2"/>
+     <text text="@@text-dest"  align="hcenter" numlines="2"/>
+     <text text="$$Would you like to overwrite it?"  align="hcenter" numlines="2"/>
+  </table>
+
+  <table x="290" y="450" w="700" h="160" rows="2" cols="2" align="hcenter" fontsize="20" actnoseltextcolor="0xffffff">
+    <imgbtn image="@@bg-YES_TO_ONE" text="$$YES"        active="@@act-YES_TO_ONE"/>
+    <imgbtn image="@@bg-YES_TO_ALL" text="$$Yes to all" active="@@act-YES_TO_ALL"/>
+    <imgbtn image="@@bg-SKIP_ONE"   text="$$NO"         active="@@act-SKIP_ONE"/>
+    <imgbtn image="@@bg-CANCEL"     text="$$Cancel"     active="@@act-CANCEL"/>
+  </table>
+  
+  <include filename="./inc_messagebox.xml" />
+</page>

@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<page>
+	<ctrlgrp lbmask="LRud">
+		<button valkey="Back" 
+			normal_bg="image/bestbuy/bby_browse_back_n.png" 
+			focused_bg="image/bestbuy/bby_browse_back_f.png"
+			disabled_bg="image/bestbuy/bby_browse_back_n.png"/>
+		<button valkey="ToHome" 
+			normal_bg="image/bestbuy/bby_browse_home_n.png"
+			focused_bg="image/bestbuy/bby_browse_home_f.png"
+			disabled_bg="image/bestbuy/bby_browse_home_n.png"/>
+		<linebreak/>
+		<button valkey="BUTTON1" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<button valkey="BUTTON2" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<button valkey="BUTTON3" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<button valkey="BUTTON4" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+		<button valkey="BUTTON5" 
+			normal_bg="image/bestbuy/bby_bt_n.png" 
+			focused_bg="image/bestbuy/bby_bt_f.png" 
+			disabled_bg="image/bestbuy/bby_bt_d.png"
+			click_bg="image/bestbuy/bby_bt_c.png" click_effect="tp"/>
+	</ctrlgrp>
+
+	<image x="105" y="140" w="1070" h="49" image="@@ourlist_bar"/>
+
+	<text text="@@videoclip-name" x="344" y="213" w="716" h="22" fontsize="20" textcolor="0xfff2f2f2" align="left"/>
+
+	<image image="@@videoclip-image" x="105" y="212" w="203" h="278" prefetch="1"/>
+	<image image="@@videoclip-image" x="105" y="490" w="203" h="100" prefetch="1" mirror="1" align="top,left"/>
+	<image image="image/bestbuy/bby_checkout_reflection_mask.png" x="85" y="490" w="243" h="100"/>
+
+	<!-- Page 1-->
+	<table x="348" y="267" h="287" w="716" rows="10" fontsize="18" textcolor="0xfff2f2f2" numlines="1" align="top,left" speed="0">
+		<text text="@@short-caption-label0" disable="@@disable-short-caption-label0"/>
+		<text text="@@short-caption-label1" disable="@@disable-short-caption-label1"/>
+		<text text="@@short-caption-label2" disable="@@disable-short-caption-label3"/>
+		<text text="@@short-caption-label3" disable="@@disable-short-caption-label3"/>
+		<text text="@@short-caption-label4" disable="@@disable-short-caption-label4"/>
+		<text text="@@short-caption-label5" disable="@@disable-short-caption-label5"/>
+		<text text="@@short-caption-label6" disable="@@disable-short-caption-label6"/>
+		<text text="@@short-caption-label7" disable="@@disable-short-caption-label7"/>
+		<text text="@@short-caption-label8" disable="@@disable-short-caption-label8"/>
+		<text text="@@short-caption-label9" disable="@@disable-short-caption-label9"/>
+	</table>
+
+	<table x="457" y="267" w="607" h="287" fontsize="18" rows="10" textcolor="0xfff2f2f2" numlines="1" align="top,left" speed="0">
+		<text text="@@short-caption-text0" disable="@@disable-short-caption-text0"/>
+		<text text="@@short-caption-text1" disable="@@disable-short-caption-text1"/>
+		<text text="@@short-caption-text2" disable="@@disable-short-caption-text3"/>
+		<text text="@@short-caption-text3" disable="@@disable-short-caption-text3"/>
+		<text text="@@short-caption-text4" disable="@@disable-short-caption-text4"/>
+		<text text="@@short-caption-text5" disable="@@disable-short-caption-text5"/>
+		<text text="@@short-caption-text6" disable="@@disable-short-caption-text6"/>
+		<text text="@@short-caption-text7" disable="@@disable-short-caption-text7"/>
+		<text text="@@short-caption-text8" disable="@@disable-short-caption-text8"/>
+		<text text="@@short-caption-text9" disable="@@disable-short-caption-text9"/>
+	</table>
+
+	<!-- Page N-->
+	<table x="194" y="267" w="900" h="287" fontsize="18" textcolor="0xfff2f2f2" numlines="1" rows="10" align="top,left">
+		<text text="@@long-caption-label0" disable="@@disable-long-caption-label0"/>
+		<text text="@@long-caption-label1" disable="@@disable-long-caption-label1"/>
+		<text text="@@long-caption-label2" disable="@@disable-long-caption-label3"/>
+		<text text="@@long-caption-label3" disable="@@disable-long-caption-label3"/>
+		<text text="@@long-caption-label4" disable="@@disable-long-caption-label4"/>
+		<text text="@@long-caption-label5" disable="@@disable-long-caption-label5"/>
+		<text text="@@long-caption-label6" disable="@@disable-long-caption-label6"/>
+		<text text="@@long-caption-label7" disable="@@disable-long-caption-label7"/>
+		<text text="@@long-caption-label8" disable="@@disable-long-caption-label8"/>
+		<text text="@@long-caption-label9" disable="@@disable-long-caption-label9"/>
+	</table>
+
+	<table x="344" w="790" y="267" h="287" fontsize="18" textcolor="0xfff2f2f2" numlines="1" rows="10" align="top,left">
+		<text text="@@long-caption-text0" disable="@@disable-long-caption-text0"/>
+		<text text="@@long-caption-text1" disable="@@disable-long-caption-text1"/>
+		<text text="@@long-caption-text2" disable="@@disable-long-caption-text3"/>
+		<text text="@@long-caption-text3" disable="@@disable-long-caption-text3"/>
+		<text text="@@long-caption-text4" disable="@@disable-long-caption-text4"/>
+		<text text="@@long-caption-text5" disable="@@disable-long-caption-text5"/>
+		<text text="@@long-caption-text6" disable="@@disable-long-caption-text6"/>
+		<text text="@@long-caption-text7" disable="@@disable-long-caption-text7"/>
+		<text text="@@long-caption-text8" disable="@@disable-long-caption-text8"/>
+		<text text="@@long-caption-text9" disable="@@disable-long-caption-text9"/>
+	</table>
+
+	<wrapper textcolor="0xff727272" actoverlistcolor="0xff727272" activetextcolor="0xfff2f2f2" clicktextcolor="0xff4d4d4d" clickedtextcolor="0xfffcb040" y="582" w="210" h="49" fontsize="20" align="hcenter">
+		<imgbtn x="106" text="@@action_1_text" image="@@bg-BUTTON1" x_offset="@@action_1_xoffset" 
+			disable="@@disable-BUTTON1" active="@@act-BUTTON1" selected="@@sel-BUTTON1" click="@@click-BUTTON1"/>
+		<imgbtn x="320" text="@@action_2_text" image="@@bg-BUTTON2" x_offset="@@action_2_xoffset" 
+			disable="@@disable-BUTTON2" active="@@act-BUTTON2" selected="@@sel-BUTTON2" click="@@click-BUTTON2"/>
+		<imgbtn x="534" text="@@action_3_text" image="@@bg-BUTTON3" x_offset="@@action_3_xoffset" 
+			disable="@@disable-BUTTON3" active="@@act-BUTTON3" selected="@@sel-BUTTON3" click="@@click-BUTTON3"/>
+		<imgbtn x="748" text="@@action_4_text" image="@@bg-BUTTON4" x_offset="@@action_4_xoffset" 
+			disable="@@disable-BUTTON4" active="@@act-BUTTON4" selected="@@sel-BUTTON4" click="@@click-BUTTON4"/>
+		<imgbtn x="961" text="@@action_5_text" image="@@bg-BUTTON5" x_offset="@@action_5_xoffset" 
+			disable="@@disable-BUTTON5" active="@@act-BUTTON5" selected="@@sel-BUTTON5" click="@@click-BUTTON5"/>
+	</wrapper>
+	<text text="@@action_tip" x="390" y="637" w="500" h="22" textcolor="0xfff54029" align="hcenter" disable="@@disable-action_tip" fontsize="20"/>
+	<image image="@@status_icon" x="585" y="303" w="113" h="113"/>
+	<text text="@@rent_hour" x="390" y="400" w="500" h="50" textcolor="0xfff54029" align="hcenter" fontsize="20" numlines="2"/>
+	<include filename="./bestbuy_common.xml"/>
+</page>
